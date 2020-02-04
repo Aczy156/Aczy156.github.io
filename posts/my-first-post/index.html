@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>The Blog of Aczy156  | My First Post</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.63.2" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="My First Post" />
+<meta property="og:description" content="POJ1113 wall 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
+卷包裹法 思路：
+ 点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大) 从点集的第一个点开始找上凸包。  如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。 如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。   从点集的最后一个点开始找下凸包。  判断点在线的左边还是右边：利用叉积(几何意义就是通过比较斜率，利用叉积的大小可以防止斜率为零或者无穷的情况)
+Graham扫描法 思路：
+ 点集预处理：通过两次预处理，首先提取处横纵坐标都最小的，也就是以横坐标为准从小到大(横坐标相同以纵坐标从小到大)，然后再平移坐标轴使原点与第一步找到的点重合，根据其他点与原点的斜率大小进行排序 按照预处理的顺序找凸包，要保证新添加的点在凸包的点集中最新添加的两个点所形成的直线的左边。  关于得到凸包点集中是否要凸包的边上的点(初顶点以外的其他点) eg: (1,1) (1,2) (2,1) (1,2) (3,1) 包含凸包边上的点：(1,1) (1,2) (2,1) (1,2) (3,1) 不包含：(1,1) (1,2) (1,2) (3,1)
+卷包裹法得到不包含凸包边上的点 解析：此时abc在一条直线，x同或者y同，那么得到的叉积必为零，同时不满足添加进凸包点集的条件就是在线的左边或者在线上，要等于号。
+int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.x); } int solve(){ int idx = 0; // upper 0 -&gt; n-1  for (int i = 0; i &lt; n; i&#43;&#43;){ while (idx &gt;1 &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } int s = idx; // lower n-1 -&gt; 0  for (int i = n-1; i &gt;= 0; i--) { while (idx &gt; s &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } return idx; } Graham-Scan法：同样道理：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://aczy156.github.io/posts/my-first-post/" />
+<meta property="article:published_time" content="2020-02-03T20:48:30+08:00" />
+<meta property="article:modified_time" content="2020-02-03T20:48:30+08:00" />
+<meta itemprop="name" content="My First Post">
+<meta itemprop="description" content="POJ1113 wall 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
+卷包裹法 思路：
+ 点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大) 从点集的第一个点开始找上凸包。  如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。 如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。   从点集的最后一个点开始找下凸包。  判断点在线的左边还是右边：利用叉积(几何意义就是通过比较斜率，利用叉积的大小可以防止斜率为零或者无穷的情况)
+Graham扫描法 思路：
+ 点集预处理：通过两次预处理，首先提取处横纵坐标都最小的，也就是以横坐标为准从小到大(横坐标相同以纵坐标从小到大)，然后再平移坐标轴使原点与第一步找到的点重合，根据其他点与原点的斜率大小进行排序 按照预处理的顺序找凸包，要保证新添加的点在凸包的点集中最新添加的两个点所形成的直线的左边。  关于得到凸包点集中是否要凸包的边上的点(初顶点以外的其他点) eg: (1,1) (1,2) (2,1) (1,2) (3,1) 包含凸包边上的点：(1,1) (1,2) (2,1) (1,2) (3,1) 不包含：(1,1) (1,2) (1,2) (3,1)
+卷包裹法得到不包含凸包边上的点 解析：此时abc在一条直线，x同或者y同，那么得到的叉积必为零，同时不满足添加进凸包点集的条件就是在线的左边或者在线上，要等于号。
+int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.x); } int solve(){ int idx = 0; // upper 0 -&gt; n-1  for (int i = 0; i &lt; n; i&#43;&#43;){ while (idx &gt;1 &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } int s = idx; // lower n-1 -&gt; 0  for (int i = n-1; i &gt;= 0; i--) { while (idx &gt; s &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } return idx; } Graham-Scan法：同样道理：">
+<meta itemprop="datePublished" content="2020-02-03T20:48:30&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-03T20:48:30&#43;08:00" />
+<meta itemprop="wordCount" content="518">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My First Post"/>
+<meta name="twitter:description" content="POJ1113 wall 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
+卷包裹法 思路：
+ 点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大) 从点集的第一个点开始找上凸包。  如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。 如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。   从点集的最后一个点开始找下凸包。  判断点在线的左边还是右边：利用叉积(几何意义就是通过比较斜率，利用叉积的大小可以防止斜率为零或者无穷的情况)
+Graham扫描法 思路：
+ 点集预处理：通过两次预处理，首先提取处横纵坐标都最小的，也就是以横坐标为准从小到大(横坐标相同以纵坐标从小到大)，然后再平移坐标轴使原点与第一步找到的点重合，根据其他点与原点的斜率大小进行排序 按照预处理的顺序找凸包，要保证新添加的点在凸包的点集中最新添加的两个点所形成的直线的左边。  关于得到凸包点集中是否要凸包的边上的点(初顶点以外的其他点) eg: (1,1) (1,2) (2,1) (1,2) (3,1) 包含凸包边上的点：(1,1) (1,2) (2,1) (1,2) (3,1) 不包含：(1,1) (1,2) (1,2) (3,1)
+卷包裹法得到不包含凸包边上的点 解析：此时abc在一条直线，x同或者y同，那么得到的叉积必为零，同时不满足添加进凸包点集的条件就是在线的左边或者在线上，要等于号。
+int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.x); } int solve(){ int idx = 0; // upper 0 -&gt; n-1  for (int i = 0; i &lt; n; i&#43;&#43;){ while (idx &gt;1 &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } int s = idx; // lower n-1 -&gt; 0  for (int i = n-1; i &gt;= 0; i--) { while (idx &gt; s &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } return idx; } Graham-Scan法：同样道理："/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://aczy156.github.io/" class="f3 fw2 hover-white no-underline white-90 dib">
+      The Blog of Aczy156
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">My First Post</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-02-03T20:48:30&#43;08:00">February 3, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="poj1113-wall">POJ1113 wall</h2>
+<p>题目链接：<a href="http://poj.org/problem?id=1113">http://poj.org/problem?id=1113</a>
+凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。</p>
+<h3 id="卷包裹法">卷包裹法</h3>
+<p>思路：</p>
+<ul>
+<li>点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大)</li>
+<li>从点集的第一个点开始找上凸包。
+<ul>
+<li>如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。</li>
+<li>如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。</li>
+</ul>
+</li>
+<li>从点集的最后一个点开始找下凸包。</li>
+</ul>
+<p>判断点在线的左边还是右边：利用<strong>叉积(几何意义就是通过比较斜率</strong>，利用叉积的大小可以防止斜率为零或者无穷的情况)</p>
+<h3 id="graham扫描法">Graham扫描法</h3>
+<p>思路：</p>
+<ul>
+<li>点集预处理：通过两次预处理，首先提取处横纵坐标都最小的，也就是以横坐标为准从小到大(横坐标相同以纵坐标从小到大)，然后再平移坐标轴使原点与第一步找到的点重合，根据其他点与原点的斜率大小进行排序</li>
+<li>按照预处理的顺序找凸包，要保证新添加的点在凸包的点集中最新添加的两个点所形成的直线的左边。</li>
+</ul>
+<h3 id="关于得到凸包点集中是否要凸包的边上的点初顶点以外的其他点">关于得到凸包点集中是否要凸包的边上的点(初顶点以外的其他点)</h3>
+<p>eg:
+(1,1) (1,2) (2,1) (1,2) (3,1)
+包含凸包边上的点：(1,1) (1,2) (2,1) (1,2) (3,1)
+不包含：(1,1) (1,2) (1,2) (3,1)</p>
+<p><strong>卷包裹法得到不包含凸包边上的点</strong>
+解析：此时abc在一条直线，x同或者y同，那么得到的叉积必为零，同时不满足添加进凸包点集的条件就是在线的左边或者在线上，要等于号。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">cross</span>(point a,point b,point c){
+    <span style="color:#66d9ef">return</span> (a.x<span style="color:#f92672">-</span>c.x)<span style="color:#f92672">*</span>(b.y<span style="color:#f92672">-</span>c.y)<span style="color:#f92672">-</span>(a.y<span style="color:#f92672">-</span>c.y)<span style="color:#f92672">*</span>(b.x<span style="color:#f92672">-</span>c.x);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solve</span>(){
+    <span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#75715e">// upper 0 -&gt; n-1
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>){
+        <span style="color:#66d9ef">while</span> (idx <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> cross(con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], e[i], con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]) <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) idx<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+        con[idx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> e[i];
+    }
+    <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> idx;
+    <span style="color:#75715e">// lower n-1 -&gt; 0
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        <span style="color:#66d9ef">while</span> (idx <span style="color:#f92672">&gt;</span> s <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> cross(con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], e[i], con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]) <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) idx<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+        con[idx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> e[i];
+    }
+    <span style="color:#66d9ef">return</span> idx;
+}
+</code></pre></div><p>Graham-Scan法：同样道理：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+	<span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> cross(con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], e[i], con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]) <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) idx<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+   	con[idx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> e[i];
+}
+con[idx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> e[<span style="color:#ae81ff">0</span>];
+</code></pre></div><p>完整代码：
+卷包裹法：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  main.cpp
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  poj1113_凸包板题
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Created by 陈冉飞 on 2020/2/2.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Copyright © 2020 陈冉飞. All rights reserved.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 1010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">point</span>{
+    <span style="color:#66d9ef">int</span> x,y;
+    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> point a)<span style="color:#66d9ef">const</span>{
+        <span style="color:#66d9ef">if</span>(x <span style="color:#f92672">=</span><span style="color:#f92672">=</span> a.x) <span style="color:#66d9ef">return</span> y <span style="color:#f92672">&lt;</span> a.y;
+        <span style="color:#66d9ef">return</span> x<span style="color:#f92672">&lt;</span>a.x;
+    }
+}e[maxn],con[maxn];
+<span style="color:#66d9ef">int</span> n,l,T;
+<span style="color:#66d9ef">double</span> ans <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+<span style="color:#75715e">#</span><span style="color:#75715e">define PI atan(1.0)*4</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">cross</span>(point a,point b,point c){
+    <span style="color:#66d9ef">return</span> (a.x<span style="color:#f92672">-</span>c.x)<span style="color:#f92672">*</span>(b.y<span style="color:#f92672">-</span>c.y)<span style="color:#f92672">-</span>(a.y<span style="color:#f92672">-</span>c.y)<span style="color:#f92672">*</span>(b.x<span style="color:#f92672">-</span>c.x);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solve</span>(){
+    <span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#75715e">// upper 0 -&gt; n-1
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>){
+        <span style="color:#66d9ef">while</span> (idx <span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> cross(con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], e[i], con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]) <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) idx<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+        con[idx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> e[i];
+    }
+    <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> idx;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        <span style="color:#66d9ef">while</span> (idx <span style="color:#f92672">&gt;</span> s <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> cross(con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], e[i], con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]) <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) idx<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+        con[idx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> e[i];
+    }
+    <span style="color:#75715e">// lower n-1 -&gt; 0
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> idx;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> argv[]) {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>T);
+    <span style="color:#66d9ef">while</span>(T<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>n,<span style="color:#f92672">&amp;</span>l);
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>e[i].x,<span style="color:#f92672">&amp;</span>e[i].y);
+            sort(e, e<span style="color:#f92672">+</span>n);
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> solve(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+<span style="color:#75715e">//                printf(&#34;%d %d %d\n&#34;,i,con[i].x,con[i].y);
+</span><span style="color:#75715e"></span>                ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> sqrt(<span style="color:#ae81ff">1.0</span><span style="color:#f92672">*</span>(con[i].x<span style="color:#f92672">-</span>con[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].x)<span style="color:#f92672">*</span>(con[i].x<span style="color:#f92672">-</span>con[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].x)<span style="color:#f92672">+</span>(con[i].y<span style="color:#f92672">-</span>con[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].y)<span style="color:#f92672">*</span>(con[i].y<span style="color:#f92672">-</span>con[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>].y));
+            }
+            
+            printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%.0lf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,ans<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>PI<span style="color:#f92672">*</span>l);
+        <span style="color:#66d9ef">if</span>(T)printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>graham-scan：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  main.cpp
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  poj1113_凸包板题_graham扫描算法
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Created by 陈冉飞 on 2020/2/3.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Copyright © 2020 陈冉飞. All rights reserved.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 1010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">point</span>{
+    <span style="color:#66d9ef">int</span> x,y;
+}e[maxn],con[maxn];
+<span style="color:#66d9ef">int</span> n,l,T;
+<span style="color:#66d9ef">double</span> ans <span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+<span style="color:#75715e">#</span><span style="color:#75715e">define PI atan(1.0)*4</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">cross</span>(point a,point b,point c){
+    <span style="color:#66d9ef">return</span> (a.x<span style="color:#f92672">-</span>c.x)<span style="color:#f92672">*</span>(b.y<span style="color:#f92672">-</span>c.y)<span style="color:#f92672">-</span>(a.y<span style="color:#f92672">-</span>c.y)<span style="color:#f92672">*</span>(b.x<span style="color:#f92672">-</span>c.x);
+}
+
+<span style="color:#66d9ef">double</span> <span style="color:#a6e22e">dis</span>(point a,point b){
+    <span style="color:#66d9ef">return</span> sqrt(<span style="color:#ae81ff">1.0</span><span style="color:#f92672">*</span>pow(a.x<span style="color:#f92672">-</span>b.x, <span style="color:#ae81ff">2</span>)<span style="color:#f92672">+</span>pow(a.y<span style="color:#f92672">-</span>b.y, <span style="color:#ae81ff">2</span>));
+}
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">cmp1</span>(point a,point b){
+    <span style="color:#66d9ef">if</span>(a.x <span style="color:#f92672">=</span><span style="color:#f92672">=</span> b.x) <span style="color:#66d9ef">return</span> a.y <span style="color:#f92672">&lt;</span> b.y;
+    <span style="color:#66d9ef">return</span> a.x<span style="color:#f92672">&lt;</span>b.x;
+}
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">cmp2</span>(point a,point b){
+    <span style="color:#66d9ef">int</span> c1 <span style="color:#f92672">=</span> cross(e[<span style="color:#ae81ff">0</span>], a, b);
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>c1) <span style="color:#66d9ef">return</span> dis(e[<span style="color:#ae81ff">0</span>], a)<span style="color:#f92672">&lt;</span> dis(e[<span style="color:#ae81ff">0</span>], b);
+    <span style="color:#66d9ef">return</span> c1 <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">solve</span>(){
+    <span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> cross(con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], e[i], con[idx<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]) <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) idx<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+        con[idx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> e[i];
+    }
+    con[idx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> e[<span style="color:#ae81ff">0</span>];
+    <span style="color:#66d9ef">return</span> idx;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> argv[]) {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>T);
+    <span style="color:#66d9ef">while</span>(T<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>n,<span style="color:#f92672">&amp;</span>l);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>e[i].x,<span style="color:#f92672">&amp;</span>e[i].y);
+        sort(e, e<span style="color:#f92672">+</span>n,cmp1);
+        sort(e<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, e<span style="color:#f92672">+</span>n, cmp2);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> solve(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> dis(con[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], con[i]);
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%.0lf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,ans<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>PI<span style="color:#f92672">*</span>l);
+        <span style="color:#66d9ef">if</span>(T)printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://aczy156.github.io/" >
+    &copy;  The Blog of Aczy156 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on The Blog of Aczy156</title>
+    <link>http://aczy156.github.io/posts/</link>
+    <description>Recent content in Posts on The Blog of Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Feb 2020 22:15:06 +0800</lastBuildDate>
+    
+	<atom:link href="http://aczy156.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android开发virtual_device连接mysql始终无法连接的问题</title>
+      <link>http://aczy156.github.io/posts/android%E5%BC%80%E5%8F%91virtual_device%E8%BF%9E%E6%8E%A5mysql%E5%A7%8B%E7%BB%88%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Mon, 03 Feb 2020 22:15:06 +0800</pubDate>
+      
+      <guid>http://aczy156.github.io/posts/android%E5%BC%80%E5%8F%91virtual_device%E8%BF%9E%E6%8E%A5mysql%E5%A7%8B%E7%BB%88%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>问题最终还是没能解决，引用其他博客中的一段话
+ 如果想要用云端数据库，一般不建议android设备直接连数据，并不是一个简单的导入jar就可以成功的，因为很多手机他的底层并没有数据库的链接驱动，就算这台手机可以，那台手机也可能是不可以的。 而且安全性是个很大的问题，android直连云端数据库，就算是毕业设计，验收也不会给你过吧。建议实现服务器端，搭建app——服务器——数据库 这样的一种结构系统，这才是正理。
+原文链接：https://blog.csdn.net/qq_40651609/article/details/86756331
+昨天晚上到今天一上午一直在解决Android 连接数据库连接不上的问题（virtual device ：Google pixel 2 ，ide ：android studio），期间使用过以下几个解决办法：
+  导入mysql-connection jar包注意导入方法
+ 将jar包放入项目文件夹下 project structure中找到依赖包添加处(也就是dependence) ➕ =&amp;gt; jar 选中mysql-connection jar 检验是否导入方法：在项目build.gradle文件下可以看到添加了配置该导入的jar包的语法。implementation files(&#39;mysql-connector-java-5.1.0-bin.jar&#39;)    在项目xml配置文件中添加virtual device 的权限配置语句(该问题在配置android 通信的过程中有碰到过，需要在项目的配置文件中添加virtual device的权限语句，添加网络配置语句等)
+ 在项目配置文件中添加配置可以连接数据库的语句   &amp;lt;uses-permission android:name=&amp;#34;android.permission.MOUNT_UNMOUNT_FILESYSTEMS&amp;#34;/&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.READ_EXTERNAL_STORAGE&amp;#34;/&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.WRITE_EXTERNAL_STORAGE&amp;#34;/&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.INTERNET&amp;#34;/&amp;gt; &amp;lt;uses-permission android:name=&amp;#34;android.permission.ACCESS_NETWORK_STATE&amp;#34; /&amp;gt;   mysql jdbc 驱动的时候未能加载：
+ virtual device 是系统跑的一个虚拟机器，有自己的驱动，IP等等，运行程序是想到与将该apk包导入到virtual device中并安装，从而进行运行的。因此如果导入的程序中连接数据库的IP为localhost 的话相当于访问的virtual device的IP 通过$ ifconfig来获取本机的IP 将localhost 改为本机IP    mysql 数据库中有用户列表，在默认的自带的mysql数据库中，如果在navicat中打开这个数据库之后是无法看到这个表的。而这个表内存的是使用数据库的用户列表，一般本地都是root，但是此情况是virtual device 远程访问本机的mysql，而root用户无法访问，因此要添加一个其他的用户来供virtual device 去使用</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://aczy156.github.io/posts/my-first-post/</link>
+      <pubDate>Mon, 03 Feb 2020 20:48:30 +0800</pubDate>
+      
+      <guid>http://aczy156.github.io/posts/my-first-post/</guid>
+      <description>POJ1113 wall 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
+卷包裹法 思路：
+ 点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大) 从点集的第一个点开始找上凸包。  如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。 如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。   从点集的最后一个点开始找下凸包。  判断点在线的左边还是右边：利用叉积(几何意义就是通过比较斜率，利用叉积的大小可以防止斜率为零或者无穷的情况)
+Graham扫描法 思路：
+ 点集预处理：通过两次预处理，首先提取处横纵坐标都最小的，也就是以横坐标为准从小到大(横坐标相同以纵坐标从小到大)，然后再平移坐标轴使原点与第一步找到的点重合，根据其他点与原点的斜率大小进行排序 按照预处理的顺序找凸包，要保证新添加的点在凸包的点集中最新添加的两个点所形成的直线的左边。  关于得到凸包点集中是否要凸包的边上的点(初顶点以外的其他点) eg: (1,1) (1,2) (2,1) (1,2) (3,1) 包含凸包边上的点：(1,1) (1,2) (2,1) (1,2) (3,1) 不包含：(1,1) (1,2) (1,2) (3,1)
+卷包裹法得到不包含凸包边上的点 解析：此时abc在一条直线，x同或者y同，那么得到的叉积必为零，同时不满足添加进凸包点集的条件就是在线的左边或者在线上，要等于号。
+int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.x); } int solve(){ int idx = 0; // upper 0 -&amp;gt; n-1  for (int i = 0; i &amp;lt; n; i++){ while (idx &amp;gt;1 &amp;amp;&amp;amp; cross(con[idx-1], e[i], con[idx-2]) &amp;gt;= 0) idx--; con[idx++] = e[i]; } int s = idx; // lower n-1 -&amp;gt; 0  for (int i = n-1; i &amp;gt;= 0; i--) { while (idx &amp;gt; s &amp;amp;&amp;amp; cross(con[idx-1], e[i], con[idx-2]) &amp;gt;= 0) idx--; con[idx++] = e[i]; } return idx; } Graham-Scan法：同样道理：</description>
+    </item>
+    
+  </channel>
+</rss>
