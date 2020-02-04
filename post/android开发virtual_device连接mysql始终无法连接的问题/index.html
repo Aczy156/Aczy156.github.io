@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Android开发virtual_device连接mysql始终无法连接的问题 - The Blog of Aczy156</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Aczy156" /><meta name="description" content="问题最终还是没能解决，引用其他博客中的一段话 如果想要用云端数据库，一般不建议android设备直接连数据，并不是一个简单的导入jar就可以成" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.63.2 with theme even" />
+
+
+<link rel="canonical" href="http://aczy156.github.io/post/android%E5%BC%80%E5%8F%91virtual_device%E8%BF%9E%E6%8E%A5mysql%E5%A7%8B%E7%BB%88%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%97%AE%E9%A2%98/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Android开发virtual_device连接mysql始终无法连接的问题" />
+<meta property="og:description" content="问题最终还是没能解决，引用其他博客中的一段话 如果想要用云端数据库，一般不建议android设备直接连数据，并不是一个简单的导入jar就可以成" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://aczy156.github.io/post/android%E5%BC%80%E5%8F%91virtual_device%E8%BF%9E%E6%8E%A5mysql%E5%A7%8B%E7%BB%88%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2020-02-04T19:09:40+08:00" />
+<meta property="article:modified_time" content="2020-02-04T19:09:40+08:00" />
+<meta itemprop="name" content="Android开发virtual_device连接mysql始终无法连接的问题">
+<meta itemprop="description" content="问题最终还是没能解决，引用其他博客中的一段话 如果想要用云端数据库，一般不建议android设备直接连数据，并不是一个简单的导入jar就可以成">
+<meta itemprop="datePublished" content="2020-02-04T19:09:40&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-04T19:09:40&#43;08:00" />
+<meta itemprop="wordCount" content="1152">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Android开发virtual_device连接mysql始终无法连接的问题"/>
+<meta name="twitter:description" content="问题最终还是没能解决，引用其他博客中的一段话 如果想要用云端数据库，一般不建议android设备直接连数据，并不是一个简单的导入jar就可以成"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aczy156&#39;s Note</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aczy156&#39;s Note</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Android开发virtual_device连接mysql始终无法连接的问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-02-04 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>问题最终还是没能解决，引用其他博客中的一段话</p>
+</blockquote>
+<p>如果想要用云端数据库，一般不建议android设备直接连数据，并不是一个简单的导入jar就可以成功的，因为很多手机他的底层并没有数据库的链接驱动，就算这台手机可以，那台手机也可能是不可以的。
+而且安全性是个很大的问题，android直连云端数据库，就算是毕业设计，验收也不会给你过吧。建议实现服务器端，搭建app——服务器——数据库  这样的一种结构系统，这才是正理。</p>
+<p>原文链接：<a href="https://blog.csdn.net/qq_40651609/article/details/86756331">https://blog.csdn.net/qq_40651609/article/details/86756331</a></p>
+<p>昨天晚上到今天一上午一直在解决Android 连接数据库连接不上的问题（virtual device ：Google pixel 2 ，ide ：android studio），期间使用过以下几个解决办法：</p>
+<ul>
+<li>
+<p>导入mysql-connection jar包注意导入方法</p>
+<ul>
+<li>将jar包放入项目文件夹下</li>
+<li>project structure中找到依赖包添加处(也就是dependence)</li>
+<li>➕ =&gt; jar</li>
+<li>选中mysql-connection jar</li>
+<li>检验是否导入方法：在项目build.gradle文件下可以看到添加了配置该导入的jar包的语法。<code>implementation files('mysql-connector-java-5.1.0-bin.jar')</code></li>
+</ul>
+</li>
+<li>
+<p>在项目xml配置文件中添加virtual device 的权限配置语句(该问题在配置android 通信的过程中有碰到过，需要在项目的配置文件中添加virtual device的权限语句，添加网络配置语句等)</p>
+<ul>
+<li>在项目配置文件中添加配置可以连接数据库的语句</li>
+<li></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.MOUNT_UNMOUNT_FILESYSTEMS&#34;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.READ_EXTERNAL_STORAGE&#34;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.WRITE_EXTERNAL_STORAGE&#34;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.INTERNET&#34;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.ACCESS_NETWORK_STATE&#34;</span> <span class="nt">/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>mysql jdbc 驱动的时候未能加载：</p>
+<ul>
+<li>virtual device 是系统跑的一个虚拟机器，有自己的驱动，IP等等，运行程序是想到与将该apk包导入到virtual device中并安装，从而进行运行的。因此如果导入的程序中连接数据库的IP为localhost 的话相当于访问的virtual device的IP</li>
+<li>通过<code>$ ifconfig</code>来获取本机的IP</li>
+<li>将localhost 改为本机IP</li>
+</ul>
+</li>
+<li>
+<p>mysql 数据库中有用户列表，在默认的自带的mysql数据库中，如果在navicat中打开这个数据库之后是无法看到这个表的。而这个表内存的是使用数据库的用户列表，一般本地都是root，但是此情况是virtual device 远程访问本机的mysql，而root用户无法访问，因此要添加一个其他的用户来供virtual device 去使用</p>
+<ul>
+<li>navicat由于不太会使用，不知道在哪里该用户访问权限，直接在terminal中跑。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ mysql
+
+-&gt; show datebases<span class="p">;</span>
+-&gt; use mysql<span class="p">;</span>
+-&gt; create user <span class="s1">&#39;androidlocal&#39;</span>@<span class="s1">&#39;%&#39;</span>  identified by <span class="s1">&#39;123456&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>提示用户权限不足，因此要更改权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">-&gt; flush privileges<span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后再重新添加用户，并给添加的用户添加权限</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">-&gt; create user <span class="s1">&#39;androidlocal&#39;</span>@<span class="s1">&#39;%&#39;</span>  identified by <span class="s1">&#39;123456&#39;</span><span class="p">;</span> 
+-&gt; grant all privileges on *.* to <span class="s1">&#39;androidlocal&#39;</span>@<span class="s1">&#39;%&#39;</span> identified by <span class="s1">&#39;123456&#39;</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>然而上面的四种方法都没有解决问题，后来有搜索了一些方法，发现了开始的那段话，觉得很有道理。（可能Google pixel 2真就没法连……</strong></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Aczy156</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-02-04
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/">
+            <span class="next-text nav-default">POJ1113 凸包算法</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://aczy156.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Aczy156</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -6,10 +6,28 @@
     <description>Recent content in Posts on The Blog of Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 04 Feb 2020 16:13:02 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 04 Feb 2020 19:09:40 +0800</lastBuildDate>
     
 	<atom:link href="http://aczy156.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android开发virtual_device连接mysql始终无法连接的问题</title>
+      <link>http://aczy156.github.io/post/android%E5%BC%80%E5%8F%91virtual_device%E8%BF%9E%E6%8E%A5mysql%E5%A7%8B%E7%BB%88%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 04 Feb 2020 19:09:40 +0800</pubDate>
+      
+      <guid>http://aczy156.github.io/post/android%E5%BC%80%E5%8F%91virtual_device%E8%BF%9E%E6%8E%A5mysql%E5%A7%8B%E7%BB%88%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>问题最终还是没能解决，引用其他博客中的一段话 如果想要用云端数据库，一般不建议android设备直接连数据，并不是一个简单的导入jar就可以成</description>
+    </item>
+    
+    <item>
+      <title>POJ1113 凸包算法</title>
+      <link>http://aczy156.github.io/post/poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 04 Feb 2020 19:03:55 +0800</pubDate>
+      
+      <guid>http://aczy156.github.io/post/poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</guid>
+      <description>POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以</description>
+    </item>
     
     <item>
       <title>Second Blog</title>
