@@ -129,11 +129,17 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#整体框架结构">整体框架结构</a></li>
+    <li><a href="#核心代码">核心代码</a></li>
+    <li><a href="#踩过的坑">踩过的坑</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <h1 id="整体框架结构">整体框架结构</h1>
+      <h2 id="整体框架结构">整体框架结构</h2>
 <p>Vue router 实现界面导航切换。</p>
 <ul>
 <li>
@@ -149,7 +155,7 @@
 <p>在需要跳转的位置利用main.js中的路由跳转函数来进行跳转</p>
 </li>
 </ul>
-<h1 id="核心代码">核心代码</h1>
+<h2 id="核心代码">核心代码</h2>
 <p>router/index.js</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -362,7 +368,7 @@
 <pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a-button</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;dashed&#34;</span> <span class="na">shape</span><span class="o">=</span><span class="s">&#34;round&#34;</span> <span class="na">size</span><span class="o">=</span><span class="s">&#34;large&#34;</span> <span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">&#34;$goRoute(&#39;/page01&#39;)&#34;</span><span class="p"></span><span class="p">&gt;</span>导入图片<span class="p">&lt;</span><span class="p">/</span><span class="nt">a-button</span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h1 id="踩过的坑">踩过的坑</h1>
+</div><h2 id="踩过的坑">踩过的坑</h2>
 <p>浏览器console里一串红，真是一个一个报错挨个Google ，(没错看不懂官方文档的菜鸡的自我救赎)</p>
 <ul>
 <li>在没有文件夹名和文件名冲突的前提下报错
