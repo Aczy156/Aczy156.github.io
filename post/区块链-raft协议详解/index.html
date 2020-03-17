@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>区块链 RAFT协议详解 - The Blog of Aczy156</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Aczy156" /><meta name="description" content="基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。 RAFT包括三种节点：leader、follower、cand" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.63.2 with theme even" />
+
+
+<link rel="canonical" href="http://aczy156.github.io/post/%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="区块链 RAFT协议详解" />
+<meta property="og:description" content="基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。 RAFT包括三种节点：leader、follower、cand" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://aczy156.github.io/post/%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" />
+<meta property="article:published_time" content="2020-03-17T21:52:58+08:00" />
+<meta property="article:modified_time" content="2020-03-17T21:52:58+08:00" />
+<meta itemprop="name" content="区块链 RAFT协议详解">
+<meta itemprop="description" content="基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。 RAFT包括三种节点：leader、follower、cand">
+<meta itemprop="datePublished" content="2020-03-17T21:52:58&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-17T21:52:58&#43;08:00" />
+<meta itemprop="wordCount" content="1338">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="区块链 RAFT协议详解"/>
+<meta name="twitter:description" content="基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。 RAFT包括三种节点：leader、follower、cand"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aczy156&#39;s Note</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aczy156&#39;s Note</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">区块链 RAFT协议详解</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-17 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#基于raft共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法">基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。</a></li>
+    <li><a href="#raft包括三种节点leaderfollowercandidate">RAFT包括三种节点：leader、follower、candidate</a></li>
+    <li><a href="#raft协议算法中包括三个基本组件动作">RAFT协议算法中包括三个基本组件动作，</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="基于raft共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法">基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。</h2>
+<h2 id="raft包括三种节点leaderfollowercandidate">RAFT包括三种节点：leader、follower、candidate</h2>
+<p><img src="https://img-blog.csdnimg.cn/20200229205736411.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="raft协议算法中包括三个基本组件动作">RAFT协议算法中包括三个基本组件动作，</h2>
+<ul>
+<li>
+<p>Leader Election，用来模拟在每次联盟链上选出当前的Leader的操作，即向其他的follower发布并传递请求：在图中的表示形式是每个节点处于follower状态，并自动转化为candidate，然后对自己投票，并发起RequestVoteRPC，随后等待联盟链上的其他节点的回应：
+<img src="https://img-blog.csdnimg.cn/20200229204624845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>当前节点获得超过半数节点的投票，赢得选举成为Leader，此时该节点所代表的联盟链上的成员可以对其他follower进行指示，可以进行相应的操作。</li>
+<li>如果参加选举的节点有多个，也即在有多个成员申请修改链上内容的权限：如果其他节点赢得选举，该节点成为Leader，当前节点接收到对方心跳 ，当前节点变为follower。</li>
+<li>选举超时，没有节点赢得选举，当前节点自增任期，重新发起选举：所有申请修改的成员都没有得到响应成功，要重新申请，只到结果呈现为情况1、情况2.</li>
+</ul>
+</li>
+<li>
+<p>Normal Operation(basic log replication)，用来每次client给每个节点发送请求的过程，每次请求就是一个指令，用来模拟在联盟链中每一个节点需要做的操作。
+<img src="https://img-blog.csdnimg.cn/2020022920553657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>leader接受请求后，把指令（Entry）追加到leader的操作日志中，然后对follower发起AppendEntries操作，尝试让操作指令(Entry)追加到Followers的操作日志中。如果有Follower不可用，则一直尝试</li>
+<li>一旦Leader接受到多数（Quorums）Follower的回应，Leader就会进行commit操作，每一台节点服务器会把操作指令交给状态机处理。这样就保证了各节点的状态的一致性</li>
+<li>各服务器状态机处理完成之后，Leader将结果返回给Client。
+<img src="https://img-blog.csdnimg.cn/20200229205517438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+</li>
+<li>
+<p>在这里插入图片描述</p>
+<ul>
+<li>对于Normal Operation中的特殊情况例如发生了网络分区，RAFT同样可以以较高的容错性解决该情况，由于部分节点的心跳跳动周期之后没有leader的响应，节点认定为 leader down ，然后重新选举，这是产生双网络之后，有两个client分别为两个leader传达命令，在此情况下两个网络中的节点会有两种不同的指令，但是当修复网络分区之后，两个leader会通过查看期限，最终会统一为一个leader，使整个网络还是保持一致性。
+<img src="https://img-blog.csdnimg.cn/20200229205556168.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+</li>
+<li>
+<p>Safety</p>
+<ul>
+<li>Election safety: 在一个term下，最多只有一个Leader：也即在联盟链中，在没有网络分区的情况下，最多只有一个leader；如果出现了网络分区的情况，则会执行Normal Operation中的特殊情况的执行方法。</li>
+<li>Leader Append-Only: 一个Leader只能追加新的entries，不能重写和删除entries</li>
+<li>Log Matching: 集群中各个节点的log都是相同一致的</li>
+<li>Leader Completeness:如果一个log entry被committed了，则这个entry一定会出现在Leader的log里，即leader会一致同步所有follower的信息。</li>
+<li>State Machine Safety: 如果一个节点服务器的state machine执行了一个某个log entry命令，则其他节点服务器，也会执行这个log entry命令，不会再执行其他命令。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Excerpt from <a href="http://thesecretlivesofdata.com/raft">http://thesecretlivesofdata.com/raft</a>
+Experpt from In Search of an Understandable Consensus Algorithm</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Aczy156</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-03-17
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Mysql安装、配置、连接navicat过程</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/%E5%88%A9%E7%94%A8sshkey%E5%AE%9E%E7%8E%B0%E5%8D%95%E5%8F%B0%E6%9C%BA%E5%99%A8%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E6%88%B7/">
+            <span class="next-text nav-default">利用sshKey实现单台机器管理多个GitHub账户</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+      <a href="http://localhost:1313" class="iconfont icon-gitlab" title="gitlab"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://aczy156.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Aczy156</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
