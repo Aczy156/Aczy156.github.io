@@ -24,24 +24,24 @@
 <meta property="og:description" content="最短路 hdu2544
  dijkstra找距离当前点中未被刷新过距离起点最值的最小值(!vis[j] &amp;&amp; min(d[j]))拿来刷新到其他点的距离 如果d[v] &#43; mp[v][j] &lt; d[j]就刷新到j点的距离，j点要是未被刷新的点。  void dijkstra(){ for (int i = 0; i &lt; n; i&#43;&#43;) d[i] = mp[0][i]; vis[0] = 1; for (int i = 0; i &lt; n; i&#43;&#43;) { tem = INF;v = 0; for (int j = 0; j &lt; n; j&#43;&#43;) if (!vis[j] &amp;&amp; d[j] &lt;= tem){ tem = d[j]; v = j; } vis[v] = 1; for (int j = 0; j &lt; n; j&#43;&#43;) if (!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/other/o-common_algorithm/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/other/o-common_algorithm/" />
 <meta property="article:published_time" content="2020-04-08T20:42:26+08:00" />
 <meta property="article:modified_time" content="2020-04-08T20:42:26+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Common_Algorithm"/>
 <meta name="twitter:description" content="最短路 hdu2544
  dijkstra找距离当前点中未被刷新过距离起点最值的最小值(!vis[j] &amp;&amp; min(d[j]))拿来刷新到其他点的距离 如果d[v] &#43; mp[v][j] &lt; d[j]就刷新到j点的距离，j点要是未被刷新的点。  void dijkstra(){ for (int i = 0; i &lt; n; i&#43;&#43;) d[i] = mp[0][i]; vis[0] = 1; for (int i = 0; i &lt; n; i&#43;&#43;) { tem = INF;v = 0; for (int j = 0; j &lt; n; j&#43;&#43;) if (!vis[j] &amp;&amp; d[j] &lt;= tem){ tem = d[j]; v = j; } vis[v] = 1; for (int j = 0; j &lt; n; j&#43;&#43;) if (!"/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -362,7 +362,7 @@
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

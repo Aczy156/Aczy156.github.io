@@ -28,7 +28,7 @@
 2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return
 #include &lt;iostream&gt;using namespace std; #define maxn 25typedef long long ll; ll ta, tb, tc, dp[maxn][maxn][maxn]; ll dfs(int a, int b, int c) { if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0) return 1; if (a &gt; 20 || b &gt; 20 || c &gt; 20) return dfs(20, 20, 20); if (dp[a][b][c]) return dp[a][b][c]; if (a &lt; b &amp;&amp; b &lt; c) return dp[a][b][c] = dfs(a, b, c-1) &#43; dfs(a, b-1, c-1) - dfs(a, b-1, c); else return dp[a][b][c] = dfs(a-1, b, c) &#43; dfs(a-1, b-1, c) &#43; dfs(a-1, b, c-1) - dfs(a-1, b-1, c-1); } int main() { while (scanf(&#34;%lld%lld%lld&#34;, &amp;ta, &amp;tb, &amp;tc) &amp;&amp; !" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -39,17 +39,17 @@
 1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
 2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return
 #include &lt;iostream&gt;using namespace std; #define maxn 25typedef long long ll; ll ta, tb, tc, dp[maxn][maxn][maxn]; ll dfs(int a, int b, int c) { if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0) return 1; if (a &gt; 20 || b &gt; 20 || c &gt; 20) return dfs(20, 20, 20); if (dp[a][b][c]) return dp[a][b][c]; if (a &lt; b &amp;&amp; b &lt; c) return dp[a][b][c] = dfs(a, b, c-1) &#43; dfs(a, b-1, c-1) - dfs(a, b-1, c); else return dp[a][b][c] = dfs(a-1, b, c) &#43; dfs(a-1, b-1, c) &#43; dfs(a-1, b, c-1) - dfs(a-1, b-1, c-1); } int main() { while (scanf(&#34;%lld%lld%lld&#34;, &amp;ta, &amp;tb, &amp;tc) &amp;&amp; !"/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -157,7 +157,7 @@ ll <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span>
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

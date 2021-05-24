@@ -26,7 +26,7 @@ ctx.read(fid, offset, &amp;mut buf).await?; 本文介绍了 io_uring 的基本�
 io_uring 简介 io_uring 是一个由 Linux 内核的提供的异步 I/O 接口。它于 2019 年 5 月在 Linux 5.1 中面世，现在已经在各种项目中被使用。 比如：
  RocksDB 的 MultiRead 目前就是通过 io_uring 做并发读文件。 Tokio 为 io_uring 包装了一层 API。在 Tokio 1.0 发布之际，开发者表示今后会通过 io_uring 提供真正的异步文件操作 (见 Announcing Tokio 1.0)。 目前 Tokio 的异步文件操作通过开另外的 I/O 线程调用同步 API 实现。 QEMU 5.0 已经使用 io_uring (见 ChangeLog)。  目前关于 io_uring 的测试，大多是和 Linux AIO 对比 Direct I/O 的性能 (1) (2) (3)。 io_uring 通常能达到两倍于 AIO 的性能。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/2021-01-30-async-random-read-with-rust/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/2021-01-30-async-random-read-with-rust/" />
 <meta property="article:published_time" content="2021-01-30T17:37:23+08:00" />
 <meta property="article:modified_time" content="2021-01-30T17:37:23+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -35,17 +35,17 @@ io_uring 简介 io_uring 是一个由 Linux 内核的提供的异步 I/O 接口�
 ctx.read(fid, offset, &amp;mut buf).await?; 本文介绍了 io_uring 的基本使用方法，然后介绍了本人写的异步读文件库的实现方法，最后做了一个 benchmark，和 mmap 对比性能。
 io_uring 简介 io_uring 是一个由 Linux 内核的提供的异步 I/O 接口。它于 2019 年 5 月在 Linux 5.1 中面世，现在已经在各种项目中被使用。 比如：
  RocksDB 的 MultiRead 目前就是通过 io_uring 做并发读文件。 Tokio 为 io_uring 包装了一层 API。在 Tokio 1.0 发布之际，开发者表示今后会通过 io_uring 提供真正的异步文件操作 (见 Announcing Tokio 1.0)。 目前 Tokio 的异步文件操作通过开另外的 I/O 线程调用同步 API 实现。 QEMU 5.0 已经使用 io_uring (见 ChangeLog)。  目前关于 io_uring 的测试，大多是和 Linux AIO 对比 Direct I/O 的性能 (1) (2) (3)。 io_uring 通常能达到两倍于 AIO 的性能。"/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -267,7 +267,7 @@ I/O 通过两次拷贝（先到缓存，再给用户）解决了这个问题。<
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

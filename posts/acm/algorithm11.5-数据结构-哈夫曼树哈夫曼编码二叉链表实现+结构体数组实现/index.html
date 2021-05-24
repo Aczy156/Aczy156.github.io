@@ -27,7 +27,7 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
 对应的思路，每次挑出节点中值最小的两个，然后把这两个节点合成一个，然后进行排序，并把新产生的节点放到优先队列中，然后再选出两个最小的，一直这么迭代下去。
  通过一个vis数组，来将右儿子给闭掉，然后将左儿子的值更新为他们所形成的父亲节点的值。  node * HuffmanTree() { for (int i = 0; i &lt; n - 1; i&#43;&#43;) { for (int j = 0; j &lt; n; &#43;&#43;j) if (!vis[j]) pq.push({huffman[j].data, j}); ll = pq.top().idx;pq.pop(); rr = pq.top().idx; while (!pq.empty()) pq.pop(); vis[rr] = 1; node * lnode = new node {huffman[ll]." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -37,17 +37,17 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
 struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[maxn];; 2、新增的数据结构：也就是huffman[maxn]，起作用就是储存所有的节点的。
 对应的思路，每次挑出节点中值最小的两个，然后把这两个节点合成一个，然后进行排序，并把新产生的节点放到优先队列中，然后再选出两个最小的，一直这么迭代下去。
  通过一个vis数组，来将右儿子给闭掉，然后将左儿子的值更新为他们所形成的父亲节点的值。  node * HuffmanTree() { for (int i = 0; i &lt; n - 1; i&#43;&#43;) { for (int j = 0; j &lt; n; &#43;&#43;j) if (!vis[j]) pq.push({huffman[j].data, j}); ll = pq.top().idx;pq.pop(); rr = pq.top().idx; while (!pq.empty()) pq.pop(); vis[rr] = 1; node * lnode = new node {huffman[ll]."/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -192,7 +192,7 @@ node <span style="color:#f92672">*</span> <span style="color:#a6e22e">HuffmanTre
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

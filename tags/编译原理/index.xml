@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编译原理 on Aczy156</title>
-    <link>https://www.skyzh.dev/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
+    <link>http://www.chenranfei.online/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
     <description>Recent content in 编译原理 on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Sun, 07 Jun 2020 19:28:52 +0800</lastBuildDate>
     
-	<atom:link href="https://www.skyzh.dev/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.chenranfei.online/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python_Compiling_principle_master</title>
-      <link>https://www.skyzh.dev/posts/other/o-python_compiling_principle_master/</link>
+      <link>http://www.chenranfei.online/posts/other/o-python_compiling_principle_master/</link>
       <pubDate>Sun, 07 Jun 2020 19:28:52 +0800</pubDate>
       
-      <guid>https://www.skyzh.dev/posts/other/o-python_compiling_principle_master/</guid>
+      <guid>http://www.chenranfei.online/posts/other/o-python_compiling_principle_master/</guid>
       <description>编译原理课程作业  词法分析器 LL1分析(消去左递归、构造FIRST\FOLLOW集合、模拟) 递归下降分析 算法优先分析  项目地址源代码 https://github.com/Aczy156/Compiling-Principle-Work 项目结构 data  Grammer_for_ll1_and_RD.txt，是存放用于实验二预测分析法和实验三递归下降分析文法的测试文法 Grammer_for_OF.txt，是存放用于实验四算符优先文法的测试文法。  MultiAnalysis  LL1_analysis.py是LL1分析法的整体过程。 RecursiveDescent_analysis.py是递归下降分析的整体过程。 OperatorFirst_analysis.py是算符优先文法的整体分析过程。  tools [在MultiAnalysis中的各种文法中多次使用，所以提取出来子模块，放进工具中来模块化管理]
  Draw_Grammer.py，利用python中prettytable来专门做文法的可视化。 Eliminate_Left_Recursion.py，利用消除左递归算法来专门处理对于自上而下的文法(例如实验二中的预测分析文法和实验三的递归下降文法)的左递归的问题。 Extract_Common_Factors.py，利用LCP(最长公共前缀)来提取公因子并消除。  数据结构 (命名基本保持一致，除了在一些情境中要利用python deepcopy深备份一份或者要进行更改会命名为new_grammer/new_vn等等)：
  文法grammer：文法在通过预处理过后，通过python中的数据结构dictionary(dict、字典)来映射，例如{&amp;lsquo;E&amp;rsquo;: [&amp;lsquo;E+T&amp;rsquo;, &amp;lsquo;T&amp;rsquo;], &amp;lsquo;T&amp;rsquo;: [&amp;lsquo;T*F&amp;rsquo;, &amp;lsquo;F&amp;rsquo;], &amp;lsquo;F&amp;rsquo;: [&#39;(E)&#39;, &amp;lsquo;i&amp;rsquo;]}，用来表示通过数据预处理之后的最基本的算术表达式文法。 非终结符vn：非终结符通过list来盛放。例如[&amp;lsquo;E&amp;rsquo;, &amp;lsquo;T&amp;rsquo;, &amp;lsquo;F&amp;rsquo;]，用来表示通过数据预处理之后的最基本的算术表达式文法的非终结符。 终结符vt：终结符通过list来盛放。例如 [&#39;(&#39;, &amp;lsquo;)&#39;, &amp;lsquo;i&amp;rsquo;, &amp;lsquo;+&amp;rsquo;, &amp;lsquo;*&#39;, &amp;lsquo;#&#39;]，用来表示通过数据预处理之后的最基本的算术表达式文法的非终结符。  </description>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DP on Aczy156</title>
-    <link>https://www.skyzh.dev/categories/dp/</link>
+    <link>http://www.chenranfei.online/categories/dp/</link>
     <description>Recent content in DP on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
     
-	<atom:link href="https://www.skyzh.dev/categories/dp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.chenranfei.online/categories/dp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Algorithm2.1 背包dp</title>
-      <link>https://www.skyzh.dev/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
+      <link>http://www.chenranfei.online/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://www.skyzh.dev/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
       <description>背包dp 01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
 题目大意：
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www.</description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>Algorithm2.2 区间dp</title>
-      <link>https://www.skyzh.dev/posts/acm/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</link>
+      <link>http://www.chenranfei.online/posts/acm/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://www.skyzh.dev/posts/acm/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
       <description>区间dp 区间基本提取 https://www.luogu.com.cn/problem/P2426
 题目大意：删除一段数组的数，代价为这个区间的左右端点值的差的绝对值*长度，求全部删去的最大代价。
 区间DP的水题，维护一个dp二维数组，然后三层遍历左右端点+中间割点，利用状态转移方程dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j])即可。
@@ -38,10 +38,10 @@
     
     <item>
       <title>Algorithm2.3 状压dp</title>
-      <link>https://www.skyzh.dev/posts/acm/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</link>
+      <link>http://www.chenranfei.online/posts/acm/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://www.skyzh.dev/posts/acm/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</guid>
       <description>状压dp  主要特征：n较小 =&amp;gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
 主要思路：就是将本来某一行的状态是或否的唯二的两种【可能本来需要用数组来储存的】 =&amp;gt; 通过用二进制【01来进行储存】
 主要原因：用于解决情况之间的耦合性太复杂（就例如八皇后，看上下左右斜上下这些，直接通过压缩成字符串的状态然后来进行位运算即可），如果直接循环遍历去判断的话太麻烦，所以通过状态压缩，
@@ -55,10 +55,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.4 树型dp</title>
-      <link>https://www.skyzh.dev/posts/acm/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</link>
+      <link>http://www.chenranfei.online/posts/acm/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://www.skyzh.dev/posts/acm/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</guid>
       <description>树型dp  题目风格：给出树上的每个节点的值，然后给出
  最大子树和 https://www.luogu.com.cn/problem/P1122
 题目大意：获取该棵树中最大的子树和
@@ -67,10 +67,10 @@ https://www.luogu.com.cn/problem/P1352</description>
     
     <item>
       <title>Algorithm2.7 线性dp</title>
-      <link>https://www.skyzh.dev/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</link>
+      <link>http://www.chenranfei.online/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://www.skyzh.dev/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</guid>
       <description>线性dp 时间线问题 https://www.luogu.com.cn/problem/P1095
 题目大意：时间线上，每秒钟 =&amp;gt; 可以选择a方式，属性c变化1；可以选择b方式，属性c变化2。
 1、dp[i]表示在时间为i的时候，最远可到达的距离。
@@ -81,10 +81,10 @@ https://www.luogu.com.cn/problem/P1352</description>
     
     <item>
       <title>Algorithm2.8 基础dp</title>
-      <link>https://www.skyzh.dev/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</link>
+      <link>http://www.chenranfei.online/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://www.skyzh.dev/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</guid>
       <description>基础dp 数字三角形 https://www.luogu.com.cn/problem/P1216
 题目大意：给一个三角形矩阵，然后从上往下走，怎么才能走的总量最大。
 1、// 上往下 =&amp;gt; 初始化三角形的上边两条边
@@ -96,10 +96,10 @@ https://www.luogu.com.cn/problem/P1352</description>
     
     <item>
       <title>Algorithm2.9 dp思维</title>
-      <link>https://www.skyzh.dev/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</link>
+      <link>http://www.chenranfei.online/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://www.skyzh.dev/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</guid>
       <description>思维 &amp;amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
 题目大意：
 1、结合贪心思想，永远把相邻的最小的给加进去，ans += min(cost[i-1], cost[i])

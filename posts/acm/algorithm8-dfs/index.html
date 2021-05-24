@@ -24,24 +24,24 @@
 <meta property="og:description" content="dfs [数组一维模版 &amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
 #include &lt;iostream&gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &lt; n; &#43;&#43;i) printf(&#34;%5d&#34;, a[i]); printf(&#34;\n&#34;); return; } for (int i = 1; i &lt;= n; &#43;&#43;i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l&#43;1); vis[i] = 0; } } } int main() { scanf(&#34;%d&#34;, &amp;n); dfs(0); return 0; } 素数环 &amp; 分层 https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm8-dfs/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/algorithm8-dfs/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm8.2 dfs"/>
 <meta name="twitter:description" content="dfs [数组一维模版 &amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
 #include &lt;iostream&gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &lt; n; &#43;&#43;i) printf(&#34;%5d&#34;, a[i]); printf(&#34;\n&#34;); return; } for (int i = 1; i &lt;= n; &#43;&#43;i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l&#43;1); vis[i] = 0; } } } int main() { scanf(&#34;%d&#34;, &amp;n); dfs(0); return 0; } 素数环 &amp; 分层 https://www."/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -360,7 +360,7 @@ ll <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span>
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

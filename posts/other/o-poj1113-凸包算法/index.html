@@ -29,7 +29,7 @@ Graham扫描法 思路：
 卷包裹法得到不包含凸包边上的点 解析：此时abc在一条直线，x同或者y同，那么得到的叉积必为零，同时不满足添加进凸包点集的条件就是在线的左边或者在线上，要等于号。
 int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.x); } int solve(){ int idx = 0; // upper 0 -&gt; n-1  for (int i = 0; i &lt; n; i&#43;&#43;){ while (idx &gt;1 &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } int s = idx; // lower n-1 -&gt; 0  for (int i = n-1; i &gt;= 0; i--) { while (idx &gt; s &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } return idx; } Graham-Scan法：同样道理：" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/other/o-poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/other/o-poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/" />
 <meta property="article:published_time" content="2020-02-04T19:03:55+08:00" />
 <meta property="article:modified_time" content="2020-02-04T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -41,17 +41,17 @@ Graham扫描法 思路：
  点集预处理：通过两次预处理，首先提取处横纵坐标都最小的，也就是以横坐标为准从小到大(横坐标相同以纵坐标从小到大)，然后再平移坐标轴使原点与第一步找到的点重合，根据其他点与原点的斜率大小进行排序 按照预处理的顺序找凸包，要保证新添加的点在凸包的点集中最新添加的两个点所形成的直线的左边。  关于得到凸包点集中是否要凸包的边上的点(初顶点以外的其他点) eg: (1,1) (1,2) (2,1) (1,2) (3,1) 包含凸包边上的点：(1,1) (1,2) (2,1) (1,2) (3,1) 不包含：(1,1) (1,2) (1,2) (3,1)
 卷包裹法得到不包含凸包边上的点 解析：此时abc在一条直线，x同或者y同，那么得到的叉积必为零，同时不满足添加进凸包点集的条件就是在线的左边或者在线上，要等于号。
 int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.x); } int solve(){ int idx = 0; // upper 0 -&gt; n-1  for (int i = 0; i &lt; n; i&#43;&#43;){ while (idx &gt;1 &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } int s = idx; // lower n-1 -&gt; 0  for (int i = n-1; i &gt;= 0; i--) { while (idx &gt; s &amp;&amp; cross(con[idx-1], e[i], con[idx-2]) &gt;= 0) idx--; con[idx&#43;&#43;] = e[i]; } return idx; } Graham-Scan法：同样道理："/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -280,7 +280,7 @@ con[idx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>]
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

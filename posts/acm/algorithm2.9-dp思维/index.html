@@ -29,7 +29,7 @@ int minCost(string s, vector&lt;int&gt;&amp; cost) { int ans = 0; for (int i = 1
 题目大意：
 #include &lt;iostream&gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]&#43;dp[i-1][j&#43;1] (注意对圈的边界的人的特判)  int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;t); // init  dp[0][0] = 1; for (int i = 1; i &lt; t; &#43;&#43;i) for (int j = 0; j &lt; n; &#43;&#43;j) if (j == 0) dp[i][j] = dp[i-1][1]&#43;dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]&#43;dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]&#43;dp[i-1][j&#43;1]; printf(&#34;%d\n&#34;, dp[t-1][0]); return 0; } " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -41,17 +41,17 @@ int minCost(string s, vector&lt;int&gt;&amp; cost) { int ans = 0; for (int i = 1
 int minCost(string s, vector&lt;int&gt;&amp; cost) { int ans = 0; for (int i = 1; i &lt; s.length(); i&#43;&#43;){ if (s[i] == s[i-1]){ ans &#43;= min(cost[i-1], cost[i]); cost[i] = max(cost[i-1], cost[i]); } } return ans; } 循环一圈形式的dp https://www.luogu.com.cn/problem/P1057
 题目大意：
 #include &lt;iostream&gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]&#43;dp[i-1][j&#43;1] (注意对圈的边界的人的特判)  int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;t); // init  dp[0][0] = 1; for (int i = 1; i &lt; t; &#43;&#43;i) for (int j = 0; j &lt; n; &#43;&#43;j) if (j == 0) dp[i][j] = dp[i-1][1]&#43;dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]&#43;dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]&#43;dp[i-1][j&#43;1]; printf(&#34;%d\n&#34;, dp[t-1][0]); return 0; } "/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -137,7 +137,7 @@ int minCost(string s, vector&lt;int&gt;&amp; cost) { int ans = 0; for (int i = 1
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

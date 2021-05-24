@@ -29,7 +29,7 @@
 初始化： dp[r-1][i] = a[r-1][i]; 状态转移方程：dp[i][j] = max(dp[i&#43;1][i], dp[i&#43;1][i&#43;1])&#43;a[i][j];
 #include &lt;iostream&gt;using namespace std; #define maxn 1005int r, a[maxn][maxn], dp[maxn][maxn], ans = 0; #include &lt;cmath&gt;// 上往下 =&gt; 初始化三角形的上边两条边(dp[i][0] = dp[i-1][0]&#43;a[i][0], dp[i][i] = dp[i-1][i-1]&#43;a[i][i];) // dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])&#43;a[i][j]; // 下往上 =&gt; 初始化最下边的那条边 dp[r-1][i] = a[r-1][i]; // dp[i][j] = max(dp[i&#43;1][i], dp[i&#43;1][i&#43;1])&#43;a[i][j];  int main() { scanf(&#34;%d&#34;, &amp;r); for (int i = 0; i &lt; r; &#43;&#43;i) for (int j = 0; j &lt; i &#43; 1; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[i][j]); //init  for (int i = 0; i &lt; r; &#43;&#43;i) dp[r-1][i] = a[r-1][i]; for (int i = r-2; i &gt;= 0; --i) for (int j = 0; j &lt; i &#43; 1; &#43;&#43;j) dp[i][j] = max(dp[i&#43;1][j], dp[i&#43;1][j&#43;1])&#43;a[i][j]; printf(&#34;%d\n&#34;, dp[0][0]); /* * // init dp[0][0] = a[0][0]; for (int i = 1; i &lt; r; &#43;&#43;i) dp[i][0] = dp[i-1][0]&#43;a[i][0], dp[i][i] = dp[i-1][i-1]&#43;a[i][i]; for (int i = 2; i &lt; r; &#43;&#43;i) for (int j = 1; j &lt; i ; &#43;&#43;j) dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])&#43;a[i][j]; for (int i = 0; i &lt; r; &#43;&#43;i) ans = max(ans, dp[r-1][i]); printf(&#34;%d\n&#34;, ans); */ return 0; } " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -41,17 +41,17 @@
 2、下往上 =&gt; 初始化最下边的那条边
 初始化： dp[r-1][i] = a[r-1][i]; 状态转移方程：dp[i][j] = max(dp[i&#43;1][i], dp[i&#43;1][i&#43;1])&#43;a[i][j];
 #include &lt;iostream&gt;using namespace std; #define maxn 1005int r, a[maxn][maxn], dp[maxn][maxn], ans = 0; #include &lt;cmath&gt;// 上往下 =&gt; 初始化三角形的上边两条边(dp[i][0] = dp[i-1][0]&#43;a[i][0], dp[i][i] = dp[i-1][i-1]&#43;a[i][i];) // dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])&#43;a[i][j]; // 下往上 =&gt; 初始化最下边的那条边 dp[r-1][i] = a[r-1][i]; // dp[i][j] = max(dp[i&#43;1][i], dp[i&#43;1][i&#43;1])&#43;a[i][j];  int main() { scanf(&#34;%d&#34;, &amp;r); for (int i = 0; i &lt; r; &#43;&#43;i) for (int j = 0; j &lt; i &#43; 1; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[i][j]); //init  for (int i = 0; i &lt; r; &#43;&#43;i) dp[r-1][i] = a[r-1][i]; for (int i = r-2; i &gt;= 0; --i) for (int j = 0; j &lt; i &#43; 1; &#43;&#43;j) dp[i][j] = max(dp[i&#43;1][j], dp[i&#43;1][j&#43;1])&#43;a[i][j]; printf(&#34;%d\n&#34;, dp[0][0]); /* * // init dp[0][0] = a[0][0]; for (int i = 1; i &lt; r; &#43;&#43;i) dp[i][0] = dp[i-1][0]&#43;a[i][0], dp[i][i] = dp[i-1][i-1]&#43;a[i][i]; for (int i = 2; i &lt; r; &#43;&#43;i) for (int j = 1; j &lt; i ; &#43;&#43;j) dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])&#43;a[i][j]; for (int i = 0; i &lt; r; &#43;&#43;i) ans = max(ans, dp[r-1][i]); printf(&#34;%d\n&#34;, ans); */ return 0; } "/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -144,7 +144,7 @@
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

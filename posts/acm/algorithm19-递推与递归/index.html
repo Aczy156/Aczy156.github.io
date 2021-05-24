@@ -29,7 +29,7 @@
 AC代码：
 #include &lt;iostream&gt;using namespace std; #define maxn 5005typedef long long ll; #include &lt;cstring&gt;const int N = 2005; struct BigInt { int len, s[N]; BigInt() {memset(s, 0, sizeof(s));len = 1;} BigInt(int num) { *this = num; } BigInt(char *num) { *this = num; } BigInt operator=(int num) { char c[N]; sprintf(c, &#34;%d&#34;, num); *this = c; return *this; } BigInt operator=(const char *num) { len = strlen(num); for (int i = 0; i &lt; len; i&#43;&#43;) s[i] = num[len - 1 - i] - &#39;0&#39;; return *this; } string str() { string res = &#34;&#34;; for (int i = 0; i &lt; len; i&#43;&#43;) res = (char) (s[i] &#43; &#39;0&#39;) &#43; res; return res; } void clean() {while (len &gt; 1 &amp;&amp; !" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -41,17 +41,17 @@ AC代码：
 2、斐波那契数列在n=50的时候就已经将int爆掉，所以如果n=5000的时候需要用高精度。
 AC代码：
 #include &lt;iostream&gt;using namespace std; #define maxn 5005typedef long long ll; #include &lt;cstring&gt;const int N = 2005; struct BigInt { int len, s[N]; BigInt() {memset(s, 0, sizeof(s));len = 1;} BigInt(int num) { *this = num; } BigInt(char *num) { *this = num; } BigInt operator=(int num) { char c[N]; sprintf(c, &#34;%d&#34;, num); *this = c; return *this; } BigInt operator=(const char *num) { len = strlen(num); for (int i = 0; i &lt; len; i&#43;&#43;) s[i] = num[len - 1 - i] - &#39;0&#39;; return *this; } string str() { string res = &#34;&#34;; for (int i = 0; i &lt; len; i&#43;&#43;) res = (char) (s[i] &#43; &#39;0&#39;) &#43; res; return res; } void clean() {while (len &gt; 1 &amp;&amp; !"/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -312,7 +312,7 @@ BigInt d[maxn];
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

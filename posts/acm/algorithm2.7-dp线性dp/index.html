@@ -28,7 +28,7 @@
 3、状态转移方程：dp[i] = max(dp[i], dp[i-1]&#43;17)
 #include &lt;iostream&gt;using namespace std; #define maxn 300010int m, s, t, dp[maxn]; int main() { scanf(&#34;%d%d%d&#34;, &amp;m, &amp;s, &amp;t); // 预处理  for (int i = 1; i &lt;= t; &#43;&#43;i) if (m &gt;= 10) {m-=10;dp[i] = dp[i-1]&#43;60;} else {m&#43;=4;dp[i] = dp[i-1];} // 状态转移  for (int i = 1; i &lt;= t; &#43;&#43;i) dp[i] = max(dp[i], dp[i-1]&#43;17); if (dp[t] &gt;= s) { printf(&#34;Yes\n&#34;); for (int i = 1; i &lt;= t; &#43;&#43;i) if (dp[i] &gt;= s) {printf(&#34;%d\n&#34;, i);break;} } else printf(&#34;No\n%d&#34;, dp[t]); return 0; } https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -39,17 +39,17 @@
 2、预处理：由于已知了a方式更好，那么可以优先通过a方式对数据dp进行预处理
 3、状态转移方程：dp[i] = max(dp[i], dp[i-1]&#43;17)
 #include &lt;iostream&gt;using namespace std; #define maxn 300010int m, s, t, dp[maxn]; int main() { scanf(&#34;%d%d%d&#34;, &amp;m, &amp;s, &amp;t); // 预处理  for (int i = 1; i &lt;= t; &#43;&#43;i) if (m &gt;= 10) {m-=10;dp[i] = dp[i-1]&#43;60;} else {m&#43;=4;dp[i] = dp[i-1];} // 状态转移  for (int i = 1; i &lt;= t; &#43;&#43;i) dp[i] = max(dp[i], dp[i-1]&#43;17); if (dp[t] &gt;= s) { printf(&#34;Yes\n&#34;); for (int i = 1; i &lt;= t; &#43;&#43;i) if (dp[i] &gt;= s) {printf(&#34;%d\n&#34;, i);break;} } else printf(&#34;No\n%d&#34;, dp[t]); return 0; } https://www."/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -220,7 +220,7 @@ ll n, k, dp[maxn], bt[maxn], idx <span style="color:#f92672">=</span> <span styl
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

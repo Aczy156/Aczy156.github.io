@@ -33,7 +33,7 @@ dfs 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进�
 // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans&#43;&#43;;return;} for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) { cnt&#43;=i;dfs(l&#43;1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
 int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans&#43;&#43;;return; } for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) dfs(l&#43;1, cnt&#43;i); } 记忆化搜索 https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm8.4&#43;2-dfs&#43;dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2&#43;dp/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/algorithm8.4&#43;2-dfs&#43;dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2&#43;dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -49,17 +49,17 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans&#43;&#43;;re
 dfs 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
 // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans&#43;&#43;;return;} for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) { cnt&#43;=i;dfs(l&#43;1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
 int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans&#43;&#43;;return; } for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) dfs(l&#43;1, cnt&#43;i); } 记忆化搜索 https://www."/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -215,7 +215,7 @@ ll <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span>
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }

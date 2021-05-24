@@ -25,7 +25,7 @@
 题目大意：
 #include &lt;iostream&gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int j = 0; j &lt; n; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &lt; n; &#43;&#43;j) for (int i = m; i &gt;= a[i]; --i) dp[i] &#43;= dp[i-a[j]]; printf(&#34;%d\n&#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -33,17 +33,17 @@
 <meta name="twitter:description" content="背包dp 01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
 题目大意：
 #include &lt;iostream&gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int j = 0; j &lt; n; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &lt; n; &#43;&#43;j) for (int i = m; i &gt;= a[i]; --i) dp[i] &#43;= dp[i-a[j]]; printf(&#34;%d\n&#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www."/>
-<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
-	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
 	
 </head>
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://www.skyzh.dev/">Aczy156</a>
+		<a href="http://www.chenranfei.online/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -335,7 +335,7 @@
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-52525161-8', 'auto');
+	ga('create', 'UA-168772474-1', 'auto');
 	
 	ga('send', 'pageview');
 }
