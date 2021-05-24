@@ -14,6 +14,17 @@
     
     <item>
       <title>Algorithm2.1 背包dp</title>
+      <link>http://www.chenranfei.online/algorithm-posts/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/algorithm-posts/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
+      <description>背包dp 01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
+题目大意：
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.1 背包dp</title>
       <link>http://www.chenranfei.online/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
@@ -21,6 +32,19 @@
       <description>背包dp 01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
 题目大意：
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.2 区间dp</title>
+      <link>http://www.chenranfei.online/algorithm-posts/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/algorithm-posts/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
+      <description>区间dp 区间基本提取 https://www.luogu.com.cn/problem/P2426
+题目大意：删除一段数组的数，代价为这个区间的左右端点值的差的绝对值*长度，求全部删去的最大代价。
+区间DP的水题，维护一个dp二维数组，然后三层遍历左右端点+中间割点，利用状态转移方程dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j])即可。
+注意：要上来初始化一下，初始化的值就是运算法则算出来的，而dp所做的就是排列组合来搜索组合。
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; int n, a[maxn], dp[maxn][maxn]; // dp[i][j] 表示区间[i, j]所获得的最大价值 // dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j]);  int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); for (int i = 1; i &amp;lt;= n; ++i) for (int l = 0; l+i &amp;lt;= n; ++l) if (l == 0) dp[i][i+l] = a[i]; else dp[i][i+l] = abs(a[i]-a[i+l])*(l+1); for (int i = 1; i &amp;lt;= n; ++i) for (int j = i+1; j &amp;lt;= n; ++j) for (int k = i; k &amp;lt;= j; ++k) dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j]); printf(&amp;#34;%d\n&amp;#34;, dp[1][n]); return 0; } 石子合并（线型） 石子合并（环形） https://www.</description>
     </item>
     
     <item>

@@ -18,9 +18,12 @@
       <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
       
       <guid>http://www.chenranfei.online/posts/academic/</guid>
-      <description>Introduction I’m a junior undergraduate student studying Computer Science at Shanghai Jiao Tong University (SJTU). I’m expected to graduate in 2022.
-My real name is Chi Zhang. As the name is too common in Chinese culture, I’m generally referred to as Alex Chi.
-In my second year at SJTU, I applied for a research internship. It turned out that the whole experience was a disaster for me. For half a year I had nothing to do, except attending weekly lab meetups.</description>
+      <description>Introduction I’m a junior undergraduate student studying Software Engineering at Central South University (CSU). I’m expected to graduate in 2022.
+My real name is Ranfei Chen.
+Experience  More Resources  Projects &amp;nbsp;
+&amp;nbsp;
+ Academic Status  First 2.5 years GPA: 93.99/100 (Rank: 1/156)  I enjoy studying courses in Computer Science, and I did well in most of them.
+ A+ courses  courses  course1   Others  etc.</description>
     </item>
     
     <item>
@@ -725,18 +728,6 @@ prime是质数列表，isprime
     </item>
     
     <item>
-      <title>在 Rust 中实现基于 io_uring 的异步随机读文件</title>
-      <link>http://www.chenranfei.online/posts/acm/2021-01-30-async-random-read-with-rust/</link>
-      <pubDate>Sat, 30 Jan 2021 17:37:23 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/2021-01-30-async-random-read-with-rust/</guid>
-      <description>一句话总结：在 skyzh/uring-positioned-io 中，我包装了 Tokio 提供的底层 io_uring 接口，在 Rust 中实现了基于 io_uring 的异步随机读文件。你可以这么用它：
-ctx.read(fid, offset, &amp;amp;mut buf).await?; 本文介绍了 io_uring 的基本使用方法，然后介绍了本人写的异步读文件库的实现方法，最后做了一个 benchmark，和 mmap 对比性能。
-io_uring 简介 io_uring 是一个由 Linux 内核的提供的异步 I/O 接口。它于 2019 年 5 月在 Linux 5.1 中面世，现在已经在各种项目中被使用。 比如：
- RocksDB 的 MultiRead 目前就是通过 io_uring 做并发读文件。 Tokio 为 io_uring 包装了一层 API。在 Tokio 1.0 发布之际，开发者表示今后会通过 io_uring 提供真正的异步文件操作 (见 Announcing Tokio 1.0)。 目前 Tokio 的异步文件操作通过开另外的 I/O 线程调用同步 API 实现。 QEMU 5.0 已经使用 io_uring (见 ChangeLog)。  目前关于 io_uring 的测试，大多是和 Linux AIO 对比 Direct I/O 的性能 (1) (2) (3)。 io_uring 通常能达到两倍于 AIO 的性能。</description>
-    </item>
-    
-    <item>
       <title>WF 中南大学网络服务队2020招新 硬件组培训知识</title>
       <link>http://www.chenranfei.online/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Mon, 20 Jul 2020 21:45:10 +0800</pubDate>
@@ -950,6 +941,30 @@ int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.
       
       <guid>http://www.chenranfei.online/posts/other/o-second-blog/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.chenranfei.online/posts/contest/contest-cf719-div3/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/contest/contest-cf719-div3/</guid>
+      <description>CF719 div3 补题  https://codeforces.com/contest/1520
+ A 题目大意：看字串中是否有重复出现的，连续一段出现可以，中间隔着其他的，然后再次出现就不行了。
+思路：用map来维护前面所出现过的所有字符，看是否存在
+#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std; int t, n; #include &amp;lt;map&amp;gt;map&amp;lt;char, int&amp;gt; m; char s[55]; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); while (t--) { int flag = 0; m.clear(); scanf(&amp;#34;%d%s&amp;#34;, &amp;amp;n, s); m[s[0]] = 1; for (int i = 1; i &amp;lt; strlen(s); ++i) { if (s[i] != s[i - 1] &amp;amp;&amp;amp; m.count(s[i])) flag = 1; else m[s[i]] = 1; } if (flag) printf(&amp;#34;NO\n&amp;#34;); else printf(&amp;#34;YES\n&amp;#34;); } return 0; } B 题目大意：找1～n范围中，所有数都相同的数（1 2 88 444是，101 67 1239不是）</description>
+    </item>
+    
+    <item>
+      <title>Contest CSU预选赛 补题</title>
+      <link>http://www.chenranfei.online/posts/contest/contest-csu2021pre/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/contest/contest-csu2021pre/</guid>
+      <description>CSU 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?cid=2193
+ A 题目大意：贪心，可以无限选，然后问给定容积，最大价值。
+思路永远选单位价值最大的，然后逐级取余。
+#include &amp;lt;iostream&amp;gt;using namespace std; int a, ans; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;a); ans += (a/16)*227; a %= 16; ans += (a/8)*109; a %= 8; ans += (a/4)*49; a %= 4; ans += (a/2)*23; a %= 2; ans += a*10; printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } B C D </description>
     </item>
     
     <item>

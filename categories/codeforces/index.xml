@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>codeforces on Aczy156</title>
+    <link>http://www.chenranfei.online/categories/codeforces/</link>
+    <description>Recent content in codeforces on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Tue, 04 Feb 2020 16:12:46 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.chenranfei.online/categories/codeforces/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>http://www.chenranfei.online/posts/contest/contest-cf719-div3/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/contest/contest-cf719-div3/</guid>
+      <description>CF719 div3 补题  https://codeforces.com/contest/1520
+ A 题目大意：看字串中是否有重复出现的，连续一段出现可以，中间隔着其他的，然后再次出现就不行了。
+思路：用map来维护前面所出现过的所有字符，看是否存在
+#include &amp;lt;bits/stdc++.h&amp;gt;using namespace std; int t, n; #include &amp;lt;map&amp;gt;map&amp;lt;char, int&amp;gt; m; char s[55]; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); while (t--) { int flag = 0; m.clear(); scanf(&amp;#34;%d%s&amp;#34;, &amp;amp;n, s); m[s[0]] = 1; for (int i = 1; i &amp;lt; strlen(s); ++i) { if (s[i] != s[i - 1] &amp;amp;&amp;amp; m.count(s[i])) flag = 1; else m[s[i]] = 1; } if (flag) printf(&amp;#34;NO\n&amp;#34;); else printf(&amp;#34;YES\n&amp;#34;); } return 0; } B 题目大意：找1～n范围中，所有数都相同的数（1 2 88 444是，101 67 1239不是）</description>
+    </item>
+    
+  </channel>
+</rss>
