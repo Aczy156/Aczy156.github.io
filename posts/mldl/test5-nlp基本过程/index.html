@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>5 NLP基本过程 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="5 NLP基本过程 | Aczy156" />
+	<meta name="twitter:title" content="5 NLP基本过程 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="5 NLP基本过程 | Aczy156" />
+	<meta name="application-name" content="5 NLP基本过程 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="5 NLP基本过程" />
+<meta property="og:description" content="NLP 1、数据清洗 data cleaning  清洗html中的残留的tag：BeautifulSoup 清洗标点：正则表达式 清洗常用的没有实际意义的词语(a, the)：nltk中的stepwords  # import basic dependencies from bs4 import BeautifulSoup import re from nltk.corpus import stopwords # 具体使用 # html残留tag：用BeautifulSoup，实例化对象，然后通过get_text()获取 bs = BeautifulSoup(train[&#39;text_content&#39;][index], &#39;lxml&#39;) print(&#39;origin content:\n{}\nafter use BeautifulSoup to clean html tag:\n{}\n&#39;, train[&#39;text_content&#39;][index], bs.get_text()) # 标点符号：正则表达式 letters_only = re.sub(&#39;[^a-zA-Z]&#39;, &#39;&#39;, bs.get_text()) print(&#39;origin content:\n{}\nafter use re:\n{}\n&#39;, bs.get_text(), letters_only) # 用nltk中导入的stopwords来删除一些常见的没有用的单词，a，the…… # 先转换成小写lower case，然后分割split，最后用nltk中的stepwords lower_case = letters_only.lower() words = lower_case.split() stopwords.words(&#39;english&#39;)[:20] words = [word for word in words if not word in stopwords." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/mldl/test5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/" />
+<meta property="article:published_time" content="2020-01-28T15:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T15:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="5 NLP基本过程"/>
+<meta name="twitter:description" content="NLP 1、数据清洗 data cleaning  清洗html中的残留的tag：BeautifulSoup 清洗标点：正则表达式 清洗常用的没有实际意义的词语(a, the)：nltk中的stepwords  # import basic dependencies from bs4 import BeautifulSoup import re from nltk.corpus import stopwords # 具体使用 # html残留tag：用BeautifulSoup，实例化对象，然后通过get_text()获取 bs = BeautifulSoup(train[&#39;text_content&#39;][index], &#39;lxml&#39;) print(&#39;origin content:\n{}\nafter use BeautifulSoup to clean html tag:\n{}\n&#39;, train[&#39;text_content&#39;][index], bs.get_text()) # 标点符号：正则表达式 letters_only = re.sub(&#39;[^a-zA-Z]&#39;, &#39;&#39;, bs.get_text()) print(&#39;origin content:\n{}\nafter use re:\n{}\n&#39;, bs.get_text(), letters_only) # 用nltk中导入的stopwords来删除一些常见的没有用的单词，a，the…… # 先转换成小写lower case，然后分割split，最后用nltk中的stepwords lower_case = letters_only.lower() words = lower_case.split() stopwords.words(&#39;english&#39;)[:20] words = [word for word in words if not word in stopwords."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">5 NLP基本过程</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="nlp">NLP</h2>
+<h3 id="1数据清洗-data-cleaning">1、数据清洗 data cleaning</h3>
+<ul>
+<li>清洗html中的残留的tag：BeautifulSoup</li>
+<li>清洗标点：正则表达式</li>
+<li>清洗常用的没有实际意义的词语(a, the)：nltk中的stepwords</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import basic dependencies</span>
+<span style="color:#f92672">from</span> bs4 <span style="color:#f92672">import</span> BeautifulSoup
+<span style="color:#f92672">import</span> re
+<span style="color:#f92672">from</span> nltk.corpus <span style="color:#f92672">import</span> stopwords
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 具体使用</span>
+<span style="color:#75715e"># html残留tag：用BeautifulSoup，实例化对象，然后通过get_text()获取</span>
+bs <span style="color:#f92672">=</span> BeautifulSoup(train[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">text_content</span><span style="color:#e6db74">&#39;</span>][index], <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">lxml</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">origin content:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> after use BeautifulSoup to clean html tag:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>, train[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">text_content</span><span style="color:#e6db74">&#39;</span>][index], bs<span style="color:#f92672">.</span>get_text())
+
+<span style="color:#75715e"># 标点符号：正则表达式</span>
+letters_only <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">[^a-zA-Z]</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span>, bs<span style="color:#f92672">.</span>get_text())
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">origin content:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> after use re:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>, bs<span style="color:#f92672">.</span>get_text(), letters_only)
+
+<span style="color:#75715e"># 用nltk中导入的stopwords来删除一些常见的没有用的单词，a，the……</span>
+<span style="color:#75715e"># 先转换成小写lower case，然后分割split，最后用nltk中的stepwords</span>
+lower_case <span style="color:#f92672">=</span> letters_only<span style="color:#f92672">.</span>lower()
+words <span style="color:#f92672">=</span> lower_case<span style="color:#f92672">.</span>split()
+stopwords<span style="color:#f92672">.</span>words(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">english</span><span style="color:#e6db74">&#39;</span>)[:<span style="color:#ae81ff">20</span>]
+words <span style="color:#f92672">=</span> [word <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> words <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> word <span style="color:#f92672">in</span> stopwords<span style="color:#f92672">.</span>words(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">english</span><span style="color:#e6db74">&#39;</span>)]
+words[:<span style="color:#ae81ff">20</span>]
+</code></pre></div><p>写成一个函数，然后对所有样本逐个遍历</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">data_cleaning</span>(raw):
+  <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">  convert raw to a string of word</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">  </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+  <span style="color:#75715e"># remove html tag</span>
+  text <span style="color:#f92672">=</span> BeautifulSoup(raw, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">lxml</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">.</span>get_text()
+  <span style="color:#75715e"># remove non-letters</span>
+  letters_only <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>sub(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">[^a-zA-Z]</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span>, text)
+  <span style="color:#75715e"># convert to lower case and spilt to words</span>
+	words <span style="color:#f92672">=</span> letters_only<span style="color:#f92672">.</span>lower()<span style="color:#f92672">.</span>split()
+  <span style="color:#75715e"># get stopwords list</span>
+  stops <span style="color:#f92672">=</span> set(stopwords<span style="color:#f92672">.</span>words(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">english</span><span style="color:#e6db74">&#39;</span>))
+  <span style="color:#75715e"># remove stopwords / get non-stopwords list</span>
+  non_stopwords <span style="color:#f92672">=</span> [word <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> words <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> word <span style="color:#f92672">in</span> stops]
+  
+  <span style="color:#66d9ef">return</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(non_stopwords))
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># for 循环遍历</span>
+all_content <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, train[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>size):
+    <span style="color:#75715e"># If the index is evenly divisible by 1000, print a message</span>
+    <span style="color:#66d9ef">if</span>((i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">1000</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Review </span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> of </span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> (i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, train[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>size))                                                                  
+    all_content<span style="color:#f92672">.</span>append(review_to_words(train[<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">content</span><span style="color:#e6db74">&#34;</span>][i]))
+</code></pre></div><h3 id="2词干提取词根还原-stemmingstemmer">2、词干提取/词根还原 stemming/stemmer</h3>
+<ul>
+<li>词干提取是去除单词的<strong>前后缀</strong>【「名次的复数」、「进行时」、「过去式」、「将来时」等】得到词根的过程</li>
+<li>例子：plays, played, playing -&gt; play</li>
+<li>总结：「提取」「缩减/容易」「粒度大，模糊」「应用于搜索场景」</li>
+<li>实现：Porter、Snowball、Lancaster(可以结合nltk)</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> nltk.stem <span style="color:#f92672">import</span> PorterStemmer
+porter <span style="color:#f92672">=</span> PorterStemmer()
+
+<span style="color:#75715e"># stem -- PorterStemmer</span>
+stem_single_word <span style="color:#f92672">=</span> porter<span style="color:#f92672">.</span>stem(single_word)
+stem_words <span style="color:#f92672">=</span> [porter<span style="color:#f92672">.</span>stem(word) <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> words]
+</code></pre></div><h3 id="3词形还原-lemmatizationlemmatizer">3、词形还原 lemmatization/lemmatizer</h3>
+<ul>
+<li>
+<p>单词的复杂形态转变成最基础的形态。</p>
+</li>
+<li>
+<p>区分与词干提取，并不是简单的前后缀，是更加深层的转换【非规则的过去式、am/is/are:be等】。</p>
+<ul>
+<li>目标一致。词干提取和词形还原的目标均为将词的屈折形态或派生形态简化或归并为词干（stem）或原形的基础形式，都是一种对词的不同形态的统一归并的过程。</li>
+<li>结果部分交叉。词干提取和词形还原不是互斥关系，其结果是有部分交叉的。一部分词利用这两类方法都能达到相同的词形转换效果。如“dogs”的词干为“dog”，其原形也为“dog”。</li>
+<li>主流实现方法类似。目前实现词干提取和词形还原的主流实现方法均是利用语言中存在的规则或利用词典映射提取词干或获得词的原形。</li>
+<li>应用领域相似。主要应用于信息检索和文本、自然语言处理等方面，二者均是这些应用的基本步骤。</li>
+</ul>
+</li>
+<li>
+<p>例子：am, is, are -&gt; be ；<strong>drove -&gt; drive</strong></p>
+</li>
+<li>
+<p>总结：「还原」「转变/复杂，依赖词典」「粒度小，精确」「应用于精细的文本处理如NLP, text mining」</p>
+</li>
+<li>
+<p>实现：利用<code>nltk</code>库中已经包含的英语单词词汇数据库，以及<code>WordNet</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> nltk
+<span style="color:#f92672">from</span> nltk.stem <span style="color:#f92672">import</span> WordNetLemmatizer
+lemmatizer <span style="color:#f92672">=</span> WordNetLemmatizer()
+<span style="color:#66d9ef">print</span>(lemmatizer<span style="color:#f92672">.</span>lemmatize(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blogs</span><span style="color:#e6db74">&#34;</span>))
+<span style="color:#75715e">#Returns blogimport nltk</span>
+<span style="color:#f92672">from</span> nltk.stem <span style="color:#f92672">import</span> WordNetLemmatizer
+lemmatizer <span style="color:#f92672">=</span> WordNetLemmatizer()
+<span style="color:#66d9ef">print</span>(lemmatizer<span style="color:#f92672">.</span>lemmatize(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blogs</span><span style="color:#e6db74">&#34;</span>))
+<span style="color:#75715e">#Returns blog</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> nltk.stem <span style="color:#f92672">import</span> WordNetLemmatizer
+wnl <span style="color:#f92672">=</span> WordNetLemmatizer()
+  
+<span style="color:#75715e"># lemmatization -- WordNetLemmatizer</span>
+lemmatizered_single_word <span style="color:#f92672">=</span> wnl<span style="color:#f92672">.</span>lemmatize(single_word)
+lemmatizered_words <span style="color:#f92672">=</span> [wnl<span style="color:#f92672">.</span>lemmatize(word) <span style="color:#66d9ef">for</span> word <span style="color:#f92672">in</span> words]
+</code></pre></div></li>
+</ul>
+<h3 id="4利用scikit-learn和词袋提取词汇表得到每个样本的特征向量">4、利用Scikit-learn和词袋提取词汇表，得到每个样本的特征向量</h3>
+<ul>
+<li>使用<code>sklearn</code>中的<code>CountVectorizer</code>来获取每个text的特征向量，作为文本的特征【这样转换的话，并<strong>没有考虑时序性</strong>，也就是说所有词袋中的所有单词都是同等的，没有先后顺序，词袋中的所有元素都各自作为一个特征的存在】</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># some basic dependencies</span>
+<span style="color:#f92672">from</span> sklearn.feature_extraction.text <span style="color:#f92672">import</span> CountVectorizer
+vectorizer <span style="color:#f92672">=</span> CountVectorizer(
+  analyzer <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">word</span><span style="color:#e6db74">&#34;</span>,
+  tokenizer <span style="color:#f92672">=</span> None,
+  preprocessor <span style="color:#f92672">=</span> None,
+  stop_words <span style="color:#f92672">=</span> None,
+  max_features <span style="color:#f92672">=</span> <span style="color:#ae81ff">5000</span>
+) 
+
+<span style="color:#75715e"># get features</span>
+train_features <span style="color:#f92672">=</span> vectorizer<span style="color:#f92672">.</span>fit_transform(train_all_content)
+test_features <span style="color:#f92672">=</span> vectorizer<span style="color:#f92672">.</span>fit_transform()
+<span style="color:#75715e"># transform format</span>
+train_features <span style="color:#f92672">=</span> train_features<span style="color:#f92672">.</span>toarray()
+test_features <span style="color:#f92672">=</span> test_features<span style="color:#f92672">.</span>toarray()
+</code></pre></div><p>可以用<code>vectorizer</code>的<code>get_feature_names()</code>方法来看都获取了哪些feature【然后还可以自己构造一个来计算各个feature（也就是词袋中的各属性出现了几次的数据）】</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(vectorizer<span style="color:#f92672">.</span>get_feature_names())
+</code></pre></div><ul>
+<li>如果使用deeplearning，通过构造RNN来提取具有时序的特征的话，可以更好的建立前后关联
+<ul>
+<li>LSTM</li>
+<li>GRU</li>
+</ul>
+</li>
+</ul>
+<h3 id="5原始text的一系列变形----embedding-过程--词向量模型word2vec模型">5、原始text的一系列变形   ==&gt; Embedding 过程 // 词向量模型(Word2Vec模型)</h3>
+<p>[可以理解成为是一个提取特征的过程] ==&gt; 不论是通过什么进行分词或者进行词向量获取</p>
+<h4 id="a-通过分词然后对序列进行调整">a) 通过分词、然后对序列进行调整</h4>
+<ul>
+<li>text -&gt; sequence ==&gt; 分词之后，才能变成序列</li>
+<li>sequence format ==&gt; 对序列进行变形</li>
+</ul>
+<p>text转换为sequence，就要引用预处理preprocessing下的text包来进行处理</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> keras.preprocessing.text <span style="color:#f92672">import</span> Tokenizer
+
+tokenizer <span style="color:#f92672">=</span> Tokenizer()
+X_train_tokens <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>text_to_sequences(X_train)
+</code></pre></div><p>产生的sequence 进行形式变换</p>
+<ul>
+<li>pad_sequences 可以将整个序列的长度变相同**[这样需要一个参数maxlen，也就是他们相同的长度的参数，也就是他们的最大长度]**// 其他参数还有包括padding种类，这样输入模型也不会报错</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> keras.preprocessing.sequence <span style="color:#f92672">import</span> pad_sequences
+
+<span style="color:#75715e"># 对上面的由text 转换的tokens进行标准化长度</span>
+X_train_pad <span style="color:#f92672">=</span> pad_sequence(X_train_tokens, maxlen<span style="color:#f92672">=</span>max_len, padding<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">post</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h4 id="b-利用现成的sklearn中的现有库feature_extraction-来进行提取特征">b) 利用现成的sklearn中的现有库feature_extraction 来进行提取特征</h4>
+<p>调用的一般都是<code>CountVectorizer</code>,<code>TfidfVectorizer</code>等。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> sklearn.feature_extraction
+</code></pre></div><h3 id="6构建model并进行预测">6、构建model并进行预测</h3>
+<ul>
+<li>基本的rf random forest</li>
+<li>用feature数组作为数据集x、用label作为y</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 注意不是RandomForestRegressor</span>
+<span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestClassifier
+
+rf <span style="color:#f92672">=</span> RandomForestClassifier(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>)
+rf <span style="color:#f92672">=</span> rf<span style="color:#f92672">.</span>fit(train_features, train[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">label</span><span style="color:#e6db74">&#39;</span>])
+</code></pre></div><ul>
+<li>predict</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">prediction <span style="color:#f92672">=</span> rf<span style="color:#f92672">.</span>predict(test_features)
+submission <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(data<span style="color:#f92672">=</span>{<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">id</span><span style="color:#e6db74">&#39;</span>:test[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">id</span><span style="color:#e6db74">&#39;</span>], <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">label</span><span style="color:#e6db74">&#39;</span>:prediction})
+submission<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">submission.csv</span><span style="color:#e6db74">&#39;</span>, index<span style="color:#f92672">=</span>False)
+</code></pre></div><h3 id="7对于nlp的模型的构建过程">7、对于nlp的模型的构建过程</h3>
+<ul>
+<li>Embedding layer
+<ul>
+<li>第一个参数：单词的最大数量 // 词典的总数量 [总的单词的数量 =&gt; 注意不是样本的数量]</li>
+<li>第二个参数：嵌入维度 <code>EMBEDDING_DIM</code> [常用100/200等] =&gt; 用于获取词袋中不同数据之间的关联</li>
+<li>第三个参数：输入的每个单词的最大长度<code>input_length</code></li>
+</ul>
+</li>
+</ul>
+<p>project eg: (500, 128) =&gt; (500, 2) [第一个参数是整个词典的数量，第二个参数是词典潜入维度]</p>
+<p>demo1</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Embedding_DIM <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>
+model<span style="color:#f92672">.</span>add(Embedding(len(list(unique_words)), Embedding_DIM, input_length<span style="color:#f92672">=</span>raw_max_length))
+</code></pre></div><p>demo2</p>
+<p>可以利用<code>from keras.initializer import Constant </code>来初始化，作为Embedding layer中的一个参数，来方便初始化的过程。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>add(Embedding(num_words, <span style="color:#ae81ff">100</span>, embedding_initializer<span style="color:#f92672">=</span>Constant(embedding_matrix), input_length<span style="color:#f92672">=</span>MAX_LENGTH, trainable<span style="color:#f92672">=</span>False))
+</code></pre></div><ul>
+<li>SpatialDropout layer  (区分SpatialDropout1D，普通的Dropout)：</li>
+</ul>
+<p>区别：都是对图像的随意丢失，只不过</p>
+<h2 id="8bert-模型">8、bert 模型</h2>
+<p>a) 三个基本参数</p>
+<ul>
+<li>token</li>
+<li>mask</li>
+<li>segment</li>
+</ul>
+<p>b) basic process</p>
+<p>第一步：编码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bert_encode</span>(texts, tokenizer, max_len<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>):
+    
+    all_tokens <span style="color:#f92672">=</span> []
+    all_masks <span style="color:#f92672">=</span> []
+    all_segments <span style="color:#f92672">=</span> []
+    
+    <span style="color:#66d9ef">for</span> text <span style="color:#f92672">in</span> texts:
+        text <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>tokenize(text)
+            
+        text <span style="color:#f92672">=</span> text[:max_len<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]
+        input_sequence <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">[CLS]</span><span style="color:#e6db74">&#34;</span>] <span style="color:#f92672">+</span> text <span style="color:#f92672">+</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">[SEP]</span><span style="color:#e6db74">&#34;</span>]
+        pad_len <span style="color:#f92672">=</span> max_len <span style="color:#f92672">-</span> len(input_sequence)
+        
+        tokens <span style="color:#f92672">=</span> tokenizer<span style="color:#f92672">.</span>convert_tokens_to_ids(input_sequence)
+        tokens <span style="color:#f92672">+</span><span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> pad_len
+        pad_masks <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>] <span style="color:#f92672">*</span> len(input_sequence) <span style="color:#f92672">+</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> pad_len
+        segment_ids <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>] <span style="color:#f92672">*</span> max_len
+        
+        all_tokens<span style="color:#f92672">.</span>append(tokens)
+        all_masks<span style="color:#f92672">.</span>append(pad_masks)
+        all_segments<span style="color:#f92672">.</span>append(segment_ids)
+    
+    <span style="color:#66d9ef">return</span> np<span style="color:#f92672">.</span>array(all_tokens), np<span style="color:#f92672">.</span>array(all_masks), np<span style="color:#f92672">.</span>array(all_segments)
+</code></pre></div><p>第二步：封装好模型</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_model</span>(bert_layer, max_len<span style="color:#f92672">=</span><span style="color:#ae81ff">512</span>):
+    input_word_ids <span style="color:#f92672">=</span> Input(shape<span style="color:#f92672">=</span>(max_len,), dtype<span style="color:#f92672">=</span>tf<span style="color:#f92672">.</span>int32, name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">input_word_ids</span><span style="color:#e6db74">&#34;</span>)
+    input_mask <span style="color:#f92672">=</span> Input(shape<span style="color:#f92672">=</span>(max_len,), dtype<span style="color:#f92672">=</span>tf<span style="color:#f92672">.</span>int32, name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">input_mask</span><span style="color:#e6db74">&#34;</span>)
+    segment_ids <span style="color:#f92672">=</span> Input(shape<span style="color:#f92672">=</span>(max_len,), dtype<span style="color:#f92672">=</span>tf<span style="color:#f92672">.</span>int32, name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">segment_ids</span><span style="color:#e6db74">&#34;</span>)
+
+    _, sequence_output <span style="color:#f92672">=</span> bert_layer([input_word_ids, input_mask, segment_ids])
+    clf_output <span style="color:#f92672">=</span> sequence_output[:, <span style="color:#ae81ff">0</span>, :]
+    
+    <span style="color:#66d9ef">if</span> Dropout_num <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#75715e"># Without Dropout</span>
+        out <span style="color:#f92672">=</span> Dense(<span style="color:#ae81ff">1</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">sigmoid</span><span style="color:#e6db74">&#39;</span>)(clf_output)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#75715e"># With Dropout(Dropout_num), Dropout_num &gt; 0</span>
+        x <span style="color:#f92672">=</span> Dropout(Dropout_num)(clf_output)
+        out <span style="color:#f92672">=</span> Dense(<span style="color:#ae81ff">1</span>, activation<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">sigmoid</span><span style="color:#e6db74">&#39;</span>)(x)
+
+    model <span style="color:#f92672">=</span> Model(inputs<span style="color:#f92672">=</span>[input_word_ids, input_mask, segment_ids], outputs<span style="color:#f92672">=</span>out)
+    model<span style="color:#f92672">.</span>compile(Adam(lr<span style="color:#f92672">=</span>learning_rate), loss<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">binary_crossentropy</span><span style="color:#e6db74">&#39;</span>, metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">accuracy</span><span style="color:#e6db74">&#39;</span>])
+    
+    <span style="color:#66d9ef">return</span> model
+</code></pre></div><p>第三步：将模型嵌套进去</p>
+<p>【有借助hub来管理的过程】【外链的链接来管理：module_url】</p>
+<ul>
+<li>获取bert model，同时利用keras来接管模型，转换为Keras可以使用的。</li>
+<li>因为是相当于<em>迁移学习[Transfer Learning]</em></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> tensorflow_hub <span style="color:#f92672">as</span> hub
+
+<span style="color:#75715e"># from </span>
+module_url <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://tfhub.dev/tensorflow/bert_en_uncased_L-24_H-1024_A-16/1</span><span style="color:#e6db74">&#39;</span>
+bert_layer <span style="color:#f92672">=</span> hub<span style="color:#f92672">.</span>KerasLayer(module_url, trainable<span style="color:#f92672">=</span>True)
+
+<span style="color:#75715e"># 传入函数中，来进行获取</span>
+model_BERT <span style="color:#f92672">=</span> build_model(bert_layer, max_len<span style="color:#f92672">=</span><span style="color:#ae81ff">160</span>)
+model_BERT<span style="color:#f92672">.</span>summary()
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

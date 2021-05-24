@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>搜索 on Aczy156</title>
+    <link>https://www.skyzh.dev/categories/%E6%90%9C%E7%B4%A2/</link>
+    <description>Recent content in 搜索 on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.skyzh.dev/categories/%E6%90%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithm8.1 bfs</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8.1-bfs/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8.1-bfs/</guid>
+      <description>bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
+题目大意：最多可到达的格点数
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 23int n, m, dir[4][2]={{0, 1}, {0, -1}, {1, 0}, {-1, 0}}, ans=1, vis[maxn][maxn]; char mp[maxn][maxn]; #include &amp;lt;queue&amp;gt;struct node{ int x, y; node(int x,int y): x(x), y(y){} }; queue&amp;lt;node&amp;gt; q; void bfs(int x, int y) { q.push(node(x, y)); vis[x][y] = 1; while (!q.empty()) { node nw = q.front();q.pop(); for (int i = 0; i &amp;lt; 4; ++i) { int nx = nw.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.2 dfs</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8-dfs/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8-dfs/</guid>
+      <description>dfs [数组一维模版 &amp;amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
+#include &amp;lt;iostream&amp;gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &amp;lt; n; ++i) printf(&amp;#34;%5d&amp;#34;, a[i]); printf(&amp;#34;\n&amp;#34;); return; } for (int i = 1; i &amp;lt;= n; ++i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l+1); vis[i] = 0; } } } int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); dfs(0); return 0; } 素数环 &amp;amp; 分层 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.3 dfs 记忆化搜索</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
+      <description>dfs记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。
+[模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
+题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。
+1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
+2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 25typedef long long ll; ll ta, tb, tc, dp[maxn][maxn][maxn]; ll dfs(int a, int b, int c) { if (a &amp;lt;= 0 || b &amp;lt;= 0 || c &amp;lt;= 0) return 1; if (a &amp;gt; 20 || b &amp;gt; 20 || c &amp;gt; 20) return dfs(20, 20, 20); if (dp[a][b][c]) return dp[a][b][c]; if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;lt; c) return dp[a][b][c] = dfs(a, b, c-1) + dfs(a, b-1, c-1) - dfs(a, b-1, c); else return dp[a][b][c] = dfs(a-1, b, c) + dfs(a-1, b-1, c) + dfs(a-1, b, c-1) - dfs(a-1, b-1, c-1); } int main() { while (scanf(&amp;#34;%lld%lld%lld&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc) &amp;amp;&amp;amp; !</description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.4 搜索进阶</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8.2-%E6%90%9C%E7%B4%A2%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8.2-%E6%90%9C%E7%B4%A2%E8%BF%9B%E9%98%B6/</guid>
+      <description>搜索进阶 </description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.4&#43;2 dfs &amp; dfs记忆化搜索 &amp; DP</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8.4&#43;2-dfs&#43;dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2&#43;dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8.4&#43;2-dfs&#43;dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2&#43;dp/</guid>
+      <description>dfs &amp;amp; dfs记忆化搜索 &amp;amp; 计数DP  方法：
+1、搜索的过程中重复搜索，然后将重复的放在数组中储存起来，在再次递归进来之后直接返回即可。
+2、在返回的时候要详细到递归进来的多个参数的情况。
+3、根据参数情况写出dp数组（也就是记忆化数组d）
+4、状态转移方程要根据实际情况，用i j k等参数来逐渐覆盖。
+5、对上一个状态转移方程中涉及到的i j k等参数利用循环来进行遍历。
+种类
+ DFS暴搜转计数DP    https://www.luogu.com.cn/problem/P1077
+dfs 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
+// 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans++;return;} for (int i = 0; i &amp;lt;= a[l+1]; ++i) { cnt+=i;dfs(l+1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
+int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } for (int i = 0; i &amp;lt;= a[l+1]; ++i) dfs(l+1, cnt+i); } 记忆化搜索 https://www.</description>
+    </item>
+    
+  </channel>
+</rss>

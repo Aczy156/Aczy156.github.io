@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码 | Aczy156" />
+	<meta name="application-name" content="Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码" />
+<meta property="og:description" content="数据结构 哈夫曼树  实现方式：
+ 二叉链表实现【实现和二叉树的二叉链表实现方式几乎一样，链接： 二叉树-二叉链表实现 】   二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。
+struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[maxn];; 2、新增的数据结构：也就是huffman[maxn]，起作用就是储存所有的节点的。
+对应的思路，每次挑出节点中值最小的两个，然后把这两个节点合成一个，然后进行排序，并把新产生的节点放到优先队列中，然后再选出两个最小的，一直这么迭代下去。
+ 通过一个vis数组，来将右儿子给闭掉，然后将左儿子的值更新为他们所形成的父亲节点的值。  node * HuffmanTree() { for (int i = 0; i &lt; n - 1; i&#43;&#43;) { for (int j = 0; j &lt; n; &#43;&#43;j) if (!vis[j]) pq.push({huffman[j].data, j}); ll = pq.top().idx;pq.pop(); rr = pq.top().idx; while (!pq.empty()) pq.pop(); vis[rr] = 1; node * lnode = new node {huffman[ll]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码"/>
+<meta name="twitter:description" content="数据结构 哈夫曼树  实现方式：
+ 二叉链表实现【实现和二叉树的二叉链表实现方式几乎一样，链接： 二叉树-二叉链表实现 】   二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。
+struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[maxn];; 2、新增的数据结构：也就是huffman[maxn]，起作用就是储存所有的节点的。
+对应的思路，每次挑出节点中值最小的两个，然后把这两个节点合成一个，然后进行排序，并把新产生的节点放到优先队列中，然后再选出两个最小的，一直这么迭代下去。
+ 通过一个vis数组，来将右儿子给闭掉，然后将左儿子的值更新为他们所形成的父亲节点的值。  node * HuffmanTree() { for (int i = 0; i &lt; n - 1; i&#43;&#43;) { for (int j = 0; j &lt; n; &#43;&#43;j) if (!vis[j]) pq.push({huffman[j].data, j}); ll = pq.top().idx;pq.pop(); rr = pq.top().idx; while (!pq.empty()) pq.pop(); vis[rr] = 1; node * lnode = new node {huffman[ll]."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="数据结构-哈夫曼树">数据结构 哈夫曼树</h2>
+<blockquote>
+<p>实现方式：</p>
+<ul>
+<li>二叉链表实现【实现和二叉树的二叉链表实现方式几乎一样，链接： <a href="http://chenranfei.online/post/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/#%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0---%E5%88%A9%E7%94%A8%E9%93%BE%E8%A1%A8%E6%9D%A5%E9%93%BE%E6%8E%A5%E8%B5%B7%E6%A0%91%E7%9A%84%E7%BB%93%E6%9E%84">二叉树-二叉链表实现</a> 】</li>
+</ul>
+</blockquote>
+<h3 id="二叉链表实现---利用链表来链接起树的结构">二叉链表实现 - 利用链表来链接起树的结构</h3>
+<p>1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span>(){
+  <span style="color:#66d9ef">int</span> data;
+  node <span style="color:#f92672">*</span> lchild;
+  node <span style="color:#f92672">*</span> rchild;
+}  <span style="color:#f92672">*</span>huffmantree, huffman[maxn];;
+</code></pre></div><p>2、新增的数据结构：也就是huffman[maxn]，起作用就是储存所有的节点的。</p>
+<p>对应的思路，每次挑出节点中值最小的两个，然后把这两个节点合成一个，然后进行排序，并把新产生的节点放到优先队列中，然后再选出两个最小的，一直这么迭代下去。</p>
+<ul>
+<li>通过一个vis数组，来将右儿子给闭掉，然后将左儿子的值更新为他们所形成的父亲节点的值。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">node <span style="color:#f92672">*</span> <span style="color:#a6e22e">HuffmanTree</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[j]) pq.push({huffman[j].data, j});
+        ll <span style="color:#f92672">=</span> pq.top().idx;pq.pop();
+        rr <span style="color:#f92672">=</span> pq.top().idx;
+        <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) pq.pop();
+        vis[rr] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        node <span style="color:#f92672">*</span> lnode <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node {huffman[ll].data, huffman[ll].lchild, huffman[ll].rchild};
+        huffman[ll] <span style="color:#f92672">=</span> {huffman[ll].data <span style="color:#f92672">+</span> huffman[rr].data, lnode, <span style="color:#f92672">&amp;</span>huffman[rr]};
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span>huffman[ll];
+}
+</code></pre></div><ul>
+<li>通过对优先队列的维护，每次弹出右儿子，左儿子更新了值再放回去</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">node <span style="color:#f92672">*</span> <span style="color:#a6e22e">HuffmanTree</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) pq.push({huffman[j].data, j});
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+        ll <span style="color:#f92672">=</span> pq.top().idx;pq.pop();
+        rr <span style="color:#f92672">=</span> pq.top().idx;pq.pop();
+        vis[rr] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        node <span style="color:#f92672">*</span> lnode <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node {huffman[ll].data, huffman[ll].lchild, huffman[ll].rchild};
+        huffman[ll] <span style="color:#f92672">=</span> {huffman[ll].data <span style="color:#f92672">+</span> huffman[rr].data, lnode, <span style="color:#f92672">&amp;</span>huffman[rr]};
+        pq.push({huffman[ll].data, ll});
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span>huffman[ll];
+}
+</code></pre></div><p>3、测试用例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">input:
+8
+5 29 7 8 14 23 3 11
+
+output:
+100 42 19 8 3 5 11 23 58 29 29 14 15 7 8 
+</code></pre></div><p>完整代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+    <span style="color:#66d9ef">int</span> data;
+    node <span style="color:#f92672">*</span>lchild;
+    node <span style="color:#f92672">*</span>rchild;
+} <span style="color:#f92672">*</span>huffmantree, huffman[maxn];
+<span style="color:#66d9ef">int</span> n, ll, rr;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">nd</span> {
+    <span style="color:#66d9ef">int</span> val, idx;
+    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> nd n) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> val <span style="color:#f92672">&gt;</span> n.val;}
+};
+priority_queue<span style="color:#f92672">&lt;</span>nd, vector<span style="color:#f92672">&lt;</span>nd<span style="color:#f92672">&gt;</span>, less<span style="color:#f92672">&lt;</span>nd<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">PreOrder</span>(node <span style="color:#f92672">*</span>T) {
+    <span style="color:#66d9ef">if</span> (T) {
+        cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> T<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>data <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>;
+        PreOrder(T<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>lchild);
+        PreOrder(T<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>rchild);
+    }
+}
+
+node <span style="color:#f92672">*</span> <span style="color:#a6e22e">HuffmanTree</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) pq.push({huffman[j].data, j});
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+        ll <span style="color:#f92672">=</span> pq.top().idx;pq.pop();
+        rr <span style="color:#f92672">=</span> pq.top().idx;pq.pop();
+        node <span style="color:#f92672">*</span> lnode <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node {huffman[ll].data, huffman[ll].lchild, huffman[ll].rchild};
+        huffman[ll] <span style="color:#f92672">=</span> {huffman[ll].data <span style="color:#f92672">+</span> huffman[rr].data, lnode, <span style="color:#f92672">&amp;</span>huffman[rr]};
+        pq.push({huffman[ll].data, ll});
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span>huffman[ll];
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>) {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>huffman[i].data);
+    <span style="color:#75715e">// build tree
+</span><span style="color:#75715e"></span>    huffmantree <span style="color:#f92672">=</span> HuffmanTree();
+    PreOrder(huffmantree);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

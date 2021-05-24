@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>13 Pandas - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="13 Pandas | Aczy156" />
+	<meta name="twitter:title" content="13 Pandas | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="13 Pandas | Aczy156" />
+	<meta name="application-name" content="13 Pandas | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="13 Pandas" />
+<meta property="og:description" content="数据类型相关 在处理脏数据的时候：
+通过data[col][raw].dtype来查看元素的类型
+通过data[col][raw].astype = specific_data_type来切换单元格的属性
+截取 1）.loc,.iloc,.ix,只加第一个参数如.loc([1,2]),.iloc([2:3]),.ix[2]…则进行的是行选择 2）.loc,.at，选列是只能是列名，不能是position 3）.iloc,.iat，选列是只能是position，不能是列名 4）df[]只能进行行选择，或列选择，不能同时进行列选择，列选择只能是列名。
+sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Male 3.31 23.68 4 Female 3.61 24.59 print df.loc[1:3, [&#39;total_bill&#39;, &#39;tip&#39;]] print df.loc[1:3, &#39;tip&#39;: &#39;total_bill&#39;] print df.iloc[1:3, [1, 2]] print df.iloc[1:3, 1: 3] total_bill tip 1 10.34 1.66 2 23.68 3.50 3 23.68 3.31 -------------------- tip total_bill 1 1.66 10.34 2 3.50 23.68 3 3." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/mldl/test13-pandas/" />
+<meta property="article:published_time" content="2020-01-28T23:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T23:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="13 Pandas"/>
+<meta name="twitter:description" content="数据类型相关 在处理脏数据的时候：
+通过data[col][raw].dtype来查看元素的类型
+通过data[col][raw].astype = specific_data_type来切换单元格的属性
+截取 1）.loc,.iloc,.ix,只加第一个参数如.loc([1,2]),.iloc([2:3]),.ix[2]…则进行的是行选择 2）.loc,.at，选列是只能是列名，不能是position 3）.iloc,.iat，选列是只能是position，不能是列名 4）df[]只能进行行选择，或列选择，不能同时进行列选择，列选择只能是列名。
+sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Male 3.31 23.68 4 Female 3.61 24.59 print df.loc[1:3, [&#39;total_bill&#39;, &#39;tip&#39;]] print df.loc[1:3, &#39;tip&#39;: &#39;total_bill&#39;] print df.iloc[1:3, [1, 2]] print df.iloc[1:3, 1: 3] total_bill tip 1 10.34 1.66 2 23.68 3.50 3 23.68 3.31 -------------------- tip total_bill 1 1.66 10.34 2 3.50 23.68 3 3."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">13 Pandas</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="数据类型相关">数据类型相关</h2>
+<p>在处理脏数据的时候：</p>
+<p>通过<code>data[col][raw].dtype</code>来查看元素的类型</p>
+<p>通过<code>data[col][raw].astype = specific_data_type</code>来切换单元格的属性</p>
+<h2 id="截取">截取</h2>
+<p>1）.loc,.iloc,.ix,只加第一个参数如.loc([1,2]),.iloc([2:3]),.ix[2]…则进行的是行选择
+2）.loc,.at，选列是只能是列名，不能是position
+3）.iloc,.iat，选列是只能是position，不能是列名
+4）df[]只能进行行选择，或列选择，不能同时进行列选择，列选择只能是列名。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"> 		 sex   tip  total_bill
+0  Female  1.01       16.99
+1    Male  1.66       10.34
+2    Male  3.50       23.68
+3    Male  3.31       23.68
+4  Female  3.61       24.59
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span> df<span style="color:#f92672">.</span>loc[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>, [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">total_bill</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">tip</span><span style="color:#e6db74">&#39;</span>]]
+<span style="color:#66d9ef">print</span> df<span style="color:#f92672">.</span>loc[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">tip</span><span style="color:#e6db74">&#39;</span>: <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">total_bill</span><span style="color:#e6db74">&#39;</span>]
+<span style="color:#66d9ef">print</span> df<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>, [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>]]
+<span style="color:#66d9ef">print</span> df<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>: <span style="color:#ae81ff">3</span>]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">		total_bill   tip
+<span style="color:#ae81ff">1</span>       <span style="color:#ae81ff">10.34</span>  <span style="color:#ae81ff">1.66</span>
+<span style="color:#ae81ff">2</span>       <span style="color:#ae81ff">23.68</span>  <span style="color:#ae81ff">3.50</span>
+<span style="color:#ae81ff">3</span>       <span style="color:#ae81ff">23.68</span>  <span style="color:#ae81ff">3.31</span>
+
+<span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span>
+
+    tip  total_bill
+<span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">1.66</span>       <span style="color:#ae81ff">10.34</span>
+<span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">3.50</span>       <span style="color:#ae81ff">23.68</span>
+<span style="color:#ae81ff">3</span>  <span style="color:#ae81ff">3.31</span>       <span style="color:#ae81ff">23.68</span>
+
+<span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span>
+
+    tip  total_bill
+<span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">1.66</span>       <span style="color:#ae81ff">10.34</span>
+<span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">3.50</span>       <span style="color:#ae81ff">23.68</span>
+
+<span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span><span style="color:#f92672">-</span>
+
+    tip  total_bill
+<span style="color:#ae81ff">1</span>  <span style="color:#ae81ff">1.66</span>       <span style="color:#ae81ff">10.34</span>
+<span style="color:#ae81ff">2</span>  <span style="color:#ae81ff">3.50</span>       <span style="color:#ae81ff">23.68</span>
+
+</code></pre></div><h2 id="拼接----concat">拼接 &ndash; concat</h2>
+<p><code>axis=0</code>纵向拼接</p>
+<p><code>axis=1</code>横向拼接【横向拼接的索引问题】</p>
+<ul>
+<li>
+<p>忽略索引的：那就让两个索引 =&gt; 通过<code>reset_index()</code>来讲提取出来的数据重新排列index</p>
+<ul>
+<li>
+<p>最后效果</p>
+<p>X  Y</p>
+</li>
+</ul>
+</li>
+<li>
+<p>不忽略索引的：就直接让他们保持原来的索引</p>
+<ul>
+<li>
+<p>最后效果</p>
+<p>X  NAN</p>
+<p>NAN Y</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="拼接----merge融合">拼接 &ndash; merge（融合）</h2>
+<p><code>pd.merge(left_data, right_data, on='same_attribute', how='left')</code></p>
+<p>left_data和right_data左右横向拼接</p>
+<h2 id="读取">读取</h2>
+<h3 id="1读取csv">1、读取<code>.csv</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">path.csv</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h3 id="2读取被压缩成zip的csv">2、读取被压缩成<code>.zip</code>的<code>.csv</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">path.zip</span><span style="color:#e6db74">&#39;</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\t</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h3 id="3读取json">3、读取<code>.json</code></h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_json(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">path.json</span><span style="color:#e6db74">&#39;</span>, lines<span style="color:#f92672">=</span>True)
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm18 数据结构 树状数组 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm18 数据结构 树状数组 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm18 数据结构 树状数组 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm18 数据结构 树状数组 | Aczy156" />
+	<meta name="application-name" content="Algorithm18 数据结构 树状数组 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm18 数据结构 树状数组" />
+<meta property="og:description" content="数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
+模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数
+eg：8(10) &amp; -8(10) = 8 =&gt; 根据树状数组结构图，就是8个节点
+eg：4(10) &amp; -4(10) = 4 =&gt; 根据树状数组结构图，就是4个节点
+eg：6(10) &amp; -6(10) = 2 =&gt; 根据树状数组结构图，就是2个节点
+![image-20210308181959879](/Users/aczy156/Library/Application Support/typora-user-images/image-20210308181959879.png)
+1、单点修改
+=&gt; 自下而上修改 =&gt; c数组的索引pos从1开始往上找，但是要限定永远≤n =&gt; 从下往上找的话，看当前的节点归属那个父节点范围，则需要pos&#43;=lowbit(pos)，此时就可以直接爬升到父节点。
+void single_add(int pos, int k) { while(pos &lt;= n) { c[pos] &#43;= k; pos &#43;= lowbit(pos); } } 2、区间求和「注意这个区间求的是前缀和，也就是1到pos的和。如果区间和的话，可以通过两个前缀和相减得到」
+=&gt; 自上而下累加 =&gt; c数组的索引pos从target目标开始往下找，但是要限定下限，不能让下限爆掉，pos≥1 =&gt; 从上往下累加的话，看当前的节点归属那个的子节点，则需要pos-=lowbit(pos)，此时就可以直接下降到子节点。
+int getsum(int pos) { int ans = 0; while(pos &gt;= 1) { ans &#43;= c[pos]; pos -= lowbit(pos); } } #include &lt;iostream&gt;using namespace std; #define maxn 500010int n, m, tm, tp, ta, tb, c[maxn]; int lowbit(int x) {return x &amp; (-x);} void single_add(int pos, int k) { while (pos &lt;= n) { c[pos] &#43;= k; pos &#43;= lowbit(pos); } } int getsum(int pos) { int ans = 0; while (pos &gt;= 1) { ans &#43;= c[pos]; pos -= lowbit(pos); } return ans; } int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;tm);single_add(i, tm);} while (m--) { scanf(&#34;%d%d%d&#34;, &amp;tp, &amp;ta, &amp;tb); if (tp-1) printf(&#34;%d\n&#34;, getsum(tb)-getsum(ta-1)); else single_add(ta, tb); } return 0; } 模版-区间修改(操作)、单点求和(查询) 区间修改&#43;单点求和 模版：https://www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm18 数据结构 树状数组"/>
+<meta name="twitter:description" content="数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
+模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数
+eg：8(10) &amp; -8(10) = 8 =&gt; 根据树状数组结构图，就是8个节点
+eg：4(10) &amp; -4(10) = 4 =&gt; 根据树状数组结构图，就是4个节点
+eg：6(10) &amp; -6(10) = 2 =&gt; 根据树状数组结构图，就是2个节点
+![image-20210308181959879](/Users/aczy156/Library/Application Support/typora-user-images/image-20210308181959879.png)
+1、单点修改
+=&gt; 自下而上修改 =&gt; c数组的索引pos从1开始往上找，但是要限定永远≤n =&gt; 从下往上找的话，看当前的节点归属那个父节点范围，则需要pos&#43;=lowbit(pos)，此时就可以直接爬升到父节点。
+void single_add(int pos, int k) { while(pos &lt;= n) { c[pos] &#43;= k; pos &#43;= lowbit(pos); } } 2、区间求和「注意这个区间求的是前缀和，也就是1到pos的和。如果区间和的话，可以通过两个前缀和相减得到」
+=&gt; 自上而下累加 =&gt; c数组的索引pos从target目标开始往下找，但是要限定下限，不能让下限爆掉，pos≥1 =&gt; 从上往下累加的话，看当前的节点归属那个的子节点，则需要pos-=lowbit(pos)，此时就可以直接下降到子节点。
+int getsum(int pos) { int ans = 0; while(pos &gt;= 1) { ans &#43;= c[pos]; pos -= lowbit(pos); } } #include &lt;iostream&gt;using namespace std; #define maxn 500010int n, m, tm, tp, ta, tb, c[maxn]; int lowbit(int x) {return x &amp; (-x);} void single_add(int pos, int k) { while (pos &lt;= n) { c[pos] &#43;= k; pos &#43;= lowbit(pos); } } int getsum(int pos) { int ans = 0; while (pos &gt;= 1) { ans &#43;= c[pos]; pos -= lowbit(pos); } return ans; } int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;tm);single_add(i, tm);} while (m--) { scanf(&#34;%d%d%d&#34;, &amp;tp, &amp;ta, &amp;tb); if (tp-1) printf(&#34;%d\n&#34;, getsum(tb)-getsum(ta-1)); else single_add(ta, tb); } return 0; } 模版-区间修改(操作)、单点求和(查询) 区间修改&#43;单点求和 模版：https://www."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm18 数据结构 树状数组</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="数据结构-树状数组">数据结构 树状数组</h2>
+<p><a href="https://www.luogu.com.cn/problem/P3374">https://www.luogu.com.cn/problem/P3374</a></p>
+<h3 id="模版-区间求和查询单点修改操作">模版-区间求和(查询)、单点修改(操作)</h3>
+<p>0、<code>lowbit()</code>看当前节点的归属情况/看当前节点所管辖的节点的个数</p>
+<p>eg：8(10) &amp; -8(10) = 8  =&gt; 根据树状数组结构图，就是8个节点</p>
+<p>eg：4(10) &amp; -4(10) = 4  =&gt; 根据树状数组结构图，就是4个节点</p>
+<p>eg：6(10) &amp; -6(10) = 2  =&gt; 根据树状数组结构图，就是2个节点</p>
+<p>![image-20210308181959879](/Users/aczy156/Library/Application Support/typora-user-images/image-20210308181959879.png)</p>
+<p>1、单点修改</p>
+<p>=&gt; 自下而上修改 =&gt; c数组的索引pos从1开始往上找，但是要限定永远≤n =&gt; 从下往上找的话，看当前的节点归属那个父节点范围，则需要<code>pos+=lowbit(pos)</code>，此时就可以直接爬升到父节点。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">single_add</span>(<span style="color:#66d9ef">int</span> pos, <span style="color:#66d9ef">int</span> k) {
+  <span style="color:#66d9ef">while</span>(pos <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n) {
+    c[pos] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> k;
+    pos <span style="color:#f92672">+</span><span style="color:#f92672">=</span> lowbit(pos);
+  }
+}
+</code></pre></div><p>2、区间求和「注意这个区间求的是前缀和，也就是1到pos的和。如果区间和的话，可以通过两个前缀和相减得到」</p>
+<p>=&gt; 自上而下累加 =&gt; c数组的索引pos从target目标开始往下找，但是要限定下限，不能让下限爆掉，pos≥1 =&gt;  从上往下累加的话，看当前的节点归属那个的子节点，则需要<code>pos-=lowbit(pos)</code>，此时就可以直接下降到子节点。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getsum</span>(<span style="color:#66d9ef">int</span> pos) {
+  <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">while</span>(pos <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) {
+    ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> c[pos];
+    pos <span style="color:#f92672">-</span><span style="color:#f92672">=</span> lowbit(pos);
+  }
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 500010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, tm, tp, ta, tb, c[maxn];
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lowbit</span>(<span style="color:#66d9ef">int</span> x) {<span style="color:#66d9ef">return</span> x <span style="color:#f92672">&amp;</span> (<span style="color:#f92672">-</span>x);}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">single_add</span>(<span style="color:#66d9ef">int</span> pos, <span style="color:#66d9ef">int</span> k) {
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n) {
+        c[pos] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> k;
+        pos <span style="color:#f92672">+</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getsum</span>(<span style="color:#66d9ef">int</span> pos) {
+    <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) {
+        ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> c[pos];
+        pos <span style="color:#f92672">-</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+    <span style="color:#66d9ef">return</span> ans;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>tm);single_add(i, tm);}
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>tp, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb);
+        <span style="color:#66d9ef">if</span> (tp<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, getsum(tb)<span style="color:#f92672">-</span>getsum(ta<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));
+        <span style="color:#66d9ef">else</span> single_add(ta, tb);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="模版-区间修改操作单点求和查询">模版-区间修改(操作)、单点求和(查询)</h3>
+<p>区间修改+单点求和 模版：https://www.luogu.com.cn/problem/P3368</p>
+<p>区间修改+单次范围最值 【范围最值也可以看作是所有的点取一遍最值】：https://www.luogu.com.cn/problem/P2367</p>
+<p>1、区间修改：考虑到<strong>差分</strong>，之不过是在树上进行差分，利用树状数组进行差分，此时对于树状数组c的修改就只需要修改两头即可了，也就是在l的位置加上k，在r+1的位置减去k，最后再利用树状数组c进行还原即可。</p>
+<p>2、此时沿着树状数组进行求和，求的就不是上面的那个区间和了 =&gt; 因为这个树状数组代表的是差分，累加所得到的该索引的数组的值。</p>
+<p>P3368模版区间修改+多次查询单个点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 500010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, a[maxn], c[maxn], tp, ta, tb, tc;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">lowbit</span>(<span style="color:#66d9ef">int</span> x) {<span style="color:#66d9ef">return</span> x <span style="color:#f92672">&amp;</span> (<span style="color:#f92672">-</span>x);}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">single_add</span>(<span style="color:#66d9ef">int</span> pos, <span style="color:#66d9ef">int</span> k) {
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n) {
+        c[pos] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> k;
+        pos <span style="color:#f92672">+</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">interval_add</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> k) {
+    single_add(l, k);
+    single_add(r<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span>k);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getsum</span>(<span style="color:#66d9ef">int</span> pos) {
+    <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) {
+        ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> c[pos];
+        pos <span style="color:#f92672">-</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+    <span style="color:#66d9ef">return</span> ans;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getval</span>(<span style="color:#66d9ef">int</span> pos) {
+    <span style="color:#66d9ef">return</span> a[pos] <span style="color:#f92672">+</span> getsum(pos);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>tp);
+        <span style="color:#66d9ef">if</span> (tp<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta);printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, getval(ta));}
+        <span style="color:#66d9ef">else</span> {scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc);interval_add(ta, tb, tc);}
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>P2367区间修改+最终单次查询所有点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 5000010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, a[maxn], c[maxn], ta, tb, tc, minn <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">31</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// c为树上的差分数组，a为记录原数据的数组
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define lowbit(x) x&amp;(-x)</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(<span style="color:#66d9ef">int</span> pos, <span style="color:#66d9ef">int</span> k) {
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n) {
+        c[pos] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> k;
+        pos <span style="color:#f92672">+</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">interval_add</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> k) {
+    add(l, k);
+    add(r<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span>k);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">query</span>(<span style="color:#66d9ef">int</span> pos){
+    <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) {
+        ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> c[pos];
+        pos <span style="color:#f92672">-</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+    <span style="color:#66d9ef">return</span> ans;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc);
+        interval_add(ta, tb, tc);
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) minn <span style="color:#f92672">=</span> min(a[i]<span style="color:#f92672">+</span>query(i), minn);
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, minn);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="模版-区间修改操作区间求和查询">模版-区间修改(操作)、区间求和(查询)</h3>
+<p><a href="https://www.luogu.com.cn/problem/P2367">https://www.luogu.com.cn/problem/P2367</a></p>
+<p>1、区分上面的单点修改+区间求和 // 区间修改+单点查询，都可以解决尾一类问题，核心代码相似，只不过后者就是前者的基础上增添了差分的思想，根据差分用求和来查单点的值 == 根据累加用单点来查求和的值。</p>
+<p>2、区间修改+区间查询需要维护两个数组，sum1数组是求和的数组，sum2数组是乘积的数组。进行区间修改的时候，进行差分来修改 // 进行区间查询的时候，根据前缀和来进行查询。</p>
+<p>区间修改：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(ll pos, ll k) {
+    ll tem <span style="color:#f92672">=</span> k<span style="color:#f92672">*</span>pos;
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n) {
+        sum1[pos] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> k;sum2[pos] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> tem;
+        pos <span style="color:#f92672">+</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">interval_add</span>(ll l, ll r, ll k) {
+    add(l, k);
+    add(r<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span>k);
+}
+</code></pre></div><p>区间查询</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">    ll ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, tem <span style="color:#f92672">=</span> pos;
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) {
+        ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> ((tem<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>sum1[pos] <span style="color:#f92672">-</span> sum2[pos]);
+        pos <span style="color:#f92672">-</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+    <span style="color:#66d9ef">return</span> ans;
+}
+
+ll interval_query(ll l, ll r) {
+    <span style="color:#66d9ef">return</span> query(r)<span style="color:#f92672">-</span>query(l<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+}
+</code></pre></div><p>完整代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 200010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+ll n, m, tm, last, first_val, sum1[maxn], sum2[maxn], tp, ta, tb, tc;
+<span style="color:#75715e">#</span><span style="color:#75715e">define lowbit(x) x&amp;(-x)</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">add</span>(ll pos, ll k) {
+    ll tem <span style="color:#f92672">=</span> k<span style="color:#f92672">*</span>pos;
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n) {
+        sum1[pos] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> k;sum2[pos] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> tem;
+        pos <span style="color:#f92672">+</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">interval_add</span>(ll l, ll r, ll k) {
+    add(l, k);
+    add(r<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">-</span>k);
+}
+
+ll <span style="color:#a6e22e">query</span>(ll pos) {
+    ll ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, tem <span style="color:#f92672">=</span> pos;
+    <span style="color:#66d9ef">while</span> (pos <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) {
+        ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> ((tem<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>sum1[pos] <span style="color:#f92672">-</span> sum2[pos]);
+        pos <span style="color:#f92672">-</span><span style="color:#f92672">=</span> lowbit(pos);
+    }
+    <span style="color:#66d9ef">return</span> ans;
+}
+
+ll <span style="color:#a6e22e">interval_query</span>(ll l, ll r) {
+    <span style="color:#66d9ef">return</span> query(r)<span style="color:#f92672">-</span>query(l<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>tm);add(i, tm<span style="color:#f92672">-</span>last);last<span style="color:#f92672">=</span>tm;}
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>tp);
+        <span style="color:#66d9ef">switch</span> (tp) {
+            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%lld%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc);interval_add(ta, tb, tc);<span style="color:#66d9ef">break</span>;
+            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta);first_val <span style="color:#f92672">+</span><span style="color:#f92672">=</span> ta;<span style="color:#66d9ef">break</span>;
+            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta);first_val <span style="color:#f92672">-</span><span style="color:#f92672">=</span> ta;<span style="color:#66d9ef">break</span>;
+            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb);printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, interval_query(ta, tb)<span style="color:#f92672">+</span>(ta<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span>first_val);<span style="color:#66d9ef">break</span>;
+            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">5</span><span style="color:#f92672">:</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, query(<span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>first_val);<span style="color:#66d9ef">break</span>;
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="树状数组变式题">树状数组变式题</h3>
+<p><a href="https://www.luogu.com.cn/problem/P2345">https://www.luogu.com.cn/problem/P2345</a></p>
+<p>对个数和坐标轴上的坐标进行维护，维护两个树状数组。</p>
+
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

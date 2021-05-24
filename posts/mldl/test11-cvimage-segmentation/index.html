@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>11 CV Image Segmentation - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="11 CV Image Segmentation | Aczy156" />
+	<meta name="twitter:title" content="11 CV Image Segmentation | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="11 CV Image Segmentation | Aczy156" />
+	<meta name="application-name" content="11 CV Image Segmentation | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="11 CV Image Segmentation" />
+<meta property="og:description" content="CV-Image Segmentation 图像分割 传统分割方法 理解：
+ 把图像分割成若干个块 每个块都有相同点 [可以利用拓广性来进行延伸]  基本方法：
+  基于阈值的图像分割：按照灰度值进行提取，直接归成纯白色和纯黑色
+  基于区域的图像分割：延伸合并 &amp; 分裂 【两个可逆的过程】
+ 单个像素点 ==延伸合并==》 一个区域 整张图片 ==分裂==》 若干个区域    基于边缘检测的图像分割： 直接通过提取边缘，来划定不同的区域。
+  分水岭算法
+  Image Segmentation 具体方法分析 基于阈值的图像分割 特点：
+阈值的影响太大：1) 阈值小 =&gt; 对亮的区域/灰度值低的区域 效果好 2) 阈值大 =&gt; 对暗的区域/灰度值高的区域 效果好
+基于区域的图像分割  单个像素点的延伸合并  特点：
+若干个单个像素点的选取影响太大。
+拓广的规则/策略的设定影响太大。
+ 分裂  特点：
+基于边缘检测的图像分割 特点：太依赖边缘的话，有可能没法形成一个回路(差一点形成一个回路)，或者很多没有规则的线。
+基于主动轮廓的图像分割 分水岭算法 特点：对于边缘的分割太过敏感了，容易过度分割
+基于GA遗传算法的图像分割 深度学习分割 基于特征编码 - VGGNet 分割 基于特征编码 - ResNet 特点：缓解梯度消失的问题。（类似于序列模型中的GRU(重置门、更新门)和LSTM(有三个门遗忘门、记忆门、输出门)，GRU就是）" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/mldl/test11-cvimage-segmentation/" />
+<meta property="article:published_time" content="2020-01-28T21:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T21:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="11 CV Image Segmentation"/>
+<meta name="twitter:description" content="CV-Image Segmentation 图像分割 传统分割方法 理解：
+ 把图像分割成若干个块 每个块都有相同点 [可以利用拓广性来进行延伸]  基本方法：
+  基于阈值的图像分割：按照灰度值进行提取，直接归成纯白色和纯黑色
+  基于区域的图像分割：延伸合并 &amp; 分裂 【两个可逆的过程】
+ 单个像素点 ==延伸合并==》 一个区域 整张图片 ==分裂==》 若干个区域    基于边缘检测的图像分割： 直接通过提取边缘，来划定不同的区域。
+  分水岭算法
+  Image Segmentation 具体方法分析 基于阈值的图像分割 特点：
+阈值的影响太大：1) 阈值小 =&gt; 对亮的区域/灰度值低的区域 效果好 2) 阈值大 =&gt; 对暗的区域/灰度值高的区域 效果好
+基于区域的图像分割  单个像素点的延伸合并  特点：
+若干个单个像素点的选取影响太大。
+拓广的规则/策略的设定影响太大。
+ 分裂  特点：
+基于边缘检测的图像分割 特点：太依赖边缘的话，有可能没法形成一个回路(差一点形成一个回路)，或者很多没有规则的线。
+基于主动轮廓的图像分割 分水岭算法 特点：对于边缘的分割太过敏感了，容易过度分割
+基于GA遗传算法的图像分割 深度学习分割 基于特征编码 - VGGNet 分割 基于特征编码 - ResNet 特点：缓解梯度消失的问题。（类似于序列模型中的GRU(重置门、更新门)和LSTM(有三个门遗忘门、记忆门、输出门)，GRU就是）"/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">11 CV Image Segmentation</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="cv-image-segmentation-图像分割">CV-Image Segmentation 图像分割</h2>
+<h2 id="传统分割方法">传统分割方法</h2>
+<p>理解：</p>
+<ul>
+<li>把图像分割成若干个块</li>
+<li>每个块都有相同点 [可以利用拓广性来进行延伸]</li>
+</ul>
+<p>基本方法：</p>
+<ul>
+<li>
+<p>基于<strong>阈值</strong>的图像分割：按照灰度值进行提取，直接归成<strong>纯白色</strong>和<strong>纯黑色</strong></p>
+</li>
+<li>
+<p>基于<strong>区域</strong>的图像分割：延伸合并 &amp; 分裂 【两个可逆的过程】</p>
+<ul>
+<li>单个像素点 ==延伸合并==》 一个区域</li>
+<li>整张图片 ==分裂==》 若干个区域</li>
+</ul>
+</li>
+<li>
+<p>基于<strong>边缘检测</strong>的图像分割： 直接通过提取边缘，来划定不同的区域。</p>
+</li>
+<li>
+<p>分水岭算法</p>
+</li>
+</ul>
+<h2 id="image-segmentation-具体方法分析">Image Segmentation 具体方法分析</h2>
+<h3 id="基于阈值的图像分割">基于阈值的图像分割</h3>
+<p>特点：</p>
+<p>阈值的影响太大：1) 阈值小 =&gt; 对亮的区域/灰度值低的区域 效果好   2) 阈值大 =&gt; 对暗的区域/灰度值高的区域 效果好</p>
+<h3 id="基于区域的图像分割">基于区域的图像分割</h3>
+<ul>
+<li>单个像素点的延伸合并</li>
+</ul>
+<p>特点：</p>
+<p>若干个单个像素点的选取影响太大。</p>
+<p>拓广的规则/策略的设定影响太大。</p>
+<ul>
+<li>分裂</li>
+</ul>
+<p>特点：</p>
+<h3 id="基于边缘检测的图像分割">基于边缘检测的图像分割</h3>
+<p>特点：太依赖边缘的话，有可能没法形成一个回路(差一点形成一个回路)，或者很多没有规则的线。</p>
+<h3 id="基于主动轮廓的图像分割">基于主动轮廓的图像分割</h3>
+<h3 id="分水岭算法">分水岭算法</h3>
+<p>特点：对于边缘的分割太过敏感了，容易过度分割</p>
+<h3 id="基于ga遗传算法的图像分割">基于GA遗传算法的图像分割</h3>
+<h2 id="深度学习分割">深度学习分割</h2>
+<h3 id="基于特征编码---vggnet-分割">基于特征编码 - VGGNet 分割</h3>
+<h3 id="基于特征编码---resnet">基于特征编码 - ResNet</h3>
+<p>特点：缓解梯度消失的问题。（类似于序列模型中的GRU(重置门、更新门)和LSTM(有三个门遗忘门、记忆门、输出门)，GRU就是）</p>
+<h3 id="r-cnntarget-detection--fast-r-cnntarget-detection--mask-r-cnnimage-segmentation">R-CNN[Target Detection] &amp; Fast R-CNN[Target Detection] &amp; Mask R-CNN[Image Segmentation]</h3>
+<p>原理：引入恒等映射，允许原始输入信息直接传到后面的层中，在学习过程中可以只学习上一个网络输出的残差<code>F(x)</code></p>
+<ul>
+<li>R-CNN、Fast R-CNN 目标检测</li>
+<li>Mask R-CNN 目标检测、目标分类、像素级分割(每个像素点进行标注)</li>
+</ul>
+
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

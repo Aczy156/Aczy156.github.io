@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端 on Aczy156</title>
+    <link>https://www.skyzh.dev/categories/%E5%89%8D%E7%AB%AF/</link>
+    <description>Recent content in 前端 on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Sun, 16 Feb 2020 12:19:14 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.skyzh.dev/categories/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vue_router路由跳转</title>
+      <link>https://www.skyzh.dev/posts/other/o-vue_router%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/</link>
+      <pubDate>Sun, 16 Feb 2020 12:19:14 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-vue_router%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/</guid>
+      <description>整体框架结构 Vue router 实现界面导航切换。.。
+  由router/index.js 中的vue-router来指引不同的要跳转的界面
+  在main.js中添加路由跳转的函数，
+  在app.vue中利用router-view来规范router切换的范围
+  在需要跳转的位置利用main.js中的路由跳转函数来进行跳转
+  核心代码 router/index.js
+import Vue from &amp;#39;vue&amp;#39; import VueRouter from &amp;#39;vue-router&amp;#39; Vue.use(VueRouter) export default new VueRouter({ routes: [ { path: &amp;#39;/&amp;#39;, redirect: { name: &amp;#39;home&amp;#39; } }, { path: &amp;#39;/home&amp;#39;, name: &amp;#39;home&amp;#39;, component: require(&amp;#39;../components/AddPicture.vue&amp;#39;).default }, { path: &amp;#39;/page01&amp;#39;, name: &amp;#39;page01&amp;#39;, component: require(&amp;#39;../components/Mainpage.vue&amp;#39;).default } ] }) main.js
+import Vue from &amp;#39;vue&amp;#39; import App from &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>Vue Report</title>
+      <link>https://www.skyzh.dev/posts/other/o-vue-report/</link>
+      <pubDate>Fri, 07 Feb 2020 15:54:32 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-vue-report/</guid>
+      <description>Label &amp;amp; Tag 每一个区块(div)有对应相应的模块的索引，
+ 对应函数有利用@进行对应， 对应css 利用class进行对应：   因为在css也就是在整体的style标签中每个括号对应的部分都有对应的一个类型，然后在标签中通过class=“”来找到对应的样式 其他的对应css的索引的方式直接在标签中加上:style=“”，如果多个的话要加括号      //添加的只有一个属性
+ &amp;lt;div :style=“{x:’……’,b:’……&#39;}” &amp;gt;  //添加的有多个属性=&amp;gt;用大括号扩到一块
+ gutter 纵向的长度
+span 横向的长度
+ 对于更改对input的类型的更改：【包括一些修饰属性的使用、v-decorator的使用】
+首先，v-decorator 是用于对输入内容的获取，是可以对输入进行修饰的，例如可以添加对输入要求的规则、是否是必须的、也可以是自己初始化号的时间……
+前面可以添加对组件的修饰，例如是否可以更改，disabled。
+ 关于label中多层引号，外层用双引号，内层如果需要的话不能用双引号，要用单引号
+ Table的渲染 &amp;amp; 表单中添加动作以及响应机制：
+类似Qt的signal-slot机制。
+在vue中渲染表格首先要定义一个填充的模型，在需要添加动作的利用scopedSlots来进行标示表格中的数据渲染的形式，利用Array(设置dataSource来渲染)最后渲染出来。
+Type of Data 在props中声明：
+Array 数组
+Number 数字
+ 在app.vue 中与组件中的数据进行sync的方法：
+(子组件：在props中声明名字(propsarray,propsnumber)以及类型，
+app.vue：在data中声明(apparat,appnumber))
+对于Array：利用v-bind:apparray=“propsarray”
+对于Number：利用propsnumber.sync=“appnumber”
+对于事件：利用$emit，
+(在子组件中：需要添加动作的组件的触发响应的emit(mark,value),
+在app.vue中：利用子组件中的mark，将mark绑定到app中对应的方法，利用v-on:mark=“appfunction”,或者@mark=“appfunction&amp;rdquo;)
+Ant Design &amp;amp; Element 封装好的组件工具。引入即用
+Ant Design of Vue https://www.antdv.com/docs/vue/introduce/</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>2 历次比赛 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="2 历次比赛 | Aczy156" />
+	<meta name="twitter:title" content="2 历次比赛 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="2 历次比赛 | Aczy156" />
+	<meta name="application-name" content="2 历次比赛 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="2 历次比赛" />
+<meta property="og:description" content="[Kaggle] House Price 结构化数据(表格)、回归问题(预测房价)
+2020.4.20 House Prices V1.0
+
+[Kaggle] TMDB Box Office Prediction 结构化数据(表格，表格拼接)、回归问题
+题意：预测某公司的全球票房
+解法：脏数据的处理(把表格中的特定数据列中的json数据提取解析出来)
+[Kaggle] Digit Recognizer 解法：通过deeplearning&#43;Neutral Network来提取属性，利用分类器来分类，神经网络最后一层用softmax。
+非结构化数据(虽然是利用表格来描述的图片像素点，但是只是通过像素点来表示图像，像素点并不能作为 单独的可以提炼出来的属性)、分类问题(softmax层多分类)
+2020.4.23 Digit Recognizer V1.0
+
+[Kaggle] Titanic 结构化数据(表格)、分类问题(二分类TorF)
+2020.4.26 Titanic V1.0
+2020.7.12 Titanic V2.0: New Featureing Engineering
+
+[Kaggle] DeepFake 非结构化数据(视频-图片,音频)、分类问题(二分类TorF)
+20207.20 DeepFake: Data proprocessing
+
+[iFLYTEK] Temperature Predict 结构化数据(表格)、时序问题(随时间推移)
+2020.7.27 Temperature Predict：Basic structure, use lightgbm and xgboost
+
+[Kaggle] Bike Sharing Demand 结构化数据(表格)、时序问题(随时间推移)
+2020.7.31 bike sharing use rf and GDBT" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/mldl/test2-%E5%8E%86%E6%AC%A1%E6%AF%94%E8%B5%9B/" />
+<meta property="article:published_time" content="2020-01-28T12:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T12:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2 历次比赛"/>
+<meta name="twitter:description" content="[Kaggle] House Price 结构化数据(表格)、回归问题(预测房价)
+2020.4.20 House Prices V1.0
+
+[Kaggle] TMDB Box Office Prediction 结构化数据(表格，表格拼接)、回归问题
+题意：预测某公司的全球票房
+解法：脏数据的处理(把表格中的特定数据列中的json数据提取解析出来)
+[Kaggle] Digit Recognizer 解法：通过deeplearning&#43;Neutral Network来提取属性，利用分类器来分类，神经网络最后一层用softmax。
+非结构化数据(虽然是利用表格来描述的图片像素点，但是只是通过像素点来表示图像，像素点并不能作为 单独的可以提炼出来的属性)、分类问题(softmax层多分类)
+2020.4.23 Digit Recognizer V1.0
+
+[Kaggle] Titanic 结构化数据(表格)、分类问题(二分类TorF)
+2020.4.26 Titanic V1.0
+2020.7.12 Titanic V2.0: New Featureing Engineering
+
+[Kaggle] DeepFake 非结构化数据(视频-图片,音频)、分类问题(二分类TorF)
+20207.20 DeepFake: Data proprocessing
+
+[iFLYTEK] Temperature Predict 结构化数据(表格)、时序问题(随时间推移)
+2020.7.27 Temperature Predict：Basic structure, use lightgbm and xgboost
+
+[Kaggle] Bike Sharing Demand 结构化数据(表格)、时序问题(随时间推移)
+2020.7.31 bike sharing use rf and GDBT"/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">2 历次比赛</h1>
+		</div>
+		
+
+		<section class="body">
+			<h3 id="kaggle-house-price">[Kaggle] House Price</h3>
+<p>结构化数据(表格)、回归问题(预测房价)</p>
+<p>2020.4.20 House Prices V1.0</p>
+<p></br></br></p>
+<h3 id="kaggle-tmdb-box-office-predictionhttpswwwkagglecomctmdb-box-office-prediction">[Kaggle] <a href="https://www.kaggle.com/c/tmdb-box-office-prediction">TMDB Box Office Prediction</a></h3>
+<p>结构化数据(表格，表格拼接)、回归问题</p>
+<p>题意：预测某公司的全球票房</p>
+<p>解法：脏数据的处理(把表格中的特定数据列中的json数据提取解析出来)</p>
+<h3 id="kaggle-digit-recognizer">[Kaggle] Digit Recognizer</h3>
+<p>解法：通过deeplearning+Neutral Network来提取属性，利用分类器来分类，神经网络最后一层用softmax。</p>
+<p><strong>非结构化数据(虽然是利用表格来描述的图片像素点，但是只是通过像素点来表示图像，像素点并不能作为 单独的可以提炼出来的属性)</strong>、分类问题(softmax层多分类)</p>
+<p>2020.4.23 Digit Recognizer V1.0</p>
+<p></br></br></p>
+<h3 id="kaggle-titanic">[Kaggle] Titanic</h3>
+<p>结构化数据(表格)、分类问题(二分类TorF)</p>
+<p>2020.4.26 Titanic V1.0</p>
+<p>2020.7.12 Titanic V2.0: New Featureing Engineering</p>
+<p></br></br></p>
+<h3 id="kaggle-deepfake">[Kaggle] DeepFake</h3>
+<p>非结构化数据(视频-图片,音频)、分类问题(二分类TorF)</p>
+<p>20207.20 DeepFake: Data proprocessing</p>
+<p></br></br></p>
+<h3 id="iflytek-temperature-predict">[iFLYTEK] Temperature Predict</h3>
+<p>结构化数据(表格)、时序问题(随时间推移)</p>
+<p>2020.7.27 Temperature Predict：Basic structure, use lightgbm and xgboost</p>
+<p></br></br></p>
+<h3 id="kaggle-bike-sharing-demand">[Kaggle] Bike Sharing Demand</h3>
+<p>结构化数据(表格)、时序问题(随时间推移)</p>
+<p>2020.7.31 bike sharing use rf and GDBT</p>
+<p></br></br></p>
+<h3 id="kaggle-forest-cover-type-prediction">[Kaggle] Forest Cover Type Prediction</h3>
+<p>结构化数据(表格)、分类问题(多分类，但是由于特征都是需要手动做，所以不需要深度学习模型，通过机器学习模型即可)</p>
+<p>2020.8.6
+<a href="https://www.kaggle.com/aczy156/forest-cover-data-visualize-plotly">Forest Cover Data visualize&ndash;plotly</a> use plotly to visualize (also have matplotlib.pyplot)
+<a href="https://www.kaggle.com/aczy156/feature-engineering-xgboost">Feature Engineering, Xgboost</a> use xgboost and with basic feature engineering</p>
+<p></br></br></p>
+<h3 id="kaggle-员工离职率预测">[Kaggle] 员工离职率预测</h3>
+<p>结构化数据(表格)、分类问题(二分类，Yes/No)</p>
+<p>2020.8.8 <a href="https://www.kaggle.com/aczy156/lr-baseline-for-bi-class">LR baseline for BI-class</a> with one-hot encoding on LR baseline</p>
+<p></br></br></p>
+<h3 id="kaggle-nlp-with-disaster-tweets">[Kaggle] NLP with Disaster Tweets</h3>
+<p>非结构化数据(文字数据，类似语音)、分类问题(二分类，isDisaster/notDisaster)</p>
+<p>题意：通过表格给出的每个样本中的对应的文本内容和标签，来预测测试文本是否预示着灾难disaster</p>
+<p>注意：虽然数据的格式.csv格式，但是实际存储格式是利用表格来映射二分类。</p>
+<p>解法：deeplearning来解决非结构化数据，通过deeplearning+Neutral Network来提取属性，利用分类器来分类，神经网络最后一层用sigmoid函数，来进行二分类，0或1。通过利用bert模型来完成。</p>
+<p>2020.8.10  Keras Bert using TensorflowHub ：直接利用Bert模型，然后训练即可。</p>
+<p>2020.9.30 <a href="https://www.kaggle.com/aczy156/nlp-with-disaster-tweets-glove-lstm-blstm">NLP with Disaster Tweets &ndash; GloVe, LSTM(BLSTM)</a> GloVe 100B LSTM ：当前存在overfitting的问题，train &raquo; val <a href="https://www.kaggle.com/mariapushkareva/nlp-disaster-tweets-with-glove-and-lstm">origin</a></p>
+<p></br></br></p>
+<h3 id="kaggle-bag-of-words-meets-bags-of-popcorn">[Kaggle] Bag of Words Meets Bags of Popcorn</h3>
+<p>非结构化数据(文字数据，类似语音)，回归问题</p>
+<p>题意：「使用Google的Word2Vec进行电影评论」通过表格给出的每个样本中的对应的文本内容和标签，来对用户对电影的点评的情绪进行预测。(0~1之间)</p>
+<p>解法：deeplearning解决非结构化数据，提取特征的方式是通过词袋+text然后映射出一个特征向量。</p>
+<p>2020.8.11 Word2vec, bag of words 基本框架，通过词袋+text然后通过rf进行基本的预测的baseline</p>
+<p>2020.8.12 <a href="https://www.kaggle.com/aczy156/bow-output-probability">Bow, Output probability</a> 在上一个的基础上，通过词袋+text获取对应的特征的时候进行了train_lr, test_lr以及交叉验证，提高了特征的质量。最后使用逻辑回归进行输出。</p>
+<p></br></br></p>
+<h3 id="kaggle-sentiment-analysis-on-movie-reviewshttpswwwkagglecomcsentiment-analysis-on-movie-reviews">[Kaggle] <a href="https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews/">Sentiment Analysis on Movie Reviews</a></h3>
+<p>题意：情感分析，对国外的某个平台(类似知乎的平台)上的信息进行甄别情感类型</p>
+<p>非结构化数据(文字数据)、分类问题(情感分类)</p>
+<p>工具：NLTK(natural language toolkit)来进行英文字符、符号等统计工作。</p>
+<p>2020.8.24 <a href="https://www.kaggle.com/aczy156/sentiment-analysis-on-movie-reviews-lstm">Sentiment Analysis on Movie Reviews &ndash; LSTM</a> 「public notebook，可以查看」使用LSTM。</p>
+<p></br></br></p>
+<h3 id="kaggle-facial-keypoint-detection">[Kaggle] Facial Keypoint Detection</h3>
+<p>非结构化数据(图片数据)</p>
+<p>题意：给出图片，找到面部关键点的位置(百分比坐标)</p>
+<p>2020.8.12 <a href="https://www.kaggle.com/aczy156/basic-netrul-network">Basic Netrul Network</a> baseline</p>
+<p>2020.8.15 <a href="https://www.kaggle.com/aczy156/data-argument-cnn">Data Argument, CNN</a> Generate more data to train.[结合CV过程blog]</p>
+<p></br></br></p>
+<h3 id="kaggle-dogs-vs-cats-redux-kernels-editionhttpswwwkagglecomcdogs-vs-cats-redux-kernels-edition">[Kaggle] <a href="https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition">Dogs vs. Cats Redux: Kernels Edition</a></h3>
+<p>非结构化数据(图片数据)</p>
+<p>主要解决思路：图片通过tqdm(提示进度)、cv2读取图片并转换成data数据，基于预训练模型的迁移学习。</p>
+<p>2020.8.16 <a href="https://www.kaggle.com/aczy156/transfer-leanring-resnet">Dogs vs. Cats - Transfer Leanring [ResNet]</a>  「迁移学习」直接调用深度残差网络ResNet34/ResNet50，来作为主模型，后面添加Dense层(? softmax层)即可。</p>
+<p></br></br></p>
+<h3 id="kaggle-dog-breed-identificationhttpswwwkagglecomcdog-breed-identification">[Kaggle] <a href="https://www.kaggle.com/c/dog-breed-identification">Dog Breed Identification</a></h3>
+<p>非结构化数据(图片)、分类问题(多分类问题，狗有多种品种，查看属于哪种)</p>
+<p>主要解决思路：图片通过tqdm(提示进度)、<code>keras.preprocessing.image</code>的<code>load_img</code>来转换成data数据。</p>
+<p>2020.8.23 <a href="https://www.kaggle.com/aczy156/dog-breed-identification-keras-cnn">Dog Breed Identification &ndash; keras, CNN</a> 利用InceptionV3、xception、NASNetLarge、Inception_Resnet_V2作为特征提取器来图片中的特征，然后最后拼接成model的输入，用model进行预测(MLE Error)</p>
+<p></br></br></p>
+<h3 id="kaggle-credit-card-fraud-detectionhttpswwwkagglecommlg-ulbcreditcardfraudnotebooks">[Kaggle] <a href="https://www.kaggle.com/mlg-ulb/creditcardfraud/notebooks">Credit Card Fraud Detection</a></h3>
+<p>结构化数据(经过PCA处理之后的主成分提取 =&gt; 保护隐私)、异常检测、分类问题(是否是为异常)</p>
+<p>存在的问题：主要是<strong>Imbalance Datasets</strong></p>
+<p>2020.8.18 Note</p>
+<p></br></br></p>
+<h3 id="kaggle-predict-future-saleshttpswwwkagglecomccompetitive-data-science-predict-future-sales">[Kaggle] <a href="https://www.kaggle.com/c/competitive-data-science-predict-future-sales">Predict Future Sales</a></h3>
+<p>结构化数据、时序问题</p>
+<p>解决：通过LSTM解决时序问题</p>
+<p>2020.8.19 <a href="https://www.kaggle.com/aczy156/predict-future-sales-xgboost">Predict Future Sales &ndash; xgboost</a> 首先尝试用非神经网络模型xgboost来解决。</p>
+<p></br></br></p>
+<h3 id="kaggle-random-acts-of-pizzahttpswwwkagglecomcrandom-acts-of-pizza">[Kaggle] <a href="https://www.kaggle.com/c/random-acts-of-pizza">Random Acts of Pizza</a></h3>
+<p></br></br></p>
+<h3 id="kaggle-dogs-vs-cats">[Kaggle] Dogs vs. Cats</h3>
+<p>非结构化数据、分类问题</p>
+<p>2020.9.7 <a href="https://www.kaggle.com/aczy156/dogs-vs-cats-keras-cnn-classification">Dogs vs. Cats &ndash; keras, CNN, classification</a> no output</p>
+<p>2020.9.8 <a href="https://www.kaggle.com/aczy156/dogs-vs-cats-pytorch-tl-resnet18">Dogs vs. Cats &ndash; pytorch, transfer learning, resnet18</a> no output</p>
+<p></br></br></p>
+<h3 id="kaggle-tgs-salt-identification-challengehttpswwwkagglecomctgs-salt-identification-challenge">[Kaggle] <a href="https://www.kaggle.com/c/tgs-salt-identification-challenge">TGS Salt Identification Challenge</a></h3>
+<p>非结构化数据(图像数据)、图像分割</p>
+<p></br></br></p>
+<h3 id="kaggle-covid-mrna-vaccine-degradation-predictionhttpswwwkagglecomcstanford-covid-vaccine">[Kaggle] <a href="https://www.kaggle.com/c/stanford-covid-vaccine">Covid mRNA Vaccine Degradation Prediction</a></h3>
+<ul>
+<li>COVID19 mRNA 疫苗讲解预测</li>
+<li>json 数据结构，通过<code>read_json</code>进行读取</li>
+<li>通过分析一个由<code>A</code>、<code>C</code>、<code>G</code>、<code>U</code>构造的mRNA序列</li>
+<li></li>
+</ul>
+
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

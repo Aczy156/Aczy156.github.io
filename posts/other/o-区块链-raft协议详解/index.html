@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>区块链 RAFT协议详解 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="区块链 RAFT协议详解 | Aczy156" />
+	<meta name="twitter:title" content="区块链 RAFT协议详解 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="区块链 RAFT协议详解 | Aczy156" />
+	<meta name="application-name" content="区块链 RAFT协议详解 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="区块链 RAFT协议详解" />
+<meta property="og:description" content="基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。 RAFT包括三种节点：leader、follower、candidate RAFT协议算法中包括三个基本组件动作，   Leader Election，用来模拟在每次联盟链上选出当前的Leader的操作，即向其他的follower发布并传递请求：在图中的表示形式是每个节点处于follower状态，并自动转化为candidate，然后对自己投票，并发起RequestVoteRPC，随后等待联盟链上的其他节点的回应：  当前节点获得超过半数节点的投票，赢得选举成为Leader，此时该节点所代表的联盟链上的成员可以对其他follower进行指示，可以进行相应的操作。 如果参加选举的节点有多个，也即在有多个成员申请修改链上内容的权限：如果其他节点赢得选举，该节点成为Leader，当前节点接收到对方心跳 ，当前节点变为follower。 选举超时，没有节点赢得选举，当前节点自增任期，重新发起选举：所有申请修改的成员都没有得到响应成功，要重新申请，只到结果呈现为情况1、情况2.    Normal Operation(basic log replication)，用来每次client给每个节点发送请求的过程，每次请求就是一个指令，用来模拟在联盟链中每一个节点需要做的操作。  leader接受请求后，把指令（Entry）追加到leader的操作日志中，然后对follower发起AppendEntries操作，尝试让操作指令(Entry)追加到Followers的操作日志中。如果有Follower不可用，则一直尝试 一旦Leader接受到多数（Quorums）Follower的回应，Leader就会进行commit操作，每一台节点服务器会把操作指令交给状态机处理。这样就保证了各节点的状态的一致性 各服务器状态机处理完成之后，Leader将结果返回给Client。     在这里插入图片描述
+ 对于Normal Operation中的特殊情况例如发生了网络分区，RAFT同样可以以较高的容错性解决该情况，由于部分节点的心跳跳动周期之后没有leader的响应，节点认定为 leader down ，然后重新选举，这是产生双网络之后，有两个client分别为两个leader传达命令，在此情况下两个网络中的节点会有两种不同的指令，但是当修复网络分区之后，两个leader会通过查看期限，最终会统一为一个leader，使整个网络还是保持一致性。     Safety
+ Election safety: 在一个term下，最多只有一个Leader：也即在联盟链中，在没有网络分区的情况下，最多只有一个leader；如果出现了网络分区的情况，则会执行Normal Operation中的特殊情况的执行方法。 Leader Append-Only: 一个Leader只能追加新的entries，不能重写和删除entries Log Matching: 集群中各个节点的log都是相同一致的 Leader Completeness:如果一个log entry被committed了，则这个entry一定会出现在Leader的log里，即leader会一致同步所有follower的信息。 State Machine Safety: 如果一个节点服务器的state machine执行了一个某个log entry命令，则其他节点服务器，也会执行这个log entry命令，不会再执行其他命令。     Excerpt from http://thesecretlivesofdata.com/raft Experpt from In Search of an Understandable Consensus Algorithm" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/" />
+<meta property="article:published_time" content="2020-03-17T21:52:58+08:00" />
+<meta property="article:modified_time" content="2020-03-17T21:52:58+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="区块链 RAFT协议详解"/>
+<meta name="twitter:description" content="基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。 RAFT包括三种节点：leader、follower、candidate RAFT协议算法中包括三个基本组件动作，   Leader Election，用来模拟在每次联盟链上选出当前的Leader的操作，即向其他的follower发布并传递请求：在图中的表示形式是每个节点处于follower状态，并自动转化为candidate，然后对自己投票，并发起RequestVoteRPC，随后等待联盟链上的其他节点的回应：  当前节点获得超过半数节点的投票，赢得选举成为Leader，此时该节点所代表的联盟链上的成员可以对其他follower进行指示，可以进行相应的操作。 如果参加选举的节点有多个，也即在有多个成员申请修改链上内容的权限：如果其他节点赢得选举，该节点成为Leader，当前节点接收到对方心跳 ，当前节点变为follower。 选举超时，没有节点赢得选举，当前节点自增任期，重新发起选举：所有申请修改的成员都没有得到响应成功，要重新申请，只到结果呈现为情况1、情况2.    Normal Operation(basic log replication)，用来每次client给每个节点发送请求的过程，每次请求就是一个指令，用来模拟在联盟链中每一个节点需要做的操作。  leader接受请求后，把指令（Entry）追加到leader的操作日志中，然后对follower发起AppendEntries操作，尝试让操作指令(Entry)追加到Followers的操作日志中。如果有Follower不可用，则一直尝试 一旦Leader接受到多数（Quorums）Follower的回应，Leader就会进行commit操作，每一台节点服务器会把操作指令交给状态机处理。这样就保证了各节点的状态的一致性 各服务器状态机处理完成之后，Leader将结果返回给Client。     在这里插入图片描述
+ 对于Normal Operation中的特殊情况例如发生了网络分区，RAFT同样可以以较高的容错性解决该情况，由于部分节点的心跳跳动周期之后没有leader的响应，节点认定为 leader down ，然后重新选举，这是产生双网络之后，有两个client分别为两个leader传达命令，在此情况下两个网络中的节点会有两种不同的指令，但是当修复网络分区之后，两个leader会通过查看期限，最终会统一为一个leader，使整个网络还是保持一致性。     Safety
+ Election safety: 在一个term下，最多只有一个Leader：也即在联盟链中，在没有网络分区的情况下，最多只有一个leader；如果出现了网络分区的情况，则会执行Normal Operation中的特殊情况的执行方法。 Leader Append-Only: 一个Leader只能追加新的entries，不能重写和删除entries Log Matching: 集群中各个节点的log都是相同一致的 Leader Completeness:如果一个log entry被committed了，则这个entry一定会出现在Leader的log里，即leader会一致同步所有follower的信息。 State Machine Safety: 如果一个节点服务器的state machine执行了一个某个log entry命令，则其他节点服务器，也会执行这个log entry命令，不会再执行其他命令。     Excerpt from http://thesecretlivesofdata.com/raft Experpt from In Search of an Understandable Consensus Algorithm"/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">区块链 RAFT协议详解</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="基于raft共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法">基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。</h2>
+<h2 id="raft包括三种节点leaderfollowercandidate">RAFT包括三种节点：leader、follower、candidate</h2>
+<p><img src="https://img-blog.csdnimg.cn/20200229205736411.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="raft协议算法中包括三个基本组件动作">RAFT协议算法中包括三个基本组件动作，</h2>
+<ul>
+<li>
+<p>Leader Election，用来模拟在每次联盟链上选出当前的Leader的操作，即向其他的follower发布并传递请求：在图中的表示形式是每个节点处于follower状态，并自动转化为candidate，然后对自己投票，并发起RequestVoteRPC，随后等待联盟链上的其他节点的回应：
+<img src="https://img-blog.csdnimg.cn/20200229204624845.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>当前节点获得超过半数节点的投票，赢得选举成为Leader，此时该节点所代表的联盟链上的成员可以对其他follower进行指示，可以进行相应的操作。</li>
+<li>如果参加选举的节点有多个，也即在有多个成员申请修改链上内容的权限：如果其他节点赢得选举，该节点成为Leader，当前节点接收到对方心跳 ，当前节点变为follower。</li>
+<li>选举超时，没有节点赢得选举，当前节点自增任期，重新发起选举：所有申请修改的成员都没有得到响应成功，要重新申请，只到结果呈现为情况1、情况2.</li>
+</ul>
+</li>
+<li>
+<p>Normal Operation(basic log replication)，用来每次client给每个节点发送请求的过程，每次请求就是一个指令，用来模拟在联盟链中每一个节点需要做的操作。
+<img src="https://img-blog.csdnimg.cn/2020022920553657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>leader接受请求后，把指令（Entry）追加到leader的操作日志中，然后对follower发起AppendEntries操作，尝试让操作指令(Entry)追加到Followers的操作日志中。如果有Follower不可用，则一直尝试</li>
+<li>一旦Leader接受到多数（Quorums）Follower的回应，Leader就会进行commit操作，每一台节点服务器会把操作指令交给状态机处理。这样就保证了各节点的状态的一致性</li>
+<li>各服务器状态机处理完成之后，Leader将结果返回给Client。
+<img src="https://img-blog.csdnimg.cn/20200229205517438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+</li>
+<li>
+<p>在这里插入图片描述</p>
+<ul>
+<li>对于Normal Operation中的特殊情况例如发生了网络分区，RAFT同样可以以较高的容错性解决该情况，由于部分节点的心跳跳动周期之后没有leader的响应，节点认定为 leader down ，然后重新选举，这是产生双网络之后，有两个client分别为两个leader传达命令，在此情况下两个网络中的节点会有两种不同的指令，但是当修复网络分区之后，两个leader会通过查看期限，最终会统一为一个leader，使整个网络还是保持一致性。
+<img src="https://img-blog.csdnimg.cn/20200229205556168.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ul>
+</li>
+<li>
+<p>Safety</p>
+<ul>
+<li>Election safety: 在一个term下，最多只有一个Leader：也即在联盟链中，在没有网络分区的情况下，最多只有一个leader；如果出现了网络分区的情况，则会执行Normal Operation中的特殊情况的执行方法。</li>
+<li>Leader Append-Only: 一个Leader只能追加新的entries，不能重写和删除entries</li>
+<li>Log Matching: 集群中各个节点的log都是相同一致的</li>
+<li>Leader Completeness:如果一个log entry被committed了，则这个entry一定会出现在Leader的log里，即leader会一致同步所有follower的信息。</li>
+<li>State Machine Safety: 如果一个节点服务器的state machine执行了一个某个log entry命令，则其他节点服务器，也会执行这个log entry命令，不会再执行其他命令。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Excerpt from <a href="http://thesecretlivesofdata.com/raft">http://thesecretlivesofdata.com/raft</a>
+Experpt from In Search of an Understandable Consensus Algorithm</p>
+</blockquote>
+
+		</section>
+
+		<div class="meta">Posted on Mar 17, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/python">Python</a></li>
+					
+					<li><a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a></li>
+					
+					<li><a href="/tags/raft">RAFT</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

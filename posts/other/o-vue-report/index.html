@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Vue Report - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Vue Report | Aczy156" />
+	<meta name="twitter:title" content="Vue Report | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Vue Report | Aczy156" />
+	<meta name="application-name" content="Vue Report | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Vue Report" />
+<meta property="og:description" content="Label &amp; Tag 每一个区块(div)有对应相应的模块的索引，
+ 对应函数有利用@进行对应， 对应css 利用class进行对应：   因为在css也就是在整体的style标签中每个括号对应的部分都有对应的一个类型，然后在标签中通过class=“”来找到对应的样式 其他的对应css的索引的方式直接在标签中加上:style=“”，如果多个的话要加括号      //添加的只有一个属性
+ &lt;div :style=“{x:’……’,b:’……&#39;}” &gt;  //添加的有多个属性=&gt;用大括号扩到一块
+ gutter 纵向的长度
+span 横向的长度
+ 对于更改对input的类型的更改：【包括一些修饰属性的使用、v-decorator的使用】
+首先，v-decorator 是用于对输入内容的获取，是可以对输入进行修饰的，例如可以添加对输入要求的规则、是否是必须的、也可以是自己初始化号的时间……
+前面可以添加对组件的修饰，例如是否可以更改，disabled。
+ 关于label中多层引号，外层用双引号，内层如果需要的话不能用双引号，要用单引号
+ Table的渲染 &amp; 表单中添加动作以及响应机制：
+类似Qt的signal-slot机制。
+在vue中渲染表格首先要定义一个填充的模型，在需要添加动作的利用scopedSlots来进行标示表格中的数据渲染的形式，利用Array(设置dataSource来渲染)最后渲染出来。
+Type of Data 在props中声明：
+Array 数组
+Number 数字
+ 在app.vue 中与组件中的数据进行sync的方法：
+(子组件：在props中声明名字(propsarray,propsnumber)以及类型，
+app.vue：在data中声明(apparat,appnumber))
+对于Array：利用v-bind:apparray=“propsarray”
+对于Number：利用propsnumber.sync=“appnumber”
+对于事件：利用$emit，
+(在子组件中：需要添加动作的组件的触发响应的emit(mark,value),
+在app.vue中：利用子组件中的mark，将mark绑定到app中对应的方法，利用v-on:mark=“appfunction”,或者@mark=“appfunction&rdquo;)
+Ant Design &amp; Element 封装好的组件工具。引入即用
+Ant Design of Vue https://www.antdv.com/docs/vue/introduce/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/other/o-vue-report/" />
+<meta property="article:published_time" content="2020-02-07T15:54:32+08:00" />
+<meta property="article:modified_time" content="2020-02-07T15:54:32+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vue Report"/>
+<meta name="twitter:description" content="Label &amp; Tag 每一个区块(div)有对应相应的模块的索引，
+ 对应函数有利用@进行对应， 对应css 利用class进行对应：   因为在css也就是在整体的style标签中每个括号对应的部分都有对应的一个类型，然后在标签中通过class=“”来找到对应的样式 其他的对应css的索引的方式直接在标签中加上:style=“”，如果多个的话要加括号      //添加的只有一个属性
+ &lt;div :style=“{x:’……’,b:’……&#39;}” &gt;  //添加的有多个属性=&gt;用大括号扩到一块
+ gutter 纵向的长度
+span 横向的长度
+ 对于更改对input的类型的更改：【包括一些修饰属性的使用、v-decorator的使用】
+首先，v-decorator 是用于对输入内容的获取，是可以对输入进行修饰的，例如可以添加对输入要求的规则、是否是必须的、也可以是自己初始化号的时间……
+前面可以添加对组件的修饰，例如是否可以更改，disabled。
+ 关于label中多层引号，外层用双引号，内层如果需要的话不能用双引号，要用单引号
+ Table的渲染 &amp; 表单中添加动作以及响应机制：
+类似Qt的signal-slot机制。
+在vue中渲染表格首先要定义一个填充的模型，在需要添加动作的利用scopedSlots来进行标示表格中的数据渲染的形式，利用Array(设置dataSource来渲染)最后渲染出来。
+Type of Data 在props中声明：
+Array 数组
+Number 数字
+ 在app.vue 中与组件中的数据进行sync的方法：
+(子组件：在props中声明名字(propsarray,propsnumber)以及类型，
+app.vue：在data中声明(apparat,appnumber))
+对于Array：利用v-bind:apparray=“propsarray”
+对于Number：利用propsnumber.sync=“appnumber”
+对于事件：利用$emit，
+(在子组件中：需要添加动作的组件的触发响应的emit(mark,value),
+在app.vue中：利用子组件中的mark，将mark绑定到app中对应的方法，利用v-on:mark=“appfunction”,或者@mark=“appfunction&rdquo;)
+Ant Design &amp; Element 封装好的组件工具。引入即用
+Ant Design of Vue https://www.antdv.com/docs/vue/introduce/"/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Vue Report</h1>
+		</div>
+		
+
+		<section class="body">
+			<h1 id="label--tag">Label &amp; Tag</h1>
+<p>每一个区块(div)有对应相应的模块的索引，</p>
+<ul>
+<li>对应函数有利用@进行对应，</li>
+<li>对应css 利用class进行对应：</li>
+<li>
+<ul>
+<li>因为在css也就是在整体的style标签中每个括号对应的部分都有对应的一个类型，然后在标签中通过class=“”来找到对应的样式</li>
+<li>其他的对应css的索引的方式直接在标签中加上:style=“”，如果多个的话要加括号</li>
+</ul>
+</li>
+</ul>
+<p> <div :style=“x:……” >  </div> //添加的只有一个属性</p>
+<p> &lt;div :style=“{x:’……’,b:’……'}” &gt;  </div> //添加的有多个属性=&gt;用大括号扩到一块</p>
+<hr>
+<p>gutter 纵向的长度</p>
+<p>span  横向的长度</p>
+<hr>
+<p><strong>对于更改对input的类型的更改</strong>：【包括一些修饰属性的使用、v-decorator的使用】</p>
+<p>首先，v-decorator 是用于对输入内容的获取，是可以对输入进行修饰的，例如可以添加对输入要求的规则、是否是必须的、也可以是自己初始化号的时间……</p>
+<p>前面可以添加对组件的修饰，例如是否可以更改，disabled。</p>
+<hr>
+<p>关于label中多层引号，外层用双引号，内层如果需要的话不能用双引号，要用单引号</p>
+<hr>
+<p>Table的渲染 &amp; 表单中添加动作以及响应机制：</p>
+<p>类似Qt的signal-slot机制。</p>
+<p>在vue中渲染表格首先要定义一个填充的模型，在需要添加动作的利用scopedSlots来进行标示表格中的数据渲染的形式，利用Array(设置dataSource来渲染)最后渲染出来。</p>
+<h1 id="type-of-data">Type of Data</h1>
+<p>在props中声明：</p>
+<p>Array 数组</p>
+<p>Number 数字</p>
+<hr>
+<p>在app.vue 中与组件中的数据进行sync的方法：</p>
+<p>(子组件：在props中声明名字(propsarray,propsnumber)以及类型，</p>
+<p>app.vue：在data中声明(apparat,appnumber))</p>
+<p>对于Array：利用v-bind:apparray=“propsarray”</p>
+<p>对于Number：利用propsnumber.sync=“appnumber”</p>
+<p>对于事件：利用$emit，</p>
+<p>(在子组件中：需要添加动作的组件的触发响应的emit(mark,value),</p>
+<p>在app.vue中：利用子组件中的mark，将mark绑定到app中对应的方法，利用v-on:mark=“appfunction”,或者@mark=“appfunction&rdquo;)</p>
+<h2 id="ant-design--element">Ant Design &amp; Element</h2>
+<p>封装好的组件工具。引入即用</p>
+<p>Ant Design of Vue <a href="https://www.antdv.com/docs/vue/introduce/">https://www.antdv.com/docs/vue/introduce/</a></p>
+<p>Element <a href="https://element.eleme.io/#/zh-CN">https://element.eleme.io/#/zh-CN</a></p>
+
+		</section>
+
+		<div class="meta">Posted on Feb 7, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/vue">Vue</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

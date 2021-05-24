@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>3 数据可视化之EDA - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="3 数据可视化之EDA | Aczy156" />
+	<meta name="twitter:title" content="3 数据可视化之EDA | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="3 数据可视化之EDA | Aczy156" />
+	<meta name="application-name" content="3 数据可视化之EDA | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="3 数据可视化之EDA" />
+<meta property="og:description" content="数据可视化&ndash;categorical data 离散数据 直方图类型 [单个属性]： 根据不同的种类来区分颜色的【通过利用plotly=&gt;histogram】
+import plotly.express as px fig = px.histogram(data, x=&#39;attr&#39;, color=&#39;attr&#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&gt;bar】import matplotlib.pyplot as plt
+eg1:
+plt.bar(data.attr.value_counts().index, data.attr.value_counts().values) eg2:
+df[&#39;Attr&#39;].value_counts().plot.bar() 直方图类型 [单个属性&#43;多个图] ： 通过把不同图放在一个图中
+# value str length fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5)) # get lens list tweet_len_1 = tweet[tweet[&#39;target&#39;] == 1][&#39;text&#39;].str.len() # get list1 ax1.hist(tweet_len_1, color=&#39;green&#39;) tweet_len_0 = tweet[tweet[&#39;target&#39;] == 0][&#39;text&#39;].str.len() # get list2 ax2.hist(tweet_len_0, color=&#39;red&#39;) 直方图类型 [多个属性]： import plotly.express as px fig = px." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/mldl/test3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/" />
+<meta property="article:published_time" content="2020-01-28T13:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T13:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="3 数据可视化之EDA"/>
+<meta name="twitter:description" content="数据可视化&ndash;categorical data 离散数据 直方图类型 [单个属性]： 根据不同的种类来区分颜色的【通过利用plotly=&gt;histogram】
+import plotly.express as px fig = px.histogram(data, x=&#39;attr&#39;, color=&#39;attr&#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&gt;bar】import matplotlib.pyplot as plt
+eg1:
+plt.bar(data.attr.value_counts().index, data.attr.value_counts().values) eg2:
+df[&#39;Attr&#39;].value_counts().plot.bar() 直方图类型 [单个属性&#43;多个图] ： 通过把不同图放在一个图中
+# value str length fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5)) # get lens list tweet_len_1 = tweet[tweet[&#39;target&#39;] == 1][&#39;text&#39;].str.len() # get list1 ax1.hist(tweet_len_1, color=&#39;green&#39;) tweet_len_0 = tweet[tweet[&#39;target&#39;] == 0][&#39;text&#39;].str.len() # get list2 ax2.hist(tweet_len_0, color=&#39;red&#39;) 直方图类型 [多个属性]： import plotly.express as px fig = px."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">3 数据可视化之EDA</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="数据可视化--categorical-data-离散数据">数据可视化&ndash;categorical data 离散数据</h2>
+<h3 id="直方图类型-单个属性">直方图类型 [单个属性]：</h3>
+<p>根据不同的种类来区分颜色的【通过利用plotly=&gt;histogram】</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> plotly.express <span style="color:#f92672">as</span> px
+fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>histogram(data, x<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr</span><span style="color:#e6db74">&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr</span><span style="color:#e6db74">&#39;</span>)
+fig<span style="color:#f92672">.</span>show()
+</code></pre></div><p>直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&gt;bar】<code>import matplotlib.pyplot as plt</code></p>
+<p>eg1:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>bar(data<span style="color:#f92672">.</span>attr<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>index, data<span style="color:#f92672">.</span>attr<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>values)
+</code></pre></div><p>eg2:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Attr</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>value_counts()<span style="color:#f92672">.</span>plot<span style="color:#f92672">.</span>bar()
+</code></pre></div><h3 id="直方图类型-单个属性多个图-">直方图类型 [单个属性+多个图] ：</h3>
+<p>通过把不同图放在一个图中</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># value str length</span>
+fig, (ax1, ax2) <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>))
+<span style="color:#75715e"># get lens list</span>
+tweet_len_1 <span style="color:#f92672">=</span> tweet[tweet[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">target</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>][<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">text</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>len() <span style="color:#75715e"># get list1</span>
+ax1<span style="color:#f92672">.</span>hist(tweet_len_1, color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">green</span><span style="color:#e6db74">&#39;</span>)
+tweet_len_0 <span style="color:#f92672">=</span> tweet[tweet[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">target</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>][<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">text</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>len() <span style="color:#75715e"># get list2</span>
+ax2<span style="color:#f92672">.</span>hist(tweet_len_0, color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">red</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h3 id="直方图类型-多个属性">直方图类型 [多个属性]：</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> plotly.express <span style="color:#f92672">as</span> px
+fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>histogram(data, x<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr1</span><span style="color:#e6db74">&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr2</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h3 id="饼状图-单个属性">饼状图 [单个属性]</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> plotly.express <span style="color:#f92672">as</span> px
+fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>pie(data, name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h2 id="数据可视化--numerical-data连续数据">数据可视化&ndash;numerical data连续数据</h2>
+<h2 id="数据可视化--correlation-相关性图heatmap">数据可视化&ndash;Correlation 相关性图[heatmap]</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f, (ax1, ax2) <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">24</span>,<span style="color:#ae81ff">20</span>))
+
+<span style="color:#75715e"># Entire DataFrame</span>
+corr <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>corr()
+sns<span style="color:#f92672">.</span>heatmap(corr, cmap<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">coolwarm_r</span><span style="color:#e6db74">&#39;</span>, annot_kws<span style="color:#f92672">=</span>{<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">size</span><span style="color:#e6db74">&#39;</span>:<span style="color:#ae81ff">20</span>}, ax<span style="color:#f92672">=</span>ax1)
+ax1<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Imbalanced Correlation Matrix </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> (don</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">t use for reference)</span><span style="color:#e6db74">&#34;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">14</span>)
+
+
+sub_sample_corr <span style="color:#f92672">=</span> new_df<span style="color:#f92672">.</span>corr()
+sns<span style="color:#f92672">.</span>heatmap(sub_sample_corr, cmap<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">coolwarm_r</span><span style="color:#e6db74">&#39;</span>, annot_kws<span style="color:#f92672">=</span>{<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">size</span><span style="color:#e6db74">&#39;</span>:<span style="color:#ae81ff">20</span>}, ax<span style="color:#f92672">=</span>ax2)
+ax2<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">SubSample Correlation Matrix </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74"> (use for reference)</span><span style="color:#e6db74">&#39;</span>, fontsize<span style="color:#f92672">=</span><span style="color:#ae81ff">14</span>)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><h2 id="数据可视化--correlation-相关性图box图">数据可视化&ndash;Correlation 相关性图[Box图]</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># preparation</span>
+colors <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#0101DF</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">#DF0101</span><span style="color:#e6db74">&#34;</span>]
+f, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(ncols<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">20</span>,<span style="color:#ae81ff">4</span>))
+
+sns<span style="color:#f92672">.</span>boxplot(x<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Class</span><span style="color:#e6db74">&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">V17</span><span style="color:#e6db74">&#34;</span>, data<span style="color:#f92672">=</span>new_df, palette<span style="color:#f92672">=</span>colors, ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">0</span>])
+axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">V17 vs Class Negative Correlation</span><span style="color:#e6db74">&#39;</span>)
+
+sns<span style="color:#f92672">.</span>boxplot(x<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Class</span><span style="color:#e6db74">&#34;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">V14</span><span style="color:#e6db74">&#34;</span>, data<span style="color:#f92672">=</span>new_df, palette<span style="color:#f92672">=</span>colors, ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">1</span>])
+axes[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">V14 vs Class Negative Correlation</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h2 id="数据可视化--boxplot">数据可视化&ndash;Boxplot</h2>
+<p>作用：查看是否有离群的点，如果有离群的点(outlier)的话，就删去，防止在训练的时候受到(outlier)影响</p>
+<h2 id="数据可视化-nlp---wordcloud">数据可视化 [NLP] &ndash;WordCloud</h2>
+<p>词云：利用matplotlib进行可视化，然后把wordcloud嵌套进去，最后进行<code>plt.show()</code>来可视化出来。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> wordcloud <span style="color:#f92672">import</span> WordCloud
+<span style="color:#f92672">import</span> matplotlib.pyplot import plt
+</code></pre></div><p>过程：首先产生一个语料库，然后通过wordcloud来generate语料库。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># generate corpus</span>
+corpus_wordcloud <span style="color:#f92672">=</span> create_corpus(data)
+<span style="color:#75715e"># plot wordcloud</span>
+plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">8</span>))
+word_cloud <span style="color:#f92672">=</span> WordCloud(
+  background_color<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">black</span><span style="color:#e6db74">&#39;</span>,
+  max_font_size<span style="color:#f92672">=</span><span style="color:#ae81ff">80</span>
+)<span style="color:#f92672">.</span>generate(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>join(corpus_wordcloud))
+<span style="color:#75715e"># first image show (imshow)</span>
+plt<span style="color:#f92672">.</span>imshow(word_cloud)
+plt<span style="color:#f92672">.</span>show()
+</code></pre></div><h2 id="总结">总结</h2>
+<p>首先关于plot的显示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>legend()  <span style="color:#75715e"># 显示图同时显示图例</span>
+plt<span style="color:#f92672">.</span>show()  <span style="color:#75715e"># 显示图</span>
+</code></pre></div><ul>
+<li>
+<p>plot method</p>
+<ul>
+<li>hist &ndash; histogram 柱状图 [单个属性<code>attr</code>传入然后绘图即可]</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>hist(data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr</span><span style="color:#e6db74">&#39;</span>])
+</code></pre></div><ul>
+<li>scatter &ndash; 散点图 [两个属性传入，然后每个点的横纵坐标代表在两个属性中的区别] =&gt; 两个numerical type</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>scatter(data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr1</span><span style="color:#e6db74">&#39;</span>], data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr2</span><span style="color:#e6db74">&#39;</span>])
+</code></pre></div><ul>
+<li>catplot &ndash; 种类图 [两个属性传入] =&gt; 一个numerical type，一个cateogrical type</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#f92672">.</span>catplot(x<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr1</span><span style="color:#e6db74">&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr2</span><span style="color:#e6db74">&#39;</span>, data<span style="color:#f92672">=</span>data)
+</code></pre></div><ul>
+<li>boxplot &ndash; 箱型图 [两个属性传入] =&gt; 一个numerical，一个cateogrical type ==&gt;</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#f92672">.</span>boxplot(x<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr1</span><span style="color:#e6db74">&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr2</span><span style="color:#e6db74">&#39;</span>, data<span style="color:#f92672">=</span>data)
+</code></pre></div><ul>
+<li>violinplot &ndash; 小提琴图
+<ul>
+<li>补充作用：用于显示数据分布及其概率密度</li>
+<li><img src="https://ask.qcloudimg.com/http-save/yehe-6021899/6ku32q2uug.png?imageView2/2/w/1620" alt="img"></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sns<span style="color:#f92672">.</span>violinplot(x<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr1</span><span style="color:#e6db74">&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr2</span><span style="color:#e6db74">&#39;</span>, data<span style="color:#f92672">=</span>data)
+</code></pre></div></li>
+<li>
+<p>plot image</p>
+<p>one images and some points(which is represent with coordinate in keypoints list)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plot_image</span>(image, keypoints, axis<span style="color:#f92672">=</span>None, title):
+  image <span style="color:#f92672">=</span> image<span style="color:#f92672">.</span>reshape(<span style="color:#ae81ff">96</span>, <span style="color:#ae81ff">96</span>)
+  axis<span style="color:#f92672">.</span>imshow(image)
+  axis<span style="color:#f92672">.</span>scatter(keypoints[<span style="color:#ae81ff">0</span>::<span style="color:#ae81ff">2</span>], keypoints[<span style="color:#ae81ff">1</span>::<span style="color:#ae81ff">2</span>], marker<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">x</span><span style="color:#e6db74">&#39;</span>, s<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>)
+  plt<span style="color:#f92672">.</span>title(title)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plot_image</span>(image, keypoints, axis<span style="color:#f92672">=</span>None):
+  <span style="color:#66d9ef">if</span> axis <span style="color:#f92672">is</span> None:
+    fig, axis <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots()
+  axis<span style="color:#f92672">.</span>scatter(keypoints)
+  axis<span style="color:#f92672">.</span>imshow(keypoints[<span style="color:#ae81ff">0</span>::<span style="color:#ae81ff">2</span>], keypoints[<span style="color:#ae81ff">1</span>::<span style="color:#ae81ff">2</span>], s<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>)
+</code></pre></div></li>
+</ul>
+<h2 id="关于一行中画多个图">关于一行中画多个图</h2>
+<h3 id="1仅用plt做图然后画在一行中的情况">1、仅用plt做图，然后画在一行中的情况</h3>
+<ul>
+<li>利用subplot来进行约束位置【是单数，只需要一个】</li>
+<li>利用plt来画各种各样的图</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">8</span>))
+<span style="color:#75715e"># 做第一个图</span>
+plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>)
+plt<span style="color:#f92672">.</span>scatter(data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr1</span><span style="color:#e6db74">&#39;</span>], data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr2</span><span style="color:#e6db74">&#39;</span>])
+<span style="color:#75715e"># 做第二个图</span>
+plt<span style="color:#f92672">.</span>subplot(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>)
+plt<span style="color:#f92672">.</span>hist(data[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr</span><span style="color:#e6db74">&#39;</span>])
+</code></pre></div><p>同样原理，如果是一行三个的话</p>
+<p><code>plt.subplot(1, 3, 1)</code>   <code>plt.subplot(1, 3, 2)</code>   <code>plt.subplot(1, 3, 3)</code></p>
+<h3 id="2用循环来做图">2、用循环来做图</h3>
+<ul>
+<li>利用<code>axes</code>来存储做图数组</li>
+<li>利用<code>subplots</code>来约束位置【注意，多个的时候是subplots，是定义很多】，并且在<code>sns</code>每一次画图的时候通过ax来进行约束</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f, axes <span style="color:#f92672">=</span> subplot(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">24</span>, <span style="color:#ae81ff">18</span>))
+<span style="color:#66d9ef">for</span> i, e <span style="color:#f92672">in</span> enumerate([col <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> data<span style="color:#f92672">.</span>columns]):
+  	sns<span style="color:#f92672">.</span>violinplot(x<span style="color:#f92672">=</span>e, y<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr</span><span style="color:#e6db74">&#39;</span>, data<span style="color:#f92672">=</span>data, ax<span style="color:#f92672">=</span>axes[i <span style="color:#f92672">/</span><span style="color:#f92672">/</span> <span style="color:#ae81ff">5</span>][i <span style="color:#f92672">%</span> <span style="color:#ae81ff">5</span>])
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaWeb on Aczy156</title>
+    <link>https://www.skyzh.dev/tags/javaweb/</link>
+    <description>Recent content in JavaWeb on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Sun, 07 Jun 2020 19:03:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.skyzh.dev/tags/javaweb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>阿里云CentOS7部署JavaWeb_jar_war_nginx</title>
+      <link>https://www.skyzh.dev/posts/other/o-%E9%98%BF%E9%87%8C%E4%BA%91centos7%E9%83%A8%E7%BD%B2javaweb_jar_war_nginx/</link>
+      <pubDate>Sun, 07 Jun 2020 19:03:25 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-%E9%98%BF%E9%87%8C%E4%BA%91centos7%E9%83%A8%E7%BD%B2javaweb_jar_war_nginx/</guid>
+      <description>(一)第一部分：最基本的jar包运行(无需配置tomcat) [http://60.205.183.114:8081/]
+ 1、配置阿里云(Esc学生服务器、镜像Centos7.7)，并远程连接进入终端。 2、安装并配置JDK(参考https://www.jianshu.com/p/093413f2a04f) a)安装jdk。 b)寻找jdk路径配置环境变量。 c)简单的Java hello world测试确保安装成功。 3、安装并配置mysql(mariadb)(参考https://blog.csdn.net/DaSo_CSDN/article/details/54754936) a)安装mysql、mariadb server。 b)systemctl 开启服务。 c) 打开端口。(阿里云要在控制台打开，参考https://yq.aliyun.com/articles/701181) d) 更改mysql 的root密码，对应于项目配置文件中的密码。 4、利用scp进行文件传输(参考https://www.cnblogs.com/tugenhua0707/p/8278772.html) a)传输spring maven 的快照版本用于测试。 b)传输数据库sql文件。 5、导入数据库 a)创建sql文件对应的数据库。 b)利用文件重定向运行sql文件。 c)检查数据库是否导入成功 6、运行jar文件，控制台获取公网IP，本机输入IP:8081测试。 7、设置后台运行(已设置：http://60.205.183.114:8081/) a)contrl+c中止。 b)然后通过nohup 和 &amp;amp; 来后台运行。 c)ps通过pid来停止后台运行进程。  运行结果 整体过程:
+[root@iZ2ze4r3b4xcztbcsey08cZ ~]# history 1 MAKRER=SHOW_LOCALE;printf $MAKRER&amp;#34;&amp;#34;; locale; MAKRER=SHOW_LOCALE;printf $MAKRER&amp;#34;&amp;#34;; 2 yum install -y mysql 3 yum install -y mariadb-server mariadb 4 systemctl start mariadb 5 systemctl enable mariadb 6 yum install -y mysql-devel 7 firewall-cmd --zone=public --add-port=3306/tcp --permanent 8 CHECK_TYPE=SHELL; echo &amp;#34;INFO=${CHECK_TYPE}PID=$$PPID=$PPIDTTY=$(tty)SHELL=$0HOME=$HOMEPWD=$PWD| CHECK_SHELL_END&amp;#34; 9 ls 10 ifconfig 11 ls 12 yum list 13 java -version 14 ls 15 yum search java-1.</description>
+    </item>
+    
+  </channel>
+</rss>

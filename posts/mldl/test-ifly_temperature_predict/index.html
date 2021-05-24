@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>IFLY Temperature Predict - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="IFLY Temperature Predict | Aczy156" />
+	<meta name="twitter:title" content="IFLY Temperature Predict | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="IFLY Temperature Predict | Aczy156" />
+	<meta name="application-name" content="IFLY Temperature Predict | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="IFLY Temperature Predict" />
+<meta property="og:description" content="描述 随着计算机技术的发展，我国逐渐实现了从传统农业到现代农业的转变，正逐步迈向智慧农业。温室是现代农业技术应用的典型场景，其内部环境具有可操作性，能人为形成适宜植物生长的小型封闭生态系统，提升农产品的产量和质量，因此被广泛应用于农业生产中。在温室的各项环境因子中，作物对温度最为敏感。温度的高低影响植株细胞的酶活性，从而影响作物的生长速度、产量和质量，因此温度对作物生长发育影响极大。为了保证农产品的产量和质量，应保证作物正常生长，需对温室温度进行精确的调控。
+二、赛事任务 温室温度调控需要对温室温度进行精准的预测，本次大赛提供了中国农业大学涿州实验站的温室温度数据作为样本，参赛选手需基于提供的样本构建模型，预测温室温度变化情况。
+三、评审规则 1.数据说明： 本次比赛为参赛选手提供了温室内外的部分传感器数据，包括温室内的温度、湿度、气压以及温室外的温度、湿度、气压。
+本次比赛分为初赛和复赛两个阶段，初赛阶段提供约30天的传感器数据，其中前20天的数据作为训练数据，后10天的数据用于做温度预测；复赛阶段提供约15天的传感器数据，其中前10天的数据作为训练数据，后5天的数据用于做温度预测。
+注1：训练集的数据，每1分钟1条数据记录；测试集的数据，每30分钟1条数据记录。
+注2：选手不能利用“未来的实际数据”预测“过去的数据”，例如，假设要预测2020/6/18 08:08:08的室内温度，就不能利用这个时间点以后的真实数据进行预测。
+特别说明，温室内的湿度和气压以及温室外的温度、湿度和气压会对温室内的温度产生一定的影响。
+2.评估指标 本模型依据提交的结果文件，采用均方误差MSE进行评价。 观测值，预测值，待预测的记录数n，计算公式如下：数据准备工作  load dependencies ：五大常用numpy, pandas, matplotlib, seaborn, warnings 和一些基本的依赖 load data 加载数据：train, test check data 数据的基本状态结构，  加载依赖
+# Common five dependencies import pandas as pd import numpy as np import matplotlib.pyplot as plt %matplotlib inline import seaborn as sns sns.set_style(&#39;whitegrid&#39;) import warnings warnings.filterwarnings(&#39;ignore&#39;) import datetime from tqdm import tqdm 加载数据：注意路径问题
+# load datall df_train = pd." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/mldl/test-ifly_temperature_predict/" />
+<meta property="article:published_time" content="2020-01-28T04:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T04:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IFLY Temperature Predict"/>
+<meta name="twitter:description" content="描述 随着计算机技术的发展，我国逐渐实现了从传统农业到现代农业的转变，正逐步迈向智慧农业。温室是现代农业技术应用的典型场景，其内部环境具有可操作性，能人为形成适宜植物生长的小型封闭生态系统，提升农产品的产量和质量，因此被广泛应用于农业生产中。在温室的各项环境因子中，作物对温度最为敏感。温度的高低影响植株细胞的酶活性，从而影响作物的生长速度、产量和质量，因此温度对作物生长发育影响极大。为了保证农产品的产量和质量，应保证作物正常生长，需对温室温度进行精确的调控。
+二、赛事任务 温室温度调控需要对温室温度进行精准的预测，本次大赛提供了中国农业大学涿州实验站的温室温度数据作为样本，参赛选手需基于提供的样本构建模型，预测温室温度变化情况。
+三、评审规则 1.数据说明： 本次比赛为参赛选手提供了温室内外的部分传感器数据，包括温室内的温度、湿度、气压以及温室外的温度、湿度、气压。
+本次比赛分为初赛和复赛两个阶段，初赛阶段提供约30天的传感器数据，其中前20天的数据作为训练数据，后10天的数据用于做温度预测；复赛阶段提供约15天的传感器数据，其中前10天的数据作为训练数据，后5天的数据用于做温度预测。
+注1：训练集的数据，每1分钟1条数据记录；测试集的数据，每30分钟1条数据记录。
+注2：选手不能利用“未来的实际数据”预测“过去的数据”，例如，假设要预测2020/6/18 08:08:08的室内温度，就不能利用这个时间点以后的真实数据进行预测。
+特别说明，温室内的湿度和气压以及温室外的温度、湿度和气压会对温室内的温度产生一定的影响。
+2.评估指标 本模型依据提交的结果文件，采用均方误差MSE进行评价。 观测值，预测值，待预测的记录数n，计算公式如下：数据准备工作  load dependencies ：五大常用numpy, pandas, matplotlib, seaborn, warnings 和一些基本的依赖 load data 加载数据：train, test check data 数据的基本状态结构，  加载依赖
+# Common five dependencies import pandas as pd import numpy as np import matplotlib.pyplot as plt %matplotlib inline import seaborn as sns sns.set_style(&#39;whitegrid&#39;) import warnings warnings.filterwarnings(&#39;ignore&#39;) import datetime from tqdm import tqdm 加载数据：注意路径问题
+# load datall df_train = pd."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">IFLY Temperature Predict</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="描述">描述</h2>
+<p>随着计算机技术的发展，我国逐渐实现了从传统农业到现代农业的转变，正逐步迈向智慧农业。温室是现代农业技术应用的典型场景，其内部环境具有可操作性，能人为形成适宜植物生长的小型封闭生态系统，提升农产品的产量和质量，因此被广泛应用于农业生产中。在温室的各项环境因子中，作物对温度最为敏感。温度的高低影响植株细胞的酶活性，从而影响作物的生长速度、产量和质量，因此温度对作物生长发育影响极大。为了保证农产品的产量和质量，应保证作物正常生长，需对温室温度进行精确的调控。</p>
+<h3 id="二赛事任务">二、赛事任务</h3>
+<p>温室温度调控需要对温室温度进行精准的预测，本次大赛提供了中国农业大学涿州实验站的温室温度数据作为样本，参赛选手需基于提供的样本构建模型，预测温室温度变化情况。</p>
+<h3 id="三评审规则">三、评审规则</h3>
+<h4 id="1数据说明">1.数据说明：</h4>
+<p>本次比赛为参赛选手提供了温室内外的部分传感器数据，包括温室内的温度、湿度、气压以及温室外的温度、湿度、气压。</p>
+<p>本次比赛分为初赛和复赛两个阶段，初赛阶段提供约30天的传感器数据，其中前20天的数据作为训练数据，后10天的数据用于做温度预测；复赛阶段提供约15天的传感器数据，其中前10天的数据作为训练数据，后5天的数据用于做温度预测。</p>
+<p>注1：训练集的数据，每1分钟1条数据记录；测试集的数据，每30分钟1条数据记录。</p>
+<p>注2：选手不能利用“未来的实际数据”预测“过去的数据”，例如，假设要预测2020/6/18 08:08:08的室内温度，就不能利用这个时间点以后的真实数据进行预测。</p>
+<p>特别说明，温室内的湿度和气压以及温室外的温度、湿度和气压会对温室内的温度产生一定的影响。</p>
+<p><img src="http://aicontest.cn-bj.ufileos.com/2020%2F9.png" alt="img"></p>
+<h4 id="2评估指标">2.评估指标</h4>
+<p>本模型依据提交的结果文件，采用均方误差MSE进行评价。 观测值<img src="http://xfyun-doc.ufile.ucloud.com.cn/1590717863099552/3.png" alt="img">，预测值<img src="http://xfyun-doc.ufile.ucloud.com.cn/1590717898986296/4.png" alt="img">，待预测的记录数n，计算公式如下：<img src="http://xfyun-doc.ufile.ucloud.com.cn/1590717929457957/2.png" alt="img"></p>
+<h2 id="数据准备工作">数据准备工作</h2>
+<ul>
+<li>load dependencies ：五大常用numpy, pandas, matplotlib, seaborn, warnings  和一些基本的依赖</li>
+<li>load data 加载数据：train, test</li>
+<li>check data 数据的基本状态结构，</li>
+</ul>
+<p><strong>加载依赖</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Common five dependencies</span>
+<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+<span style="color:#f92672">import</span> numpy <span style="color:#f92672">as</span> np
+
+<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">%</span>matplotlib inline
+
+<span style="color:#f92672">import</span> seaborn <span style="color:#f92672">as</span> sns
+sns<span style="color:#f92672">.</span>set_style(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">whitegrid</span><span style="color:#e6db74">&#39;</span>)
+
+<span style="color:#f92672">import</span> warnings
+warnings<span style="color:#f92672">.</span>filterwarnings(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ignore</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> datetime
+<span style="color:#f92672">from</span> tqdm <span style="color:#f92672">import</span> tqdm
+</code></pre></div><p><strong>加载数据</strong>：注意路径问题</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># load datall</span>
+df_train <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./data/train/train.csv</span><span style="color:#e6db74">&#39;</span>)
+df_test <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">./data/test/test.csv</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p><strong>检查</strong>-数据结构</p>
+<ul>
+<li>通过利用<code>data.shape</code> 来查看基本的数据(shape为属性)的结构</li>
+<li>通过利用<code>data.columns </code> 来查看数据的attribute属性(columns和shape一样，也是属性)也就是key-value中的key，</li>
+<li>通过利用<code>data.info()</code> 来查看数据的完整信息，包括数据的类型，数据key-value的对应情况，然后还有value中不为null的个数(non-null)，或者也可以通过自己写一个循环，通过遍历data.columns中的所有的属性key对应的所有值的<code>isna()</code>情况并用<code>sum(data[col].isna())</code>来统计和，最后用pd.Dataframe来显示出来即可</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 写成函数，方便后面直接调用</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_info</span>(data):
+    <span style="color:#75715e"># basic shape</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data shape is: {}   sample number {}   attribute number {}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(data<span style="color:#f92672">.</span>shape, data<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>], data<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]))
+    <span style="color:#75715e"># attribute(key)</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data columns number {}  </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">all columns: {}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(len(data<span style="color:#f92672">.</span>columns) ,data<span style="color:#f92672">.</span>columns))
+    <span style="color:#75715e"># value&#39;s null</span>
+    null_cnt <span style="color:#f92672">=</span> [sum(data[col]<span style="color:#f92672">.</span>isna()) <span style="color:#66d9ef">for</span> col <span style="color:#f92672">in</span> data<span style="color:#f92672">.</span>columns]
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data all attribute count null:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>, pd<span style="color:#f92672">.</span>DataFrame(null_cnt, columns<span style="color:#f92672">=</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">cnt null</span><span style="color:#e6db74">&#39;</span>],index<span style="color:#f92672">=</span>data<span style="color:#f92672">.</span>columns))  
+</code></pre></div><p>修改版</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">show_info</span>(data, is_matrix_transpose<span style="color:#f92672">=</span>False):
+    <span style="color:#75715e"># basic shape</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data shape is: {}   sample number {}   attribute number {}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(data<span style="color:#f92672">.</span>shape, data<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">0</span>], data<span style="color:#f92672">.</span>shape[<span style="color:#ae81ff">1</span>]))
+    <span style="color:#75715e"># attribute(key)</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data columns number {}  </span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">all columns: {}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(len(data<span style="color:#f92672">.</span>columns) ,data<span style="color:#f92672">.</span>columns))
+    <span style="color:#75715e"># value&#39;s null</span>
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data all attribute count null:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>, data<span style="color:#f92672">.</span>isna()<span style="color:#f92672">.</span>sum())
+    <span style="color:#75715e"># data value analysis and data demo</span>
+    <span style="color:#66d9ef">if</span> is_matrix_transpose:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data value analysis: </span><span style="color:#e6db74">&#39;</span>, data<span style="color:#f92672">.</span>describe()<span style="color:#f92672">.</span>T)
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data demo without matrix transpose: </span><span style="color:#e6db74">&#39;</span>, data<span style="color:#f92672">.</span>head()<span style="color:#f92672">.</span>T)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data value analysis: </span><span style="color:#e6db74">&#39;</span>, data<span style="color:#f92672">.</span>describe())
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data demo without matrix transpose: </span><span style="color:#e6db74">&#39;</span>, data<span style="color:#f92672">.</span>head())
+</code></pre></div><p>查看某个属性的分类【在最后的二分类或多分类的情况】：也就是属性<code>'Attr'</code>中有多少是标签为分类1</p>
+<p>？？</p>
+<p>查看最后多分类中的数据分布：在最后的分类结果中，有多少各个分类的</p>
+<p>eg： dog breed identification，看看label中有多少种dog的分类</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">all_dog_breeds <span style="color:#f92672">=</span> sorted(list(set(labels[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">breed</span><span style="color:#e6db74">&#39;</span>])))
+</code></pre></div><ul>
+<li>然后调用，并传入想看的数据即可：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">show_info(df_train)
+show_info(df_test)
+</code></pre></div><details><summary>点击展开输出</summary>
+<pre><code>
+data shape is: (25497, 13)   sample number 25497   attribute number 13
+data columns number 13  
+all columns: Index(['time', '年', '月', '日', '小时', '分钟', '秒', '温度(室外)', '湿度(室外)', '气压(室外)',
+       '湿度(室内)', '气压(室内)', 'temperature'],
+      dtype='object')
+data all attribute count null:
+              cnt null
+time                0
+年                   0
+月                   0
+日                   0
+小时                  0
+分钟                  0
+秒                   0
+温度(室外)            660
+湿度(室外)            660
+气压(室外)            660
+湿度(室内)            690
+气压(室内)            690
+temperature       690
+data columns number 12  
+all columns: Index(['time', '年', '月', '日', '小时', '分钟', '秒', '温度(室外)', '湿度(室外)', '气压(室外)',
+       '湿度(室内)', '气压(室内)'],
+      dtype='object')
+data all attribute count null:
+         cnt null
+time           0
+年              0
+月              0
+日              0
+小时             0
+分钟             0
+秒              0
+温度(室外)         2
+湿度(室外)         2
+气压(室外)         2
+湿度(室内)         1
+气压(室内)         1
+</code></pre></details>
+<p><strong>检查</strong>-数据内容(count, mean, std, min=0%, 25%, 50%, 75%, max=100%)：直接用pd.Dataframe 已经内部封装好的函数<code>data.describe()</code>来渲染即可（注意是函数，不是属性了，因为最后是要显示出一个表格）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_train<span style="color:#f92672">.</span>describe()
+</code></pre></div><table>
+<thead>
+<tr>
+<th align="right"></th>
+<th align="right">time</th>
+<th align="right">年</th>
+<th align="right">月</th>
+<th align="right">日</th>
+<th align="right">小时</th>
+<th align="right">分钟</th>
+<th align="right">秒</th>
+<th align="right">温度(室外)</th>
+<th align="right">湿度(室外)</th>
+<th align="right">气压(室外)</th>
+<th align="right">湿度(室内)</th>
+<th align="right">气压(室内)</th>
+<th align="right">temperature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">count</td>
+<td align="right">2.549700e+04</td>
+<td align="right">25497.0</td>
+<td align="right">25497.000000</td>
+<td align="right">25497.000000</td>
+<td align="right">25497.000000</td>
+<td align="right">25497.000000</td>
+<td align="right">25497.000000</td>
+<td align="right">24837.000000</td>
+<td align="right">24837.000000</td>
+<td align="right">24837.000000</td>
+<td align="right">24807.000000</td>
+<td align="right">24807.000000</td>
+<td align="right">24807.000000</td>
+</tr>
+<tr>
+<td align="right">mean</td>
+<td align="right">1.553344e+09</td>
+<td align="right">2019.0</td>
+<td align="right">3.097619</td>
+<td align="right">20.299369</td>
+<td align="right">12.062870</td>
+<td align="right">29.583441</td>
+<td align="right">29.614974</td>
+<td align="right">16.529235</td>
+<td align="right">74.358014</td>
+<td align="right">983.638640</td>
+<td align="right">72.601443</td>
+<td align="right">981.264248</td>
+<td align="right">16.629089</td>
+</tr>
+<tr>
+<td align="right">std</td>
+<td align="right">5.011791e+05</td>
+<td align="right">0.0</td>
+<td align="right">0.296805</td>
+<td align="right">7.938573</td>
+<td align="right">6.895092</td>
+<td align="right">17.282217</td>
+<td align="right">17.218067</td>
+<td align="right">4.249602</td>
+<td align="right">16.349346</td>
+<td align="right">22.990619</td>
+<td align="right">14.051747</td>
+<td align="right">43.900166</td>
+<td align="right">3.693474</td>
+</tr>
+<tr>
+<td align="right">min</td>
+<td align="right">1.552496e+09</td>
+<td align="right">2019.0</td>
+<td align="right">3.000000</td>
+<td align="right">1.000000</td>
+<td align="right">0.000000</td>
+<td align="right">0.000000</td>
+<td align="right">0.000000</td>
+<td align="right">8.900000</td>
+<td align="right">23.000000</td>
+<td align="right">400.200000</td>
+<td align="right">25.000000</td>
+<td align="right">392.500000</td>
+<td align="right">9.300000</td>
+</tr>
+<tr>
+<td align="right">25%</td>
+<td align="right">1.552917e+09</td>
+<td align="right">2019.0</td>
+<td align="right">3.000000</td>
+<td align="right">16.000000</td>
+<td align="right">6.000000</td>
+<td align="right">15.000000</td>
+<td align="right">15.000000</td>
+<td align="right">13.300000</td>
+<td align="right">64.000000</td>
+<td align="right">979.900000</td>
+<td align="right">64.000000</td>
+<td align="right">980.000000</td>
+<td align="right">13.800000</td>
+</tr>
+<tr>
+<td align="right">50%</td>
+<td align="right">1.553342e+09</td>
+<td align="right">2019.0</td>
+<td align="right">3.000000</td>
+<td align="right">22.000000</td>
+<td align="right">13.000000</td>
+<td align="right">30.000000</td>
+<td align="right">30.000000</td>
+<td align="right">15.900000</td>
+<td align="right">78.000000</td>
+<td align="right">986.100000</td>
+<td align="right">76.000000</td>
+<td align="right">985.900000</td>
+<td align="right">16.100000</td>
+</tr>
+<tr>
+<td align="right">75%</td>
+<td align="right">1.553774e+09</td>
+<td align="right">2019.0</td>
+<td align="right">3.000000</td>
+<td align="right">26.000000</td>
+<td align="right">18.000000</td>
+<td align="right">45.000000</td>
+<td align="right">44.000000</td>
+<td align="right">18.600000</td>
+<td align="right">88.000000</td>
+<td align="right">990.400000</td>
+<td align="right">84.000000</td>
+<td align="right">989.900000</td>
+<td align="right">18.400000</td>
+</tr>
+<tr>
+<td align="right">max</td>
+<td align="right">1.554224e+09</td>
+<td align="right">2019.0</td>
+<td align="right">4.000000</td>
+<td align="right">31.000000</td>
+<td align="right">23.000000</td>
+<td align="right">59.000000</td>
+<td align="right">59.000000</td>
+<td align="right">32.600000</td>
+<td align="right">96.000000</td>
+<td align="right">1082.500000</td>
+<td align="right">91.000000</td>
+<td align="right">1013.700000</td>
+<td align="right">30.100000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="eda-探索性数据分析">EDA 探索性数据分析</h2>
+<p>作图、制表、方程拟合、计算特征量等手段探索数据的结构和规律的一种数据分析方法</p>
+<ul>
+<li>预处理：将train和test进行拼接，然后整体看某个属性的情况</li>
+<li>作图：查看数据其中的结构与规律</li>
+</ul>
+<p><strong>预处理</strong>-用pandas中的concat函数<code>pd.concat([df_train, df_test])</code>把train和test连接
+【为了方便分开，就添加一个type属性(&lsquo;train&rsquo;, &lsquo;test&rsquo;)，来区分train集合和test集合】</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df_train[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">type</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">train</span><span style="color:#e6db74">&#39;</span>
+df_test[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">type</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">test</span><span style="color:#e6db74">&#39;</span>
+df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([df_train, df_test])
+</code></pre></div><p>分开：
+由于本来test是没有temperature这个属性的，但是由于拼接了之后和train有这个属性，所以再摘出来就获得了本来没有的这个属性，但是都赋值null了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">train <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">type</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">train</span><span style="color:#e6db74">&#39;</span>]
+test <span style="color:#f92672">=</span> df[df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">type</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">test</span><span style="color:#e6db74">&#39;</span>]
+show_info(train)
+show_info(test)
+</code></pre></div><p>输出为：「即可发现区别经过拼接和分开之后test增加了一列属性」</p>
+<details>
+  <summary>Collapsible</summary>
+  ```xml
+  <p>I am xml</p>
+  `` -- should have an extra one, but don't want this closed.
+</details>
+<details>
+  <summary>点击展开输出</summary>
+  <pre>
+  <code>
+  data shape is: (25497, 14)   sample number 25497   attribute number 14
+	data columns number 14  
+	all columns: Index(['time', '年', '月', '日', '小时', '分钟', '秒', '温度(室外)', '湿度(室外)', '气压(室外)',
+  	     '湿度(室内)', '气压(室内)', 'temperature', 'type'],
+    	  dtype='object')
+	data all attribute count null:
+  	            cnt null
+	time                0
+	年                   0
+	月                   0
+	日                   0
+	小时                  0
+	分钟                  0
+	秒                   0
+	温度(室外)            660
+	湿度(室外)            660
+	气压(室外)            660
+	湿度(室内)            690
+	气压(室内)            690
+	temperature       690
+	type                0
+	data shape is: (406, 14)   sample number 406   attribute number 14
+	data columns number 14  
+	all columns: Index(['time', '年', '月', '日', '小时', '分钟', '秒', '温度(室外)', '湿度(室外)', '气压(室外)',
+  	     '湿度(室内)', '气压(室内)', 'temperature', 'type'],
+    	  dtype='object')
+	data all attribute count null:
+  	            cnt null
+	time                0
+	年                   0
+	月                   0
+	日                   0
+	小时                  0
+	分钟                  0
+	秒                   0
+	温度(室外)              2
+	湿度(室外)              2
+	气压(室外)              2
+	湿度(室内)              1
+	气压(室内)              1
+	temperature       406
+	type                0
+  </code>
+  </pre>
+</details>
+<p><strong>作图</strong></p>
+<ul>
+<li>【hue】最好通过给所有数据添加一个属性type，来画图，这样就可以根据type来进行分类，最后在图中呈现出两种不同的数据的走向</li>
+<li>【col】来区分是表格中的哪种属性</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plot_curve</span>(df, col, hue):
+  plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">24</span>,<span style="color:#ae81ff">5</span>))
+  sns<span style="color:#f92672">.</span>lineplot(x<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">time</span><span style="color:#e6db74">&#39;</span>, y<span style="color:#f92672">=</span>col, hue<span style="color:#f92672">=</span>hue, data<span style="color:#f92672">=</span>df)
+  plt<span style="color:#f92672">.</span>show()
+</code></pre></div><p>调用：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plot_curve(df, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">温度(室外)</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">type</span><span style="color:#e6db74">&#39;</span>)
+plot_curve(df, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">湿度(室外)</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">type</span><span style="color:#e6db74">&#39;</span>)
+plot_curve(df, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">湿度(室内)</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">type</span><span style="color:#e6db74">&#39;</span>)
+plot_curve(df, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">气压(室外)</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">type</span><span style="color:#e6db74">&#39;</span>)
+plot_curve(df, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">气压(室内)</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">type</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

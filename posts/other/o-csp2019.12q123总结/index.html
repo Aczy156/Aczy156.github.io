@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>CSP[2019.12]1.2.3题总结 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="CSP[2019.12]1.2.3题总结 | Aczy156" />
+	<meta name="twitter:title" content="CSP[2019.12]1.2.3题总结 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="CSP[2019.12]1.2.3题总结 | Aczy156" />
+	<meta name="application-name" content="CSP[2019.12]1.2.3题总结 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="CSP[2019.12]1.2.3题总结" />
+<meta property="og:description" content="CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
+// // main.cpp // [201912-1]count-num // // Created by 陈冉飞 on 2020/2/9. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &lt;iostream&gt;using namespace std; int cnt = 0,num = 0,n,a[4]; bool check(int num){ if (num%7 == 0) return true; while (num &gt; 0) { if (num%10 == 7) return true; num/=10; } return false;; } int main(int argc, const char * argv[]) { scanf(&#34;%d&#34;,&amp;n); while (cnt &lt; n) { num&#43;&#43;; if (check(num)) {a[(num-1)%4]&#43;&#43;;cnt--;} cnt&#43;&#43;; } printf(&#34;%d\n%d\n%d\n%d\n&#34;,a[0],a[1],a[2],a[3]); return 0; } 第二题 一开始想复杂了，想成搜索了，后来网页往下滚动看到了1e3果断循环暴力，结果还真是，，。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/other/o-csp2019.12q123%E6%80%BB%E7%BB%93/" />
+<meta property="article:published_time" content="2020-02-09T21:54:27+08:00" />
+<meta property="article:modified_time" content="2020-02-09T21:54:27+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSP[2019.12]1.2.3题总结"/>
+<meta name="twitter:description" content="CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
+// // main.cpp // [201912-1]count-num // // Created by 陈冉飞 on 2020/2/9. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &lt;iostream&gt;using namespace std; int cnt = 0,num = 0,n,a[4]; bool check(int num){ if (num%7 == 0) return true; while (num &gt; 0) { if (num%10 == 7) return true; num/=10; } return false;; } int main(int argc, const char * argv[]) { scanf(&#34;%d&#34;,&amp;n); while (cnt &lt; n) { num&#43;&#43;; if (check(num)) {a[(num-1)%4]&#43;&#43;;cnt--;} cnt&#43;&#43;; } printf(&#34;%d\n%d\n%d\n%d\n&#34;,a[0],a[1],a[2],a[3]); return 0; } 第二题 一开始想复杂了，想成搜索了，后来网页往下滚动看到了1e3果断循环暴力，结果还真是，，。"/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">CSP[2019.12]1.2.3题总结</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="csp201912123题总结">CSP[2019.12]1.2.3题总结</h2>
+<h3 id="1题">1题</h3>
+<p>找7倍数或者含有7的数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  main.cpp
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  [201912-1]count-num
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Created by 陈冉飞 on 2020/2/9.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Copyright © 2020 陈冉飞. All rights reserved.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">int</span> cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,num <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,n,a[<span style="color:#ae81ff">4</span>];
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">check</span>(<span style="color:#66d9ef">int</span> num){
+    <span style="color:#66d9ef">if</span> (num<span style="color:#f92672">%</span><span style="color:#ae81ff">7</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">while</span> (num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">if</span> (num<span style="color:#f92672">%</span><span style="color:#ae81ff">10</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>) <span style="color:#66d9ef">return</span> true;
+        num<span style="color:#f92672">/</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;
+    }
+    <span style="color:#66d9ef">return</span> false;;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> argv[]) {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">while</span> (cnt <span style="color:#f92672">&lt;</span> n) {
+        num<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        <span style="color:#66d9ef">if</span> (check(num)) {a[(num<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">%</span><span style="color:#ae81ff">4</span>]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;cnt<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;}
+        cnt<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,a[<span style="color:#ae81ff">0</span>],a[<span style="color:#ae81ff">1</span>],a[<span style="color:#ae81ff">2</span>],a[<span style="color:#ae81ff">3</span>]);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div><h3 id="第二题">第二题</h3>
+<p>一开始想复杂了，想成搜索了，后来网页往下滚动看到了1e3果断循环暴力，结果还真是，，。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  main.cpp
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  [201912-2]search-trush
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Created by 陈冉飞 on 2020/2/9.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Copyright © 2020 陈冉飞. All rights reserved.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 1010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n,x[maxn],y[maxn],cnt[maxn],flag[maxn],dir[<span style="color:#ae81ff">8</span>][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> {{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>},{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>},{<span style="color:#ae81ff">0</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>},{<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>},{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>},{<span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>},{<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>},{<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>}},ans[<span style="color:#ae81ff">5</span>];
+
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> argv[]) {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>x[i],<span style="color:#f92672">&amp;</span>y[i]);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">8</span>; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>){
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> n; k<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+                <span style="color:#66d9ef">if</span> (x[i] <span style="color:#f92672">+</span> dir[j][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> x[k] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> y[i] <span style="color:#f92672">+</span> dir[j][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> y[k])
+                    cnt[i]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+            <span style="color:#66d9ef">if</span> (j <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> cnt[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>) flag[i] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>){
+        <span style="color:#66d9ef">if</span> (flag[i]) ans[cnt[i]<span style="color:#f92672">-</span><span style="color:#ae81ff">4</span>]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,ans[i]);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="第三题">第三题</h3>
+<p>，，，<del>菜炸了</del>好tm麻烦，一堆坑，想法用的是原来数据结构课设里用的化简多项式的思路，一层一层括号的往下递归， 这个唯一不同的就是自变量稍微复杂一点，多了个大小写，然后系数是由前后共同决定的罢了，但是却写了一下午，，，然后还才50分。。。无语了，不过菜归菜，顺手复习了C++的string库</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string&gt;  //具体哪个需要哪个记不太清了，</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cctype&gt;  //#include &lt;ctype.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 截取 
+</span><span style="color:#75715e"></span>str.substr(bg,length);
+<span style="color:#75715e">// 替换
+</span><span style="color:#75715e"></span>str <span style="color:#f92672">=</span> str.replace(bg,length,goalstr);
+<span style="color:#75715e">// 插入
+</span><span style="color:#75715e"></span>str.insert(index,insertstr);  <span style="color:#75715e">// index 为插入之后的索引。
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 判断是否数字、大小写、字母
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (isdigit(str[i])){}
+<span style="color:#66d9ef">if</span> (isupper(str[i])){}
+<span style="color:#66d9ef">if</span> (islower(str[i])){}
+<span style="color:#66d9ef">if</span> (isalpha(str[i])){}
+<span style="color:#75715e">// string to int
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> stoi(str);
+</code></pre></div><p>然后debug真是帮大忙了
+中间索引啥的脑袋要炸掉了
+<img src="https://img-blog.csdnimg.cn/20200209195048717.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>最后附上50分代码<del>后面接着改</del></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  main.cpp
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  [201912-3]chemistry-equation
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Created by 陈冉飞 on 2020/2/9.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//  Copyright © 2020 陈冉飞. All rights reserved.
+</span><span style="color:#75715e"></span><span style="color:#75715e">//
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">alp</span>{
+    string name;
+    <span style="color:#66d9ef">int</span> cnt;
+    alp(string name,<span style="color:#66d9ef">int</span> cnt)<span style="color:#f92672">:</span>name(name),cnt(cnt){}
+};
+<span style="color:#66d9ef">int</span> n;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span>alp<span style="color:#f92672">&gt;</span> l;
+vector<span style="color:#f92672">&lt;</span>alp<span style="color:#f92672">&gt;</span> r;
+string str,strl,strr;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;ctype.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+string <span style="color:#a6e22e">trans</span>(string str){
+    <span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> str.length(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) <span style="color:#66d9ef">if</span> (str[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(</span><span style="color:#e6db74">&#39;</span>)flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (str[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> str[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#39;</span>) str.insert(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1</span><span style="color:#e6db74">&#34;</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>flag) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> str.length(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">if</span> (str[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">(</span><span style="color:#e6db74">&#39;</span>) {
+            <span style="color:#66d9ef">int</span> ti <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(str.length()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>); j <span style="color:#f92672">&gt;</span> i; j<span style="color:#f92672">-</span><span style="color:#f92672">-</span>){
+                <span style="color:#66d9ef">if</span> (str[j] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#39;</span>) ti<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+                <span style="color:#66d9ef">if</span> (str[j] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> ti <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) {
+                    <span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+                    <span style="color:#66d9ef">for</span> (; k <span style="color:#f92672">&lt;</span> str.length() <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> isdigit(str[k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]); k<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {}
+                    str <span style="color:#f92672">=</span> str.replace(i, k<span style="color:#f92672">-</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, trans(str.substr(i,k<span style="color:#f92672">-</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)));
+                }
+            }
+        }
+    }
+    <span style="color:#75715e">// mutliply the coefficient solve ()x
+</span><span style="color:#75715e"></span>    string transtr;
+    <span style="color:#66d9ef">int</span> coef <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#66d9ef">int</span>(str.length()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>); i <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> str[i] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#39;</span>; i<span style="color:#f92672">-</span><span style="color:#f92672">-</span>)
+        <span style="color:#66d9ef">if</span> (isdigit(str[i])) coef <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (str[i]<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">*</span>pow(<span style="color:#ae81ff">10</span>,<span style="color:#66d9ef">int</span>(str.length()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">-</span>i);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; str[i] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#39;</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">if</span> (isupper(str[i]) <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> islower(str[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>])) {
+            <span style="color:#66d9ef">if</span> (isdigit(str[i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>])) {
+                <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>;
+                <span style="color:#66d9ef">for</span> (; j <span style="color:#f92672">&lt;</span> str.length() <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> isdigit(str[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]); j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {}
+                transtr <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (str.substr(i,<span style="color:#ae81ff">2</span>)<span style="color:#f92672">+</span>to_string(coef<span style="color:#f92672">*</span>stoi(str.substr(i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,j<span style="color:#f92672">-</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))));
+            }<span style="color:#66d9ef">else</span> transtr <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (str.substr(i,<span style="color:#ae81ff">2</span>)<span style="color:#f92672">+</span>to_string(coef));
+        }<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (isupper(str[i])) {
+            <span style="color:#66d9ef">if</span> (isdigit(str[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>])) {
+                <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+                <span style="color:#66d9ef">for</span> (; j <span style="color:#f92672">&lt;</span> str.length() <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> isdigit(str[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]); j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {}
+                transtr <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (str.substr(i,<span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>to_string(coef<span style="color:#f92672">*</span>stoi(str.substr(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">-</span>i))));
+            }<span style="color:#66d9ef">else</span> transtr <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (str.substr(i,<span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span>to_string(coef));
+        }
+    <span style="color:#66d9ef">return</span> transtr;
+}
+
+vector<span style="color:#f92672">&lt;</span>alp<span style="color:#f92672">&gt;</span> trans_to_vector(string str,vector<span style="color:#f92672">&lt;</span>alp<span style="color:#f92672">&gt;</span> b){
+    <span style="color:#66d9ef">if</span> (isdigit(str[<span style="color:#ae81ff">0</span>])) {
+        <span style="color:#66d9ef">int</span> di <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (; isdigit(str[di<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]); di<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {}
+        str <span style="color:#f92672">=</span> trans(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">(</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>str<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>str.substr(<span style="color:#ae81ff">0</span>,di<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>));
+    }<span style="color:#66d9ef">else</span> str <span style="color:#f92672">=</span> trans(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">(</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">+</span>str<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">)1</span><span style="color:#e6db74">&#34;</span>);
+    
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> str.length(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+        <span style="color:#66d9ef">if</span> (isupper(str[i]) <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> islower(str[i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>])) {
+            <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>;
+            <span style="color:#66d9ef">for</span> (; j <span style="color:#f92672">&lt;</span> str.length() <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> isdigit(str[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]); j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {}
+            <span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> b.size(); k<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+                <span style="color:#66d9ef">if</span> (b[k].name <span style="color:#f92672">=</span><span style="color:#f92672">=</span> str.substr(i,<span style="color:#ae81ff">2</span>)) {b[k].cnt <span style="color:#f92672">+</span><span style="color:#f92672">=</span> stoi(str.substr(i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,j<span style="color:#f92672">-</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>));flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;}
+            <span style="color:#66d9ef">if</span> (flag) b.push_back(alp(str.substr(i,<span style="color:#ae81ff">2</span>),stoi(str.substr(i<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>,j<span style="color:#f92672">-</span>i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))));
+        }<span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> (isupper(str[i])) {
+            <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">for</span> (; j <span style="color:#f92672">&lt;</span> str.length() <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> isdigit(str[j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]); j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {}
+            <span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; k <span style="color:#f92672">&lt;</span> b.size(); k<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+                <span style="color:#66d9ef">if</span> (b[k].name <span style="color:#f92672">=</span><span style="color:#f92672">=</span> str.substr(i,<span style="color:#ae81ff">1</span>)) {b[k].cnt <span style="color:#f92672">+</span><span style="color:#f92672">=</span> stoi(str.substr(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">-</span>i));flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;}
+            <span style="color:#66d9ef">if</span> (flag) b.push_back(alp(str.substr(i,<span style="color:#ae81ff">1</span>),stoi(str.substr(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">-</span>i))));
+        }
+    }
+    <span style="color:#66d9ef">return</span> b;
+}
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">solve</span>(string str){
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> str.length(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">if</span> (str[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#39;</span>) strl <span style="color:#f92672">=</span> str.substr(<span style="color:#ae81ff">0</span>,i)<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">+</span><span style="color:#e6db74">&#39;</span>,strr <span style="color:#f92672">=</span> str.substr(i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,str.length()<span style="color:#f92672">-</span>i)<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">+</span><span style="color:#e6db74">&#39;</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> bg <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> strl.length(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">if</span> (strl[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">+</span><span style="color:#e6db74">&#39;</span>) {l <span style="color:#f92672">=</span> trans_to_vector(strl.substr(bg,i<span style="color:#f92672">-</span>bg),l);bg <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;}
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> bg <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> strr.length(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+        <span style="color:#66d9ef">if</span> (strr[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">+</span><span style="color:#e6db74">&#39;</span>) {r <span style="color:#f92672">=</span> trans_to_vector(strr.substr(bg,i<span style="color:#f92672">-</span>bg),r);bg <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;}
+    <span style="color:#66d9ef">int</span> flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> l.size(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>){
+        <span style="color:#66d9ef">int</span> mark <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> r.size(); j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>)
+            <span style="color:#66d9ef">if</span> (l[i].name <span style="color:#f92672">=</span><span style="color:#f92672">=</span> r[j].name <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> l[i].cnt <span style="color:#f92672">=</span><span style="color:#f92672">=</span> r[j].cnt) mark <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">if</span> (mark) {flag <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;}
+    }
+    <span style="color:#66d9ef">if</span> (flag) <span style="color:#66d9ef">return</span> true;
+    <span style="color:#66d9ef">return</span> false;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> argv[]) {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+        l.clear();r.clear();
+        cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>str;
+        <span style="color:#66d9ef">if</span>(solve(str)){printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Y</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);}
+        <span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">N</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 9, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

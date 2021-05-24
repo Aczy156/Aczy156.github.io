@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Python虚拟环境virtualenv的使用 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Python虚拟环境virtualenv的使用 | Aczy156" />
+	<meta name="twitter:title" content="Python虚拟环境virtualenv的使用 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Python虚拟环境virtualenv的使用 | Aczy156" />
+	<meta name="application-name" content="Python虚拟环境virtualenv的使用 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Python虚拟环境virtualenv的使用" />
+<meta property="og:description" content=" Virtualenv用于为某个项目新配置一个独立的python环境而产生 环境为macOS pip安装virtualvenvsudo pip install virtualenv
+ mac如果有安装Xcode，则在/usr/bin中自带有python2.7，可用于配置python2.7的相关环境 而自己装配的python3则在/usr/local/bin中，可用于python3的相关环境
+第一种方法：
+ 通过在创建项目之前，先开好一个venv mkdir newproject cd newproject 指定python版本(以自带的python2.7为例) virtualenv -p /usr/bin venv2.7 激活当前的虚拟环境 source venv/bin/activate [然后可以通过pip list 查看当前的这个虚拟环境中都有什么以来,此时因为已经成为虚拟环境，在指令前面会变成(venv)localhost:newproject aczy156$:，会多出一个(venv),会显示出此时的python版本、已经安装的各种库函数(博主手动安装的numpy pyzmq，剩下的自带的)]  在pycharm中选择virtualenv作为环境，然后选择对应的版本的interpreter(博主在这一步的时候打开之后pycharm直接识别到了创建好的venv，都是默认选好的了)  在新的空目录下选择virtualenv，然后location是这个目录下存放库的文件，可以起名为venv，interpreter为python版本。 此时就配置好虚拟环境了。
+ terminal 通过 deactivate可以退出source环境下的编辑。  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/other/o-python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv%E7%9A%84%E4%BD%BF%E7%94%A8/" />
+<meta property="article:published_time" content="2020-04-05T17:13:50+08:00" />
+<meta property="article:modified_time" content="2020-04-05T17:13:50+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python虚拟环境virtualenv的使用"/>
+<meta name="twitter:description" content=" Virtualenv用于为某个项目新配置一个独立的python环境而产生 环境为macOS pip安装virtualvenvsudo pip install virtualenv
+ mac如果有安装Xcode，则在/usr/bin中自带有python2.7，可用于配置python2.7的相关环境 而自己装配的python3则在/usr/local/bin中，可用于python3的相关环境
+第一种方法：
+ 通过在创建项目之前，先开好一个venv mkdir newproject cd newproject 指定python版本(以自带的python2.7为例) virtualenv -p /usr/bin venv2.7 激活当前的虚拟环境 source venv/bin/activate [然后可以通过pip list 查看当前的这个虚拟环境中都有什么以来,此时因为已经成为虚拟环境，在指令前面会变成(venv)localhost:newproject aczy156$:，会多出一个(venv),会显示出此时的python版本、已经安装的各种库函数(博主手动安装的numpy pyzmq，剩下的自带的)]  在pycharm中选择virtualenv作为环境，然后选择对应的版本的interpreter(博主在这一步的时候打开之后pycharm直接识别到了创建好的venv，都是默认选好的了)  在新的空目录下选择virtualenv，然后location是这个目录下存放库的文件，可以起名为venv，interpreter为python版本。 此时就配置好虚拟环境了。
+ terminal 通过 deactivate可以退出source环境下的编辑。  "/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Python虚拟环境virtualenv的使用</h1>
+		</div>
+		
+
+		<section class="body">
+			<blockquote>
+<h2 id="virtualenv用于为某个项目新配置一个独立的python环境而产生">Virtualenv用于为某个项目新配置一个独立的python环境而产生</h2>
+<p>环境为macOS
+pip安装virtualvenv<code>sudo pip install virtualenv</code></p>
+</blockquote>
+<p>mac如果有安装Xcode，则在<code>/usr/bin</code>中自带有python2.7，可用于配置python2.7的相关环境
+而自己装配的python3则在<code>/usr/local/bin</code>中，可用于python3的相关环境</p>
+<p>第一种方法：</p>
+<ul>
+<li>通过在创建项目之前，先开好一个venv
+<code>mkdir newproject</code>
+<code>cd newproject</code></li>
+<li>指定python版本(以自带的python2.7为例)
+<code>virtualenv -p /usr/bin venv2.7</code></li>
+<li>激活当前的虚拟环境
+<code>source venv/bin/activate</code>
+[然后可以通过<code>pip list</code> 查看当前的这个虚拟环境中都有什么以来,此时因为已经成为虚拟环境，在指令前面会变成<code>(venv)localhost:newproject aczy156$:</code>，会多出一个(venv),会显示出此时的python版本、已经安装的各种库函数(博主手动安装的<code>numpy pyzmq</code>，剩下的自带的)]
+<img src="https://img-blog.csdnimg.cn/20200321140516166.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li>在pycharm中选择virtualenv作为环境，然后选择对应的版本的interpreter(博主在这一步的时候打开之后pycharm直接识别到了创建好的venv，都是默认选好的了)</li>
+</ul>
+<p><img src="https://img-blog.csdnimg.cn/20200321142343685.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+在新的空目录下选择virtualenv，然后location是这个目录下存放库的文件，可以起名为venv，interpreter为python版本。
+此时就配置好虚拟环境了。</p>
+<ul>
+<li>terminal 通过 <code>deactivate</code>可以退出source环境下的编辑。</li>
+</ul>
+
+		</section>
+
+		<div class="meta">Posted on Apr 5, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/python">Python</a></li>
+					
+					<li><a href="/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2">环境&amp;部署</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

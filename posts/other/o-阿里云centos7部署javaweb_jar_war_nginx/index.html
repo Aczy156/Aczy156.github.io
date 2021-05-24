@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>阿里云CentOS7部署JavaWeb_jar_war_nginx - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="阿里云CentOS7部署JavaWeb_jar_war_nginx | Aczy156" />
+	<meta name="twitter:title" content="阿里云CentOS7部署JavaWeb_jar_war_nginx | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="阿里云CentOS7部署JavaWeb_jar_war_nginx | Aczy156" />
+	<meta name="application-name" content="阿里云CentOS7部署JavaWeb_jar_war_nginx | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="阿里云CentOS7部署JavaWeb_jar_war_nginx" />
+<meta property="og:description" content="(一)第一部分：最基本的jar包运行(无需配置tomcat) [http://60.205.183.114:8081/]
+ 1、配置阿里云(Esc学生服务器、镜像Centos7.7)，并远程连接进入终端。 2、安装并配置JDK(参考https://www.jianshu.com/p/093413f2a04f) a)安装jdk。 b)寻找jdk路径配置环境变量。 c)简单的Java hello world测试确保安装成功。 3、安装并配置mysql(mariadb)(参考https://blog.csdn.net/DaSo_CSDN/article/details/54754936) a)安装mysql、mariadb server。 b)systemctl 开启服务。 c) 打开端口。(阿里云要在控制台打开，参考https://yq.aliyun.com/articles/701181) d) 更改mysql 的root密码，对应于项目配置文件中的密码。 4、利用scp进行文件传输(参考https://www.cnblogs.com/tugenhua0707/p/8278772.html) a)传输spring maven 的快照版本用于测试。 b)传输数据库sql文件。 5、导入数据库 a)创建sql文件对应的数据库。 b)利用文件重定向运行sql文件。 c)检查数据库是否导入成功 6、运行jar文件，控制台获取公网IP，本机输入IP:8081测试。 7、设置后台运行(已设置：http://60.205.183.114:8081/) a)contrl&#43;c中止。 b)然后通过nohup 和 &amp; 来后台运行。 c)ps通过pid来停止后台运行进程。  运行结果 整体过程:
+[root@iZ2ze4r3b4xcztbcsey08cZ ~]# history 1 MAKRER=SHOW_LOCALE;printf $MAKRER&#34;&#34;; locale; MAKRER=SHOW_LOCALE;printf $MAKRER&#34;&#34;; 2 yum install -y mysql 3 yum install -y mariadb-server mariadb 4 systemctl start mariadb 5 systemctl enable mariadb 6 yum install -y mysql-devel 7 firewall-cmd --zone=public --add-port=3306/tcp --permanent 8 CHECK_TYPE=SHELL; echo &#34;INFO=${CHECK_TYPE}PID=$$PPID=$PPIDTTY=$(tty)SHELL=$0HOME=$HOMEPWD=$PWD| CHECK_SHELL_END&#34; 9 ls 10 ifconfig 11 ls 12 yum list 13 java -version 14 ls 15 yum search java-1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/other/o-%E9%98%BF%E9%87%8C%E4%BA%91centos7%E9%83%A8%E7%BD%B2javaweb_jar_war_nginx/" />
+<meta property="article:published_time" content="2020-06-07T19:03:25+08:00" />
+<meta property="article:modified_time" content="2020-06-07T19:03:25+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="阿里云CentOS7部署JavaWeb_jar_war_nginx"/>
+<meta name="twitter:description" content="(一)第一部分：最基本的jar包运行(无需配置tomcat) [http://60.205.183.114:8081/]
+ 1、配置阿里云(Esc学生服务器、镜像Centos7.7)，并远程连接进入终端。 2、安装并配置JDK(参考https://www.jianshu.com/p/093413f2a04f) a)安装jdk。 b)寻找jdk路径配置环境变量。 c)简单的Java hello world测试确保安装成功。 3、安装并配置mysql(mariadb)(参考https://blog.csdn.net/DaSo_CSDN/article/details/54754936) a)安装mysql、mariadb server。 b)systemctl 开启服务。 c) 打开端口。(阿里云要在控制台打开，参考https://yq.aliyun.com/articles/701181) d) 更改mysql 的root密码，对应于项目配置文件中的密码。 4、利用scp进行文件传输(参考https://www.cnblogs.com/tugenhua0707/p/8278772.html) a)传输spring maven 的快照版本用于测试。 b)传输数据库sql文件。 5、导入数据库 a)创建sql文件对应的数据库。 b)利用文件重定向运行sql文件。 c)检查数据库是否导入成功 6、运行jar文件，控制台获取公网IP，本机输入IP:8081测试。 7、设置后台运行(已设置：http://60.205.183.114:8081/) a)contrl&#43;c中止。 b)然后通过nohup 和 &amp; 来后台运行。 c)ps通过pid来停止后台运行进程。  运行结果 整体过程:
+[root@iZ2ze4r3b4xcztbcsey08cZ ~]# history 1 MAKRER=SHOW_LOCALE;printf $MAKRER&#34;&#34;; locale; MAKRER=SHOW_LOCALE;printf $MAKRER&#34;&#34;; 2 yum install -y mysql 3 yum install -y mariadb-server mariadb 4 systemctl start mariadb 5 systemctl enable mariadb 6 yum install -y mysql-devel 7 firewall-cmd --zone=public --add-port=3306/tcp --permanent 8 CHECK_TYPE=SHELL; echo &#34;INFO=${CHECK_TYPE}PID=$$PPID=$PPIDTTY=$(tty)SHELL=$0HOME=$HOMEPWD=$PWD| CHECK_SHELL_END&#34; 9 ls 10 ifconfig 11 ls 12 yum list 13 java -version 14 ls 15 yum search java-1."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">阿里云CentOS7部署JavaWeb_jar_war_nginx</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="一第一部分最基本的jar包运行无需配置tomcat">(一)第一部分：最基本的jar包运行(无需配置tomcat)</h2>
+<p>[<a href="http://60.205.183.114:8081/">http://60.205.183.114:8081/</a>]</p>
+<ul>
+<li>1、配置阿里云(Esc学生服务器、镜像Centos7.7)，并远程连接进入终端。</li>
+<li>2、安装并配置JDK(参考https://www.jianshu.com/p/093413f2a04f)
+a)安装jdk。
+b)寻找jdk路径配置环境变量。
+c)简单的Java hello world测试确保安装成功。</li>
+<li>3、安装并配置mysql(mariadb)(参考<a href="https://blog.csdn.net/DaSo_CSDN/article/details/54754936">https://blog.csdn.net/DaSo_CSDN/article/details/54754936</a>)
+a)安装mysql、mariadb server。
+b)systemctl 开启服务。
+c)  打开端口。(阿里云要在控制台打开，参考https://yq.aliyun.com/articles/701181)
+d)  更改mysql 的root密码，对应于项目配置文件中的密码。</li>
+<li>4、利用scp进行文件传输(参考<a href="https://www.cnblogs.com/tugenhua0707/p/8278772.html">https://www.cnblogs.com/tugenhua0707/p/8278772.html</a>)
+a)传输spring maven 的快照版本用于测试。
+b)传输数据库sql文件。</li>
+<li>5、导入数据库
+a)创建sql文件对应的数据库。
+b)利用文件重定向运行sql文件。
+c)检查数据库是否导入成功</li>
+<li>6、运行jar文件，控制台获取公网IP，本机输入IP:8081测试。</li>
+<li>7、设置后台运行(已设置：<a href="http://60.205.183.114:8081/">http://60.205.183.114:8081/</a>)
+a)contrl+c中止。
+b)然后通过nohup 和 &amp; 来后台运行。
+c)ps通过pid来停止后台运行进程。</li>
+</ul>
+<p>运行结果
+整体过程:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@iZ2ze4r3b4xcztbcsey08cZ ~<span style="color:#f92672">]</span><span style="color:#75715e"># history</span>
+    <span style="color:#ae81ff">1</span>   MAKRER<span style="color:#f92672">=</span>SHOW_LOCALE;printf $MAKRER<span style="color:#e6db74">&#34;&#34;</span>; locale; MAKRER<span style="color:#f92672">=</span>SHOW_LOCALE;printf $MAKRER<span style="color:#e6db74">&#34;&#34;</span>;
+    <span style="color:#ae81ff">2</span>  yum install -y mysql
+    <span style="color:#ae81ff">3</span>  yum install -y mariadb-server mariadb
+    <span style="color:#ae81ff">4</span>  systemctl start mariadb
+    <span style="color:#ae81ff">5</span>  systemctl enable mariadb
+    <span style="color:#ae81ff">6</span>  yum install -y mysql-devel
+    <span style="color:#ae81ff">7</span>  firewall-cmd --zone<span style="color:#f92672">=</span>public --add-port<span style="color:#f92672">=</span>3306/tcp --permanent
+    <span style="color:#ae81ff">8</span>   CHECK_TYPE<span style="color:#f92672">=</span>SHELL; echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">INFO=</span><span style="color:#e6db74">${</span>CHECK_TYPE<span style="color:#e6db74">}</span><span style="color:#e6db74"> PID=</span>$$<span style="color:#e6db74"> PPID=</span>$PPID<span style="color:#e6db74"> TTY=</span><span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span><span style="color:#e6db74"> SHELL=</span>$0<span style="color:#e6db74"> HOME=</span>$HOME<span style="color:#e6db74"> PWD=</span>$PWD<span style="color:#e6db74">| CHECK_SHELL_END</span><span style="color:#e6db74">&#34;</span>
+    <span style="color:#ae81ff">9</span>  ls
+   <span style="color:#ae81ff">10</span>  ifconfig
+   <span style="color:#ae81ff">11</span>  ls
+   <span style="color:#ae81ff">12</span>  yum list
+   <span style="color:#ae81ff">13</span>  java -version
+   <span style="color:#ae81ff">14</span>  ls
+   <span style="color:#ae81ff">15</span>  yum search java-1.8
+   <span style="color:#ae81ff">16</span>  yum -y install java-1.8.0-openjdk-devel.x86_64
+   <span style="color:#ae81ff">17</span>  java -version
+   <span style="color:#ae81ff">18</span>  cd /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.252.b09-2.el7_8.x86_64/
+   <span style="color:#ae81ff">19</span>  pwd
+   <span style="color:#ae81ff">20</span>  vim /etc/profile
+   <span style="color:#ae81ff">21</span>  . /etc/profile
+   <span style="color:#ae81ff">22</span>  vim Demo.java
+   <span style="color:#ae81ff">23</span>  javac  Demo.java
+   <span style="color:#ae81ff">24</span>  java Demo
+   <span style="color:#ae81ff">25</span>  su
+   <span style="color:#ae81ff">26</span>   MAKRER<span style="color:#f92672">=</span>SHOW_LOCALE;printf $MAKRER<span style="color:#e6db74">&#34;&#34;</span>; locale; MAKRER<span style="color:#f92672">=</span>SHOW_LOCALE;printf $MAKRER<span style="color:#e6db74">&#34;&#34;</span>;
+   <span style="color:#ae81ff">27</span>   CHECK_TYPE<span style="color:#f92672">=</span>SHELL; echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">INFO=</span><span style="color:#e6db74">${</span>CHECK_TYPE<span style="color:#e6db74">}</span><span style="color:#e6db74"> PID=</span>$$<span style="color:#e6db74"> PPID=</span>$PPID<span style="color:#e6db74"> TTY=</span><span style="color:#66d9ef">$(</span>tty<span style="color:#66d9ef">)</span><span style="color:#e6db74"> SHELL=</span>$0<span style="color:#e6db74"> HOME=</span>$HOME<span style="color:#e6db74"> PWD=</span>$PWD<span style="color:#e6db74">| CHECK_SHELL_END</span><span style="color:#e6db74">&#34;</span>
+   <span style="color:#ae81ff">28</span>  mysql -u root
+   <span style="color:#ae81ff">29</span>  ls
+   <span style="color:#ae81ff">30</span>  pwd
+   <span style="color:#ae81ff">31</span>  ifconfig
+   <span style="color:#ae81ff">32</span>  ls
+   <span style="color:#ae81ff">33</span>  mysql
+   <span style="color:#ae81ff">34</span>  mysql -u root jpetstore &lt; jpetstore.sql
+   <span style="color:#ae81ff">35</span>  mariadb
+   <span style="color:#ae81ff">36</span>  mysql
+   <span style="color:#ae81ff">37</span>  java -jar mypetstore-0.0.3-SNAPSHOT.jar
+   <span style="color:#ae81ff">38</span>  nohup java -jar mypetstore-0.0.3-SNAPSHOT.jar &amp;
+   <span style="color:#ae81ff">39</span>  ps
+   <span style="color:#ae81ff">40</span>  history
+<span style="color:#f92672">[</span>root@iZ2ze4r3b4xcztbcsey08cZ ~<span style="color:#f92672">]</span># 
+</code></pre></div><p>控制台开端口
+<img src="https://img-blog.csdnimg.cn/20200531133322417.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>利用scp传文件
+<img src="https://img-blog.csdnimg.cn/2020053113331914.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+运行mysql 文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@iZ2ze4r3b4xcztbcsey08cZ ~<span style="color:#f92672">]</span><span style="color:#75715e"># mysql</span>
+Welcome to the MariaDB monitor.  Commands end with ; or <span style="color:#ae81ff">\g</span>.
+Your MariaDB connection id is <span style="color:#ae81ff">3</span>
+Server version: 5.5.65-MariaDB MariaDB Server
+
+Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type <span style="color:#e6db74">&#39;help;&#39;</span> or <span style="color:#e6db74">&#39;\h&#39;</span> <span style="color:#66d9ef">for</span> help. Type <span style="color:#e6db74">&#39;\c&#39;</span> to clear the current input statement.
+
+MariaDB <span style="color:#f92672">[</span><span style="color:#f92672">(</span>none<span style="color:#f92672">)</span><span style="color:#f92672">]</span>&gt; create database jpetstore;
+Query OK, <span style="color:#ae81ff">1</span> row affected <span style="color:#f92672">(</span>0.00 sec<span style="color:#f92672">)</span>
+
+MariaDB <span style="color:#f92672">[</span><span style="color:#f92672">(</span>none<span style="color:#f92672">)</span><span style="color:#f92672">]</span>&gt; quit
+Bye
+<span style="color:#f92672">[</span>root@iZ2ze4r3b4xcztbcsey08cZ ~<span style="color:#f92672">]</span><span style="color:#75715e"># mysql -u root jpetstore &lt; jpetstore.sql</span> 
+<span style="color:#f92672">[</span>root@iZ2ze4r3b4xcztbcsey08cZ ~<span style="color:#f92672">]</span><span style="color:#75715e"># mariadb</span>
+-bash: mariadb: command not found
+<span style="color:#f92672">[</span>root@iZ2ze4r3b4xcztbcsey08cZ ~<span style="color:#f92672">]</span><span style="color:#75715e"># mysql</span>
+Welcome to the MariaDB monitor.  Commands end with ; or <span style="color:#ae81ff">\g</span>.
+Your MariaDB connection id is <span style="color:#ae81ff">5</span>
+Server version: 5.5.65-MariaDB MariaDB Server
+
+Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type <span style="color:#e6db74">&#39;help;&#39;</span> or <span style="color:#e6db74">&#39;\h&#39;</span> <span style="color:#66d9ef">for</span> help. Type <span style="color:#e6db74">&#39;\c&#39;</span> to clear the current input statement.
+
+MariaDB <span style="color:#f92672">[</span><span style="color:#f92672">(</span>none<span style="color:#f92672">)</span><span style="color:#f92672">]</span>&gt; show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| jpetstore          |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+<span style="color:#ae81ff">5</span> rows in set <span style="color:#f92672">(</span>0.00 sec<span style="color:#f92672">)</span>
+
+MariaDB <span style="color:#f92672">[</span><span style="color:#f92672">(</span>none<span style="color:#f92672">)</span><span style="color:#f92672">]</span>&gt; use jpetstore;
+Reading table information <span style="color:#66d9ef">for</span> completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB <span style="color:#f92672">[</span>jpetstore<span style="color:#f92672">]</span>&gt; show tables;
++---------------------+
+| Tables_in_jpetstore |
++---------------------+
+| account             |
+| addlog              |
+| bannerdata          |
+| browselog           |
+| cart                |
+| cartitem            |
+| category            |
+| inventory           |
+| item                |
+| lineitem            |
+| orders              |
+| orderstatus         |
+| product             |
+| profile             |
+| sequence            |
+| signon              |
+| supplier            |
++---------------------+
+<span style="color:#ae81ff">17</span> rows in set <span style="color:#f92672">(</span>0.00 sec<span style="color:#f92672">)</span>
+</code></pre></div><p>访问<a href="http://60.205.183.114:8081/">http://60.205.183.114:8081/</a></p>
+<p><img src="https://img-blog.csdnimg.cn/20200531133310604.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="二第二部分利用tomcat容器对war包进行处理需要tomcat">(二)第二部分：利用Tomcat容器对war包进行处理(需要Tomcat)</h2>
+<p>[<a href="http://60.205.183.114:8080/myJPetStore_war/index.jsp">http://60.205.183.114:8080/myJPetStore_war/index.jsp</a>]</p>
+<ul>
+<li>1、安装Tomcat(参考<a href="https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-centos-7">https://www.digitalocean.com/community/tutorials/how-to-install-apache-tomcat-8-on-centos-7</a>)
+a)本地下载tomcat，然后利用scp文件传输
+b)设置访问权限
+c)设置服务配置
+d)输入IP:8080测试是否已经开启服务</li>
+<li>2、数据库/端口配置
+a)数据库root 密码 和服务器对应
+b)端口配置，在上面已经开启了8080端口</li>
+<li>3、利用scp传输war包，放到webapp里边(直接会解析出文件)</li>
+<li>4、重启tomcat服务
+a)bin下的shutdown.sh
+b)bin下的startup.sh</li>
+<li>5、本机测试访问
+a)注意要添加访问的资源的路径/myJPetStore_war/index.jsp，然后tomcat容器会自动到webapp下去寻找
+b)  已设置tomcat容器：<a href="http://60.205.183.114:8080/myJPetStore_war/index.jsp">http://60.205.183.114:8080/myJPetStore_war/index.jsp</a></li>
+</ul>
+<p>运行结果
+整体过程</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   <span style="color:#ae81ff">52</span>  ls
+   <span style="color:#ae81ff">53</span>  sudo mkdir /opt/tomcat
+   <span style="color:#ae81ff">54</span>  sudo tar xvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+   <span style="color:#ae81ff">55</span>  cd /opt/tomcat
+   <span style="color:#ae81ff">56</span>  sudo chgrp -R tomcat /opt/tomcat
+   <span style="color:#ae81ff">57</span>  sudo chmod -R g+r conf
+   <span style="color:#ae81ff">58</span>  sudo chmod g+x conf
+   <span style="color:#ae81ff">59</span>  sudo chown -R tomcat webapps/ work/ temp/ logs/
+   <span style="color:#ae81ff">60</span>  sudo vi /etc/systemd/system/tomcat.service
+   <span style="color:#ae81ff">61</span>  sudo systemctl daemon-reload
+   <span style="color:#ae81ff">62</span>  sudo systemctl start tomcat
+   <span style="color:#ae81ff">63</span>  sudo systemctl status tomcat
+   <span style="color:#ae81ff">64</span>  sudo systemctl enable tomcat
+   <span style="color:#ae81ff">65</span>  ls
+   <span style="color:#ae81ff">66</span>  cd webapps/
+   <span style="color:#ae81ff">67</span>  pwd
+   <span style="color:#ae81ff">68</span>  ls
+   <span style="color:#ae81ff">69</span>  sudo systemctl restart tomcat
+   <span style="color:#ae81ff">70</span>  cd ../bin/
+   <span style="color:#ae81ff">71</span>  ls
+   <span style="color:#ae81ff">72</span>  sh shutdown.sh 
+   <span style="color:#ae81ff">73</span>  sh startup.sh 
+   <span style="color:#ae81ff">74</span>  history
+<span style="color:#f92672">[</span>root@iZ2ze4r3b4xcztbcsey08cZ bin<span style="color:#f92672">]</span># 
+</code></pre></div><p>利用systemctl查看tomcat的状态
+<img src="https://img-blog.csdnimg.cn/20200531133301366.png" alt="在这里插入图片描述"></p>
+<p>验证是否开启tomcat服务
+<img src="https://img-blog.csdnimg.cn/20200531133257207.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>将war包直接传入webapp中</p>
+<p><img src="https://img-blog.csdnimg.cn/20200531134939420.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+然后webapp会自动解析war包(即myJPetStore_war)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@iZ2ze4r3b4xcztbcsey08cZ webapps<span style="color:#f92672">]</span><span style="color:#75715e"># pwd</span>
+/opt/tomcat/webapps
+<span style="color:#f92672">[</span>root@iZ2ze4r3b4xcztbcsey08cZ webapps<span style="color:#f92672">]</span><span style="color:#75715e"># ls</span>
+docs  examples  host-manager  manager  myJPetStore_war  myJPetStore_war.war  ROOT
+</code></pre></div><p>访问<a href="http://60.205.183.114:8080/myJPetStore_war/index.jsp">http://60.205.183.114:8080/myJPetStore_war/index.jsp</a>
+<img src="https://img-blog.csdnimg.cn/20200531133251485.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h2 id="三第三部分指定域名进行访问">(三)第三部分：指定域名进行访问</h2>
+<p>[<a href="http://crf.codes/">http://crf.codes/</a>]</p>
+<ul>
+<li>1、配置virmach vps，达到可以通过IP进行访问
+a)过程同第一步，最后设置为后台运行。
+b)  已配置：<a href="http://198.12.120.212:8081/">http://198.12.120.212:8081/</a></li>
+<li>2、服务器安装web server (安装nginx，参考<a href="http://blog.kenyang.net/2019/02/26/upgrade-nginx-to-latest-version-on-centos">http://blog.kenyang.net/2019/02/26/upgrade-nginx-to-latest-version-on-centos</a>)</li>
+<li>3、在域名提供商 name(或者cloudflare)进行DNS域名解析，进行请求中转。
+a)ping 域名(<code>ping crf.codes</code>)查看是否绑定成功。</li>
+<li>4、修改nginx 配置文件
+a)Web server 设定域名
+b)Location 配置index界面
+c)开放Linux系统防火墙
+d)访问crf.code <a href="http://crf.codes/">http://crf.codes/</a></li>
+</ul>
+<p>运行结果
+域名提供商(name)配置dns</p>
+<p><img src="https://img-blog.csdnimg.cn/20200531133243475.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>验证dns是否配置成功
+<code>ping crf.codes</code>，可以看到
+<img src="https://img-blog.csdnimg.cn/20200531133237815.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+修改nginx配置文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">server <span style="color:#f92672">{</span>
+    listen       80;
+    server_name   crf.codes;
+
+    <span style="color:#75715e">#charset koi8-r;</span>
+    access_log  /var/log/nginx/host.access.log  main;
+
+    location / <span style="color:#f92672">{</span>
+        <span style="color:#75715e"># root   /usr/share/nginx/html;</span>
+        index  index.html index.htm;
+        proxy_pass http://127.0.0.1:8081/;
+        <span style="color:#75715e"># proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+        <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">#error_page  404              /404.html;</span>
+
+    <span style="color:#75715e"># redirect server error pages to the static page /50x.html</span>
+    #
+    error_page   <span style="color:#ae81ff">500</span> <span style="color:#ae81ff">502</span> <span style="color:#ae81ff">503</span> <span style="color:#ae81ff">504</span>  /50x.html;
+    location <span style="color:#f92672">=</span> /50x.html <span style="color:#f92672">{</span>
+        root   /usr/share/nginx/html;
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span>
+    #
+    <span style="color:#75715e">#location ~ \.php$ {</span>
+    <span style="color:#75715e">#    proxy_pass   http://127.0.0.1;</span>
+    <span style="color:#75715e">#}</span>
+
+    <span style="color:#75715e"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span>
+    #
+    <span style="color:#75715e">#location ~ \.php$ {</span>
+    <span style="color:#75715e">#    root           html;</span>
+    <span style="color:#75715e">#    fastcgi_pass   127.0.0.1:9000;</span>
+    <span style="color:#75715e">#    fastcgi_index  index.php;</span>
+    <span style="color:#75715e">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span>
+    <span style="color:#75715e">#    include        fastcgi_params;</span>
+    <span style="color:#75715e">#}</span>
+
+    <span style="color:#75715e"># deny access to .htaccess files, if Apache&#39;s document root</span>
+    <span style="color:#75715e"># concurs with nginx&#39;s one</span>
+    #
+    <span style="color:#75715e">#location ~ /\.ht {</span>
+    <span style="color:#75715e">#    deny  all;</span>
+    <span style="color:#75715e">#}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>访问crf.codes</p>
+<p><img src="https://img-blog.csdnimg.cn/2020053113322164.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+		</section>
+
+		<div class="meta">Posted on Jun 7, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/javaweb">JavaWeb</a></li>
+					
+					<li><a href="/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2">环境&amp;部署</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

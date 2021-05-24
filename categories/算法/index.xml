@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on Aczy156</title>
+    <link>https://www.skyzh.dev/categories/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Wed, 08 Apr 2020 20:42:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.skyzh.dev/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Common_Algorithm</title>
+      <link>https://www.skyzh.dev/posts/other/o-common_algorithm/</link>
+      <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-common_algorithm/</guid>
+      <description>最短路 hdu2544
+ dijkstra找距离当前点中未被刷新过距离起点最值的最小值(!vis[j] &amp;amp;&amp;amp; min(d[j]))拿来刷新到其他点的距离 如果d[v] + mp[v][j] &amp;lt; d[j]就刷新到j点的距离，j点要是未被刷新的点。  void dijkstra(){ for (int i = 0; i &amp;lt; n; i++) d[i] = mp[0][i]; vis[0] = 1; for (int i = 0; i &amp;lt; n; i++) { tem = INF;v = 0; for (int j = 0; j &amp;lt; n; j++) if (!vis[j] &amp;amp;&amp;amp; d[j] &amp;lt;= tem){ tem = d[j]; v = j; } vis[v] = 1; for (int j = 0; j &amp;lt; n; j++) if (!</description>
+    </item>
+    
+    <item>
+      <title>Dp回文串问题整理</title>
+      <link>https://www.skyzh.dev/posts/other/o-dp%E5%9B%9E%E6%96%87%E4%B8%B2%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/</link>
+      <pubDate>Wed, 08 Apr 2020 20:41:58 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-dp%E5%9B%9E%E6%96%87%E4%B8%B2%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/</guid>
+      <description>回文串dp问题
+判断最长回文串  bool dp[i][j]表示从[i,j]这一段是否为回文串 状态转移方程：dp[i][j] = (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1||dp[i+1]dp[j-1]))?true:false (j &amp;gt; i) j-i == 1 是对aa这种两个字符呈对称形式的情况  // // main.cpp // 5回文子串 // // Created by 陈冉飞 on 2020/4/6. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010char s[maxn]; int main(int argc, const char * argv[]) { scanf(&amp;#34;%s&amp;#34;,s); int len = strlen(s),ans = 0; bool dp[len][len]; for (int i = 0; i &amp;lt; len; i++) dp[i][i] = true; for (int j = 1; j &amp;lt; len; j++) for (int i = 0; i &amp;lt; j; i++) if (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1 || dp[i+1][j-1])) {dp[i][j] = true;ans = max(ans,j-i+1);} else dp[i][j] = false; printf(&amp;#34;%d\n&amp;#34;,ans); return 0; } 以回文串形式抽取字串的最小次数  dp[i][j]表示区间[i,j]的最少抽取次数 状态转移方程 if (s[i] == s[j]) dp[i][j] = (j-i == 1)?</description>
+    </item>
+    
+    <item>
+      <title>区块链 RAFT协议详解</title>
+      <link>https://www.skyzh.dev/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</link>
+      <pubDate>Tue, 17 Mar 2020 21:52:58 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</guid>
+      <description>基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。 RAFT包括三种节点：leader、follower、candidate RAFT协议算法中包括三个基本组件动作，   Leader Election，用来模拟在每次联盟链上选出当前的Leader的操作，即向其他的follower发布并传递请求：在图中的表示形式是每个节点处于follower状态，并自动转化为candidate，然后对自己投票，并发起RequestVoteRPC，随后等待联盟链上的其他节点的回应：  当前节点获得超过半数节点的投票，赢得选举成为Leader，此时该节点所代表的联盟链上的成员可以对其他follower进行指示，可以进行相应的操作。 如果参加选举的节点有多个，也即在有多个成员申请修改链上内容的权限：如果其他节点赢得选举，该节点成为Leader，当前节点接收到对方心跳 ，当前节点变为follower。 选举超时，没有节点赢得选举，当前节点自增任期，重新发起选举：所有申请修改的成员都没有得到响应成功，要重新申请，只到结果呈现为情况1、情况2.    Normal Operation(basic log replication)，用来每次client给每个节点发送请求的过程，每次请求就是一个指令，用来模拟在联盟链中每一个节点需要做的操作。  leader接受请求后，把指令（Entry）追加到leader的操作日志中，然后对follower发起AppendEntries操作，尝试让操作指令(Entry)追加到Followers的操作日志中。如果有Follower不可用，则一直尝试 一旦Leader接受到多数（Quorums）Follower的回应，Leader就会进行commit操作，每一台节点服务器会把操作指令交给状态机处理。这样就保证了各节点的状态的一致性 各服务器状态机处理完成之后，Leader将结果返回给Client。     在这里插入图片描述
+ 对于Normal Operation中的特殊情况例如发生了网络分区，RAFT同样可以以较高的容错性解决该情况，由于部分节点的心跳跳动周期之后没有leader的响应，节点认定为 leader down ，然后重新选举，这是产生双网络之后，有两个client分别为两个leader传达命令，在此情况下两个网络中的节点会有两种不同的指令，但是当修复网络分区之后，两个leader会通过查看期限，最终会统一为一个leader，使整个网络还是保持一致性。     Safety
+ Election safety: 在一个term下，最多只有一个Leader：也即在联盟链中，在没有网络分区的情况下，最多只有一个leader；如果出现了网络分区的情况，则会执行Normal Operation中的特殊情况的执行方法。 Leader Append-Only: 一个Leader只能追加新的entries，不能重写和删除entries Log Matching: 集群中各个节点的log都是相同一致的 Leader Completeness:如果一个log entry被committed了，则这个entry一定会出现在Leader的log里，即leader会一致同步所有follower的信息。 State Machine Safety: 如果一个节点服务器的state machine执行了一个某个log entry命令，则其他节点服务器，也会执行这个log entry命令，不会再执行其他命令。     Excerpt from http://thesecretlivesofdata.com/raft Experpt from In Search of an Understandable Consensus Algorithm</description>
+    </item>
+    
+    <item>
+      <title>CSP[2019.12]1.2.3题总结</title>
+      <link>https://www.skyzh.dev/posts/other/o-csp2019.12q123%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 09 Feb 2020 21:54:27 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-csp2019.12q123%E6%80%BB%E7%BB%93/</guid>
+      <description>CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
+// // main.cpp // [201912-1]count-num // // Created by 陈冉飞 on 2020/2/9. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &amp;lt;iostream&amp;gt;using namespace std; int cnt = 0,num = 0,n,a[4]; bool check(int num){ if (num%7 == 0) return true; while (num &amp;gt; 0) { if (num%10 == 7) return true; num/=10; } return false;; } int main(int argc, const char * argv[]) { scanf(&amp;#34;%d&amp;#34;,&amp;amp;n); while (cnt &amp;lt; n) { num++; if (check(num)) {a[(num-1)%4]++;cnt--;} cnt++; } printf(&amp;#34;%d\n%d\n%d\n%d\n&amp;#34;,a[0],a[1],a[2],a[3]); return 0; } 第二题 一开始想复杂了，想成搜索了，后来网页往下滚动看到了1e3果断循环暴力，结果还真是，，。</description>
+    </item>
+    
+    <item>
+      <title>POJ1113 凸包算法</title>
+      <link>https://www.skyzh.dev/posts/other/o-poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 04 Feb 2020 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</guid>
+      <description>POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
+卷包裹法 思路：
+ 点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大) 从点集的第一个点开始找上凸包。  如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。 如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。   从点集的最后一个点开始找下凸包。  判断点在线的左边还是右边：利用叉积(几何意义就是通过比较斜率，利用叉积的大小可以防止斜率为零或者无穷的情况)
+Graham扫描法 思路：
+ 点集预处理：通过两次预处理，首先提取处横纵坐标都最小的，也就是以横坐标为准从小到大(横坐标相同以纵坐标从小到大)，然后再平移坐标轴使原点与第一步找到的点重合，根据其他点与原点的斜率大小进行排序 按照预处理的顺序找凸包，要保证新添加的点在凸包的点集中最新添加的两个点所形成的直线的左边。  关于得到凸包点集中是否要凸包的边上的点(初顶点以外的其他点) eg: (1,1) (1,2) (2,1) (1,2) (3,1) 包含凸包边上的点：(1,1) (1,2) (2,1) (1,2) (3,1) 不包含：(1,1) (1,2) (1,2) (3,1)
+卷包裹法得到不包含凸包边上的点 解析：此时abc在一条直线，x同或者y同，那么得到的叉积必为零，同时不满足添加进凸包点集的条件就是在线的左边或者在线上，要等于号。
+int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.x); } int solve(){ int idx = 0; // upper 0 -&amp;gt; n-1  for (int i = 0; i &amp;lt; n; i++){ while (idx &amp;gt;1 &amp;amp;&amp;amp; cross(con[idx-1], e[i], con[idx-2]) &amp;gt;= 0) idx--; con[idx++] = e[i]; } int s = idx; // lower n-1 -&amp;gt; 0  for (int i = n-1; i &amp;gt;= 0; i--) { while (idx &amp;gt; s &amp;amp;&amp;amp; cross(con[idx-1], e[i], con[idx-2]) &amp;gt;= 0) idx--; con[idx++] = e[i]; } return idx; } Graham-Scan法：同样道理：</description>
+    </item>
+    
+    <item>
+      <title>14 keras</title>
+      <link>https://www.skyzh.dev/posts/mldl/test14-keras/</link>
+      <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test14-keras/</guid>
+      <description>keras.models  Model Sequential  Keras.Input 区分于keras.layers.Input 或者区分于
+keras.layers 适用于含有神经元的网络  Dropout / SpatialDropout Dense 全连接层  用于处理图像-卷积  Convention卷积：Conv1D，Conv2D 和 Conv3D Pooling池化：MaxPooling1D,MaxPooling2D, GlobalMaxPooling1D   用于NLP处理-序列模型  LSTM / Bidirectional LSTM GRU Cu  CuDNNLSTM：这个是在老版本(在V_tensorflow &amp;lt; 2.0.0)中支持的，在新的tensorflow和独立出来的keras中都是没有的，所以如果使用的话，需要1:调整tensorflow的版本小于2.0.0、2:不使用自带的独立出来的keras，而是使用tensorflow内置的keras CUDNNGRU    一些不常用的keras库 keras.engine 底层控制驱动引擎，keras.engine.topology中的Layer来自定义keras神经网络模型中的某一层(是层，不是神经元)
+keras.initializers &amp;ndash; 初始化 keras.regularizers &amp;ndash; 正则化 keras.constraints &amp;ndash; 约束(以层为对象进行) keras.concatenate &amp;ndash; 用于连接 </description>
+    </item>
+    
+    <item>
+      <title>14.1 pytorch</title>
+      <link>https://www.skyzh.dev/posts/mldl/test14.1-pytorch/</link>
+      <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test14.1-pytorch/</guid>
+      <description>pytorch类比keras但区别 keras的所有子库基本都是复数，包括models, layers, optimizers等等
+而torch大部分都是单数
+torch.model ?
+torch.input ?
+torch.layer ?
+torch.optim torch.optim.Adam()
+一些不常用的keras库 keras.engine keras.initializers &amp;ndash; 初始化 keras.regularizers &amp;ndash; 正则化 keras.constraints &amp;ndash; 约束(以层为对象进行) keras.concatenate &amp;ndash; 用于连接 </description>
+    </item>
+    
+    <item>
+      <title>16 基本流程</title>
+      <link>https://www.skyzh.dev/posts/mldl/test16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</guid>
+      <description>工具配备：
+深度学习框架：
+​	常用：pytorch
+神经网络框架：
+ DGL：deep graph library (AWS) PyG：pytorch_geometric (Pytorch) AGL：Euler (alibaba) tf_geometric  基本流程 basic dependencies 导入dgl deep graph library ，引入，没有的话安装再引入
+try: import dgl except: !pip install dgl import dgl 导入torch的一些基本依赖
+Graph embedding [把整个表进行嵌入]   node embedding
+  edge embedding
+  build Spatial Model [构建空间model] </description>
+    </item>
+    
+    <item>
+      <title>13 Pandas</title>
+      <link>https://www.skyzh.dev/posts/mldl/test13-pandas/</link>
+      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test13-pandas/</guid>
+      <description>数据类型相关 在处理脏数据的时候：
+通过data[col][raw].dtype来查看元素的类型
+通过data[col][raw].astype = specific_data_type来切换单元格的属性
+截取 1）.loc,.iloc,.ix,只加第一个参数如.loc([1,2]),.iloc([2:3]),.ix[2]…则进行的是行选择 2）.loc,.at，选列是只能是列名，不能是position 3）.iloc,.iat，选列是只能是position，不能是列名 4）df[]只能进行行选择，或列选择，不能同时进行列选择，列选择只能是列名。
+sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Male 3.31 23.68 4 Female 3.61 24.59 print df.loc[1:3, [&amp;#39;total_bill&amp;#39;, &amp;#39;tip&amp;#39;]] print df.loc[1:3, &amp;#39;tip&amp;#39;: &amp;#39;total_bill&amp;#39;] print df.iloc[1:3, [1, 2]] print df.iloc[1:3, 1: 3] total_bill tip 1 10.34 1.66 2 23.68 3.50 3 23.68 3.31 -------------------- tip total_bill 1 1.66 10.34 2 3.50 23.68 3 3.</description>
+    </item>
+    
+    <item>
+      <title>13.1 Numpy</title>
+      <link>https://www.skyzh.dev/posts/mldl/test13.1-numpy/</link>
+      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test13.1-numpy/</guid>
+      <description>np.zeros np.zeros(size) 初始化为长度为size，内容为0的矢量「秩=1」==》既不是行向量也不是列向量【a.T=a即可以验证】
+a = np.zeros(array_size)
+np.zero(size_x, size_y) 初始化为二维的「秩=2」==》如果让此时的size_y=1,那就是个列向量；如果让此时的size_x=1,那就是个行向量
+![image-20201206171734156](/Users/aczy156/Library/Application Support/typora-user-images/image-20201206171734156.png)
+np.random.rand(size)/ np.random/randn(size) 初始化一个长度为size，内容为0～1随机数(精确说是高斯变量)矢量==》既不是行向量也不是列向量【a.T=a即可以验证】
+a = np.random.rand(array_size)
+print(a, len(a))
+# 成功初始化一个矢量/数据 输出的是[xxx, xxx, ……, xxx], array_size
+np.dot(array_a, array_b) 做矢量/向量的乘积（点乘）=》
+ 可以是下边例子的两个长度为array_size的一维向量 也可以是只要是符合矩阵乘积规则的都OK，例如(m, r) * (r, n) / (m, a) * (a, n)  a = np.random.rand(array_size)
+b = np.random.rand(array_size)
+c = np.dot(a, b)
+np 广播
+a = np.random.rand(array_size)
+c = a+5 # 加上一个常数但是numpy会自动转换成一个n为向量，来和前面的格式对齐，最后就是[a[0]+5, a[1]+5, ……]
+np.exp/np.expm1/np.log/np.log1p 做//做对数logv1,logv2……
+v = np.zero(100)</description>
+    </item>
+    
+    <item>
+      <title>15 Kaggle一些基本问题</title>
+      <link>https://www.skyzh.dev/posts/mldl/test15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</guid>
+      <description>/input目录下的数据是read_only格式 可以通过copy一份到/working
+两个路径：
+ input路径： /kaggle/input/ working路径：/kaggle/working/  利用Linux指令进行copy
+!cp -r /kaggle/input/ new_folder_name
+切换tensorflow版本到旧版本( &amp;lt; 2.x ) （1）无论如何切换，在kaggle 的kernel环境下需要修改一个kernel配置，来使对环境的配置生效
+修改kaggle的tensorflow的版本之后，print仍不变version的处理办法：https://www.kaggle.com/general/88036
+切换原因：tensorflow训练过程中的log需要旧版本（AttributeError: module &#39;tensorflow&#39; has no attribute &#39;log&#39;）
+移除掉旧的：
+!pip uninstall tensorflow
+安装新的：
+!pip install tensorflow==1.13.1
+（2）由于keras需要2.2+的版本，所以需要再次升级到高版本
+!pip install--upgrade tensorflow
+查看版本信息
+print(tf.__version)
+最后发现只有安装tensorflow 一些常见的基本报错 1、
+TypeError: &amp;#39;int&amp;#39; object is not iterable 表示数据类型、数据维度不对
+情况一：在for循环遍历的时候，要用range()把遍历的范围修饰，也就是把传入的int/len()给修饰
+for i in len(sample_list): -&amp;gt;要改成
+for i in range(len(sample_list)): 情况二：keras的layer输入数据时维度不对。
+input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进行读的时候，并没有转换成可iterable的，因为input的格式不对。</description>
+    </item>
+    
+    <item>
+      <title>12 CV Target Detection</title>
+      <link>https://www.skyzh.dev/posts/mldl/test12-cvtarget-detection/</link>
+      <pubDate>Tue, 28 Jan 2020 22:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test12-cvtarget-detection/</guid>
+      <description>CV Target Detection YOLO R-CNN &amp;amp; Fast R-CNN </description>
+    </item>
+    
+    <item>
+      <title>11 CV Image Segmentation</title>
+      <link>https://www.skyzh.dev/posts/mldl/test11-cvimage-segmentation/</link>
+      <pubDate>Tue, 28 Jan 2020 21:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test11-cvimage-segmentation/</guid>
+      <description>CV-Image Segmentation 图像分割 传统分割方法 理解：
+ 把图像分割成若干个块 每个块都有相同点 [可以利用拓广性来进行延伸]  基本方法：
+  基于阈值的图像分割：按照灰度值进行提取，直接归成纯白色和纯黑色
+  基于区域的图像分割：延伸合并 &amp;amp; 分裂 【两个可逆的过程】
+ 单个像素点 ==延伸合并==》 一个区域 整张图片 ==分裂==》 若干个区域    基于边缘检测的图像分割： 直接通过提取边缘，来划定不同的区域。
+  分水岭算法
+  Image Segmentation 具体方法分析 基于阈值的图像分割 特点：
+阈值的影响太大：1) 阈值小 =&amp;gt; 对亮的区域/灰度值低的区域 效果好 2) 阈值大 =&amp;gt; 对暗的区域/灰度值高的区域 效果好
+基于区域的图像分割  单个像素点的延伸合并  特点：
+若干个单个像素点的选取影响太大。
+拓广的规则/策略的设定影响太大。
+ 分裂  特点：
+基于边缘检测的图像分割 特点：太依赖边缘的话，有可能没法形成一个回路(差一点形成一个回路)，或者很多没有规则的线。
+基于主动轮廓的图像分割 分水岭算法 特点：对于边缘的分割太过敏感了，容易过度分割
+基于GA遗传算法的图像分割 深度学习分割 基于特征编码 - VGGNet 分割 基于特征编码 - ResNet 特点：缓解梯度消失的问题。（类似于序列模型中的GRU(重置门、更新门)和LSTM(有三个门遗忘门、记忆门、输出门)，GRU就是）</description>
+    </item>
+    
+    <item>
+      <title>10 Boosting家族</title>
+      <link>https://www.skyzh.dev/posts/mldl/test10-mlxgboost-lightgbm-catboost/</link>
+      <pubDate>Tue, 28 Jan 2020 20:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test10-mlxgboost-lightgbm-catboost/</guid>
+      <description>Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix来进行转换
+  然后通过xgb的train()来进行训练
+  for fold_n (train_idx, val_idx) in enumerate(folds.split(X)): train_data = xgb.DMatrix(data=X_train) val_data = xgb.DMatrix(data=X_val) model = xgb.train() Lightgbm 0 相关预处理 a) 中文属性的问题，需要编码，不然无法训练
+1 普通训练 2 对于利用交叉训练的 几个组成成分
+ oof: out-of-folds clf: classifier trn_idx, val_idx: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合 lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。   # 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns) features = [&amp;#39;feature1&amp;#39;, &amp;#39;feature2&amp;#39;, &amp;#39;feature3&amp;#39;, &amp;#39;feature4&amp;#39;] cat_feats = [&amp;#39;feature1&amp;#39;, &amp;#39;feature4&amp;#39;] # oof, predictions oof = np.zeros(len(train)) prediction = np.</description>
+    </item>
+    
+    <item>
+      <title>9 几种常用数据类型</title>
+      <link>https://www.skyzh.dev/posts/mldl/test9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Tue, 28 Jan 2020 19:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
+print(&amp;#39;data_np shape is: &amp;#39;, np.size(data_np, 0), np.size(data_np, 1), np.size(data_np, 2)) 需要进行维度变化的 按照维度求最值 【根据axis来选择对应的维度，然后提取最大值】 ==&amp;gt; axis=x,就是第x的维度提取最值，最后那个维度变成一，dim--
+array([[0, 1, 2], [9, 4, 5], [6, 7, 8], [10, 11, 12]]) # 当前维度(4, 3) print(np.max(a)) #全局最大 8 print(np.max(a,axis=0)) #每列最大 =&amp;gt; 第一个维度的长度变为1，所以向量的长度变为3 [6 7 8] print(np.max(a,axis=1)) #每行最大 =&amp;gt; 第二个维度的长度变为1，所以向量的长度变为4 [2 5 8]import plotly.express as px fig = px.pie(data, name=&amp;#39;attr&amp;#39;) 类似于Dataframe的value_counts() 实质还是要通过形成dataframe数据结构来进行
+pd.Series(numpy_data).value_counts().plot.bar()
+numpy 去重 区分于List，都可以去重，其中，list可以通过转换set直接去重，即：但是无法获取重复的元素的索引
+ls = list(set([&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;a&amp;#39;])) numpy去重，不仅可以去重，并且可以获得重复的索引</description>
+    </item>
+    
+    <item>
+      <title>8 Python 广播机制/apply/map/zip等</title>
+      <link>https://www.skyzh.dev/posts/mldl/test8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</link>
+      <pubDate>Tue, 28 Jan 2020 18:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</guid>
+      <description>Python - 广播机制 Python - apply [维持原来的维度数]
+应用场景：对于一个DataFrame
+1、利用函数进行apply
+然后通过给apply传入一个参数是一个映射的函数apply(func)，然后进行映射的方式就是func函数所表达的方式
+def get_length(text): return len(text) train[&amp;#39;new_length&amp;#39;] = train[&amp;#39;text&amp;#39;].apply(get_length) 2、利用lambda然后直接进行转换
+train[&amp;#39;new_length&amp;#39;] = train[&amp;#39;text&amp;#39;].apply(lambda x: len(x)) Python - map [降低原来的维度数]
+无规则映射都是可以的。【在没有设定规则的映射下，映射方式就是通过离散型数据进行映射，自动按照长度进行映射】
+也就是1-500的范围或者是abcd多少个种类，一般连续性的都没法map，因为就算map映射了之后也是各自为一个长度的直方体
+ 把一个csv中的某一列(全都是字符串)映射到一个这一列的长度的数组中  tweet_len = tweet.text.str.len() tweet_len.value_counts().plot.bar() 如果按照零一进行提取
+# value str length fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5)) # get lens list tweet_len_1 = tweet[tweet[&amp;#39;target&amp;#39;] == 1][&amp;#39;text&amp;#39;].str.len() ax1.hist(tweet_len_1, color=&amp;#39;green&amp;#39;) tweet_len_0 = tweet[tweet[&amp;#39;target&amp;#39;] == 0][&amp;#39;text&amp;#39;].str.len() ax2.hist(tweet_len_0, color=&amp;#39;red&amp;#39;)  把一个csv中的某一列(全都是字符串)映射到一个这一列的各个元素的分割后的长度的数组中  tweet_num = tweet.</description>
+    </item>
+    
+    <item>
+      <title>7 综合性案例 Credit Card Anomly Detection</title>
+      <link>https://www.skyzh.dev/posts/mldl/test7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</link>
+      <pubDate>Tue, 28 Jan 2020 17:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</guid>
+      <description>Credit Card Frauds Detection 处理样本分布不均问题：Imbalance Datasets distribution 几种可行的解决方案：
+ 采样方法  under-sampling 欠采样 over-sampling 过采样   集成学习+阈值调整 *  根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
+import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr&amp;#39;, color=&amp;#39;attr&amp;#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&amp;gt;bar】import matplotlib.pyplot as plt
+eg1:
+plt.bar(data.attr.value_counts().index, data.attr.value_counts().values) eg2:
+df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [多个属性]： import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr1&amp;#39;, color=&amp;#39;attr2&amp;#39;) 饼状图 [单个属性] import plotly.express as px fig = px.pie(data, name=&amp;#39;attr&amp;#39;) 数据可视化&amp;ndash;numerical data连续数据 </description>
+    </item>
+    
+    <item>
+      <title>6 CV</title>
+      <link>https://www.skyzh.dev/posts/mldl/test6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Tue, 28 Jan 2020 16:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
+      <description>CV-数据增强 手动人工数据增强   数据为非图形化的数据「本身不是图片」
+ 例如Digit Recognization，通过把所有像素点放进了表格里边    数据为图形化的数据「本身是图片」
+ 例如Facial Keypoints Detection，通过对已经是图片的进行变形。 变形包括：  垂直镜像对称 mirroring on vertical axis 旋转类 rotation  水平翻转 horizontal flip 旋转增强 rotation augmentation   色彩转换 color shifting  亮度增强 brightness augmentation RGB变化 RGB shifting (PCA采样，AlexNet PCA色彩增强)   剪裁类 shearing  转移/移动增强 shifit agumentation 随机剪裁 random cropping   变形类 warping  局部变形 local warping   随机噪声增强 random-noise augmentation      利用albumentations进行数据增强 要点：</description>
+    </item>
+    
+    <item>
+      <title>5.1 NLP 一些常用库</title>
+      <link>https://www.skyzh.dev/posts/mldl/test5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</link>
+      <pubDate>Tue, 28 Jan 2020 15:15:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</guid>
+      <description>NLP 工具库 NLP &amp;ndash; nltk [natural language toolkit] NLP &amp;ndash; gensim NLP 语料库 NLP &amp;ndash; GloVe全局动态库  GloVe 50D GloVe 100D GloVe 200D GloVe 300D  一些其他的具有标准参考的库 String库 punctuation 【标点符号】
+import string collections defaultdict 【默认字典】
+Counter
+from collection import defaultdict from collection import Counter </description>
+    </item>
+    
+    <item>
+      <title>5 NLP基本过程</title>
+      <link>https://www.skyzh.dev/posts/mldl/test5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
+      <description>NLP 1、数据清洗 data cleaning  清洗html中的残留的tag：BeautifulSoup 清洗标点：正则表达式 清洗常用的没有实际意义的词语(a, the)：nltk中的stepwords  # import basic dependencies from bs4 import BeautifulSoup import re from nltk.corpus import stopwords # 具体使用 # html残留tag：用BeautifulSoup，实例化对象，然后通过get_text()获取 bs = BeautifulSoup(train[&amp;#39;text_content&amp;#39;][index], &amp;#39;lxml&amp;#39;) print(&amp;#39;origin content:\n{}\nafter use BeautifulSoup to clean html tag:\n{}\n&amp;#39;, train[&amp;#39;text_content&amp;#39;][index], bs.get_text()) # 标点符号：正则表达式 letters_only = re.sub(&amp;#39;[^a-zA-Z]&amp;#39;, &amp;#39;&amp;#39;, bs.get_text()) print(&amp;#39;origin content:\n{}\nafter use re:\n{}\n&amp;#39;, bs.get_text(), letters_only) # 用nltk中导入的stopwords来删除一些常见的没有用的单词，a，the…… # 先转换成小写lower case，然后分割split，最后用nltk中的stepwords lower_case = letters_only.lower() words = lower_case.split() stopwords.words(&amp;#39;english&amp;#39;)[:20] words = [word for word in words if not word in stopwords.</description>
+    </item>
+    
+    <item>
+      <title>5 NLP基本过程</title>
+      <link>https://www.skyzh.dev/posts/mldl/test5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</guid>
+      <description>NLP punctuations - 标点 puncts = [&amp;#39;,&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;&amp;#34;&amp;#39;, &amp;#39;:&amp;#39;, &amp;#39;)&amp;#39;, &amp;#39;(&amp;#39;, &amp;#39;-&amp;#39;, &amp;#39;!&amp;#39;, &amp;#39;?&amp;#39;, &amp;#39;|&amp;#39;, &amp;#39;;&amp;#39;, &amp;#34;&amp;#39;&amp;#34;, &amp;#39;$&amp;#39;, &amp;#39;&amp;amp;&amp;#39;, &amp;#39;/&amp;#39;, &amp;#39;[&amp;#39;, &amp;#39;]&amp;#39;, &amp;#39;&amp;gt;&amp;#39;, &amp;#39;%&amp;#39;, &amp;#39;=&amp;#39;, &amp;#39;#&amp;#39;, &amp;#39;*&amp;#39;, &amp;#39;+&amp;#39;, &amp;#39;\\&amp;#39;, &amp;#39;•&amp;#39;, &amp;#39;~&amp;#39;, &amp;#39;@&amp;#39;, &amp;#39;£&amp;#39;, &amp;#39;·&amp;#39;, &amp;#39;_&amp;#39;, &amp;#39;{&amp;#39;, &amp;#39;}&amp;#39;, &amp;#39;©&amp;#39;, &amp;#39;^&amp;#39;, &amp;#39;®&amp;#39;, &amp;#39;`&amp;#39;, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;→&amp;#39;, &amp;#39;°&amp;#39;, &amp;#39;€&amp;#39;, &amp;#39;™&amp;#39;, &amp;#39;›&amp;#39;, &amp;#39;♥&amp;#39;, &amp;#39;←&amp;#39;, &amp;#39;×&amp;#39;, &amp;#39;§&amp;#39;, &amp;#39;″&amp;#39;, &amp;#39;′&amp;#39;, &amp;#39;Â&amp;#39;, &amp;#39;█&amp;#39;, &amp;#39;½&amp;#39;, &amp;#39;à&amp;#39;, &amp;#39;…&amp;#39;, &amp;#39;“&amp;#39;, &amp;#39;★&amp;#39;, &amp;#39;”&amp;#39;, &amp;#39;–&amp;#39;, &amp;#39;●&amp;#39;, &amp;#39;â&amp;#39;, &amp;#39;►&amp;#39;, &amp;#39;−&amp;#39;, &amp;#39;¢&amp;#39;, &amp;#39;²&amp;#39;, &amp;#39;¬&amp;#39;, &amp;#39;░&amp;#39;, &amp;#39;¶&amp;#39;, &amp;#39;↑&amp;#39;, &amp;#39;±&amp;#39;, &amp;#39;¿&amp;#39;, &amp;#39;▾&amp;#39;, &amp;#39;═&amp;#39;, &amp;#39;¦&amp;#39;, &amp;#39;║&amp;#39;, &amp;#39;―&amp;#39;, &amp;#39;¥&amp;#39;, &amp;#39;▓&amp;#39;, &amp;#39;—&amp;#39;, &amp;#39;‹&amp;#39;, &amp;#39;─&amp;#39;, &amp;#39;▒&amp;#39;, &amp;#39;：&amp;#39;, &amp;#39;¼&amp;#39;, &amp;#39;⊕&amp;#39;, &amp;#39;▼&amp;#39;, &amp;#39;▪&amp;#39;, &amp;#39;†&amp;#39;, &amp;#39;■&amp;#39;, &amp;#39;’&amp;#39;, &amp;#39;▀&amp;#39;, &amp;#39;¨&amp;#39;, &amp;#39;▄&amp;#39;, &amp;#39;♫&amp;#39;, &amp;#39;☆&amp;#39;, &amp;#39;é&amp;#39;, &amp;#39;¯&amp;#39;, &amp;#39;♦&amp;#39;, &amp;#39;¤&amp;#39;, &amp;#39;▲&amp;#39;, &amp;#39;è&amp;#39;, &amp;#39;¸&amp;#39;, &amp;#39;¾&amp;#39;, &amp;#39;Ã&amp;#39;, &amp;#39;⋅&amp;#39;, &amp;#39;‘&amp;#39;, &amp;#39;∞&amp;#39;, &amp;#39;∙&amp;#39;, &amp;#39;）&amp;#39;, &amp;#39;↓&amp;#39;, &amp;#39;、&amp;#39;, &amp;#39;│&amp;#39;, &amp;#39;（&amp;#39;, &amp;#39;»&amp;#39;, &amp;#39;，&amp;#39;, &amp;#39;♪&amp;#39;, &amp;#39;╩&amp;#39;, &amp;#39;╚&amp;#39;, &amp;#39;³&amp;#39;, &amp;#39;・&amp;#39;, &amp;#39;╦&amp;#39;, &amp;#39;╣&amp;#39;, &amp;#39;╔&amp;#39;, &amp;#39;╗&amp;#39;, &amp;#39;▬&amp;#39;, &amp;#39;❤&amp;#39;, &amp;#39;ï&amp;#39;, &amp;#39;Ø&amp;#39;, &amp;#39;¹&amp;#39;, &amp;#39;≤&amp;#39;, &amp;#39;‡&amp;#39;, &amp;#39;√&amp;#39;, ] fasttext mispell - 一些省略成引号的 mispell_dict = {&amp;#34;ain&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;aren&amp;#39;t&amp;#34;: &amp;#34;are not&amp;#34;,&amp;#34;can&amp;#39;t&amp;#34;: &amp;#34;cannot&amp;#34;, &amp;#34;&amp;#39;cause&amp;#34;: &amp;#34;because&amp;#34;, &amp;#34;could&amp;#39;ve&amp;#34;: &amp;#34;could have&amp;#34;, &amp;#34;couldn&amp;#39;t&amp;#34;: &amp;#34;could not&amp;#34;, &amp;#34;didn&amp;#39;t&amp;#34;: &amp;#34;did not&amp;#34;, &amp;#34;doesn&amp;#39;t&amp;#34;: &amp;#34;does not&amp;#34;, &amp;#34;don&amp;#39;t&amp;#34;: &amp;#34;do not&amp;#34;, &amp;#34;hadn&amp;#39;t&amp;#34;: &amp;#34;had not&amp;#34;, &amp;#34;hasn&amp;#39;t&amp;#34;: &amp;#34;has not&amp;#34;, &amp;#34;haven&amp;#39;t&amp;#34;: &amp;#34;have not&amp;#34;, &amp;#34;he&amp;#39;d&amp;#34;: &amp;#34;he would&amp;#34;,&amp;#34;he&amp;#39;ll&amp;#34;: &amp;#34;he will&amp;#34;, &amp;#34;he&amp;#39;s&amp;#34;: &amp;#34;he is&amp;#34;, &amp;#34;how&amp;#39;d&amp;#34;: &amp;#34;how did&amp;#34;, &amp;#34;how&amp;#39;d&amp;#39;y&amp;#34;: &amp;#34;how do you&amp;#34;, &amp;#34;how&amp;#39;ll&amp;#34;: &amp;#34;how will&amp;#34;, &amp;#34;how&amp;#39;s&amp;#34;: &amp;#34;how is&amp;#34;, &amp;#34;I&amp;#39;d&amp;#34;: &amp;#34;I would&amp;#34;, &amp;#34;I&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;I would have&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#34;: &amp;#34;I will&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;I will have&amp;#34;,&amp;#34;I&amp;#39;m&amp;#34;: &amp;#34;I am&amp;#34;, &amp;#34;I&amp;#39;ve&amp;#34;: &amp;#34;I have&amp;#34;, &amp;#34;i&amp;#39;d&amp;#34;: &amp;#34;i would&amp;#34;, &amp;#34;i&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;i would have&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#34;: &amp;#34;i will&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;i will have&amp;#34;,&amp;#34;i&amp;#39;m&amp;#34;: &amp;#34;i am&amp;#34;, &amp;#34;i&amp;#39;ve&amp;#34;: &amp;#34;i have&amp;#34;, &amp;#34;isn&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;it&amp;#39;d&amp;#34;: &amp;#34;it would&amp;#34;, &amp;#34;it&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;it would have&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#34;: &amp;#34;it will&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;it will have&amp;#34;,&amp;#34;it&amp;#39;s&amp;#34;: &amp;#34;it is&amp;#34;, &amp;#34;let&amp;#39;s&amp;#34;: &amp;#34;let us&amp;#34;, &amp;#34;ma&amp;#39;am&amp;#34;: &amp;#34;madam&amp;#34;, &amp;#34;mayn&amp;#39;t&amp;#34;: &amp;#34;may not&amp;#34;, &amp;#34;might&amp;#39;ve&amp;#34;: &amp;#34;might have&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#34;: &amp;#34;might not&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;might not have&amp;#34;, &amp;#34;must&amp;#39;ve&amp;#34;: &amp;#34;must have&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#34;: &amp;#34;must not&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;must not have&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#34;: &amp;#34;need not&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;need not have&amp;#34;,&amp;#34;o&amp;#39;clock&amp;#34;: &amp;#34;of the clock&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#34;: &amp;#34;ought not&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;ought not have&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;sha&amp;#39;n&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;shall not have&amp;#34;, &amp;#34;she&amp;#39;d&amp;#34;: &amp;#34;she would&amp;#34;, &amp;#34;she&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;she would have&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#34;: &amp;#34;she will&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;she will have&amp;#34;, &amp;#34;she&amp;#39;s&amp;#34;: &amp;#34;she is&amp;#34;, &amp;#34;should&amp;#39;ve&amp;#34;: &amp;#34;should have&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#34;: &amp;#34;should not&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;should not have&amp;#34;, &amp;#34;so&amp;#39;ve&amp;#34;: &amp;#34;so have&amp;#34;,&amp;#34;so&amp;#39;s&amp;#34;: &amp;#34;so as&amp;#34;, &amp;#34;this&amp;#39;s&amp;#34;: &amp;#34;this is&amp;#34;,&amp;#34;that&amp;#39;d&amp;#34;: &amp;#34;that would&amp;#34;, &amp;#34;that&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;that would have&amp;#34;, &amp;#34;that&amp;#39;s&amp;#34;: &amp;#34;that is&amp;#34;, &amp;#34;there&amp;#39;d&amp;#34;: &amp;#34;there would&amp;#34;, &amp;#34;there&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;there would have&amp;#34;, &amp;#34;there&amp;#39;s&amp;#34;: &amp;#34;there is&amp;#34;, &amp;#34;here&amp;#39;s&amp;#34;: &amp;#34;here is&amp;#34;,&amp;#34;they&amp;#39;d&amp;#34;: &amp;#34;they would&amp;#34;, &amp;#34;they&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;they would have&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#34;: &amp;#34;they will&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;they will have&amp;#34;, &amp;#34;they&amp;#39;re&amp;#34;: &amp;#34;they are&amp;#34;, &amp;#34;they&amp;#39;ve&amp;#34;: &amp;#34;they have&amp;#34;, &amp;#34;to&amp;#39;ve&amp;#34;: &amp;#34;to have&amp;#34;, &amp;#34;wasn&amp;#39;t&amp;#34;: &amp;#34;was not&amp;#34;, &amp;#34;we&amp;#39;d&amp;#34;: &amp;#34;we would&amp;#34;, &amp;#34;we&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;we would have&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#34;: &amp;#34;we will&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;we will have&amp;#34;, &amp;#34;we&amp;#39;re&amp;#34;: &amp;#34;we are&amp;#34;, &amp;#34;we&amp;#39;ve&amp;#34;: &amp;#34;we have&amp;#34;, &amp;#34;weren&amp;#39;t&amp;#34;: &amp;#34;were not&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#34;: &amp;#34;what will&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;what will have&amp;#34;, &amp;#34;what&amp;#39;re&amp;#34;: &amp;#34;what are&amp;#34;, &amp;#34;what&amp;#39;s&amp;#34;: &amp;#34;what is&amp;#34;, &amp;#34;what&amp;#39;ve&amp;#34;: &amp;#34;what have&amp;#34;, &amp;#34;when&amp;#39;s&amp;#34;: &amp;#34;when is&amp;#34;, &amp;#34;when&amp;#39;ve&amp;#34;: &amp;#34;when have&amp;#34;, &amp;#34;where&amp;#39;d&amp;#34;: &amp;#34;where did&amp;#34;, &amp;#34;where&amp;#39;s&amp;#34;: &amp;#34;where is&amp;#34;, &amp;#34;where&amp;#39;ve&amp;#34;: &amp;#34;where have&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#34;: &amp;#34;who will&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;who will have&amp;#34;, &amp;#34;who&amp;#39;s&amp;#34;: &amp;#34;who is&amp;#34;, &amp;#34;who&amp;#39;ve&amp;#34;: &amp;#34;who have&amp;#34;, &amp;#34;why&amp;#39;s&amp;#34;: &amp;#34;why is&amp;#34;, &amp;#34;why&amp;#39;ve&amp;#34;: &amp;#34;why have&amp;#34;, &amp;#34;will&amp;#39;ve&amp;#34;: &amp;#34;will have&amp;#34;, &amp;#34;won&amp;#39;t&amp;#34;: &amp;#34;will not&amp;#34;, &amp;#34;won&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;will not have&amp;#34;, &amp;#34;would&amp;#39;ve&amp;#34;: &amp;#34;would have&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#34;: &amp;#34;would not&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;would not have&amp;#34;, &amp;#34;y&amp;#39;all&amp;#34;: &amp;#34;you all&amp;#34;, &amp;#34;y&amp;#39;all&amp;#39;d&amp;#34;: &amp;#34;you all would&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you all would have&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;re&amp;#34;: &amp;#34;you all are&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;ve&amp;#34;: &amp;#34;you all have&amp;#34;,&amp;#34;you&amp;#39;d&amp;#34;: &amp;#34;you would&amp;#34;, &amp;#34;you&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you would have&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#34;: &amp;#34;you will&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;you will have&amp;#34;, &amp;#34;you&amp;#39;re&amp;#34;: &amp;#34;you are&amp;#34;, &amp;#34;you&amp;#39;ve&amp;#34;: &amp;#34;you have&amp;#34;, &amp;#39;colour&amp;#39;: &amp;#39;color&amp;#39;, &amp;#39;centre&amp;#39;: &amp;#39;center&amp;#39;, &amp;#39;favourite&amp;#39;: &amp;#39;favorite&amp;#39;, &amp;#39;travelling&amp;#39;: &amp;#39;traveling&amp;#39;, &amp;#39;counselling&amp;#39;: &amp;#39;counseling&amp;#39;, &amp;#39;theatre&amp;#39;: &amp;#39;theater&amp;#39;, &amp;#39;cancelled&amp;#39;: &amp;#39;canceled&amp;#39;, &amp;#39;labour&amp;#39;: &amp;#39;labor&amp;#39;, &amp;#39;organisation&amp;#39;: &amp;#39;organization&amp;#39;, &amp;#39;wwii&amp;#39;: &amp;#39;world war 2&amp;#39;, &amp;#39;citicise&amp;#39;: &amp;#39;criticize&amp;#39;, &amp;#39;youtu &amp;#39;: &amp;#39;youtube &amp;#39;, &amp;#39;Qoura&amp;#39;: &amp;#39;Quora&amp;#39;, &amp;#39;sallary&amp;#39;: &amp;#39;salary&amp;#39;, &amp;#39;Whta&amp;#39;: &amp;#39;What&amp;#39;, &amp;#39;narcisist&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;howdo&amp;#39;: &amp;#39;how do&amp;#39;, &amp;#39;whatare&amp;#39;: &amp;#39;what are&amp;#39;, &amp;#39;howcan&amp;#39;: &amp;#39;how can&amp;#39;, &amp;#39;howmuch&amp;#39;: &amp;#39;how much&amp;#39;, &amp;#39;howmany&amp;#39;: &amp;#39;how many&amp;#39;, &amp;#39;whydo&amp;#39;: &amp;#39;why do&amp;#39;, &amp;#39;doI&amp;#39;: &amp;#39;do I&amp;#39;, &amp;#39;theBest&amp;#39;: &amp;#39;the best&amp;#39;, &amp;#39;howdoes&amp;#39;: &amp;#39;how does&amp;#39;, &amp;#39;mastrubation&amp;#39;: &amp;#39;masturbation&amp;#39;, &amp;#39;mastrubate&amp;#39;: &amp;#39;masturbate&amp;#39;, &amp;#34;mastrubating&amp;#34;: &amp;#39;masturbating&amp;#39;, &amp;#39;pennis&amp;#39;: &amp;#39;penis&amp;#39;, &amp;#39;Etherium&amp;#39;: &amp;#39;Ethereum&amp;#39;, &amp;#39;narcissit&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;bigdata&amp;#39;: &amp;#39;big data&amp;#39;, &amp;#39;2k17&amp;#39;: &amp;#39;2017&amp;#39;, &amp;#39;2k18&amp;#39;: &amp;#39;2018&amp;#39;, &amp;#39;qouta&amp;#39;: &amp;#39;quota&amp;#39;, &amp;#39;exboyfriend&amp;#39;: &amp;#39;ex boyfriend&amp;#39;, &amp;#39;airhostess&amp;#39;: &amp;#39;air hostess&amp;#39;, &amp;#34;whst&amp;#34;: &amp;#39;what&amp;#39;, &amp;#39;watsapp&amp;#39;: &amp;#39;whatsapp&amp;#39;, &amp;#39;demonitisation&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonitization&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonetisation&amp;#39;: &amp;#39;demonetization&amp;#39;} </description>
+    </item>
+    
+    <item>
+      <title>5 NLP基本过程</title>
+      <link>https://www.skyzh.dev/posts/mldl/test5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</link>
+      <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</guid>
+      <description>NLP - 词嵌入 </description>
+    </item>
+    
+    <item>
+      <title>4 Feature Engineering 几种编码整合</title>
+      <link>https://www.skyzh.dev/posts/mldl/test4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Tue, 28 Jan 2020 14:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</guid>
+      <description>Feature Engineering&amp;ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
+df = pd.concat([train, test]) 用:来分割，:num表示num之前的所有，num:num之后的所有，:就是没有界限，所有的
+train = df[:len_of_train] test = df[len_of_test:] 2、提前添加属性拼接、利用属性拆分
+train[&amp;#39;type&amp;#39;] = &amp;#39;train&amp;#39; test[&amp;#39;type&amp;#39;] = &amp;#39;test&amp;#39; df = pd.concat([train, test]) train = df[df[&amp;#39;type&amp;#39;] == &amp;#39;train&amp;#39;] test = df[df[&amp;#39;type&amp;#39;] == &amp;#39;test&amp;#39;] 最后需要把拼接的时候，造成的test多了一个结果(也就是要预测的那个属性)属性给去掉
+test.drop([&amp;#39;Ans_Attr&amp;#39;], axis=1) Feature Engineering&amp;ndash;Delete Duplicated attribute 用loc提取对应的列(那么行的位置不提取的话，就要用:来全部替代)，那就是df.loc[:,~df.colums.duplicated()]。（简化过程，先提取多余属性，df.columns.duplicated()，然后取反表示非多余的留下，用~进行筛选）
+df = df.loc[:, ~df.columns.duplicated()] 用iloc的意思就是通过索引index来作为参数，提取的依据。
+Feature Engineering&amp;ndash;Extract some valid info from other Attr 典型例子：
+ titanic 中的用户名中，可以拆出Mrs, Mr……等，作为一个新的属性 Predict Feature Sale中，可以从Shop表中的shop_name属性中拆出城市的名字作为一个新的属性，可以从Category表中的type等，拆除新的属性来。  直接一句话搞定，split分割、map映射、lambda进行填入
+shops[&amp;#39;newAttr&amp;#39;] = shops[&amp;#39;oriAttr&amp;#39;].str.split(&amp;#39;&amp;#39;).map(lambda x: x[0]) shops[&amp;#39;newAttr1&amp;#39;] = shops[&amp;#39;oriAttr&amp;#39;].</description>
+    </item>
+    
+    <item>
+      <title>3 数据可视化之EDA</title>
+      <link>https://www.skyzh.dev/posts/mldl/test3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</link>
+      <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</guid>
+      <description>数据可视化&amp;ndash;categorical data 离散数据 直方图类型 [单个属性]： 根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
+import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr&amp;#39;, color=&amp;#39;attr&amp;#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&amp;gt;bar】import matplotlib.pyplot as plt
+eg1:
+plt.bar(data.attr.value_counts().index, data.attr.value_counts().values) eg2:
+df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [单个属性+多个图] ： 通过把不同图放在一个图中
+# value str length fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5)) # get lens list tweet_len_1 = tweet[tweet[&amp;#39;target&amp;#39;] == 1][&amp;#39;text&amp;#39;].str.len() # get list1 ax1.hist(tweet_len_1, color=&amp;#39;green&amp;#39;) tweet_len_0 = tweet[tweet[&amp;#39;target&amp;#39;] == 0][&amp;#39;text&amp;#39;].str.len() # get list2 ax2.hist(tweet_len_0, color=&amp;#39;red&amp;#39;) 直方图类型 [多个属性]： import plotly.express as px fig = px.</description>
+    </item>
+    
+    <item>
+      <title>3.1 数据可视化之模型评估阶段</title>
+      <link>https://www.skyzh.dev/posts/mldl/test3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</link>
+      <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</guid>
+      <description>数据可视化 &amp;ndash; 通过sklearn.metrics直接plot from sklearn.metrics import plot_precision_recall_curve
+from sklearn.metrics import plot_roc_curve
+from sklearn.metrics import plot_confusion_matrix
+1、三个参数，分别是classifier、X_test / X_train / X_val、y_test / y_train / y_val，把模型+数据集传入方法中，然后直接进行预测，并把预测出来的数据和本来就有的y_test进行运算。
+数据可视化 &amp;ndash; 通过sklearn.metrics进行计算，然后通过其他画图工具去画 首先计算所需要相关的包
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import precision_score 
+from sklearn.metrics import recall_score
+from sklearn.metrics import f1_score
+from sklearn.metrics import roc_auc_score
+from sklearn.metrics import confusion_matrix
+【一】plot_roc_curve // 然后顺便计算出来auc(也就是线下边的面积)
+1、通过roc_curve来计算tpr真正率和fpr假正率
+2、通过auc来计算ROC面积
+3、通过plt.plot()来画图
+def plot_roc_curve_(y_true, y_pred): # Compute ROC curve and ROC area(auc) fpr, tpr, threshold = roc_curve(y_true, y_pred) # 计算真正率和假正率 roc_auc = auc(fpr, tpr) # plot plt.</description>
+    </item>
+    
+    <item>
+      <title>2 历次比赛</title>
+      <link>https://www.skyzh.dev/posts/mldl/test2-%E5%8E%86%E6%AC%A1%E6%AF%94%E8%B5%9B/</link>
+      <pubDate>Tue, 28 Jan 2020 12:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test2-%E5%8E%86%E6%AC%A1%E6%AF%94%E8%B5%9B/</guid>
+      <description>[Kaggle] House Price 结构化数据(表格)、回归问题(预测房价)
+2020.4.20 House Prices V1.0
+
+[Kaggle] TMDB Box Office Prediction 结构化数据(表格，表格拼接)、回归问题
+题意：预测某公司的全球票房
+解法：脏数据的处理(把表格中的特定数据列中的json数据提取解析出来)
+[Kaggle] Digit Recognizer 解法：通过deeplearning+Neutral Network来提取属性，利用分类器来分类，神经网络最后一层用softmax。
+非结构化数据(虽然是利用表格来描述的图片像素点，但是只是通过像素点来表示图像，像素点并不能作为 单独的可以提炼出来的属性)、分类问题(softmax层多分类)
+2020.4.23 Digit Recognizer V1.0
+
+[Kaggle] Titanic 结构化数据(表格)、分类问题(二分类TorF)
+2020.4.26 Titanic V1.0
+2020.7.12 Titanic V2.0: New Featureing Engineering
+
+[Kaggle] DeepFake 非结构化数据(视频-图片,音频)、分类问题(二分类TorF)
+20207.20 DeepFake: Data proprocessing
+
+[iFLYTEK] Temperature Predict 结构化数据(表格)、时序问题(随时间推移)
+2020.7.27 Temperature Predict：Basic structure, use lightgbm and xgboost
+
+[Kaggle] Bike Sharing Demand 结构化数据(表格)、时序问题(随时间推移)
+2020.7.31 bike sharing use rf and GDBT</description>
+    </item>
+    
+    <item>
+      <title>IFLY Temperature Predict</title>
+      <link>https://www.skyzh.dev/posts/mldl/test-ifly_temperature_predict/</link>
+      <pubDate>Tue, 28 Jan 2020 04:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test-ifly_temperature_predict/</guid>
+      <description>描述 随着计算机技术的发展，我国逐渐实现了从传统农业到现代农业的转变，正逐步迈向智慧农业。温室是现代农业技术应用的典型场景，其内部环境具有可操作性，能人为形成适宜植物生长的小型封闭生态系统，提升农产品的产量和质量，因此被广泛应用于农业生产中。在温室的各项环境因子中，作物对温度最为敏感。温度的高低影响植株细胞的酶活性，从而影响作物的生长速度、产量和质量，因此温度对作物生长发育影响极大。为了保证农产品的产量和质量，应保证作物正常生长，需对温室温度进行精确的调控。
+二、赛事任务 温室温度调控需要对温室温度进行精准的预测，本次大赛提供了中国农业大学涿州实验站的温室温度数据作为样本，参赛选手需基于提供的样本构建模型，预测温室温度变化情况。
+三、评审规则 1.数据说明： 本次比赛为参赛选手提供了温室内外的部分传感器数据，包括温室内的温度、湿度、气压以及温室外的温度、湿度、气压。
+本次比赛分为初赛和复赛两个阶段，初赛阶段提供约30天的传感器数据，其中前20天的数据作为训练数据，后10天的数据用于做温度预测；复赛阶段提供约15天的传感器数据，其中前10天的数据作为训练数据，后5天的数据用于做温度预测。
+注1：训练集的数据，每1分钟1条数据记录；测试集的数据，每30分钟1条数据记录。
+注2：选手不能利用“未来的实际数据”预测“过去的数据”，例如，假设要预测2020/6/18 08:08:08的室内温度，就不能利用这个时间点以后的真实数据进行预测。
+特别说明，温室内的湿度和气压以及温室外的温度、湿度和气压会对温室内的温度产生一定的影响。
+2.评估指标 本模型依据提交的结果文件，采用均方误差MSE进行评价。 观测值，预测值，待预测的记录数n，计算公式如下：数据准备工作  load dependencies ：五大常用numpy, pandas, matplotlib, seaborn, warnings 和一些基本的依赖 load data 加载数据：train, test check data 数据的基本状态结构，  加载依赖
+# Common five dependencies import pandas as pd import numpy as np import matplotlib.pyplot as plt %matplotlib inline import seaborn as sns sns.set_style(&amp;#39;whitegrid&amp;#39;) import warnings warnings.filterwarnings(&amp;#39;ignore&amp;#39;) import datetime from tqdm import tqdm 加载数据：注意路径问题
+# load datall df_train = pd.</description>
+    </item>
+    
+  </channel>
+</rss>

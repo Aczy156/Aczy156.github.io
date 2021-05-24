@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm12 并查集 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm12 并查集 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm12 并查集 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm12 并查集 | Aczy156" />
+	<meta name="application-name" content="Algorithm12 并查集 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm12 并查集" />
+<meta property="og:description" content="并查集 模版-查看两个元素是否在一个集合中 https://www.luogu.com.cn/problem/P1551
+题目大意：
+1、findfa写法：return fa[x]==x?x:findfa(fa[x]);
+ 如果fa[x] == x，则代表这个节点就是代表这个集合的中心。 如果fa[x] != x，继续递归往上找，findfa(fa[x])  「路径压缩，把一条线的树结构给压缩成一个矮宽胖的类似于dom树结构的样式」：return fa[x]==x?x:fa[x]=findfa(fa[x]);
+ 通过在路径中对fa进行赋值，来保证路径上的fa都是那个父亲节点 可以看出指向关系的根。（类似题目找到某个节点的最终指向）  2、存放同个集合的关系：如果findfa(a)!=findafa(b)=&gt;就可以直接让找到的顶上的直接赋给另一个的顶上。也即fa[findfa(a)]=findafa(b)或者fa[findfa(b)]=findafa(a)
+#include &lt;iostream&gt;using namespace std; #define maxn 5005int n, m, p, fa[maxn], ta, tb; int findfa(int x){return fa[x] == x?x:findfa(fa[x]);} int main() { scanf(&#34;%d%d%d&#34;, &amp;n, &amp;m, &amp;p); // init  for (int i = 1; i &lt;= n; &#43;&#43;i) fa[i]=i; for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); if (findfa(ta) !" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm12 并查集"/>
+<meta name="twitter:description" content="并查集 模版-查看两个元素是否在一个集合中 https://www.luogu.com.cn/problem/P1551
+题目大意：
+1、findfa写法：return fa[x]==x?x:findfa(fa[x]);
+ 如果fa[x] == x，则代表这个节点就是代表这个集合的中心。 如果fa[x] != x，继续递归往上找，findfa(fa[x])  「路径压缩，把一条线的树结构给压缩成一个矮宽胖的类似于dom树结构的样式」：return fa[x]==x?x:fa[x]=findfa(fa[x]);
+ 通过在路径中对fa进行赋值，来保证路径上的fa都是那个父亲节点 可以看出指向关系的根。（类似题目找到某个节点的最终指向）  2、存放同个集合的关系：如果findfa(a)!=findafa(b)=&gt;就可以直接让找到的顶上的直接赋给另一个的顶上。也即fa[findfa(a)]=findafa(b)或者fa[findfa(b)]=findafa(a)
+#include &lt;iostream&gt;using namespace std; #define maxn 5005int n, m, p, fa[maxn], ta, tb; int findfa(int x){return fa[x] == x?x:findfa(fa[x]);} int main() { scanf(&#34;%d%d%d&#34;, &amp;n, &amp;m, &amp;p); // init  for (int i = 1; i &lt;= n; &#43;&#43;i) fa[i]=i; for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); if (findfa(ta) !"/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm12 并查集</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="并查集">并查集</h2>
+<h3 id="模版-查看两个元素是否在一个集合中">模版-查看两个元素是否在一个集合中</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1551">https://www.luogu.com.cn/problem/P1551</a></p>
+<p>题目大意：</p>
+<p>1、findfa写法：<code>return fa[x]==x?x:findfa(fa[x]);</code></p>
+<ul>
+<li>如果<code>fa[x] == x</code>，则代表这个节点就是代表这个集合的中心。</li>
+<li>如果<code>fa[x] != x</code>，继续递归往上找，<code>findfa(fa[x])</code></li>
+</ul>
+<p>「路径压缩，把一条线的树结构给压缩成一个矮宽胖的类似于dom树结构的样式」：<code>return fa[x]==x?x:fa[x]=findfa(fa[x]);</code></p>
+<ul>
+<li>通过在路径中对fa<input checked="" disabled="" type="checkbox">进行赋值，来保证路径上的fa<input checked="" disabled="" type="checkbox">都是那个父亲节点</li>
+<li>可以看出指向关系的根。（类似题目<a href="https://www.luogu.com.cn/problem/U100521">找到某个节点的最终指向</a>）</li>
+</ul>
+<p>2、存放同个集合的关系：如果<code>findfa(a)!=findafa(b)</code>=&gt;就可以直接让找到的顶上的直接赋给另一个的顶上。也即<code>fa[findfa(a)]=findafa(b)</code>或者<code>fa[findfa(b)]=findafa(a)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 5005</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, p, fa[maxn], ta, tb;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">findfa</span>(<span style="color:#66d9ef">int</span> x){<span style="color:#66d9ef">return</span> fa[x] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> x<span style="color:#f92672">?</span>x:findfa(fa[x]);}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>p);
+    <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) fa[i]<span style="color:#f92672">=</span>i;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb);
+        <span style="color:#66d9ef">if</span> (findfa(ta) <span style="color:#f92672">!</span><span style="color:#f92672">=</span> findfa(tb)) fa[findfa(tb)] <span style="color:#f92672">=</span> findfa(ta);
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> p; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb);
+        <span style="color:#66d9ef">if</span> (findfa(ta) <span style="color:#f92672">!</span><span style="color:#f92672">=</span> findfa(tb)) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">No</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+        <span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Yes</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div><h3 id="模版-查看集合个数">模版-查看集合个数</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1536">https://www.luogu.com.cn/problem/P1536</a></p>
+<p>题目大意：</p>
+<p>1、</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 1005</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, fa[maxn], cnt, ta, tb;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">findfa</span>(<span style="color:#66d9ef">int</span> x){<span style="color:#66d9ef">return</span> fa[x]<span style="color:#f92672">=</span><span style="color:#f92672">=</span>x<span style="color:#f92672">?</span>x:findfa(fa[x]);}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">while</span> (scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m) <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> n) {
+        cl(fa, <span style="color:#ae81ff">0</span>);cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) fa[i] <span style="color:#f92672">=</span> i;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb);
+            <span style="color:#66d9ef">if</span> (findfa(ta) <span style="color:#f92672">!</span><span style="color:#f92672">=</span> findfa(tb)) fa[findfa(tb)] <span style="color:#f92672">=</span> findfa(ta);
+        }
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) <span style="color:#66d9ef">if</span> (fa[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> i) cnt<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, cnt<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="反集--敌对集">反集 &amp; 敌对集</h3>
+<p>关键：敌对的敌对是朋友。运用反集解决。</p>
+<p><a href="https://www.luogu.com.cn/problem/P1892">https://www.luogu.com.cn/problem/P1892</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 2020</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, fa[maxn], ta, tb, cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">char</span> ch;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">findfa</span>(<span style="color:#66d9ef">int</span> x){<span style="color:#66d9ef">return</span> fa[x]<span style="color:#f92672">=</span><span style="color:#f92672">=</span>x<span style="color:#f92672">?</span>x:findfa(fa[x]);}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) fa[i] <span style="color:#f92672">=</span> i;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>ch<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>ta<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>tb;
+        <span style="color:#66d9ef">if</span> (ch <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">F</span><span style="color:#e6db74">&#39;</span>){
+            fa[findfa(ta)] <span style="color:#f92672">=</span> findfa(tb);
+        } <span style="color:#66d9ef">else</span>{
+            fa[findfa(ta<span style="color:#f92672">+</span>n)] <span style="color:#f92672">=</span> findfa(tb);
+            fa[findfa(tb<span style="color:#f92672">+</span>n)] <span style="color:#f92672">=</span> findfa(ta);
+        }
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">if</span> (fa[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> i) cnt<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, cnt);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

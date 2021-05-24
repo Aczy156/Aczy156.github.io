@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm5 Advanced Sort - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm5 Advanced Sort | Aczy156" />
+	<meta name="twitter:title" content="Algorithm5 Advanced Sort | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm5 Advanced Sort | Aczy156" />
+	<meta name="application-name" content="Algorithm5 Advanced Sort | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm5 Advanced Sort" />
+<meta property="og:description" content="排序变种 用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
+最小：priority_queue&lt;int&gt; pq;
+https://www.luogu.com.cn/problem/P3378
+#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;&amp; 直接利用优先队列实现的排序 https://www.luogu.com.cn/problem/P1068
+题目大意：按照成绩选人【多个】，但是每个人有编号和成绩两个属性是相互绑定的，所以用结构体储存很好。
+考点：如果选人的个数是一个的话直接遍历==&gt;区分下面的宇宙总统，宇宙总统就是选一个，但是比较的元素是大数，考点在大数；而这个题选人的个数是多个=&gt;一边遍历就不合适了，直接排序即可。
+而此题是
+1、重载运算符，结合优先队列，直接根据成绩进行排名。 // 或者根据向量&#43;sort排序，但是这样重载运算符的时候有区别。
+2、**易错：重载的时候，成绩相同看看其他属性有没有要求。**=&gt;如果成绩相同，编号小的靠前。
+struct node { int id, score; node(int id, int score): id(id), score(score){} bool operator &lt; (const node n) const{ if (score == n." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm5 Advanced Sort"/>
+<meta name="twitter:description" content="排序变种 用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
+最小：priority_queue&lt;int&gt; pq;
+https://www.luogu.com.cn/problem/P3378
+#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;&amp; 直接利用优先队列实现的排序 https://www.luogu.com.cn/problem/P1068
+题目大意：按照成绩选人【多个】，但是每个人有编号和成绩两个属性是相互绑定的，所以用结构体储存很好。
+考点：如果选人的个数是一个的话直接遍历==&gt;区分下面的宇宙总统，宇宙总统就是选一个，但是比较的元素是大数，考点在大数；而这个题选人的个数是多个=&gt;一边遍历就不合适了，直接排序即可。
+而此题是
+1、重载运算符，结合优先队列，直接根据成绩进行排名。 // 或者根据向量&#43;sort排序，但是这样重载运算符的时候有区别。
+2、**易错：重载的时候，成绩相同看看其他属性有没有要求。**=&gt;如果成绩相同，编号小的靠前。
+struct node { int id, score; node(int id, int score): id(id), score(score){} bool operator &lt; (const node n) const{ if (score == n."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm5 Advanced Sort</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="排序变种">排序变种</h2>
+<h3 id="用优先队列实现的顶部最大--顶部最小">用优先队列实现的顶部最大 &amp; 顶部最小</h3>
+<p>最大：<code>priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;</code></p>
+<p>最小：<code>priority_queue&lt;int&gt; pq;</code></p>
+<p><a href="https://www.luogu.com.cn/problem/P3378">https://www.luogu.com.cn/problem/P3378</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>, greater<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq;
+<span style="color:#66d9ef">int</span> m, op, t;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>op);
+        <span style="color:#66d9ef">switch</span> (op) {
+            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>t);pq.push(t);<span style="color:#66d9ef">break</span>;
+            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, pq.top());<span style="color:#66d9ef">break</span>;
+            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> pq.pop();<span style="color:#66d9ef">break</span>;
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="结合结构体的排序--直接利用优先队列实现的排序">结合结构体的排序 &amp;&amp; 直接利用优先队列实现的排序</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1068">https://www.luogu.com.cn/problem/P1068</a></p>
+<p>题目大意：按照成绩选人【多个】，但是每个人有编号和成绩两个属性是相互绑定的，所以用结构体储存很好。</p>
+<p>考点：如果选人的个数是一个的话直接遍历==&gt;区分下面的宇宙总统，宇宙总统就是选一个，但是比较的元素是大数，考点在大数；而这个题选人的个数是多个=&gt;一边遍历就不合适了，直接排序即可。</p>
+<p>而此题是</p>
+<p>1、重载运算符，结合优先队列，直接根据成绩进行排名。 // 或者根据向量+sort排序，但是这样重载运算符的时候有区别。</p>
+<p>2、**易错：重载的时候，成绩相同看看其他属性有没有要求。**=&gt;如果成绩相同，编号小的靠前。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+    <span style="color:#66d9ef">int</span> id, score;
+    node(<span style="color:#66d9ef">int</span> id, <span style="color:#66d9ef">int</span> score)<span style="color:#f92672">:</span> id(id), score(score){}
+    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> node n) <span style="color:#66d9ef">const</span>{
+        <span style="color:#66d9ef">if</span> (score <span style="color:#f92672">=</span><span style="color:#f92672">=</span> n.score)
+            <span style="color:#66d9ef">return</span> id <span style="color:#f92672">&gt;</span> n.id;
+        <span style="color:#66d9ef">return</span> score <span style="color:#f92672">&lt;</span> n.score;
+    }
+};
+</code></pre></div><p>题目链接：https://www.luogu.com.cn/problem/P1086</p>
+<p>捡花生：数量最多：</p>
+<p>题目大意：是给一个地图，地图上的某些点有一定数量的花生。给定一个步数范围拿到最多的花生。【纯数据结构可以解决，结构体+重载运算符+优先队列】</p>
+<p>1、通过结构体储存地图上的点
+2、按照每个点上的花生的个数来排序
+3、从多到少遍历，并通过步数判断是否能采摘到下一个点</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">int</span> m, n, k, tem, sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+    <span style="color:#66d9ef">int</span> x, y, val;
+    node(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> val)<span style="color:#f92672">:</span> x(x), y(y), val(val){}
+    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span>(<span style="color:#66d9ef">const</span> node n) <span style="color:#66d9ef">const</span>{
+        <span style="color:#66d9ef">return</span> val <span style="color:#f92672">&lt;</span> n.val;
+    }
+};
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;</span> pq;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>k);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+            scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>tem);
+            <span style="color:#66d9ef">if</span> (tem) pq.push(node(i, j, tem));
+        }
+    node ls <span style="color:#f92672">=</span> pq.top();
+    sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>ls.x<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()){
+        node ls <span style="color:#f92672">=</span> pq.top();pq.pop();
+        <span style="color:#66d9ef">if</span> (sum <span style="color:#f92672">+</span> (ls.x<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">&gt;</span> k) <span style="color:#66d9ef">break</span>;
+        ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> ls.val;
+        node nt <span style="color:#f92672">=</span> pq.top();
+        <span style="color:#66d9ef">if</span> (sum <span style="color:#f92672">+</span> (abs(nt.x<span style="color:#f92672">-</span>ls.x) <span style="color:#f92672">+</span> abs(nt.y<span style="color:#f92672">-</span>ls.y) <span style="color:#f92672">+</span> nt.x<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">&gt;</span> k) <span style="color:#66d9ef">break</span>;
+        sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (abs(nt.x<span style="color:#f92672">-</span>ls.x) <span style="color:#f92672">+</span> abs(nt.y<span style="color:#f92672">-</span>ls.y) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div><h3 id="大数比较--字符串比较">大数比较 &amp;&amp; 字符串比较</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1781">https://www.luogu.com.cn/problem/P1781</a></p>
+<p>题目大意：选出一个数组中最大的数以及这个数的索引</p>
+<p>1、比较大数=&gt;先比较长度，长度想通了再逐位比较。</p>
+<p>2、由于最新版C++支持将string转换为高精度浮点数比较，可以直接进行string的大小号比较。也就是直接将字符串in和字符串maxstr进行比较，来看是否要更新<code>in &gt; maxstr</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">int</span> insize <span style="color:#f92672">=</span> in.size(), maxsize <span style="color:#f92672">=</span> maxstr.size();
+<span style="color:#66d9ef">if</span> (insize <span style="color:#f92672">&gt;</span> maxsize <span style="color:#f92672">|</span><span style="color:#f92672">|</span> (insize <span style="color:#f92672">=</span><span style="color:#f92672">=</span> maxsize <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> in <span style="color:#f92672">&gt;</span> maxstr)) {
+    maxid <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+    maxstr <span style="color:#f92672">=</span> in;
+}
+</code></pre></div><h3 id="大数乘除法--结构体排序">大数乘除法 &amp;&amp; 结构体排序</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1080">https://www.luogu.com.cn/problem/P1080</a></p>
+<p>题目大意：若干个node，每个node都有左边和右边两个数。计算的数是排在每个node之前的所有node的左边的数相乘除以这个node的右边的数。=&gt;要让这个最小，就需要进行结构体排序</p>
+<p>1、结构体排序</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">		<span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> node n) <span style="color:#66d9ef">const</span>{
+        <span style="color:#66d9ef">if</span> (r <span style="color:#f92672">=</span><span style="color:#f92672">=</span> n.r) <span style="color:#66d9ef">return</span> l <span style="color:#f92672">&gt;</span> n.l;
+        <span style="color:#66d9ef">return</span> r <span style="color:#f92672">&gt;</span> n.r;
+      	<span style="color:#75715e">// 或者
+</span><span style="color:#75715e"></span>      	<span style="color:#75715e">// return l*r &gt; n.l*n*r; // 可以根据数学推导推出
+</span><span style="color:#75715e"></span>    }
+
+</code></pre></div><p>2、由于要把前面所有人的乘起来，位数爆炸。开long long也不够用。</p>
+<p>因此要通过封装大数乘法来乘/除。</p>
+<h3 id="字符串拼接--字符串比较">字符串拼接 &amp; 字符串比较</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1012">https://www.luogu.com.cn/problem/P1012</a></p>
+<p>题目大意：给出若干个字符串（长度不等长），要求拼接出一个字符串，这个字符串所代表的数最大。</p>
+<p>1、单个字符串和单个字符串之间不好比较，转换成(单个字符串a+单个字符串b)与(单个字符串b+单个字符串a)的比较，这样就方便比较两个字符串拼接顺序，拼接无非就是先a后b或者先b后a，所以这样固定住了。</p>
+<p>2、结合sort直接对<code>string strs[maxn];</code>进行排序即可。封装好<code>bool cmp()</code>函数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#66d9ef">int</span> n;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 25</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>string strs[maxn];
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">cmp</span>(string a, string b){
+    <span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>b <span style="color:#f92672">&gt;</span> b<span style="color:#f92672">+</span>a;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>strs[i];
+    sort(strs, strs<span style="color:#f92672">+</span>n, cmp);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>strs[i];
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

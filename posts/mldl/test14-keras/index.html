@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>14 keras - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="14 keras | Aczy156" />
+	<meta name="twitter:title" content="14 keras | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="14 keras | Aczy156" />
+	<meta name="application-name" content="14 keras | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="14 keras" />
+<meta property="og:description" content="keras.models  Model Sequential  Keras.Input 区分于keras.layers.Input 或者区分于
+keras.layers 适用于含有神经元的网络  Dropout / SpatialDropout Dense 全连接层  用于处理图像-卷积  Convention卷积：Conv1D，Conv2D 和 Conv3D Pooling池化：MaxPooling1D,MaxPooling2D, GlobalMaxPooling1D   用于NLP处理-序列模型  LSTM / Bidirectional LSTM GRU Cu  CuDNNLSTM：这个是在老版本(在V_tensorflow &lt; 2.0.0)中支持的，在新的tensorflow和独立出来的keras中都是没有的，所以如果使用的话，需要1:调整tensorflow的版本小于2.0.0、2:不使用自带的独立出来的keras，而是使用tensorflow内置的keras CUDNNGRU    一些不常用的keras库 keras.engine 底层控制驱动引擎，keras.engine.topology中的Layer来自定义keras神经网络模型中的某一层(是层，不是神经元)
+keras.initializers &ndash; 初始化 keras.regularizers &ndash; 正则化 keras.constraints &ndash; 约束(以层为对象进行) keras.concatenate &ndash; 用于连接 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/mldl/test14-keras/" />
+<meta property="article:published_time" content="2020-01-29T01:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-29T01:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="14 keras"/>
+<meta name="twitter:description" content="keras.models  Model Sequential  Keras.Input 区分于keras.layers.Input 或者区分于
+keras.layers 适用于含有神经元的网络  Dropout / SpatialDropout Dense 全连接层  用于处理图像-卷积  Convention卷积：Conv1D，Conv2D 和 Conv3D Pooling池化：MaxPooling1D,MaxPooling2D, GlobalMaxPooling1D   用于NLP处理-序列模型  LSTM / Bidirectional LSTM GRU Cu  CuDNNLSTM：这个是在老版本(在V_tensorflow &lt; 2.0.0)中支持的，在新的tensorflow和独立出来的keras中都是没有的，所以如果使用的话，需要1:调整tensorflow的版本小于2.0.0、2:不使用自带的独立出来的keras，而是使用tensorflow内置的keras CUDNNGRU    一些不常用的keras库 keras.engine 底层控制驱动引擎，keras.engine.topology中的Layer来自定义keras神经网络模型中的某一层(是层，不是神经元)
+keras.initializers &ndash; 初始化 keras.regularizers &ndash; 正则化 keras.constraints &ndash; 约束(以层为对象进行) keras.concatenate &ndash; 用于连接 "/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">14 keras</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="kerasmodels">keras.models</h2>
+<ul>
+<li>Model</li>
+<li>Sequential</li>
+</ul>
+<h2 id="kerasinput">Keras.Input</h2>
+<p>区分于keras.layers.Input 或者区分于</p>
+<h2 id="keraslayers">keras.layers</h2>
+<h3 id="适用于含有神经元的网络">适用于含有神经元的网络</h3>
+<ul>
+<li>Dropout / SpatialDropout</li>
+<li>Dense 全连接层</li>
+</ul>
+<h3 id="用于处理图像-卷积">用于处理图像-卷积</h3>
+<ul>
+<li>Convention卷积：<code>Conv1D</code>，<code>Conv2D</code> 和 <code>Conv3D</code></li>
+<li>Pooling池化：<code>MaxPooling1D</code>,<code>MaxPooling2D</code>, <code>GlobalMaxPooling1D</code></li>
+<li></li>
+</ul>
+<h3 id="用于nlp处理-序列模型">用于NLP处理-序列模型</h3>
+<ul>
+<li>LSTM / Bidirectional LSTM</li>
+<li>GRU</li>
+<li>Cu
+<ul>
+<li>CuDNNLSTM：这个是在老版本(在V_tensorflow &lt; 2.0.0)中支持的，在新的tensorflow和独立出来的keras中都是没有的，所以如果使用的话，需要<code>1:调整tensorflow的版本小于2.0.0</code>、<code>2:不使用自带的独立出来的keras，而是使用tensorflow内置的keras</code></li>
+<li>CUDNNGRU</li>
+</ul>
+</li>
+</ul>
+<h2 id="一些不常用的keras库">一些不常用的keras库</h2>
+<h3 id="kerasengine">keras.engine</h3>
+<p>底层控制驱动引擎，<code>keras.engine.topology</code>中的<code>Layer</code>来自定义keras神经网络模型中的某一层(是层，不是神经元)</p>
+<h3 id="kerasinitializers----初始化">keras.initializers &ndash; 初始化</h3>
+<h3 id="kerasregularizers----正则化">keras.regularizers &ndash; 正则化</h3>
+<h3 id="kerasconstraints----约束以层为对象进行">keras.constraints &ndash; 约束(以层为对象进行)</h3>
+<h3 id="kerasconcatenate----用于连接">keras.concatenate &ndash; 用于连接</h3>
+
+		</section>
+
+		<div class="meta">Posted on Jan 29, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

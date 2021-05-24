@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on Aczy156</title>
+    <link>https://www.skyzh.dev/tags/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.skyzh.dev/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithm1 字符串 整合</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/</guid>
+      <description>字符串 &amp;amp; 回文串 Leetcode125-valid-palindrome 题目链接：valid-palindrome
+C/C++ - basic 利用toupper()、tolower()转换大小写
+bool isPalindrome(string s) { // remove invalid char and transform to lower case  string str = &amp;#34;&amp;#34;; for(int i = 0; i &amp;lt; s.length(); i++) if (s[i] &amp;lt;= &amp;#39;Z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;A&amp;#39; || s[i] &amp;lt;= &amp;#39;z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;a&amp;#39; || s[i] &amp;lt;= &amp;#39;9&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;0&amp;#39;) str += tolower(s[i]); // check  int l = str.size(); for (int i = 0; i &amp;lt; str.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm1.1 字符串-匹配</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E6%8B%86%E5%88%86-%E6%8B%BC%E6%8E%A5/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E6%8B%86%E5%88%86-%E6%8B%BC%E6%8E%A5/</guid>
+      <description>字符串 &amp;amp; 匹配（拆分） 字串匹配之后替换 =&amp;gt; map进行映射，将要映射的成分进行映射 https://www.luogu.com.cn/problem/P1603
+题目大意：给六个字符串，然后如果有映射的进行映射为数字，没有的就不映射。输出最后映射完的结果
+1、准备数据结构：用于匹配的map字典=&amp;gt;将字符串与数字进行映射
+2、易错：第一位随便匹配，后面的位数如果是1位的话，拼接到一起之前要补0，例如如果是5，要输出05。
+声明字符串映射的数据结构map
+// 声明map map&amp;lt;string, int&amp;gt; mp; // 进行映射 mp[&amp;#34;one&amp;#34;] = 1; mp[&amp;#34;two&amp;#34;] = 2; /* ……*/ mp[&amp;#34;nineteen&amp;#34;] = 19; mp[&amp;#34;twenty&amp;#34;] = 20; mp[&amp;#34;one&amp;#34;] = 1; 进行匹配：
+int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp[str]){ int cnt = mp[str]*mp[str]%100; if (!cnt) continue; ans[idx++] = cnt; } } sort(ans, ans+idx); printf(&amp;#34;%d&amp;#34;, ans[0]); for (int i = 1; i &amp;lt; idx; ++i) { if (ans[i] &amp;lt; 10) printf(&amp;#34;0&amp;#34;); printf(&amp;#34;%d&amp;#34;, ans[i]); } return 0; } https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm1.2 字符串 Trie树</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
+      <description>字符串 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
+ [模版] 点名问题 https://www.luogu.com.cn/problem/P2580
+题目大意：给出若干个人的名字，多次询问看某个询问是否是第一次出现 &amp;amp; 重复出现【字典树最基本的应用】 &amp;amp; 错误名字
+1、数据结构：
+ch[maxn][字符串的涉及字符空间]，一般字典树第二维都是26，26个字母
+val[maxn]用来记录索引到这个点的值，例如学生名字是索引的字典，这个学生的各个成绩就是val这个值，exist[maxn]用来记录是否存在或者重复访问
+2、常用操作：
+插入insert：
+查找query：
+ 是否存在或者重复访问，访问exist数组 字符串对应的值，访问val数组  AC代码：只需访问exist，看是否存在或者重复访问
+#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;cstring&amp;gt;#define maxn 500010struct trie { int nex[maxn][26], cnt; int exist[maxn]; // 0 没出现；1 第一出现；2 重复出现  int val[maxn]; // -1 查不到这个人的对应的值  void insert(char *s) { int p = 0, l = strlen(s); for (int i = 0; i &amp;lt; l; i++) { int c = s[i] - &amp;#39;a&amp;#39;; if (!</description>
+    </item>
+    
+    <item>
+      <title>Algorithm10 二分</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm10-%E4%BA%8C%E5%88%86/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm10-%E4%BA%8C%E5%88%86/</guid>
+      <description>二分 关键点：等于号的选取、l/r的区间范围的更改、check函数
+整数二分
+1 =&amp;gt; l &amp;lt;= r
+while (l &amp;lt;= r) { mid = (l+r)&amp;gt;&amp;gt;1; if (mid == 0) {ans = mid;break;} if (check(mid)) l = (ans=mid)+1; else r = mid-1; } 2 =&amp;gt; l+1 &amp;lt; r
+while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid; } cout &amp;lt;&amp;lt; l &amp;lt;&amp;lt; endl; https://www.luogu.com.cn/problem/P1024
+题目大意：
+#include &amp;lt;iostream&amp;gt;using namespace std; double a, b, c, d, l, r, tl, tr, mid; double compute(double x) {return a*x*x*x+b*x*x+c*x+d;} int main() { scanf(&amp;#34;%lf%lf%lf%lf&amp;#34;, &amp;amp;a, &amp;amp;b, &amp;amp;c, &amp;amp;d); for (int i = -100; i &amp;lt; 100 ; ++i) { l = i,r = i+1; tl = compute(l), tr = compute(r); // printf(&amp;#34;%d == %.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm11 数据结构 线性表 整合</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
+      <description>数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
+题目大意：有规则抽取特定位置索引
+1、删除、首尾添加、排序等等 =&amp;gt; vector
+#include &amp;lt;iostream&amp;gt;using namespace std; int n, m, idx=0; #include &amp;lt;vector&amp;gt;vector&amp;lt;int&amp;gt; b; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) b.push_back(i); while (b.size() &amp;gt; 1) { idx = (idx+m-1)%b.size(); printf(&amp;#34;%d &amp;#34;, b[idx]); b.erase(b.begin()+idx); } printf(&amp;#34;%d\n&amp;#34;, b[0]); return 0; } 前&amp;amp;中&amp;amp;后缀 https://www.luogu.com.cn/problem/P1449
+题目大意：解析前、中、后缀表达式，然后得到表达式的值的意思
+1、前缀中缀后缀，表达式 =&amp;gt; 栈
+#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;stack&amp;gt;char ch; int a, b, store; stack&amp;lt;int&amp;gt; s; int main() { while (ch !</description>
+    </item>
+    
+    <item>
+      <title>Algorithm11.1 数据结构 线性表 链表</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/</guid>
+      <description>数据结构 线性表 - 链表  1、通过STL库中的list，直接可以使用的链表
+2、通过手写链表
+ 队列排队问题 - 利用STL库中的链表进行实现 https://www.luogu.com.cn/problem/P1160
+题目大意：在特定位置添加、插入成员，从而建立一个队列；然后通过调整相关的前后顺序位置，得到最后的队列
+1、特定位置插入、前后顺序（相邻位置）调整 =&amp;gt; 链表 // 双向链表
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 100010int n, m, idx, tp; #include &amp;lt;list&amp;gt;list&amp;lt;int&amp;gt; l; using Iterator = list&amp;lt;int&amp;gt;::iterator; Iterator pos[maxn]; // 用于存储索引关系 bool erased[maxn]; int main() { // init  l.push_front(1); pos[1] = l.begin(); scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 2; i &amp;lt;= n; ++i){ scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;idx, &amp;amp;tp); if (!tp) pos[i] = l.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm11.2 数据结构 堆与堆优化</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</guid>
+      <description>数据结构 堆 &amp;amp; 手写堆  用到堆优化的思路不一定是用堆，也可能是通过利用优先队列进行优化
+ 堆的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&amp;gt; 可以用堆进行优化
+https://www.luogu.com.cn/problem/P3378
+手写堆 实现 获取区间前几大/最大 1、数据结构：一个模拟堆的数组myheap
+2、堆的基本操作：
+ insert：插入新的元素 myheap[1]：获取堆顶元素 deletetop：删除堆顶元素  3、【下面范例都是小顶堆】
+插入新的元素 =&amp;gt; 从堆底往堆顶移动索引
+while (idx &amp;gt; 1) { if (myheap[idx] &amp;lt; myheap[idx&amp;gt;&amp;gt;1]) { swap(myheap[idx], myheap[idx&amp;gt;&amp;gt;1]); idx &amp;gt;&amp;gt;= 1; } } 删除堆顶元素 =&amp;gt; 从堆顶网堆底移动索引
+int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; size &amp;amp;&amp;amp; myheap[son] &amp;gt; myheap[son+1]) son++; if (myheap[son] &amp;lt; myheap[idx]) { swap(myheap[son], myheap[idx]); idx &amp;lt;&amp;lt;= 1; } } 完整代码：</description>
+    </item>
+    
+    <item>
+      <title>Algorithm11.3 数据结构 线性表 栈</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</guid>
+      <description>数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
+2、通过手写栈
+ 进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
+题目大意：给定进栈顺序和出栈顺序，根据进栈顺序来比对出栈顺序是否正确
+1、push、pop、empty
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 100010int t, len, in[maxn], out[maxn], idx_out; #include &amp;lt;stack&amp;gt;stack&amp;lt;int&amp;gt; s; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); while (t--) { // init  idx_out = 1; scanf(&amp;#34;%d&amp;#34;, &amp;amp;len); for (int i = 1; i &amp;lt;= len; ++i) scanf(&amp;#34;%d&amp;#34;, &amp;amp;in[i]); for (int i = 1; i &amp;lt;= len; ++i) scanf(&amp;#34;%d&amp;#34;, &amp;amp;out[i]); for (int i = 1; i &amp;lt;= len; ++i) { s.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm11.4 数据结构 二叉树建树 前中后序遍历</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <description>数据结构 二叉树 建树、前中后序遍历  两种实现方式：
+ 二叉链表实现 结构体数组实现  性质：
+ 前序 中序 后序 dfs序 相关性质 给出两个，推第三个  给出前+后【不带中】 =&amp;gt; 中序不一定唯一 给出中+前【带中】 =&amp;gt; 后序唯一 给出中+后【带中】 =&amp;gt; 前序唯一     二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。
+struct node(){ int data; node * lchild; node * rchild; node(){} node(int data): data(data){} node(int data, node * lchild, node * rchild): data(data), lchild(lchild), rchild(rchild){} } 2、要给出的数据，是一串字符串，然后通过递归建树的过程中，逐渐输入scanf进去
+例如：
+// 两组测试用例 // A B D # # E # # C F # # G # # // 1 2 4 # # 5 # # 3 6 # # 7 # # // A B C # # D E # G # # F # # # // 1 2 3 # # 4 5 # 6 # # 7 # # # 3、思路：由于是二叉链表，实质上是指针指向的，所以就写一个递归的返回指针的函数。</description>
+    </item>
+    
+    <item>
+      <title>Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</guid>
+      <description>数据结构 哈夫曼树  实现方式：
+ 二叉链表实现【实现和二叉树的二叉链表实现方式几乎一样，链接： 二叉树-二叉链表实现 】   二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。
+struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[maxn];; 2、新增的数据结构：也就是huffman[maxn]，起作用就是储存所有的节点的。
+对应的思路，每次挑出节点中值最小的两个，然后把这两个节点合成一个，然后进行排序，并把新产生的节点放到优先队列中，然后再选出两个最小的，一直这么迭代下去。
+ 通过一个vis数组，来将右儿子给闭掉，然后将左儿子的值更新为他们所形成的父亲节点的值。  node * HuffmanTree() { for (int i = 0; i &amp;lt; n - 1; i++) { for (int j = 0; j &amp;lt; n; ++j) if (!vis[j]) pq.push({huffman[j].data, j}); ll = pq.top().idx;pq.pop(); rr = pq.top().idx; while (!pq.empty()) pq.pop(); vis[rr] = 1; node * lnode = new node {huffman[ll].</description>
+    </item>
+    
+    <item>
+      <title>Algorithm12 并查集</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
+      <description>并查集 模版-查看两个元素是否在一个集合中 https://www.luogu.com.cn/problem/P1551
+题目大意：
+1、findfa写法：return fa[x]==x?x:findfa(fa[x]);
+ 如果fa[x] == x，则代表这个节点就是代表这个集合的中心。 如果fa[x] != x，继续递归往上找，findfa(fa[x])  「路径压缩，把一条线的树结构给压缩成一个矮宽胖的类似于dom树结构的样式」：return fa[x]==x?x:fa[x]=findfa(fa[x]);
+ 通过在路径中对fa进行赋值，来保证路径上的fa都是那个父亲节点 可以看出指向关系的根。（类似题目找到某个节点的最终指向）  2、存放同个集合的关系：如果findfa(a)!=findafa(b)=&amp;gt;就可以直接让找到的顶上的直接赋给另一个的顶上。也即fa[findfa(a)]=findafa(b)或者fa[findfa(b)]=findafa(a)
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 5005int n, m, p, fa[maxn], ta, tb; int findfa(int x){return fa[x] == x?x:findfa(fa[x]);} int main() { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;n, &amp;amp;m, &amp;amp;p); // init  for (int i = 1; i &amp;lt;= n; ++i) fa[i]=i; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); if (findfa(ta) !</description>
+    </item>
+    
+    <item>
+      <title>Algorithm13 前缀和与差分</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</guid>
+      <description>前缀和与差分 一维的 最大子区间和 https://www.luogu.com.cn/problem/P1115
+题目大意：一维数组，求最大子区间的和
+（一）、前缀和思想：维护一个sum来描述当前索引位置之前的是否要存留。大于零就存储，小于零就归零。
+#include &amp;lt;iostream&amp;gt;using namespace std; int n, prefix, tem, ans=1&amp;lt;&amp;lt;31; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;prefix); while (--n) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tem); prefix += tem; ans = max(ans, prefix); if (prefix &amp;lt; 0) prefix = 0; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } （二）、dp思想
+1、dp[i]表示当前位置之前的、包含自己的最大的子段，也就是说最大的要不就是单独的自己、要不就是自己加上前面的任意长度。dp[i] = max(dp[i-1]+now, now);
+2、在最后要遍历一边所有的dp，也就是所有的位置上最长的，而不只是最后的那个dp[n]，是要筛选出dp[1]~dp[n]中最大的
+#include &amp;lt;iostream&amp;gt;using namespace std; int ans = -999999, tmp, i, n, dp[200100] = {0}; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (i = 1; i &amp;lt;= n; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tmp); dp[i] = max(dp[i - 1] + tmp, tmp); ans = max(ans, dp[i]); } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } 二维的 最大子区域和 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.0 图论 数据结构存储形式</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</guid>
+      <description>图论 四种数据结构存储形式 存纯边【无点集的一点关系】 // 数据结构：结构体「起点、终点、权重」 struct node { int from, to, cost; bool operator &amp;lt; (const node n) const{return cost &amp;lt; n.cost;} // kruskal初始化 =&amp;gt; 边权排序 }edge[maxedge]; // 遍历 for (int i = 1; i &amp;lt;= number_of_edge; i++) { int from = edge[i].from, to = edge[i].to, cost = edge[i].cost; } 邻接矩阵 // 数据结构：二维数组 int mp[maxpoint][maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 1; j &amp;lt;= number_of_point; j++) { int from = i, to = j, cost = mp[i][j]; } } 邻接表 // 数据结构：向量+结构体「终点、权重」 struct node { int to, cost; }; vector&amp;lt;node&amp;gt; b[maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 0; j &amp;lt; b[i].</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.1 最短路-dijkstra</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</guid>
+      <description>最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
+我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
+ 裸的dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&amp;lt;&amp;lt;31)-1; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &amp;lt;= n; ++i) { tem = INF,v = 0; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.1 最短路-floyd</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</guid>
+      <description>最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.2 最小生成树</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <description>最小生成树  几种数据给出形式以及对应的解决方案
+1、点a 点b 边ab权值 =&amp;gt; 邻接表vector来存 =&amp;gt; 优先kruskal
+2、一个矩阵 =&amp;gt; 邻接矩阵来存【适合存点少线多的，也就是稠密图，如果稀疏的话，空间就爆炸了】 =&amp;gt; 优先prim（当然也可以手动提取，但是这样提取会很麻烦，因为边很多，有多少点就要考虑点个数平方个的边）
+ https://www.luogu.com.cn/problem/P3366
+模版 - Prim解法 &amp;ndash; 邻接矩阵 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 5005int n, m, dis[maxn], vis[maxn], mp[maxn][maxn], tem, v, ta, tb, tc, sum; const int INF = 0x3f3f3f; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[1][i]; for (int i = 2; i &amp;lt;= n; ++i) { tem = INF; v = 1;vis[1] = 1; for (int j = 2; j &amp;lt;= n; ++j) if (!</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.3 拓扑图</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</guid>
+      <description>拓扑图 https://www.luogu.com.cn/problem/P4017
+1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
+2、根据入度、出度来看是否添加进入队列。
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 5005int n, m, mp[maxn][maxn], in[maxn], out[maxn], ta, tb, ans[maxn], final; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt; q; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); mp[ta][tb] = 1; out[ta]++;in[tb]++; } for (int i = 1; i &amp;lt;= n; ++i) if (!in[i]) {ans[i] = 1;q.push(i);} while (!q.empty()) { int nw = q.front();q.pop(); for (int i = 1; i &amp;lt;= n; ++i){ if (mp[nw][i]) { ans[i] += ans[nw];ans[i] %= 80112002; in[i]--; if (!</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.4 最近公共祖先(LCA)</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
+      <description>LCA最近公共祖先 dfs深搜
+ 更新depth深度数组 depth[maxpoint] 更新p爬升数组 p[maxpoint][21]  LCA
+ 利用depth深度数组来进行爬升之前的微调 =&amp;gt; 将两个节点调整到同一高度 利用p数组来进行爬升，获取最近公共祖先  模版 LCA https://www.luogu.com.cn/problem/P3379
+1、数据结构：
+ 链式前向星储存图结构：  用结构体储存to和next，类似于可延展的vector所描述的邻接表
+struct node { int to, next; }edge[maxpoint&amp;lt;&amp;lt;1]; int head[maxpoint], tot; // 注意：edge边的数量要开到二倍，因为 添加边 =&amp;gt;利用tot全局索引指引。
+void addedge(int from, int to) { edge[++tot].to = to; edge[tot].next = head[from]; head[from] = tot; }  LCA的数据结构：depth[maxpoint]和p[maxpoint][21]  dfs构造depth深度数组和p爬升数组
+void dfs(int from, int fa) { depth[from] = depth[fa] + 1; // 更新depth深度数组  for (int i = 1; (1&amp;lt;&amp;lt;i) &amp;lt;= depth[from]; ++i) p[from][i] = p[p[from][i-1]][i-1]; // 更新p爬升数组  for (int i = head[from]; i; i=edge[i].</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.5 二分图-最大匹配</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</guid>
+      <description>二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
+二分图变式 关押罪犯：两个监狱，
+https://www.luogu.com.cn/problem/P1525</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.6 图的遍历与搜索</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</guid>
+      <description>图的遍历与搜索 模版 dfs &amp;amp; bfs https://www.luogu.com.cn/problem/P5318
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxpoint 100010#define maxedge 1000010int n, m, ta, tb, vis[maxpoint]; struct ed { int from, to; bool operator &amp;lt; (const ed e) const { if (from == e.from) return to &amp;gt; e.to;return from &amp;gt;e.from;} }t[maxedge]; struct node { int to, next; }edge[maxedge];int head[maxpoint], tot; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt;pq; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a))#include &amp;lt;algorithm&amp;gt; void addedge(int from, int to) { edge[++tot].</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.7 树的图解法</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</guid>
+      <description>树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
+ 树的深度：【图中其他所有点】 离 【根节点对应的图中的节点】 距离最远的 树的宽度：图中距离 【根节点对应的图中的节点】 各个不同距离中，个数最多的点（例如，距离为1的点有2个，距离为2的点有3个，距离为3的点有1个，所以宽度为3） LCA问题：可以通过图论中的最短路来解决=》floyd直接暴力出来   基础转换 https://www.luogu.com.cn/problem/P3884
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = 1e8+9; int n, d[maxn][maxn], ta, tb, depth, w[maxn], width = 1, ans; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt; n; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); d[ta][tb] = 1; d[tb][ta] = 2; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); for (int i = 1; i &amp;lt;= n; ++i) { depth = max(depth, d[1][i]); w[d[1][i]]++; } for (int i = 1; i &amp;lt;= depth+1; ++i) width = max(width, w[i]); printf(&amp;#34;%d\n%d\n%d\n&amp;#34;, depth+1, width, d[ta][tb]); return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm15 倍增</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm15-%E5%80%8D%E5%A2%9E/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm15-%E5%80%8D%E5%A2%9E/</guid>
+      <description>倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
+#include &amp;lt;iostream&amp;gt;using namespace std; int w[8] = {1, 2, 3, 5, 10, 20}, t; #include &amp;lt;bitset&amp;gt;bitset&amp;lt;1010&amp;gt; s; int main() { s[0] = 1; for (int i = 0; i &amp;lt; 6; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); for (int j = 0; j &amp;lt; t; ++j) s |= s&amp;lt;&amp;lt;w[i]; } printf(&amp;#34;Total=%d\n&amp;#34;, s.count()-1); return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm16 高精度&amp;大数运算</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</guid>
+      <description>高精度 &amp;amp; 大数运算 （一）高精度除法-高精度除低精度 &amp;lt; 高精度加法 &amp;lt; 高精度乘法 &amp;lt; 高精度减法 &amp;lt; 高精度除法-高精度除高精度
+（二）语言：python，Java的四则运算自带高精度；C/C++需要利用字符串/字符数组来读取大数并开数组存放然后通过模拟竖式运算来计算。
+大数加法 https://www.luogu.com.cn/problem/P1601
+1、读入用字符数组读入。
+2、做加法通过考虑进位位。
+3、输出的时候特判进位位是否需要单独输出
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 100005char sa[maxn], sb[maxn]; int a[maxn], b[maxn], ans[maxn], lena, lenb ,lenans, ap; #include &amp;lt;cmath&amp;gt;#include &amp;lt;string.h&amp;gt; void read() { lena = strlen(sa);lenb = strlen(sb); lenans = max(lena, lenb); for (int i = 0; i &amp;lt; lena; ++i) a[i] = sa[lena-1-i] - &amp;#39;0&amp;#39;; for (int i = 0; i &amp;lt; lenb; ++i) b[i] = sb[lenb-1-i] - &amp;#39;0&amp;#39;; } void add(int a[], int b[]) { for (int i = 0; i &amp;lt; lenans; ++i) { ans[i] = a[i]+b[i]+ap; ap = ans[i]/10; ans[i]%=10; } } void write() { if (ap) printf(&amp;#34;%d&amp;#34;, ap); for (int i = lenans-1; i &amp;gt;= 0; --i) printf(&amp;#34;%d&amp;#34;, ans[i]); } int main() { scanf(&amp;#34;%s%s&amp;#34;, sa, sb); read(); add(a, b); write(); return 0; } 大数减法 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm17 数据结构ST表</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84st%E8%A1%A8/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84st%E8%A1%A8/</guid>
+      <description>ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
+https://www.luogu.com.cn/problem/P3865
+模版 - ST表 题目大意：得到范围内（Range）最大值（Max）的若干次查询（Query）=&amp;gt;RMQ问题
+1、倍增思想，核心就是二倍二倍的获取最大值，类似于二叉树结构的遍历过程，复杂度为O(nlogn)。
+maxx[i][j]二维数组：维护的数据结构，表示[i, i+pow(2, j)-1]区间的最大值。=&amp;gt;i表示区间的起点，j表示倍增的倍数。所以在初始化的时候j所需要max的就是两个j-1倍数的区间来比较最大值(其中两个区间的起点分别是i和i+1&amp;lt;&amp;lt;(j-1))，也就是在这个倍增的倍数情况下，需要把起点往后挪的长度。
+maxx[i][j] = max(maxx[i][j-1], max[i+(1&amp;lt;&amp;lt;(j-1))][j-1]); 2、查询的时候反向解析
+利用query函数来进行解析：先找到该区间对应的倍数，然后再顺着区间的右边界找到对应的查找区间，可以考虑到这个区间不一定是刚好划分好的二倍的区间，所以可以通过拼接子区间来获取最大的
+int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); 3、注意数组不要开太大，因为倍增最多也就是21倍，2的21次方这么大的区间长度
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 1000010int n, m, a[maxn], maxx[maxn][21], ta, tb; // maxx[i][j]表示[i, i+pow(2, j)-1]的区间的最大值  inline int read() { char c=getchar();int x=0,f=1; while(c&amp;lt;&amp;#39;0&amp;#39;||c&amp;gt;&amp;#39;9&amp;#39;){if(c==&amp;#39;-&amp;#39;)f=-1;c=getchar();} while(c&amp;gt;=&amp;#39;0&amp;#39;&amp;amp;&amp;amp;c&amp;lt;=&amp;#39;9&amp;#39;){x=x*10+c-&amp;#39;0&amp;#39;;c=getchar();} return x*f; } // init maxx数组，通过迭代j来2倍率的速度进行初始化=&amp;gt;填补maxx数组 void init() { for (int i = 1; i &amp;lt;= n; ++i) maxx[i][0] = a[i]; for (int j = 1; j &amp;lt;= 21; ++j) for (int i = 1; i+(1&amp;lt;&amp;lt;j)-1 &amp;lt;= n; ++i) maxx[i][j] = max(maxx[i][j-1], maxx[i+(1&amp;lt;&amp;lt;(j-1))][j-1]); } int query(int l, int r) { int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); } int main() { n = read();m = read(); for (int i = 1; i &amp;lt;= n; ++i) a[i] = read(); init(); while (m--) { ta = read();tb = read(); printf(&amp;#34;%d\n&amp;#34;, query(ta, tb)); } return 0; } RMQ模版-最大和最小都有 【类似https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm18 数据结构 树状数组</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
+      <description>数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
+模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数
+eg：8(10) &amp;amp; -8(10) = 8 =&amp;gt; 根据树状数组结构图，就是8个节点
+eg：4(10) &amp;amp; -4(10) = 4 =&amp;gt; 根据树状数组结构图，就是4个节点
+eg：6(10) &amp;amp; -6(10) = 2 =&amp;gt; 根据树状数组结构图，就是2个节点
+![image-20210308181959879](/Users/aczy156/Library/Application Support/typora-user-images/image-20210308181959879.png)
+1、单点修改
+=&amp;gt; 自下而上修改 =&amp;gt; c数组的索引pos从1开始往上找，但是要限定永远≤n =&amp;gt; 从下往上找的话，看当前的节点归属那个父节点范围，则需要pos+=lowbit(pos)，此时就可以直接爬升到父节点。
+void single_add(int pos, int k) { while(pos &amp;lt;= n) { c[pos] += k; pos += lowbit(pos); } } 2、区间求和「注意这个区间求的是前缀和，也就是1到pos的和。如果区间和的话，可以通过两个前缀和相减得到」
+=&amp;gt; 自上而下累加 =&amp;gt; c数组的索引pos从target目标开始往下找，但是要限定下限，不能让下限爆掉，pos≥1 =&amp;gt; 从上往下累加的话，看当前的节点归属那个的子节点，则需要pos-=lowbit(pos)，此时就可以直接下降到子节点。
+int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -= lowbit(pos); } } #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 500010int n, m, tm, tp, ta, tb, c[maxn]; int lowbit(int x) {return x &amp;amp; (-x);} void single_add(int pos, int k) { while (pos &amp;lt;= n) { c[pos] += k; pos += lowbit(pos); } } int getsum(int pos) { int ans = 0; while (pos &amp;gt;= 1) { ans += c[pos]; pos -= lowbit(pos); } return ans; } int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;tm);single_add(i, tm);} while (m--) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;tp, &amp;amp;ta, &amp;amp;tb); if (tp-1) printf(&amp;#34;%d\n&amp;#34;, getsum(tb)-getsum(ta-1)); else single_add(ta, tb); } return 0; } 模版-区间修改(操作)、单点求和(查询) 区间修改+单点求和 模版：https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm19 递推与递归</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</guid>
+      <description>递推与递归 斐波那契数列 （高精度） https://www.luogu.com.cn/problem/P1255
+(相似题目：https://www.luogu.com.cn/problem/P2437)
+题目大意：上楼梯，一次上一步或者一次上两步，问上n阶的楼梯可以有多少种走法
+1、递推公式：d[i] = d[i-1]+d[i-2];
+2、斐波那契数列在n=50的时候就已经将int爆掉，所以如果n=5000的时候需要用高精度。
+AC代码：
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 5005typedef long long ll; #include &amp;lt;cstring&amp;gt;const int N = 2005; struct BigInt { int len, s[N]; BigInt() {memset(s, 0, sizeof(s));len = 1;} BigInt(int num) { *this = num; } BigInt(char *num) { *this = num; } BigInt operator=(int num) { char c[N]; sprintf(c, &amp;#34;%d&amp;#34;, num); *this = c; return *this; } BigInt operator=(const char *num) { len = strlen(num); for (int i = 0; i &amp;lt; len; i++) s[i] = num[len - 1 - i] - &amp;#39;0&amp;#39;; return *this; } string str() { string res = &amp;#34;&amp;#34;; for (int i = 0; i &amp;lt; len; i++) res = (char) (s[i] + &amp;#39;0&amp;#39;) + res; return res; } void clean() {while (len &amp;gt; 1 &amp;amp;&amp;amp; !</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.1 背包dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
+      <description>背包dp 01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
+题目大意：
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.2 区间dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
+      <description>区间dp 区间基本提取 https://www.luogu.com.cn/problem/P2426
+题目大意：删除一段数组的数，代价为这个区间的左右端点值的差的绝对值*长度，求全部删去的最大代价。
+区间DP的水题，维护一个dp二维数组，然后三层遍历左右端点+中间割点，利用状态转移方程dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j])即可。
+注意：要上来初始化一下，初始化的值就是运算法则算出来的，而dp所做的就是排列组合来搜索组合。
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; int n, a[maxn], dp[maxn][maxn]; // dp[i][j] 表示区间[i, j]所获得的最大价值 // dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j]);  int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); for (int i = 1; i &amp;lt;= n; ++i) for (int l = 0; l+i &amp;lt;= n; ++l) if (l == 0) dp[i][i+l] = a[i]; else dp[i][i+l] = abs(a[i]-a[i+l])*(l+1); for (int i = 1; i &amp;lt;= n; ++i) for (int j = i+1; j &amp;lt;= n; ++j) for (int k = i; k &amp;lt;= j; ++k) dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j]); printf(&amp;#34;%d\n&amp;#34;, dp[1][n]); return 0; } 石子合并（线型） 石子合并（环形） https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.3 状压dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</guid>
+      <description>状压dp  主要特征：n较小 =&amp;gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
+主要思路：就是将本来某一行的状态是或否的唯二的两种【可能本来需要用数组来储存的】 =&amp;gt; 通过用二进制【01来进行储存】
+主要原因：用于解决情况之间的耦合性太复杂（就例如八皇后，看上下左右斜上下这些，直接通过压缩成字符串的状态然后来进行位运算即可），如果直接循环遍历去判断的话太麻烦，所以通过状态压缩，
+ 把本来是需要用数组表示的数据结构=&amp;gt;用一个字串直接整体表示 把本来需要循环来计算的=&amp;gt;用位运算来计算   互不侵犯：https://www.luogu.com.cn/problem/P1896
+题目大意：类似于八皇后，只不过八皇后是一行一列都会受影响，而这个题只是相邻的上下行受影响。问放n个皇后最多有多少种方式
+1、数据结构：
+dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王的个数为s个，此时的种类数量。
+2、遍历层次：遍历各个层-&amp;gt;遍历某一层所有的可能的状态-&amp;gt;遍历所需要的国王的个数-&amp;gt;遍历上一行的状态查看是否冲突sit[j]&amp;amp;sit[t] sit[j]&amp;gt;&amp;gt;1&amp;amp;sit[t] sit[j]&amp;lt;&amp;lt;1&amp;amp;sit[t] ，查看这些状态是否冲突
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10#define maxsit (1&amp;lt;&amp;lt;10)+50#define maxk 105int n, k, sit[maxk], cnt_sit, num[maxk]; // dp[i][j][s] 表示在第i行，这一行的状态为j（二进制所转换成的十进制之后的数），放了s个目标 的总方案数 typedef long long LL; LL dp[maxn][maxsit][maxk], ans=0; // 首先预处理单独这一行，可能的状态，相互之间不冲突，也就是没有相邻的。【注意是线性的，不是环形的，也就是说101这种的是完全可以的】 void init() { for (int i = 0; i &amp;lt; (1&amp;lt;&amp;lt;n); ++i) { if (i &amp;amp; (i&amp;lt;&amp;lt;1)) continue; int sum = 0; for (int j = 0; j &amp;lt; n; ++j) if (i &amp;amp; (1&amp;lt;&amp;lt;j)) sum++; sit[++cnt_sit] = i; num[cnt_sit] = sum; } } void solve() { dp[0][1][0] = 1; for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= cnt_sit; ++j) for (int l = num[j]; l &amp;lt;= k; ++l) for (int t = 1; t &amp;lt;= cnt_sit; ++t) if (!</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.4 树型dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</guid>
+      <description>树型dp  题目风格：给出树上的每个节点的值，然后给出
+ 最大子树和 https://www.luogu.com.cn/problem/P1122
+题目大意：获取该棵树中最大的子树和
+https://www.luogu.com.cn/problem/P1352</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.7 线性dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</guid>
+      <description>线性dp 时间线问题 https://www.luogu.com.cn/problem/P1095
+题目大意：时间线上，每秒钟 =&amp;gt; 可以选择a方式，属性c变化1；可以选择b方式，属性c变化2。
+1、dp[i]表示在时间为i的时候，最远可到达的距离。
+2、预处理：由于已知了a方式更好，那么可以优先通过a方式对数据dp进行预处理
+3、状态转移方程：dp[i] = max(dp[i], dp[i-1]+17)
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 300010int m, s, t, dp[maxn]; int main() { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;m, &amp;amp;s, &amp;amp;t); // 预处理  for (int i = 1; i &amp;lt;= t; ++i) if (m &amp;gt;= 10) {m-=10;dp[i] = dp[i-1]+60;} else {m+=4;dp[i] = dp[i-1];} // 状态转移  for (int i = 1; i &amp;lt;= t; ++i) dp[i] = max(dp[i], dp[i-1]+17); if (dp[t] &amp;gt;= s) { printf(&amp;#34;Yes\n&amp;#34;); for (int i = 1; i &amp;lt;= t; ++i) if (dp[i] &amp;gt;= s) {printf(&amp;#34;%d\n&amp;#34;, i);break;} } else printf(&amp;#34;No\n%d&amp;#34;, dp[t]); return 0; } https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.8 基础dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</guid>
+      <description>基础dp 数字三角形 https://www.luogu.com.cn/problem/P1216
+题目大意：给一个三角形矩阵，然后从上往下走，怎么才能走的总量最大。
+1、// 上往下 =&amp;gt; 初始化三角形的上边两条边
+初始化：dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i]; 状态转移方程：dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j];
+2、下往上 =&amp;gt; 初始化最下边的那条边
+初始化： dp[r-1][i] = a[r-1][i]; 状态转移方程：dp[i][j] = max(dp[i+1][i], dp[i+1][i+1])+a[i][j];
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 1005int r, a[maxn][maxn], dp[maxn][maxn], ans = 0; #include &amp;lt;cmath&amp;gt;// 上往下 =&amp;gt; 初始化三角形的上边两条边(dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i];) // dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j]; // 下往上 =&amp;gt; 初始化最下边的那条边 dp[r-1][i] = a[r-1][i]; // dp[i][j] = max(dp[i+1][i], dp[i+1][i+1])+a[i][j];  int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;r); for (int i = 0; i &amp;lt; r; ++i) for (int j = 0; j &amp;lt; i + 1; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i][j]); //init  for (int i = 0; i &amp;lt; r; ++i) dp[r-1][i] = a[r-1][i]; for (int i = r-2; i &amp;gt;= 0; --i) for (int j = 0; j &amp;lt; i + 1; ++j) dp[i][j] = max(dp[i+1][j], dp[i+1][j+1])+a[i][j]; printf(&amp;#34;%d\n&amp;#34;, dp[0][0]); /* * // init dp[0][0] = a[0][0]; for (int i = 1; i &amp;lt; r; ++i) dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i]; for (int i = 2; i &amp;lt; r; ++i) for (int j = 1; j &amp;lt; i ; ++j) dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j]; for (int i = 0; i &amp;lt; r; ++i) ans = max(ans, dp[r-1][i]); printf(&amp;#34;%d\n&amp;#34;, ans); */ return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.9 dp思维</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</guid>
+      <description>思维 &amp;amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
+题目大意：
+1、结合贪心思想，永远把相邻的最小的给加进去，ans += min(cost[i-1], cost[i])
+2、状态的推进更新，例如str=&amp;quot;aaa&amp;quot;，cost分别为4 3 5，在更新4 3时候就要把状态退后，用这两个的最大的去比【因为最大的才是真正留下来的】，所以要用cost[i] = max(cost[i-1], cost[i])来保留状态
+int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; for (int i = 1; i &amp;lt; s.length(); i++){ if (s[i] == s[i-1]){ ans += min(cost[i-1], cost[i]); cost[i] = max(cost[i-1], cost[i]); } } return ans; } 循环一圈形式的dp https://www.luogu.com.cn/problem/P1057
+题目大意：
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1] (注意对圈的边界的人的特判)  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;t); // init  dp[0][0] = 1; for (int i = 1; i &amp;lt; t; ++i) for (int j = 0; j &amp;lt; n; ++j) if (j == 0) dp[i][j] = dp[i-1][1]+dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]+dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1]; printf(&amp;#34;%d\n&amp;#34;, dp[t-1][0]); return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm20.1 STL map</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm20.1-stl-map/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm20.1-stl-map/</guid>
+      <description>STL - map  【注意，此处的map是指的c++STL的map，c++STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
+map底层：红黑树（一种非严格意义上的平衡二叉树）【利用二叉树来进行查询、插入、删除=&amp;gt;O(logn)】map内部所有的数据都是无重复+有序的
+map有序性：map的key需要定义operator &amp;lt;。一般的数据类型系统已经确定了（如果是结构体做key的话，需要重载小于号。）
+  unordered_map底层：hash_value【利用哈希来进行查询、插入、删除=&amp;gt;O(1)】unordered_map内部的数据只保证无重复 （不能保证有序）
+unordered_map无重复性：unordered_map需要重载 == ，因为他判断重复就是看 ==。一般的数据类型系统已经确定了（如果是结构体做key的话，需要重载==。）
+  vector+pair实现：
+  map与unordered_map VS set与multiset:
+map有序，而unordered_map的无序性，但是两者都保持的是key唯一。
+set唯一，而multiset不唯一，可重复，但是两者都保持的是有序。
+ 查看是否已经映射 https://www.luogu.com.cn/problem/P1918
+#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;map&amp;gt;map&amp;lt;int, int&amp;gt; mp; int n, m, t; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);mp[t] = i;} scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); while (m--) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); if (mp.count(t)) printf(&amp;#34;%d\n&amp;#34;, mp[t]); else printf(&amp;#34;0\n&amp;#34;); } return 0; } 管理系统映射 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm20.2 STL set</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm20.2-stl-set/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm20.2-stl-set/</guid>
+      <description>STL - set set基础语法整理博客：
+https://www.luogu.com.cn/blog/communist/stl-zheng-li-zhi-set
+ set底层：红黑树
+set关键字唯一性【类似于map中的key，只出现一次】：保证set中所有元素只出现一次
+set序列递增性：如果不是int的话需要重载运算符
+使用场景：维护一个不重复的数据结构 =》 类似于unique的结构【拓展延伸：可以维护一个结构体，然后来看是否重复】
+  multiset底层：红黑树
+multiset关键字不唯一，可重复性
+  map与unordered_map VS set与multiset:
+map有序，而unordered_map的无序性，但是两者都保持的是key唯一。
+set唯一，而multiset不唯一，可重复，但是两者都保持的是有序。
+ basic
+int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); set&amp;lt;int&amp;gt; s(a+1, a+1+n); auto iter = s.begin(); // 输出，发现保证了有序性  while (iter != s.end()) { printf(&amp;#34;%d &amp;#34;, *iter);iter++; } // 然后再插入新的元素，查看是否有去重复  cin&amp;gt;&amp;gt;t; s.insert(t); cout&amp;lt;&amp;lt;endl; auto iter2 = s.begin(); while (iter2 !</description>
+    </item>
+    
+    <item>
+      <title>Algorithm21 博弈论</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm21-%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm21-%E5%8D%9A%E5%BC%88%E8%AE%BA/</guid>
+      <description>博弈论    巴什博弈 【bash game】 威佐夫博弈 【Wythoff game】 尼姆博弈 【Nimm game】 斐波那契博弈   巴什博弈 题目大意：
+ 情景：一堆两人。 方式：每人每回合拿1～m个。 问题：给定石头总数，问先手是否必胜。  思路：先手在石头总数为n%(1+m) == 0的时候必败，在其余时候必胜。因为先手可以总保证在每回合让自己和对手拿的总数为(1+m)个，所以到最后一轮对手无论拿1～m个都没用，都必败。
+威佐夫博弈 题目大意：
+ 情景：两堆两人。 方式：每人每回合 从一堆中拿若干个 或者 从两堆中各拿相同个。 问题：给定两堆石头数量，问先手是否必胜。  尼姆博弈 题目大意：
+ 情景：n堆两人。 方式：每人每回合 从一堆中拿若干个。 问题：给定若干堆石头数量，问先手是否必胜。  变式：
+题目大意：
+ 情景：n堆两人。 方式：每人每回合 从一堆中拿一个【那一堆不能是对手上回合拿过的堆】  </description>
+    </item>
+    
+    <item>
+      <title>Algorithm3 交叉</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm3-%E4%BA%A4%E5%8F%89/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm3-%E4%BA%A4%E5%8F%89/</guid>
+      <description>交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
+1、题目大意是允许相邻的两个牌堆交叉换牌
+2、解决方案就是把交叉换成单向，然后通过单边尽头单向遍历简化问题【单边尽头单向可以的原因就是每次至少保证满足1个，然后就算是其他的中间往两边的，也最多了，每次只能满足一个，所以不如直接 单边 尽头 =&amp;gt; 方便遍历】
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 105int n, a[maxn], sum = 0, ans = 0; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 0; i &amp;lt; n; i++) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i]);sum += a[i];} sum /= n; for (int i = 0; i &amp;lt; n - 1; ++i) if (a[i] != sum) { a[i + 1] -= (sum - a[i]); ans++; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm4 Basic Sort</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm4-%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm4-%E6%8E%92%E5%BA%8F/</guid>
+      <description>排序 题目链接：https://www.luogu.com.cn/problem/P1177
+题目大意：实现快排
+1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
+2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。
+3、分块的部分，可以通过前后遍历，碰到一对分别小于、大于的，直接swap()掉即可。但是会引发一个问题，就是如果碰到了一边刚好完全都是符合那个标准的，然后另一边存在不符合标准的，此时就需要把标准和不符合标准的换位置了。
+4、递归的部分，边界的设定问题，存在有刚好极端情况也就是分块的标准数刚好是最大或者最小的，那就不用再递归他了。所以要判断l &amp;lt; j或者i &amp;lt; r也就是排除了最大最小两种极端情况，其他的次大次小=&amp;gt;都要老老实实的把长度为2的给往下递归
+void quicksort(int l, int r){ int mid = a[(l+r)/2], i = l, j = r; do{ while (a[i] &amp;lt; mid) i++; while (a[j] &amp;gt; mid) j--; if (i &amp;lt;= j) {swap(a[i], a[j]);i++;j--;} }while (i &amp;lt;= j); // recursion left and right  if (l &amp;lt; j) quicksort(l, j); if (i &amp;lt; r) quicksort(i, r); } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm5 Advanced Sort</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</guid>
+      <description>排序变种 用优先队列实现的顶部最大 &amp;amp; 顶部最小 最大：priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq;
+最小：priority_queue&amp;lt;int&amp;gt; pq;
+https://www.luogu.com.cn/problem/P3378
+#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq; int m, op, t; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); while (m--) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;op); switch (op) { case 1: scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);pq.push(t);break; case 2: printf(&amp;#34;%d\n&amp;#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;amp;&amp;amp; 直接利用优先队列实现的排序 https://www.luogu.com.cn/problem/P1068
+题目大意：按照成绩选人【多个】，但是每个人有编号和成绩两个属性是相互绑定的，所以用结构体储存很好。
+考点：如果选人的个数是一个的话直接遍历==&amp;gt;区分下面的宇宙总统，宇宙总统就是选一个，但是比较的元素是大数，考点在大数；而这个题选人的个数是多个=&amp;gt;一边遍历就不合适了，直接排序即可。
+而此题是
+1、重载运算符，结合优先队列，直接根据成绩进行排名。 // 或者根据向量+sort排序，但是这样重载运算符的时候有区别。
+2、**易错：重载的时候，成绩相同看看其他属性有没有要求。**=&amp;gt;如果成绩相同，编号小的靠前。
+struct node { int id, score; node(int id, int score): id(id), score(score){} bool operator &amp;lt; (const node n) const{ if (score == n.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm6 贪心问题</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm6-%E8%B4%AA%E5%BF%83/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm6-%E8%B4%AA%E5%BF%83/</guid>
+      <description>贪心问题 装袋问题-每个袋子限制个数为两个 https://www.luogu.com.cn/problem/P1094
+题目大意：给出若干个不同容量的东西，给出限定的最大容量的袋子，然后最少用多少个袋子装完这些不同容量东西
+思路1【错误】：维护一个优先队列，每次取顶上两个，然后放一块。不行的原因，一些特殊情况，例如袋子100，物品分别为20、20、30、50、60，如果顺次加起来的话，=&amp;gt;30、40、50、60=&amp;gt;50、60、70，最后三个袋子，最少装袋是两个，20+20+60和30+50。
+priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;k, &amp;amp;n); for (int i = 0; i &amp;lt; n; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tem); pq.push(tem); } while (true){ int tmp1 = pq.top();pq.pop(); int tmp2 = pq.top();pq.pop(); cout&amp;lt;&amp;lt;tmp1&amp;lt;&amp;lt;&amp;#34;&amp;#34;&amp;lt;&amp;lt;tmp2&amp;lt;&amp;lt;endl; if (tmp1 + tmp2 &amp;gt; k) {pq.push(tmp1);pq.push(tmp2);break;} else pq.push(tmp1+tmp2); } printf(&amp;#34;%d\n&amp;#34;, pq.size()); return 0; } 思路2【正确】：由于题目还有一个附加条件=&amp;gt;每个袋子最多两个（=&amp;gt;也在一定程度上约束了两个）用双指针，首尾各一个，分别用来指代放在袋子的两个：够了就放一个袋子里，指针都往中间移动；不够就只把大的往中间移。前提是排好序
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 30010int k, n, tem, a[maxn], ans = 0; #include &amp;lt;algorithm&amp;gt; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;k, &amp;amp;n); for (int i = 0; i &amp;lt; n; ++i) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i]); sort(a, a+n); int fidx = 0, eidx = n-1; while (fidx &amp;lt;= eidx) if (a[fidx] + a[eidx] &amp;lt;= k) fidx++, eidx--, ans++; else eidx--, ans++; printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } 装袋问题-无限制个数的装袋 排序贪心 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm6.1 贪心 VS 其他算法</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</guid>
+      <description>二分  一些第一眼看上去是用贪心解决，但实际上是需要用其他算法解决的问题
+ https://www.luogu.com.cn/problem/P1570
+题目大意：选取m个，然后问怎么选，才能保证属性a求和比上属性b求和的值最大
+思路一：【贪心】按照属性a和属性b的比值进行排序，然后贪心的选取前m个。单个的VS求和的，有冲突
+（反例：400 1和200 100 1 1）在选取了400 1之后，如果根据比例会优先选200 100，但是实际上在求和中要选1 1，
+思路二：【二分】进行算式推导，推导成关于要求解的数的一个方程式，然后进行二分，来调整解，逼近解
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 205; int n, m, a[maxn], b[maxn]; double l, mid, r; #include &amp;lt;algorithm&amp;gt; double check(double x) { double w[maxn]; for (int i = 1; i &amp;lt;= n; ++i) w[i] = b[i]*x-a[i]; sort(w+1, w+1+n); double tmp = 0; for (int i = 1; i &amp;lt;= m; ++i) tmp += w[i]; return tmp; } int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); for (int i = 1; i &amp;lt;= n; ++i) { scanf(&amp;#34;%d&amp;#34;, b+i); r = max(r, a[i]*1.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm7 分治算法 &amp; 快速幂</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <description>分治问题 最典型：分形 &amp;amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
+ 矩阵的分治：https://www.luogu.com.cn/problem/P5461
+题目大意：正方形矩阵，分成四块，左上全赦免（为零），然后对剩下其他部分接着分成四块，一直这样下去。输出最后矩阵
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxl 1030int n, a[maxl][maxl]; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a))#include &amp;lt;cmath&amp;gt; void draw(int x, int y, int h) { if (h == 2) {a[x+1][y] = a[x][y+1] = a[x+1][y+1] = 1;return;} int nowh = h&amp;gt;&amp;gt;1; draw(x+nowh, y, nowh); draw(x, y+nowh, nowh); draw(x+nowh, y+nowh, nowh); } void print() { for (int i = 1; i &amp;lt;= n; ++i) { for (int j = 1; j &amp;lt;= n; ++j) { printf(&amp;#34;%d &amp;#34;, a[i][j]); } printf(&amp;#34;\n&amp;#34;); } } int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); n = pow(2, n); cl(a, 0); // init  draw(1, 1, n); // draw  print(); // print  return 0; } 分形-谢尔宾斯基三角：https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.1 bfs</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8.1-bfs/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8.1-bfs/</guid>
+      <description>bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
+题目大意：最多可到达的格点数
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 23int n, m, dir[4][2]={{0, 1}, {0, -1}, {1, 0}, {-1, 0}}, ans=1, vis[maxn][maxn]; char mp[maxn][maxn]; #include &amp;lt;queue&amp;gt;struct node{ int x, y; node(int x,int y): x(x), y(y){} }; queue&amp;lt;node&amp;gt; q; void bfs(int x, int y) { q.push(node(x, y)); vis[x][y] = 1; while (!q.empty()) { node nw = q.front();q.pop(); for (int i = 0; i &amp;lt; 4; ++i) { int nx = nw.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.2 dfs</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8-dfs/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8-dfs/</guid>
+      <description>dfs [数组一维模版 &amp;amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
+#include &amp;lt;iostream&amp;gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &amp;lt; n; ++i) printf(&amp;#34;%5d&amp;#34;, a[i]); printf(&amp;#34;\n&amp;#34;); return; } for (int i = 1; i &amp;lt;= n; ++i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l+1); vis[i] = 0; } } } int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); dfs(0); return 0; } 素数环 &amp;amp; 分层 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.3 dfs 记忆化搜索</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
+      <description>dfs记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。
+[模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
+题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。
+1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
+2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 25typedef long long ll; ll ta, tb, tc, dp[maxn][maxn][maxn]; ll dfs(int a, int b, int c) { if (a &amp;lt;= 0 || b &amp;lt;= 0 || c &amp;lt;= 0) return 1; if (a &amp;gt; 20 || b &amp;gt; 20 || c &amp;gt; 20) return dfs(20, 20, 20); if (dp[a][b][c]) return dp[a][b][c]; if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;lt; c) return dp[a][b][c] = dfs(a, b, c-1) + dfs(a, b-1, c-1) - dfs(a, b-1, c); else return dp[a][b][c] = dfs(a-1, b, c) + dfs(a-1, b-1, c) + dfs(a-1, b, c-1) - dfs(a-1, b-1, c-1); } int main() { while (scanf(&amp;#34;%lld%lld%lld&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc) &amp;amp;&amp;amp; !</description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.4 搜索进阶</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8.2-%E6%90%9C%E7%B4%A2%E8%BF%9B%E9%98%B6/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8.2-%E6%90%9C%E7%B4%A2%E8%BF%9B%E9%98%B6/</guid>
+      <description>搜索进阶 </description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.4&#43;2 dfs &amp; dfs记忆化搜索 &amp; DP</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm8.4&#43;2-dfs&#43;dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2&#43;dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm8.4&#43;2-dfs&#43;dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2&#43;dp/</guid>
+      <description>dfs &amp;amp; dfs记忆化搜索 &amp;amp; 计数DP  方法：
+1、搜索的过程中重复搜索，然后将重复的放在数组中储存起来，在再次递归进来之后直接返回即可。
+2、在返回的时候要详细到递归进来的多个参数的情况。
+3、根据参数情况写出dp数组（也就是记忆化数组d）
+4、状态转移方程要根据实际情况，用i j k等参数来逐渐覆盖。
+5、对上一个状态转移方程中涉及到的i j k等参数利用循环来进行遍历。
+种类
+ DFS暴搜转计数DP    https://www.luogu.com.cn/problem/P1077
+dfs 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
+// 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans++;return;} for (int i = 0; i &amp;lt;= a[l+1]; ++i) { cnt+=i;dfs(l+1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
+int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } for (int i = 0; i &amp;lt;= a[l+1]; ++i) dfs(l+1, cnt+i); } 记忆化搜索 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm9 数论其他汇总</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</guid>
+      <description>数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
+题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。</description>
+    </item>
+    
+    <item>
+      <title>Algorithm9.1 数论 数学基础</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
+      <description>数论 数学基础 进制转换 获取唯一的奇数个的不匹配的数 &amp;amp; 找未配上的对 https://www.luogu.com.cn/problem/P1469 【注意：卡内存，卡时间】
+ 思路一：数组存，然后排序，然后再遍历，两个两个遍历=&amp;gt; 爆内存，爆时间。 思路二：map存，找到配对的删除。一边即过。=&amp;gt; 6个点爆内存 正确思路：直接用一个变量，然后来异或^所有的数，a^a = 0，所以最后剩下的那个数就是没匹配的。  scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); ans ^= t;} printf(&amp;#34;%d\n&amp;#34;, ans); 获取唯一的出现偶数次数的 &amp;amp; 找配上对的 这个需要先把所有存在的数都输入进去，得到所有数的异或，然后再异或数组种的所有数，那么出现偶数次的就会显露出来了，出现单次的就会和第一次的异或掉了。
+scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} </description>
+    </item>
+    
+    <item>
+      <title>Algorithm9.2 数论入门</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</guid>
+      <description>数论基础 最大公约数gcd int gcd(int a,int b) { return (b&amp;gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
+int gcd(int a, int b) { return (b&amp;lt;=0)?a:gcd(b, a%b); } 最大公约数[gcd]与最小公倍数[gld]乘积 == 这两个数的乘积 a*b = gcd(a, b)*gld()
+最小公倍数[gld] 可以利用最大公约数倒推回去，也就是gld(a, b)=a*b/gcd(a, b)
+质数 判断1～n中的所有质数
+1、基础：O(n^2)复杂度，遍历，遍历的边界从3～sqrt(x)
+bool isprime(int x){ for (int i = 3; i &amp;lt;= sqrt(x); ++i) if (x%i == 0) return false; return true; } 2、埃拉托斯特尼筛：O(nlogn)复杂度
+3、线性筛：O(n)
+prime是质数列表，isprime
+#define maxn 10000010int vis[maxn], prime[maxn], isprime[maxn]; void Prime() { for(int i=2; i&amp;lt;=b; i++) { if(!</description>
+    </item>
+    
+    <item>
+      <title>Summary1.2 数据结构 STL整合</title>
+      <link>https://www.skyzh.dev/posts/summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</guid>
+      <description>数据结构 STL 用法整合 linklist #include &amp;lt;list&amp;gt; list&amp;lt;int&amp;gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map // 功能描述 =&amp;gt; 查找出现单次的,并尽可能的节省空间 #include &amp;lt;map&amp;gt; map&amp;lt;int, bool&amp;gt; m; for (1~n) { cin&amp;gt;&amp;gt;t; if (m.count(t)) m.erase(t); // m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项  else m[t] = true; } // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&amp;lt;int, bool&amp;gt;::iterator iter = m.</description>
+    </item>
+    
+    <item>
+      <title>Common_Algorithm</title>
+      <link>https://www.skyzh.dev/posts/other/o-common_algorithm/</link>
+      <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-common_algorithm/</guid>
+      <description>最短路 hdu2544
+ dijkstra找距离当前点中未被刷新过距离起点最值的最小值(!vis[j] &amp;amp;&amp;amp; min(d[j]))拿来刷新到其他点的距离 如果d[v] + mp[v][j] &amp;lt; d[j]就刷新到j点的距离，j点要是未被刷新的点。  void dijkstra(){ for (int i = 0; i &amp;lt; n; i++) d[i] = mp[0][i]; vis[0] = 1; for (int i = 0; i &amp;lt; n; i++) { tem = INF;v = 0; for (int j = 0; j &amp;lt; n; j++) if (!vis[j] &amp;amp;&amp;amp; d[j] &amp;lt;= tem){ tem = d[j]; v = j; } vis[v] = 1; for (int j = 0; j &amp;lt; n; j++) if (!</description>
+    </item>
+    
+    <item>
+      <title>Dp回文串问题整理</title>
+      <link>https://www.skyzh.dev/posts/other/o-dp%E5%9B%9E%E6%96%87%E4%B8%B2%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/</link>
+      <pubDate>Wed, 08 Apr 2020 20:41:58 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-dp%E5%9B%9E%E6%96%87%E4%B8%B2%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/</guid>
+      <description>回文串dp问题
+判断最长回文串  bool dp[i][j]表示从[i,j]这一段是否为回文串 状态转移方程：dp[i][j] = (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1||dp[i+1]dp[j-1]))?true:false (j &amp;gt; i) j-i == 1 是对aa这种两个字符呈对称形式的情况  // // main.cpp // 5回文子串 // // Created by 陈冉飞 on 2020/4/6. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010char s[maxn]; int main(int argc, const char * argv[]) { scanf(&amp;#34;%s&amp;#34;,s); int len = strlen(s),ans = 0; bool dp[len][len]; for (int i = 0; i &amp;lt; len; i++) dp[i][i] = true; for (int j = 1; j &amp;lt; len; j++) for (int i = 0; i &amp;lt; j; i++) if (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1 || dp[i+1][j-1])) {dp[i][j] = true;ans = max(ans,j-i+1);} else dp[i][j] = false; printf(&amp;#34;%d\n&amp;#34;,ans); return 0; } 以回文串形式抽取字串的最小次数  dp[i][j]表示区间[i,j]的最少抽取次数 状态转移方程 if (s[i] == s[j]) dp[i][j] = (j-i == 1)?</description>
+    </item>
+    
+    <item>
+      <title>CSP[2019.12]1.2.3题总结</title>
+      <link>https://www.skyzh.dev/posts/other/o-csp2019.12q123%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Sun, 09 Feb 2020 21:54:27 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-csp2019.12q123%E6%80%BB%E7%BB%93/</guid>
+      <description>CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
+// // main.cpp // [201912-1]count-num // // Created by 陈冉飞 on 2020/2/9. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &amp;lt;iostream&amp;gt;using namespace std; int cnt = 0,num = 0,n,a[4]; bool check(int num){ if (num%7 == 0) return true; while (num &amp;gt; 0) { if (num%10 == 7) return true; num/=10; } return false;; } int main(int argc, const char * argv[]) { scanf(&amp;#34;%d&amp;#34;,&amp;amp;n); while (cnt &amp;lt; n) { num++; if (check(num)) {a[(num-1)%4]++;cnt--;} cnt++; } printf(&amp;#34;%d\n%d\n%d\n%d\n&amp;#34;,a[0],a[1],a[2],a[3]); return 0; } 第二题 一开始想复杂了，想成搜索了，后来网页往下滚动看到了1e3果断循环暴力，结果还真是，，。</description>
+    </item>
+    
+    <item>
+      <title>POJ1113 凸包算法</title>
+      <link>https://www.skyzh.dev/posts/other/o-poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Tue, 04 Feb 2020 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</guid>
+      <description>POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
+卷包裹法 思路：
+ 点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大) 从点集的第一个点开始找上凸包。  如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。 如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。   从点集的最后一个点开始找下凸包。  判断点在线的左边还是右边：利用叉积(几何意义就是通过比较斜率，利用叉积的大小可以防止斜率为零或者无穷的情况)
+Graham扫描法 思路：
+ 点集预处理：通过两次预处理，首先提取处横纵坐标都最小的，也就是以横坐标为准从小到大(横坐标相同以纵坐标从小到大)，然后再平移坐标轴使原点与第一步找到的点重合，根据其他点与原点的斜率大小进行排序 按照预处理的顺序找凸包，要保证新添加的点在凸包的点集中最新添加的两个点所形成的直线的左边。  关于得到凸包点集中是否要凸包的边上的点(初顶点以外的其他点) eg: (1,1) (1,2) (2,1) (1,2) (3,1) 包含凸包边上的点：(1,1) (1,2) (2,1) (1,2) (3,1) 不包含：(1,1) (1,2) (1,2) (3,1)
+卷包裹法得到不包含凸包边上的点 解析：此时abc在一条直线，x同或者y同，那么得到的叉积必为零，同时不满足添加进凸包点集的条件就是在线的左边或者在线上，要等于号。
+int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.x); } int solve(){ int idx = 0; // upper 0 -&amp;gt; n-1  for (int i = 0; i &amp;lt; n; i++){ while (idx &amp;gt;1 &amp;amp;&amp;amp; cross(con[idx-1], e[i], con[idx-2]) &amp;gt;= 0) idx--; con[idx++] = e[i]; } int s = idx; // lower n-1 -&amp;gt; 0  for (int i = n-1; i &amp;gt;= 0; i--) { while (idx &amp;gt; s &amp;amp;&amp;amp; cross(con[idx-1], e[i], con[idx-2]) &amp;gt;= 0) idx--; con[idx++] = e[i]; } return idx; } Graham-Scan法：同样道理：</description>
+    </item>
+    
+    <item>
+      <title>14 keras</title>
+      <link>https://www.skyzh.dev/posts/mldl/test14-keras/</link>
+      <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test14-keras/</guid>
+      <description>keras.models  Model Sequential  Keras.Input 区分于keras.layers.Input 或者区分于
+keras.layers 适用于含有神经元的网络  Dropout / SpatialDropout Dense 全连接层  用于处理图像-卷积  Convention卷积：Conv1D，Conv2D 和 Conv3D Pooling池化：MaxPooling1D,MaxPooling2D, GlobalMaxPooling1D   用于NLP处理-序列模型  LSTM / Bidirectional LSTM GRU Cu  CuDNNLSTM：这个是在老版本(在V_tensorflow &amp;lt; 2.0.0)中支持的，在新的tensorflow和独立出来的keras中都是没有的，所以如果使用的话，需要1:调整tensorflow的版本小于2.0.0、2:不使用自带的独立出来的keras，而是使用tensorflow内置的keras CUDNNGRU    一些不常用的keras库 keras.engine 底层控制驱动引擎，keras.engine.topology中的Layer来自定义keras神经网络模型中的某一层(是层，不是神经元)
+keras.initializers &amp;ndash; 初始化 keras.regularizers &amp;ndash; 正则化 keras.constraints &amp;ndash; 约束(以层为对象进行) keras.concatenate &amp;ndash; 用于连接 </description>
+    </item>
+    
+    <item>
+      <title>14.1 pytorch</title>
+      <link>https://www.skyzh.dev/posts/mldl/test14.1-pytorch/</link>
+      <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test14.1-pytorch/</guid>
+      <description>pytorch类比keras但区别 keras的所有子库基本都是复数，包括models, layers, optimizers等等
+而torch大部分都是单数
+torch.model ?
+torch.input ?
+torch.layer ?
+torch.optim torch.optim.Adam()
+一些不常用的keras库 keras.engine keras.initializers &amp;ndash; 初始化 keras.regularizers &amp;ndash; 正则化 keras.constraints &amp;ndash; 约束(以层为对象进行) keras.concatenate &amp;ndash; 用于连接 </description>
+    </item>
+    
+    <item>
+      <title>16 基本流程</title>
+      <link>https://www.skyzh.dev/posts/mldl/test16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</link>
+      <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</guid>
+      <description>工具配备：
+深度学习框架：
+​	常用：pytorch
+神经网络框架：
+ DGL：deep graph library (AWS) PyG：pytorch_geometric (Pytorch) AGL：Euler (alibaba) tf_geometric  基本流程 basic dependencies 导入dgl deep graph library ，引入，没有的话安装再引入
+try: import dgl except: !pip install dgl import dgl 导入torch的一些基本依赖
+Graph embedding [把整个表进行嵌入]   node embedding
+  edge embedding
+  build Spatial Model [构建空间model] </description>
+    </item>
+    
+    <item>
+      <title>13 Pandas</title>
+      <link>https://www.skyzh.dev/posts/mldl/test13-pandas/</link>
+      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test13-pandas/</guid>
+      <description>数据类型相关 在处理脏数据的时候：
+通过data[col][raw].dtype来查看元素的类型
+通过data[col][raw].astype = specific_data_type来切换单元格的属性
+截取 1）.loc,.iloc,.ix,只加第一个参数如.loc([1,2]),.iloc([2:3]),.ix[2]…则进行的是行选择 2）.loc,.at，选列是只能是列名，不能是position 3）.iloc,.iat，选列是只能是position，不能是列名 4）df[]只能进行行选择，或列选择，不能同时进行列选择，列选择只能是列名。
+sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Male 3.31 23.68 4 Female 3.61 24.59 print df.loc[1:3, [&amp;#39;total_bill&amp;#39;, &amp;#39;tip&amp;#39;]] print df.loc[1:3, &amp;#39;tip&amp;#39;: &amp;#39;total_bill&amp;#39;] print df.iloc[1:3, [1, 2]] print df.iloc[1:3, 1: 3] total_bill tip 1 10.34 1.66 2 23.68 3.50 3 23.68 3.31 -------------------- tip total_bill 1 1.66 10.34 2 3.50 23.68 3 3.</description>
+    </item>
+    
+    <item>
+      <title>13.1 Numpy</title>
+      <link>https://www.skyzh.dev/posts/mldl/test13.1-numpy/</link>
+      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test13.1-numpy/</guid>
+      <description>np.zeros np.zeros(size) 初始化为长度为size，内容为0的矢量「秩=1」==》既不是行向量也不是列向量【a.T=a即可以验证】
+a = np.zeros(array_size)
+np.zero(size_x, size_y) 初始化为二维的「秩=2」==》如果让此时的size_y=1,那就是个列向量；如果让此时的size_x=1,那就是个行向量
+![image-20201206171734156](/Users/aczy156/Library/Application Support/typora-user-images/image-20201206171734156.png)
+np.random.rand(size)/ np.random/randn(size) 初始化一个长度为size，内容为0～1随机数(精确说是高斯变量)矢量==》既不是行向量也不是列向量【a.T=a即可以验证】
+a = np.random.rand(array_size)
+print(a, len(a))
+# 成功初始化一个矢量/数据 输出的是[xxx, xxx, ……, xxx], array_size
+np.dot(array_a, array_b) 做矢量/向量的乘积（点乘）=》
+ 可以是下边例子的两个长度为array_size的一维向量 也可以是只要是符合矩阵乘积规则的都OK，例如(m, r) * (r, n) / (m, a) * (a, n)  a = np.random.rand(array_size)
+b = np.random.rand(array_size)
+c = np.dot(a, b)
+np 广播
+a = np.random.rand(array_size)
+c = a+5 # 加上一个常数但是numpy会自动转换成一个n为向量，来和前面的格式对齐，最后就是[a[0]+5, a[1]+5, ……]
+np.exp/np.expm1/np.log/np.log1p 做//做对数logv1,logv2……
+v = np.zero(100)</description>
+    </item>
+    
+    <item>
+      <title>15 Kaggle一些基本问题</title>
+      <link>https://www.skyzh.dev/posts/mldl/test15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</guid>
+      <description>/input目录下的数据是read_only格式 可以通过copy一份到/working
+两个路径：
+ input路径： /kaggle/input/ working路径：/kaggle/working/  利用Linux指令进行copy
+!cp -r /kaggle/input/ new_folder_name
+切换tensorflow版本到旧版本( &amp;lt; 2.x ) （1）无论如何切换，在kaggle 的kernel环境下需要修改一个kernel配置，来使对环境的配置生效
+修改kaggle的tensorflow的版本之后，print仍不变version的处理办法：https://www.kaggle.com/general/88036
+切换原因：tensorflow训练过程中的log需要旧版本（AttributeError: module &#39;tensorflow&#39; has no attribute &#39;log&#39;）
+移除掉旧的：
+!pip uninstall tensorflow
+安装新的：
+!pip install tensorflow==1.13.1
+（2）由于keras需要2.2+的版本，所以需要再次升级到高版本
+!pip install--upgrade tensorflow
+查看版本信息
+print(tf.__version)
+最后发现只有安装tensorflow 一些常见的基本报错 1、
+TypeError: &amp;#39;int&amp;#39; object is not iterable 表示数据类型、数据维度不对
+情况一：在for循环遍历的时候，要用range()把遍历的范围修饰，也就是把传入的int/len()给修饰
+for i in len(sample_list): -&amp;gt;要改成
+for i in range(len(sample_list)): 情况二：keras的layer输入数据时维度不对。
+input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进行读的时候，并没有转换成可iterable的，因为input的格式不对。</description>
+    </item>
+    
+    <item>
+      <title>12 CV Target Detection</title>
+      <link>https://www.skyzh.dev/posts/mldl/test12-cvtarget-detection/</link>
+      <pubDate>Tue, 28 Jan 2020 22:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test12-cvtarget-detection/</guid>
+      <description>CV Target Detection YOLO R-CNN &amp;amp; Fast R-CNN </description>
+    </item>
+    
+    <item>
+      <title>11 CV Image Segmentation</title>
+      <link>https://www.skyzh.dev/posts/mldl/test11-cvimage-segmentation/</link>
+      <pubDate>Tue, 28 Jan 2020 21:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test11-cvimage-segmentation/</guid>
+      <description>CV-Image Segmentation 图像分割 传统分割方法 理解：
+ 把图像分割成若干个块 每个块都有相同点 [可以利用拓广性来进行延伸]  基本方法：
+  基于阈值的图像分割：按照灰度值进行提取，直接归成纯白色和纯黑色
+  基于区域的图像分割：延伸合并 &amp;amp; 分裂 【两个可逆的过程】
+ 单个像素点 ==延伸合并==》 一个区域 整张图片 ==分裂==》 若干个区域    基于边缘检测的图像分割： 直接通过提取边缘，来划定不同的区域。
+  分水岭算法
+  Image Segmentation 具体方法分析 基于阈值的图像分割 特点：
+阈值的影响太大：1) 阈值小 =&amp;gt; 对亮的区域/灰度值低的区域 效果好 2) 阈值大 =&amp;gt; 对暗的区域/灰度值高的区域 效果好
+基于区域的图像分割  单个像素点的延伸合并  特点：
+若干个单个像素点的选取影响太大。
+拓广的规则/策略的设定影响太大。
+ 分裂  特点：
+基于边缘检测的图像分割 特点：太依赖边缘的话，有可能没法形成一个回路(差一点形成一个回路)，或者很多没有规则的线。
+基于主动轮廓的图像分割 分水岭算法 特点：对于边缘的分割太过敏感了，容易过度分割
+基于GA遗传算法的图像分割 深度学习分割 基于特征编码 - VGGNet 分割 基于特征编码 - ResNet 特点：缓解梯度消失的问题。（类似于序列模型中的GRU(重置门、更新门)和LSTM(有三个门遗忘门、记忆门、输出门)，GRU就是）</description>
+    </item>
+    
+    <item>
+      <title>10 Boosting家族</title>
+      <link>https://www.skyzh.dev/posts/mldl/test10-mlxgboost-lightgbm-catboost/</link>
+      <pubDate>Tue, 28 Jan 2020 20:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test10-mlxgboost-lightgbm-catboost/</guid>
+      <description>Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix来进行转换
+  然后通过xgb的train()来进行训练
+  for fold_n (train_idx, val_idx) in enumerate(folds.split(X)): train_data = xgb.DMatrix(data=X_train) val_data = xgb.DMatrix(data=X_val) model = xgb.train() Lightgbm 0 相关预处理 a) 中文属性的问题，需要编码，不然无法训练
+1 普通训练 2 对于利用交叉训练的 几个组成成分
+ oof: out-of-folds clf: classifier trn_idx, val_idx: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合 lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。   # 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns) features = [&amp;#39;feature1&amp;#39;, &amp;#39;feature2&amp;#39;, &amp;#39;feature3&amp;#39;, &amp;#39;feature4&amp;#39;] cat_feats = [&amp;#39;feature1&amp;#39;, &amp;#39;feature4&amp;#39;] # oof, predictions oof = np.zeros(len(train)) prediction = np.</description>
+    </item>
+    
+    <item>
+      <title>9 几种常用数据类型</title>
+      <link>https://www.skyzh.dev/posts/mldl/test9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Tue, 28 Jan 2020 19:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
+print(&amp;#39;data_np shape is: &amp;#39;, np.size(data_np, 0), np.size(data_np, 1), np.size(data_np, 2)) 需要进行维度变化的 按照维度求最值 【根据axis来选择对应的维度，然后提取最大值】 ==&amp;gt; axis=x,就是第x的维度提取最值，最后那个维度变成一，dim--
+array([[0, 1, 2], [9, 4, 5], [6, 7, 8], [10, 11, 12]]) # 当前维度(4, 3) print(np.max(a)) #全局最大 8 print(np.max(a,axis=0)) #每列最大 =&amp;gt; 第一个维度的长度变为1，所以向量的长度变为3 [6 7 8] print(np.max(a,axis=1)) #每行最大 =&amp;gt; 第二个维度的长度变为1，所以向量的长度变为4 [2 5 8]import plotly.express as px fig = px.pie(data, name=&amp;#39;attr&amp;#39;) 类似于Dataframe的value_counts() 实质还是要通过形成dataframe数据结构来进行
+pd.Series(numpy_data).value_counts().plot.bar()
+numpy 去重 区分于List，都可以去重，其中，list可以通过转换set直接去重，即：但是无法获取重复的元素的索引
+ls = list(set([&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;a&amp;#39;])) numpy去重，不仅可以去重，并且可以获得重复的索引</description>
+    </item>
+    
+    <item>
+      <title>8 Python 广播机制/apply/map/zip等</title>
+      <link>https://www.skyzh.dev/posts/mldl/test8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</link>
+      <pubDate>Tue, 28 Jan 2020 18:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</guid>
+      <description>Python - 广播机制 Python - apply [维持原来的维度数]
+应用场景：对于一个DataFrame
+1、利用函数进行apply
+然后通过给apply传入一个参数是一个映射的函数apply(func)，然后进行映射的方式就是func函数所表达的方式
+def get_length(text): return len(text) train[&amp;#39;new_length&amp;#39;] = train[&amp;#39;text&amp;#39;].apply(get_length) 2、利用lambda然后直接进行转换
+train[&amp;#39;new_length&amp;#39;] = train[&amp;#39;text&amp;#39;].apply(lambda x: len(x)) Python - map [降低原来的维度数]
+无规则映射都是可以的。【在没有设定规则的映射下，映射方式就是通过离散型数据进行映射，自动按照长度进行映射】
+也就是1-500的范围或者是abcd多少个种类，一般连续性的都没法map，因为就算map映射了之后也是各自为一个长度的直方体
+ 把一个csv中的某一列(全都是字符串)映射到一个这一列的长度的数组中  tweet_len = tweet.text.str.len() tweet_len.value_counts().plot.bar() 如果按照零一进行提取
+# value str length fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5)) # get lens list tweet_len_1 = tweet[tweet[&amp;#39;target&amp;#39;] == 1][&amp;#39;text&amp;#39;].str.len() ax1.hist(tweet_len_1, color=&amp;#39;green&amp;#39;) tweet_len_0 = tweet[tweet[&amp;#39;target&amp;#39;] == 0][&amp;#39;text&amp;#39;].str.len() ax2.hist(tweet_len_0, color=&amp;#39;red&amp;#39;)  把一个csv中的某一列(全都是字符串)映射到一个这一列的各个元素的分割后的长度的数组中  tweet_num = tweet.</description>
+    </item>
+    
+    <item>
+      <title>7 综合性案例 Credit Card Anomly Detection</title>
+      <link>https://www.skyzh.dev/posts/mldl/test7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</link>
+      <pubDate>Tue, 28 Jan 2020 17:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</guid>
+      <description>Credit Card Frauds Detection 处理样本分布不均问题：Imbalance Datasets distribution 几种可行的解决方案：
+ 采样方法  under-sampling 欠采样 over-sampling 过采样   集成学习+阈值调整 *  根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
+import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr&amp;#39;, color=&amp;#39;attr&amp;#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&amp;gt;bar】import matplotlib.pyplot as plt
+eg1:
+plt.bar(data.attr.value_counts().index, data.attr.value_counts().values) eg2:
+df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [多个属性]： import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr1&amp;#39;, color=&amp;#39;attr2&amp;#39;) 饼状图 [单个属性] import plotly.express as px fig = px.pie(data, name=&amp;#39;attr&amp;#39;) 数据可视化&amp;ndash;numerical data连续数据 </description>
+    </item>
+    
+    <item>
+      <title>6 CV</title>
+      <link>https://www.skyzh.dev/posts/mldl/test6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Tue, 28 Jan 2020 16:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
+      <description>CV-数据增强 手动人工数据增强   数据为非图形化的数据「本身不是图片」
+ 例如Digit Recognization，通过把所有像素点放进了表格里边    数据为图形化的数据「本身是图片」
+ 例如Facial Keypoints Detection，通过对已经是图片的进行变形。 变形包括：  垂直镜像对称 mirroring on vertical axis 旋转类 rotation  水平翻转 horizontal flip 旋转增强 rotation augmentation   色彩转换 color shifting  亮度增强 brightness augmentation RGB变化 RGB shifting (PCA采样，AlexNet PCA色彩增强)   剪裁类 shearing  转移/移动增强 shifit agumentation 随机剪裁 random cropping   变形类 warping  局部变形 local warping   随机噪声增强 random-noise augmentation      利用albumentations进行数据增强 要点：</description>
+    </item>
+    
+    <item>
+      <title>5.1 NLP 一些常用库</title>
+      <link>https://www.skyzh.dev/posts/mldl/test5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</link>
+      <pubDate>Tue, 28 Jan 2020 15:15:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</guid>
+      <description>NLP 工具库 NLP &amp;ndash; nltk [natural language toolkit] NLP &amp;ndash; gensim NLP 语料库 NLP &amp;ndash; GloVe全局动态库  GloVe 50D GloVe 100D GloVe 200D GloVe 300D  一些其他的具有标准参考的库 String库 punctuation 【标点符号】
+import string collections defaultdict 【默认字典】
+Counter
+from collection import defaultdict from collection import Counter </description>
+    </item>
+    
+    <item>
+      <title>5 NLP基本过程</title>
+      <link>https://www.skyzh.dev/posts/mldl/test5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
+      <description>NLP 1、数据清洗 data cleaning  清洗html中的残留的tag：BeautifulSoup 清洗标点：正则表达式 清洗常用的没有实际意义的词语(a, the)：nltk中的stepwords  # import basic dependencies from bs4 import BeautifulSoup import re from nltk.corpus import stopwords # 具体使用 # html残留tag：用BeautifulSoup，实例化对象，然后通过get_text()获取 bs = BeautifulSoup(train[&amp;#39;text_content&amp;#39;][index], &amp;#39;lxml&amp;#39;) print(&amp;#39;origin content:\n{}\nafter use BeautifulSoup to clean html tag:\n{}\n&amp;#39;, train[&amp;#39;text_content&amp;#39;][index], bs.get_text()) # 标点符号：正则表达式 letters_only = re.sub(&amp;#39;[^a-zA-Z]&amp;#39;, &amp;#39;&amp;#39;, bs.get_text()) print(&amp;#39;origin content:\n{}\nafter use re:\n{}\n&amp;#39;, bs.get_text(), letters_only) # 用nltk中导入的stopwords来删除一些常见的没有用的单词，a，the…… # 先转换成小写lower case，然后分割split，最后用nltk中的stepwords lower_case = letters_only.lower() words = lower_case.split() stopwords.words(&amp;#39;english&amp;#39;)[:20] words = [word for word in words if not word in stopwords.</description>
+    </item>
+    
+    <item>
+      <title>5 NLP基本过程</title>
+      <link>https://www.skyzh.dev/posts/mldl/test5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</link>
+      <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</guid>
+      <description>NLP punctuations - 标点 puncts = [&amp;#39;,&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;&amp;#34;&amp;#39;, &amp;#39;:&amp;#39;, &amp;#39;)&amp;#39;, &amp;#39;(&amp;#39;, &amp;#39;-&amp;#39;, &amp;#39;!&amp;#39;, &amp;#39;?&amp;#39;, &amp;#39;|&amp;#39;, &amp;#39;;&amp;#39;, &amp;#34;&amp;#39;&amp;#34;, &amp;#39;$&amp;#39;, &amp;#39;&amp;amp;&amp;#39;, &amp;#39;/&amp;#39;, &amp;#39;[&amp;#39;, &amp;#39;]&amp;#39;, &amp;#39;&amp;gt;&amp;#39;, &amp;#39;%&amp;#39;, &amp;#39;=&amp;#39;, &amp;#39;#&amp;#39;, &amp;#39;*&amp;#39;, &amp;#39;+&amp;#39;, &amp;#39;\\&amp;#39;, &amp;#39;•&amp;#39;, &amp;#39;~&amp;#39;, &amp;#39;@&amp;#39;, &amp;#39;£&amp;#39;, &amp;#39;·&amp;#39;, &amp;#39;_&amp;#39;, &amp;#39;{&amp;#39;, &amp;#39;}&amp;#39;, &amp;#39;©&amp;#39;, &amp;#39;^&amp;#39;, &amp;#39;®&amp;#39;, &amp;#39;`&amp;#39;, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;→&amp;#39;, &amp;#39;°&amp;#39;, &amp;#39;€&amp;#39;, &amp;#39;™&amp;#39;, &amp;#39;›&amp;#39;, &amp;#39;♥&amp;#39;, &amp;#39;←&amp;#39;, &amp;#39;×&amp;#39;, &amp;#39;§&amp;#39;, &amp;#39;″&amp;#39;, &amp;#39;′&amp;#39;, &amp;#39;Â&amp;#39;, &amp;#39;█&amp;#39;, &amp;#39;½&amp;#39;, &amp;#39;à&amp;#39;, &amp;#39;…&amp;#39;, &amp;#39;“&amp;#39;, &amp;#39;★&amp;#39;, &amp;#39;”&amp;#39;, &amp;#39;–&amp;#39;, &amp;#39;●&amp;#39;, &amp;#39;â&amp;#39;, &amp;#39;►&amp;#39;, &amp;#39;−&amp;#39;, &amp;#39;¢&amp;#39;, &amp;#39;²&amp;#39;, &amp;#39;¬&amp;#39;, &amp;#39;░&amp;#39;, &amp;#39;¶&amp;#39;, &amp;#39;↑&amp;#39;, &amp;#39;±&amp;#39;, &amp;#39;¿&amp;#39;, &amp;#39;▾&amp;#39;, &amp;#39;═&amp;#39;, &amp;#39;¦&amp;#39;, &amp;#39;║&amp;#39;, &amp;#39;―&amp;#39;, &amp;#39;¥&amp;#39;, &amp;#39;▓&amp;#39;, &amp;#39;—&amp;#39;, &amp;#39;‹&amp;#39;, &amp;#39;─&amp;#39;, &amp;#39;▒&amp;#39;, &amp;#39;：&amp;#39;, &amp;#39;¼&amp;#39;, &amp;#39;⊕&amp;#39;, &amp;#39;▼&amp;#39;, &amp;#39;▪&amp;#39;, &amp;#39;†&amp;#39;, &amp;#39;■&amp;#39;, &amp;#39;’&amp;#39;, &amp;#39;▀&amp;#39;, &amp;#39;¨&amp;#39;, &amp;#39;▄&amp;#39;, &amp;#39;♫&amp;#39;, &amp;#39;☆&amp;#39;, &amp;#39;é&amp;#39;, &amp;#39;¯&amp;#39;, &amp;#39;♦&amp;#39;, &amp;#39;¤&amp;#39;, &amp;#39;▲&amp;#39;, &amp;#39;è&amp;#39;, &amp;#39;¸&amp;#39;, &amp;#39;¾&amp;#39;, &amp;#39;Ã&amp;#39;, &amp;#39;⋅&amp;#39;, &amp;#39;‘&amp;#39;, &amp;#39;∞&amp;#39;, &amp;#39;∙&amp;#39;, &amp;#39;）&amp;#39;, &amp;#39;↓&amp;#39;, &amp;#39;、&amp;#39;, &amp;#39;│&amp;#39;, &amp;#39;（&amp;#39;, &amp;#39;»&amp;#39;, &amp;#39;，&amp;#39;, &amp;#39;♪&amp;#39;, &amp;#39;╩&amp;#39;, &amp;#39;╚&amp;#39;, &amp;#39;³&amp;#39;, &amp;#39;・&amp;#39;, &amp;#39;╦&amp;#39;, &amp;#39;╣&amp;#39;, &amp;#39;╔&amp;#39;, &amp;#39;╗&amp;#39;, &amp;#39;▬&amp;#39;, &amp;#39;❤&amp;#39;, &amp;#39;ï&amp;#39;, &amp;#39;Ø&amp;#39;, &amp;#39;¹&amp;#39;, &amp;#39;≤&amp;#39;, &amp;#39;‡&amp;#39;, &amp;#39;√&amp;#39;, ] fasttext mispell - 一些省略成引号的 mispell_dict = {&amp;#34;ain&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;aren&amp;#39;t&amp;#34;: &amp;#34;are not&amp;#34;,&amp;#34;can&amp;#39;t&amp;#34;: &amp;#34;cannot&amp;#34;, &amp;#34;&amp;#39;cause&amp;#34;: &amp;#34;because&amp;#34;, &amp;#34;could&amp;#39;ve&amp;#34;: &amp;#34;could have&amp;#34;, &amp;#34;couldn&amp;#39;t&amp;#34;: &amp;#34;could not&amp;#34;, &amp;#34;didn&amp;#39;t&amp;#34;: &amp;#34;did not&amp;#34;, &amp;#34;doesn&amp;#39;t&amp;#34;: &amp;#34;does not&amp;#34;, &amp;#34;don&amp;#39;t&amp;#34;: &amp;#34;do not&amp;#34;, &amp;#34;hadn&amp;#39;t&amp;#34;: &amp;#34;had not&amp;#34;, &amp;#34;hasn&amp;#39;t&amp;#34;: &amp;#34;has not&amp;#34;, &amp;#34;haven&amp;#39;t&amp;#34;: &amp;#34;have not&amp;#34;, &amp;#34;he&amp;#39;d&amp;#34;: &amp;#34;he would&amp;#34;,&amp;#34;he&amp;#39;ll&amp;#34;: &amp;#34;he will&amp;#34;, &amp;#34;he&amp;#39;s&amp;#34;: &amp;#34;he is&amp;#34;, &amp;#34;how&amp;#39;d&amp;#34;: &amp;#34;how did&amp;#34;, &amp;#34;how&amp;#39;d&amp;#39;y&amp;#34;: &amp;#34;how do you&amp;#34;, &amp;#34;how&amp;#39;ll&amp;#34;: &amp;#34;how will&amp;#34;, &amp;#34;how&amp;#39;s&amp;#34;: &amp;#34;how is&amp;#34;, &amp;#34;I&amp;#39;d&amp;#34;: &amp;#34;I would&amp;#34;, &amp;#34;I&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;I would have&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#34;: &amp;#34;I will&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;I will have&amp;#34;,&amp;#34;I&amp;#39;m&amp;#34;: &amp;#34;I am&amp;#34;, &amp;#34;I&amp;#39;ve&amp;#34;: &amp;#34;I have&amp;#34;, &amp;#34;i&amp;#39;d&amp;#34;: &amp;#34;i would&amp;#34;, &amp;#34;i&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;i would have&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#34;: &amp;#34;i will&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;i will have&amp;#34;,&amp;#34;i&amp;#39;m&amp;#34;: &amp;#34;i am&amp;#34;, &amp;#34;i&amp;#39;ve&amp;#34;: &amp;#34;i have&amp;#34;, &amp;#34;isn&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;it&amp;#39;d&amp;#34;: &amp;#34;it would&amp;#34;, &amp;#34;it&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;it would have&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#34;: &amp;#34;it will&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;it will have&amp;#34;,&amp;#34;it&amp;#39;s&amp;#34;: &amp;#34;it is&amp;#34;, &amp;#34;let&amp;#39;s&amp;#34;: &amp;#34;let us&amp;#34;, &amp;#34;ma&amp;#39;am&amp;#34;: &amp;#34;madam&amp;#34;, &amp;#34;mayn&amp;#39;t&amp;#34;: &amp;#34;may not&amp;#34;, &amp;#34;might&amp;#39;ve&amp;#34;: &amp;#34;might have&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#34;: &amp;#34;might not&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;might not have&amp;#34;, &amp;#34;must&amp;#39;ve&amp;#34;: &amp;#34;must have&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#34;: &amp;#34;must not&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;must not have&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#34;: &amp;#34;need not&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;need not have&amp;#34;,&amp;#34;o&amp;#39;clock&amp;#34;: &amp;#34;of the clock&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#34;: &amp;#34;ought not&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;ought not have&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;sha&amp;#39;n&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;shall not have&amp;#34;, &amp;#34;she&amp;#39;d&amp;#34;: &amp;#34;she would&amp;#34;, &amp;#34;she&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;she would have&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#34;: &amp;#34;she will&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;she will have&amp;#34;, &amp;#34;she&amp;#39;s&amp;#34;: &amp;#34;she is&amp;#34;, &amp;#34;should&amp;#39;ve&amp;#34;: &amp;#34;should have&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#34;: &amp;#34;should not&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;should not have&amp;#34;, &amp;#34;so&amp;#39;ve&amp;#34;: &amp;#34;so have&amp;#34;,&amp;#34;so&amp;#39;s&amp;#34;: &amp;#34;so as&amp;#34;, &amp;#34;this&amp;#39;s&amp;#34;: &amp;#34;this is&amp;#34;,&amp;#34;that&amp;#39;d&amp;#34;: &amp;#34;that would&amp;#34;, &amp;#34;that&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;that would have&amp;#34;, &amp;#34;that&amp;#39;s&amp;#34;: &amp;#34;that is&amp;#34;, &amp;#34;there&amp;#39;d&amp;#34;: &amp;#34;there would&amp;#34;, &amp;#34;there&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;there would have&amp;#34;, &amp;#34;there&amp;#39;s&amp;#34;: &amp;#34;there is&amp;#34;, &amp;#34;here&amp;#39;s&amp;#34;: &amp;#34;here is&amp;#34;,&amp;#34;they&amp;#39;d&amp;#34;: &amp;#34;they would&amp;#34;, &amp;#34;they&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;they would have&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#34;: &amp;#34;they will&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;they will have&amp;#34;, &amp;#34;they&amp;#39;re&amp;#34;: &amp;#34;they are&amp;#34;, &amp;#34;they&amp;#39;ve&amp;#34;: &amp;#34;they have&amp;#34;, &amp;#34;to&amp;#39;ve&amp;#34;: &amp;#34;to have&amp;#34;, &amp;#34;wasn&amp;#39;t&amp;#34;: &amp;#34;was not&amp;#34;, &amp;#34;we&amp;#39;d&amp;#34;: &amp;#34;we would&amp;#34;, &amp;#34;we&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;we would have&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#34;: &amp;#34;we will&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;we will have&amp;#34;, &amp;#34;we&amp;#39;re&amp;#34;: &amp;#34;we are&amp;#34;, &amp;#34;we&amp;#39;ve&amp;#34;: &amp;#34;we have&amp;#34;, &amp;#34;weren&amp;#39;t&amp;#34;: &amp;#34;were not&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#34;: &amp;#34;what will&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;what will have&amp;#34;, &amp;#34;what&amp;#39;re&amp;#34;: &amp;#34;what are&amp;#34;, &amp;#34;what&amp;#39;s&amp;#34;: &amp;#34;what is&amp;#34;, &amp;#34;what&amp;#39;ve&amp;#34;: &amp;#34;what have&amp;#34;, &amp;#34;when&amp;#39;s&amp;#34;: &amp;#34;when is&amp;#34;, &amp;#34;when&amp;#39;ve&amp;#34;: &amp;#34;when have&amp;#34;, &amp;#34;where&amp;#39;d&amp;#34;: &amp;#34;where did&amp;#34;, &amp;#34;where&amp;#39;s&amp;#34;: &amp;#34;where is&amp;#34;, &amp;#34;where&amp;#39;ve&amp;#34;: &amp;#34;where have&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#34;: &amp;#34;who will&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;who will have&amp;#34;, &amp;#34;who&amp;#39;s&amp;#34;: &amp;#34;who is&amp;#34;, &amp;#34;who&amp;#39;ve&amp;#34;: &amp;#34;who have&amp;#34;, &amp;#34;why&amp;#39;s&amp;#34;: &amp;#34;why is&amp;#34;, &amp;#34;why&amp;#39;ve&amp;#34;: &amp;#34;why have&amp;#34;, &amp;#34;will&amp;#39;ve&amp;#34;: &amp;#34;will have&amp;#34;, &amp;#34;won&amp;#39;t&amp;#34;: &amp;#34;will not&amp;#34;, &amp;#34;won&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;will not have&amp;#34;, &amp;#34;would&amp;#39;ve&amp;#34;: &amp;#34;would have&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#34;: &amp;#34;would not&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;would not have&amp;#34;, &amp;#34;y&amp;#39;all&amp;#34;: &amp;#34;you all&amp;#34;, &amp;#34;y&amp;#39;all&amp;#39;d&amp;#34;: &amp;#34;you all would&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you all would have&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;re&amp;#34;: &amp;#34;you all are&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;ve&amp;#34;: &amp;#34;you all have&amp;#34;,&amp;#34;you&amp;#39;d&amp;#34;: &amp;#34;you would&amp;#34;, &amp;#34;you&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you would have&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#34;: &amp;#34;you will&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;you will have&amp;#34;, &amp;#34;you&amp;#39;re&amp;#34;: &amp;#34;you are&amp;#34;, &amp;#34;you&amp;#39;ve&amp;#34;: &amp;#34;you have&amp;#34;, &amp;#39;colour&amp;#39;: &amp;#39;color&amp;#39;, &amp;#39;centre&amp;#39;: &amp;#39;center&amp;#39;, &amp;#39;favourite&amp;#39;: &amp;#39;favorite&amp;#39;, &amp;#39;travelling&amp;#39;: &amp;#39;traveling&amp;#39;, &amp;#39;counselling&amp;#39;: &amp;#39;counseling&amp;#39;, &amp;#39;theatre&amp;#39;: &amp;#39;theater&amp;#39;, &amp;#39;cancelled&amp;#39;: &amp;#39;canceled&amp;#39;, &amp;#39;labour&amp;#39;: &amp;#39;labor&amp;#39;, &amp;#39;organisation&amp;#39;: &amp;#39;organization&amp;#39;, &amp;#39;wwii&amp;#39;: &amp;#39;world war 2&amp;#39;, &amp;#39;citicise&amp;#39;: &amp;#39;criticize&amp;#39;, &amp;#39;youtu &amp;#39;: &amp;#39;youtube &amp;#39;, &amp;#39;Qoura&amp;#39;: &amp;#39;Quora&amp;#39;, &amp;#39;sallary&amp;#39;: &amp;#39;salary&amp;#39;, &amp;#39;Whta&amp;#39;: &amp;#39;What&amp;#39;, &amp;#39;narcisist&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;howdo&amp;#39;: &amp;#39;how do&amp;#39;, &amp;#39;whatare&amp;#39;: &amp;#39;what are&amp;#39;, &amp;#39;howcan&amp;#39;: &amp;#39;how can&amp;#39;, &amp;#39;howmuch&amp;#39;: &amp;#39;how much&amp;#39;, &amp;#39;howmany&amp;#39;: &amp;#39;how many&amp;#39;, &amp;#39;whydo&amp;#39;: &amp;#39;why do&amp;#39;, &amp;#39;doI&amp;#39;: &amp;#39;do I&amp;#39;, &amp;#39;theBest&amp;#39;: &amp;#39;the best&amp;#39;, &amp;#39;howdoes&amp;#39;: &amp;#39;how does&amp;#39;, &amp;#39;mastrubation&amp;#39;: &amp;#39;masturbation&amp;#39;, &amp;#39;mastrubate&amp;#39;: &amp;#39;masturbate&amp;#39;, &amp;#34;mastrubating&amp;#34;: &amp;#39;masturbating&amp;#39;, &amp;#39;pennis&amp;#39;: &amp;#39;penis&amp;#39;, &amp;#39;Etherium&amp;#39;: &amp;#39;Ethereum&amp;#39;, &amp;#39;narcissit&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;bigdata&amp;#39;: &amp;#39;big data&amp;#39;, &amp;#39;2k17&amp;#39;: &amp;#39;2017&amp;#39;, &amp;#39;2k18&amp;#39;: &amp;#39;2018&amp;#39;, &amp;#39;qouta&amp;#39;: &amp;#39;quota&amp;#39;, &amp;#39;exboyfriend&amp;#39;: &amp;#39;ex boyfriend&amp;#39;, &amp;#39;airhostess&amp;#39;: &amp;#39;air hostess&amp;#39;, &amp;#34;whst&amp;#34;: &amp;#39;what&amp;#39;, &amp;#39;watsapp&amp;#39;: &amp;#39;whatsapp&amp;#39;, &amp;#39;demonitisation&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonitization&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonetisation&amp;#39;: &amp;#39;demonetization&amp;#39;} </description>
+    </item>
+    
+    <item>
+      <title>5 NLP基本过程</title>
+      <link>https://www.skyzh.dev/posts/mldl/test5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</link>
+      <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</guid>
+      <description>NLP - 词嵌入 </description>
+    </item>
+    
+    <item>
+      <title>4 Feature Engineering 几种编码整合</title>
+      <link>https://www.skyzh.dev/posts/mldl/test4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Tue, 28 Jan 2020 14:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</guid>
+      <description>Feature Engineering&amp;ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
+df = pd.concat([train, test]) 用:来分割，:num表示num之前的所有，num:num之后的所有，:就是没有界限，所有的
+train = df[:len_of_train] test = df[len_of_test:] 2、提前添加属性拼接、利用属性拆分
+train[&amp;#39;type&amp;#39;] = &amp;#39;train&amp;#39; test[&amp;#39;type&amp;#39;] = &amp;#39;test&amp;#39; df = pd.concat([train, test]) train = df[df[&amp;#39;type&amp;#39;] == &amp;#39;train&amp;#39;] test = df[df[&amp;#39;type&amp;#39;] == &amp;#39;test&amp;#39;] 最后需要把拼接的时候，造成的test多了一个结果(也就是要预测的那个属性)属性给去掉
+test.drop([&amp;#39;Ans_Attr&amp;#39;], axis=1) Feature Engineering&amp;ndash;Delete Duplicated attribute 用loc提取对应的列(那么行的位置不提取的话，就要用:来全部替代)，那就是df.loc[:,~df.colums.duplicated()]。（简化过程，先提取多余属性，df.columns.duplicated()，然后取反表示非多余的留下，用~进行筛选）
+df = df.loc[:, ~df.columns.duplicated()] 用iloc的意思就是通过索引index来作为参数，提取的依据。
+Feature Engineering&amp;ndash;Extract some valid info from other Attr 典型例子：
+ titanic 中的用户名中，可以拆出Mrs, Mr……等，作为一个新的属性 Predict Feature Sale中，可以从Shop表中的shop_name属性中拆出城市的名字作为一个新的属性，可以从Category表中的type等，拆除新的属性来。  直接一句话搞定，split分割、map映射、lambda进行填入
+shops[&amp;#39;newAttr&amp;#39;] = shops[&amp;#39;oriAttr&amp;#39;].str.split(&amp;#39;&amp;#39;).map(lambda x: x[0]) shops[&amp;#39;newAttr1&amp;#39;] = shops[&amp;#39;oriAttr&amp;#39;].</description>
+    </item>
+    
+    <item>
+      <title>3 数据可视化之EDA</title>
+      <link>https://www.skyzh.dev/posts/mldl/test3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</link>
+      <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</guid>
+      <description>数据可视化&amp;ndash;categorical data 离散数据 直方图类型 [单个属性]： 根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
+import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr&amp;#39;, color=&amp;#39;attr&amp;#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&amp;gt;bar】import matplotlib.pyplot as plt
+eg1:
+plt.bar(data.attr.value_counts().index, data.attr.value_counts().values) eg2:
+df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [单个属性+多个图] ： 通过把不同图放在一个图中
+# value str length fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5)) # get lens list tweet_len_1 = tweet[tweet[&amp;#39;target&amp;#39;] == 1][&amp;#39;text&amp;#39;].str.len() # get list1 ax1.hist(tweet_len_1, color=&amp;#39;green&amp;#39;) tweet_len_0 = tweet[tweet[&amp;#39;target&amp;#39;] == 0][&amp;#39;text&amp;#39;].str.len() # get list2 ax2.hist(tweet_len_0, color=&amp;#39;red&amp;#39;) 直方图类型 [多个属性]： import plotly.express as px fig = px.</description>
+    </item>
+    
+    <item>
+      <title>3.1 数据可视化之模型评估阶段</title>
+      <link>https://www.skyzh.dev/posts/mldl/test3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</link>
+      <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</guid>
+      <description>数据可视化 &amp;ndash; 通过sklearn.metrics直接plot from sklearn.metrics import plot_precision_recall_curve
+from sklearn.metrics import plot_roc_curve
+from sklearn.metrics import plot_confusion_matrix
+1、三个参数，分别是classifier、X_test / X_train / X_val、y_test / y_train / y_val，把模型+数据集传入方法中，然后直接进行预测，并把预测出来的数据和本来就有的y_test进行运算。
+数据可视化 &amp;ndash; 通过sklearn.metrics进行计算，然后通过其他画图工具去画 首先计算所需要相关的包
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import precision_score 
+from sklearn.metrics import recall_score
+from sklearn.metrics import f1_score
+from sklearn.metrics import roc_auc_score
+from sklearn.metrics import confusion_matrix
+【一】plot_roc_curve // 然后顺便计算出来auc(也就是线下边的面积)
+1、通过roc_curve来计算tpr真正率和fpr假正率
+2、通过auc来计算ROC面积
+3、通过plt.plot()来画图
+def plot_roc_curve_(y_true, y_pred): # Compute ROC curve and ROC area(auc) fpr, tpr, threshold = roc_curve(y_true, y_pred) # 计算真正率和假正率 roc_auc = auc(fpr, tpr) # plot plt.</description>
+    </item>
+    
+    <item>
+      <title>2 历次比赛</title>
+      <link>https://www.skyzh.dev/posts/mldl/test2-%E5%8E%86%E6%AC%A1%E6%AF%94%E8%B5%9B/</link>
+      <pubDate>Tue, 28 Jan 2020 12:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test2-%E5%8E%86%E6%AC%A1%E6%AF%94%E8%B5%9B/</guid>
+      <description>[Kaggle] House Price 结构化数据(表格)、回归问题(预测房价)
+2020.4.20 House Prices V1.0
+
+[Kaggle] TMDB Box Office Prediction 结构化数据(表格，表格拼接)、回归问题
+题意：预测某公司的全球票房
+解法：脏数据的处理(把表格中的特定数据列中的json数据提取解析出来)
+[Kaggle] Digit Recognizer 解法：通过deeplearning+Neutral Network来提取属性，利用分类器来分类，神经网络最后一层用softmax。
+非结构化数据(虽然是利用表格来描述的图片像素点，但是只是通过像素点来表示图像，像素点并不能作为 单独的可以提炼出来的属性)、分类问题(softmax层多分类)
+2020.4.23 Digit Recognizer V1.0
+
+[Kaggle] Titanic 结构化数据(表格)、分类问题(二分类TorF)
+2020.4.26 Titanic V1.0
+2020.7.12 Titanic V2.0: New Featureing Engineering
+
+[Kaggle] DeepFake 非结构化数据(视频-图片,音频)、分类问题(二分类TorF)
+20207.20 DeepFake: Data proprocessing
+
+[iFLYTEK] Temperature Predict 结构化数据(表格)、时序问题(随时间推移)
+2020.7.27 Temperature Predict：Basic structure, use lightgbm and xgboost
+
+[Kaggle] Bike Sharing Demand 结构化数据(表格)、时序问题(随时间推移)
+2020.7.31 bike sharing use rf and GDBT</description>
+    </item>
+    
+    <item>
+      <title>IFLY Temperature Predict</title>
+      <link>https://www.skyzh.dev/posts/mldl/test-ifly_temperature_predict/</link>
+      <pubDate>Tue, 28 Jan 2020 04:05:44 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/mldl/test-ifly_temperature_predict/</guid>
+      <description>描述 随着计算机技术的发展，我国逐渐实现了从传统农业到现代农业的转变，正逐步迈向智慧农业。温室是现代农业技术应用的典型场景，其内部环境具有可操作性，能人为形成适宜植物生长的小型封闭生态系统，提升农产品的产量和质量，因此被广泛应用于农业生产中。在温室的各项环境因子中，作物对温度最为敏感。温度的高低影响植株细胞的酶活性，从而影响作物的生长速度、产量和质量，因此温度对作物生长发育影响极大。为了保证农产品的产量和质量，应保证作物正常生长，需对温室温度进行精确的调控。
+二、赛事任务 温室温度调控需要对温室温度进行精准的预测，本次大赛提供了中国农业大学涿州实验站的温室温度数据作为样本，参赛选手需基于提供的样本构建模型，预测温室温度变化情况。
+三、评审规则 1.数据说明： 本次比赛为参赛选手提供了温室内外的部分传感器数据，包括温室内的温度、湿度、气压以及温室外的温度、湿度、气压。
+本次比赛分为初赛和复赛两个阶段，初赛阶段提供约30天的传感器数据，其中前20天的数据作为训练数据，后10天的数据用于做温度预测；复赛阶段提供约15天的传感器数据，其中前10天的数据作为训练数据，后5天的数据用于做温度预测。
+注1：训练集的数据，每1分钟1条数据记录；测试集的数据，每30分钟1条数据记录。
+注2：选手不能利用“未来的实际数据”预测“过去的数据”，例如，假设要预测2020/6/18 08:08:08的室内温度，就不能利用这个时间点以后的真实数据进行预测。
+特别说明，温室内的湿度和气压以及温室外的温度、湿度和气压会对温室内的温度产生一定的影响。
+2.评估指标 本模型依据提交的结果文件，采用均方误差MSE进行评价。 观测值，预测值，待预测的记录数n，计算公式如下：数据准备工作  load dependencies ：五大常用numpy, pandas, matplotlib, seaborn, warnings 和一些基本的依赖 load data 加载数据：train, test check data 数据的基本状态结构，  加载依赖
+# Common five dependencies import pandas as pd import numpy as np import matplotlib.pyplot as plt %matplotlib inline import seaborn as sns sns.set_style(&amp;#39;whitegrid&amp;#39;) import warnings warnings.filterwarnings(&amp;#39;ignore&amp;#39;) import datetime from tqdm import tqdm 加载数据：注意路径问题
+# load datall df_train = pd.</description>
+    </item>
+    
+  </channel>
+</rss>

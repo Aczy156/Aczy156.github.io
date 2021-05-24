@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>15 Kaggle一些基本问题 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="15 Kaggle一些基本问题 | Aczy156" />
+	<meta name="twitter:title" content="15 Kaggle一些基本问题 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="15 Kaggle一些基本问题 | Aczy156" />
+	<meta name="application-name" content="15 Kaggle一些基本问题 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="15 Kaggle一些基本问题" />
+<meta property="og:description" content="/input目录下的数据是read_only格式 可以通过copy一份到/working
+两个路径：
+ input路径： /kaggle/input/ working路径：/kaggle/working/  利用Linux指令进行copy
+!cp -r /kaggle/input/ new_folder_name
+切换tensorflow版本到旧版本( &lt; 2.x ) （1）无论如何切换，在kaggle 的kernel环境下需要修改一个kernel配置，来使对环境的配置生效
+修改kaggle的tensorflow的版本之后，print仍不变version的处理办法：https://www.kaggle.com/general/88036
+切换原因：tensorflow训练过程中的log需要旧版本（AttributeError: module &#39;tensorflow&#39; has no attribute &#39;log&#39;）
+移除掉旧的：
+!pip uninstall tensorflow
+安装新的：
+!pip install tensorflow==1.13.1
+（2）由于keras需要2.2&#43;的版本，所以需要再次升级到高版本
+!pip install--upgrade tensorflow
+查看版本信息
+print(tf.__version)
+最后发现只有安装tensorflow 一些常见的基本报错 1、
+TypeError: &#39;int&#39; object is not iterable 表示数据类型、数据维度不对
+情况一：在for循环遍历的时候，要用range()把遍历的范围修饰，也就是把传入的int/len()给修饰
+for i in len(sample_list): -&gt;要改成
+for i in range(len(sample_list)): 情况二：keras的layer输入数据时维度不对。
+input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进行读的时候，并没有转换成可iterable的，因为input的格式不对。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/mldl/test15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/" />
+<meta property="article:published_time" content="2020-01-28T23:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T23:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="15 Kaggle一些基本问题"/>
+<meta name="twitter:description" content="/input目录下的数据是read_only格式 可以通过copy一份到/working
+两个路径：
+ input路径： /kaggle/input/ working路径：/kaggle/working/  利用Linux指令进行copy
+!cp -r /kaggle/input/ new_folder_name
+切换tensorflow版本到旧版本( &lt; 2.x ) （1）无论如何切换，在kaggle 的kernel环境下需要修改一个kernel配置，来使对环境的配置生效
+修改kaggle的tensorflow的版本之后，print仍不变version的处理办法：https://www.kaggle.com/general/88036
+切换原因：tensorflow训练过程中的log需要旧版本（AttributeError: module &#39;tensorflow&#39; has no attribute &#39;log&#39;）
+移除掉旧的：
+!pip uninstall tensorflow
+安装新的：
+!pip install tensorflow==1.13.1
+（2）由于keras需要2.2&#43;的版本，所以需要再次升级到高版本
+!pip install--upgrade tensorflow
+查看版本信息
+print(tf.__version)
+最后发现只有安装tensorflow 一些常见的基本报错 1、
+TypeError: &#39;int&#39; object is not iterable 表示数据类型、数据维度不对
+情况一：在for循环遍历的时候，要用range()把遍历的范围修饰，也就是把传入的int/len()给修饰
+for i in len(sample_list): -&gt;要改成
+for i in range(len(sample_list)): 情况二：keras的layer输入数据时维度不对。
+input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进行读的时候，并没有转换成可iterable的，因为input的格式不对。"/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">15 Kaggle一些基本问题</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="input目录下的数据是read_only格式"><code>/input</code>目录下的数据是<code>read_only</code>格式</h2>
+<p>可以通过copy一份到<code>/working</code></p>
+<p>两个路径：</p>
+<ul>
+<li>input路径： <code>/kaggle/input/</code></li>
+<li>working路径：<code>/kaggle/working/</code></li>
+</ul>
+<p>利用Linux指令进行copy</p>
+<p><code>!cp -r /kaggle/input/ new_folder_name</code></p>
+<h2 id="切换tensorflow版本到旧版本--2x-">切换tensorflow版本到旧版本( &lt; 2.x )</h2>
+<p>（1）无论如何切换，在kaggle 的kernel环境下需要修改一个kernel配置，来使对环境的配置生效</p>
+<p>修改kaggle的tensorflow的版本之后，print仍不变version的处理办法：https://www.kaggle.com/general/88036</p>
+<p>切换原因：tensorflow训练过程中的log需要旧版本（<code>AttributeError: module 'tensorflow' has no attribute 'log'</code>）</p>
+<p>移除掉旧的：</p>
+<p><code>!pip uninstall tensorflow</code></p>
+<p>安装新的：</p>
+<p><code>!pip install tensorflow==1.13.1</code></p>
+<p>（2）由于keras需要2.2+的版本，所以需要再次升级到高版本</p>
+<p><code>!pip install--upgrade tensorflow</code></p>
+<p>查看版本信息</p>
+<p><code>print(tf.__version)</code></p>
+<h3 id="最后发现只有安装tensorflow">最后发现只有安装tensorflow</h3>
+<h2 id="一些常见的基本报错">一些常见的基本报错</h2>
+<p>1、</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">TypeError: &#39;int&#39; object is not iterable
+</code></pre></div><p>表示数据类型、数据维度不对</p>
+<p>情况一：在for循环遍历的时候，要用<code>range()</code>把遍历的范围修饰，也就是把传入的<code>int/len()</code>给修饰</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> len(sample_list):
+</code></pre></div><p>-&gt;要改成</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(len(sample_list)):
+</code></pre></div><p>情况二：keras的layer输入数据时维度不对。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>) vs input_shape<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>,)
+</code></pre></div><p>前面的是数字，然后在这一层进行读的时候，并没有转换成可iterable的，因为input的格式不对。</p>
+
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>9 几种常用数据类型 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="9 几种常用数据类型 | Aczy156" />
+	<meta name="twitter:title" content="9 几种常用数据类型 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="9 几种常用数据类型 | Aczy156" />
+	<meta name="application-name" content="9 几种常用数据类型 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="9 几种常用数据类型" />
+<meta property="og:description" content="numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
+print(&#39;data_np shape is: &#39;, np.size(data_np, 0), np.size(data_np, 1), np.size(data_np, 2)) 需要进行维度变化的 按照维度求最值 【根据axis来选择对应的维度，然后提取最大值】 ==&gt; axis=x,就是第x的维度提取最值，最后那个维度变成一，dim--
+array([[0, 1, 2], [9, 4, 5], [6, 7, 8], [10, 11, 12]]) # 当前维度(4, 3) print(np.max(a)) #全局最大 8 print(np.max(a,axis=0)) #每列最大 =&gt; 第一个维度的长度变为1，所以向量的长度变为3 [6 7 8] print(np.max(a,axis=1)) #每行最大 =&gt; 第二个维度的长度变为1，所以向量的长度变为4 [2 5 8]import plotly.express as px fig = px.pie(data, name=&#39;attr&#39;) 类似于Dataframe的value_counts() 实质还是要通过形成dataframe数据结构来进行
+pd.Series(numpy_data).value_counts().plot.bar()
+numpy 去重 区分于List，都可以去重，其中，list可以通过转换set直接去重，即：但是无法获取重复的元素的索引
+ls = list(set([&#39;a&#39;, &#39;b&#39;, &#39;a&#39;])) numpy去重，不仅可以去重，并且可以获得重复的索引" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/mldl/test9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" />
+<meta property="article:published_time" content="2020-01-28T19:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T19:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="9 几种常用数据类型"/>
+<meta name="twitter:description" content="numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
+print(&#39;data_np shape is: &#39;, np.size(data_np, 0), np.size(data_np, 1), np.size(data_np, 2)) 需要进行维度变化的 按照维度求最值 【根据axis来选择对应的维度，然后提取最大值】 ==&gt; axis=x,就是第x的维度提取最值，最后那个维度变成一，dim--
+array([[0, 1, 2], [9, 4, 5], [6, 7, 8], [10, 11, 12]]) # 当前维度(4, 3) print(np.max(a)) #全局最大 8 print(np.max(a,axis=0)) #每列最大 =&gt; 第一个维度的长度变为1，所以向量的长度变为3 [6 7 8] print(np.max(a,axis=1)) #每行最大 =&gt; 第二个维度的长度变为1，所以向量的长度变为4 [2 5 8]import plotly.express as px fig = px.pie(data, name=&#39;attr&#39;) 类似于Dataframe的value_counts() 实质还是要通过形成dataframe数据结构来进行
+pd.Series(numpy_data).value_counts().plot.bar()
+numpy 去重 区分于List，都可以去重，其中，list可以通过转换set直接去重，即：但是无法获取重复的元素的索引
+ls = list(set([&#39;a&#39;, &#39;b&#39;, &#39;a&#39;])) numpy去重，不仅可以去重，并且可以获得重复的索引"/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">9 几种常用数据类型</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="numpy-数据类型">numpy 数据类型</h2>
+<h3 id="查看维度数dim">查看维度数dim</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+</code></pre></div><h3 id="查看各个维度的长度">查看各个维度的长度</h3>
+<p>【前提要知道有多少维度】</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">data_np shape is: </span><span style="color:#e6db74">&#39;</span>, np<span style="color:#f92672">.</span>size(data_np, <span style="color:#ae81ff">0</span>), np<span style="color:#f92672">.</span>size(data_np, <span style="color:#ae81ff">1</span>), np<span style="color:#f92672">.</span>size(data_np, <span style="color:#ae81ff">2</span>))
+</code></pre></div><h3 id="需要进行维度变化的">需要进行维度变化的</h3>
+<h3 id="按照维度求最值">按照维度求最值</h3>
+<p>【根据axis来选择对应的维度，然后提取最大值】 ==&gt; <code>axis=x</code>,就是第x的维度提取最值，最后那个维度变成一，<code>dim--</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">array([[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>],
+[<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>],
+[<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>],
+[<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">12</span>]])
+<span style="color:#75715e"># 当前维度(4, 3)</span>
+ 
+<span style="color:#66d9ef">print</span>(np<span style="color:#f92672">.</span>max(a)) <span style="color:#75715e">#全局最大</span>
+<span style="color:#ae81ff">8</span>
+<span style="color:#66d9ef">print</span>(np<span style="color:#f92672">.</span>max(a,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)) <span style="color:#75715e">#每列最大 =&gt; 第一个维度的长度变为1，所以向量的长度变为3</span>
+[<span style="color:#ae81ff">6</span> <span style="color:#ae81ff">7</span> <span style="color:#ae81ff">8</span>]
+<span style="color:#66d9ef">print</span>(np<span style="color:#f92672">.</span>max(a,axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)) <span style="color:#75715e">#每行最大 =&gt; 第二个维度的长度变为1，所以向量的长度变为4</span>
+[<span style="color:#ae81ff">2</span> <span style="color:#ae81ff">5</span> <span style="color:#ae81ff">8</span>]<span style="color:#f92672">import</span> plotly.express <span style="color:#f92672">as</span> px
+fig <span style="color:#f92672">=</span> px<span style="color:#f92672">.</span>pie(data, name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><h3 id="类似于dataframe的value_counts">类似于Dataframe的<code>value_counts()</code></h3>
+<p>实质还是要通过形成dataframe数据结构来进行</p>
+<p><code>pd.Series(numpy_data).value_counts().plot.bar()</code></p>
+<h3 id="numpy-去重">numpy 去重</h3>
+<p>区分于List，都可以去重，其中，list可以通过转换set直接去重，即：<strong>但是无法获取重复的元素的索引</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ls <span style="color:#f92672">=</span> list(set([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>]))
+</code></pre></div><p>numpy去重，不仅可以去重，并且可以获得重复的索引</p>
+<p>1 首先无论是字符numpy数据还是其他的，先转换为numpy数据</p>
+<p>2 然后调用<code>np.unique()</code>函数</p>
+<p>3 最后可以同时返回去重之后，被删去的元素的索引</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">np_str <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>array([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">c</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>])
+ad_np_str, indices <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>unique(np_str, return_index<span style="color:#f92672">=</span>True)
+</code></pre></div><h3 id="numpy数据映射">numpy数据映射</h3>
+<p>和list一样，没有map方法</p>
+<p>思路：通过np.where函数来进行映射，<code>np.where(condition, true=&gt;, false=&gt;)</code></p>
+<ul>
+<li>一维：<code>y_pred = np.where(np.reshape(y_pred, -1) &lt; 0.5, 0, 1)</code></li>
+<li>二维：<code>y_pred = np.array([np.where(np.reshape(pred, -1) &lt; 0.5, 0, 1) for pred in y_pred])</code></li>
+</ul>
+<h2 id="list-数据类型">List 数据类型</h2>
+<p>是最原始的list &lt;==&gt; 区分于numpy 的arr</p>
+<h2 id="dataframe-数据类型">DataFrame 数据类型</h2>
+<p>维度+各维度的长度</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">data_df<span style="color:#f92672">.</span>shape
+<span style="color:#75715e"># 输出的格式为(第一个维度的长度, 第二个维度的长度, ……)</span>
+</code></pre></div><p>维度转换类型</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Attr</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Attr</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>astype(np<span style="color:#f92672">.</span>datetime64)
+</code></pre></div><p>一些常规操作：</p>
+<ul>
+<li>
+<p>【单个格】None</p>
+<ul>
+<li>fillna</li>
+<li>dropna</li>
+</ul>
+</li>
+<li>
+<p>某个列/某个属性</p>
+<ul>
+<li>映射</li>
+<li>drop</li>
+</ul>
+</li>
+</ul>
+<p>映射：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">new_attr</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">attr</span><span style="color:#e6db74">&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">if</span> x <span style="color:#f92672">==</span> True <span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>)
+</code></pre></div><p>drop:</p>
+<p>注意是赋值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>drop([<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">old_attr</span><span style="color:#e6db74">&#39;</span>], axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><h2 id="相互转换">相互转换</h2>
+<ul>
+<li><strong>dataframe转化成array</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df<span style="color:#f92672">=</span>df<span style="color:#f92672">.</span>values
+</code></pre></div><ul>
+<li><strong>array转化成dataframe</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
+df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(df)
+</code></pre></div><ul>
+<li></li>
+</ul>
+
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

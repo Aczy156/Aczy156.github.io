@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Summary2 Aczy156的面经 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Summary2 Aczy156的面经 | Aczy156" />
+	<meta name="twitter:title" content="Summary2 Aczy156的面经 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Summary2 Aczy156的面经 | Aczy156" />
+	<meta name="application-name" content="Summary2 Aczy156的面经 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Summary2 Aczy156的面经" />
+<meta property="og:description" content="Aczy156的面经 系统 1、Linux系统的进程通信方式
+管道pipeline，信号signal，消息队列message queue，共享内存，信号量semophore，套接字socket
+   类型 无连接 可靠 流控制 优缺点 优先级     普通PIPE N Y Y 只能父子进程通信，速度慢 N   流PIPE N Y Y 速度慢 N   命名PIPE(FIFO) N Y Y 任何进程间都能通讯，但速度慢 N   消息队列 N Y Y  Y   信号量 N Y Y 不能传复杂消息 Y   共享存储 N Y Y 速度快，容量不限，但是面临同步问题，读写问题 Y   UNIX流SOCKET N Y Y  N   UNIX数据包SOCKET Y Y N  N    2、Linux指令：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/summary/summary2-%E9%9D%A2%E7%BB%8F/" />
+<meta property="article:published_time" content="2020-02-04T16:12:46+08:00" />
+<meta property="article:modified_time" content="2020-02-04T16:12:46+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Summary2 Aczy156的面经"/>
+<meta name="twitter:description" content="Aczy156的面经 系统 1、Linux系统的进程通信方式
+管道pipeline，信号signal，消息队列message queue，共享内存，信号量semophore，套接字socket
+   类型 无连接 可靠 流控制 优缺点 优先级     普通PIPE N Y Y 只能父子进程通信，速度慢 N   流PIPE N Y Y 速度慢 N   命名PIPE(FIFO) N Y Y 任何进程间都能通讯，但速度慢 N   消息队列 N Y Y  Y   信号量 N Y Y 不能传复杂消息 Y   共享存储 N Y Y 速度快，容量不限，但是面临同步问题，读写问题 Y   UNIX流SOCKET N Y Y  N   UNIX数据包SOCKET Y Y N  N    2、Linux指令："/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Summary2 Aczy156的面经</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="aczy156的面经">Aczy156的面经</h2>
+<h3 id="系统">系统</h3>
+<p>1、Linux系统的进程通信方式</p>
+<p>管道pipeline，信号signal，消息队列message queue，共享内存，信号量semophore，套接字socket</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>无连接</th>
+<th>可靠</th>
+<th>流控制</th>
+<th>优缺点</th>
+<th align="center">优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通PIPE</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>只能父子进程通信，速度慢</td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td>流PIPE</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>速度慢</td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td>命名PIPE(FIFO)</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>任何进程间都能通讯，但速度慢</td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td>消息队列</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td align="center">Y</td>
+</tr>
+<tr>
+<td>信号量</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>不能传复杂消息</td>
+<td align="center">Y</td>
+</tr>
+<tr>
+<td>共享存储</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td>速度快，容量不限，但是面临同步问题，读写问题</td>
+<td align="center">Y</td>
+</tr>
+<tr>
+<td>UNIX流SOCKET</td>
+<td>N</td>
+<td>Y</td>
+<td>Y</td>
+<td></td>
+<td align="center">N</td>
+</tr>
+<tr>
+<td>UNIX数据包SOCKET</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td></td>
+<td align="center">N</td>
+</tr>
+</tbody>
+</table>
+<p>2、Linux指令：</p>
+<p>ls指令：</p>
+<p>ln指令：软链接</p>
+<h3 id="语言">语言</h3>
+<p>1、C语言编译，运行详细过程</p>
+<p>test.c</p>
+<p>预处理(Preprocessing)：预处理用于将所有的#include头文件以及宏定义替换成其真正的内容</p>
+<p>test.i</p>
+<p>编译(Compilation)：将经过预处理之后的程序转换成特定汇编代码(assembly code)的过程</p>
+<p>test.s</p>
+<p>汇编(Assemble)：汇编过程将上一步的汇编代码转换成机器码(machine code)</p>
+<p>test.o</p>
+<p>链接(Linking):链接过程将多个目标文以及所需的库文件(.so等)链接成最终的可执行文件(executable file)</p>
+<p>test.exe</p>
+<p>2、Java的final static abstract关键字</p>
+<p>final是</p>
+<p>3、Java的public private protect</p>
+<p>4、Java的string的equal方法和其他的object的equal的区别</p>
+<h3 id="计网">计网</h3>
+<p>1、http协议：几种请求post、get、put：</p>
+<p>http1.0：get，post，head方法</p>
+<p>http2.0：get，post，head + option，put，patch，delete，trace，connect =&gt; http1.0的三种+http2.0新增的六种</p>
+<p>2、http协议与https协议区别：</p>
+<p>3、OSI七层、TCP/IP五层</p>
+<p>OSI七层：应用层、表示层、会话层、传输层、网络层、数据链路层、物理层</p>
+<p>TCP/IP五层：应用层、传输层、网络层、数据链路层、物理层</p>
+<p>4、tcp、udp区别</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">UDP</th>
+<th align="left">TCP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">是否连接</td>
+<td align="left">无连接</td>
+<td align="left">面向连接</td>
+</tr>
+<tr>
+<td align="left">是否可靠</td>
+<td align="left">不可靠传输，不使用流量控制和拥塞控制</td>
+<td align="left">可靠传输，使用流量控制和拥塞控制</td>
+</tr>
+<tr>
+<td align="left">连接对象个数</td>
+<td align="left">支持一对一，一对多，多对一和多对多交互通信</td>
+<td align="left">只能是一对一通信</td>
+</tr>
+<tr>
+<td align="left">传输方式</td>
+<td align="left">面向报文</td>
+<td align="left">面向字节流</td>
+</tr>
+<tr>
+<td align="left">首部开销</td>
+<td align="left">首部开销小，仅8字节</td>
+<td align="left">首部最小20字节，最大60字节</td>
+</tr>
+<tr>
+<td align="left">适用场景</td>
+<td align="left">适用于实时应用（IP电话、视频会议、直播等）</td>
+<td align="left">适用于要求可靠传输的应用，例如文件传输</td>
+</tr>
+</tbody>
+</table>
+<p>5、tcp的三次握手四次挥手；为什么在第三次客户端还要向服务器发送请求</p>
+<p>a) 第三次握手的原因：防止出现失效的连接请求报文段被服务端接收的情况，从而产生错误。</p>
+<p>b)（表层：第一次握手客户端要让服务器知道自己的序列号 // 要建立连接并且自己处于active状态；第二次握手服务器要让客户端知道自己的序列号 以及 自己已经知道客户端的序列号 // 可以建立，并且自己处于active状态；第三次握手客户端要让服务器知道 自己已经知道服务器的序列号了。</p>
+<p>c）一些词语相关（SYN+ACK+Data等等：第一次客户端向服务器发送SYN；第二次服务器向客户端发送SYN+ACK；第三次客户端向服务器发送ACK+Data。</p>
+<p>序列号也就是通信双方的数据原点。只有把数据原点给了对方，才能正常的进行数据交流</p>
+<p>6、域名解析的两种方式：</p>
+<p>递归和迭代：递归是客户端给一次就行，然后查询方会递归的帮忙给查；迭代是客户端查询多次，查询方查到了就返回结果，查不到就返回下一个查询方的位置让客户端去查询。</p>
+<p>递归的情况对于有缓存的是有好处的。缺点是有安全漏洞，可以造成dns攻击（DNS放大攻击和DNS缓存攻击）</p>
+<h3 id="数据库">数据库：</h3>
+<p>1、mysql的索引和主键的区别</p>
+<p>索引：一种数据结构，也就是B+树，通过B+树来进行快速查找</p>
+<p>2、</p>
+<h3 id="数据结构">数据结构：</h3>
+<p>1、红黑树：stl的map和set的底层</p>
+<h3 id="项目">项目</h3>
+<p>1、unifit团购网站中，后台的后端用户管理，数据库设计以及权限管理：</p>
+<p>通过使用Spring Security 的hasrole注解控制，是利用ROLE（角色）来控制的，而不是authorities（权限）来控制的。角色有ROLE_USER, ROLE_ADMIN</p>
+
+		</section>
+
+		<div class="meta">Posted on Feb 4, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

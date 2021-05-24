@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>硬件 on Aczy156</title>
+    <link>https://www.skyzh.dev/tags/%E7%A1%AC%E4%BB%B6/</link>
+    <description>Recent content in 硬件 on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Mon, 20 Jul 2020 21:45:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.skyzh.dev/tags/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WF 中南大学网络服务队2020招新 硬件组培训知识</title>
+      <link>https://www.skyzh.dev/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</link>
+      <pubDate>Mon, 20 Jul 2020 21:45:10 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</guid>
+      <description>首先 Authored By Aczy156
+CPU 1型号 1AMD芯片U移动端都具备核显，G为具备核显的，并且后缀无论是否有X，都可以超频，主板也都可以超，芯片组都支持CPU超频。 不同芯片组主板都支持超频，intel只有Z系列芯片组支持CPU超频 2intel有较为古老的赛扬、奔腾、至强系列、M系列(M3,M5,M7，后来M7并入i3)，低电压，用于超级本、轻薄本等；以及现在主流的有i系列（i3,i5,i7,i9）
+2架构 Intel 一代Nehalem、二代SandyBridge、三代IvyBridge、四代Haswell、五代Broadwell、六代Skylake、七代Kabylake，八代Coffee lake，第九代Coffee Lake-Refresh ，第十代Ice Lake
+AMD AMD的架构有诸如推土机（bulldozer 中文译名推土机）、打桩机(piledriver 中文译名打桩机)、压路机(streamroller 中文译名压路机)、以及最新的Ryzen系列采用的Zen架构等等。 zen架构有1系zen，2系zen+，3系zen2（移动端从2系开始，2系zen，3系zen+，4系zen2）
+3制程/工艺 intel 六代-九代 14nm 十代 10nm/14nm共存
+Amd amd1、2代12nm 三代7nm
+4核心core(C)/线程Thread(T) 超线程技术：超线程技术是一个很好的提升核心利用率的东西，将闲置处理资源充分调动起来，增强核心并行运算性能，在操作系统中一颗物理CPU能同时执行两个线程。 核心不一定越多越好，要看实际应用场景。
+5主频、超频 外频*倍频 外频：总线速度，倍频：频率倍数， 主频并不是衡量性能的唯一标准，但也是非常重要的参数，在其他参数相同的情况下，主频越高性能越好。 intel处理器采用睿频加速技术（Turbo Boost技术），来提高运行主频，达到提高性能 amdTurbo Core技术是多核产品上的一种智能调频技术，增强多核平台在运行不支持多核处理的程序时提高系统性能。 两个技术都可以实现自动超频。 AMD多核占优的原因：工艺散热限制核心组排布、由于多方面因素和挤牙膏的因素和物理架构的原因，导致intel在多核心上表现不优
+6缓存(一级缓存/二级缓存/三级缓存) 一二 一般对应核心，其中一级缓存成本很高，直接处理要求速度特别高，一般只有几十k，三级缓存共享缓存，直接和内存做通信。
+7TDP功耗 主要与CPU架构、制程的更新有关 CPU架构越先进,工艺越小，功耗越低。 同系列产品，CPU功耗还是和性能基本成正比的，性能越高，需要的功耗也就越高。
+8核显 核心显卡是封装在CPU里的，一般平时承担一些负载较轻的图形运算，使用内存共享作为显存。 其中AMD和Intel两家CPU制造厂商都有带有核心显卡的CPU。其中AMD最新的Vega架构实力强劲。
+9cpu封装 LGA：Intel CPU采用的封装方式 LGA封装是最常见的，LGA全称“land grid array”，或者叫“平面网格阵列封装”，我们平时常见的Intel CPU基本都采用了这样的封装方式。
+PGA：主流的AMD CPU采用的封装方式 PGA的全称叫做“pin grid array”，或者叫“插针网格阵列封装”，主流的AMD CPU，以及早期的酷睿移动MQ系列基本都采用了PGA封装方式
+BGA：intel所有低压CPU采用的封装方式 BGA的全称叫做“ball grid array”，或者叫“球柵网格阵列封装”。目前，绝大部分的intel移动CPU都使用了这种封装方式，例如intel所有以H、HQ、U、Y等结尾（包括但不限低压）的处理器。</description>
+    </item>
+    
+  </channel>
+</rss>

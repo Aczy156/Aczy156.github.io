@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm13 前缀和与差分 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm13 前缀和与差分 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm13 前缀和与差分 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm13 前缀和与差分 | Aczy156" />
+	<meta name="application-name" content="Algorithm13 前缀和与差分 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm13 前缀和与差分" />
+<meta property="og:description" content="前缀和与差分 一维的 最大子区间和 https://www.luogu.com.cn/problem/P1115
+题目大意：一维数组，求最大子区间的和
+（一）、前缀和思想：维护一个sum来描述当前索引位置之前的是否要存留。大于零就存储，小于零就归零。
+#include &lt;iostream&gt;using namespace std; int n, prefix, tem, ans=1&lt;&lt;31; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;prefix); while (--n) { scanf(&#34;%d&#34;, &amp;tem); prefix &#43;= tem; ans = max(ans, prefix); if (prefix &lt; 0) prefix = 0; } printf(&#34;%d\n&#34;, ans); return 0; } （二）、dp思想
+1、dp[i]表示当前位置之前的、包含自己的最大的子段，也就是说最大的要不就是单独的自己、要不就是自己加上前面的任意长度。dp[i] = max(dp[i-1]&#43;now, now);
+2、在最后要遍历一边所有的dp，也就是所有的位置上最长的，而不只是最后的那个dp[n]，是要筛选出dp[1]~dp[n]中最大的
+#include &lt;iostream&gt;using namespace std; int ans = -999999, tmp, i, n, dp[200100] = {0}; int main() { scanf(&#34;%d&#34;, &amp;n); for (i = 1; i &lt;= n; &#43;&#43;i) { scanf(&#34;%d&#34;, &amp;tmp); dp[i] = max(dp[i - 1] &#43; tmp, tmp); ans = max(ans, dp[i]); } printf(&#34;%d\n&#34;, ans); return 0; } 二维的 最大子区域和 https://www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/acm/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm13 前缀和与差分"/>
+<meta name="twitter:description" content="前缀和与差分 一维的 最大子区间和 https://www.luogu.com.cn/problem/P1115
+题目大意：一维数组，求最大子区间的和
+（一）、前缀和思想：维护一个sum来描述当前索引位置之前的是否要存留。大于零就存储，小于零就归零。
+#include &lt;iostream&gt;using namespace std; int n, prefix, tem, ans=1&lt;&lt;31; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;prefix); while (--n) { scanf(&#34;%d&#34;, &amp;tem); prefix &#43;= tem; ans = max(ans, prefix); if (prefix &lt; 0) prefix = 0; } printf(&#34;%d\n&#34;, ans); return 0; } （二）、dp思想
+1、dp[i]表示当前位置之前的、包含自己的最大的子段，也就是说最大的要不就是单独的自己、要不就是自己加上前面的任意长度。dp[i] = max(dp[i-1]&#43;now, now);
+2、在最后要遍历一边所有的dp，也就是所有的位置上最长的，而不只是最后的那个dp[n]，是要筛选出dp[1]~dp[n]中最大的
+#include &lt;iostream&gt;using namespace std; int ans = -999999, tmp, i, n, dp[200100] = {0}; int main() { scanf(&#34;%d&#34;, &amp;n); for (i = 1; i &lt;= n; &#43;&#43;i) { scanf(&#34;%d&#34;, &amp;tmp); dp[i] = max(dp[i - 1] &#43; tmp, tmp); ans = max(ans, dp[i]); } printf(&#34;%d\n&#34;, ans); return 0; } 二维的 最大子区域和 https://www."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm13 前缀和与差分</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="前缀和与差分">前缀和与差分</h2>
+<h3 id="一维的-最大子区间和">一维的 最大子区间和</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1115">https://www.luogu.com.cn/problem/P1115</a></p>
+<p>题目大意：一维数组，求最大子区间的和</p>
+<p>（一）、前缀和思想：维护一个sum来描述当前索引位置之前的是否要存留。大于零就存储，小于零就归零。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#66d9ef">int</span> n, prefix, tem, ans<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">31</span>;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>prefix);
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">-</span><span style="color:#f92672">-</span>n) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>tem);
+        prefix <span style="color:#f92672">+</span><span style="color:#f92672">=</span> tem;
+        ans <span style="color:#f92672">=</span> max(ans, prefix);
+        <span style="color:#66d9ef">if</span> (prefix <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) prefix <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>（二）、dp思想</p>
+<p>1、<code>dp[i]</code>表示当前位置之前的、<strong>包含自己的</strong>最大的子段，也就是说最大的要不就是单独的自己、要不就是自己加上前面的任意长度。<code>dp[i] = max(dp[i-1]+now, now);</code></p>
+<p>2、在最后要遍历一边所有的dp，也就是所有的位置上最长的，而不只是最后的那个dp[n]，是要筛选出dp[1]~dp[n]中最大的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">999999</span>, tmp, i, n, dp[<span style="color:#ae81ff">200100</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>};
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>tmp);
+        dp[i] <span style="color:#f92672">=</span> max(dp[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> tmp, tmp);
+        ans <span style="color:#f92672">=</span> max(ans, dp[i]);
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="二维的-最大子区域和">二维的 最大子区域和</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1719">https://www.luogu.com.cn/problem/P1719</a></p>
+<p>题目：二维数组，求最大子区域（矩形）的和</p>
+<p>1、分两步和两个方向，每一步各自对应一个方向：</p>
+<p>a) 第一步在行或者列二选一的方向上进行计算前缀和=&gt;来进行压缩(本次压缩选择的是列上进行压缩，然后)<code>a[i][j] += a[i-1][j]</code>，也就是将每一列的和都压缩起来。</p>
+<p>b) 第二部在上一步选的剩余的方向上进行提取：思想类似于上面的一维的遍历，从上往下前i行，然后用k做隔断，然后横向上在j做索引看每个i，j上的点在以k为隔断的最大值。</p>
+<p><strong>最终少了一个索引的原因</strong> ：因为两个方向遍历，每个方向上都有一对起始索引，两个方向（横纵），索引复杂度理应O(n^4)，但是由于数据预处理利用前缀和进行压缩，再利用dp来提取max，所以复杂度降到O(n^3)。原理类似于上面一维的，一个方向一对起始索引O(n^2)，降到了O(n)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 125</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, prefix[maxn][maxn], ans<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">31</span>;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+            scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>prefix[i][j]);
+            prefix[i][j] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> prefix[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j];
+        }
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> i; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>k) {
+            <span style="color:#66d9ef">int</span> t[maxn]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">0</span>}, dp[maxn]<span style="color:#f92672">=</span>{<span style="color:#ae81ff">0</span>};
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+                t[j] <span style="color:#f92672">=</span> prefix[i][j]<span style="color:#f92672">-</span>prefix[i<span style="color:#f92672">-</span>k][j];
+                dp[j] <span style="color:#f92672">=</span> max(dp[j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>t[j], t[j]);
+                ans <span style="color:#f92672">=</span> max(ans, dp[j]);
+            }
+        }
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="二维的-区域矩阵覆盖单点最大">二维的 区域矩阵覆盖+单点最大</h3>
+<p><a href="https://www.luogu.com.cn/problem/P3397">https://www.luogu.com.cn/problem/P3397</a></p>
+<p>题目大意：区域盖毯子，每个点上可以叠上多个毯子，问叠的毯子最多的点所叠的个数</p>
+<p>1、差分就是和前缀和互逆的过程</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 1005</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, diff[maxn][maxn], bgx, bgy, edx, edy;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>bgx, <span style="color:#f92672">&amp;</span>bgy, <span style="color:#f92672">&amp;</span>edx, <span style="color:#f92672">&amp;</span>edy);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> bgx; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> edx; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) diff[i][bgy]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>,diff[i][edy<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+            diff[i][j] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> diff[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+            printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, diff[i][j]);
+        }
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="二维的-最大正方形">二维的 最大正方形</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1387">https://www.luogu.com.cn/problem/P1387</a></p>
+<p>题目大意：给出01矩阵，求最大的正方形。</p>
+<p>dp：状态转移方程为<code>dp[i][j] = min(dp[i][j-1], dp[i-1][j], dp[i-1][j-1]);</code>(注意这里只是伪代码，要运行需要min套min)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 105</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, a[maxn][maxn], dp[maxn][maxn], ans;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">// dp[i][j] = min(dp[i-1][j-1], dp[i][j-1], dp[i-1][j])+1;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a[i][j]);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            <span style="color:#66d9ef">if</span> (a[i][j]) dp[i][j] <span style="color:#f92672">=</span> min(min(dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], dp[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]), dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j])<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            ans <span style="color:#f92672">=</span> max(ans, dp[i][j]);
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

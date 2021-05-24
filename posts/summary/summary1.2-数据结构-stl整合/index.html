@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Summary1.2 数据结构 STL整合 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Summary1.2 数据结构 STL整合 | Aczy156" />
+	<meta name="twitter:title" content="Summary1.2 数据结构 STL整合 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Summary1.2 数据结构 STL整合 | Aczy156" />
+	<meta name="application-name" content="Summary1.2 数据结构 STL整合 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Summary1.2 数据结构 STL整合" />
+<meta property="og:description" content="数据结构 STL 用法整合 linklist #include &lt;list&gt; list&lt;int&gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map // 功能描述 =&gt; 查找出现单次的,并尽可能的节省空间 #include &lt;map&gt; map&lt;int, bool&gt; m; for (1~n) { cin&gt;&gt;t; if (m.count(t)) m.erase(t); // m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项  else m[t] = true; } // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&lt;int, bool&gt;::iterator iter = m." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Summary1.2 数据结构 STL整合"/>
+<meta name="twitter:description" content="数据结构 STL 用法整合 linklist #include &lt;list&gt; list&lt;int&gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map // 功能描述 =&gt; 查找出现单次的,并尽可能的节省空间 #include &lt;map&gt; map&lt;int, bool&gt; m; for (1~n) { cin&gt;&gt;t; if (m.count(t)) m.erase(t); // m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项  else m[t] = true; } // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&lt;int, bool&gt;::iterator iter = m."/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Summary1.2 数据结构 STL整合</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="数据结构-stl-用法整合">数据结构 STL 用法整合</h2>
+<h3 id="linklist">linklist</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;list&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> linklist;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#75715e">// 往链表头部插入元素
+</span><span style="color:#75715e"></span>  linklist.push_front(<span style="color:#ae81ff">2</span>); <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span>  linklist.push_front(<span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 1 2
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 往链表尾部插入元素
+</span><span style="color:#75715e"></span>  linklist.push_back(<span style="color:#ae81ff">3</span>); <span style="color:#75715e">// 1 2 3
+</span><span style="color:#75715e"></span>  
+  <span style="color:#75715e">// 链表排序
+</span><span style="color:#75715e"></span>  linklist.sort();
+  <span style="color:#75715e">// 链表去重
+</span><span style="color:#75715e"></span>  linklist.unique();
+  <span style="color:#75715e">// 链表长度
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> linklistlen <span style="color:#f92672">=</span> linklist.size();
+}
+</code></pre></div><h3 id="map">map</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 功能描述 =&gt; 查找出现单次的,并尽可能的节省空间
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;map&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span> m;
+
+<span style="color:#66d9ef">for</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">~</span>n) {
+  cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>t;
+  <span style="color:#66d9ef">if</span> (m.count(t))  m.erase(t); <span style="color:#75715e">// m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">else</span> m[t] <span style="color:#f92672">=</span> true;
+}
+
+<span style="color:#75715e">// map利用迭代器进行遍历，需要设置迭代器并且指向对应的map
+</span><span style="color:#75715e"></span>map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">:</span><span style="color:#f92672">:</span>iterator iter <span style="color:#f92672">=</span> m.begin(); 
+<span style="color:#75715e">// 或者通过auto来声明：
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">auto</span> iter2 <span style="color:#f92672">=</span> m.begin();
+<span style="color:#66d9ef">while</span>(iter <span style="color:#f92672">!</span><span style="color:#f92672">=</span> m.end()) {
+  cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">key = </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>iter<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>first<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">       value = </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>iter<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>second<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;
+  iter<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+}
+<span style="color:#75715e">// map遍历利用最新的C++17的写法进行遍历,C++11/13/15都是不支持的
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> [k, v]<span style="color:#f92672">:</span> m) cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">key = </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">       value = </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>v<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;
+
+
+<span style="color:#75715e">// 迭代器的移动 =&gt; 迭代器只能进行自增操作，也即只能进行 iter++或者iter--，无法进行其他操作
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (iter<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>first <span style="color:#f92672">&gt;</span> (<span style="color:#f92672">-</span><span style="color:#f92672">-</span>iter)<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>first) {printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">当前迭代器的key比他前面的迭代器的key的值要大</span><span style="color:#e6db74">&#34;</span>);}
+</code></pre></div><h3 id="set">set</h3>
+<h3 id="unique">unique</h3>
+<h3 id="vector">vector</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> b;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+  <span style="color:#75715e">// 向量末尾插入元素
+</span><span style="color:#75715e"></span>  b.push_back(<span style="color:#ae81ff">1</span>);
+  <span style="color:#75715e">// 向量开头插入元素
+</span><span style="color:#75715e"></span>  b.insert(b.begin(), <span style="color:#ae81ff">2</span>); <span style="color:#75715e">// 2 1
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 向量任意位置插入
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  b.insert(b.begin()<span style="color:#f92672">+</span>idx, <span style="color:#ae81ff">3</span>); <span style="color:#75715e">// 2 3 1 idx为1插入到索引为1的地方
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 移除
+</span><span style="color:#75715e"></span>  b.erase(b.begin()<span style="color:#f92672">+</span>idx); <span style="color:#75715e">// 2 1 idx为1移除
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 带迭代器iteration的可以调整整个序列方向 =&gt; 注意是reverse，不是reserve；而且不是b.reverse,是外部的方法，包含在algorithm库中
+</span><span style="color:#75715e"></span>  reverse(b.begin(), b.end()); <span style="color:#75715e">// 1 2
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 排序，sort外部的方法，包含在algorithm库中
+</span><span style="color:#75715e"></span>  sort(b.begin(), b.end());
+  <span style="color:#75715e">// 查找
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">auto</span> iter <span style="color:#f92672">=</span> find(b.begin(), b.end(), target_num);
+  <span style="color:#66d9ef">if</span> (iter <span style="color:#f92672">!</span><span style="color:#f92672">=</span> b.end()) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">找到了</span><span style="color:#e6db74">&#34;</span>);
+  <span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">没找到</span><span style="color:#e6db74">&#34;</span>);
+  <span style="color:#75715e">// 易错：vector移除队尾元素
+</span><span style="color:#75715e"></span>  b.erase(b.end()); <span style="color:#75715e">// 会报错，因为b.end()实质上不是向量的最后一个，而是最后一个的下一个，就像find函数，看他是否有找到的实质就是看迭代器是否到了最后一个之后的end，而不是最后一个
+</span><span style="color:#75715e"></span>  b.pop_back(); <span style="color:#75715e">// 正确写法
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="queue">queue</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> q;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+  <span style="color:#75715e">// 往优先队列中添加元素
+</span><span style="color:#75715e"></span>  q.push(<span style="color:#ae81ff">2</span>);
+  q.push(<span style="color:#ae81ff">1</span>);
+  <span style="color:#75715e">// 获取队首 并 移除队首元素
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> queue_front <span style="color:#f92672">=</span> q.front(); pq1.pop();
+  <span style="color:#75715e">// 获取队尾
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> queue_back <span style="color:#f92672">=</span> q.back();
+}
+</code></pre></div><h3 id="priority_queue">priority_queue</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 小顶堆 - 默认的int为容器中的元素
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>, greater<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq1;
+<span style="color:#75715e">// 大顶堆 - 默认的
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> pq2;
+<span style="color:#75715e">// 重载大于号的 - 容器元素为结构体node的
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span>node, vector<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;</span>, greater<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq3;
+<span style="color:#75715e">// 重载小于号的 - 容器元素为结构体node的
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span>node, vector<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;</span>, less<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq4;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+  <span style="color:#75715e">// 往优先队列中添加元素
+</span><span style="color:#75715e"></span>  pq1.push(<span style="color:#ae81ff">2</span>);
+  pq1.push(<span style="color:#ae81ff">1</span>);
+  <span style="color:#75715e">// 获取队首 并 移除队首元素
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> queue_top <span style="color:#f92672">=</span> pq1.top(); pq1.pop();
+  <span style="color:#75715e">// 优先队列无法获取队尾，只能获取队首
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>优先队列结合重载运算符来使容器单元为结构体</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// greater =&gt; 只能重载 &gt; （大于号），重载成&lt;会报错，因为greater是指利用&gt;的比较方式
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> node{
+  <span style="color:#66d9ef">int</span> val;
+  <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&gt;</span> (<span style="color:#66d9ef">const</span> node n) <span style="color:#66d9ef">const</span>{<span style="color:#66d9ef">return</span> val<span style="color:#f92672">&gt;</span>n.val;} <span style="color:#75715e">// val的值由小到大
+</span><span style="color:#75715e"></span>}
+priority_queue<span style="color:#f92672">&lt;</span>node, vector<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;</span>, greater<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq;
+<span style="color:#75715e">// less =&gt; 只能重载 &lt; （小于号），重载成&gt;会报错，因为less是指利用&lt;进行比较的方式
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> node{
+  <span style="color:#66d9ef">int</span> val;
+  <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> node n) <span style="color:#66d9ef">const</span>{<span style="color:#66d9ef">return</span> val<span style="color:#f92672">&gt;</span>n.val;} <span style="color:#75715e">// val的值由小到大
+</span><span style="color:#75715e"></span>}
+priority_queue<span style="color:#f92672">&lt;</span>node, vector<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;</span>, less<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq;
+</code></pre></div><h3 id="upperbound--lowerbound">upperbound &amp; lowerbound</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+  <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">18</span>}, n<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>; <span style="color:#75715e">// 提前排好序的 或者 提前先排序的
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> pos1 <span style="color:#f92672">=</span> lowerbound(a, a<span style="color:#f92672">+</span>n, <span style="color:#ae81ff">7</span>); <span style="color:#75715e">// 大于等于7的边界 =&gt; 3
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> pos2 <span style="color:#f92672">=</span> upperbound(a, a<span style="color:#f92672">+</span>n, <span style="color:#ae81ff">7</span>); <span style="color:#75715e">// 大于7的边界 =&gt; 4
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> {<span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>}, n<span style="color:#f92672">=</span><span style="color:#ae81ff">7</span>; <span style="color:#75715e">//如果是反向的递减排序
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> pos3 <span style="color:#f92672">=</span> lowerbound(b, b<span style="color:#f92672">+</span>n, <span style="color:#ae81ff">7</span>); <span style="color:#75715e">// 小于等于7的边界 =&gt; 3
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> pos4 <span style="color:#f92672">=</span> lowerbound(b, b<span style="color:#f92672">+</span>n, <span style="color:#ae81ff">7</span>); <span style="color:#75715e">// 小于7的边界 =&gt; 4
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

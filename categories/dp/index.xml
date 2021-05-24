@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DP on Aczy156</title>
+    <link>https://www.skyzh.dev/categories/dp/</link>
+    <description>Recent content in DP on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.skyzh.dev/categories/dp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Algorithm2.1 背包dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
+      <description>背包dp 01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
+题目大意：
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.2 区间dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
+      <description>区间dp 区间基本提取 https://www.luogu.com.cn/problem/P2426
+题目大意：删除一段数组的数，代价为这个区间的左右端点值的差的绝对值*长度，求全部删去的最大代价。
+区间DP的水题，维护一个dp二维数组，然后三层遍历左右端点+中间割点，利用状态转移方程dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j])即可。
+注意：要上来初始化一下，初始化的值就是运算法则算出来的，而dp所做的就是排列组合来搜索组合。
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; int n, a[maxn], dp[maxn][maxn]; // dp[i][j] 表示区间[i, j]所获得的最大价值 // dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j]);  int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); for (int i = 1; i &amp;lt;= n; ++i) for (int l = 0; l+i &amp;lt;= n; ++l) if (l == 0) dp[i][i+l] = a[i]; else dp[i][i+l] = abs(a[i]-a[i+l])*(l+1); for (int i = 1; i &amp;lt;= n; ++i) for (int j = i+1; j &amp;lt;= n; ++j) for (int k = i; k &amp;lt;= j; ++k) dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j]); printf(&amp;#34;%d\n&amp;#34;, dp[1][n]); return 0; } 石子合并（线型） 石子合并（环形） https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.3 状压dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</guid>
+      <description>状压dp  主要特征：n较小 =&amp;gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
+主要思路：就是将本来某一行的状态是或否的唯二的两种【可能本来需要用数组来储存的】 =&amp;gt; 通过用二进制【01来进行储存】
+主要原因：用于解决情况之间的耦合性太复杂（就例如八皇后，看上下左右斜上下这些，直接通过压缩成字符串的状态然后来进行位运算即可），如果直接循环遍历去判断的话太麻烦，所以通过状态压缩，
+ 把本来是需要用数组表示的数据结构=&amp;gt;用一个字串直接整体表示 把本来需要循环来计算的=&amp;gt;用位运算来计算   互不侵犯：https://www.luogu.com.cn/problem/P1896
+题目大意：类似于八皇后，只不过八皇后是一行一列都会受影响，而这个题只是相邻的上下行受影响。问放n个皇后最多有多少种方式
+1、数据结构：
+dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王的个数为s个，此时的种类数量。
+2、遍历层次：遍历各个层-&amp;gt;遍历某一层所有的可能的状态-&amp;gt;遍历所需要的国王的个数-&amp;gt;遍历上一行的状态查看是否冲突sit[j]&amp;amp;sit[t] sit[j]&amp;gt;&amp;gt;1&amp;amp;sit[t] sit[j]&amp;lt;&amp;lt;1&amp;amp;sit[t] ，查看这些状态是否冲突
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10#define maxsit (1&amp;lt;&amp;lt;10)+50#define maxk 105int n, k, sit[maxk], cnt_sit, num[maxk]; // dp[i][j][s] 表示在第i行，这一行的状态为j（二进制所转换成的十进制之后的数），放了s个目标 的总方案数 typedef long long LL; LL dp[maxn][maxsit][maxk], ans=0; // 首先预处理单独这一行，可能的状态，相互之间不冲突，也就是没有相邻的。【注意是线性的，不是环形的，也就是说101这种的是完全可以的】 void init() { for (int i = 0; i &amp;lt; (1&amp;lt;&amp;lt;n); ++i) { if (i &amp;amp; (i&amp;lt;&amp;lt;1)) continue; int sum = 0; for (int j = 0; j &amp;lt; n; ++j) if (i &amp;amp; (1&amp;lt;&amp;lt;j)) sum++; sit[++cnt_sit] = i; num[cnt_sit] = sum; } } void solve() { dp[0][1][0] = 1; for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= cnt_sit; ++j) for (int l = num[j]; l &amp;lt;= k; ++l) for (int t = 1; t &amp;lt;= cnt_sit; ++t) if (!</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.4 树型dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</guid>
+      <description>树型dp  题目风格：给出树上的每个节点的值，然后给出
+ 最大子树和 https://www.luogu.com.cn/problem/P1122
+题目大意：获取该棵树中最大的子树和
+https://www.luogu.com.cn/problem/P1352</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.7 线性dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</guid>
+      <description>线性dp 时间线问题 https://www.luogu.com.cn/problem/P1095
+题目大意：时间线上，每秒钟 =&amp;gt; 可以选择a方式，属性c变化1；可以选择b方式，属性c变化2。
+1、dp[i]表示在时间为i的时候，最远可到达的距离。
+2、预处理：由于已知了a方式更好，那么可以优先通过a方式对数据dp进行预处理
+3、状态转移方程：dp[i] = max(dp[i], dp[i-1]+17)
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 300010int m, s, t, dp[maxn]; int main() { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;m, &amp;amp;s, &amp;amp;t); // 预处理  for (int i = 1; i &amp;lt;= t; ++i) if (m &amp;gt;= 10) {m-=10;dp[i] = dp[i-1]+60;} else {m+=4;dp[i] = dp[i-1];} // 状态转移  for (int i = 1; i &amp;lt;= t; ++i) dp[i] = max(dp[i], dp[i-1]+17); if (dp[t] &amp;gt;= s) { printf(&amp;#34;Yes\n&amp;#34;); for (int i = 1; i &amp;lt;= t; ++i) if (dp[i] &amp;gt;= s) {printf(&amp;#34;%d\n&amp;#34;, i);break;} } else printf(&amp;#34;No\n%d&amp;#34;, dp[t]); return 0; } https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.8 基础dp</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</guid>
+      <description>基础dp 数字三角形 https://www.luogu.com.cn/problem/P1216
+题目大意：给一个三角形矩阵，然后从上往下走，怎么才能走的总量最大。
+1、// 上往下 =&amp;gt; 初始化三角形的上边两条边
+初始化：dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i]; 状态转移方程：dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j];
+2、下往上 =&amp;gt; 初始化最下边的那条边
+初始化： dp[r-1][i] = a[r-1][i]; 状态转移方程：dp[i][j] = max(dp[i+1][i], dp[i+1][i+1])+a[i][j];
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 1005int r, a[maxn][maxn], dp[maxn][maxn], ans = 0; #include &amp;lt;cmath&amp;gt;// 上往下 =&amp;gt; 初始化三角形的上边两条边(dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i];) // dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j]; // 下往上 =&amp;gt; 初始化最下边的那条边 dp[r-1][i] = a[r-1][i]; // dp[i][j] = max(dp[i+1][i], dp[i+1][i+1])+a[i][j];  int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;r); for (int i = 0; i &amp;lt; r; ++i) for (int j = 0; j &amp;lt; i + 1; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i][j]); //init  for (int i = 0; i &amp;lt; r; ++i) dp[r-1][i] = a[r-1][i]; for (int i = r-2; i &amp;gt;= 0; --i) for (int j = 0; j &amp;lt; i + 1; ++j) dp[i][j] = max(dp[i+1][j], dp[i+1][j+1])+a[i][j]; printf(&amp;#34;%d\n&amp;#34;, dp[0][0]); /* * // init dp[0][0] = a[0][0]; for (int i = 1; i &amp;lt; r; ++i) dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i]; for (int i = 2; i &amp;lt; r; ++i) for (int j = 1; j &amp;lt; i ; ++j) dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j]; for (int i = 0; i &amp;lt; r; ++i) ans = max(ans, dp[r-1][i]); printf(&amp;#34;%d\n&amp;#34;, ans); */ return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.9 dp思维</title>
+      <link>https://www.skyzh.dev/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://www.skyzh.dev/posts/acm/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</guid>
+      <description>思维 &amp;amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
+题目大意：
+1、结合贪心思想，永远把相邻的最小的给加进去，ans += min(cost[i-1], cost[i])
+2、状态的推进更新，例如str=&amp;quot;aaa&amp;quot;，cost分别为4 3 5，在更新4 3时候就要把状态退后，用这两个的最大的去比【因为最大的才是真正留下来的】，所以要用cost[i] = max(cost[i-1], cost[i])来保留状态
+int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; for (int i = 1; i &amp;lt; s.length(); i++){ if (s[i] == s[i-1]){ ans += min(cost[i-1], cost[i]); cost[i] = max(cost[i-1], cost[i]); } } return ans; } 循环一圈形式的dp https://www.luogu.com.cn/problem/P1057
+题目大意：
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1] (注意对圈的边界的人的特判)  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;t); // init  dp[0][0] = 1; for (int i = 1; i &amp;lt; t; ++i) for (int j = 0; j &amp;lt; n; ++j) if (j == 0) dp[i][j] = dp[i-1][1]+dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]+dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1]; printf(&amp;#34;%d\n&amp;#34;, dp[t-1][0]); return 0; } </description>
+    </item>
+    
+  </channel>
+</rss>

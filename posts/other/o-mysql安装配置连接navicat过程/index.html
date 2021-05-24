@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Mysql安装、配置、连接navicat过程 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Mysql安装、配置、连接navicat过程 | Aczy156" />
+	<meta name="twitter:title" content="Mysql安装、配置、连接navicat过程 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Mysql安装、配置、连接navicat过程 | Aczy156" />
+	<meta name="application-name" content="Mysql安装、配置、连接navicat过程 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Mysql安装、配置、连接navicat过程" />
+<meta property="og:description" content="Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
+配置环境变量 按win键，输入“查看高级系统设置”-&gt;编辑系统变量中的PATH-&gt;添加下载的mysql的bin目录。 eg：C:\Program Files\MySQL\MySQL Server 8.0\bin 按win键，输入cmd，右击通过管理员权限打开
+ 进入mysql文件下的bin目录cd &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin&quot;(目录不同电脑不同，通过tab自动弹出的是最准的) mysqld --initialize --console记录下来初始化的密码  mysqld install mysqld --console 可以测试一下当前的数据库是否安装好：  登陆mysql -u root -p,密码是上面初始化的那个。 执行show databases;如果报错，可以通过修改密码解决。alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;youpassword&#39;    设置密码加密方式 此步可以解决navicat可视化管理本地mysql或者其他IP的MySQL的连接失败的情况
+ 首先登陆mysql -u root -p,如果改了密码了就是自己改的，如果没有改过密码就是原来初始话的那个密码 然后更改加密方式： alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;youpassword&#39;  最后navicat可以连接成功 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.skyzh.dev/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/" />
+<meta property="article:published_time" content="2020-03-17T21:54:42+08:00" />
+<meta property="article:modified_time" content="2020-03-17T21:54:42+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mysql安装、配置、连接navicat过程"/>
+<meta name="twitter:description" content="Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
+配置环境变量 按win键，输入“查看高级系统设置”-&gt;编辑系统变量中的PATH-&gt;添加下载的mysql的bin目录。 eg：C:\Program Files\MySQL\MySQL Server 8.0\bin 按win键，输入cmd，右击通过管理员权限打开
+ 进入mysql文件下的bin目录cd &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin&quot;(目录不同电脑不同，通过tab自动弹出的是最准的) mysqld --initialize --console记录下来初始化的密码  mysqld install mysqld --console 可以测试一下当前的数据库是否安装好：  登陆mysql -u root -p,密码是上面初始化的那个。 执行show databases;如果报错，可以通过修改密码解决。alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;youpassword&#39;    设置密码加密方式 此步可以解决navicat可视化管理本地mysql或者其他IP的MySQL的连接失败的情况
+ 首先登陆mysql -u root -p,如果改了密码了就是自己改的，如果没有改过密码就是原来初始话的那个密码 然后更改加密方式： alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;youpassword&#39;  最后navicat可以连接成功 "/>
+<script src="https://www.skyzh.dev/js/feather.min.js"></script>
+	
+	<link href="https://www.skyzh.dev/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://www.skyzh.dev/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://www.skyzh.dev/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Mysql安装、配置、连接navicat过程</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="windows环境下配置mysql环境">Windows环境下配置mysql环境</h2>
+<h2 id="安装包下载">安装包下载</h2>
+<p>清华源可以直接下载.msi 安装引导。
+<a href="https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/">https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/</a></p>
+<h2 id="配置环境变量">配置环境变量</h2>
+<p>按win键，输入“查看高级系统设置”-&gt;编辑系统变量中的PATH-&gt;添加下载的mysql的<strong>bin目录</strong>。
+eg：<code>C:\Program Files\MySQL\MySQL Server 8.0\bin</code>
+按win键，输入cmd，<strong>右击通过管理员权限打开</strong></p>
+<ul>
+<li><strong>进入mysql文件下的bin目录</strong><code>cd &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin&quot;</code>(目录不同电脑不同，通过tab自动弹出的是最准的)</li>
+<li><code>mysqld --initialize --console</code><strong>记录下来初始化的密码</strong>
+<img src="https://img-blog.csdnimg.cn/20200316164903745.png" alt="在这里插入图片描述"></li>
+<li><code>mysqld install</code></li>
+<li><code>mysqld --console</code></li>
+<li>可以测试一下当前的数据库是否安装好：
+<ul>
+<li>登陆<code>mysql -u root -p</code>,密码是上面初始化的那个。</li>
+<li>执行<code>show databases;</code>如果报错，可以通过修改密码解决。<code>alter user 'root'@'localhost' identified by 'youpassword'</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="设置密码加密方式">设置密码加密方式</h2>
+<p>此步可以解决navicat可视化管理本地mysql或者其他IP的MySQL的连接失败的情况</p>
+<ul>
+<li>首先登陆<code>mysql -u root -p</code>,如果改了密码了就是自己改的，如果没有改过密码就是原来初始话的那个密码</li>
+<li>然后更改加密方式：
+<code>alter user 'root'@'localhost' identified with mysql_native_password by 'youpassword'</code></li>
+</ul>
+<p>最后navicat可以连接成功
+<img src="https://img-blog.csdnimg.cn/20200316165542128.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzMzQ1MjA0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+		</section>
+
+		<div class="meta">Posted on Mar 17, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/mysql">MySQL</a></li>
+					
+					<li><a href="/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2">环境&amp;部署</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-52525161-8', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>
