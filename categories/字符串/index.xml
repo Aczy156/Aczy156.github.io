@@ -14,17 +14,6 @@
     
     <item>
       <title>Algorithm1 字符串 整合</title>
-      <link>http://www.chenranfei.online/algorithm-posts/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/algorithm-posts/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/</guid>
-      <description>字符串 &amp;amp; 回文串 Leetcode125-valid-palindrome 题目链接：valid-palindrome
-C/C++ - basic 利用toupper()、tolower()转换大小写
-bool isPalindrome(string s) { // remove invalid char and transform to lower case  string str = &amp;#34;&amp;#34;; for(int i = 0; i &amp;lt; s.length(); i++) if (s[i] &amp;lt;= &amp;#39;Z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;A&amp;#39; || s[i] &amp;lt;= &amp;#39;z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;a&amp;#39; || s[i] &amp;lt;= &amp;#39;9&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;0&amp;#39;) str += tolower(s[i]); // check  int l = str.size(); for (int i = 0; i &amp;lt; str.</description>
-    </item>
-    
-    <item>
-      <title>Algorithm1 字符串 整合</title>
       <link>http://www.chenranfei.online/posts/acm/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
@@ -32,21 +21,6 @@ bool isPalindrome(string s) { // remove invalid char and transform to lower case
       <description>字符串 &amp;amp; 回文串 Leetcode125-valid-palindrome 题目链接：valid-palindrome
 C/C++ - basic 利用toupper()、tolower()转换大小写
 bool isPalindrome(string s) { // remove invalid char and transform to lower case  string str = &amp;#34;&amp;#34;; for(int i = 0; i &amp;lt; s.length(); i++) if (s[i] &amp;lt;= &amp;#39;Z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;A&amp;#39; || s[i] &amp;lt;= &amp;#39;z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;a&amp;#39; || s[i] &amp;lt;= &amp;#39;9&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;0&amp;#39;) str += tolower(s[i]); // check  int l = str.size(); for (int i = 0; i &amp;lt; str.</description>
-    </item>
-    
-    <item>
-      <title>Algorithm1.1 字符串-匹配</title>
-      <link>http://www.chenranfei.online/algorithm-posts/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E6%8B%86%E5%88%86-%E6%8B%BC%E6%8E%A5/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/algorithm-posts/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E6%8B%86%E5%88%86-%E6%8B%BC%E6%8E%A5/</guid>
-      <description>字符串 &amp;amp; 匹配（拆分） 字串匹配之后替换 =&amp;gt; map进行映射，将要映射的成分进行映射 https://www.luogu.com.cn/problem/P1603
-题目大意：给六个字符串，然后如果有映射的进行映射为数字，没有的就不映射。输出最后映射完的结果
-1、准备数据结构：用于匹配的map字典=&amp;gt;将字符串与数字进行映射
-2、易错：第一位随便匹配，后面的位数如果是1位的话，拼接到一起之前要补0，例如如果是5，要输出05。
-声明字符串映射的数据结构map
-// 声明map map&amp;lt;string, int&amp;gt; mp; // 进行映射 mp[&amp;#34;one&amp;#34;] = 1; mp[&amp;#34;two&amp;#34;] = 2; /* ……*/ mp[&amp;#34;nineteen&amp;#34;] = 19; mp[&amp;#34;twenty&amp;#34;] = 20; mp[&amp;#34;one&amp;#34;] = 1; 进行匹配：
-int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp[str]){ int cnt = mp[str]*mp[str]%100; if (!cnt) continue; ans[idx++] = cnt; } } sort(ans, ans+idx); printf(&amp;#34;%d&amp;#34;, ans[0]); for (int i = 1; i &amp;lt; idx; ++i) { if (ans[i] &amp;lt; 10) printf(&amp;#34;0&amp;#34;); printf(&amp;#34;%d&amp;#34;, ans[i]); } return 0; } https://www.</description>
     </item>
     
     <item>
@@ -62,25 +36,6 @@ int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp
 声明字符串映射的数据结构map
 // 声明map map&amp;lt;string, int&amp;gt; mp; // 进行映射 mp[&amp;#34;one&amp;#34;] = 1; mp[&amp;#34;two&amp;#34;] = 2; /* ……*/ mp[&amp;#34;nineteen&amp;#34;] = 19; mp[&amp;#34;twenty&amp;#34;] = 20; mp[&amp;#34;one&amp;#34;] = 1; 进行匹配：
 int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp[str]){ int cnt = mp[str]*mp[str]%100; if (!cnt) continue; ans[idx++] = cnt; } } sort(ans, ans+idx); printf(&amp;#34;%d&amp;#34;, ans[0]); for (int i = 1; i &amp;lt; idx; ++i) { if (ans[i] &amp;lt; 10) printf(&amp;#34;0&amp;#34;); printf(&amp;#34;%d&amp;#34;, ans[i]); } return 0; } https://www.</description>
-    </item>
-    
-    <item>
-      <title>Algorithm1.2 字符串 Trie树</title>
-      <link>http://www.chenranfei.online/algorithm-posts/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/algorithm-posts/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
-      <description>字符串 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
- [模版] 点名问题 https://www.luogu.com.cn/problem/P2580
-题目大意：给出若干个人的名字，多次询问看某个询问是否是第一次出现 &amp;amp; 重复出现【字典树最基本的应用】 &amp;amp; 错误名字
-1、数据结构：
-ch[maxn][字符串的涉及字符空间]，一般字典树第二维都是26，26个字母
-val[maxn]用来记录索引到这个点的值，例如学生名字是索引的字典，这个学生的各个成绩就是val这个值，exist[maxn]用来记录是否存在或者重复访问
-2、常用操作：
-插入insert：
-查找query：
- 是否存在或者重复访问，访问exist数组 字符串对应的值，访问val数组  AC代码：只需访问exist，看是否存在或者重复访问
-#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;cstring&amp;gt;#define maxn 500010struct trie { int nex[maxn][26], cnt; int exist[maxn]; // 0 没出现；1 第一出现；2 重复出现  int val[maxn]; // -1 查不到这个人的对应的值  void insert(char *s) { int p = 0, l = strlen(s); for (int i = 0; i &amp;lt; l; i++) { int c = s[i] - &amp;#39;a&amp;#39;; if (!</description>
     </item>
     
     <item>
