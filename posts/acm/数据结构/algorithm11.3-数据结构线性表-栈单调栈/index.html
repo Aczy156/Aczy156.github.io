@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm11.3 数据结构 线性表 栈 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm11.3 数据结构 线性表 栈 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm11.3 数据结构 线性表 栈 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm11.3 数据结构 线性表 栈 | Aczy156" />
+	<meta name="application-name" content="Algorithm11.3 数据结构 线性表 栈 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm11.3 数据结构 线性表 栈" />
+<meta property="og:description" content="数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
+2、通过手写栈
+ 进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
+题目大意：给定进栈顺序和出栈顺序，根据进栈顺序来比对出栈顺序是否正确
+1、push、pop、empty
+#include &lt;iostream&gt;using namespace std; #define maxn 100010int t, len, in[maxn], out[maxn], idx_out; #include &lt;stack&gt;stack&lt;int&gt; s; int main() { scanf(&#34;%d&#34;, &amp;t); while (t--) { // init  idx_out = 1; scanf(&#34;%d&#34;, &amp;len); for (int i = 1; i &lt;= len; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;in[i]); for (int i = 1; i &lt;= len; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;out[i]); for (int i = 1; i &lt;= len; &#43;&#43;i) { s." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm11.3 数据结构 线性表 栈"/>
+<meta name="twitter:description" content="数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
+2、通过手写栈
+ 进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
+题目大意：给定进栈顺序和出栈顺序，根据进栈顺序来比对出栈顺序是否正确
+1、push、pop、empty
+#include &lt;iostream&gt;using namespace std; #define maxn 100010int t, len, in[maxn], out[maxn], idx_out; #include &lt;stack&gt;stack&lt;int&gt; s; int main() { scanf(&#34;%d&#34;, &amp;t); while (t--) { // init  idx_out = 1; scanf(&#34;%d&#34;, &amp;len); for (int i = 1; i &lt;= len; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;in[i]); for (int i = 1; i &lt;= len; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;out[i]); for (int i = 1; i &lt;= len; &#43;&#43;i) { s."/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm11.3 数据结构 线性表 栈</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="数据结构-线性表---栈">数据结构 线性表 - 栈</h2>
+<blockquote>
+<p>1、通过STL库中的stack，直接可以使用的链表</p>
+<p>2、通过手写栈</p>
+</blockquote>
+<h3 id="进出栈顺序问题---利用stl库中的栈进行实现">进出栈顺序问题 - 利用STL库中的栈进行实现</h3>
+<p><a href="https://www.luogu.com.cn/problem/P4387">https://www.luogu.com.cn/problem/P4387</a></p>
+<p>题目大意：给定进栈顺序和出栈顺序，根据进栈顺序来比对出栈顺序是否正确</p>
+<p>1、push、pop、empty</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 100010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> t, len, in[maxn], out[maxn], idx_out;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stack&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>stack<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> s;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>t);
+    <span style="color:#66d9ef">while</span> (t<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>        idx_out <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>len);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> len; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>in[i]);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> len; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>out[i]);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> len; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            s.push(in[i]);
+            <span style="color:#66d9ef">while</span> ((s.top()) <span style="color:#f92672">=</span><span style="color:#f92672">=</span> out[idx_out]) {s.pop();idx_out<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;<span style="color:#66d9ef">if</span> (s.empty()) <span style="color:#66d9ef">break</span>;}
+        }
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>s.empty()) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">No</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+        <span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Yes</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+        <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>s.empty()) s.pop();
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="进出栈顺序问题---利用手写栈进行实现">进出栈顺序问题 - 利用手写栈进行实现</h3>
+<p>1、数据结构：用一个数组来模拟栈</p>
+<p><code>stk[maxn]</code>用做存放数据的容器，<code>top</code>用来做栈的唯一索引。【注意，堆用作存放数据的容器<code>是myheap[maxn]</code>，size用来做堆的唯一索引。】</p>
+<p>2、基本操作：push、pop、empty</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// push添加元素
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x) {stk[<span style="color:#f92672">+</span><span style="color:#f92672">+</span>top] <span style="color:#f92672">=</span> x;}
+<span style="color:#75715e">// pop弹出栈顶元素
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pop</span>() {top<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;}
+<span style="color:#75715e">// 判断是否为空 =&gt; 就看栈顶的索引top的值即可，看索引是否是0，是0的话就代表栈顶
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>() {<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>top) <span style="color:#66d9ef">return</span> true;<span style="color:#66d9ef">return</span> false;}
+</code></pre></div><p>AC代码</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 100010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> t, stk[maxn], top, len, in[maxn], out[maxn], idx_out;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> x) {stk[<span style="color:#f92672">+</span><span style="color:#f92672">+</span>top] <span style="color:#f92672">=</span> x;}
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pop</span>() {top<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;}
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">empty</span>() { <span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span>top)<span style="color:#66d9ef">return</span> true;<span style="color:#66d9ef">return</span> false;}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>t);
+    <span style="color:#66d9ef">while</span> (t<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>        top<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;idx_out<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>len);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> len; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>in[i]);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> len; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>out[i]);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> len; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            push(in[i]);
+            <span style="color:#66d9ef">while</span> (stk[top] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> out[idx_out]) {pop();idx_out<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;<span style="color:#66d9ef">if</span> (empty())<span style="color:#66d9ef">break</span>;}
+        }
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>empty()) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">No</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+        <span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Yes</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

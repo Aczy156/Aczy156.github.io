@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm10 二分 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm10 二分 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm10 二分 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm10 二分 | Aczy156" />
+	<meta name="application-name" content="Algorithm10 二分 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm10 二分" />
+<meta property="og:description" content="二分 关键点：等于号的选取、l/r的区间范围的更改、check函数
+整数二分
+1 =&gt; l &lt;= r
+while (l &lt;= r) { mid = (l&#43;r)&gt;&gt;1; if (mid == 0) {ans = mid;break;} if (check(mid)) l = (ans=mid)&#43;1; else r = mid-1; } 2 =&gt; l&#43;1 &lt; r
+while (l &#43; 1 &lt; r) { mid = (l &#43; r) / 2; if (f(mid)) l = mid; else r = mid; } cout &lt;&lt; l &lt;&lt; endl; https://www.luogu.com.cn/problem/P1024
+题目大意：
+#include &lt;iostream&gt;using namespace std; double a, b, c, d, l, r, tl, tr, mid; double compute(double x) {return a*x*x*x&#43;b*x*x&#43;c*x&#43;d;} int main() { scanf(&#34;%lf%lf%lf%lf&#34;, &amp;a, &amp;b, &amp;c, &amp;d); for (int i = -100; i &lt; 100 ; &#43;&#43;i) { l = i,r = i&#43;1; tl = compute(l), tr = compute(r); // printf(&#34;%d == %." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm10 二分"/>
+<meta name="twitter:description" content="二分 关键点：等于号的选取、l/r的区间范围的更改、check函数
+整数二分
+1 =&gt; l &lt;= r
+while (l &lt;= r) { mid = (l&#43;r)&gt;&gt;1; if (mid == 0) {ans = mid;break;} if (check(mid)) l = (ans=mid)&#43;1; else r = mid-1; } 2 =&gt; l&#43;1 &lt; r
+while (l &#43; 1 &lt; r) { mid = (l &#43; r) / 2; if (f(mid)) l = mid; else r = mid; } cout &lt;&lt; l &lt;&lt; endl; https://www.luogu.com.cn/problem/P1024
+题目大意：
+#include &lt;iostream&gt;using namespace std; double a, b, c, d, l, r, tl, tr, mid; double compute(double x) {return a*x*x*x&#43;b*x*x&#43;c*x&#43;d;} int main() { scanf(&#34;%lf%lf%lf%lf&#34;, &amp;a, &amp;b, &amp;c, &amp;d); for (int i = -100; i &lt; 100 ; &#43;&#43;i) { l = i,r = i&#43;1; tl = compute(l), tr = compute(r); // printf(&#34;%d == %."/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm10 二分</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="二分">二分</h2>
+<p>关键点：等于号的选取、l/r的区间范围的更改、check函数</p>
+<p>整数二分</p>
+<p>1 =&gt; <code>l &lt;= r</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"> <span style="color:#66d9ef">while</span> (l <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> r) {
+        mid <span style="color:#f92672">=</span> (l<span style="color:#f92672">+</span>r)<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {ans <span style="color:#f92672">=</span> mid;<span style="color:#66d9ef">break</span>;}
+        <span style="color:#66d9ef">if</span> (check(mid)) l <span style="color:#f92672">=</span> (ans<span style="color:#f92672">=</span>mid)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">else</span> r <span style="color:#f92672">=</span> mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    }
+</code></pre></div><p>2 =&gt; <code>l+1 &lt; r</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">while</span> (l <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> r) {
+		mid <span style="color:#f92672">=</span> (l <span style="color:#f92672">+</span> r) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+		<span style="color:#66d9ef">if</span> (f(mid)) l <span style="color:#f92672">=</span> mid;
+		<span style="color:#66d9ef">else</span> r <span style="color:#f92672">=</span> mid;
+	}
+	cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> l <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+</code></pre></div><p><a href="https://www.luogu.com.cn/problem/P1024">https://www.luogu.com.cn/problem/P1024</a></p>
+<p>题目大意：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#66d9ef">double</span> a, b, c, d, l, r, tl, tr, mid;
+
+<span style="color:#66d9ef">double</span> <span style="color:#a6e22e">compute</span>(<span style="color:#66d9ef">double</span> x) {<span style="color:#66d9ef">return</span> a<span style="color:#f92672">*</span>x<span style="color:#f92672">*</span>x<span style="color:#f92672">*</span>x<span style="color:#f92672">+</span>b<span style="color:#f92672">*</span>x<span style="color:#f92672">*</span>x<span style="color:#f92672">+</span>c<span style="color:#f92672">*</span>x<span style="color:#f92672">+</span>d;}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lf%lf%lf%lf</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b, <span style="color:#f92672">&amp;</span>c, <span style="color:#f92672">&amp;</span>d);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">100</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100</span> ; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        l <span style="color:#f92672">=</span> i,r <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+        tl <span style="color:#f92672">=</span> compute(l), tr <span style="color:#f92672">=</span> compute(r);
+<span style="color:#75715e">//        printf(&#34;%d == %.2lf == %.2lf\n&#34;, i, tl, tr);
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (tl <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%.2lf </span><span style="color:#e6db74">&#34;</span>, l);
+        <span style="color:#75715e">// 限定了单个解的区间之后，进行二分
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (tl<span style="color:#f92672">*</span>tr <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>){
+<span style="color:#75715e">//            printf(&#34; -------- %d -- %d\n&#34;, l, r);
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">while</span> (r<span style="color:#f92672">-</span>l <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0.001</span>) {
+                mid <span style="color:#f92672">=</span> (r<span style="color:#f92672">+</span>l)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;
+                <span style="color:#66d9ef">if</span> (compute(mid) <span style="color:#f92672">*</span> compute(r) <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) l <span style="color:#f92672">=</span> mid;
+                <span style="color:#66d9ef">else</span> r <span style="color:#f92672">=</span> mid;
+            }
+            printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%.2lf </span><span style="color:#e6db74">&#34;</span>, r);
+        }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="整数二分">整数二分</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1873">https://www.luogu.com.cn/problem/P1873</a></p>
+<p>题目大意：求最高的切割高度，满足切下来的总长度大于要求的</p>
+<h3 id="整数二分特殊情况特判-也就是二分不出结果的情况">整数二分+特殊情况特判 （=&gt;也就是二分不出结果的情况）</h3>
+<p><a href="https://www.luogu.com.cn/problem/P2440">https://www.luogu.com.cn/problem/P2440</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 1000100</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> LL;
+LL k;
+<span style="color:#66d9ef">int</span> n, a[maxn], l, r, mid, ans;
+
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">check</span>(<span style="color:#66d9ef">int</span> mid) {
+    LL cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) cnt <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (a[i]<span style="color:#f92672">/</span>mid);
+    <span style="color:#66d9ef">return</span> cnt <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> k;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>k);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);r <span style="color:#f92672">=</span> max(r, a[i]);}
+    <span style="color:#66d9ef">while</span> (l <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> r) {
+        mid <span style="color:#f92672">=</span> (l<span style="color:#f92672">+</span>r)<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">if</span> (mid <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {ans <span style="color:#f92672">=</span> mid;<span style="color:#66d9ef">break</span>;}
+        <span style="color:#66d9ef">if</span> (check(mid)) l <span style="color:#f92672">=</span> (ans<span style="color:#f92672">=</span>mid)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">else</span> r <span style="color:#f92672">=</span> mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="整数二分-1">整数二分</h3>
+<p><a href="https://www.luogu.com.cn/problem/P2678">https://www.luogu.com.cn/problem/P2678</a></p>
+<p>1、check函数的写法 =&gt; 通过二分最小的跳跃距离。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 50010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> LL;
+<span style="color:#75715e">#</span><span style="color:#75715e">define INF (1&lt;&lt;31)-1</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, a[maxn], l<span style="color:#f92672">=</span>INF, r, mid, ans;
+LL len;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">check</span>(<span style="color:#66d9ef">int</span> mid) {
+    <span style="color:#66d9ef">int</span> last<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, cnt<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i){
+        <span style="color:#66d9ef">if</span> (a[i]<span style="color:#f92672">-</span>last<span style="color:#f92672">&lt;</span>mid) cnt<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        <span style="color:#66d9ef">else</span> last <span style="color:#f92672">=</span> a[i];
+    }
+    <span style="color:#66d9ef">if</span> (len<span style="color:#f92672">-</span>last<span style="color:#f92672">&lt;</span>mid) cnt<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+<span style="color:#75715e">//    printf(&#34;----- %d %d\n&#34;, mid, cnt);
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> cnt<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span>m;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>len, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+    sort(a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>n);
+    l <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,r <span style="color:#f92672">=</span> len<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">while</span> (l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span> r) {
+        mid <span style="color:#f92672">=</span> (l<span style="color:#f92672">+</span>r)<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">if</span> (check(mid)) l <span style="color:#f92672">=</span> (ans<span style="color:#f92672">=</span>mid);
+        <span style="color:#66d9ef">else</span> r <span style="color:#f92672">=</span> mid;
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="小数二分">小数二分</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1163">https://www.luogu.com.cn/problem/P1163</a></p>
+<h3 id="特殊二分">特殊二分</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1678">https://www.luogu.com.cn/problem/P1678</a></p>
+<p>在二分的过程中找最小的遍历到的最小，二分搜索到的那个并不一定是最佳的，所以在遍历的过程中进行判断</p>
+<p>题目大意：m个学校，n个学生，给每个学生找到绝对值的差值最小的分数的学习（低了高了都行）</p>
+<p>1、每个学生都进行一遍二分，然后最后在二分的遍历过程中获取最小的和</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 100010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> m, n, a[maxn], b[maxn], total;
+<span style="color:#75715e">#</span><span style="color:#75715e">define INF (1&lt;&lt;31)-1</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>b[i]);
+    sort(a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, r <span style="color:#f92672">=</span> m, mid, ans<span style="color:#f92672">=</span>INF;
+        <span style="color:#66d9ef">while</span> (l <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> r) {
+            mid <span style="color:#f92672">=</span> (l<span style="color:#f92672">+</span>r)<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">if</span> (b[i] <span style="color:#f92672">&gt;</span> a[mid]) {l <span style="color:#f92672">=</span> mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;ans <span style="color:#f92672">=</span> min(ans, abs(a[mid]<span style="color:#f92672">-</span>b[i]));}
+            <span style="color:#66d9ef">else</span> {r <span style="color:#f92672">=</span> mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;ans <span style="color:#f92672">=</span> min(ans, abs(a[mid]<span style="color:#f92672">-</span>b[i]));}
+        }
+        total <span style="color:#f92672">+</span><span style="color:#f92672">=</span> ans;
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, total);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="stl-二分---lowerbound--upperbound">STL 二分 - lowerbound &amp; upperbound</h3>
+<p>0、<strong>理解</strong>：lower upper不理解为大小，而理解为边界，因为在单增和单减的情况下，所确定的大小关系是灵活的，但是边界选取的情况都是一致的，lower是上边界闭区间，upper是上边界开区间</p>
+<p>1、【大前提：必须是在已经排好序的情况下】在递增和递减的序列中的有不同的作用。</p>
+<p>2、指针类型的使用方法，类似于排序的参数传入<code>(a, a+n)-n</code>，想返回索引就要把首地址给减了走</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">35</span>}, targetnum <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+<span style="color:#66d9ef">int</span> pos1 <span style="color:#f92672">=</span> lowerbound(a, a<span style="color:#f92672">+</span><span style="color:#ae81ff">6</span>, targetnum)<span style="color:#f92672">-</span>a;  <span style="color:#75715e">// 输出 大于等于 targetnum(7) 的数的索引位置 =&gt; 3，也就是第4个数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> pos2 <span style="color:#f92672">=</span> upperbound(a, a<span style="color:#f92672">+</span><span style="color:#ae81ff">6</span>, targetnum)<span style="color:#f92672">-</span>a;  <span style="color:#75715e">// 输出 大于    targetnum(7) 的数的索引位置 =&gt; 4，也就是第5个数
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> b <span style="color:#f92672">=</span> {<span style="color:#ae81ff">35</span>, <span style="color:#ae81ff">14</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>};
+<span style="color:#66d9ef">int</span> pos3 <span style="color:#f92672">=</span> lowerbound(b, b<span style="color:#f92672">+</span><span style="color:#ae81ff">6</span>, targetnum)<span style="color:#f92672">-</span>b; <span style="color:#75715e">// 输出 小于等于 targetnum(7) 的数的索引位置 =&gt; 2，也就是第3个数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> pos4 <span style="color:#f92672">=</span> upperbound(b, b<span style="color:#f92672">+</span><span style="color:#ae81ff">6</span>, targetnum)<span style="color:#f92672">-</span>b; <span style="color:#75715e">// 输出 小于    targetnum(7) 的数的索引位置 =&gt; 3，也就是第4个数
+</span></code></pre></div><p><a href="https://www.luogu.com.cn/problem/P1168">https://www.luogu.com.cn/problem/P1168</a></p>
+
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

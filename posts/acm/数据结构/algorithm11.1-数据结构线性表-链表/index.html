@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm11.1 数据结构 线性表 链表 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm11.1 数据结构 线性表 链表 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm11.1 数据结构 线性表 链表 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm11.1 数据结构 线性表 链表 | Aczy156" />
+	<meta name="application-name" content="Algorithm11.1 数据结构 线性表 链表 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm11.1 数据结构 线性表 链表" />
+<meta property="og:description" content="数据结构 线性表 - 链表  1、通过STL库中的list，直接可以使用的链表
+2、通过手写链表
+ 队列排队问题 - 利用STL库中的链表进行实现 https://www.luogu.com.cn/problem/P1160
+题目大意：在特定位置添加、插入成员，从而建立一个队列；然后通过调整相关的前后顺序位置，得到最后的队列
+1、特定位置插入、前后顺序（相邻位置）调整 =&gt; 链表 // 双向链表
+#include &lt;iostream&gt;using namespace std; #define maxn 100010int n, m, idx, tp; #include &lt;list&gt;list&lt;int&gt; l; using Iterator = list&lt;int&gt;::iterator; Iterator pos[maxn]; // 用于存储索引关系 bool erased[maxn]; int main() { // init  l.push_front(1); pos[1] = l.begin(); scanf(&#34;%d&#34;, &amp;n); for (int i = 2; i &lt;= n; &#43;&#43;i){ scanf(&#34;%d%d&#34;, &amp;idx, &amp;tp); if (!tp) pos[i] = l." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm11.1 数据结构 线性表 链表"/>
+<meta name="twitter:description" content="数据结构 线性表 - 链表  1、通过STL库中的list，直接可以使用的链表
+2、通过手写链表
+ 队列排队问题 - 利用STL库中的链表进行实现 https://www.luogu.com.cn/problem/P1160
+题目大意：在特定位置添加、插入成员，从而建立一个队列；然后通过调整相关的前后顺序位置，得到最后的队列
+1、特定位置插入、前后顺序（相邻位置）调整 =&gt; 链表 // 双向链表
+#include &lt;iostream&gt;using namespace std; #define maxn 100010int n, m, idx, tp; #include &lt;list&gt;list&lt;int&gt; l; using Iterator = list&lt;int&gt;::iterator; Iterator pos[maxn]; // 用于存储索引关系 bool erased[maxn]; int main() { // init  l.push_front(1); pos[1] = l.begin(); scanf(&#34;%d&#34;, &amp;n); for (int i = 2; i &lt;= n; &#43;&#43;i){ scanf(&#34;%d%d&#34;, &amp;idx, &amp;tp); if (!tp) pos[i] = l."/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm11.1 数据结构 线性表 链表</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="数据结构-线性表---链表">数据结构 线性表 - 链表</h2>
+<blockquote>
+<p>1、通过STL库中的list，直接可以使用的链表</p>
+<p>2、通过手写链表</p>
+</blockquote>
+<h3 id="队列排队问题---利用stl库中的链表进行实现">队列排队问题 - 利用STL库中的链表进行实现</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1160">https://www.luogu.com.cn/problem/P1160</a></p>
+<p>题目大意：在特定位置添加、插入成员，从而建立一个队列；然后通过调整相关的前后顺序位置，得到最后的队列</p>
+<p>1、特定位置插入、前后顺序（相邻位置）调整 =&gt; 链表 // 双向链表</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 100010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, idx, tp;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;list&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> l;
+using Iterator <span style="color:#f92672">=</span> list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">:</span><span style="color:#f92672">:</span>iterator;
+Iterator pos[maxn]; <span style="color:#75715e">// 用于存储索引关系
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> erased[maxn];
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    l.push_front(<span style="color:#ae81ff">1</span>);
+    pos[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> l.begin();
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i){
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>idx, <span style="color:#f92672">&amp;</span>tp);
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>tp) pos[i] <span style="color:#f92672">=</span> l.insert(pos[idx], i);
+        <span style="color:#66d9ef">else</span> {
+            <span style="color:#66d9ef">auto</span> ntiter <span style="color:#f92672">=</span> next(pos[idx]);
+            pos[i] <span style="color:#f92672">=</span> l.insert(ntiter, i);
+        }
+    }
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>idx);
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>erased[idx]) l.erase(pos[idx]);
+        erased[idx] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> x: l) 
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, x);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="队列问题---利用手写链表进行实现">队列问题 - 利用手写链表进行实现</h3>
+<h3 id="手写链表之基本的链表操作--将链表封装成新的数据结构">手写链表之基本的链表操作 &amp; 将链表封装成新的数据结构</h3>
+<p>1、链表单元：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> node {
+  <span style="color:#66d9ef">int</span> num;
+  node <span style="color:#f92672">*</span>next;
+}
+</code></pre></div><p>2、链表的遍历：将bgnode给传入即可</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">node <span style="color:#f92672">*</span>nw <span style="color:#f92672">=</span> bgnode;
+<span style="color:#66d9ef">while</span>(nw) {
+  <span style="color:#75715e">/* 进行一定的操作或者记录 */</span>
+  nw <span style="color:#f92672">=</span> nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
+}
+</code></pre></div><p>3、链表基本操作之插入：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">node <span style="color:#f92672">*</span>newnode <span style="color:#f92672">=</span> new node;
+newnode<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next <span style="color:#f92672">=</span> nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
+nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next <span style="color:#f92672">=</span> newnode;
+</code></pre></div><p>4、链表基本操作之删除 =&gt; 直接把它的下一个给隔过去就好。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next <span style="color:#f92672">=</span> nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>next;
+</code></pre></div><h3 id="手写链表实现-树形结构之孩子兄弟表示法">手写链表实现 树形结构之孩子兄弟表示法</h3>
+<p>1、链表单元：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> node {
+  <span style="color:#66d9ef">char</span> a[maxn];
+  node <span style="color:#f92672">*</span>child, <span style="color:#f92672">*</span>bro;
+}
+</code></pre></div><p>2、几种树形结构的表示方式【双亲表示法】【孩子表示法】【孩子兄弟表示法】</p>
+
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

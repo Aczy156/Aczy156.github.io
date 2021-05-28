@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm7 分治算法 &amp; 快速幂 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm7 分治算法 &amp; 快速幂 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm7 分治算法 &amp; 快速幂 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm7 分治算法 &amp; 快速幂 | Aczy156" />
+	<meta name="application-name" content="Algorithm7 分治算法 &amp; 快速幂 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm7 分治算法 &amp; 快速幂" />
+<meta property="og:description" content="分治问题 最典型：分形 &amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
+ 矩阵的分治：https://www.luogu.com.cn/problem/P5461
+题目大意：正方形矩阵，分成四块，左上全赦免（为零），然后对剩下其他部分接着分成四块，一直这样下去。输出最后矩阵
+#include &lt;iostream&gt;using namespace std; #define maxl 1030int n, a[maxl][maxl]; #include &lt;cstring&gt;#define cl(a, b) memset(a, b, sizeof(a))#include &lt;cmath&gt; void draw(int x, int y, int h) { if (h == 2) {a[x&#43;1][y] = a[x][y&#43;1] = a[x&#43;1][y&#43;1] = 1;return;} int nowh = h&gt;&gt;1; draw(x&#43;nowh, y, nowh); draw(x, y&#43;nowh, nowh); draw(x&#43;nowh, y&#43;nowh, nowh); } void print() { for (int i = 1; i &lt;= n; &#43;&#43;i) { for (int j = 1; j &lt;= n; &#43;&#43;j) { printf(&#34;%d &#34;, a[i][j]); } printf(&#34;\n&#34;); } } int main() { scanf(&#34;%d&#34;, &amp;n); n = pow(2, n); cl(a, 0); // init  draw(1, 1, n); // draw  print(); // print  return 0; } 分形-谢尔宾斯基三角：https://www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm7 分治算法 &amp; 快速幂"/>
+<meta name="twitter:description" content="分治问题 最典型：分形 &amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
+ 矩阵的分治：https://www.luogu.com.cn/problem/P5461
+题目大意：正方形矩阵，分成四块，左上全赦免（为零），然后对剩下其他部分接着分成四块，一直这样下去。输出最后矩阵
+#include &lt;iostream&gt;using namespace std; #define maxl 1030int n, a[maxl][maxl]; #include &lt;cstring&gt;#define cl(a, b) memset(a, b, sizeof(a))#include &lt;cmath&gt; void draw(int x, int y, int h) { if (h == 2) {a[x&#43;1][y] = a[x][y&#43;1] = a[x&#43;1][y&#43;1] = 1;return;} int nowh = h&gt;&gt;1; draw(x&#43;nowh, y, nowh); draw(x, y&#43;nowh, nowh); draw(x&#43;nowh, y&#43;nowh, nowh); } void print() { for (int i = 1; i &lt;= n; &#43;&#43;i) { for (int j = 1; j &lt;= n; &#43;&#43;j) { printf(&#34;%d &#34;, a[i][j]); } printf(&#34;\n&#34;); } } int main() { scanf(&#34;%d&#34;, &amp;n); n = pow(2, n); cl(a, 0); // init  draw(1, 1, n); // draw  print(); // print  return 0; } 分形-谢尔宾斯基三角：https://www."/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm7 分治算法 &amp; 快速幂</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="分治问题">分治问题</h2>
+<h3 id="最典型分形--矩阵的分治">最典型：分形 &amp; 矩阵的分治</h3>
+<blockquote>
+<p>矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）</p>
+</blockquote>
+<p>矩阵的分治：https://www.luogu.com.cn/problem/P5461</p>
+<p>题目大意：正方形矩阵，分成四块，左上全赦免（为零），然后对剩下其他部分接着分成四块，一直这样下去。输出最后矩阵</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxl 1030</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, a[maxl][maxl];
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">draw</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> h) {
+    <span style="color:#66d9ef">if</span> (h <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) {a[x<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][y] <span style="color:#f92672">=</span> a[x][y<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;<span style="color:#66d9ef">return</span>;}
+    <span style="color:#66d9ef">int</span> nowh <span style="color:#f92672">=</span> h<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+    draw(x<span style="color:#f92672">+</span>nowh, y, nowh);
+    draw(x, y<span style="color:#f92672">+</span>nowh, nowh);
+    draw(x<span style="color:#f92672">+</span>nowh, y<span style="color:#f92672">+</span>nowh, nowh);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+            printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, a[i][j]);
+        }
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n); n <span style="color:#f92672">=</span> pow(<span style="color:#ae81ff">2</span>, n);
+    cl(a, <span style="color:#ae81ff">0</span>); <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    draw(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, n); <span style="color:#75715e">// draw
+</span><span style="color:#75715e"></span>    print(); <span style="color:#75715e">// print
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div><p>分形-谢尔宾斯基三角：https://www.luogu.com.cn/problem/P1498</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxl 1030</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, a[maxl][maxl];
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">draw</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> h) {
+    <span style="color:#66d9ef">if</span> (h <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) {
+        a[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#66d9ef">int</span> nowh <span style="color:#f92672">=</span> h <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> x; i <span style="color:#f92672">&lt;</span> x <span style="color:#f92672">+</span> nowh; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> y; j <span style="color:#f92672">&lt;</span> y <span style="color:#f92672">+</span> nowh; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            a[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    draw(x, y <span style="color:#f92672">+</span> nowh, nowh);
+    draw(x <span style="color:#f92672">+</span> nowh, y, nowh);
+    draw(x <span style="color:#f92672">+</span> nowh, y <span style="color:#f92672">+</span> nowh, nowh);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+        <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">while</span> (a[i][j]) {printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>);j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;}
+        <span style="color:#66d9ef">for</span> (; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) {
+                <span style="color:#66d9ef">if</span> (a[i][j] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>);
+                <span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  </span><span style="color:#e6db74">&#34;</span>);
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">if</span> (a[i][j] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {
+                    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/__</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>);
+                    j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+                } <span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  </span><span style="color:#e6db74">&#34;</span>);
+            }
+        }
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    n <span style="color:#f92672">=</span> pow(<span style="color:#ae81ff">2</span>, n);
+    cl(a, <span style="color:#ae81ff">0</span>); <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    draw(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, n); <span style="color:#75715e">// draw
+</span><span style="color:#75715e"></span>    print(); <span style="color:#75715e">// print
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="分治思想">分治思想</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1228">https://www.luogu.com.cn/problem/P1228</a></p>
+<p>题目大意：用四种形状来覆盖正方形</p>
+<p>思路：分成四个大块，然后把没有点的那个模块的剩下三个模块的端点给覆盖上即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxl 1030</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> k, x, y, a[maxl][maxl];
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">draw</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> h) {
+    <span style="color:#66d9ef">if</span> (h <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) {
+        <span style="color:#66d9ef">int</span> nowh <span style="color:#f92672">=</span> h<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> x; i <span style="color:#f92672">&lt;</span> x<span style="color:#f92672">+</span>h; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> y; j <span style="color:#f92672">&lt;</span> y<span style="color:#f92672">+</span>h; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+                <span style="color:#66d9ef">if</span> (a[i][j]) {
+                    <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">&lt;</span>x<span style="color:#f92672">+</span>nowh <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> j<span style="color:#f92672">&lt;</span>y<span style="color:#f92672">+</span>nowh) {a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d %d 1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x<span style="color:#f92672">+</span>nowh, y<span style="color:#f92672">+</span>nowh);}
+                    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>x<span style="color:#f92672">+</span>nowh <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> j<span style="color:#f92672">&lt;</span>y<span style="color:#f92672">+</span>nowh) {a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d %d 3</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, y<span style="color:#f92672">+</span>nowh);}
+                    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">&lt;</span>x<span style="color:#f92672">+</span>nowh <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> j<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>y<span style="color:#f92672">+</span>nowh) {a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d %d 2</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x<span style="color:#f92672">+</span>nowh, y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);}
+                    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>x<span style="color:#f92672">+</span>nowh <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> j<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>y<span style="color:#f92672">+</span>nowh) {a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d %d 4</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);}
+                    draw(x, y, nowh);draw(x<span style="color:#f92672">+</span>nowh, y, nowh);draw(x, y<span style="color:#f92672">+</span>nowh, nowh);draw(x<span style="color:#f92672">+</span>nowh, y<span style="color:#f92672">+</span>nowh, nowh);
+                    <span style="color:#66d9ef">return</span>;
+                }
+            }
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>k, <span style="color:#f92672">&amp;</span>x, <span style="color:#f92672">&amp;</span>y); k <span style="color:#f92672">=</span> pow(<span style="color:#ae81ff">2</span>, k);
+    cl(a, <span style="color:#ae81ff">0</span>); a[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    draw(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, k); <span style="color:#75715e">// draw
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="快速幂">快速幂</h3>
+<p>题目大意：求a的b幂。</p>
+<p>1、任何数都可以写成2的a次幂+2的b次幂+……这样，类比任何数都有二进制来表示，二进制就是2的各个位数次幂进行相加。</p>
+<p>2、自相乘<code>base *= base</code>就可以将幂次翻倍，也就刚好达到按位移动的道理。</p>
+<p>3、看看这个数的幂次是否需要乘进去，就让当前的数来按位与上1<code>&amp;1</code>，这样就可以判断最后一位是否是1，也就是自乘出来的这一次是否需要乘进去。</p>
+<p>4、通过按位移动，来看不同位数，从而看这个幂次的组成。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 计算a的k次方
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">quickPower</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> k){
+    <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, base <span style="color:#f92672">=</span> a; <span style="color:#75715e">// base就是a的1次幂，然后再自乘就是a的2次幂，再自乘就是a的4次幂，再自乘就是a的8次幂
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (k <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">if</span> (k <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) ans <span style="color:#f92672">*</span><span style="color:#f92672">=</span> base;
+        base <span style="color:#f92672">*</span><span style="color:#f92672">=</span> base;
+        k <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    }
+    <span style="color:#66d9ef">return</span> ans;
+}
+</code></pre></div><h3 id="快速幂取余">快速幂取余</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 计算a的k次方再取余
+</span><span style="color:#75715e"></span>ll <span style="color:#a6e22e">quickPowerwithMod</span>(ll a, ll k, ll m){
+    ll ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, base <span style="color:#f92672">=</span> a; <span style="color:#75715e">// base就是a的1次幂，然后再自乘就是a的2次幂，再自乘就是a的4次幂，再自乘就是a的8次幂
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (k <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+        <span style="color:#66d9ef">if</span> (k <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) {ans <span style="color:#f92672">*</span><span style="color:#f92672">=</span> base; ans <span style="color:#f92672">%</span><span style="color:#f92672">=</span> m;}
+        base <span style="color:#f92672">*</span><span style="color:#f92672">=</span> base; base <span style="color:#f92672">%</span><span style="color:#f92672">=</span> m;
+        k <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    }
+    <span style="color:#66d9ef">return</span> ans;
+}
+</code></pre></div><h3 id="矩阵快速幂">矩阵快速幂</h3>
+
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

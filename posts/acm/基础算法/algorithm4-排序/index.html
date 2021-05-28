@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm4 Basic Sort - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm4 Basic Sort | Aczy156" />
+	<meta name="twitter:title" content="Algorithm4 Basic Sort | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm4 Basic Sort | Aczy156" />
+	<meta name="application-name" content="Algorithm4 Basic Sort | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm4 Basic Sort" />
+<meta property="og:description" content="排序 题目链接：https://www.luogu.com.cn/problem/P1177
+题目大意：实现快排
+1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
+2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。
+3、分块的部分，可以通过前后遍历，碰到一对分别小于、大于的，直接swap()掉即可。但是会引发一个问题，就是如果碰到了一边刚好完全都是符合那个标准的，然后另一边存在不符合标准的，此时就需要把标准和不符合标准的换位置了。
+4、递归的部分，边界的设定问题，存在有刚好极端情况也就是分块的标准数刚好是最大或者最小的，那就不用再递归他了。所以要判断l &lt; j或者i &lt; r也就是排除了最大最小两种极端情况，其他的次大次小=&gt;都要老老实实的把长度为2的给往下递归
+void quicksort(int l, int r){ int mid = a[(l&#43;r)/2], i = l, j = r; do{ while (a[i] &lt; mid) i&#43;&#43;; while (a[j] &gt; mid) j--; if (i &lt;= j) {swap(a[i], a[j]);i&#43;&#43;;j--;} }while (i &lt;= j); // recursion left and right  if (l &lt; j) quicksort(l, j); if (i &lt; r) quicksort(i, r); } " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm4 Basic Sort"/>
+<meta name="twitter:description" content="排序 题目链接：https://www.luogu.com.cn/problem/P1177
+题目大意：实现快排
+1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
+2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。
+3、分块的部分，可以通过前后遍历，碰到一对分别小于、大于的，直接swap()掉即可。但是会引发一个问题，就是如果碰到了一边刚好完全都是符合那个标准的，然后另一边存在不符合标准的，此时就需要把标准和不符合标准的换位置了。
+4、递归的部分，边界的设定问题，存在有刚好极端情况也就是分块的标准数刚好是最大或者最小的，那就不用再递归他了。所以要判断l &lt; j或者i &lt; r也就是排除了最大最小两种极端情况，其他的次大次小=&gt;都要老老实实的把长度为2的给往下递归
+void quicksort(int l, int r){ int mid = a[(l&#43;r)/2], i = l, j = r; do{ while (a[i] &lt; mid) i&#43;&#43;; while (a[j] &gt; mid) j--; if (i &lt;= j) {swap(a[i], a[j]);i&#43;&#43;;j--;} }while (i &lt;= j); // recursion left and right  if (l &lt; j) quicksort(l, j); if (i &lt; r) quicksort(i, r); } "/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm4 Basic Sort</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="排序">排序</h2>
+<p>题目链接：https://www.luogu.com.cn/problem/P1177</p>
+<p>题目大意：实现快排</p>
+<p>1、所有排序算法的函数形式都是可以写成<code>sort_algorithm(int[] arr, int l,int r){}</code></p>
+<p>2、<del>找分块的标准数的部分</del>快排的核心思想就是<strong>找一个数，来作为分块标准</strong>，而<strong>不是找一个分割的数的索引</strong>，因为索引的话，会随着<code>swap()</code>变换而导致本来已经确定的数变化。</p>
+<p>3、<del>分块的部分</del>，可以通过前后遍历，碰到一对分别小于、大于的，直接<code>swap()</code>掉即可。但是会引发一个问题，就是如果碰到了一边刚好完全都是符合那个标准的，然后另一边存在不符合标准的，此时就需要把标准和不符合标准的换位置了。</p>
+<p>4、<del>递归的部分</del>，<strong>边界的设定问题</strong>，存在有刚好极端情况也就是分块的标准数刚好是最大或者最小的，那就不用再递归他了。所以要判断<code>l &lt; j</code>或者<code>i &lt; r</code>也就是排除了最大最小两种极端情况，其他的次大次小=&gt;都要老老实实的把长度为2的给往下递归</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">quicksort</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r){
+    <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> a[(l<span style="color:#f92672">+</span>r)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>], i <span style="color:#f92672">=</span> l, j <span style="color:#f92672">=</span> r;
+    <span style="color:#66d9ef">do</span>{
+        <span style="color:#66d9ef">while</span> (a[i] <span style="color:#f92672">&lt;</span> mid) i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        <span style="color:#66d9ef">while</span> (a[j] <span style="color:#f92672">&gt;</span> mid) j<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> j) {swap(a[i], a[j]);i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;j<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;}
+    }<span style="color:#66d9ef">while</span> (i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> j);
+    <span style="color:#75715e">// recursion left and right
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&lt;</span> j) quicksort(l, j);
+    <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span> r) quicksort(i, r);
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

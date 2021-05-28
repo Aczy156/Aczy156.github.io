@@ -14,10 +14,10 @@
     
     <item>
       <title>Algorithm11 数据结构 线性表 整合</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
       <description>数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
 题目大意：有规则抽取特定位置索引
 1、删除、首尾添加、排序等等 =&amp;gt; vector
@@ -29,10 +29,10 @@
     
     <item>
       <title>Algorithm11.1 数据结构 线性表 链表</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/</guid>
       <description>数据结构 线性表 - 链表  1、通过STL库中的list，直接可以使用的链表
 2、通过手写链表
  队列排队问题 - 利用STL库中的链表进行实现 https://www.luogu.com.cn/problem/P1160
@@ -43,10 +43,10 @@
     
     <item>
       <title>Algorithm11.2 数据结构 堆与堆优化</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</guid>
       <description>数据结构 堆 &amp;amp; 手写堆  用到堆优化的思路不一定是用堆，也可能是通过利用优先队列进行优化
  堆的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&amp;gt; 可以用堆进行优化
 https://www.luogu.com.cn/problem/P3378
@@ -60,10 +60,10 @@ int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; si
     
     <item>
       <title>Algorithm11.3 数据结构 线性表 栈</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</guid>
       <description>数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
 2、通过手写栈
  进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
@@ -74,10 +74,10 @@ int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; si
     
     <item>
       <title>Algorithm11.4 数据结构 二叉树建树 前中后序遍历</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
       <description>数据结构 二叉树 建树、前中后序遍历  两种实现方式：
  二叉链表实现 结构体数组实现  性质：
  前序 中序 后序 dfs序 相关性质 给出两个，推第三个  给出前+后【不带中】 =&amp;gt; 中序不一定唯一 给出中+前【带中】 =&amp;gt; 后序唯一 给出中+后【带中】 =&amp;gt; 前序唯一     二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。
@@ -88,10 +88,10 @@ struct node(){ int data; node * lchild; node * rchild; node(){} node(int data): 
     
     <item>
       <title>Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</guid>
       <description>数据结构 哈夫曼树  实现方式：
  二叉链表实现【实现和二叉树的二叉链表实现方式几乎一样，链接： 二叉树-二叉链表实现 】   二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。
 struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[maxn];; 2、新增的数据结构：也就是huffman[maxn]，起作用就是储存所有的节点的。
@@ -101,10 +101,10 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
     
     <item>
       <title>Algorithm17 数据结构ST表</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84st%E8%A1%A8/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84st%E8%A1%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84st%E8%A1%A8/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84st%E8%A1%A8/</guid>
       <description>ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
 https://www.luogu.com.cn/problem/P3865
 模版 - ST表 题目大意：得到范围内（Range）最大值（Max）的若干次查询（Query）=&amp;gt;RMQ问题
@@ -118,10 +118,10 @@ int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); 
     
     <item>
       <title>Algorithm18 数据结构 树状数组</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
       <description>数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
 模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数
 eg：8(10) &amp;amp; -8(10) = 8 =&amp;gt; 根据树状数组结构图，就是8个节点

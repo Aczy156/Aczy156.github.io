@@ -14,19 +14,19 @@
     
     <item>
       <title>Algorithm14.0 图论 数据结构存储形式</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</guid>
       <description>图论 四种数据结构存储形式 存纯边【无点集的一点关系】 // 数据结构：结构体「起点、终点、权重」 struct node { int from, to, cost; bool operator &amp;lt; (const node n) const{return cost &amp;lt; n.cost;} // kruskal初始化 =&amp;gt; 边权排序 }edge[maxedge]; // 遍历 for (int i = 1; i &amp;lt;= number_of_edge; i++) { int from = edge[i].from, to = edge[i].to, cost = edge[i].cost; } 邻接矩阵 // 数据结构：二维数组 int mp[maxpoint][maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 1; j &amp;lt;= number_of_point; j++) { int from = i, to = j, cost = mp[i][j]; } } 邻接表 // 数据结构：向量+结构体「终点、权重」 struct node { int to, cost; }; vector&amp;lt;node&amp;gt; b[maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 0; j &amp;lt; b[i].</description>
     </item>
     
     <item>
       <title>Algorithm14.1 最短路-dijkstra</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</guid>
       <description>最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
  裸的dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&amp;lt;&amp;lt;31)-1; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &amp;lt;= n; ++i) { tem = INF,v = 0; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
@@ -34,19 +34,19 @@
     
     <item>
       <title>Algorithm14.1 最短路-floyd</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</guid>
       <description>最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www.</description>
     </item>
     
     <item>
       <title>Algorithm14.2 最小生成树</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
       <description>最小生成树  几种数据给出形式以及对应的解决方案
 1、点a 点b 边ab权值 =&amp;gt; 邻接表vector来存 =&amp;gt; 优先kruskal
 2、一个矩阵 =&amp;gt; 邻接矩阵来存【适合存点少线多的，也就是稠密图，如果稀疏的话，空间就爆炸了】 =&amp;gt; 优先prim（当然也可以手动提取，但是这样提取会很麻烦，因为边很多，有多少点就要考虑点个数平方个的边）
@@ -56,10 +56,10 @@
     
     <item>
       <title>Algorithm14.3 拓扑图</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</guid>
       <description>拓扑图 https://www.luogu.com.cn/problem/P4017
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
 2、根据入度、出度来看是否添加进入队列。
@@ -68,10 +68,10 @@
     
     <item>
       <title>Algorithm14.4 最近公共祖先(LCA)</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
       <description>LCA最近公共祖先 dfs深搜
  更新depth深度数组 depth[maxpoint] 更新p爬升数组 p[maxpoint][21]  LCA
  利用depth深度数组来进行爬升之前的微调 =&amp;gt; 将两个节点调整到同一高度 利用p数组来进行爬升，获取最近公共祖先  模版 LCA https://www.luogu.com.cn/problem/P3379
@@ -84,10 +84,10 @@ void dfs(int from, int fa) { depth[from] = depth[fa] + 1; // 更新depth深度�
     
     <item>
       <title>Algorithm14.5 二分图-最大匹配</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</guid>
       <description>二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
 二分图变式 关押罪犯：两个监狱，
 https://www.luogu.com.cn/problem/P1525</description>
@@ -95,20 +95,20 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm14.6 图的遍历与搜索</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</guid>
       <description>图的遍历与搜索 模版 dfs &amp;amp; bfs https://www.luogu.com.cn/problem/P5318
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxpoint 100010#define maxedge 1000010int n, m, ta, tb, vis[maxpoint]; struct ed { int from, to; bool operator &amp;lt; (const ed e) const { if (from == e.from) return to &amp;gt; e.to;return from &amp;gt;e.from;} }t[maxedge]; struct node { int to, next; }edge[maxedge];int head[maxpoint], tot; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt;pq; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a))#include &amp;lt;algorithm&amp;gt; void addedge(int from, int to) { edge[++tot].</description>
     </item>
     
     <item>
       <title>Algorithm14.7 树的图解法</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</guid>
       <description>树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
  树的深度：【图中其他所有点】 离 【根节点对应的图中的节点】 距离最远的 树的宽度：图中距离 【根节点对应的图中的节点】 各个不同距离中，个数最多的点（例如，距离为1的点有2个，距离为2的点有3个，距离为3的点有1个，所以宽度为3） LCA问题：可以通过图论中的最短路来解决=》floyd直接暴力出来   基础转换 https://www.luogu.com.cn/problem/P3884
 #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = 1e8+9; int n, d[maxn][maxn], ta, tb, depth, w[maxn], width = 1, ans; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt; n; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); d[ta][tb] = 1; d[tb][ta] = 2; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); for (int i = 1; i &amp;lt;= n; ++i) { depth = max(depth, d[1][i]); w[d[1][i]]++; } for (int i = 1; i &amp;lt;= depth+1; ++i) width = max(width, w[i]); printf(&amp;#34;%d\n%d\n%d\n&amp;#34;, depth+1, width, d[ta][tb]); return 0; } </description>

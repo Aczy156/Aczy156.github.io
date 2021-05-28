@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm2.9 dp思维 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm2.9 dp思维 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm2.9 dp思维 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm2.9 dp思维 | Aczy156" />
+	<meta name="application-name" content="Algorithm2.9 dp思维 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm2.9 dp思维" />
+<meta property="og:description" content="思维 &amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
+题目大意：
+1、结合贪心思想，永远把相邻的最小的给加进去，ans &#43;= min(cost[i-1], cost[i])
+2、状态的推进更新，例如str=&quot;aaa&quot;，cost分别为4 3 5，在更新4 3时候就要把状态退后，用这两个的最大的去比【因为最大的才是真正留下来的】，所以要用cost[i] = max(cost[i-1], cost[i])来保留状态
+int minCost(string s, vector&lt;int&gt;&amp; cost) { int ans = 0; for (int i = 1; i &lt; s.length(); i&#43;&#43;){ if (s[i] == s[i-1]){ ans &#43;= min(cost[i-1], cost[i]); cost[i] = max(cost[i-1], cost[i]); } } return ans; } 循环一圈形式的dp https://www.luogu.com.cn/problem/P1057
+题目大意：
+#include &lt;iostream&gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]&#43;dp[i-1][j&#43;1] (注意对圈的边界的人的特判)  int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;t); // init  dp[0][0] = 1; for (int i = 1; i &lt; t; &#43;&#43;i) for (int j = 0; j &lt; n; &#43;&#43;j) if (j == 0) dp[i][j] = dp[i-1][1]&#43;dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]&#43;dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]&#43;dp[i-1][j&#43;1]; printf(&#34;%d\n&#34;, dp[t-1][0]); return 0; } " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/dp/algorithm2.9-dp%E6%80%9D%E7%BB%B4/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm2.9 dp思维"/>
+<meta name="twitter:description" content="思维 &amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
+题目大意：
+1、结合贪心思想，永远把相邻的最小的给加进去，ans &#43;= min(cost[i-1], cost[i])
+2、状态的推进更新，例如str=&quot;aaa&quot;，cost分别为4 3 5，在更新4 3时候就要把状态退后，用这两个的最大的去比【因为最大的才是真正留下来的】，所以要用cost[i] = max(cost[i-1], cost[i])来保留状态
+int minCost(string s, vector&lt;int&gt;&amp; cost) { int ans = 0; for (int i = 1; i &lt; s.length(); i&#43;&#43;){ if (s[i] == s[i-1]){ ans &#43;= min(cost[i-1], cost[i]); cost[i] = max(cost[i-1], cost[i]); } } return ans; } 循环一圈形式的dp https://www.luogu.com.cn/problem/P1057
+题目大意：
+#include &lt;iostream&gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]&#43;dp[i-1][j&#43;1] (注意对圈的边界的人的特判)  int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;t); // init  dp[0][0] = 1; for (int i = 1; i &lt; t; &#43;&#43;i) for (int j = 0; j &lt; n; &#43;&#43;j) if (j == 0) dp[i][j] = dp[i-1][1]&#43;dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]&#43;dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]&#43;dp[i-1][j&#43;1]; printf(&#34;%d\n&#34;, dp[t-1][0]); return 0; } "/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm2.9 dp思维</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="思维--dp">思维 &amp; dp</h2>
+<h3 id="leetcode1578-valid-palindrome">Leetcode1578-valid-palindrome</h3>
+<p><a href="https://leetcode-cn.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/">1578. 避免重复字母的最小删除成本</a></p>
+<p>题目大意：</p>
+<p>1、结合贪心思想，永远把相邻的最小的给加进去，<code>ans += min(cost[i-1], cost[i])</code></p>
+<p>2、状态的推进更新，例如<code>str=&quot;aaa&quot;</code>，<code>cost分别为4 3 5</code>，在更新4 3时候就要把状态退后，用这两个的最大的去比【<strong>因为最大的才是真正留下来的</strong>】，所以要用<code>cost[i] = max(cost[i-1], cost[i])</code>来保留状态</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">minCost</span>(string s, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&amp;</span> cost) {
+  <span style="color:#66d9ef">int</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> s.length(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>){
+    <span style="color:#66d9ef">if</span> (s[i] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> s[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]){
+      ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> min(cost[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], cost[i]);
+      cost[i] <span style="color:#f92672">=</span> max(cost[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], cost[i]);
+    }
+  }
+  <span style="color:#66d9ef">return</span> ans;
+}
+</code></pre></div><h3 id="循环一圈形式的dp">循环一圈形式的dp</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1057">https://www.luogu.com.cn/problem/P1057</a></p>
+<p>题目大意：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 32</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, t, dp[maxn][maxn]; <span style="color:#75715e">// dp[i][j]表示第i次传球第j个人到自己手上的方式总数
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和
+</span><span style="color:#75715e"></span><span style="color:#75715e">// dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1] (注意对圈的边界的人的特判)
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>t);
+    <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> t; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            <span style="color:#66d9ef">if</span> (j <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
+            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (j <span style="color:#f92672">=</span><span style="color:#f92672">=</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][n<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]<span style="color:#f92672">+</span>dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>];
+            <span style="color:#66d9ef">else</span> dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>];
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, dp[t<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

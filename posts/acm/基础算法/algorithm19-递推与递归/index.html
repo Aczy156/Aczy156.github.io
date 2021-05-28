@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm19 递推与递归 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm19 递推与递归 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm19 递推与递归 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm19 递推与递归 | Aczy156" />
+	<meta name="application-name" content="Algorithm19 递推与递归 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm19 递推与递归" />
+<meta property="og:description" content="递推与递归 斐波那契数列 （高精度） https://www.luogu.com.cn/problem/P1255
+(相似题目：https://www.luogu.com.cn/problem/P2437)
+题目大意：上楼梯，一次上一步或者一次上两步，问上n阶的楼梯可以有多少种走法
+1、递推公式：d[i] = d[i-1]&#43;d[i-2];
+2、斐波那契数列在n=50的时候就已经将int爆掉，所以如果n=5000的时候需要用高精度。
+AC代码：
+#include &lt;iostream&gt;using namespace std; #define maxn 5005typedef long long ll; #include &lt;cstring&gt;const int N = 2005; struct BigInt { int len, s[N]; BigInt() {memset(s, 0, sizeof(s));len = 1;} BigInt(int num) { *this = num; } BigInt(char *num) { *this = num; } BigInt operator=(int num) { char c[N]; sprintf(c, &#34;%d&#34;, num); *this = c; return *this; } BigInt operator=(const char *num) { len = strlen(num); for (int i = 0; i &lt; len; i&#43;&#43;) s[i] = num[len - 1 - i] - &#39;0&#39;; return *this; } string str() { string res = &#34;&#34;; for (int i = 0; i &lt; len; i&#43;&#43;) res = (char) (s[i] &#43; &#39;0&#39;) &#43; res; return res; } void clean() {while (len &gt; 1 &amp;&amp; !" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm19 递推与递归"/>
+<meta name="twitter:description" content="递推与递归 斐波那契数列 （高精度） https://www.luogu.com.cn/problem/P1255
+(相似题目：https://www.luogu.com.cn/problem/P2437)
+题目大意：上楼梯，一次上一步或者一次上两步，问上n阶的楼梯可以有多少种走法
+1、递推公式：d[i] = d[i-1]&#43;d[i-2];
+2、斐波那契数列在n=50的时候就已经将int爆掉，所以如果n=5000的时候需要用高精度。
+AC代码：
+#include &lt;iostream&gt;using namespace std; #define maxn 5005typedef long long ll; #include &lt;cstring&gt;const int N = 2005; struct BigInt { int len, s[N]; BigInt() {memset(s, 0, sizeof(s));len = 1;} BigInt(int num) { *this = num; } BigInt(char *num) { *this = num; } BigInt operator=(int num) { char c[N]; sprintf(c, &#34;%d&#34;, num); *this = c; return *this; } BigInt operator=(const char *num) { len = strlen(num); for (int i = 0; i &lt; len; i&#43;&#43;) s[i] = num[len - 1 - i] - &#39;0&#39;; return *this; } string str() { string res = &#34;&#34;; for (int i = 0; i &lt; len; i&#43;&#43;) res = (char) (s[i] &#43; &#39;0&#39;) &#43; res; return res; } void clean() {while (len &gt; 1 &amp;&amp; !"/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm19 递推与递归</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="递推与递归">递推与递归</h2>
+<h3 id="斐波那契数列-高精度">斐波那契数列 （高精度）</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1255">https://www.luogu.com.cn/problem/P1255</a></p>
+<p>(相似题目：https://www.luogu.com.cn/problem/P2437)</p>
+<p>题目大意：上楼梯，一次上一步或者一次上两步，问上n阶的楼梯可以有多少种走法</p>
+<p>1、递推公式：<code>d[i] = d[i-1]+d[i-2];</code></p>
+<p>2、斐波那契数列在n=50的时候就已经将int爆掉，所以如果n=5000的时候需要用高精度。</p>
+<p>AC代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 5005</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">2005</span>;
+
+<span style="color:#66d9ef">struct</span> BigInt {
+    <span style="color:#66d9ef">int</span> len, s[N];
+
+    BigInt() {memset(s, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(s));len <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;}
+    BigInt(<span style="color:#66d9ef">int</span> num) { <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> num; }
+    BigInt(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>num) { <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> num; }
+
+    BigInt operator<span style="color:#f92672">=</span>(<span style="color:#66d9ef">int</span> num) {
+        <span style="color:#66d9ef">char</span> c[N];
+        sprintf(c, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, num);
+        <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> c;
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>this;
+    }
+
+    BigInt operator<span style="color:#f92672">=</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>num) {
+        len <span style="color:#f92672">=</span> strlen(num);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) s[i] <span style="color:#f92672">=</span> num[len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> i] <span style="color:#f92672">-</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>;
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>this;
+    }
+
+    string str() {
+        string res <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) res <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span>) (s[i] <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>) <span style="color:#f92672">+</span> res;
+        <span style="color:#66d9ef">return</span> res;
+    }
+
+    <span style="color:#66d9ef">void</span> clean() {<span style="color:#66d9ef">while</span> (len <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>s[len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) len<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;}
+
+    BigInt operator <span style="color:#f92672">+</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        BigInt c;
+        c.len <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, g <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; g <span style="color:#f92672">|</span><span style="color:#f92672">|</span> i <span style="color:#f92672">&lt;</span> len <span style="color:#f92672">|</span><span style="color:#f92672">|</span> i <span style="color:#f92672">&lt;</span> b.len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+            <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> g;
+            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span> len) x <span style="color:#f92672">+</span><span style="color:#f92672">=</span> s[i];
+            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span> b.len) x <span style="color:#f92672">+</span><span style="color:#f92672">=</span> b.s[i];
+            c.s[c.len<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>;
+            g <span style="color:#f92672">=</span> x <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>;
+        }
+        <span style="color:#66d9ef">return</span> c;
+    }
+
+    BigInt operator <span style="color:#f92672">-</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        BigInt c;
+        c.len <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">int</span> x;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, g <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+            x <span style="color:#f92672">=</span> s[i] <span style="color:#f92672">-</span> g;
+            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span> b.len) x <span style="color:#f92672">-</span><span style="color:#f92672">=</span> b.s[i];
+            <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) g <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">else</span> {
+                x <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+                g <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            };
+            c.s[c.len<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> x;
+        }
+        c.clean();
+        <span style="color:#66d9ef">return</span> c;
+    }
+
+    BigInt operator <span style="color:#f92672">*</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        BigInt c;
+        c.len <span style="color:#f92672">=</span> len <span style="color:#f92672">+</span> b.len;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> b.len; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) c.s[i <span style="color:#f92672">+</span> j] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> s[i] <span style="color:#f92672">*</span> b.s[j];
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> c.len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+            c.s[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> c.s[i] <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>;
+            c.s[i] <span style="color:#f92672">%</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+        }
+        c.clean();
+        <span style="color:#66d9ef">return</span> c;
+    }
+
+    <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        <span style="color:#66d9ef">if</span> (len <span style="color:#f92672">!</span><span style="color:#f92672">=</span> b.len) <span style="color:#66d9ef">return</span> len <span style="color:#f92672">&lt;</span> b.len;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-</span><span style="color:#f92672">-</span>)
+            <span style="color:#66d9ef">if</span> (s[i] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> b.s[i]) <span style="color:#66d9ef">return</span> s[i] <span style="color:#f92672">&lt;</span> b.s[i];
+        <span style="color:#66d9ef">return</span> false;
+    }
+
+    BigInt operator <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>this <span style="color:#f92672">+</span> b;
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>this;
+    }
+
+    BigInt operator <span style="color:#f92672">-</span><span style="color:#f92672">=</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>this <span style="color:#f92672">-</span> b;
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>this;
+    }
+};
+
+istream <span style="color:#f92672">&amp;</span>operator<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>(istream <span style="color:#f92672">&amp;</span>in, BigInt <span style="color:#f92672">&amp;</span>x) {
+    string s;
+    in <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> s;
+    x <span style="color:#f92672">=</span> s.c_str();
+    <span style="color:#66d9ef">return</span> in;
+}
+
+ostream <span style="color:#f92672">&amp;</span>operator<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(ostream <span style="color:#f92672">&amp;</span>out, BigInt <span style="color:#f92672">&amp;</span>x) {
+    out <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> x.str();
+    <span style="color:#66d9ef">return</span> out;
+}
+
+<span style="color:#66d9ef">int</span> n;
+BigInt d[maxn];
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    d[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, d[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) d[i] <span style="color:#f92672">=</span> d[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> d[i <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>];
+    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> d[n] <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="分形-谢尔宾斯基三角">分形-谢尔宾斯基三角</h3>
+<p>特点：数据规模是二倍的上升；大规模可以缩减成小规模去算去模拟；</p>
+<p><a href="https://www.luogu.com.cn/problem/P1498">https://www.luogu.com.cn/problem/P1498</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxl 1030</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, a[maxl][maxl];
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">draw</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> h) {
+    <span style="color:#66d9ef">if</span> (h <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) {
+        a[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#66d9ef">int</span> nowh <span style="color:#f92672">=</span> h <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> x; i <span style="color:#f92672">&lt;</span> x <span style="color:#f92672">+</span> nowh; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> y; j <span style="color:#f92672">&lt;</span> y <span style="color:#f92672">+</span> nowh; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            a[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    draw(x, y <span style="color:#f92672">+</span> nowh, nowh);
+    draw(x <span style="color:#f92672">+</span> nowh, y, nowh);
+    draw(x <span style="color:#f92672">+</span> nowh, y <span style="color:#f92672">+</span> nowh, nowh);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+        <span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">while</span> (a[i][j]) {printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>);j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;}
+        <span style="color:#66d9ef">for</span> (; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) {
+                <span style="color:#66d9ef">if</span> (a[i][j] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>)printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>);
+                <span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  </span><span style="color:#e6db74">&#34;</span>);
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">if</span> (a[i][j] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) {
+                    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">/__</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#34;</span>);
+                    j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+                } <span style="color:#66d9ef">else</span> printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  </span><span style="color:#e6db74">&#34;</span>);
+            }
+        }
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    n <span style="color:#f92672">=</span> pow(<span style="color:#ae81ff">2</span>, n);
+    cl(a, <span style="color:#ae81ff">0</span>); <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    draw(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, n); <span style="color:#75715e">// draw
+</span><span style="color:#75715e"></span>    print(); <span style="color:#75715e">// print
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="分治思想">分治思想</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1228">https://www.luogu.com.cn/problem/P1228</a></p>
+<p>题目大意：用四种形状来覆盖正方形</p>
+<p>思路：分成四个大块，然后把没有点的那个模块的剩下三个模块的端点给覆盖上即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxl 1030</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> k, x, y, a[maxl][maxl];
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">draw</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> h) {
+    <span style="color:#66d9ef">if</span> (h <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) {
+        <span style="color:#66d9ef">int</span> nowh <span style="color:#f92672">=</span> h<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> x; i <span style="color:#f92672">&lt;</span> x<span style="color:#f92672">+</span>h; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> y; j <span style="color:#f92672">&lt;</span> y<span style="color:#f92672">+</span>h; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+                <span style="color:#66d9ef">if</span> (a[i][j]) {
+                    <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">&lt;</span>x<span style="color:#f92672">+</span>nowh <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> j<span style="color:#f92672">&lt;</span>y<span style="color:#f92672">+</span>nowh) {a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d %d 1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x<span style="color:#f92672">+</span>nowh, y<span style="color:#f92672">+</span>nowh);}
+                    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>x<span style="color:#f92672">+</span>nowh <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> j<span style="color:#f92672">&lt;</span>y<span style="color:#f92672">+</span>nowh) {a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d %d 3</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, y<span style="color:#f92672">+</span>nowh);}
+                    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">&lt;</span>x<span style="color:#f92672">+</span>nowh <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> j<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>y<span style="color:#f92672">+</span>nowh) {a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d %d 2</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x<span style="color:#f92672">+</span>nowh, y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);}
+                    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>x<span style="color:#f92672">+</span>nowh <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> j<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>y<span style="color:#f92672">+</span>nowh) {a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][y<span style="color:#f92672">+</span>nowh] <span style="color:#f92672">=</span> a[x<span style="color:#f92672">+</span>nowh][y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d %d 4</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, x<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, y<span style="color:#f92672">+</span>nowh<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);}
+                    draw(x, y, nowh);draw(x<span style="color:#f92672">+</span>nowh, y, nowh);draw(x, y<span style="color:#f92672">+</span>nowh, nowh);draw(x<span style="color:#f92672">+</span>nowh, y<span style="color:#f92672">+</span>nowh, nowh);
+                    <span style="color:#66d9ef">return</span>;
+                }
+            }
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>k, <span style="color:#f92672">&amp;</span>x, <span style="color:#f92672">&amp;</span>y); k <span style="color:#f92672">=</span> pow(<span style="color:#ae81ff">2</span>, k);
+    cl(a, <span style="color:#ae81ff">0</span>); a[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    draw(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, k); <span style="color:#75715e">// draw
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

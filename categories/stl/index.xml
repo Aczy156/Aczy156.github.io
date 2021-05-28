@@ -14,10 +14,10 @@
     
     <item>
       <title>Algorithm20.1 STL map</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm20.1-stl-map/</link>
+      <link>http://www.chenranfei.online/posts/acm/stl/algorithm20.1-stl-map/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm20.1-stl-map/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/stl/algorithm20.1-stl-map/</guid>
       <description>STL - map  【注意，此处的map是指的c++STL的map，c++STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
 map底层：红黑树（一种非严格意义上的平衡二叉树）【利用二叉树来进行查询、插入、删除=&amp;gt;O(logn)】map内部所有的数据都是无重复+有序的
 map有序性：map的key需要定义operator &amp;lt;。一般的数据类型系统已经确定了（如果是结构体做key的话，需要重载小于号。）
@@ -33,10 +33,10 @@ set唯一，而multiset不唯一，可重复，但是两者都保持的是有序
     
     <item>
       <title>Algorithm20.2 STL set</title>
-      <link>http://www.chenranfei.online/posts/acm/algorithm20.2-stl-set/</link>
+      <link>http://www.chenranfei.online/posts/acm/stl/algorithm20.2-stl-set/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/algorithm20.2-stl-set/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/stl/algorithm20.2-stl-set/</guid>
       <description>STL - set set基础语法整理博客：
 https://www.luogu.com.cn/blog/communist/stl-zheng-li-zhi-set
  set底层：红黑树

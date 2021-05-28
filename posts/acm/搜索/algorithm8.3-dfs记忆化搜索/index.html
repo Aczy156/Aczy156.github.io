@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm8.3 dfs 记忆化搜索 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm8.3 dfs 记忆化搜索 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm8.3 dfs 记忆化搜索 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm8.3 dfs 记忆化搜索 | Aczy156" />
+	<meta name="application-name" content="Algorithm8.3 dfs 记忆化搜索 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm8.3 dfs 记忆化搜索" />
+<meta property="og:description" content="dfs记忆化搜索 用于相邻依赖 =&gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式&#43;dp的存储思想，把dp数组融合到dfs搜索的过程中。
+[模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
+题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。
+1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
+2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return
+#include &lt;iostream&gt;using namespace std; #define maxn 25typedef long long ll; ll ta, tb, tc, dp[maxn][maxn][maxn]; ll dfs(int a, int b, int c) { if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0) return 1; if (a &gt; 20 || b &gt; 20 || c &gt; 20) return dfs(20, 20, 20); if (dp[a][b][c]) return dp[a][b][c]; if (a &lt; b &amp;&amp; b &lt; c) return dp[a][b][c] = dfs(a, b, c-1) &#43; dfs(a, b-1, c-1) - dfs(a, b-1, c); else return dp[a][b][c] = dfs(a-1, b, c) &#43; dfs(a-1, b-1, c) &#43; dfs(a-1, b, c-1) - dfs(a-1, b-1, c-1); } int main() { while (scanf(&#34;%lld%lld%lld&#34;, &amp;ta, &amp;tb, &amp;tc) &amp;&amp; !" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm8.3 dfs 记忆化搜索"/>
+<meta name="twitter:description" content="dfs记忆化搜索 用于相邻依赖 =&gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式&#43;dp的存储思想，把dp数组融合到dfs搜索的过程中。
+[模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
+题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。
+1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
+2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return
+#include &lt;iostream&gt;using namespace std; #define maxn 25typedef long long ll; ll ta, tb, tc, dp[maxn][maxn][maxn]; ll dfs(int a, int b, int c) { if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0) return 1; if (a &gt; 20 || b &gt; 20 || c &gt; 20) return dfs(20, 20, 20); if (dp[a][b][c]) return dp[a][b][c]; if (a &lt; b &amp;&amp; b &lt; c) return dp[a][b][c] = dfs(a, b, c-1) &#43; dfs(a, b-1, c-1) - dfs(a, b-1, c); else return dp[a][b][c] = dfs(a-1, b, c) &#43; dfs(a-1, b-1, c) &#43; dfs(a-1, b, c-1) - dfs(a-1, b-1, c-1); } int main() { while (scanf(&#34;%lld%lld%lld&#34;, &amp;ta, &amp;tb, &amp;tc) &amp;&amp; !"/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm8.3 dfs 记忆化搜索</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="dfs记忆化搜索">dfs记忆化搜索</h2>
+<h3 id="用于相邻依赖--涂色相邻的不能相同连续递增连续递减">用于相邻依赖 =&gt; 涂色：相邻的不能相同；连续递增/连续递减</h3>
+<p>搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。</p>
+<h3 id="模版-记忆化搜索---优化重复递归调用">[模版] 记忆化搜索 - 优化重复递归调用</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1464">https://www.luogu.com.cn/problem/P1464</a></p>
+<p>题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。</p>
+<p>1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。<code>return dp=w();</code></p>
+<p>2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 25</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+ll ta, tb, tc, dp[maxn][maxn][maxn];
+
+ll <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b, <span style="color:#66d9ef">int</span> c) {
+    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> b <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> c <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> c <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">return</span> dfs(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>);
+    <span style="color:#66d9ef">if</span> (dp[a][b][c])  <span style="color:#66d9ef">return</span> dp[a][b][c];
+    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">&lt;</span> b <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> b <span style="color:#f92672">&lt;</span> c) <span style="color:#66d9ef">return</span> dp[a][b][c] <span style="color:#f92672">=</span> dfs(a, b, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> dfs(a, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> dfs(a, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c);
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> dp[a][b][c] <span style="color:#f92672">=</span> dfs(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b, c) <span style="color:#f92672">+</span> dfs(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c) <span style="color:#f92672">+</span> dfs(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> dfs(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">while</span> (scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%lld%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc) <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>(ta<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> tb<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> tc<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+      printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">w(%lld, %lld, %lld) = %lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ta, tb, tc, dfs(ta, tb, tc));
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="记忆化搜索">记忆化搜索</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1434">https://www.luogu.com.cn/problem/P1434</a></p>
+<p>题目大意：地图中最长的路线，没有固定起点。</p>
+<p>1、没有固定起点，就代表要所有点都做起点去算一遍。所以计算的总成本就是算一个点的成本*总共的点数=&gt;多次重复计算，所以用记忆化搜索来储存减少运算量</p>
+<p>2、先递归满足往深层次拓展的点，然后拓展完成之后，再来更新dp数组。<code>dfs(nx, ny);</code>然后<code>dp[x][y] = max(dp[x][y], dp[nx][ny]+1);</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 205</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> r, c, mp[maxn][maxn], dp[maxn][maxn], ans, dir[<span style="color:#ae81ff">4</span>][<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> {{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}}; <span style="color:#75715e">// dp[i][j]这个点开始的最长连续下降的长度
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) {
+    <span style="color:#66d9ef">if</span> (dp[x][y]) <span style="color:#66d9ef">return</span> dp[x][y];
+    dp[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">int</span> nx <span style="color:#f92672">=</span> x<span style="color:#f92672">+</span>dir[i][<span style="color:#ae81ff">0</span>], ny <span style="color:#f92672">=</span> y<span style="color:#f92672">+</span>dir[i][<span style="color:#ae81ff">1</span>];
+        <span style="color:#66d9ef">if</span> (nx <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> nx <span style="color:#f92672">&lt;</span> r <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> ny <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> ny <span style="color:#f92672">&lt;</span> c <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> mp[nx][ny] <span style="color:#f92672">&lt;</span> mp[x][y]){
+            dfs(nx, ny);
+            dp[x][y] <span style="color:#f92672">=</span> max(dp[x][y], dp[nx][ny]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+        }
+    }
+    <span style="color:#66d9ef">return</span> dp[x][y];
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>r, <span style="color:#f92672">&amp;</span>c);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> r; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> c; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>mp[i][j]);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> r; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> c; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            ans <span style="color:#f92672">=</span> max(ans, dfs(i, j));
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>
