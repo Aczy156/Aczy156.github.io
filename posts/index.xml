@@ -53,10 +53,10 @@ int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp
     
     <item>
       <title>Algorithm1.2 字符串 Trie树</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
       <description>字符串 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
  [模版] 点名问题 https://www.luogu.com.cn/problem/P2580
 题目大意：给出若干个人的名字，多次询问看某个询问是否是第一次出现 &amp;amp; 重复出现【字典树最基本的应用】 &amp;amp; 错误名字
@@ -106,12 +106,15 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/</guid>
-      <description>数据结构 线性表 - 链表  1、通过STL库中的list，直接可以使用的链表
-2、通过手写链表
- 队列排队问题 - 利用STL库中的链表进行实现 https://www.luogu.com.cn/problem/P1160
+      <description>数据结构 线性表 - 链表  1、STL库中的list，直接可以使用的链表
+补：手写链表的基本结构以及名词区分：
+基本结构就是指向第一个元素的指针（包含有第一个元素地址的变量）+后面一串的包含后序节点地址的节点
+区分头指针、头节点、首元素节点
+ 头指针就是存放第一个节点的地址的变量，无论第一个节点是头节点（用来填补回圈的）还是首元素节点，都是第一个节点的地址（也就是指向第一个节点） 头节点：一个存首元素节点地址的一个节点，这个节点的数据域没有实际意义，为了拼凑地址而存在 首元素节点：第一个存实际数值的节点  2、手写链表
+ 单向链表  两个部分「数据域+指针域」+一个指针{记录链表第一个节点的地址}   单向链表双指针【主要用于用链接表模拟队列】  两个部分「数据域+指针域」+两个指针{记录链表第一个节点的地址front 和 记录链表最后一个节点的地址rear}   双向链表  三个部分「数据域+两个指针域」+两个指针{记录正方向链表的第一个节点的地址 和 记录反方向链表的第一个节点的地址}   循环链表  两个部分「数据域+指针域」+一个指针{记录链表第一个节点头节点的地址}+用于初始化回圈的头节点 注意：  需要用一个头节点组成回圈。 此时头指针初始化的位置是在循环链表的尾部，原因就是如果把它首尾相接的话，那么最后尾节点按理就是存放的首节点的地址，头指针就是指第一个节点的地址，所以头指针就相当于在尾节点的位置。     双向循环链表  三个部分「数据域+两个指针域」+两个指针{记录正方向链表的第一个节点的地址 和 记录反方向链表的第一个节点的地址}     队列排队问题 - 利用STL库中的链表进行实现 https://www.luogu.com.cn/problem/P1160
 题目大意：在特定位置添加、插入成员，从而建立一个队列；然后通过调整相关的前后顺序位置，得到最后的队列
 1、特定位置插入、前后顺序（相邻位置）调整 =&amp;gt; 链表 // 双向链表
-#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 100010int n, m, idx, tp; #include &amp;lt;list&amp;gt;list&amp;lt;int&amp;gt; l; using Iterator = list&amp;lt;int&amp;gt;::iterator; Iterator pos[maxn]; // 用于存储索引关系 bool erased[maxn]; int main() { // init  l.push_front(1); pos[1] = l.begin(); scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 2; i &amp;lt;= n; ++i){ scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;idx, &amp;amp;tp); if (!tp) pos[i] = l.</description>
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 100010int n, m, idx, tp; #include &amp;lt;list&amp;gt;list&amp;lt;int&amp;gt; l; using Iterator = list&amp;lt;int&amp;gt;::iterator; Iterator pos[maxn]; // 用于存储索引关系 bool erased[maxn]; int main() { // init  l.</description>
     </item>
     
     <item>
@@ -139,24 +142,29 @@ int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; si
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</guid>
       <description>数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
 2、通过手写栈
- 进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
+ 利用「顺序表」实现：用数组来模拟容器，用变量来作为栈顶 利用「链接表』实现：用链表实现  链首做为栈底，链尾做为栈顶：栈顶添加O(n)，查看栈顶O(n)，栈顶移除O(n) 链首做为栈顶，链尾做为栈底：栈顶添加O(1)，查看栈顶O(1)，栈顶移除O(1)     进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
 题目大意：给定进栈顺序和出栈顺序，根据进栈顺序来比对出栈顺序是否正确
 1、push、pop、empty
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 100010int t, len, in[maxn], out[maxn], idx_out; #include &amp;lt;stack&amp;gt;stack&amp;lt;int&amp;gt; s; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); while (t--) { // init  idx_out = 1; scanf(&amp;#34;%d&amp;#34;, &amp;amp;len); for (int i = 1; i &amp;lt;= len; ++i) scanf(&amp;#34;%d&amp;#34;, &amp;amp;in[i]); for (int i = 1; i &amp;lt;= len; ++i) scanf(&amp;#34;%d&amp;#34;, &amp;amp;out[i]); for (int i = 1; i &amp;lt;= len; ++i) { s.</description>
     </item>
     
     <item>
-      <title>Algorithm11.4 数据结构 二叉树建树 前中后序遍历</title>
+      <title>Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历</title>
       <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
-      <description>数据结构 二叉树 建树、前中后序遍历  两种实现方式：
- 二叉链表实现 结构体数组实现  性质：
- 前序 中序 后序 dfs序 相关性质 给出两个，推第三个  给出前+后【不带中】 =&amp;gt; 中序不一定唯一 给出中+前【带中】 =&amp;gt; 后序唯一 给出中+后【带中】 =&amp;gt; 前序唯一     二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。
-struct node(){ int data; node * lchild; node * rchild; node(){} node(int data): data(data){} node(int data, node * lchild, node * rchild): data(data), lchild(lchild), rchild(rchild){} } 2、要给出的数据，是一串字符串，然后通过递归建树的过程中，逐渐输入scanf进去
-例如：
-// 两组测试用例 // A B D # # E # # C F # # G # # // 1 2 4 # # 5 # # 3 6 # # 7 # # // A B C # # D E # G # # F # # # // 1 2 3 # # 4 5 # 6 # # 7 # # # 3、思路：由于是二叉链表，实质上是指针指向的，所以就写一个递归的返回指针的函数。</description>
+      <description>数据结构 树 二叉树 性质 建树、前中后序遍历  树相关 遍历操作：
+ 【递归】先根遍历、后根遍历。看所有儿子节点和根节点的遍历顺序 【非递归】也是用队列先进先出作为数据结构来存    二叉树相关 两种实现方式：（基本的树结构是两种，如果转换为图进行储存也是可以的）
+  「顺序表」结构体数组实现
+  「链接表」二叉链表实现
+  拓展方法：通过图方式进行存储
+  树结构性质：
+  对于各种二叉树都有的性质：各种类型的节点个数之间的关系
+ 叶子结点个数=度为2的节点个数+1（推导：连线个数=2*n2+1*n1+0*n0，节点个数=n2+n1+n0，连线个数+1=节点个数 =&amp;gt; n2+1 = n0）    对于完全二叉树：高度相关，pow(2, k-1) &amp;lt; n &amp;lt; pow(2, k)，这样可以反推出k的范围。
+  遍历操作：
+ 基本的三种前中后序「主要根据碰到根节点的三个时机，分出了前中后序遍历」  【递归实现】 【非递归实现】通过 栈 模拟函数调用栈先进后出 来 模拟 递归前中后序遍历   【非递归】层次遍历：通过维护一个先进先出  遍历性质：
+ 前序 中序 后序 dfs序 相关性质 给出两个，推第三个  给出前+后【不带中】 =&amp;gt; 中序不一定唯一 给出中+前【带中】 =&amp;gt; 后序唯一 给出中+后【带中】 =&amp;gt; 前序唯一      树与二叉树之间转换 兄弟节点法，把当前节点的同层的右边节点按次顺到右儿子，一直这样下去。</description>
     </item>
     
     <item>
@@ -170,6 +178,18 @@ struct node(){ int data; node * lchild; node * rchild; node(){} node(int data): 
 struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[maxn];; 2、新增的数据结构：也就是huffman[maxn]，起作用就是储存所有的节点的。
 对应的思路，每次挑出节点中值最小的两个，然后把这两个节点合成一个，然后进行排序，并把新产生的节点放到优先队列中，然后再选出两个最小的，一直这么迭代下去。
  通过一个vis数组，来将右儿子给闭掉，然后将左儿子的值更新为他们所形成的父亲节点的值。  node * HuffmanTree() { for (int i = 0; i &amp;lt; n - 1; i++) { for (int j = 0; j &amp;lt; n; ++j) if (!vis[j]) pq.push({huffman[j].data, j}); ll = pq.top().idx;pq.pop(); rr = pq.top().idx; while (!pq.empty()) pq.pop(); vis[rr] = 1; node * lnode = new node {huffman[ll].</description>
+    </item>
+    
+    <item>
+      <title>Algorithm11.6 数据结构 线性表 队列</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%98%9F%E5%88%97/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%98%9F%E5%88%97/</guid>
+      <description>数据结构 线性表 - 队列  1、STL库中的queue
+2、手写队列
+ 利用「顺序表」实现：用数组来模拟容器，用front来作为队首，用rear来作为队尾 利用「链接表」实现：用链表实现  链首做为队首，链尾做为队尾：队尾添加O(n)，查看队首O(1)，栈顶移除O(1) 链首做为队尾，链尾做为队首：栈顶添加O(1)，查看栈顶O(n)，栈顶移除O(n)    3、利用「顺序表」手写队列的溢出问题
+ 假溢出「仅限于用顺序表/数组实现的队列」  出现的原因：由于队首front和队尾rear两个索引在一直往后推延，这样前面用过的地址空间就无法重复使用，在量巨大的情况下就会导致超过地址本来可承受的。 解决方案：通过搞成循环队列，这样原来用过的地址就可以进行重复利用，也不用回收   真溢出「仅限于循环队列，无论是哪种方式实现的」  出现的原因：循环队列不是普通队列的固定长度，所以一直往里边添加的话总会有溢出的时候。     </description>
     </item>
     
     <item>
@@ -436,10 +456,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.7 线性dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</link>
+      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.7-dp%E7%BA%BF%E6%80%A7dp/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</guid>
       <description>线性dp 时间线问题 https://www.luogu.com.cn/problem/P1095
 题目大意：时间线上，每秒钟 =&amp;gt; 可以选择a方式，属性c变化1；可以选择b方式，属性c变化2。
 1、dp[i]表示在时间为i的时候，最远可到达的距离。
@@ -450,10 +470,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.8 基础dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</link>
+      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.8-%E5%9F%BA%E7%A1%80dp/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</guid>
       <description>基础dp 数字三角形 https://www.luogu.com.cn/problem/P1216
 题目大意：给一个三角形矩阵，然后从上往下走，怎么才能走的总量最大。
 1、// 上往下 =&amp;gt; 初始化三角形的上边两条边
@@ -465,10 +485,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.9 dp思维</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</link>
+      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.9-dp%E6%80%9D%E7%BB%B4/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</guid>
       <description>思维 &amp;amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
 题目大意：
 1、结合贪心思想，永远把相邻的最小的给加进去，ans += min(cost[i-1], cost[i])
@@ -547,11 +567,14 @@ int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;
     
     <item>
       <title>Algorithm4 Basic Sort</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F/</guid>
-      <description>排序 题目链接：https://www.luogu.com.cn/problem/P1177
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</guid>
+      <description>排序  冒泡：最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」
+选择：
+插入
+ 题目链接：https://www.luogu.com.cn/problem/P1177
 题目大意：实现快排
 1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
 2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。

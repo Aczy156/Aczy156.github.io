@@ -23,7 +23,7 @@
 	<meta property="og:title" content="Algorithm11.3 数据结构 线性表 栈" />
 <meta property="og:description" content="数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
 2、通过手写栈
- 进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
+ 利用「顺序表」实现：用数组来模拟容器，用变量来作为栈顶 利用「链接表』实现：用链表实现  链首做为栈底，链尾做为栈顶：栈顶添加O(n)，查看栈顶O(n)，栈顶移除O(n) 链首做为栈顶，链尾做为栈底：栈顶添加O(1)，查看栈顶O(1)，栈顶移除O(1)     进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
 题目大意：给定进栈顺序和出栈顺序，根据进栈顺序来比对出栈顺序是否正确
 1、push、pop、empty
 #include &lt;iostream&gt;using namespace std; #define maxn 100010int t, len, in[maxn], out[maxn], idx_out; #include &lt;stack&gt;stack&lt;int&gt; s; int main() { scanf(&#34;%d&#34;, &amp;t); while (t--) { // init  idx_out = 1; scanf(&#34;%d&#34;, &amp;len); for (int i = 1; i &lt;= len; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;in[i]); for (int i = 1; i &lt;= len; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;out[i]); for (int i = 1; i &lt;= len; &#43;&#43;i) { s." />
@@ -35,7 +35,7 @@
 <meta name="twitter:title" content="Algorithm11.3 数据结构 线性表 栈"/>
 <meta name="twitter:description" content="数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
 2、通过手写栈
- 进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
+ 利用「顺序表」实现：用数组来模拟容器，用变量来作为栈顶 利用「链接表』实现：用链表实现  链首做为栈底，链尾做为栈顶：栈顶添加O(n)，查看栈顶O(n)，栈顶移除O(n) 链首做为栈顶，链尾做为栈底：栈顶添加O(1)，查看栈顶O(1)，栈顶移除O(1)     进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
 题目大意：给定进栈顺序和出栈顺序，根据进栈顺序来比对出栈顺序是否正确
 1、push、pop、empty
 #include &lt;iostream&gt;using namespace std; #define maxn 100010int t, len, in[maxn], out[maxn], idx_out; #include &lt;stack&gt;stack&lt;int&gt; s; int main() { scanf(&#34;%d&#34;, &amp;t); while (t--) { // init  idx_out = 1; scanf(&#34;%d&#34;, &amp;len); for (int i = 1; i &lt;= len; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;in[i]); for (int i = 1; i &lt;= len; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;out[i]); for (int i = 1; i &lt;= len; &#43;&#43;i) { s."/>
@@ -68,6 +68,15 @@
 <blockquote>
 <p>1、通过STL库中的stack，直接可以使用的链表</p>
 <p>2、通过手写栈</p>
+<ul>
+<li>利用「顺序表」实现：用<strong>数组</strong>来模拟容器，用变量来作为栈顶</li>
+<li>利用「链接表』实现：用链表实现
+<ul>
+<li>链首做为栈底，链尾做为栈顶：栈顶添加O(n)，查看栈顶O(n)，栈顶移除O(n)</li>
+<li>链首做为栈顶，链尾做为栈底：栈顶添加O(1)，查看栈顶O(1)，栈顶移除O(1)</li>
+</ul>
+</li>
+</ul>
 </blockquote>
 <h3 id="进出栈顺序问题---利用stl库中的栈进行实现">进出栈顺序问题 - 利用STL库中的栈进行实现</h3>
 <p><a href="https://www.luogu.com.cn/problem/P4387">https://www.luogu.com.cn/problem/P4387</a></p>

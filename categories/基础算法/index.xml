@@ -95,11 +95,14 @@ AC代码：
     
     <item>
       <title>Algorithm4 Basic Sort</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F/</guid>
-      <description>排序 题目链接：https://www.luogu.com.cn/problem/P1177
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</guid>
+      <description>排序  冒泡：最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」
+选择：
+插入
+ 题目链接：https://www.luogu.com.cn/problem/P1177
 题目大意：实现快排
 1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
 2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。

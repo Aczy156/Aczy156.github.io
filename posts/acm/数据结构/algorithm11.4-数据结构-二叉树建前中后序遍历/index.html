@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm11.4 数据结构 二叉树建树 前中后序遍历 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
@@ -13,32 +13,42 @@
 	<meta name="description" content="" />
 	<meta name="description" content="" />
 
-	<meta property="og:title" content="Algorithm11.4 数据结构 二叉树建树 前中后序遍历 | Aczy156" />
-	<meta name="twitter:title" content="Algorithm11.4 数据结构 二叉树建树 前中后序遍历 | Aczy156" />
+	<meta property="og:title" content="Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历 | Aczy156" />
 
 	<meta property="og:image" content=""/>
-	<meta itemprop="name" content="Algorithm11.4 数据结构 二叉树建树 前中后序遍历 | Aczy156" />
-	<meta name="application-name" content="Algorithm11.4 数据结构 二叉树建树 前中后序遍历 | Aczy156" />
+	<meta itemprop="name" content="Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历 | Aczy156" />
+	<meta name="application-name" content="Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历 | Aczy156" />
 	<meta property="og:site_name" content="" />
-	<meta property="og:title" content="Algorithm11.4 数据结构 二叉树建树 前中后序遍历" />
-<meta property="og:description" content="数据结构 二叉树 建树、前中后序遍历  两种实现方式：
- 二叉链表实现 结构体数组实现  性质：
- 前序 中序 后序 dfs序 相关性质 给出两个，推第三个  给出前&#43;后【不带中】 =&gt; 中序不一定唯一 给出中&#43;前【带中】 =&gt; 后序唯一 给出中&#43;后【带中】 =&gt; 前序唯一     二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。
-struct node(){ int data; node * lchild; node * rchild; node(){} node(int data): data(data){} node(int data, node * lchild, node * rchild): data(data), lchild(lchild), rchild(rchild){} } 2、要给出的数据，是一串字符串，然后通过递归建树的过程中，逐渐输入scanf进去
-例如：
-// 两组测试用例 // A B D # # E # # C F # # G # # // 1 2 4 # # 5 # # 3 6 # # 7 # # // A B C # # D E # G # # F # # # // 1 2 3 # # 4 5 # 6 # # 7 # # # 3、思路：由于是二叉链表，实质上是指针指向的，所以就写一个递归的返回指针的函数。" />
+	<meta property="og:title" content="Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历" />
+<meta property="og:description" content="数据结构 树 二叉树 性质 建树、前中后序遍历  树相关 遍历操作：
+ 【递归】先根遍历、后根遍历。看所有儿子节点和根节点的遍历顺序 【非递归】也是用队列先进先出作为数据结构来存    二叉树相关 两种实现方式：（基本的树结构是两种，如果转换为图进行储存也是可以的）
+  「顺序表」结构体数组实现
+  「链接表」二叉链表实现
+  拓展方法：通过图方式进行存储
+  树结构性质：
+  对于各种二叉树都有的性质：各种类型的节点个数之间的关系
+ 叶子结点个数=度为2的节点个数&#43;1（推导：连线个数=2*n2&#43;1*n1&#43;0*n0，节点个数=n2&#43;n1&#43;n0，连线个数&#43;1=节点个数 =&gt; n2&#43;1 = n0）    对于完全二叉树：高度相关，pow(2, k-1) &lt; n &lt; pow(2, k)，这样可以反推出k的范围。
+  遍历操作：
+ 基本的三种前中后序「主要根据碰到根节点的三个时机，分出了前中后序遍历」  【递归实现】 【非递归实现】通过 栈 模拟函数调用栈先进后出 来 模拟 递归前中后序遍历   【非递归】层次遍历：通过维护一个先进先出  遍历性质：
+ 前序 中序 后序 dfs序 相关性质 给出两个，推第三个  给出前&#43;后【不带中】 =&gt; 中序不一定唯一 给出中&#43;前【带中】 =&gt; 后序唯一 给出中&#43;后【带中】 =&gt; 前序唯一      树与二叉树之间转换 兄弟节点法，把当前节点的同层的右边节点按次顺到右儿子，一直这样下去。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Algorithm11.4 数据结构 二叉树建树 前中后序遍历"/>
-<meta name="twitter:description" content="数据结构 二叉树 建树、前中后序遍历  两种实现方式：
- 二叉链表实现 结构体数组实现  性质：
- 前序 中序 后序 dfs序 相关性质 给出两个，推第三个  给出前&#43;后【不带中】 =&gt; 中序不一定唯一 给出中&#43;前【带中】 =&gt; 后序唯一 给出中&#43;后【带中】 =&gt; 前序唯一     二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。
-struct node(){ int data; node * lchild; node * rchild; node(){} node(int data): data(data){} node(int data, node * lchild, node * rchild): data(data), lchild(lchild), rchild(rchild){} } 2、要给出的数据，是一串字符串，然后通过递归建树的过程中，逐渐输入scanf进去
-例如：
-// 两组测试用例 // A B D # # E # # C F # # G # # // 1 2 4 # # 5 # # 3 6 # # 7 # # // A B C # # D E # G # # F # # # // 1 2 3 # # 4 5 # 6 # # 7 # # # 3、思路：由于是二叉链表，实质上是指针指向的，所以就写一个递归的返回指针的函数。"/>
+<meta name="twitter:title" content="Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历"/>
+<meta name="twitter:description" content="数据结构 树 二叉树 性质 建树、前中后序遍历  树相关 遍历操作：
+ 【递归】先根遍历、后根遍历。看所有儿子节点和根节点的遍历顺序 【非递归】也是用队列先进先出作为数据结构来存    二叉树相关 两种实现方式：（基本的树结构是两种，如果转换为图进行储存也是可以的）
+  「顺序表」结构体数组实现
+  「链接表」二叉链表实现
+  拓展方法：通过图方式进行存储
+  树结构性质：
+  对于各种二叉树都有的性质：各种类型的节点个数之间的关系
+ 叶子结点个数=度为2的节点个数&#43;1（推导：连线个数=2*n2&#43;1*n1&#43;0*n0，节点个数=n2&#43;n1&#43;n0，连线个数&#43;1=节点个数 =&gt; n2&#43;1 = n0）    对于完全二叉树：高度相关，pow(2, k-1) &lt; n &lt; pow(2, k)，这样可以反推出k的范围。
+  遍历操作：
+ 基本的三种前中后序「主要根据碰到根节点的三个时机，分出了前中后序遍历」  【递归实现】 【非递归实现】通过 栈 模拟函数调用栈先进后出 来 模拟 递归前中后序遍历   【非递归】层次遍历：通过维护一个先进先出  遍历性质：
+ 前序 中序 后序 dfs序 相关性质 给出两个，推第三个  给出前&#43;后【不带中】 =&gt; 中序不一定唯一 给出中&#43;前【带中】 =&gt; 后序唯一 给出中&#43;后【带中】 =&gt; 前序唯一      树与二叉树之间转换 兄弟节点法，把当前节点的同层的右边节点按次顺到右儿子，一直这样下去。"/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -59,19 +69,57 @@ struct node(){ int data; node * lchild; node * rchild; node(){} node(int data): 
 <main>
 	<article>
 		<div class="title">
-			<h1 class="title">Algorithm11.4 数据结构 二叉树建树 前中后序遍历</h1>
+			<h1 class="title">Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历</h1>
 		</div>
 		
 
 		<section class="body">
-			<h2 id="数据结构-二叉树-建树前中后序遍历">数据结构 二叉树 建树、前中后序遍历</h2>
+			<h2 id="数据结构-树-二叉树-性质-建树前中后序遍历">数据结构 树 二叉树 性质 建树、前中后序遍历</h2>
 <blockquote>
-<p>两种实现方式：</p>
+<h3 id="树相关">树相关</h3>
+<p>遍历操作：</p>
 <ul>
-<li>二叉链表实现</li>
-<li>结构体数组实现</li>
+<li>【递归】先根遍历、后根遍历。看所有儿子节点和根节点的遍历顺序</li>
+<li>【非递归】也是用队列<strong>先进先出</strong>作为数据结构来存</li>
 </ul>
-<p>性质：</p>
+</blockquote>
+<blockquote>
+<h3 id="二叉树相关">二叉树相关</h3>
+<p>两种实现方式：（基本的树结构是两种，如果转换为图进行储存也是可以的）</p>
+<ul>
+<li>
+<p>「顺序表」结构体数组实现</p>
+</li>
+<li>
+<p>「链接表」二叉链表实现</p>
+</li>
+<li>
+<p>拓展方法：通过图方式进行存储</p>
+</li>
+</ul>
+<p>树结构性质：</p>
+<ul>
+<li>
+<p>对于各种二叉树都有的性质：各种类型的节点个数之间的关系</p>
+<ul>
+<li>叶子结点个数=度为2的节点个数+1（推导：连线个数=2<code>*</code>n2+1<code>*</code>n1+0<code>*</code>n0，节点个数=n2+n1+n0，连线个数+1=节点个数 =&gt; n2+1 = n0）</li>
+</ul>
+</li>
+<li>
+<p>对于完全二叉树：高度相关，pow(2, k-1) &lt; n &lt; pow(2, k)，这样可以反推出k的范围。</p>
+</li>
+</ul>
+<p>遍历操作：</p>
+<ul>
+<li>基本的三种前中后序「主要根据碰到根节点的三个时机，分出了前中后序遍历」
+<ul>
+<li>【递归实现】</li>
+<li>【非递归实现】通过 栈 模拟函数调用栈<strong>先进后出</strong> 来 模拟 递归前中后序遍历</li>
+</ul>
+</li>
+<li>【非递归】层次遍历：通过维护一个<strong>先进先出</strong></li>
+</ul>
+<p>遍历性质：</p>
 <ul>
 <li>前序 中序 后序 dfs序 相关性质</li>
 <li>给出两个，推第三个
@@ -82,6 +130,11 @@ struct node(){ int data; node * lchild; node * rchild; node(){} node(int data): 
 </ul>
 </li>
 </ul>
+</blockquote>
+<blockquote>
+<h3 id="树与二叉树之间转换">树与二叉树之间转换</h3>
+<p>兄弟节点法，把当前节点的同层的右边节点按次顺到右儿子，一直这样下去。</p>
+<p>转换回去，通过把右节点往上一直连接</p>
 </blockquote>
 <h3 id="二叉链表实现---利用链表来链接起树的结构">二叉链表实现 - 利用链表来链接起树的结构</h3>
 <p>1、节点中有两个指向叶子结点的指针。</p>
