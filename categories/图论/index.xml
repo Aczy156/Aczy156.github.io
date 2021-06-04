@@ -50,6 +50,9 @@
       <description>最小生成树  几种数据给出形式以及对应的解决方案
 1、点a 点b 边ab权值 =&amp;gt; 邻接表vector来存 =&amp;gt; 优先kruskal
 2、一个矩阵 =&amp;gt; 邻接矩阵来存【适合存点少线多的，也就是稠密图，如果稀疏的话，空间就爆炸了】 =&amp;gt; 优先prim（当然也可以手动提取，但是这样提取会很麻烦，因为边很多，有多少点就要考虑点个数平方个的边）
+两种解决方案的大致思路：
+1、kruskal克鲁斯卡尔：以边为核心，每次提取权值最小的边，判断是否要这个边的依据就是看这个边的两个端点是否已经在同一个树中
+2、prim普里姆：以点为核心，每次拓展 树点集 和 外部点 之间的最小值，从而把外部点拉入到树点集中去
  https://www.luogu.com.cn/problem/P3366
 模版 - Prim解法 &amp;ndash; 邻接矩阵 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 5005int n, m, dis[maxn], vis[maxn], mp[maxn][maxn], tem, v, ta, tb, tc, sum; const int INF = 0x3f3f3f; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[1][i]; for (int i = 2; i &amp;lt;= n; ++i) { tem = INF; v = 1;vis[1] = 1; for (int j = 2; j &amp;lt;= n; ++j) if (!</description>
     </item>

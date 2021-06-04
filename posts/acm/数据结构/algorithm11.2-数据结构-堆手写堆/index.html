@@ -22,7 +22,8 @@
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm11.2 数据结构 堆与堆优化" />
 <meta property="og:description" content="数据结构 堆 &amp; 手写堆  用到堆优化的思路不一定是用堆，也可能是通过利用优先队列进行优化
- 堆的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&gt; 可以用堆进行优化
+堆：
+ 分类：最大堆、最小堆 过程：首先按照完全二叉树的形式，将序列填补到初始的堆中   堆的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&gt; 可以用堆进行优化
 https://www.luogu.com.cn/problem/P3378
 手写堆 实现 获取区间前几大/最大 1、数据结构：一个模拟堆的数组myheap
 2、堆的基本操作：
@@ -37,7 +38,8 @@ int son = idx&lt;&lt;1; while (son &lt;= size) { if (son &lt; size &amp;&amp; my
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm11.2 数据结构 堆与堆优化"/>
 <meta name="twitter:description" content="数据结构 堆 &amp; 手写堆  用到堆优化的思路不一定是用堆，也可能是通过利用优先队列进行优化
- 堆的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&gt; 可以用堆进行优化
+堆：
+ 分类：最大堆、最小堆 过程：首先按照完全二叉树的形式，将序列填补到初始的堆中   堆的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&gt; 可以用堆进行优化
 https://www.luogu.com.cn/problem/P3378
 手写堆 实现 获取区间前几大/最大 1、数据结构：一个模拟堆的数组myheap
 2、堆的基本操作：
@@ -73,6 +75,11 @@ int son = idx&lt;&lt;1; while (son &lt;= size) { if (son &lt; size &amp;&amp; my
 			<h2 id="数据结构-堆--手写堆">数据结构 堆 &amp; 手写堆</h2>
 <blockquote>
 <p>用到堆优化的思路不一定是用堆，也可能是通过利用优先队列进行优化</p>
+<p>堆：</p>
+<ul>
+<li>分类：最大堆、最小堆</li>
+<li>过程：首先按照完全二叉树的形式，将序列填补到初始的堆中</li>
+</ul>
 </blockquote>
 <p>堆的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&gt; 可以用堆进行优化</p>
 <p><a href="https://www.luogu.com.cn/problem/P3378">https://www.luogu.com.cn/problem/P3378</a></p>
