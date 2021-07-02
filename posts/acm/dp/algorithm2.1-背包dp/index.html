@@ -21,7 +21,7 @@
 	<meta name="application-name" content="Algorithm2.1 背包dp | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm2.1 背包dp" />
-<meta property="og:description" content="背包dp 01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
+<meta property="og:description" content="背包dp   01背包：每种物品仅一个 完全背包：每种物品有无限个 多重背包：每种物品有具体个数 分组背包：每种物品仅一个，且不同物品有自己所属的组别 多维代价背包：每种物品不仅占用空间，而且占用金钱 多维目的背包：每种物品不仅具有价值1，而且具有价值2   01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
 题目大意：
 #include &lt;iostream&gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int j = 0; j &lt; n; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &lt; n; &#43;&#43;j) for (int i = m; i &gt;= a[i]; --i) dp[i] &#43;= dp[i-a[j]]; printf(&#34;%d\n&#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www." />
 <meta property="og:type" content="article" />
@@ -30,7 +30,7 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm2.1 背包dp"/>
-<meta name="twitter:description" content="背包dp 01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
+<meta name="twitter:description" content="背包dp   01背包：每种物品仅一个 完全背包：每种物品有无限个 多重背包：每种物品有具体个数 分组背包：每种物品仅一个，且不同物品有自己所属的组别 多维代价背包：每种物品不仅占用空间，而且占用金钱 多维目的背包：每种物品不仅具有价值1，而且具有价值2   01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
 题目大意：
 #include &lt;iostream&gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int j = 0; j &lt; n; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &lt; n; &#43;&#43;j) for (int i = m; i &gt;= a[i]; --i) dp[i] &#43;= dp[i-a[j]]; printf(&#34;%d\n&#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
@@ -59,6 +59,16 @@
 
 		<section class="body">
 			<h2 id="背包dp">背包dp</h2>
+<blockquote>
+<ul>
+<li>01背包：每种物品仅一个</li>
+<li>完全背包：每种物品有无限个</li>
+<li>多重背包：每种物品有具体个数</li>
+<li>分组背包：每种物品仅一个，且不同物品有自己所属的组别</li>
+<li>多维代价背包：每种物品不仅占用空间，而且占用金钱</li>
+<li>多维目的背包：每种物品不仅具有价值1，而且具有价值2</li>
+</ul>
+</blockquote>
 <h3 id="01背包-装配组合路径问题">01背包-装配组合//路径问题</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1164">https://www.luogu.com.cn/problem/P1164</a></p>
 <p>题目大意：</p>
@@ -275,8 +285,46 @@
         printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, dp[m]);
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre></div><h3 id="多维代价背包">多维代价背包</h3>
+</code></pre></div><h3 id="组合背包">组合背包</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1757">https://www.luogu.com.cn/problem/P1757</a></p>
+<blockquote>
+<p>题目大意：就是普通01背包，但是给每个物品都添加了自己所属的组别。</p>
+</blockquote>
+<p>1、此时遍历所有物品的话，就要按照组别-&gt;每个组别所包含的物品来遍历。</p>
+<p>2、组别的目的就是加约束，每一组最多多少个，限制一个的话，可以通过把最内层遍历为该组别的遍历，中间设置为容量的遍历</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">for 所有组别
+	for 容量从最大到0
+		for 该组别中的所有物品
+			if 当前容量大于该物品的容量
+</code></pre></div><p>AC代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1010</span>;
+<span style="color:#66d9ef">int</span> dp[maxn], c[maxn], v[maxn], grp[maxn][maxn], cnt[maxn]; <span style="color:#75715e">// grp[i][j]表示第i组，第j个商品在总的索引里边的位次
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> ctotal, n, tc, tval, tgrp, grpmax;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ctotal, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, c<span style="color:#f92672">+</span>i, v<span style="color:#f92672">+</span>i, <span style="color:#f92672">&amp;</span>tgrp);
+        grpmax <span style="color:#f92672">=</span> max(grpmax, tgrp);
+        cnt[tgrp]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        grp[tgrp][cnt[tgrp]] <span style="color:#f92672">=</span> i;
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> grpmax; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> ctotal; j <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#f92672">-</span><span style="color:#f92672">-</span>j)
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> cnt[i]; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>k)
+                <span style="color:#66d9ef">if</span> (j<span style="color:#f92672">-</span>c[grp[i][k]]<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) dp[j] <span style="color:#f92672">=</span> max(dp[j], dp[j<span style="color:#f92672">-</span>c[grp[i][k]]]<span style="color:#f92672">+</span>v[grp[i][k]]);
+            printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, dp[ctotal]);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div><h3 id="多维代价--多维目的----背包">多维代价 // 多维目的 &ndash; 背包</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1855">https://www.luogu.com.cn/problem/P1855</a></p>
+<blockquote>
+<p>多（2）维代价，所以各自的dp数组都是2个维度</p>
+<p>一个目的，所以只需要开一个dp数组来作为目的</p>
+</blockquote>
 <p>1、dp[]数组遍历的就是代价元素，所以有几个代价，就增加几个维度，二维就是<code>dp[代价1][代价2]</code>，三维就是<code>dp[代价1][代价2][代价3]</code></p>
 <p>2、本题<code>dp[i][j]</code>表示在代价1为i，代价2位j的时候，所获的的最大的数量。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
@@ -303,6 +351,32 @@
         <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> m; k <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> c_m[i]; <span style="color:#f92672">-</span><span style="color:#f92672">-</span>k)
             dp[j][k] <span style="color:#f92672">=</span> max(dp[j][k], dp[j<span style="color:#f92672">-</span>c_v[i]][k<span style="color:#f92672">-</span>c_m[i]]<span style="color:#f92672">+</span>val[i]);
         printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, dp[v][m]);
+</code></pre></div><p><a href="https://www.luogu.com.cn/problem/P1509">https://www.luogu.com.cn/problem/P1509</a></p>
+<blockquote>
+<p>多（2）维代价，所以各自的dp数组都是2个维度</p>
+<p>两个目的，要开两个dp数组来作为目的</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">105</span>;
+<span style="color:#66d9ef">int</span> n, rmb[maxn], rp[maxn], tim[maxn], totalRmb, totalRp; <span style="color:#75715e">// 两个代价
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> dpNum[maxn][maxn], dpTime[maxn][maxn]; <span style="color:#75715e">// 两个目的
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, rmb<span style="color:#f92672">+</span>i, rp<span style="color:#f92672">+</span>i, tim<span style="color:#f92672">+</span>i);
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>totalRmb, <span style="color:#f92672">&amp;</span>totalRp);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> totalRmb; j <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> rmb[i]; <span style="color:#f92672">-</span><span style="color:#f92672">-</span>j)
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> totalRp; k <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> rp[i]; <span style="color:#f92672">-</span><span style="color:#f92672">-</span>k)
+                <span style="color:#66d9ef">if</span> (dpNum[j][k] <span style="color:#f92672">&lt;</span> dpNum[j<span style="color:#f92672">-</span>rmb[i]][k<span style="color:#f92672">-</span>rp[i]]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) {
+                    dpNum[j][k] <span style="color:#f92672">=</span> dpNum[j<span style="color:#f92672">-</span>rmb[i]][k<span style="color:#f92672">-</span>rp[i]]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+                    dpTime[j][k] <span style="color:#f92672">=</span> dpTime[j<span style="color:#f92672">-</span>rmb[i]][k<span style="color:#f92672">-</span>rp[i]]<span style="color:#f92672">+</span>tim[i];
+                } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (dpNum[j][k] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> dpNum[j<span style="color:#f92672">-</span>rmb[i]][k<span style="color:#f92672">-</span>rp[i]]<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+                    dpTime[j][k] <span style="color:#f92672">=</span> min(dpTime[j][k], dpTime[j<span style="color:#f92672">-</span>rmb[i]][k<span style="color:#f92672">-</span>rp[i]]<span style="color:#f92672">+</span>tim[i]);
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, dpTime[totalRmb][totalRp]);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
 </code></pre></div>
 		</section>
 

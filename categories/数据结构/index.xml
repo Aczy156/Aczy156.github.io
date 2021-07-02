@@ -156,5 +156,19 @@ void single_add(int pos, int k) { while(pos &amp;lt;= n) { c[pos] += k; pos += l
 int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -= lowbit(pos); } } #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 500010int n, m, tm, tp, ta, tb, c[maxn]; int lowbit(int x) {return x &amp;amp; (-x);} void single_add(int pos, int k) { while (pos &amp;lt;= n) { c[pos] += k; pos += lowbit(pos); } } int getsum(int pos) { int ans = 0; while (pos &amp;gt;= 1) { ans += c[pos]; pos -= lowbit(pos); } return ans; } int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;tm);single_add(i, tm);} while (m--) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;tp, &amp;amp;ta, &amp;amp;tb); if (tp-1) printf(&amp;#34;%d\n&amp;#34;, getsum(tb)-getsum(ta-1)); else single_add(ta, tb); } return 0; } 模版-区间修改(操作)、单点求和(查询) 区间修改+单点求和 模版：https://www.</description>
     </item>
     
+    <item>
+      <title>Algorithm21 数据结构 离散化</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm21-%E7%A6%BB%E6%95%A3%E5%8C%96/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm21-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
+      <description>数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
+ 基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
+1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
+2、再将每个位置反向赋值回去。
+struct DisNum { int idx, val; bool operator &amp;lt; (const DisNum n) const { if (val == n.val) return idx &amp;lt; n.idx; return val &amp;lt; n.val; } }a[maxn]; 赋值，排序，然后再反向赋值回去
+for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i].val);a[i].idx = i;} sort(a+1, a+1+n); for (int i = 1; i &amp;lt;= n; ++i) nw[a[i].idx] = i; lower bound 将数据进行离散化 vector实现 </description>
+    </item>
+    
   </channel>
 </rss>

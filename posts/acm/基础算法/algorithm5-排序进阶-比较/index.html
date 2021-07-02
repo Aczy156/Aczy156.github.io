@@ -21,32 +21,20 @@
 	<meta name="application-name" content="Algorithm5 Advanced Sort | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm5 Advanced Sort" />
-<meta property="og:description" content="排序变种 用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
+<meta property="og:description" content="排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&gt; 一遍扫，模拟即可 仅可以交换相邻的 =&gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
 最小：priority_queue&lt;int&gt; pq;
 https://www.luogu.com.cn/problem/P3378
-#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;&amp; 直接利用优先队列实现的排序 https://www.luogu.com.cn/problem/P1068
-题目大意：按照成绩选人【多个】，但是每个人有编号和成绩两个属性是相互绑定的，所以用结构体储存很好。
-考点：如果选人的个数是一个的话直接遍历==&gt;区分下面的宇宙总统，宇宙总统就是选一个，但是比较的元素是大数，考点在大数；而这个题选人的个数是多个=&gt;一边遍历就不合适了，直接排序即可。
-而此题是
-1、重载运算符，结合优先队列，直接根据成绩进行排名。 // 或者根据向量&#43;sort排序，但是这样重载运算符的时候有区别。
-2、**易错：重载的时候，成绩相同看看其他属性有没有要求。**=&gt;如果成绩相同，编号小的靠前。
-struct node { int id, score; node(int id, int score): id(id), score(score){} bool operator &lt; (const node n) const{ if (score == n." />
+#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;&amp; 直接利用优先队列实现的排序 https://www." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm5 Advanced Sort"/>
-<meta name="twitter:description" content="排序变种 用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
+<meta name="twitter:description" content="排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&gt; 一遍扫，模拟即可 仅可以交换相邻的 =&gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
 最小：priority_queue&lt;int&gt; pq;
 https://www.luogu.com.cn/problem/P3378
-#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;&amp; 直接利用优先队列实现的排序 https://www.luogu.com.cn/problem/P1068
-题目大意：按照成绩选人【多个】，但是每个人有编号和成绩两个属性是相互绑定的，所以用结构体储存很好。
-考点：如果选人的个数是一个的话直接遍历==&gt;区分下面的宇宙总统，宇宙总统就是选一个，但是比较的元素是大数，考点在大数；而这个题选人的个数是多个=&gt;一边遍历就不合适了，直接排序即可。
-而此题是
-1、重载运算符，结合优先队列，直接根据成绩进行排名。 // 或者根据向量&#43;sort排序，但是这样重载运算符的时候有区别。
-2、**易错：重载的时候，成绩相同看看其他属性有没有要求。**=&gt;如果成绩相同，编号小的靠前。
-struct node { int id, score; node(int id, int score): id(id), score(score){} bool operator &lt; (const node n) const{ if (score == n."/>
+#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;&amp; 直接利用优先队列实现的排序 https://www."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -73,6 +61,22 @@ struct node { int id, score; node(int id, int score): id(id), score(score){} boo
 
 		<section class="body">
 			<h2 id="排序变种">排序变种</h2>
+<blockquote>
+<ul>
+<li>结构体排序
+<ul>
+<li>结构体封装题目要求的实体</li>
+<li>结构体封装大数的类，来进行运算</li>
+</ul>
+</li>
+<li>排序过程：计算交换次数
+<ul>
+<li>交换任意一对 =&gt; 一遍扫，模拟即可</li>
+<li>仅可以交换相邻的 =&gt; 树状数组 // 归并排序</li>
+</ul>
+</li>
+</ul>
+</blockquote>
 <h3 id="用优先队列实现的顶部最大--顶部最小">用优先队列实现的顶部最大 &amp; 顶部最小</h3>
 <p>最大：<code>priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;</code></p>
 <p>最小：<code>priority_queue&lt;int&gt; pq;</code></p>
@@ -198,6 +202,52 @@ struct node { int id, score; node(int id, int score): id(id), score(score){} boo
     <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>strs[i];
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
+</code></pre></div><h3 id="排序求最少交换次数---任意一对">排序求最少交换次数 - 任意一对</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1327">https://www.luogu.com.cn/problem/P1327</a></p>
+<h3 id="排序求最少交换次数---仅限相邻">排序求最少交换次数 - 仅限相邻</h3>
+<blockquote>
+<p>题目类型：</p>
+<ul>
+<li>【P1908】逆序的对数 =》 3 2 1的逆序的对数为32 31 21</li>
+<li>【P1774】相邻两个交换，最后得到单调递增的序列的交换次数 =》3 2 1，首先213，把和3为逆序的都依次交换</li>
+</ul>
+</blockquote>
+<p><a href="https://www.luogu.com.cn/problem/P1908">https://www.luogu.com.cn/problem/P1908</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P1774">https://www.luogu.com.cn/problem/P1774</a></p>
+<p><em>归并排序解法</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">5e5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+<span style="color:#66d9ef">int</span> n, a[maxn], t[maxn], tidx, lidx, ridx;
+ll ans;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">mergesort</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r){
+    <span style="color:#66d9ef">if</span> (r <span style="color:#f92672">&gt;</span> l) {
+        <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> (l<span style="color:#f92672">+</span>r)<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+        mergesort(l, mid);
+        mergesort(mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, r);
+        tidx <span style="color:#f92672">=</span> lidx <span style="color:#f92672">=</span> l, ridx <span style="color:#f92672">=</span> mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">while</span> (lidx <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> mid <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> ridx <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> r) {
+            <span style="color:#66d9ef">if</span> (a[lidx] <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> a[ridx]) t[tidx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> a[lidx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>];
+            <span style="color:#66d9ef">else</span> t[tidx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> a[ridx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>], ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (mid<span style="color:#f92672">-</span>lidx<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+        }
+        <span style="color:#66d9ef">while</span> (lidx <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> mid) t[tidx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> a[lidx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>];
+        <span style="color:#66d9ef">while</span> (ridx <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> r) t[tidx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> a[ridx<span style="color:#f92672">+</span><span style="color:#f92672">+</span>];
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> l; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> r; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) a[i] <span style="color:#f92672">=</span> t[i];
+    }
+}
+
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, a<span style="color:#f92672">+</span>i);
+    mergesort(<span style="color:#ae81ff">1</span>, n);
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p><em>离散化+树状数组解法</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
 </code></pre></div>
 		</section>
 

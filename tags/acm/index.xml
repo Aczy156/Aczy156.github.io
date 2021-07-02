@@ -391,14 +391,40 @@ AC代码：
     </item>
     
     <item>
+      <title>Algorithm19.1 递归</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</guid>
+      <description>递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
+两种方案：
+ 第一种，先输入进来，然后整体进行递归，递归的参数就是这个整体字串 第二种，边输入边递归，这样就可以利用一些getchar，char字符来进行输入的直接判断（例如如果字串一部分为ADD567，如果不知道长度的的话还有遍历判断，如果直接边输入边解析，那就可以直接利用cin来直接分割，cin&amp;raquo;字串&amp;raquo;数字，就自动分割了）   指令移动 https://www.luogu.com.cn/problem/P1322
+#include &amp;lt;iostream&amp;gt;using namespace std; int solve() { char c; string tp; int num, ans, d; while (cin&amp;gt;&amp;gt;c) { if (c == &amp;#39;]&amp;#39;) break; cin&amp;gt;&amp;gt;tp&amp;gt;&amp;gt;num; if (c == &amp;#39;R&amp;#39;) { d = getchar(); ans += num*solve(); d = getchar(); } if (c == &amp;#39;B&amp;#39;) d = getchar(), ans -= num; if (c == &amp;#39;F&amp;#39;) d = getchar(), ans += num; if (d == int(&amp;#39;]&amp;#39;)) break; } return ans; } int main() { printf(&amp;#34;%d\n&amp;#34;, solve()); return 0; } </description>
+    </item>
+    
+    <item>
       <title>Algorithm2.1 背包dp</title>
       <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
-      <description>背包dp 01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
+      <description>背包dp   01背包：每种物品仅一个 完全背包：每种物品有无限个 多重背包：每种物品有具体个数 分组背包：每种物品仅一个，且不同物品有自己所属的组别 多维代价背包：每种物品不仅占用空间，而且占用金钱 多维目的背包：每种物品不仅具有价值1，而且具有价值2   01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
 题目大意：
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm2.10 坐标系dp</title>
+      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</guid>
+      <description>坐标系dp 最大正方形 https://www.luogu.com.cn/problem/P1387
+ 题目大意：给出一个二维坐标系中，找出里边全部是1的一个正方形的最大长度
+ 初始化：维护一个dp[maxn][maxn],dp[i][j]表示在第i，j的这个点上的最大正方形
+状态转移方程：
+if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))+1; 完整代码：
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; int n, m, a[maxn][maxn], dp[maxn][maxn], ans; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= m; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i][j]); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= m; ++j) if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i-1][j], dp[i][j-1]))+1, ans = max(ans, dp[i][j]); printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } 最大正方形变式子 https://www.</description>
     </item>
     
     <item>
@@ -471,7 +497,7 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
 初始化：dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i]; 状态转移方程：dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j];
 2、下往上 =&amp;gt; 初始化最下边的那条边
 初始化： dp[r-1][i] = a[r-1][i]; 状态转移方程：dp[i][j] = max(dp[i+1][i], dp[i+1][i+1])+a[i][j];
-#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 1005int r, a[maxn][maxn], dp[maxn][maxn], ans = 0; #include &amp;lt;cmath&amp;gt;// 上往下 =&amp;gt; 初始化三角形的上边两条边(dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i];) // dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j]; // 下往上 =&amp;gt; 初始化最下边的那条边 dp[r-1][i] = a[r-1][i]; // dp[i][j] = max(dp[i+1][i], dp[i+1][i+1])+a[i][j];  int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;r); for (int i = 0; i &amp;lt; r; ++i) for (int j = 0; j &amp;lt; i + 1; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i][j]); //init  for (int i = 0; i &amp;lt; r; ++i) dp[r-1][i] = a[r-1][i]; for (int i = r-2; i &amp;gt;= 0; --i) for (int j = 0; j &amp;lt; i + 1; ++j) dp[i][j] = max(dp[i+1][j], dp[i+1][j+1])+a[i][j]; printf(&amp;#34;%d\n&amp;#34;, dp[0][0]); /* * // init dp[0][0] = a[0][0]; for (int i = 1; i &amp;lt; r; ++i) dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i]; for (int i = 2; i &amp;lt; r; ++i) for (int j = 1; j &amp;lt; i ; ++j) dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j]; for (int i = 0; i &amp;lt; r; ++i) ans = max(ans, dp[r-1][i]); printf(&amp;#34;%d\n&amp;#34;, ans); */ return 0; } </description>
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 1005int r, a[maxn][maxn], dp[maxn][maxn], ans = 0; #include &amp;lt;cmath&amp;gt;// 上往下 =&amp;gt; 初始化三角形的上边两条边(dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i];) // dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j]; // 下往上 =&amp;gt; 初始化最下边的那条边 dp[r-1][i] = a[r-1][i]; // dp[i][j] = max(dp[i+1][i], dp[i+1][i+1])+a[i][j];  int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;r); for (int i = 0; i &amp;lt; r; ++i) for (int j = 0; j &amp;lt; i + 1; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i][j]); //init  for (int i = 0; i &amp;lt; r; ++i) dp[r-1][i] = a[r-1][i]; for (int i = r-2; i &amp;gt;= 0; --i) for (int j = 0; j &amp;lt; i + 1; ++j) dp[i][j] = max(dp[i+1][j], dp[i+1][j+1])+a[i][j]; printf(&amp;#34;%d\n&amp;#34;, dp[0][0]); /* * // init dp[0][0] = a[0][0]; for (int i = 1; i &amp;lt; r; ++i) dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i]; for (int i = 2; i &amp;lt; r; ++i) for (int j = 1; j &amp;lt; i ; ++j) dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j]; for (int i = 0; i &amp;lt; r; ++i) ans = max(ans, dp[r-1][i]); printf(&amp;#34;%d\n&amp;#34;, ans); */ return 0; } 数字三角形变形 https://www.</description>
     </item>
     
     <item>
@@ -545,6 +571,20 @@ int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;
     </item>
     
     <item>
+      <title>Algorithm21 数据结构 离散化</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm21-%E7%A6%BB%E6%95%A3%E5%8C%96/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm21-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
+      <description>数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
+ 基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
+1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
+2、再将每个位置反向赋值回去。
+struct DisNum { int idx, val; bool operator &amp;lt; (const DisNum n) const { if (val == n.val) return idx &amp;lt; n.idx; return val &amp;lt; n.val; } }a[maxn]; 赋值，排序，然后再反向赋值回去
+for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i].val);a[i].idx = i;} sort(a+1, a+1+n); for (int i = 1; i &amp;lt;= n; ++i) nw[a[i].idx] = i; lower bound 将数据进行离散化 vector实现 </description>
+    </item>
+    
+    <item>
       <title>Algorithm3 交叉</title>
       <link>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
@@ -567,9 +607,10 @@ int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;
  希尔排序【不稳定】：三大步，首先对半分，两半一对一匹配进行插入排序；然后对半分的两类内部分别进行插入，然后对整体进行插入排序。  递归 二分与合并： $$ O(n*log_n2) $$
  快速排序【不稳定】：首先移动，然后「合理的分割」 归并排序【稳定】：「分割」，然后「合理的合并」  递归 桶 多分与合并：
  计数排序：n个数n个桶，然后把n个桶再合并 桶排序：n个数k个桶，k个桶各自进行排序，然后再把k个桶合并 基数排序【稳定】：n个数10个桶，10个桶为首位/尾位的是个数字对应的数。  思路一：先合并，然后再根据首位/尾位的下面一位接着入桶 思路二：对每一个桶分别根据下一位再重新进小小桶，然后对小小桶进行合并，再对大桶进行合并    其他： $$ O(n*log_n2) $$
- 锦标赛排序/堆排序【不稳定】：利用类似于堆/树的log2n的结构来提取最大/最小，然后放在首/尾。  利用最小堆：递增排序 利用最大堆：递减排序     \alpha
-题目链接：https://www.luogu.com.cn/problem/P1177
-题目大意：实现快排
+ 锦标赛排序/堆排序【不稳定】：利用类似于堆/树的log2n的结构来提取最大/最小，然后放在首/尾。  利用最小堆：递增排序 利用最大堆：递减排序     归并排序 两个易错点：
+1、递归完了回来将要排序的时候，两个范围注意，左边小于等于mid，右边小于等于r，然后右边的起点也是mid+1。
+2、******递归
+快速排序 题目链接：https://www.luogu.com.cn/problem/P1177
 1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
 2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。
 3、分块的部分，可以通过前后遍历，碰到一对分别小于、大于的，直接swap()掉即可。但是会引发一个问题，就是如果碰到了一边刚好完全都是符合那个标准的，然后另一边存在不符合标准的，此时就需要把标准和不符合标准的换位置了。
@@ -583,16 +624,10 @@ void quicksort(int l, int r){ int mid = a[(l+r)/2], i = l, j = r; do{ while (a[i
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</guid>
-      <description>排序变种 用优先队列实现的顶部最大 &amp;amp; 顶部最小 最大：priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq;
+      <description>排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&amp;gt; 一遍扫，模拟即可 仅可以交换相邻的 =&amp;gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp;amp; 顶部最小 最大：priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq;
 最小：priority_queue&amp;lt;int&amp;gt; pq;
 https://www.luogu.com.cn/problem/P3378
-#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq; int m, op, t; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); while (m--) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;op); switch (op) { case 1: scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);pq.push(t);break; case 2: printf(&amp;#34;%d\n&amp;#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;amp;&amp;amp; 直接利用优先队列实现的排序 https://www.luogu.com.cn/problem/P1068
-题目大意：按照成绩选人【多个】，但是每个人有编号和成绩两个属性是相互绑定的，所以用结构体储存很好。
-考点：如果选人的个数是一个的话直接遍历==&amp;gt;区分下面的宇宙总统，宇宙总统就是选一个，但是比较的元素是大数，考点在大数；而这个题选人的个数是多个=&amp;gt;一边遍历就不合适了，直接排序即可。
-而此题是
-1、重载运算符，结合优先队列，直接根据成绩进行排名。 // 或者根据向量+sort排序，但是这样重载运算符的时候有区别。
-2、**易错：重载的时候，成绩相同看看其他属性有没有要求。**=&amp;gt;如果成绩相同，编号小的靠前。
-struct node { int id, score; node(int id, int score): id(id), score(score){} bool operator &amp;lt; (const node n) const{ if (score == n.</description>
+#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq; int m, op, t; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); while (m--) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;op); switch (op) { case 1: scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);pq.push(t);break; case 2: printf(&amp;#34;%d\n&amp;#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;amp;&amp;amp; 直接利用优先队列实现的排序 https://www.</description>
     </item>
     
     <item>

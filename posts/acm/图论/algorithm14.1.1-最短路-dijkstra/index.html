@@ -320,20 +320,20 @@ vector<span style="color:#f92672">&lt;</span>edge<span style="color:#f92672">&gt
 </code></pre></div><h3 id="堆优化dijkstra提高效率">堆优化dijkstra提高效率</h3>
 <p>解决题目：数据增强的最短路，洛谷P4779</p>
 <p><a href="https://www.luogu.com.cn/problem/P4779">https://www.luogu.com.cn/problem/P4779</a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>using namespace std;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
 <span style="color:#75715e">#</span><span style="color:#75715e">define maxpoint 100010</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define maxedge 200010</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define INF 2147483647</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, s, ta, tb, tc, dis[maxpoint], vis[maxpoint], v, tem<span style="color:#f92672">=</span>INF;
-<span style="color:#66d9ef">struct</span> node {
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
     <span style="color:#66d9ef">int</span> to, next, cost;
 }edge[maxedge]; <span style="color:#66d9ef">int</span> head[maxpoint], tot;
 <span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> nd {
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">nd</span> {
     <span style="color:#66d9ef">int</span> dis, pos;
     nd(<span style="color:#66d9ef">int</span> dis, <span style="color:#66d9ef">int</span> pos)<span style="color:#f92672">:</span> dis(dis), pos(pos) {}
-    <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> nd n) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> dis <span style="color:#f92672">&gt;</span> n.dis;}
+    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> nd n) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> dis <span style="color:#f92672">&gt;</span> n.dis;}
 };
 priority_queue<span style="color:#f92672">&lt;</span>nd<span style="color:#f92672">&gt;</span> pq;
 
@@ -377,7 +377,42 @@ priority_queue<span style="color:#f92672">&lt;</span>nd<span style="color:#f9267
     dijkstra();
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre></div>
+</code></pre></div><p>堆优化Dijkstra：</p>
+<p><a href="https://www.luogu.com.cn/problem/P1339">https://www.luogu.com.cn/problem/P1339</a></p>
+<p>核心模块：数据结构和非堆优化的一样，都是<code>dis[], tem, vis[], v</code>,只不过在堆优化运用priority_queue优化的过程中，需要首先push进一个两端为bg-bg且长度为0的一条边</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> bg, <span style="color:#66d9ef">int</span> ed) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dis[i] <span style="color:#f92672">=</span> inf;
+    dis[bg] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    pq.push({bg, <span style="color:#ae81ff">0</span>});
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
+        <span style="color:#66d9ef">int</span> nw <span style="color:#f92672">=</span> pq.top().idx;pq.pop();
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[nw]) {
+            vis[nw] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> head[nw]; i; i<span style="color:#f92672">=</span>edges[i].next) {
+                <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edges[i].to;
+                <span style="color:#66d9ef">if</span> (dis[to] <span style="color:#f92672">&gt;</span> dis[nw]<span style="color:#f92672">+</span>edges[i].val) {
+                    dis[to] <span style="color:#f92672">=</span> dis[nw]<span style="color:#f92672">+</span>edges[i].val;
+                    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to]) pq.push({to, dis[to]});
+                }
+            }
+        }
+    }
+    <span style="color:#66d9ef">return</span> dis[ed];
+}
+</code></pre></div><h3 id="反向建图堆优化">反向建图、堆优化</h3>
+<blockquote>
+<p>给出若干个点，得到每个点到指定点的最短来回距离</p>
+<ul>
+<li>所有点到指定点的来路距离=》单终点最短路 =》反向建图</li>
+<li>指定点往其他所有点的去的距离=》单源（头）最短路</li>
+</ul>
+</blockquote>
+<p>注意：用堆优化的时候</p>
+<ul>
+<li>也是要两层的判断是否扫过了<code>!vis</code></li>
+<li>初始化的时候也是要将d数组按照inf与0进行初始化。</li>
+</ul>
+
 		</section>
 
 		<div class="meta">Posted on Feb 1, 2021</div>

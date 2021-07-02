@@ -139,6 +139,31 @@ string name;
     }
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
+</code></pre></div><h3 id="计数映射直接销毁">计数映射，直接销毁</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1684">https://www.luogu.com.cn/problem/P1684</a></p>
+<blockquote>
+<p>题目大意：找一个字串中满足移除一定数量之后，满足AABB ABAB ABBA AAAA最多的数量。</p>
+</blockquote>
+<p>思路：能不删就不删，然后只要满足有两种凑够了两个或者有一种凑够了4个，就可以立马将答案+1，然后重置（也就是前面的都不管了）</p>
+<p>因而可以利用map进行计数。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;map&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, t, cnt, ans;
+map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> mp;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>t);
+        mp[t]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        <span style="color:#66d9ef">if</span> (mp[t] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) cnt<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        <span style="color:#66d9ef">if</span> (cnt <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, ans<span style="color:#f92672">+</span><span style="color:#f92672">+</span>, mp.clear();
+        <span style="color:#66d9ef">if</span> (mp[t] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>) cnt <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, ans<span style="color:#f92672">+</span><span style="color:#f92672">+</span>, mp.clear();
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
 </code></pre></div><h3 id="利用map的key有序性---find函数logn复杂度">利用map的key有序性 - (find函数logn复杂度)</h3>
 <p><a href="https://www.luogu.com.cn/problem/P5250">https://www.luogu.com.cn/problem/P5250</a></p>
 <p>题目大意：一堆木头（无重复）有放有拿。拿的时候，如果有刚好对应的长度就拿，没有对应的长度，就拿离他最近长度的，如果比他长和比他短的长度一样，那就拿比他短的那个长度的那根。</p>
