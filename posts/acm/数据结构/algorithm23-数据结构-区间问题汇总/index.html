@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm23 数据结构 区间问题 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm23 数据结构 区间问题 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm23 数据结构 区间问题 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm23 数据结构 区间问题 | Aczy156" />
+	<meta name="application-name" content="Algorithm23 数据结构 区间问题 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm23 数据结构 区间问题" />
+<meta property="og:description" content="数据结构 区间问题  区间最值：
+ 固定长度区间，然后滑动询问：  单调队列 RMQ [Range maximum/minimun Query] 线段树   不固定长度，随意起点和终点：  RMQ [Range maximum/minimun Query] 线段树     区间最值-固定长度区间&#43;滑动询问 https://www.luogu.com.cn/problem/P2032
+https://www.luogu.com.cn/problem/P1440
+https://www.luogu.com.cn/problem/P2251
+https://www.luogu.com.cn/problem/P1886
+ 固定长度区间最大 // 固定长度区间最小 // 固定长度区间最小 // 固定长度区间最大和最小
+ 「单调队列思路」思路：维护一个优先队列（也就是堆结构），然后往里边push，往外拿，输出顶的
+ 往里边push：无脑每次往里边push 往外拿：每次先遍历，遍历到索引不在合适的区间内的，然后给pop掉【理解成从堆里把不符合的内容揪出来】 输出顶的：直接每次把堆顶拿出来  数据结构：通过pair来将值和索引进行绑定，【借助优先队列】默认对值进行排序，根据（less选取最大）（greater选取最小）对堆进行更新。
+#include &lt;iostream&gt;using namespace std; const int maxn = 1e6&#43;9; int n, k, a[maxn], ans_max[maxn], ans_min[maxn], idx; typedef pair&lt;int, int&gt; pr; #include &lt;queue&gt;priority_queue&lt;pr, vector&lt;pr&gt;, less&lt;pr&gt;&gt; pq_max; priority_queue&lt;pr, vector&lt;pr&gt;, greater&lt;pr&gt;&gt; pq_min; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;k); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); for (int i = 1; i &lt;= n; &#43;&#43;i) { pq_max." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm23 数据结构 区间问题"/>
+<meta name="twitter:description" content="数据结构 区间问题  区间最值：
+ 固定长度区间，然后滑动询问：  单调队列 RMQ [Range maximum/minimun Query] 线段树   不固定长度，随意起点和终点：  RMQ [Range maximum/minimun Query] 线段树     区间最值-固定长度区间&#43;滑动询问 https://www.luogu.com.cn/problem/P2032
+https://www.luogu.com.cn/problem/P1440
+https://www.luogu.com.cn/problem/P2251
+https://www.luogu.com.cn/problem/P1886
+ 固定长度区间最大 // 固定长度区间最小 // 固定长度区间最小 // 固定长度区间最大和最小
+ 「单调队列思路」思路：维护一个优先队列（也就是堆结构），然后往里边push，往外拿，输出顶的
+ 往里边push：无脑每次往里边push 往外拿：每次先遍历，遍历到索引不在合适的区间内的，然后给pop掉【理解成从堆里把不符合的内容揪出来】 输出顶的：直接每次把堆顶拿出来  数据结构：通过pair来将值和索引进行绑定，【借助优先队列】默认对值进行排序，根据（less选取最大）（greater选取最小）对堆进行更新。
+#include &lt;iostream&gt;using namespace std; const int maxn = 1e6&#43;9; int n, k, a[maxn], ans_max[maxn], ans_min[maxn], idx; typedef pair&lt;int, int&gt; pr; #include &lt;queue&gt;priority_queue&lt;pr, vector&lt;pr&gt;, less&lt;pr&gt;&gt; pq_max; priority_queue&lt;pr, vector&lt;pr&gt;, greater&lt;pr&gt;&gt; pq_min; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;k); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); for (int i = 1; i &lt;= n; &#43;&#43;i) { pq_max."/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm23 数据结构 区间问题</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="数据结构-区间问题">数据结构 区间问题</h2>
+<blockquote>
+<p>区间最值：</p>
+<ul>
+<li>固定长度区间，然后滑动询问：
+<ul>
+<li>单调队列</li>
+<li>RMQ [Range maximum/minimun Query]</li>
+<li>线段树</li>
+</ul>
+</li>
+<li>不固定长度，随意起点和终点：
+<ul>
+<li>RMQ [Range maximum/minimun Query]</li>
+<li>线段树</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="区间最值-固定长度区间滑动询问">区间最值-固定长度区间+滑动询问</h3>
+<p><a href="https://www.luogu.com.cn/problem/P2032">https://www.luogu.com.cn/problem/P2032</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P1440">https://www.luogu.com.cn/problem/P1440</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P2251">https://www.luogu.com.cn/problem/P2251</a></p>
+<p><a href="https://www.luogu.com.cn/problem/P1886">https://www.luogu.com.cn/problem/P1886</a></p>
+<blockquote>
+<p>固定长度区间最大 // 固定长度区间最小 // 固定长度区间最小 // 固定长度区间最大和最小</p>
+</blockquote>
+<p>「单调队列思路」思路：维护一个优先队列（也就是堆结构），然后往里边push，往外拿，输出顶的</p>
+<ul>
+<li>往里边push：无脑每次往里边push</li>
+<li>往外拿：每次先遍历，遍历到索引不在合适的区间内的，然后给pop掉【理解成从堆里把不符合的内容揪出来】</li>
+<li>输出顶的：直接每次把堆顶拿出来</li>
+</ul>
+<p>数据结构：通过pair来将值和索引进行绑定，【借助优先队列】默认对值进行排序，根据（less选取最大）（greater选取最小）对堆进行更新。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e6</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">int</span> n, k, a[maxn], ans_max[maxn], ans_min[maxn], idx;
+<span style="color:#66d9ef">typedef</span> pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> pr;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span>pr, vector<span style="color:#f92672">&lt;</span>pr<span style="color:#f92672">&gt;</span>, less<span style="color:#f92672">&lt;</span>pr<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq_max;
+priority_queue<span style="color:#f92672">&lt;</span>pr, vector<span style="color:#f92672">&lt;</span>pr<span style="color:#f92672">&gt;</span>, greater<span style="color:#f92672">&lt;</span>pr<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq_min;
+
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>k);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, a<span style="color:#f92672">+</span>i);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        pq_max.push(make_pair(a[i], i));
+        pq_min.push(make_pair(a[i], i));
+        <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> k) {
+            <span style="color:#66d9ef">while</span> (i<span style="color:#f92672">-</span>k <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> pq_max.top().second) pq_max.pop();
+            ans_max[<span style="color:#f92672">+</span><span style="color:#f92672">+</span>idx] <span style="color:#f92672">=</span> pq_max.top().first;
+            <span style="color:#66d9ef">while</span> (i<span style="color:#f92672">-</span>k <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> pq_min.top().second) pq_min.pop();
+            ans_min[idx] <span style="color:#f92672">=</span> pq_min.top().first;
+        }
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> idx; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, ans_min[i]);
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> idx; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, ans_max[i]);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>「RMQ的ST表思路」</p>
+<p>首先初始化，得到一个数组，然后再利用得到的数组进行查询。</p>
+<p>数据结构：如果是求min，则用</p>
+
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

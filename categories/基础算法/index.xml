@@ -47,13 +47,16 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</guid>
-      <description>前缀和与差分 一维的 最大子区间和 https://www.luogu.com.cn/problem/P1115
+      <description>前缀和与差分  压缩时间复杂度：只要降一个等级的复杂度即可达到题解的情况
+ 经典情景：
+ 求和 计算个数   【下边的时间复杂度分析只针对选取左上和右下的端点】
+O(n^2) =&amp;gt; O(n) ：一维上选取和最大的子区间
+O(n^4) =&amp;gt; O(n^3) ：二维上选取区域和最大的子区间
+O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的点
+ 一维的 最大子区间和 https://www.luogu.com.cn/problem/P1115
 题目大意：一维数组，求最大子区间的和
 （一）、前缀和思想：维护一个sum来描述当前索引位置之前的是否要存留。大于零就存储，小于零就归零。
-#include &amp;lt;iostream&amp;gt;using namespace std; int n, prefix, tem, ans=1&amp;lt;&amp;lt;31; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;prefix); while (--n) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tem); prefix += tem; ans = max(ans, prefix); if (prefix &amp;lt; 0) prefix = 0; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } （二）、dp思想
-1、dp[i]表示当前位置之前的、包含自己的最大的子段，也就是说最大的要不就是单独的自己、要不就是自己加上前面的任意长度。dp[i] = max(dp[i-1]+now, now);
-2、在最后要遍历一边所有的dp，也就是所有的位置上最长的，而不只是最后的那个dp[n]，是要筛选出dp[1]~dp[n]中最大的
-#include &amp;lt;iostream&amp;gt;using namespace std; int ans = -999999, tmp, i, n, dp[200100] = {0}; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (i = 1; i &amp;lt;= n; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tmp); dp[i] = max(dp[i - 1] + tmp, tmp); ans = max(ans, dp[i]); } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } 二维的 最大子区域和 https://www.</description>
+#include &amp;lt;iostream&amp;gt;using namespace std; int n, prefix, tem, ans=1&amp;lt;&amp;lt;31; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;prefix); while (--n) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tem); prefix += tem; ans = max(ans, prefix); if (prefix &amp;lt; 0) prefix = 0; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } （二）、dp思想</description>
     </item>
     
     <item>

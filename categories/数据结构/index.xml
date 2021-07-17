@@ -157,17 +157,34 @@ int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -
     </item>
     
     <item>
-      <title>Algorithm21 数据结构 离散化</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm21-%E7%A6%BB%E6%95%A3%E5%8C%96/</link>
+      <title>Algorithm22 数据结构 离散化</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm21-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
       <description>数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
  基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
 1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
 2、再将每个位置反向赋值回去。
 struct DisNum { int idx, val; bool operator &amp;lt; (const DisNum n) const { if (val == n.val) return idx &amp;lt; n.idx; return val &amp;lt; n.val; } }a[maxn]; 赋值，排序，然后再反向赋值回去
 for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i].val);a[i].idx = i;} sort(a+1, a+1+n); for (int i = 1; i &amp;lt;= n; ++i) nw[a[i].idx] = i; lower bound 将数据进行离散化 vector实现 </description>
+    </item>
+    
+    <item>
+      <title>Algorithm23 数据结构 区间问题</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>数据结构 区间问题  区间最值：
+ 固定长度区间，然后滑动询问：  单调队列 RMQ [Range maximum/minimun Query] 线段树   不固定长度，随意起点和终点：  RMQ [Range maximum/minimun Query] 线段树     区间最值-固定长度区间+滑动询问 https://www.luogu.com.cn/problem/P2032
+https://www.luogu.com.cn/problem/P1440
+https://www.luogu.com.cn/problem/P2251
+https://www.luogu.com.cn/problem/P1886
+ 固定长度区间最大 // 固定长度区间最小 // 固定长度区间最小 // 固定长度区间最大和最小
+ 「单调队列思路」思路：维护一个优先队列（也就是堆结构），然后往里边push，往外拿，输出顶的
+ 往里边push：无脑每次往里边push 往外拿：每次先遍历，遍历到索引不在合适的区间内的，然后给pop掉【理解成从堆里把不符合的内容揪出来】 输出顶的：直接每次把堆顶拿出来  数据结构：通过pair来将值和索引进行绑定，【借助优先队列】默认对值进行排序，根据（less选取最大）（greater选取最小）对堆进行更新。
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e6+9; int n, k, a[maxn], ans_max[maxn], ans_min[maxn], idx; typedef pair&amp;lt;int, int&amp;gt; pr; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;pr, vector&amp;lt;pr&amp;gt;, less&amp;lt;pr&amp;gt;&amp;gt; pq_max; priority_queue&amp;lt;pr, vector&amp;lt;pr&amp;gt;, greater&amp;lt;pr&amp;gt;&amp;gt; pq_min; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;k); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); for (int i = 1; i &amp;lt;= n; ++i) { pq_max.</description>
     </item>
     
   </channel>

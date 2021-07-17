@@ -200,13 +200,16 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</guid>
-      <description>前缀和与差分 一维的 最大子区间和 https://www.luogu.com.cn/problem/P1115
+      <description>前缀和与差分  压缩时间复杂度：只要降一个等级的复杂度即可达到题解的情况
+ 经典情景：
+ 求和 计算个数   【下边的时间复杂度分析只针对选取左上和右下的端点】
+O(n^2) =&amp;gt; O(n) ：一维上选取和最大的子区间
+O(n^4) =&amp;gt; O(n^3) ：二维上选取区域和最大的子区间
+O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的点
+ 一维的 最大子区间和 https://www.luogu.com.cn/problem/P1115
 题目大意：一维数组，求最大子区间的和
 （一）、前缀和思想：维护一个sum来描述当前索引位置之前的是否要存留。大于零就存储，小于零就归零。
-#include &amp;lt;iostream&amp;gt;using namespace std; int n, prefix, tem, ans=1&amp;lt;&amp;lt;31; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;prefix); while (--n) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tem); prefix += tem; ans = max(ans, prefix); if (prefix &amp;lt; 0) prefix = 0; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } （二）、dp思想
-1、dp[i]表示当前位置之前的、包含自己的最大的子段，也就是说最大的要不就是单独的自己、要不就是自己加上前面的任意长度。dp[i] = max(dp[i-1]+now, now);
-2、在最后要遍历一边所有的dp，也就是所有的位置上最长的，而不只是最后的那个dp[n]，是要筛选出dp[1]~dp[n]中最大的
-#include &amp;lt;iostream&amp;gt;using namespace std; int ans = -999999, tmp, i, n, dp[200100] = {0}; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (i = 1; i &amp;lt;= n; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tmp); dp[i] = max(dp[i - 1] + tmp, tmp); ans = max(ans, dp[i]); } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } 二维的 最大子区域和 https://www.</description>
+#include &amp;lt;iostream&amp;gt;using namespace std; int n, prefix, tem, ans=1&amp;lt;&amp;lt;31; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;prefix); while (--n) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tem); prefix += tem; ans = max(ans, prefix); if (prefix &amp;lt; 0) prefix = 0; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } （二）、dp思想</description>
     </item>
     
     <item>
@@ -264,6 +267,15 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
 2、根据入度、出度来看是否添加进入队列。
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 5005int n, m, mp[maxn][maxn], in[maxn], out[maxn], ta, tb, ans[maxn], final; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt; q; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); mp[ta][tb] = 1; out[ta]++;in[tb]++; } for (int i = 1; i &amp;lt;= n; ++i) if (!in[i]) {ans[i] = 1;q.push(i);} while (!q.empty()) { int nw = q.front();q.pop(); for (int i = 1; i &amp;lt;= n; ++i){ if (mp[nw][i]) { ans[i] += ans[nw];ans[i] %= 80112002; in[i]--; if (!</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.3 最短路-SPFA</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-%E6%9C%80%E7%9F%AD%E8%B7%AF-spfa/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-%E6%9C%80%E7%9F%AD%E8%B7%AF-spfa/</guid>
+      <description>最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&amp;lt;nd&amp;gt; spf; void spfa(int s) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &amp;gt; d[nwpos]+edge[i].cost) { d[to] = d[nwpos]+edge[i].cost; if (!</description>
     </item>
     
     <item>
@@ -472,6 +484,21 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     </item>
     
     <item>
+      <title>Algorithm2.6 计数dp</title>
+      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</guid>
+      <description>计数dp  典型：
+ 对一个区域进行划分，划分种类  随意划分：P1025，直接给定一个数以及要划分的份数，然后看这个数有多少种分法 按照给定的要求划分：P1077，直接卡死了每一个点上的约定范围 按照递增/递减的方式划分：P1806，直接按照递增着划分      随意划分 https://www.luogu.com.cn/problem/P1025
+按照给定要求划分 https://www.luogu.com.cn/problem/P1077
+递增/递减划分 https://www.luogu.com.cn/problem/P1806
+每一步都有可能是从任意之前的某一步跳过来的，因为只要保证递增就好了。也就是第一次是1次，那么第2次必定第一次的次数递增上来，那么第三次必定包括第一次和第二次递增上来。
+=&amp;gt;每次只需要把自己前面所有的点的值都加起来即可
+#include &amp;lt;iostream&amp;gt;using namespace std; typedef long long ll; const int maxn = 509; ll n, dp[maxn]; int main() { scanf(&amp;#34;%lld&amp;#34;, &amp;amp;n); dp[0] = 1; for (int i = 1; i &amp;lt;= n; ++i) for (int j = n; j &amp;gt;= i; --j) dp[j] += dp[j-i]; printf(&amp;#34;%lld\n&amp;#34;, dp[n]-1); return 0; } </description>
+    </item>
+    
+    <item>
       <title>Algorithm2.7 线性dp</title>
       <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
@@ -571,17 +598,34 @@ int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;
     </item>
     
     <item>
-      <title>Algorithm21 数据结构 离散化</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm21-%E7%A6%BB%E6%95%A3%E5%8C%96/</link>
+      <title>Algorithm22 数据结构 离散化</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm21-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
       <description>数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
  基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
 1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
 2、再将每个位置反向赋值回去。
 struct DisNum { int idx, val; bool operator &amp;lt; (const DisNum n) const { if (val == n.val) return idx &amp;lt; n.idx; return val &amp;lt; n.val; } }a[maxn]; 赋值，排序，然后再反向赋值回去
 for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i].val);a[i].idx = i;} sort(a+1, a+1+n); for (int i = 1; i &amp;lt;= n; ++i) nw[a[i].idx] = i; lower bound 将数据进行离散化 vector实现 </description>
+    </item>
+    
+    <item>
+      <title>Algorithm23 数据结构 区间问题</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <description>数据结构 区间问题  区间最值：
+ 固定长度区间，然后滑动询问：  单调队列 RMQ [Range maximum/minimun Query] 线段树   不固定长度，随意起点和终点：  RMQ [Range maximum/minimun Query] 线段树     区间最值-固定长度区间+滑动询问 https://www.luogu.com.cn/problem/P2032
+https://www.luogu.com.cn/problem/P1440
+https://www.luogu.com.cn/problem/P2251
+https://www.luogu.com.cn/problem/P1886
+ 固定长度区间最大 // 固定长度区间最小 // 固定长度区间最小 // 固定长度区间最大和最小
+ 「单调队列思路」思路：维护一个优先队列（也就是堆结构），然后往里边push，往外拿，输出顶的
+ 往里边push：无脑每次往里边push 往外拿：每次先遍历，遍历到索引不在合适的区间内的，然后给pop掉【理解成从堆里把不符合的内容揪出来】 输出顶的：直接每次把堆顶拿出来  数据结构：通过pair来将值和索引进行绑定，【借助优先队列】默认对值进行排序，根据（less选取最大）（greater选取最小）对堆进行更新。
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e6+9; int n, k, a[maxn], ans_max[maxn], ans_min[maxn], idx; typedef pair&amp;lt;int, int&amp;gt; pr; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;pr, vector&amp;lt;pr&amp;gt;, less&amp;lt;pr&amp;gt;&amp;gt; pq_max; priority_queue&amp;lt;pr, vector&amp;lt;pr&amp;gt;, greater&amp;lt;pr&amp;gt;&amp;gt; pq_min; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;k); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); for (int i = 1; i &amp;lt;= n; ++i) { pq_max.</description>
     </item>
     
     <item>
@@ -749,9 +793,13 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
-      <description>数论 数学基础 进制转换 获取唯一的奇数个的不匹配的数 &amp;amp; 找未配上的对 https://www.luogu.com.cn/problem/P1469 【注意：卡内存，卡时间】
+      <description>数论 数学基础  常用：
+ 进制转换  数学思维：
+1、找到一段序列中出现奇数次/偶数次的
+2、找到一段区间中可以用平方差计算得到的个数
+ 进制转换 获取唯一的奇数个的不匹配的数 &amp;amp; 找未配上的对 https://www.luogu.com.cn/problem/P1469 【注意：卡内存，卡时间】
  思路一：数组存，然后排序，然后再遍历，两个两个遍历=&amp;gt; 爆内存，爆时间。 思路二：map存，找到配对的删除。一边即过。=&amp;gt; 6个点爆内存 正确思路：直接用一个变量，然后来异或^所有的数，a^a = 0，所以最后剩下的那个数就是没匹配的。  scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); ans ^= t;} printf(&amp;#34;%d\n&amp;#34;, ans); 获取唯一的出现偶数次数的 &amp;amp; 找配上对的 这个需要先把所有存在的数都输入进去，得到所有数的异或，然后再异或数组种的所有数，那么出现偶数次的就会显露出来了，出现单次的就会和第一次的异或掉了。
-scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} </description>
+scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} 区间中可以用平方差计算得到的个数 https://www.</description>
     </item>
     
     <item>

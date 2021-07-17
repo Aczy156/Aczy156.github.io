@@ -21,18 +21,26 @@
 	<meta name="application-name" content="Algorithm9.1 数论 数学基础 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm9.1 数论 数学基础" />
-<meta property="og:description" content="数论 数学基础 进制转换 获取唯一的奇数个的不匹配的数 &amp; 找未配上的对 https://www.luogu.com.cn/problem/P1469 【注意：卡内存，卡时间】
+<meta property="og:description" content="数论 数学基础  常用：
+ 进制转换  数学思维：
+1、找到一段序列中出现奇数次/偶数次的
+2、找到一段区间中可以用平方差计算得到的个数
+ 进制转换 获取唯一的奇数个的不匹配的数 &amp; 找未配上的对 https://www.luogu.com.cn/problem/P1469 【注意：卡内存，卡时间】
  思路一：数组存，然后排序，然后再遍历，两个两个遍历=&gt; 爆内存，爆时间。 思路二：map存，找到配对的删除。一边即过。=&gt; 6个点爆内存 正确思路：直接用一个变量，然后来异或^所有的数，a^a = 0，所以最后剩下的那个数就是没匹配的。  scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t); ans ^= t;} printf(&#34;%d\n&#34;, ans); 获取唯一的出现偶数次数的 &amp; 找配上对的 这个需要先把所有存在的数都输入进去，得到所有数的异或，然后再异或数组种的所有数，那么出现偶数次的就会显露出来了，出现单次的就会和第一次的异或掉了。
-scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t);ans^=t;} scanf(&#34;%d&#34;, &amp;m); for (int i = 1; i &lt;= m; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t);ans^=t;} " />
+scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t);ans^=t;} scanf(&#34;%d&#34;, &amp;m); for (int i = 1; i &lt;= m; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t);ans^=t;} 区间中可以用平方差计算得到的个数 https://www." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm9.1 数论 数学基础"/>
-<meta name="twitter:description" content="数论 数学基础 进制转换 获取唯一的奇数个的不匹配的数 &amp; 找未配上的对 https://www.luogu.com.cn/problem/P1469 【注意：卡内存，卡时间】
+<meta name="twitter:description" content="数论 数学基础  常用：
+ 进制转换  数学思维：
+1、找到一段序列中出现奇数次/偶数次的
+2、找到一段区间中可以用平方差计算得到的个数
+ 进制转换 获取唯一的奇数个的不匹配的数 &amp; 找未配上的对 https://www.luogu.com.cn/problem/P1469 【注意：卡内存，卡时间】
  思路一：数组存，然后排序，然后再遍历，两个两个遍历=&gt; 爆内存，爆时间。 思路二：map存，找到配对的删除。一边即过。=&gt; 6个点爆内存 正确思路：直接用一个变量，然后来异或^所有的数，a^a = 0，所以最后剩下的那个数就是没匹配的。  scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t); ans ^= t;} printf(&#34;%d\n&#34;, ans); 获取唯一的出现偶数次数的 &amp; 找配上对的 这个需要先把所有存在的数都输入进去，得到所有数的异或，然后再异或数组种的所有数，那么出现偶数次的就会显露出来了，出现单次的就会和第一次的异或掉了。
-scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t);ans^=t;} scanf(&#34;%d&#34;, &amp;m); for (int i = 1; i &lt;= m; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t);ans^=t;} "/>
+scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t);ans^=t;} scanf(&#34;%d&#34;, &amp;m); for (int i = 1; i &lt;= m; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;t);ans^=t;} 区间中可以用平方差计算得到的个数 https://www."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -59,6 +67,15 @@ scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34
 
 		<section class="body">
 			<h2 id="数论-数学基础">数论 数学基础</h2>
+<blockquote>
+<p>常用：</p>
+<ul>
+<li>进制转换</li>
+</ul>
+<p>数学思维：</p>
+<p>1、找到一段序列中出现奇数次/偶数次的</p>
+<p>2、找到一段区间中可以用平方差计算得到的个数</p>
+</blockquote>
 <h3 id="进制转换">进制转换</h3>
 <h3 id="获取唯一的奇数个的不匹配的数--找未配上的对">获取唯一的奇数个的不匹配的数 &amp; 找未配上的对</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1469">https://www.luogu.com.cn/problem/P1469</a> 【注意：卡内存，卡时间】</p>
@@ -76,6 +93,16 @@ printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</spa
 <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>t);ans<span style="color:#f92672">^</span><span style="color:#f92672">=</span>t;}
 scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>m);
 <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>t);ans<span style="color:#f92672">^</span><span style="color:#f92672">=</span>t;}
+</code></pre></div><h3 id="区间中可以用平方差计算得到的个数">区间中可以用平方差计算得到的个数</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1348">https://www.luogu.com.cn/problem/P1348</a></p>
+<blockquote>
+<p>题目大意：区间[a, b]中，某个数i，这个数i可以写成c^2-d^2</p>
+</blockquote>
+<p>正向数学推导：i=(c+d)(c-d)，那么c+d/c-d必定为同奇偶，同奇偶必定乘积要不满足是奇数，要不满足是4的倍数（因为是两个2的倍数相乘）。</p>
+<p>反推验证：若i为奇数，也就是2k+1，那么可以找到c=k+1, d=k满足c+d=2k+1与c-d=1的乘积为2k+1这个条件。</p>
+<p>若i为4的倍数，也就是4k，那么可以找到c=k+1, d=k-1满足c+d=2k与c-d=2的乘积是4k这个条件。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> a; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> b; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+    <span style="color:#66d9ef">if</span> (i<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> <span style="color:#f92672">!</span>(i<span style="color:#f92672">%</span><span style="color:#ae81ff">4</span>)) ans<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
 </code></pre></div>
 		</section>
 

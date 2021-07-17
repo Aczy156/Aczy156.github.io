@@ -43,9 +43,13 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
-      <description>数论 数学基础 进制转换 获取唯一的奇数个的不匹配的数 &amp;amp; 找未配上的对 https://www.luogu.com.cn/problem/P1469 【注意：卡内存，卡时间】
+      <description>数论 数学基础  常用：
+ 进制转换  数学思维：
+1、找到一段序列中出现奇数次/偶数次的
+2、找到一段区间中可以用平方差计算得到的个数
+ 进制转换 获取唯一的奇数个的不匹配的数 &amp;amp; 找未配上的对 https://www.luogu.com.cn/problem/P1469 【注意：卡内存，卡时间】
  思路一：数组存，然后排序，然后再遍历，两个两个遍历=&amp;gt; 爆内存，爆时间。 思路二：map存，找到配对的删除。一边即过。=&amp;gt; 6个点爆内存 正确思路：直接用一个变量，然后来异或^所有的数，a^a = 0，所以最后剩下的那个数就是没匹配的。  scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); ans ^= t;} printf(&amp;#34;%d\n&amp;#34;, ans); 获取唯一的出现偶数次数的 &amp;amp; 找配上对的 这个需要先把所有存在的数都输入进去，得到所有数的异或，然后再异或数组种的所有数，那么出现偶数次的就会显露出来了，出现单次的就会和第一次的异或掉了。
-scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} </description>
+scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);ans^=t;} 区间中可以用平方差计算得到的个数 https://www.</description>
     </item>
     
     <item>

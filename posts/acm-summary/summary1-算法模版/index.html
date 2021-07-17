@@ -103,9 +103,10 @@ sort(strs<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span
 node <span style="color:#f92672">*</span> point_node <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node(); <span style="color:#75715e">// c++写法，声明一个指向结构体的指针（point to struct）
 </span><span style="color:#75715e"></span>node <span style="color:#f92672">*</span> point_node_2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node {param1, param2};
 
-<span style="color:#75715e">// 如果用typedef 来进行声明的简化 =&gt; 然后就可以用point_node 来代替node *
+<span style="color:#75715e">// 注意如果用malloc(c)来new一个的话，强制转换要为(node*)的类型，但是size不是指针的size，而是结构体的size
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 如果用typedef 来进行声明的简化 =&gt; 然后就可以用point_node 来代替node*
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span> pnode;
-node <span style="color:#f92672">*</span> point_node3 <span style="color:#f92672">=</span> (node <span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(node)); <span style="color:#75715e">// C写法，利用malloc
+node <span style="color:#f92672">*</span> point_node3 <span style="color:#f92672">=</span> (node<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(node)); <span style="color:#75715e">// C写法，利用malloc
 </span><span style="color:#75715e"></span>pnode point_node4 <span style="color:#f92672">=</span> (pnode)malloc(<span style="color:#66d9ef">sizeof</span>(node)); <span style="color:#75715e">// C写法，利用malloc然后利用typedef来进行简化
 </span><span style="color:#75715e"></span>pnode point_node5 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node {param1, param2};
 </code></pre></div><h3 id="io">io</h3>
@@ -125,14 +126,28 @@ node <span style="color:#f92672">*</span> point_node3 <span style="color:#f92672
 }
 p.push(node(aa, bb)); <span style="color:#75715e">// 第一种
 </span><span style="color:#75715e"></span>p.push({aa, bb}); <span style="color:#75715e">// 第二种
-</span></code></pre></div><p>重载运算符</p>
-<p>让结构体在排序的时候可以以重载后的&lt;进行排序，此时来比较的重载后的比较结构体的方式</p>
+</span></code></pre></div><p>结构体中-重载运算符</p>
+<p>让结构体在排序的时候可以以重载后的&lt;进行排序，此时来比较的重载后的比较结构体的方式【所以重载之后要返回bool】</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> node{
   <span style="color:#66d9ef">int</span> a, b;
-  <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> node n) <span style="color:#66d9ef">const</span> {
-    <span style="color:#66d9ef">return</span> a<span style="color:#f92672">*</span>b <span style="color:#f92672">&lt;</span> n.a<span style="color:#f92672">*</span>n.b;
-  }
+  <span style="color:#75715e">// 方法1
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> node n) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> a<span style="color:#f92672">*</span>b <span style="color:#f92672">&lt;</span> n.a<span style="color:#f92672">*</span>n.b;}
+  <span style="color:#75715e">// 方法2
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> node<span style="color:#f92672">&amp;</span> n) {<span style="color:#66d9ef">return</span> a<span style="color:#f92672">*</span>b <span style="color:#f92672">&lt;</span> n.a<span style="color:#f92672">*</span>n.b;} 
 }
+</code></pre></div><p>类中-重载运算符</p>
+<p>类里边重载，目的是为了让两个类可以进行四则运算所以对他进行重载，最终肯定返回的是一个类【所以重载之后要返回类testClass】</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">testClass</span>{
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">int</span> a, b;
+	testClass(){}
+  testClass(<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">=</span>tc.a;<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>b<span style="color:#f92672">=</span>tc.b;}
+  testClass()
+  <span style="color:#75715e">// 下边在类里边重载的话，用类返回 -- 两种写法
+</span><span style="color:#75715e"></span>  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>tc.a;}
+  <span style="color:#75715e">// 另一种写法
+</span><span style="color:#75715e"></span>  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&gt;</span> (<span style="color:#66d9ef">const</span> testClass tc) <span style="color:#66d9ef">const</span> {}
+};
 </code></pre></div><hr>
 <h3 id="数据结构">数据结构</h3>
 <p>ST表-区间最大最小gcd(RMQ)</p>
