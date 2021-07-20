@@ -21,24 +21,26 @@
 	<meta name="application-name" content="Algorithm2.10 坐标系dp | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm2.10 坐标系dp" />
-<meta property="og:description" content="坐标系dp 最大正方形 https://www.luogu.com.cn/problem/P1387
+<meta property="og:description" content="坐标系dp  区域最大：
+ 最大正方形 &lt;-&gt; 最大正方形变式 最大矩形（包括正方形）   最大正方形 https://www.luogu.com.cn/problem/P1387
  题目大意：给出一个二维坐标系中，找出里边全部是1的一个正方形的最大长度
  初始化：维护一个dp[maxn][maxn],dp[i][j]表示在第i，j的这个点上的最大正方形
 状态转移方程：
 if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))&#43;1; 完整代码：
-#include &lt;iostream&gt;using namespace std; const int maxn = 105; int n, m, a[maxn][maxn], dp[maxn][maxn], ans; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[i][j]); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i-1][j], dp[i][j-1]))&#43;1, ans = max(ans, dp[i][j]); printf(&#34;%d\n&#34;, ans); return 0; } 最大正方形变式子 https://www." />
+#include &lt;iostream&gt;using namespace std; const int maxn = 105; int n, m, a[maxn][maxn], dp[maxn][maxn], ans; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[i][j]); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i-1][j], dp[i][j-1]))&#43;1, ans = max(ans, dp[i][j]); printf(&#34;%d\n&#34;, ans); return 0; } 最大矩形（包括正方形） https://leetcode-cn." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm2.10 坐标系dp"/>
-<meta name="twitter:description" content="坐标系dp 最大正方形 https://www.luogu.com.cn/problem/P1387
+<meta name="twitter:description" content="坐标系dp  区域最大：
+ 最大正方形 &lt;-&gt; 最大正方形变式 最大矩形（包括正方形）   最大正方形 https://www.luogu.com.cn/problem/P1387
  题目大意：给出一个二维坐标系中，找出里边全部是1的一个正方形的最大长度
  初始化：维护一个dp[maxn][maxn],dp[i][j]表示在第i，j的这个点上的最大正方形
 状态转移方程：
 if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))&#43;1; 完整代码：
-#include &lt;iostream&gt;using namespace std; const int maxn = 105; int n, m, a[maxn][maxn], dp[maxn][maxn], ans; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[i][j]); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i-1][j], dp[i][j-1]))&#43;1, ans = max(ans, dp[i][j]); printf(&#34;%d\n&#34;, ans); return 0; } 最大正方形变式子 https://www."/>
+#include &lt;iostream&gt;using namespace std; const int maxn = 105; int n, m, a[maxn][maxn], dp[maxn][maxn], ans; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[i][j]); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i-1][j], dp[i][j-1]))&#43;1, ans = max(ans, dp[i][j]); printf(&#34;%d\n&#34;, ans); return 0; } 最大矩形（包括正方形） https://leetcode-cn."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -65,6 +67,13 @@ if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))&#43;1; �
 
 		<section class="body">
 			<h2 id="坐标系dp">坐标系dp</h2>
+<blockquote>
+<p>区域最大：</p>
+<ul>
+<li>最大正方形 &lt;-&gt; 最大正方形变式</li>
+<li>最大矩形（包括正方形）</li>
+</ul>
+</blockquote>
 <h3 id="最大正方形">最大正方形</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1387">https://www.luogu.com.cn/problem/P1387</a></p>
 <blockquote>
@@ -91,7 +100,9 @@ if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))&#43;1; �
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 
-</code></pre></div><h3 id="最大正方形变式子">最大正方形变式子</h3>
+</code></pre></div><h3 id="最大矩形包括正方形">最大矩形（包括正方形）</h3>
+<p><a href="https://leetcode-cn.com/problems/maximal-rectangle/solution/zui-da-ju-xing-by-leetcode-solution-bjlu/">https://leetcode-cn.com/problems/maximal-rectangle/solution/zui-da-ju-xing-by-leetcode-solution-bjlu/</a></p>
+<h3 id="最大正方形变式">最大正方形变式</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1681">https://www.luogu.com.cn/problem/P1681</a></p>
 <blockquote>
 <p>题目大意：变成01交换的正方形</p>

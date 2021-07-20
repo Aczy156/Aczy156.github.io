@@ -137,17 +137,38 @@ p.push(node(aa, bb)); <span style="color:#75715e">// 第一种
 }
 </code></pre></div><p>类中-重载运算符</p>
 <p>类里边重载，目的是为了让两个类可以进行四则运算所以对他进行重载，最终肯定返回的是一个类【所以重载之后要返回类testClass】</p>
+<p>（两个对象进行比较得到 =&gt; 是/否， 两个对象做四则运算 =&gt; 得到一个新的对象）</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">testClass</span>{
 <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
   <span style="color:#66d9ef">int</span> a, b;
 	testClass(){}
   testClass(<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">=</span>tc.a;<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>b<span style="color:#f92672">=</span>tc.b;}
-  testClass()
+  testClass(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>a <span style="color:#f92672">=</span> a;<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>b <span style="color:#f92672">=</span> b;}
   <span style="color:#75715e">// 下边在类里边重载的话，用类返回 -- 两种写法
-</span><span style="color:#75715e"></span>  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>tc.a;}
-  <span style="color:#75715e">// 另一种写法
-</span><span style="color:#75715e"></span>  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&gt;</span> (<span style="color:#66d9ef">const</span> testClass tc) <span style="color:#66d9ef">const</span> {}
+</span><span style="color:#75715e"></span>  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">+</span> (<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">testClass</span>(a<span style="color:#f92672">+</span>tc.a, b<span style="color:#f92672">+</span>tc.b);}
+  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">-</span> (<span style="color:#66d9ef">const</span> testClass tc) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">testClass</span>(a<span style="color:#f92672">-</span>tc.a, b<span style="color:#f92672">-</span>tc.b);}
+  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">*</span> (<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">testClass</span>(a<span style="color:#f92672">*</span>tc.a, b<span style="color:#f92672">*</span>tc.b);}
+  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">/</span> (<span style="color:#66d9ef">const</span> testClass tc) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">testClass</span>(a<span style="color:#f92672">/</span>tc.a, b<span style="color:#f92672">/</span>tc.b);}
+  
+  <span style="color:#75715e">// 注意 &gt; &lt; 的重载，这个重载之后的结果返回的是bool
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> testClass tc) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> a <span style="color:#f92672">&lt;</span> tc.a;}
+  <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&gt;</span> (<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">return</span> a <span style="color:#f92672">&lt;</span> tc.a;}
+  
+  <span style="color:#75715e">// 重载输入输出，返回的应该是输入输出流这个对象（然后处理的这个实体对象应该是要被处理的对象）=&gt; 注意都没有const，需要修改这个参数的话就不能加const
+</span><span style="color:#75715e"></span>  istream<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> (istream<span style="color:#f92672">&amp;</span> input, testClass<span style="color:#f92672">&amp;</span> tc) {input<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>tc.a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>tc.b;<span style="color:#66d9ef">return</span> input;}
+  ostream<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> (ostream<span style="color:#f92672">&amp;</span> output, testClass<span style="color:#f92672">&amp;</span> tc) {output<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>tc.a<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>tc.b;<span style="color:#66d9ef">return</span> output;}
 };
+
+
+<span style="color:#75715e">// 类测试代码
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    testClass t1, t2;
+    cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>t1<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>t2;
+    testClass t3, t4, t5;
+    t3 <span style="color:#f92672">=</span> t1<span style="color:#f92672">+</span>t2;t4 <span style="color:#f92672">=</span> t1<span style="color:#f92672">-</span>t2;t5 <span style="color:#f92672">=</span> t1<span style="color:#f92672">*</span>t2;
+    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>t3<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>t4<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>t5<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; <span style="color:#75715e">// 注意不可以直接cout&lt;&lt;t1+t2&lt;&lt;endl;这样是报错的
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
 </code></pre></div><hr>
 <h3 id="数据结构">数据结构</h3>
 <p>ST表-区间最大最小gcd(RMQ)</p>
