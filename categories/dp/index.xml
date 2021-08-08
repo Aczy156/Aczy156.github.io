@@ -18,7 +18,7 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
-      <description>背包dp   01背包：每种物品仅一个 完全背包：每种物品有无限个 多重背包：每种物品有具体个数 分组背包：每种物品仅一个，且不同物品有自己所属的组别 多维代价背包：每种物品不仅占用空间，而且占用金钱 多维目的背包：每种物品不仅具有价值1，而且具有价值2   01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
+      <description>背包dp   01背包：每种物品仅一个  体积逆序遍历   完全背包：每种物品有无限个  体积升序遍历   多重背包：每种物品有具体个数  外层是体积逆序遍历  内层是个数遍历     分组背包：每种物品仅一个，且不同物品有自己所属的组别 多维代价背包：每种物品不仅占用空间，而且占用金钱 多维目的背包：每种物品不仅具有价值1，而且具有价值2   01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
 题目大意：
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www.</description>
     </item>

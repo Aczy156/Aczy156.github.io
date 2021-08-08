@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm8.2 dfs | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm8.2 dfs" />
-<meta property="og:description" content="dfs [数组一维模版 &amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
+<meta property="og:description" content="dfs  向深递归
+ 传参的确定 =&gt; 可以利用好递归调用栈机制 状态的判断 =&gt; 递归到每一层之后，所有参数共同组合决定出一个状态，这个状态维护是否重复   [数组一维模版 &amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
 #include &lt;iostream&gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &lt; n; &#43;&#43;i) printf(&#34;%5d&#34;, a[i]); printf(&#34;\n&#34;); return; } for (int i = 1; i &lt;= n; &#43;&#43;i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l&#43;1); vis[i] = 0; } } } int main() { scanf(&#34;%d&#34;, &amp;n); dfs(0); return 0; } 素数环 &amp; 分层 https://www." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/" />
@@ -29,7 +30,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm8.2 dfs"/>
-<meta name="twitter:description" content="dfs [数组一维模版 &amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
+<meta name="twitter:description" content="dfs  向深递归
+ 传参的确定 =&gt; 可以利用好递归调用栈机制 状态的判断 =&gt; 递归到每一层之后，所有参数共同组合决定出一个状态，这个状态维护是否重复   [数组一维模版 &amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
 #include &lt;iostream&gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &lt; n; &#43;&#43;i) printf(&#34;%5d&#34;, a[i]); printf(&#34;\n&#34;); return; } for (int i = 1; i &lt;= n; &#43;&#43;i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l&#43;1); vis[i] = 0; } } } int main() { scanf(&#34;%d&#34;, &amp;n); dfs(0); return 0; } 素数环 &amp; 分层 https://www."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
@@ -57,6 +59,13 @@
 
 		<section class="body">
 			<h2 id="dfs">dfs</h2>
+<blockquote>
+<p>向深递归</p>
+<ul>
+<li>传参的确定 =&gt; 可以利用好递归调用栈机制</li>
+<li>状态的判断 =&gt; 递归到每一层之后，所有参数共同组合决定出一个状态，这个状态维护是否重复</li>
+</ul>
+</blockquote>
 <h3 id="数组一维模版--分层-全排列">[数组一维模版 &amp; 分层] 全排列</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1706">https://www.luogu.com.cn/problem/P1706</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
@@ -228,8 +237,6 @@
                 a[x][y] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
             }
         }
-
-
 }
 
 <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
@@ -248,6 +255,10 @@
 </code></pre></div><h3 id="图上-模版-联通块数">图上 [模版] 联通块数</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1596">https://www.luogu.com.cn/problem/P1596</a></p>
 <p>dfs实现 // 用bfs也可以实现，只是不同的搜索策略。</p>
+<blockquote>
+<p>参数：二维坐标系中的横纵坐标x和y</p>
+<p>状态：对于横纵坐标中每个点是否都有去到过，用一个<code>vis[][]</code>来维护</p>
+</blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>using namespace std;
 <span style="color:#75715e">#</span><span style="color:#75715e">define maxn 105</span><span style="color:#75715e">
@@ -268,6 +279,63 @@
         <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
             <span style="color:#66d9ef">if</span> (a[i][j] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">W</span><span style="color:#e6db74">&#39;</span>) {cnt<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;a[i][j] <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span>;dfs(i, j); }
     printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, cnt);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="其他dfs-纯状态深搜">其他DFS-纯状态深搜</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1215">https://www.luogu.com.cn/problem/P1215</a></p>
+<p>题目大意：三个桶，abc，c满的，来回倒（每次都要倒到 再也倒不出 或者 再也倒不进），问当a空的情况下c有多少。</p>
+<blockquote>
+<p>参数：abc三个桶各自的当前容量，递归往下给进行倒，递归回来自动退回，倒回去了。</p>
+<p>状态：对于每一个桶内的量，用一个<code>vis[][][]</code>来判断当前这种情况是否来回已经倒过一次了</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">int</span> a, b, c, na, nb, nc, vis[<span style="color:#ae81ff">25</span>];
+
+<span style="color:#75715e">// 优化dfs
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> v[<span style="color:#ae81ff">25</span>][<span style="color:#ae81ff">25</span>][<span style="color:#ae81ff">25</span>];
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> z) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>x <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>vis[z]) vis[z] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (v[x][y][z]) <span style="color:#66d9ef">return</span>;
+    v[x][y][z] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (x) {
+        <span style="color:#66d9ef">if</span> (y <span style="color:#f92672">&lt;</span> b) {
+            <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span> b<span style="color:#f92672">-</span>y) dfs(x<span style="color:#f92672">-</span>(b<span style="color:#f92672">-</span>y), b, z);
+            <span style="color:#66d9ef">else</span> dfs(<span style="color:#ae81ff">0</span>, y<span style="color:#f92672">+</span>x, z);
+        }
+        <span style="color:#66d9ef">if</span> (z <span style="color:#f92672">&lt;</span> c) {
+            <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span> c<span style="color:#f92672">-</span>z) dfs(x<span style="color:#f92672">-</span>(c<span style="color:#f92672">-</span>z), y, c);
+            <span style="color:#66d9ef">else</span> dfs(<span style="color:#ae81ff">0</span>, y, z<span style="color:#f92672">+</span>x);
+        }
+    }
+    <span style="color:#66d9ef">if</span> (y) {
+        <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&lt;</span> a) {
+            <span style="color:#66d9ef">if</span> (y <span style="color:#f92672">&gt;</span> a<span style="color:#f92672">-</span>x) dfs(a, y<span style="color:#f92672">-</span>(a<span style="color:#f92672">-</span>x), z);
+            <span style="color:#66d9ef">else</span> dfs(x<span style="color:#f92672">+</span>y, <span style="color:#ae81ff">0</span>, z);
+        }
+        <span style="color:#66d9ef">if</span> (z <span style="color:#f92672">&lt;</span> c) {
+            <span style="color:#66d9ef">if</span> (y <span style="color:#f92672">&gt;</span> c<span style="color:#f92672">-</span>z) dfs(x, y<span style="color:#f92672">-</span>(c<span style="color:#f92672">-</span>z), c);
+            <span style="color:#66d9ef">else</span> dfs(x, <span style="color:#ae81ff">0</span>, z<span style="color:#f92672">+</span>y);
+        }
+    }
+    <span style="color:#66d9ef">if</span> (z) {
+        <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&lt;</span> a) {
+            <span style="color:#66d9ef">if</span> (z <span style="color:#f92672">&gt;</span> a<span style="color:#f92672">-</span>x) dfs(a, y, z<span style="color:#f92672">-</span>(a<span style="color:#f92672">-</span>x));
+            <span style="color:#66d9ef">else</span> dfs(x<span style="color:#f92672">+</span>z, y, <span style="color:#ae81ff">0</span>);
+        }
+        <span style="color:#66d9ef">if</span> (y <span style="color:#f92672">&lt;</span> b) {
+            <span style="color:#66d9ef">if</span> (z <span style="color:#f92672">&gt;</span> b<span style="color:#f92672">-</span>y) dfs(x, b, z<span style="color:#f92672">-</span>(b<span style="color:#f92672">-</span>y));
+            <span style="color:#66d9ef">else</span> dfs(x, y<span style="color:#f92672">+</span>z, <span style="color:#ae81ff">0</span>);
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b, <span style="color:#f92672">&amp;</span>c);
+    na <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, nb <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, nc <span style="color:#f92672">=</span> c;vis[c] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    dfs(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, c);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">if</span> (vis[i]) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, i);
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><h3 id="模版-记忆化搜索---优化重复递归调用">[模版] 记忆化搜索 - 优化重复递归调用</h3>

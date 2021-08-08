@@ -25,7 +25,7 @@
 // int的最大值就是2的31次方-1 #define INF (1&lt;&lt;31)-1// 用库中定义的INT_MAX #include &lt;climits&gt;#define INF INT_MAXdouble 四舍五入的变式：永远舍和永远入：
 double a = 0.656, b = 0.651; printf(&#34;%.2lf %2lf&#34;, a-0.05, b-0.05); // 都会往下舍，变为0.65 0.65 printf(&#34;%.2lf %2lf&#34;, a&#43;0.05, b&#43;0.05); // 都会往上入，变为0.66 0.66 字符 &amp; 字符串的scanf读入
 char ch scanf(&#34;%c&#34;, &amp;ch); // 前面要加空格 char s[10]; scanf(&#34;%s&#34;, s); scanf字符串读入(对于流输入输出进行优化)
-// 数据：2007-06-23-11:59 2007-06-23-12:00 int by, ey, bm, em, bd, ed, bh, eh, bmin, emin; scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;by, &amp;bm, &amp;bd, &amp;bh, &amp;bmin); scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;ey, &amp;em, &amp;ed, &amp;eh, &amp;emin); // 即可获取 char a; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;bd&gt;&gt;a&gt;&gt;bh&gt;&gt;a&gt;&gt;bmin; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;ed&gt;&gt;a&gt;&gt;eh&gt;&gt;a&gt;&gt;emin; // 也可以获取 字符串当作数字使用，通过数字排序来代表字典序" />
+// 数据：2007-06-23-11:59 2007-06-23-12:00 int by, ey, bm, em, bd, ed, bh, eh, bmin, emin; scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;by, &amp;bm, &amp;bd, &amp;bh, &amp;bmin); scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;ey, &amp;em, &amp;ed, &amp;eh, &amp;emin); // 即可获取 char a; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;bd&gt;&gt;a&gt;&gt;bh&gt;&gt;a&gt;&gt;bmin; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;ed&gt;&gt;a&gt;&gt;eh&gt;&gt;a&gt;&gt;emin; // 也可以获取 cin读入提速" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm-summary/summary1-%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/" />
 <meta property="article:published_time" content="2020-02-04T16:12:46+08:00" />
@@ -36,7 +36,7 @@ char ch scanf(&#34;%c&#34;, &amp;ch); // 前面要加空格 char s[10]; scanf(&#
 // int的最大值就是2的31次方-1 #define INF (1&lt;&lt;31)-1// 用库中定义的INT_MAX #include &lt;climits&gt;#define INF INT_MAXdouble 四舍五入的变式：永远舍和永远入：
 double a = 0.656, b = 0.651; printf(&#34;%.2lf %2lf&#34;, a-0.05, b-0.05); // 都会往下舍，变为0.65 0.65 printf(&#34;%.2lf %2lf&#34;, a&#43;0.05, b&#43;0.05); // 都会往上入，变为0.66 0.66 字符 &amp; 字符串的scanf读入
 char ch scanf(&#34;%c&#34;, &amp;ch); // 前面要加空格 char s[10]; scanf(&#34;%s&#34;, s); scanf字符串读入(对于流输入输出进行优化)
-// 数据：2007-06-23-11:59 2007-06-23-12:00 int by, ey, bm, em, bd, ed, bh, eh, bmin, emin; scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;by, &amp;bm, &amp;bd, &amp;bh, &amp;bmin); scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;ey, &amp;em, &amp;ed, &amp;eh, &amp;emin); // 即可获取 char a; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;bd&gt;&gt;a&gt;&gt;bh&gt;&gt;a&gt;&gt;bmin; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;ed&gt;&gt;a&gt;&gt;eh&gt;&gt;a&gt;&gt;emin; // 也可以获取 字符串当作数字使用，通过数字排序来代表字典序"/>
+// 数据：2007-06-23-11:59 2007-06-23-12:00 int by, ey, bm, em, bd, ed, bh, eh, bmin, emin; scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;by, &amp;bm, &amp;bd, &amp;bh, &amp;bmin); scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;ey, &amp;em, &amp;ed, &amp;eh, &amp;emin); // 即可获取 char a; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;bd&gt;&gt;a&gt;&gt;bh&gt;&gt;a&gt;&gt;bmin; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;ed&gt;&gt;a&gt;&gt;eh&gt;&gt;a&gt;&gt;emin; // 也可以获取 cin读入提速"/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -87,7 +87,30 @@ scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> a;
 cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>by<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bm<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bd<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bh<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bmin;
 cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>by<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bm<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>ed<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>eh<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>emin; <span style="color:#75715e">// 也可以获取
-</span></code></pre></div><p>字符串当作数字使用，通过数字排序来代表字典序</p>
+</span></code></pre></div><p>cin读入提速</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">ios<span style="color:#f92672">:</span><span style="color:#f92672">:</span>sync_with_stdio(false);
+</code></pre></div><p>scanf // getline+cin读入一整行：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// scanf
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> s[maxn];
+scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%[^</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">]</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>s); <span style="color:#75715e">// 注意，此时传入的变量名就类似于读入数字，不可以类似于数组或者字符串数组的那种直接传地址了
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// getline+cin
+</span><span style="color:#75715e"></span>string str1, str2;
+getline(cin, str1); <span style="color:#75715e">// 注意，出现了getline之后，单独使用cin会失效
+</span><span style="color:#75715e"></span>getline(cin, str2);
+</code></pre></div><p>字符串不告诉有多少，读着读着就消失了 scanf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">char</span> s[maxn];
+<span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, s)) {
+  <span style="color:#75715e">// 对s字符数组进行操作
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#75715e">// cin + eof
+</span><span style="color:#75715e"></span>string str;
+<span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>cin.eof()) {
+  cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>str;
+  <span style="color:#75715e">// 对str字符串进行操作
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>字符串当作数字使用，通过数字排序来代表字典序</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>string strs[maxn];
 

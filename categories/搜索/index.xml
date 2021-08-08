@@ -29,7 +29,8 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</guid>
-      <description>dfs [数组一维模版 &amp;amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
+      <description>dfs  向深递归
+ 传参的确定 =&amp;gt; 可以利用好递归调用栈机制 状态的判断 =&amp;gt; 递归到每一层之后，所有参数共同组合决定出一个状态，这个状态维护是否重复   [数组一维模版 &amp;amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
 #include &amp;lt;iostream&amp;gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &amp;lt; n; ++i) printf(&amp;#34;%5d&amp;#34;, a[i]); printf(&amp;#34;\n&amp;#34;); return; } for (int i = 1; i &amp;lt;= n; ++i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l+1); vis[i] = 0; } } } int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); dfs(0); return 0; } 素数环 &amp;amp; 分层 https://www.</description>
     </item>
     
