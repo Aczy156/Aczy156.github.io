@@ -960,18 +960,6 @@ eg:</description>
     </item>
     
     <item>
-      <title>Linux-常用配置</title>
-      <link>http://www.chenranfei.online/posts/tool/t-latex%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/tool/t-latex%E8%AF%AD%E6%B3%95/</guid>
-      <description>LaTex语法 插入方式  inline math 行内公式 block math 块内公式  inline math $test_{latex}$
-$test_{latex}$ block math $$ test_{latex} $$
-$$ test_{latex} $$ 基本字符 下面基本常用字符都是inline math 写的
-   字母 实现 字母 实现     $\alpha$​ \alpha $\Alpha$ \Alpha   $\beta$ \beta $\Beta$ \Beta   $\gamma$ \gamma $\Gamma$ \Gamma   $\delta$ \delta $\Delta$ \Delta   $\epsilon$ \epsilon $\Epsilon$ \Epsilon   $\varepsilon$ \varepsilon     $\zeta$ \zeta $\Zeta$ \Zeta   $\eta$ \eta $\Eta$ \Eta   $\theta$ \theta $\Theta$ \Theta   $\vartheta$ \vartheta     $\iota$ \iota $\Iota$ \Iota   $\kappa$ \kappa $\Kappa$ \Kappa   $\lambda$ \lambda $\Lambda$ \Lambda   $\mu$ \mu $\Mu$ \Mu   $\nu$ \nu $\Nu$ \Nu   $\xi$ \xi $\Xi$ \Xi   $\omicron$ \omicron $\Omicron$ \Omicron   $\pi$ \pi $\Pi$ \Pi   $\varpi$ \varpi     $\rho$ \rho $\Rho$ \Rho   $\varrho$ \varrho     $\sigma$ \sigma $\Sigma$ \Sigma   $\varsigma$ \varsigma     $\tau$ \tau $\Tau$ \Tau   $\upsilon$ \upsilon $\Upsilon$ \Upsilon   $\phi$ \phi $\Phi$ \Phi   $\varphi$ \varphi     $\chi$ \chi $\Chi$ \Chi   $\psi$ \psi $\Psi$ \Psi   $\omega$ \omega $\Omega$ \Omega    运算符号 普通运算符号    符号 实现 名称     $\pm$ \pm 加减   $\mp$ \mp 减加   $\times$ \times 乘   $\div$ \div 除   $\cdot$ \cdot 点   $\ast$ \ast 星号   $\star$ \star 五角星   $\dagger$ \dagger 剑号   $\ddagger$ \ddagger 双剑号   $\amalg$ \amalg amalg   $\cap$ \cap 圆帽   $\cup$ \cup 圆杯   $\uplus$ \uplus 圆杯加号   $\sqcap$ \sqcap 方帽   $\sqcup$ \sqcup 方杯   $\vee$ \vee 正V   $\wedge$ \wedge 倒V   $\setminus$ \setminus 集差   $\wr$ \wr 环积   $\circ$ \circ 圆圈   $\bullet$ \bullet 实心圆   $\oslash$ \oslash 圆圈斜线   $\odot$ \odot 圆圈点   $\bigcirc$ \bigcirc 大圆圈   $\bigtriangleup$ \bigtriangleup 大正三角形   $\bigtriangledown$ \bigtriangledown 大倒三角形   $\triangleleft$ \triangleleft 左三角形   $\triangleright$ \triangleright 右三角形   $\oplus$ \oplus 圆圈加号   $\ominus$ \ominus 圆圈减号   $\otimes$ \otimes 圆圈乘号   $\bot$ \bot 倒T   $\top$ \top 正T   $\sum$ \sum 求和   $\prod$ \prod 乘积   $\int$ \int 积分   $\oint$ \oint 围道积分   $\biguplus$ \biguplus 大圆杯加号   $\bigoplus$ \bigoplus 大圆圈加号   $\bigvee$ \bigvee 大V   $\bigcap$ \bigcap 大圆帽   $\bigotimes$ \bigotimes 大圆圈乘号   $\bigwedge$ \bigwedge 大倒V   $\bigcup$ \bigcup 大圆杯   $\bigodot$ \bigodot 大圆圈点   $\bigsqcup$ \bigsqcup 大方杯    分数：\frac{} 正常大小的：$P(B_j|A)=\frac{P(B_jA)}{P(A)}$​​​</description>
-    </item>
-    
-    <item>
       <title>Linux-指令整理</title>
       <link>http://www.chenranfei.online/posts/other/o-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
@@ -980,6 +968,18 @@ $$ test_{latex} $$ 基本字符 下面基本常用字符都是inline math 写的
       <description>综合了https://blog.csdn.net/wojiaopanpan/article/details/7286430 博客的一些指令以及一些过去的一些积累。
  基本指令 mv cp ls (ls -l 查看该目录下面文件的具体信息，包括权限归属) chown 切换权限归属 chown -R aczy156 file-name （-R为当前目录以及这个目录下边的所有文件） chroot chroot /mnt，在配置arch并利用arch安装驱动系统安装好后，把root权交给新安装的那个系统的一个操作 chmod +x 目录 给目录 cd cd 空，默认进入root文件，也就是相当于cd ～ cd .. 两个点为进入上一级目录 pwd 当前目录的path open 打开某个文件夹（open . 打开当前的目录的文件夹） mkdir vim fdisk cfdisk df -hl 看所有的存储空间使用情况 mount mkfs :q（退出模式） :wq move rm []删除 rm -rf xx [删除目录的,也就是文件夹]删除某个文件 cd rm rf .删除所有文件 xrandr 不加参数：查看分辨率 cvt 1024 768 参数为分辨率的x和y
  日常使用 os config file 系统文件 config.</description>
+    </item>
+    
+    <item>
+      <title>Tool-LaTex语法</title>
+      <link>http://www.chenranfei.online/posts/tool/t-latex%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/tool/t-latex%E8%AF%AD%E6%B3%95/</guid>
+      <description>LaTex语法 插入方式  inline math 行内公式 block math 块内公式  inline math $test_{latex}$
+$test_{latex}$ block math $$ test_{latex} $$
+$$ test_{latex} $$ 基本字符 下面基本常用字符都是inline math 写的
+   字母 实现 字母 实现     $\alpha$​ \alpha $\Alpha$ \Alpha   $\beta$ \beta $\Beta$ \Beta   $\gamma$ \gamma $\Gamma$ \Gamma   $\delta$ \delta $\Delta$ \Delta   $\epsilon$ \epsilon $\Epsilon$ \Epsilon   $\varepsilon$ \varepsilon     $\zeta$ \zeta $\Zeta$ \Zeta   $\eta$ \eta $\Eta$ \Eta   $\theta$ \theta $\Theta$ \Theta   $\vartheta$ \vartheta     $\iota$ \iota $\Iota$ \Iota   $\kappa$ \kappa $\Kappa$ \Kappa   $\lambda$ \lambda $\Lambda$ \Lambda   $\mu$ \mu $\Mu$ \Mu   $\nu$ \nu $\Nu$ \Nu   $\xi$ \xi $\Xi$ \Xi   $\omicron$ \omicron $\Omicron$ \Omicron   $\pi$ \pi $\Pi$ \Pi   $\varpi$ \varpi     $\rho$ \rho $\Rho$ \Rho   $\varrho$ \varrho     $\sigma$ \sigma $\Sigma$ \Sigma   $\varsigma$ \varsigma     $\tau$ \tau $\Tau$ \Tau   $\upsilon$ \upsilon $\Upsilon$ \Upsilon   $\phi$ \phi $\Phi$ \Phi   $\varphi$ \varphi     $\chi$ \chi $\Chi$ \Chi   $\psi$ \psi $\Psi$ \Psi   $\omega$ \omega $\Omega$ \Omega    运算符号 普通运算符号    符号 实现 名称     $\pm$ \pm 加减   $\mp$ \mp 减加   $\times$ \times 乘   $\div$ \div 除   $\cdot$ \cdot 点   $\ast$ \ast 星号   $\star$ \star 五角星   $\dagger$ \dagger 剑号   $\ddagger$ \ddagger 双剑号   $\amalg$ \amalg amalg   $\cap$ \cap 圆帽   $\cup$ \cup 圆杯   $\uplus$ \uplus 圆杯加号   $\sqcap$ \sqcap 方帽   $\sqcup$ \sqcup 方杯   $\vee$ \vee 正V   $\wedge$ \wedge 倒V   $\setminus$ \setminus 集差   $\wr$ \wr 环积   $\circ$ \circ 圆圈   $\bullet$ \bullet 实心圆   $\oslash$ \oslash 圆圈斜线   $\odot$ \odot 圆圈点   $\bigcirc$ \bigcirc 大圆圈   $\bigtriangleup$ \bigtriangleup 大正三角形   $\bigtriangledown$ \bigtriangledown 大倒三角形   $\triangleleft$ \triangleleft 左三角形   $\triangleright$ \triangleright 右三角形   $\oplus$ \oplus 圆圈加号   $\ominus$ \ominus 圆圈减号   $\otimes$ \otimes 圆圈乘号   $\bot$ \bot 倒T   $\top$ \top 正T   $\sum$ \sum 求和   $\prod$ \prod 乘积   $\int$ \int 积分   $\oint$ \oint 围道积分   $\biguplus$ \biguplus 大圆杯加号   $\bigoplus$ \bigoplus 大圆圈加号   $\bigvee$ \bigvee 大V   $\bigcap$ \bigcap 大圆帽   $\bigotimes$ \bigotimes 大圆圈乘号   $\bigwedge$ \bigwedge 大倒V   $\bigcup$ \bigcup 大圆杯   $\bigodot$ \bigodot 大圆圈点   $\bigsqcup$ \bigsqcup 大方杯    分数：\frac{} 正常大小的：$P(B_j|A)=\frac{P(B_jA)}{P(A)}$​​​</description>
     </item>
     
     <item>
