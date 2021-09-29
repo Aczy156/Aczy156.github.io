@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>PTA 1000-1099 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="PTA 1000-1099 | Aczy156" />
+	<meta name="twitter:title" content="PTA 1000-1099 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="PTA 1000-1099 | Aczy156" />
+	<meta name="application-name" content="PTA 1000-1099 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="PTA 1000-1099" />
+<meta property="og:description" content="PTA1000-1099 1000  题目大意：求a&#43;b
+  【易错】输出格式的标准化：每3位来一个逗号（利用循环&#43;取余进行输出）  1007  题目大意：最大子区间
+  子区间中有可能穿插着负数。（因此不能一到负数就重置起终点，而是要等到当前临时的sum小于0了，再重置起终点） 重置终点的情况为sum&gt;ans，此时才是正确的重置起终点的时机。 【易错】特殊情况考虑：对于全是负数的情况，此时ans为0，但是ans为0不一定全是负数，因为有可能存在0 0 0这样的子区间。  1008  题目大意：直接模拟楼层上下变化即可
+ 1012  题目大意：给出n个人的平均成绩、c语言、数学、英语，输出所有人排名最高的科目以及排名。（如果有相同的按照平均成绩&gt;c语言&gt;数学&gt;英语顺序输出）
+  利用map进行string和struct结构体进行映射 【易错】排序问题：排名时分数相同的话，就需要设置并列  1013  题目大意：给出n个城，m条路，k个查询，查询内容为，当排除掉输入的这个城（这个城&#43;与这个城相连的连线都失效）之后，联通其他所有城所需要新增的路数
+  利用kruskal的并查集维护点集思路，储存数据用线/链式前向星均可 【易错】数据边界问题：容易RE，在这个题里边，他没有限定线的个数，所以线的个数的上限应该是点数*点数  1020  题目大意：给出二叉树中序后序，求层次遍历
+  利用后序最后一个是根结点，然后从中序里边进行分割，分割出左右两块分别为这个根结点的左右儿子。 递归建树的返回内容是一个节点。递归的参数要包括中序的左右区间节点以及后序的根结点，三个参数即可 【易错】递归终点返回值问题：返回NULL的条件  1023  题目大意：给出一个数，看看这个数在乘了2之后，是否还满足和原来一样的各种数字的个数不变但是顺序变化
+ 1040  题目大意：找到最大的回文子串
+ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/pta/pta/" />
+<meta property="article:published_time" content="2020-04-08T20:42:26+08:00" />
+<meta property="article:modified_time" content="2020-04-08T20:42:26+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PTA 1000-1099"/>
+<meta name="twitter:description" content="PTA1000-1099 1000  题目大意：求a&#43;b
+  【易错】输出格式的标准化：每3位来一个逗号（利用循环&#43;取余进行输出）  1007  题目大意：最大子区间
+  子区间中有可能穿插着负数。（因此不能一到负数就重置起终点，而是要等到当前临时的sum小于0了，再重置起终点） 重置终点的情况为sum&gt;ans，此时才是正确的重置起终点的时机。 【易错】特殊情况考虑：对于全是负数的情况，此时ans为0，但是ans为0不一定全是负数，因为有可能存在0 0 0这样的子区间。  1008  题目大意：直接模拟楼层上下变化即可
+ 1012  题目大意：给出n个人的平均成绩、c语言、数学、英语，输出所有人排名最高的科目以及排名。（如果有相同的按照平均成绩&gt;c语言&gt;数学&gt;英语顺序输出）
+  利用map进行string和struct结构体进行映射 【易错】排序问题：排名时分数相同的话，就需要设置并列  1013  题目大意：给出n个城，m条路，k个查询，查询内容为，当排除掉输入的这个城（这个城&#43;与这个城相连的连线都失效）之后，联通其他所有城所需要新增的路数
+  利用kruskal的并查集维护点集思路，储存数据用线/链式前向星均可 【易错】数据边界问题：容易RE，在这个题里边，他没有限定线的个数，所以线的个数的上限应该是点数*点数  1020  题目大意：给出二叉树中序后序，求层次遍历
+  利用后序最后一个是根结点，然后从中序里边进行分割，分割出左右两块分别为这个根结点的左右儿子。 递归建树的返回内容是一个节点。递归的参数要包括中序的左右区间节点以及后序的根结点，三个参数即可 【易错】递归终点返回值问题：返回NULL的条件  1023  题目大意：给出一个数，看看这个数在乘了2之后，是否还满足和原来一样的各种数字的个数不变但是顺序变化
+ 1040  题目大意：找到最大的回文子串
+ "/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">PTA 1000-1099</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="pta1000-1099">PTA1000-1099</h2>
+<h3 id="1000">1000</h3>
+<blockquote>
+<p>题目大意：求a+b</p>
+</blockquote>
+<ul>
+<li>【易错】输出格式的标准化：每3位来一个逗号（利用循环+取余进行输出）</li>
+</ul>
+<h3 id="1007">1007</h3>
+<blockquote>
+<p>题目大意：最大子区间</p>
+</blockquote>
+<ul>
+<li>子区间中有可能穿插着负数。（因此不能一到负数就重置起终点，而是要等到当前临时的sum小于0了，再重置起终点）</li>
+<li>重置终点的情况为sum&gt;ans，此时才是正确的重置起终点的时机。</li>
+<li>【易错】特殊情况考虑：对于全是负数的情况，此时ans为0，但是ans为0不一定全是负数，因为有可能存在0 0 0这样的子区间。</li>
+</ul>
+<h3 id="1008">1008</h3>
+<blockquote>
+<p>题目大意：直接模拟楼层上下变化即可</p>
+</blockquote>
+<h3 id="1012">1012</h3>
+<blockquote>
+<p>题目大意：给出n个人的平均成绩、c语言、数学、英语，输出所有人排名最高的科目以及排名。（如果有相同的按照平均成绩&gt;c语言&gt;数学&gt;英语顺序输出）</p>
+</blockquote>
+<ul>
+<li>利用map进行string和struct结构体进行映射</li>
+<li>【易错】排序问题：排名时分数相同的话，就需要设置并列</li>
+</ul>
+<h3 id="1013">1013</h3>
+<blockquote>
+<p>题目大意：给出n个城，m条路，k个查询，查询内容为，当排除掉输入的这个城（这个城+与这个城相连的连线都失效）之后，联通其他所有城所需要新增的路数</p>
+</blockquote>
+<ul>
+<li>利用kruskal的并查集维护点集思路，储存数据用线/链式前向星均可</li>
+<li>【易错】数据边界问题：容易RE，在这个题里边，他没有限定线的个数，所以线的个数的上限应该是点数*点数</li>
+</ul>
+<h3 id="1020">1020</h3>
+<blockquote>
+<p>题目大意：给出二叉树中序后序，求层次遍历</p>
+</blockquote>
+<ul>
+<li>利用后序最后一个是根结点，然后从中序里边进行分割，分割出左右两块分别为这个根结点的左右儿子。</li>
+<li>递归建树的返回内容是一个节点。递归的参数要包括中序的左右区间节点以及后序的根结点，三个参数即可</li>
+<li>【易错】递归终点返回值问题：返回NULL的条件</li>
+</ul>
+<h3 id="1023">1023</h3>
+<blockquote>
+<p>题目大意：给出一个数，看看这个数在乘了2之后，是否还满足和原来一样的各种数字的个数不变但是顺序变化</p>
+</blockquote>
+<h3 id="1040">1040</h3>
+<blockquote>
+<p>题目大意：找到最大的回文子串</p>
+</blockquote>
+
+		</section>
+
+		<div class="meta">Posted on Apr 8, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

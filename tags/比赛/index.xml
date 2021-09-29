@@ -25,6 +25,18 @@
     </item>
     
     <item>
+      <title></title>
+      <link>http://www.chenranfei.online/posts/contest/contest-ict-pfind/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/contest/contest-ict-pfind/</guid>
+      <description>ICT-pFind  机试：共五道，前两个签到，第三个大数乘法，第四个区间最值问题，第五个数据结构二叉树问题
+ 1 题目大意：将二维数组进行翻转
+思路：储存在二维数组中，利用循环来进行翻转然后输出。
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 209; int n, a[maxn][maxn]; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i][j]); for (int i = 1; i &amp;lt;= n; ++i) { for (int j = 1; j &amp;lt;= n; ++j) { printf(&amp;#34;%d &amp;#34;, a[n-j+1][i]); } printf(&amp;#34;\n&amp;#34;); } return 0; } 2 题目大意：括号匹配，非左右括号的按照异常处理，然后查看左右括号是否匹配</description>
+    </item>
+    
+    <item>
       <title>Contest CSU预选赛 补题</title>
       <link>http://www.chenranfei.online/posts/contest/contest-csu2021pre/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>

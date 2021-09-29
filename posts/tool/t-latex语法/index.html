@@ -532,36 +532,66 @@ $$
 </code></pre></div><h4 id="求和sum_">求和：\sum_{}^</h4>
 <p>是否放缩大小和上面一样：$\sum_{j=1}^{n}P(B_j)$</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\sum_{j=1}^{n}P(B_j)$
-</code></pre></div><h4 id="平均数反集合非-字符或字符串上加横线bar-或者-overline">平均数/反/集合非-字符或字符串上加横线：/bar{} 或者 /overline</h4>
+</code></pre></div><p>写成block math
+$$
+\sum_{j=1}^{n}P(B_j)
+$$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$$
+\sum_{j=1}^{n}P(B_j)
+$$			
+</code></pre></div><h4 id="平均数反集合非-字符或字符串上加横线bar-或者-overline">平均数/反/集合非-字符或字符串上加横线：\bar{} 或者 \overline</h4>
 <p>只在单个字符上加线：$\bar{A}B\bar{C}$</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\bar{A}B\bar{C}$
 </code></pre></div><p>在多个字符/字符串上加线：$\overline{\bar{A}B\bar{C}}$</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\overline{\bar{A}B\bar{C}}$
-</code></pre></div><h3 id="矩阵表示">矩阵表示</h3>
-<p>利用已经有的各种matrix环境 =&gt; <code>matrix、pmatrix、bmatrix、Bmatrix、vmatrix</code>或者<code>Vmatrix</code></p>
-<p>行列式：</p>
-<p>$\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix}$​​​​​​​​​​</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$
-\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix}
-$
-</code></pre></div><p>矩阵：</p>
+</code></pre></div><h4 id="极限limlimits">极限:\lim\limits</h4>
+<p>$F_X(x)=\lim\limits_{y\to\infty}F(x,y)=F(x, +\infty)$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$F_X(x)=\lim\limits_{y\to\infty}F(x,y)=F(x, +\infty)$
+</code></pre></div><h4 id="多区间范围式">多区间范围式</h4>
 <p>$
-\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{pmatrix}
-$​​​​​​​​​​</p>
+\begin{equation}f(x)=
+\left{
+\begin{aligned}
+\displaystyle\frac{1}{b-a} &amp;  &amp; a≤x≤b \
+0 &amp;  &amp; x&lt;a, x&gt;b
+\end{aligned}
+\right.
+\end{equation}
+$</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$
-\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{pmatrix}
+\begin{equation}f(x)=
+\left\{
+\begin{aligned}
+\displaystyle\frac{1}{b-a} &amp;  &amp; a≤x≤b \\ 
+0 &amp;  &amp; x&lt;a, x&gt;b
+\end{aligned}
+\right.
+\end{equation}
 $
+</code></pre></div><h3 id="矩阵表示">矩阵表示</h3>
+<p>利用已经有的各种matrix环境 =&gt; <code>matrix、pmatrix、bmatrix、Bmatrix、vmatrix</code>或者<code>Vmatrix</code>。</p>
+<p>（由于编译器的问题，在解析latex代码是，会将<code>\\</code>编译成一个<code>\</code>，因此需要转义，在行中间输入四个<code>\</code>，即<code>\\\\</code>，最后才得到网页中解析出来的<code>\\</code>）</p>
+<p>行列式：$\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix}$​​​​​​​​​​</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix}$
+
+为了网页渲染样式：
+$\begin{vmatrix} a &amp; b \\\\ c &amp; d \end{vmatrix}$
+</code></pre></div><p>矩阵：$\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{pmatrix}$​​​​​​​​​​​</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{pmatrix}$
+
+为了网页渲染样式：
+$\begin{pmatrix} 1 &amp; 2 &amp; 3 \\\\ 4 &amp; 5 &amp; 6 \end{pmatrix}$
 </code></pre></div><p>其他：\quad 可以用于在latex中加空格</p>
 <p>后面的各式之间都有利用  <code>\quad</code> 加空格：</p>
 <p>$
-\begin{matrix} 0 &amp; 1 \ 1 &amp; 0 \end{matrix}
+\begin{matrix} 0 &amp; 1 \\ 1 &amp; 0 \end{matrix}
 \quad
-\begin{bmatrix} 0 &amp; -1 \ 1 &amp; 0 \end{bmatrix}
+\begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix}
 \quad
-\begin{Bmatrix} 1 &amp; 0 \ 0 &amp; -1 \end{Bmatrix}
+\begin{Bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{Bmatrix}
 \quad
-\begin{Vmatrix} i &amp; 0 \ 0 &amp; -i \end{Vmatrix}
-$​​​​​​</p>
+\begin{Vmatrix} i &amp; 0 \\ 0 &amp; -i \end{Vmatrix}
+$</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$
 \begin{matrix} 0 &amp; 1 \\ 1 &amp; 0 \end{matrix}
 \quad

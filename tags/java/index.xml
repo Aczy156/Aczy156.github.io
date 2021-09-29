@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Aczy156</title>
+    <link>http://www.chenranfei.online/tags/java/</link>
+    <description>Recent content in Java on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Wed, 08 Apr 2020 20:42:26 +0800</lastBuildDate>
+    
+	<atom:link href="http://www.chenranfei.online/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PTA 1000-1099</title>
+      <link>http://www.chenranfei.online/posts/project/java-web/</link>
+      <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/project/java-web/</guid>
+      <description>Java Web 最基础JavaWeb：Web-INF工程 过程：
+ 直接创建基础Java项目 利用创建出来的空Java项目，添加「框架支持」“Add Frameworks Support” 利用Java EE中的Web Application 即可构建最最最基本的Java web框架  易错点：
+ 空工程，没有依赖/或者类似maven的包管理工具，所以依赖需要手动倒入，各种jar包。 两种配置servlet的写法中：  利用.xml配置文件的写法，容易忘记写servlet-class标签，这样就无法响应servlet 利用标签的写法，会利用name属性去找对应的类，找不到对应的类就会出问题，直接在tomcat容器里跑不起来。   tomcat配置内容，artifact配置注意会默认有war_exploded这个出现在链接里，也即是最后打包之后放在tomcat里边的内容，链接里要加入的。如果想删除，不仅要在server里边删除，也要在「deployment」部署里边删除  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -661,20 +661,16 @@ https://www.luogu.com.cn/problem/P1886
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</guid>
-      <description>排序  暴力遍历：O(n^2)
- 冒泡排序【稳定】：最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」 选择排序【不稳定】：「拿到合适的然后放置」选择出最值以及最值的索引，然后进行交换。 插入排序【稳定】：「拿到然后找合适的地方放置」对每次拿到的数，找到合适的位置插入进去  普通插入是O(n^2)，折半插入是O(nlog2n)，原因就是在选择合适的位置的时候，会进行二分折半查找，而不是暴力从一端到另一端查找了    介于暴力与递归之间的：O(n^(1.3-2))
- 希尔排序【不稳定】：三大步，首先对半分，两半一对一匹配进行插入排序；然后对半分的两类内部分别进行插入，然后对整体进行插入排序。  递归 二分与合并： $$ O(n*log_n2) $$
+      <description>排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
+ 冒泡排序【稳定】：$O(n^2)$ 最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」 选择排序【不稳定】：$O(n^2)$ 「拿到合适的然后放置」选择出最值以及最值的索引，然后进行交换。 插入排序三种：「拿到然后找合适的地方放置一个/多个」  直接插入【稳定】：$O(n^2)$ 对每次拿到的数，从一端到另一端暴力查找，找到合适的位置插入进去 折半插入【稳定】：$O(nlog_2^n)$ 在选择合适的位置的时候，会进行二分折半查找，找到合适位置插入进去 希尔插入【不稳定】：$O(n^{1.3})\sim O(n^2)$ 更复杂的插入排序过程，三大步，首先对半分，两半一对一匹配进行插入排序；然后对半分的两类内部分别进行插入，然后对整体进行插入排序。    递归 二分与合并：$O(n*log_2^n)$
  快速排序【不稳定】：首先移动，然后「合理的分割」 归并排序【稳定】：「分割」，然后「合理的合并」  递归 桶 多分与合并：
  计数排序：n个数n个桶，然后把n个桶再合并 桶排序：n个数k个桶，k个桶各自进行排序，然后再把k个桶合并 基数排序【稳定】：n个数10个桶，10个桶为首位/尾位的是个数字对应的数。  思路一：先合并，然后再根据首位/尾位的下面一位接着入桶 思路二：对每一个桶分别根据下一位再重新进小小桶，然后对小小桶进行合并，再对大桶进行合并    其他： $$ O(n*log_n2) $$
- 锦标赛排序/堆排序【不稳定】：利用类似于堆/树的log2n的结构来提取最大/最小，然后放在首/尾。  利用最小堆：递增排序 利用最大堆：递减排序     归并排序 两个易错点：
+ 锦标赛排序/堆排序【不稳定】：利用类似于堆/树的log2n的结构来提取最大/最小，然后放在首/尾。  利用最小堆：递增排序   利用最大堆：递减排序   归并排序 两个易错点：
 1、递归完了回来将要排序的时候，两个范围注意，左边小于等于mid，右边小于等于r，然后右边的起点也是mid+1。
 2、******递归
 快速排序 题目链接：https://www.luogu.com.cn/problem/P1177
 1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
-2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。
-3、分块的部分，可以通过前后遍历，碰到一对分别小于、大于的，直接swap()掉即可。但是会引发一个问题，就是如果碰到了一边刚好完全都是符合那个标准的，然后另一边存在不符合标准的，此时就需要把标准和不符合标准的换位置了。
-4、递归的部分，边界的设定问题，存在有刚好极端情况也就是分块的标准数刚好是最大或者最小的，那就不用再递归他了。所以要判断l &amp;lt; j或者i &amp;lt; r也就是排除了最大最小两种极端情况，其他的次大次小=&amp;gt;都要老老实实的把长度为2的给往下递归
-void quicksort(int l, int r){ int mid = a[(l+r)/2], i = l, j = r; do{ while (a[i] &amp;lt; mid) i++; while (a[j] &amp;gt; mid) j--; if (i &amp;lt;= j) {swap(a[i], a[j]);i++;j--;} }while (i &amp;lt;= j); // recursion left and right  if (l &amp;lt; j) quicksort(l, j); if (i &amp;lt; r) quicksort(i, r); } </description>
+2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。</description>
     </item>
     
     <item>
@@ -695,7 +691,9 @@ https://www.luogu.com.cn/problem/P3378
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</guid>
-      <description>贪心问题 装袋问题-每个袋子限制个数为两个 https://www.luogu.com.cn/problem/P1094
+      <description>贪心问题  装袋问题：
+结构体排序问题 // 排序贪心：
+ 装袋问题-每个袋子限制个数为两个 https://www.luogu.com.cn/problem/P1094
 题目大意：给出若干个不同容量的东西，给出限定的最大容量的袋子，然后最少用多少个袋子装完这些不同容量东西
 思路1【错误】：维护一个优先队列，每次取顶上两个，然后放一块。不行的原因，一些特殊情况，例如袋子100，物品分别为20、20、30、50、60，如果顺次加起来的话，=&amp;gt;30、40、50、60=&amp;gt;50、60、70，最后三个袋子，最少装袋是两个，20+20+60和30+50。
 priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;k, &amp;amp;n); for (int i = 0; i &amp;lt; n; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;tem); pq.push(tem); } while (true){ int tmp1 = pq.top();pq.pop(); int tmp2 = pq.top();pq.pop(); cout&amp;lt;&amp;lt;tmp1&amp;lt;&amp;lt;&amp;#34;&amp;#34;&amp;lt;&amp;lt;tmp2&amp;lt;&amp;lt;endl; if (tmp1 + tmp2 &amp;gt; k) {pq.push(tmp1);pq.push(tmp2);break;} else pq.push(tmp1+tmp2); } printf(&amp;#34;%d\n&amp;#34;, pq.size()); return 0; } 思路2【正确】：由于题目还有一个附加条件=&amp;gt;每个袋子最多两个（=&amp;gt;也在一定程度上约束了两个）用双指针，首尾各一个，分别用来指代放在袋子的两个：够了就放一个袋子里，指针都往中间移动；不够就只把大的往中间移。前提是排好序
@@ -730,7 +728,7 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
     </item>
     
     <item>
-      <title>Algorithm8.1 bfs</title>
+      <title>Algorithm8.1 BFS</title>
       <link>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
@@ -741,7 +739,7 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
     </item>
     
     <item>
-      <title>Algorithm8.2 dfs</title>
+      <title>Algorithm8.2 DFS</title>
       <link>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
@@ -752,45 +750,30 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
     </item>
     
     <item>
-      <title>Algorithm8.3 dfs 记忆化搜索</title>
+      <title>Algorithm8.2 DFS进阶-TLE情况的解决方案</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <description>DFS进阶-TLE情况的解决方案  解决方案
+ 「一」通过剪枝缩小搜索范围 「二」记忆化搜索 - 添加一个v数组 // dp数组，来记录DFS所有触及到的状态，防止再次访问 「其他」DP解决   https://www.luogu.com.cn/problem/P1077
+「一」剪枝缩小搜索范围 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
+// 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans++;return;} for (int i = 0; i &amp;lt;= a[l+1]; ++i) { cnt+=i;dfs(l+1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
+int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } for (int i = 0; i &amp;lt;= a[l+1]; ++i) dfs(l+1, cnt+i); } 「二」记忆化搜索 - 记录状态，防止重复访问  核心：</description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.3 DFS 记忆化搜索</title>
       <link>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
-      <description>dfs记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。
+      <description>DFS 记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。
 [模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
 题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。
 1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
 2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 25typedef long long ll; ll ta, tb, tc, dp[maxn][maxn][maxn]; ll dfs(int a, int b, int c) { if (a &amp;lt;= 0 || b &amp;lt;= 0 || c &amp;lt;= 0) return 1; if (a &amp;gt; 20 || b &amp;gt; 20 || c &amp;gt; 20) return dfs(20, 20, 20); if (dp[a][b][c]) return dp[a][b][c]; if (a &amp;lt; b &amp;amp;&amp;amp; b &amp;lt; c) return dp[a][b][c] = dfs(a, b, c-1) + dfs(a, b-1, c-1) - dfs(a, b-1, c); else return dp[a][b][c] = dfs(a-1, b, c) + dfs(a-1, b-1, c) + dfs(a-1, b, c-1) - dfs(a-1, b-1, c-1); } int main() { while (scanf(&amp;#34;%lld%lld%lld&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc) &amp;amp;&amp;amp; !</description>
-    </item>
-    
-    <item>
-      <title>Algorithm8.4 搜索进阶</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-%E6%90%9C%E7%B4%A2%E8%BF%9B%E9%98%B6/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-%E6%90%9C%E7%B4%A2%E8%BF%9B%E9%98%B6/</guid>
-      <description>搜索进阶 </description>
-    </item>
-    
-    <item>
-      <title>Algorithm8.4&#43;2 dfs &amp; dfs记忆化搜索 &amp; DP</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.4&#43;2-dfs&#43;dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2&#43;dp/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.4&#43;2-dfs&#43;dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2&#43;dp/</guid>
-      <description>dfs &amp;amp; dfs记忆化搜索 &amp;amp; 计数DP  方法：
-1、搜索的过程中重复搜索，然后将重复的放在数组中储存起来，在再次递归进来之后直接返回即可。
-2、在返回的时候要详细到递归进来的多个参数的情况。
-3、根据参数情况写出dp数组（也就是记忆化数组d）
-4、状态转移方程要根据实际情况，用i j k等参数来逐渐覆盖。
-5、对上一个状态转移方程中涉及到的i j k等参数利用循环来进行遍历。
-种类
- DFS暴搜转计数DP    https://www.luogu.com.cn/problem/P1077
-dfs 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
-// 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans++;return;} for (int i = 0; i &amp;lt;= a[l+1]; ++i) { cnt+=i;dfs(l+1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
-int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } for (int i = 0; i &amp;lt;= a[l+1]; ++i) dfs(l+1, cnt+i); } 记忆化搜索 https://www.</description>
     </item>
     
     <item>
@@ -881,6 +864,23 @@ ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow
     </item>
     
     <item>
+      <title>PTA 1000-1099</title>
+      <link>http://www.chenranfei.online/posts/pta/pta/</link>
+      <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/pta/pta/</guid>
+      <description>PTA1000-1099 1000  题目大意：求a+b
+  【易错】输出格式的标准化：每3位来一个逗号（利用循环+取余进行输出）  1007  题目大意：最大子区间
+  子区间中有可能穿插着负数。（因此不能一到负数就重置起终点，而是要等到当前临时的sum小于0了，再重置起终点） 重置终点的情况为sum&amp;gt;ans，此时才是正确的重置起终点的时机。 【易错】特殊情况考虑：对于全是负数的情况，此时ans为0，但是ans为0不一定全是负数，因为有可能存在0 0 0这样的子区间。  1008  题目大意：直接模拟楼层上下变化即可
+ 1012  题目大意：给出n个人的平均成绩、c语言、数学、英语，输出所有人排名最高的科目以及排名。（如果有相同的按照平均成绩&amp;gt;c语言&amp;gt;数学&amp;gt;英语顺序输出）
+  利用map进行string和struct结构体进行映射 【易错】排序问题：排名时分数相同的话，就需要设置并列  1013  题目大意：给出n个城，m条路，k个查询，查询内容为，当排除掉输入的这个城（这个城+与这个城相连的连线都失效）之后，联通其他所有城所需要新增的路数
+  利用kruskal的并查集维护点集思路，储存数据用线/链式前向星均可 【易错】数据边界问题：容易RE，在这个题里边，他没有限定线的个数，所以线的个数的上限应该是点数*点数  1020  题目大意：给出二叉树中序后序，求层次遍历
+  利用后序最后一个是根结点，然后从中序里边进行分割，分割出左右两块分别为这个根结点的左右儿子。 递归建树的返回内容是一个节点。递归的参数要包括中序的左右区间节点以及后序的根结点，三个参数即可 【易错】递归终点返回值问题：返回NULL的条件  1023  题目大意：给出一个数，看看这个数在乘了2之后，是否还满足和原来一样的各种数字的个数不变但是顺序变化
+ 1040  题目大意：找到最大的回文子串
+ </description>
+    </item>
+    
+    <item>
       <title>Dp回文串问题整理</title>
       <link>http://www.chenranfei.online/posts/other/o-dp%E5%9B%9E%E6%96%87%E4%B8%B2%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/</link>
       <pubDate>Wed, 08 Apr 2020 20:41:58 +0800</pubDate>
@@ -925,6 +925,18 @@ int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.
  A 题目大意：看字串中是否有重复出现的，连续一段出现可以，中间隔着其他的，然后再次出现就不行了。
 思路：用map来维护前面所出现过的所有字符，看是否存在
 #include &amp;lt;bits/stdc++.h&amp;gt;using namespace std; int t, n; #include &amp;lt;map&amp;gt;map&amp;lt;char, int&amp;gt; m; char s[55]; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); while (t--) { int flag = 0; m.clear(); scanf(&amp;#34;%d%s&amp;#34;, &amp;amp;n, s); m[s[0]] = 1; for (int i = 1; i &amp;lt; strlen(s); ++i) { if (s[i] != s[i - 1] &amp;amp;&amp;amp; m.count(s[i])) flag = 1; else m[s[i]] = 1; } if (flag) printf(&amp;#34;NO\n&amp;#34;); else printf(&amp;#34;YES\n&amp;#34;); } return 0; } B 题目大意：找1～n范围中，所有数都相同的数（1 2 88 444是，101 67 1239不是）</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://www.chenranfei.online/posts/contest/contest-ict-pfind/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/contest/contest-ict-pfind/</guid>
+      <description>ICT-pFind  机试：共五道，前两个签到，第三个大数乘法，第四个区间最值问题，第五个数据结构二叉树问题
+ 1 题目大意：将二维数组进行翻转
+思路：储存在二维数组中，利用循环来进行翻转然后输出。
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 209; int n, a[maxn][maxn]; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i][j]); for (int i = 1; i &amp;lt;= n; ++i) { for (int j = 1; j &amp;lt;= n; ++j) { printf(&amp;#34;%d &amp;#34;, a[n-j+1][i]); } printf(&amp;#34;\n&amp;#34;); } return 0; } 2 题目大意：括号匹配，非左右括号的按照异常处理，然后查看左右括号是否匹配</description>
     </item>
     
     <item>

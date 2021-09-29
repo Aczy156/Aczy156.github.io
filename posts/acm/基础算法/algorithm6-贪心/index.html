@@ -21,7 +21,9 @@
 	<meta name="application-name" content="Algorithm6 贪心问题 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm6 贪心问题" />
-<meta property="og:description" content="贪心问题 装袋问题-每个袋子限制个数为两个 https://www.luogu.com.cn/problem/P1094
+<meta property="og:description" content="贪心问题  装袋问题：
+结构体排序问题 // 排序贪心：
+ 装袋问题-每个袋子限制个数为两个 https://www.luogu.com.cn/problem/P1094
 题目大意：给出若干个不同容量的东西，给出限定的最大容量的袋子，然后最少用多少个袋子装完这些不同容量东西
 思路1【错误】：维护一个优先队列，每次取顶上两个，然后放一块。不行的原因，一些特殊情况，例如袋子100，物品分别为20、20、30、50、60，如果顺次加起来的话，=&gt;30、40、50、60=&gt;50、60、70，最后三个袋子，最少装袋是两个，20&#43;20&#43;60和30&#43;50。
 priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int main() { scanf(&#34;%d%d&#34;, &amp;k, &amp;n); for (int i = 0; i &lt; n; &#43;&#43;i) { scanf(&#34;%d&#34;, &amp;tem); pq.push(tem); } while (true){ int tmp1 = pq.top();pq.pop(); int tmp2 = pq.top();pq.pop(); cout&lt;&lt;tmp1&lt;&lt;&#34;&#34;&lt;&lt;tmp2&lt;&lt;endl; if (tmp1 &#43; tmp2 &gt; k) {pq.push(tmp1);pq.push(tmp2);break;} else pq.push(tmp1&#43;tmp2); } printf(&#34;%d\n&#34;, pq.size()); return 0; } 思路2【正确】：由于题目还有一个附加条件=&gt;每个袋子最多两个（=&gt;也在一定程度上约束了两个）用双指针，首尾各一个，分别用来指代放在袋子的两个：够了就放一个袋子里，指针都往中间移动；不够就只把大的往中间移。前提是排好序
@@ -32,7 +34,9 @@ priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int main() 
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm6 贪心问题"/>
-<meta name="twitter:description" content="贪心问题 装袋问题-每个袋子限制个数为两个 https://www.luogu.com.cn/problem/P1094
+<meta name="twitter:description" content="贪心问题  装袋问题：
+结构体排序问题 // 排序贪心：
+ 装袋问题-每个袋子限制个数为两个 https://www.luogu.com.cn/problem/P1094
 题目大意：给出若干个不同容量的东西，给出限定的最大容量的袋子，然后最少用多少个袋子装完这些不同容量东西
 思路1【错误】：维护一个优先队列，每次取顶上两个，然后放一块。不行的原因，一些特殊情况，例如袋子100，物品分别为20、20、30、50、60，如果顺次加起来的话，=&gt;30、40、50、60=&gt;50、60、70，最后三个袋子，最少装袋是两个，20&#43;20&#43;60和30&#43;50。
 priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int main() { scanf(&#34;%d%d&#34;, &amp;k, &amp;n); for (int i = 0; i &lt; n; &#43;&#43;i) { scanf(&#34;%d&#34;, &amp;tem); pq.push(tem); } while (true){ int tmp1 = pq.top();pq.pop(); int tmp2 = pq.top();pq.pop(); cout&lt;&lt;tmp1&lt;&lt;&#34;&#34;&lt;&lt;tmp2&lt;&lt;endl; if (tmp1 &#43; tmp2 &gt; k) {pq.push(tmp1);pq.push(tmp2);break;} else pq.push(tmp1&#43;tmp2); } printf(&#34;%d\n&#34;, pq.size()); return 0; } 思路2【正确】：由于题目还有一个附加条件=&gt;每个袋子最多两个（=&gt;也在一定程度上约束了两个）用双指针，首尾各一个，分别用来指代放在袋子的两个：够了就放一个袋子里，指针都往中间移动；不够就只把大的往中间移。前提是排好序
@@ -71,6 +75,10 @@ MathJax.Hub.Config({
 
 		<section class="body">
 			<h2 id="贪心问题">贪心问题</h2>
+<blockquote>
+<p>装袋问题：</p>
+<p>结构体排序问题 // 排序贪心：</p>
+</blockquote>
 <h3 id="装袋问题-每个袋子限制个数为两个">装袋问题-每个袋子限制个数为两个</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1094">https://www.luogu.com.cn/problem/P1094</a></p>
 <p>题目大意：给出若干个不同容量的东西，给出限定的最大容量的袋子，然后最少用多少个袋子装完这些不同容量东西</p>
@@ -116,6 +124,9 @@ MathJax.Hub.Config({
 <p><a href="https://www.luogu.com.cn/problem/P2240">https://www.luogu.com.cn/problem/P2240</a></p>
 <p>1、结构体排序，重载运算符；</p>
 <p>2、<em>注意点：在重载运算符的时候，存在单位<code>**</code>的，意思就是需要作比的，注意精度问题=&gt;尽量把除法转换成乘法</em></p>
+<blockquote>
+<p>按照单位质量排序</p>
+</blockquote>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> node {
     <span style="color:#66d9ef">int</span> cost, val;
   	<span style="color:#75715e">// bool operator &lt; (const node n) const{return val/cost &lt; n.val/n.cost;} // 除法的话要注意精度问题
@@ -145,6 +156,36 @@ MathJax.Hub.Config({
         sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (m<span style="color:#f92672">-</span>sum<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span>nw.cost<span style="color:#f92672">?</span>nw.cost:m<span style="color:#f92672">-</span>sum);
     }
     printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%.2lf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p><a href="https://www.luogu.com.cn/problem/P1230">https://www.luogu.com.cn/problem/P1230</a></p>
+<p>题目大意：给定若干个任务，给出每个任务完成的最后期限+价值，然后每个时间点只能完成一个任务。那么这些任务列表怎么排序去完成才能让价值最大化</p>
+<blockquote>
+<p>按照价值排序，由高到低</p>
+<p>每次遍历到之后，维护一个vis数组，来选择他的位置，贪心的选取当前位置或者往前面的最靠近当前位置的</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">5e2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">int</span> n, m, vis[maxn];
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+    <span style="color:#66d9ef">int</span> t, v;
+    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> node n) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> v <span style="color:#f92672">&gt;</span> n.v;}
+}a[maxn];
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a[i].t);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a[i].v);
+    sort(a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">int</span> idx <span style="color:#f92672">=</span> a[i].t;
+        <span style="color:#66d9ef">while</span> (vis[idx] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> idx) idx<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;
+        <span style="color:#66d9ef">if</span> (idx) vis[idx] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">else</span> m<span style="color:#f92672">-</span><span style="color:#f92672">=</span>a[i].v;
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, m);
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div>

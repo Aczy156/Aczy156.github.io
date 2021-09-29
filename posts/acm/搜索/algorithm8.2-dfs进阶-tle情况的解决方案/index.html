@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm8.2 DFS进阶-TLE情况的解决方案 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm8.2 DFS进阶-TLE情况的解决方案 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm8.2 DFS进阶-TLE情况的解决方案 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm8.2 DFS进阶-TLE情况的解决方案 | Aczy156" />
+	<meta name="application-name" content="Algorithm8.2 DFS进阶-TLE情况的解决方案 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm8.2 DFS进阶-TLE情况的解决方案" />
+<meta property="og:description" content="DFS进阶-TLE情况的解决方案  解决方案
+ 「一」通过剪枝缩小搜索范围 「二」记忆化搜索 - 添加一个v数组 // dp数组，来记录DFS所有触及到的状态，防止再次访问 「其他」DP解决   https://www.luogu.com.cn/problem/P1077
+「一」剪枝缩小搜索范围 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
+// 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans&#43;&#43;;return;} for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) { cnt&#43;=i;dfs(l&#43;1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
+int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans&#43;&#43;;return; } for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) dfs(l&#43;1, cnt&#43;i); } 「二」记忆化搜索 - 记录状态，防止重复访问  核心：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm8.2 DFS进阶-TLE情况的解决方案"/>
+<meta name="twitter:description" content="DFS进阶-TLE情况的解决方案  解决方案
+ 「一」通过剪枝缩小搜索范围 「二」记忆化搜索 - 添加一个v数组 // dp数组，来记录DFS所有触及到的状态，防止再次访问 「其他」DP解决   https://www.luogu.com.cn/problem/P1077
+「一」剪枝缩小搜索范围 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
+// 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans&#43;&#43;;return;} for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) { cnt&#43;=i;dfs(l&#43;1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
+int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans&#43;&#43;;return; } for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) dfs(l&#43;1, cnt&#43;i); } 「二」记忆化搜索 - 记录状态，防止重复访问  核心："/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm8.2 DFS进阶-TLE情况的解决方案</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="dfs进阶-tle情况的解决方案">DFS进阶-TLE情况的解决方案</h2>
+<blockquote>
+<p>解决方案</p>
+<ul>
+<li>「一」通过剪枝缩小搜索范围</li>
+<li>「二」记忆化搜索 - 添加一个v数组 // dp数组，来记录DFS所有触及到的状态，防止再次访问</li>
+<li>「其他」DP解决</li>
+</ul>
+</blockquote>
+<p><a href="https://www.luogu.com.cn/problem/P1077">https://www.luogu.com.cn/problem/P1077</a></p>
+<h3 id="一剪枝缩小搜索范围">「一」剪枝缩小搜索范围</h3>
+<p><strong>关键是找清楚搜索维度的变量变化</strong>，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 搜索
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> cnt, ans;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> l) {
+    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">=</span><span style="color:#f92672">=</span> n) { <span style="color:#66d9ef">if</span> (cnt <span style="color:#f92672">=</span><span style="color:#f92672">=</span> m) ans<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;<span style="color:#66d9ef">return</span>;}
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> a[l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) { cnt<span style="color:#f92672">+</span><span style="color:#f92672">=</span>i;dfs(l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);cnt<span style="color:#f92672">-</span><span style="color:#f92672">=</span>i; }
+}
+</code></pre></div><p>可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">int</span> ans;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> cnt) {
+     <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">=</span><span style="color:#f92672">=</span> n) { <span style="color:#66d9ef">if</span> (cnt <span style="color:#f92672">=</span><span style="color:#f92672">=</span> m) ans<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;<span style="color:#66d9ef">return</span>; }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> a[l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dfs(l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, cnt<span style="color:#f92672">+</span>i);
+}
+</code></pre></div><h3 id="二记忆化搜索---记录状态防止重复访问">「二」记忆化搜索 - 记录状态，防止重复访问</h3>
+<blockquote>
+<p>核心：</p>
+<p>用v数组区分<strong>递归过来的状态是否来过</strong> // 或者用dp数组<strong>记录原来来过这个状态之后计算得到的值</strong>，这个状态可能是</p>
+<ul>
+<li>固定个数的属性：
+<ul>
+<li>特殊函数递归，然后对于传进来的参数abc，当前的参数a、b、c【整体 // 状态】</li>
+<li>给四个瓶子互相倒水，每个瓶子的水量abcd，每轮中所有瓶子各自水量a、b、c、d</li>
+</ul>
+</li>
+<li>若干个属性：（这种情况就不好记录状态了）
+<ul>
+<li><del>例如素数环中的某个数是否用过</del>【不能称得上状态】=&gt; 应该是当前面的若干个数已经排好的，这个整体是状态，然后后面未知的可以直接套用前面的</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>详细：</p>
+<ul>
+<li>搜索的过程中重复搜索，然后将重复的放在数组中储存起来，在再次递归进来之后直接返回即可。</li>
+<li>在返回的时候要详细到递归进来的多个参数的情况。</li>
+<li>根据参数情况写出dp数组（也就是记忆化数组d）</li>
+<li>状态转移方程要根据实际情况，用<code>i j k</code>等参数来逐渐覆盖。</li>
+<li>对上一个状态转移方程中涉及到的<code>i j k</code>等参数利用循环来进行遍历。</li>
+</ul>
+<p><a href="https://www.luogu.com.cn/problem/P1464">https://www.luogu.com.cn/problem/P1464</a></p>
+<p>题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。</p>
+<p>注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 25</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+ll ta, tb, tc, dp[maxn][maxn][maxn];
+
+ll <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b, <span style="color:#66d9ef">int</span> c) {
+    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> b <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> c <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> b <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> c <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20</span>) <span style="color:#66d9ef">return</span> dfs(<span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">20</span>);
+    <span style="color:#66d9ef">if</span> (dp[a][b][c])  <span style="color:#66d9ef">return</span> dp[a][b][c];
+    <span style="color:#66d9ef">if</span> (a <span style="color:#f92672">&lt;</span> b <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> b <span style="color:#f92672">&lt;</span> c) <span style="color:#66d9ef">return</span> dp[a][b][c] <span style="color:#f92672">=</span> dfs(a, b, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> dfs(a, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> dfs(a, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c);
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> dp[a][b][c] <span style="color:#f92672">=</span> dfs(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b, c) <span style="color:#f92672">+</span> dfs(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c) <span style="color:#f92672">+</span> dfs(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> dfs(a<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, c<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">while</span> (scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%lld%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc) <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>(ta<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> tb<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> tc<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))
+      printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">w(%lld, %lld, %lld) = %lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ta, tb, tc, dfs(ta, tb, tc));
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p><a href="https://www.luogu.com.cn/problem/P1215">https://www.luogu.com.cn/problem/P1215</a></p>
+<p>题目大意：三个桶，abc，c满的，来回倒（每次都要倒到 再也倒不出 或者 再也倒不进），问当a空的情况下c有多少。</p>
+<blockquote>
+<p>参数：abc三个桶各自的当前容量，递归往下给进行倒，递归回来自动退回，倒回去了。</p>
+<p>状态：对于每一个桶内的量，用一个<code>v[][]</code>来判断当前这种情况是否来回已经倒过一次了</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">int</span> a, b, c, na, nb, nc, vis[<span style="color:#ae81ff">25</span>];
+
+<span style="color:#75715e">// 优化dfs
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> v[<span style="color:#ae81ff">25</span>][<span style="color:#ae81ff">25</span>][<span style="color:#ae81ff">25</span>];
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> z) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>x <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>vis[z]) vis[z] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (v[x][y][z]) <span style="color:#66d9ef">return</span>;
+    v[x][y][z] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (x) {
+        <span style="color:#66d9ef">if</span> (y <span style="color:#f92672">&lt;</span> b) {
+            <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span> b<span style="color:#f92672">-</span>y) dfs(x<span style="color:#f92672">-</span>(b<span style="color:#f92672">-</span>y), b, z);
+            <span style="color:#66d9ef">else</span> dfs(<span style="color:#ae81ff">0</span>, y<span style="color:#f92672">+</span>x, z);
+        }
+        <span style="color:#66d9ef">if</span> (z <span style="color:#f92672">&lt;</span> c) {
+            <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span> c<span style="color:#f92672">-</span>z) dfs(x<span style="color:#f92672">-</span>(c<span style="color:#f92672">-</span>z), y, c);
+            <span style="color:#66d9ef">else</span> dfs(<span style="color:#ae81ff">0</span>, y, z<span style="color:#f92672">+</span>x);
+        }
+    }
+    <span style="color:#66d9ef">if</span> (y) {
+        <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&lt;</span> a) {
+            <span style="color:#66d9ef">if</span> (y <span style="color:#f92672">&gt;</span> a<span style="color:#f92672">-</span>x) dfs(a, y<span style="color:#f92672">-</span>(a<span style="color:#f92672">-</span>x), z);
+            <span style="color:#66d9ef">else</span> dfs(x<span style="color:#f92672">+</span>y, <span style="color:#ae81ff">0</span>, z);
+        }
+        <span style="color:#66d9ef">if</span> (z <span style="color:#f92672">&lt;</span> c) {
+            <span style="color:#66d9ef">if</span> (y <span style="color:#f92672">&gt;</span> c<span style="color:#f92672">-</span>z) dfs(x, y<span style="color:#f92672">-</span>(c<span style="color:#f92672">-</span>z), c);
+            <span style="color:#66d9ef">else</span> dfs(x, <span style="color:#ae81ff">0</span>, z<span style="color:#f92672">+</span>y);
+        }
+    }
+    <span style="color:#66d9ef">if</span> (z) {
+        <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&lt;</span> a) {
+            <span style="color:#66d9ef">if</span> (z <span style="color:#f92672">&gt;</span> a<span style="color:#f92672">-</span>x) dfs(a, y, z<span style="color:#f92672">-</span>(a<span style="color:#f92672">-</span>x));
+            <span style="color:#66d9ef">else</span> dfs(x<span style="color:#f92672">+</span>z, y, <span style="color:#ae81ff">0</span>);
+        }
+        <span style="color:#66d9ef">if</span> (y <span style="color:#f92672">&lt;</span> b) {
+            <span style="color:#66d9ef">if</span> (z <span style="color:#f92672">&gt;</span> b<span style="color:#f92672">-</span>y) dfs(x, b, z<span style="color:#f92672">-</span>(b<span style="color:#f92672">-</span>y));
+            <span style="color:#66d9ef">else</span> dfs(x, y<span style="color:#f92672">+</span>z, <span style="color:#ae81ff">0</span>);
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b, <span style="color:#f92672">&amp;</span>c);
+    na <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, nb <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, nc <span style="color:#f92672">=</span> c;vis[c] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    dfs(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, c);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">if</span> (vis[i]) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, i);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="三dp解决">「三」DP解决</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1025">https://www.luogu.com.cn/problem/P1025</a></p>
+<p>题目大意：组合数【若干个数相加 组合成目标数】的方案总数</p>
+<p>解题思路：首先纯暴力DFS会</p>
+<ul>
+<li>「一」通过DFS+剪枝，在搜索的过程中减少搜索范围 =&gt; AC，但是558ms</li>
+<li>「三」DP解决 =&gt; 13ms</li>
+</ul>
+<p>「一」DFS+剪枝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> last, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> val){
+    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">=</span><span style="color:#f92672">=</span> n) {<span style="color:#66d9ef">if</span> (val <span style="color:#f92672">=</span><span style="color:#f92672">=</span> total) ans<span style="color:#f92672">+</span><span style="color:#f92672">+</span>; <span style="color:#66d9ef">return</span>;}
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> last; val<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>(n<span style="color:#f92672">-</span>l)<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span>total; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dfs(i, l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, val<span style="color:#f92672">+</span>i);
+}
+</code></pre></div><p>「三」利用dp实现</p>
+<ul>
+<li>定义dp数组：<code>dp[k][j]</code>表示在第k个数且和为j的时候总方案数</li>
+<li>状态转移方程：
+<ul>
+<li>结构：遍历第k个数，第k个数要选i作为储存的值，j作为容量。</li>
+<li><code>dp[k][j] += dp[k-1][j-i]</code></li>
+</ul>
+</li>
+<li>外层循环？？？：</li>
+</ul>
+<p>遍历的三个维度，分别为<code>要算进去的数的数值i</code>和<code>要算进去的数的数量k</code>和<code>要填充的其他位置的dp数组的值</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 伪代码
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">~</span> (<span style="color:#ae81ff">1</span>, M)) 
+  <span style="color:#66d9ef">for</span> (j <span style="color:#f92672">~</span> (i, M)) 
+    <span style="color:#66d9ef">for</span> (k <span style="color:#f92672">~</span> (<span style="color:#ae81ff">1</span>, n)) 
+      dp[k][j] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> dp[k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span>i];
+
+<span style="color:#75715e">// AC代码
+</span><span style="color:#75715e"></span>dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 首先初始化一下
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> total; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) <span style="color:#75715e">// 遍历第一维度的时候就不会再涉及到初始化的那个维度，不然会覆盖掉
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> total; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>k)
+            dp[k][j] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> dp[k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span>i];
+</code></pre></div><p><a href="https://www.luogu.com.cn/problem/P1586">https://www.luogu.com.cn/problem/P1586</a></p>
+<p>题目大意：组合数【小于等于4个数平方的和 组合成目标数】 的方案总和</p>
+<p>解题思路：</p>
+<ul>
+<li>「一」DFS+剪枝，会TLE</li>
+<li>「三」DP解决 =&gt; AC</li>
+</ul>
+<p>「一」DFS暴搜，但是会TLE。(有使用剪枝，剪枝的思路就是搜索的话，允许当前数重复，但是不允许往前到倒着搜。所以把当前搜的这个数last往下传，到下一层的遍历就要在这层基础上进行搜索)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dfs</span>(<span style="color:#66d9ef">int</span> last, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> val) {
+    <span style="color:#66d9ef">if</span> (val <span style="color:#f92672">=</span><span style="color:#f92672">=</span> a) {ans<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;<span style="color:#66d9ef">return</span>;}
+    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>) <span style="color:#66d9ef">return</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> last; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> sqrt(a<span style="color:#f92672">-</span>val); <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dfs(i, l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, val<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>i);
+}
+</code></pre></div><p>「三」DP：通过确定了需要两给维度，选择的<code>数的个数</code>和<code>当前所有选择的数的总和</code>作为dp的两个维度=&gt;</p>
+<ul>
+<li>定义dp数组：<code>dp[i][j]</code>表示在决策第i个数，并且累加的总和为j的方案总数</li>
+<li>状态转移方程：
+<ul>
+<li>结构：遍历第k个数，第k个数要选i作为储存的值，j作为容量。</li>
+<li><code>dp[k][j]++dp[k-1][j-i*i]</code>。</li>
+</ul>
+</li>
+<li>外层循环？？？：</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#66d9ef">for</span> (i<span style="color:#f92672">*</span>i <span style="color:#f92672">~</span> (<span style="color:#ae81ff">0</span>, m)) 
+  <span style="color:#66d9ef">for</span> (j <span style="color:#f92672">~</span> (i<span style="color:#f92672">*</span>i, m)) 
+    <span style="color:#66d9ef">for</span> (k <span style="color:#f92672">~</span> (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">4</span>)) 
+      dp[k][j] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> dp[k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span>i<span style="color:#f92672">*</span>i];<span style="color:#75715e">// 对于dfs的转换就是把原来没有规则的搜索直接通过遍历，给提前算好了，摆在数组里，供使用
+</span><span style="color:#75715e"></span><span style="color:#75715e">// AC代码
+</span><span style="color:#75715e"></span>dp[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">*</span>i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> M; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) <span style="color:#75715e">// 遍历第一维度的时候就不会再涉及到初始化的那个维度，不然会覆盖掉
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> i<span style="color:#f92672">*</span>i; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> M; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>k)
+            dp[k][j] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> dp[k<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span>i<span style="color:#f92672">*</span>i];
+</code></pre></div><p><a href="https://www.luogu.com.cn/problem/P1466">https://www.luogu.com.cn/problem/P1466</a></p>
+<p>题目大意：组合数【不限个数 组合成目标数】的方案总和</p>
+<p>「一」DFS暴搜，但是会TLE。</p>
+<p>「三」DP解决</p>
+<ul>
+<li>定义dp数组：<code>dp[i][j]</code>表示在决策第i个数，并且累加的总和为j的方案总数</li>
+<li>状态转移方程：
+<ul>
+<li>结构：在决策第i个数的时候，他的方案总数等于决策上一个数的情况下，选取这个数和不选取这个数的情况和。</li>
+<li>写法：<code>dp[i][j]=dp[i-1][j]+dp[i-1][j-i]</code></li>
+</ul>
+</li>
+<li>外层循环：遍历所有的数，遍历到某数的时候就是对该数做决策的时候，需要类似背包，从上限容量一直往下遍历填充</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">for</span> (i <span style="color:#f92672">~</span> (<span style="color:#ae81ff">1</span>, N)) 
+  <span style="color:#66d9ef">for</span> (j <span style="color:#f92672">~</span> (i, M))
+    dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j]<span style="color:#f92672">+</span>dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span>i]
+<span style="color:#75715e">// AC代码
+</span><span style="color:#75715e"></span>dp[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> nn<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+        <span style="color:#66d9ef">if</span> (j <span style="color:#f92672">&gt;</span> i) dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j]<span style="color:#f92672">+</span>dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j<span style="color:#f92672">-</span>i];
+        <span style="color:#66d9ef">else</span> dp[i][j] <span style="color:#f92672">=</span> dp[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>][j];
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

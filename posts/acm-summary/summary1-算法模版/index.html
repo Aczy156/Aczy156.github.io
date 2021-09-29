@@ -106,6 +106,11 @@ scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span
 </span><span style="color:#75715e"></span>string str1, str2;
 getline(cin, str1); <span style="color:#75715e">// 注意，出现了getline之后，单独使用cin会失效
 </span><span style="color:#75715e"></span>getline(cin, str2);
+
+<span style="color:#75715e">// 解决方案
+</span><span style="color:#75715e"></span>cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a;
+getchar(); <span style="color:#75715e">// 中间添加getchar将多余的读了进去就好了
+</span><span style="color:#75715e"></span>getline(cin, b);
 </code></pre></div><p>字符串不告诉有多少，读着读着就消失了 scanf</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">char</span> s[maxn];
 <span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, s)) {
@@ -140,6 +145,11 @@ node <span style="color:#f92672">*</span> point_node <span style="color:#f92672"
 node <span style="color:#f92672">*</span> point_node3 <span style="color:#f92672">=</span> (node<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(node)); <span style="color:#75715e">// C写法，利用malloc
 </span><span style="color:#75715e"></span>pnode point_node4 <span style="color:#f92672">=</span> (pnode)malloc(<span style="color:#66d9ef">sizeof</span>(node)); <span style="color:#75715e">// C写法，利用malloc然后利用typedef来进行简化
 </span><span style="color:#75715e"></span>pnode point_node5 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node {param1, param2};
+</code></pre></div><p>其他写法：（对于之前声明的，可以先判断是否为NULL，如果为NULL的话，直接给他赋一个值就好）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">if</span> (nw <span style="color:#f92672">=</span><span style="color:#f92672">=</span> NULL) {
+  nw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node(); <span style="color:#75715e">// 在为NULL的情况下，直接new一个新的节点
+</span><span style="color:#75715e"></span>  nw.l <span style="color:#f92672">=</span> nw.r <span style="color:#f92672">=</span> NULL;nw.val <span style="color:#f92672">=</span> val;
+}
 </code></pre></div><h3 id="io">io</h3>
 <p>快速读入</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">read</span>()

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>PTA 1000-1099 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="PTA 1000-1099 | Aczy156" />
+	<meta name="twitter:title" content="PTA 1000-1099 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="PTA 1000-1099 | Aczy156" />
+	<meta name="application-name" content="PTA 1000-1099 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="PTA 1000-1099" />
+<meta property="og:description" content="Java Web 最基础JavaWeb：Web-INF工程 过程：
+ 直接创建基础Java项目 利用创建出来的空Java项目，添加「框架支持」“Add Frameworks Support” 利用Java EE中的Web Application 即可构建最最最基本的Java web框架  易错点：
+ 空工程，没有依赖/或者类似maven的包管理工具，所以依赖需要手动倒入，各种jar包。 两种配置servlet的写法中：  利用.xml配置文件的写法，容易忘记写servlet-class标签，这样就无法响应servlet 利用标签的写法，会利用name属性去找对应的类，找不到对应的类就会出问题，直接在tomcat容器里跑不起来。   tomcat配置内容，artifact配置注意会默认有war_exploded这个出现在链接里，也即是最后打包之后放在tomcat里边的内容，链接里要加入的。如果想删除，不仅要在server里边删除，也要在「deployment」部署里边删除  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/project/java-web/" />
+<meta property="article:published_time" content="2020-04-08T20:42:26+08:00" />
+<meta property="article:modified_time" content="2020-04-08T20:42:26+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="PTA 1000-1099"/>
+<meta name="twitter:description" content="Java Web 最基础JavaWeb：Web-INF工程 过程：
+ 直接创建基础Java项目 利用创建出来的空Java项目，添加「框架支持」“Add Frameworks Support” 利用Java EE中的Web Application 即可构建最最最基本的Java web框架  易错点：
+ 空工程，没有依赖/或者类似maven的包管理工具，所以依赖需要手动倒入，各种jar包。 两种配置servlet的写法中：  利用.xml配置文件的写法，容易忘记写servlet-class标签，这样就无法响应servlet 利用标签的写法，会利用name属性去找对应的类，找不到对应的类就会出问题，直接在tomcat容器里跑不起来。   tomcat配置内容，artifact配置注意会默认有war_exploded这个出现在链接里，也即是最后打包之后放在tomcat里边的内容，链接里要加入的。如果想删除，不仅要在server里边删除，也要在「deployment」部署里边删除  "/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<article>
+		<div class="title">
+			<h1 class="title">PTA 1000-1099</h1>
+		</div>
+		
+
+		<section class="body">
+			<h2 id="java-web">Java Web</h2>
+<h3 id="最基础javawebweb-inf工程">最基础JavaWeb：Web-INF工程</h3>
+<p>过程：</p>
+<ul>
+<li>直接创建基础Java项目</li>
+<li>利用创建出来的空Java项目，添加「框架支持」“Add Frameworks Support”</li>
+<li>利用Java EE中的Web Application 即可构建最最最基本的Java web框架</li>
+</ul>
+<p>易错点：</p>
+<ul>
+<li>空工程，没有依赖/或者类似maven的包管理工具，所以依赖需要手动倒入，各种jar包。</li>
+<li>两种配置servlet的写法中：
+<ul>
+<li>利用.xml配置文件的写法，容易忘记写servlet-class标签，这样就无法响应servlet</li>
+<li>利用标签的写法，会利用name属性去找对应的类，找不到对应的类就会出问题，直接在tomcat容器里跑不起来。</li>
+</ul>
+</li>
+<li>tomcat配置内容，artifact配置注意会默认有war_exploded这个出现在链接里，也即是最后打包之后放在tomcat里边的内容，链接里要加入的。如果想删除，不仅要在server里边删除，也要在「deployment」部署里边删除</li>
+</ul>
+
+		</section>
+
+		<div class="meta">Posted on Apr 8, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/java">Java</a></li>
+					
+					<li><a href="/tags/web">Web</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>
