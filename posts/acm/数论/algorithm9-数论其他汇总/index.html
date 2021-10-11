@@ -22,7 +22,11 @@
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm9 数论其他汇总" />
 <meta property="og:description" content="数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
-题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。" />
+题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。
+https://www.luogu.com.cn/problem/P1372
+题目大意：给定1～n，求这里边任意k个数的最大公约数是多少
+思路：最基本的就是这k个数是相互之间按照ans*1， ans*2……ans*k这样得到的k个数，所以这k个数之间的最大公约数必定为ans*1。所以想要得到这个ans，就可以通过令ans*k=n =&gt; ans=n/k。
+#include &lt;iostream&gt;using namespace std; int n, k; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;k); printf(&#34;%d\n&#34;, n/k); return 0; } " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
@@ -30,7 +34,11 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm9 数论其他汇总"/>
 <meta name="twitter:description" content="数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
-题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。"/>
+题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。
+https://www.luogu.com.cn/problem/P1372
+题目大意：给定1～n，求这里边任意k个数的最大公约数是多少
+思路：最基本的就是这k个数是相互之间按照ans*1， ans*2……ans*k这样得到的k个数，所以这k个数之间的最大公约数必定为ans*1。所以想要得到这个ans，就可以通过令ans*k=n =&gt; ans=n/k。
+#include &lt;iostream&gt;using namespace std; int n, k; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;k); printf(&#34;%d\n&#34;, n/k); return 0; } "/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -69,7 +77,19 @@ MathJax.Hub.Config({
 <p><a href="https://www.luogu.com.cn/problem/P1403">https://www.luogu.com.cn/problem/P1403</a></p>
 <p>题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。</p>
 <p><img src="https://cdn.luogu.com.cn/upload/pic/53063.png" alt="img"></p>
+<p><a href="https://www.luogu.com.cn/problem/P1372">https://www.luogu.com.cn/problem/P1372</a></p>
+<p>题目大意：给定1～n，求这里边任意k个数的最大公约数是多少</p>
+<p>思路：最基本的就是这k个数是相互之间按照<code>ans*1， ans*2……ans*k</code>这样得到的k个数，所以这k个数之间的最大公约数必定为<code>ans*1</code>。所以想要得到这个ans，就可以通过令<code>ans*k=n =&gt; ans=n/k</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">int</span> n, k;
 
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>k);
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n<span style="color:#f92672">/</span>k);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
 		</section>
 
 		<div class="meta">Posted on Feb 1, 2021</div>

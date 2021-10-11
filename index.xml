@@ -807,7 +807,11 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</guid>
       <description>数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
-题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。</description>
+题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。
+https://www.luogu.com.cn/problem/P1372
+题目大意：给定1～n，求这里边任意k个数的最大公约数是多少
+思路：最基本的就是这k个数是相互之间按照ans*1， ans*2……ans*k这样得到的k个数，所以这k个数之间的最大公约数必定为ans*1。所以想要得到这个ans，就可以通过令ans*k=n =&amp;gt; ans=n/k。
+#include &amp;lt;iostream&amp;gt;using namespace std; int n, k; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;k); printf(&amp;#34;%d\n&amp;#34;, n/k); return 0; } </description>
     </item>
     
     <item>
@@ -958,11 +962,11 @@ BGA：intel所有低压CPU采用的封装方式 BGA的全称叫做“ball grid a
 几个位置：
  工作区  版本库   暂存区 仓库  本地仓库 远端仓库    基础语法 git init 【修改】初始化当前目录变成可以用git进行接管的文件目录。在整个工作区中会产生一个.git文件，存放版本库。
 git add . git add README.md 【移动】将该目录的所有文件/README.md文件添加到缓存区
-（注意，虽然移动到了暂缓区，但是还没有被提交到本地仓库，因此在add之后，查看log，还是没有记录这个版本的，包括查看reflog，也是没有这个版本的）
+（注意，虽然移动到了暂缓区，但是还没有被提交到本地仓库，因此在add之后，查看log，还是没有记录这个版本的「此时的status显示红色」，包括查看reflog，也是没有这个版本的）然后将文件加入工作区之后「此时status显示绿色」
 git commit -m &amp;#34;xxx 提交到本地仓库&amp;#34; 【移动】将缓存区的文件提交到本地仓库
 git status 【查看】
  看缓存区是否还有尚未提交到本地仓库的文件 看缓存区文件里的内容和本地仓库文件里的内容是否有不一致的  git diff README.md 【查看】看某个文件不一致在哪里，回来类似于cat语句将不一样的地方输出出来
-git log git log -pretty=oneline 【查看】看所有的缓存区提交到本地仓库的记录（通过添加参数保证所有的内容都在一行内显示）
+git log git log --pretty=oneline 【查看】看所有的缓存区提交到本地仓库的记录（通过添加参数保证所有的内容都在一行内显示）
 git reflog 【查看】看到所有本地仓库的历史记录的版本号，可以利用获取到的版本好来随意移动到本地仓库的对应版本
 git reset --hard HEAD^ git reset --hard HEAD^^ git reset --hard HEAD~100 git reset --hard 6fcfc89 【前后移动+修改】</description>
     </item>

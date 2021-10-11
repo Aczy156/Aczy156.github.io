@@ -794,7 +794,11 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</guid>
       <description>数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
-题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。</description>
+题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。
+https://www.luogu.com.cn/problem/P1372
+题目大意：给定1～n，求这里边任意k个数的最大公约数是多少
+思路：最基本的就是这k个数是相互之间按照ans*1， ans*2……ans*k这样得到的k个数，所以这k个数之间的最大公约数必定为ans*1。所以想要得到这个ans，就可以通过令ans*k=n =&amp;gt; ans=n/k。
+#include &amp;lt;iostream&amp;gt;using namespace std; int n, k; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;k); printf(&amp;#34;%d\n&amp;#34;, n/k); return 0; } </description>
     </item>
     
     <item>
