@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm7 分治算法 &amp; 快速幂 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm7 分治算法 &amp; 快速幂" />
-<meta property="og:description" content="分治问题 最典型：分形 &amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
+<meta property="og:description" content="[TOC]
+分治问题 最典型：分形 &amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
  矩阵的分治：https://www.luogu.com.cn/problem/P5461
 题目大意：正方形矩阵，分成四块，左上全赦免（为零），然后对剩下其他部分接着分成四块，一直这样下去。输出最后矩阵
 #include &lt;iostream&gt;using namespace std; #define maxl 1030int n, a[maxl][maxl]; #include &lt;cstring&gt;#define cl(a, b) memset(a, b, sizeof(a))#include &lt;cmath&gt; void draw(int x, int y, int h) { if (h == 2) {a[x&#43;1][y] = a[x][y&#43;1] = a[x&#43;1][y&#43;1] = 1;return;} int nowh = h&gt;&gt;1; draw(x&#43;nowh, y, nowh); draw(x, y&#43;nowh, nowh); draw(x&#43;nowh, y&#43;nowh, nowh); } void print() { for (int i = 1; i &lt;= n; &#43;&#43;i) { for (int j = 1; j &lt;= n; &#43;&#43;j) { printf(&#34;%d &#34;, a[i][j]); } printf(&#34;\n&#34;); } } int main() { scanf(&#34;%d&#34;, &amp;n); n = pow(2, n); cl(a, 0); // init  draw(1, 1, n); // draw  print(); // print  return 0; } 分形-谢尔宾斯基三角：https://www." />
@@ -31,7 +32,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm7 分治算法 &amp; 快速幂"/>
-<meta name="twitter:description" content="分治问题 最典型：分形 &amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
+<meta name="twitter:description" content="[TOC]
+分治问题 最典型：分形 &amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
  矩阵的分治：https://www.luogu.com.cn/problem/P5461
 题目大意：正方形矩阵，分成四块，左上全赦免（为零），然后对剩下其他部分接着分成四块，一直这样下去。输出最后矩阵
 #include &lt;iostream&gt;using namespace std; #define maxl 1030int n, a[maxl][maxl]; #include &lt;cstring&gt;#define cl(a, b) memset(a, b, sizeof(a))#include &lt;cmath&gt; void draw(int x, int y, int h) { if (h == 2) {a[x&#43;1][y] = a[x][y&#43;1] = a[x&#43;1][y&#43;1] = 1;return;} int nowh = h&gt;&gt;1; draw(x&#43;nowh, y, nowh); draw(x, y&#43;nowh, nowh); draw(x&#43;nowh, y&#43;nowh, nowh); } void print() { for (int i = 1; i &lt;= n; &#43;&#43;i) { for (int j = 1; j &lt;= n; &#43;&#43;j) { printf(&#34;%d &#34;, a[i][j]); } printf(&#34;\n&#34;); } } int main() { scanf(&#34;%d&#34;, &amp;n); n = pow(2, n); cl(a, 0); // init  draw(1, 1, n); // draw  print(); // print  return 0; } 分形-谢尔宾斯基三角：https://www."/>
@@ -68,7 +70,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="分治问题">分治问题</h2>
+			<p>[TOC]</p>
+<h2 id="分治问题">分治问题</h2>
 <h3 id="最典型分形--矩阵的分治">最典型：分形 &amp; 矩阵的分治</h3>
 <blockquote>
 <p>矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）</p>

@@ -18,7 +18,8 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</guid>
-      <description>高精度 &amp;amp; 大数运算 （一）高精度除法-高精度除低精度 &amp;lt; 高精度加法 &amp;lt; 高精度乘法 &amp;lt; 高精度减法 &amp;lt; 高精度除法-高精度除高精度
+      <description>[TOC]
+高精度 &amp;amp; 大数运算 （一）高精度除法-高精度除低精度 &amp;lt; 高精度加法 &amp;lt; 高精度乘法 &amp;lt; 高精度减法 &amp;lt; 高精度除法-高精度除高精度
 （二）语言：python，Java的四则运算自带高精度；C/C++需要利用字符串/字符数组来读取大数并开数组存放然后通过模拟竖式运算来计算。
 大数加法 https://www.luogu.com.cn/problem/P1601
 1、读入用字符数组读入。
@@ -33,7 +34,8 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</guid>
-      <description>数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
+      <description>[TOC]
+数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
 题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。
 https://www.luogu.com.cn/problem/P1372
 题目大意：给定1～n，求这里边任意k个数的最大公约数是多少
@@ -47,7 +49,8 @@ https://www.luogu.com.cn/problem/P1372
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
-      <description>数论 数学基础  常用：
+      <description>[TOC]
+数论 数学基础  常用：
  进制转换  数学思维：
 1、找到一段序列中出现奇数次/偶数次的
 2、找到一段区间中可以用平方差计算得到的个数
@@ -62,7 +65,8 @@ scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {sc
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</guid>
-      <description>数论基础 最大公约数gcd int gcd(int a,int b) { return (b&amp;gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
+      <description>[TOC]
+数论基础 最大公约数gcd int gcd(int a,int b) { return (b&amp;gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
 int gcd(int a, int b) { return (b&amp;lt;=0)?a:gcd(b, a%b); } 最大公约数[gcd]与最小公倍数[gld]乘积 == 这两个数的乘积 a*b = gcd(a, b)*gld()
 最小公倍数[gld] 可以利用最大公约数倒推回去，也就是gld(a, b)=a*b/gcd(a, b)
 质数 判断1～n中的所有质数
@@ -79,7 +83,8 @@ prime是质数列表，isprime
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</guid>
-      <description>组合数 基本的排列组合数 A(n, m)和C(n, m)
+      <description>[TOC]
+组合数 基本的排列组合数 A(n, m)和C(n, m)
 第二类Stirling数 数学意义：把n个数划分成k个集合
 实际意义：将n个球分到k个相同的盒子
 // 递归写法 ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow(2, (n-1)*1.0)-1; else return stirling(n-1, k-1)+k*stirling(n-1, k); } // 非递归写法  第二类Stirling数的变形 数学意义：把n个数划分成k个不同的集合

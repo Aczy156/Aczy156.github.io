@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Dp回文串问题整理 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Dp回文串问题整理" />
-<meta property="og:description" content="回文串dp问题
+<meta property="og:description" content="[TOC]
+回文串dp问题
 判断最长回文串  bool dp[i][j]表示从[i,j]这一段是否为回文串 状态转移方程：dp[i][j] = (s[i] == s[j] &amp;&amp; (j-i == 1||dp[i&#43;1]dp[j-1]))?true:false (j &gt; i) j-i == 1 是对aa这种两个字符呈对称形式的情况  // // main.cpp // 5回文子串 // // Created by 陈冉飞 on 2020/4/6. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &lt;iostream&gt;using namespace std; #define maxn 10010char s[maxn]; int main(int argc, const char * argv[]) { scanf(&#34;%s&#34;,s); int len = strlen(s),ans = 0; bool dp[len][len]; for (int i = 0; i &lt; len; i&#43;&#43;) dp[i][i] = true; for (int j = 1; j &lt; len; j&#43;&#43;) for (int i = 0; i &lt; j; i&#43;&#43;) if (s[i] == s[j] &amp;&amp; (j-i == 1 || dp[i&#43;1][j-1])) {dp[i][j] = true;ans = max(ans,j-i&#43;1);} else dp[i][j] = false; printf(&#34;%d\n&#34;,ans); return 0; } 以回文串形式抽取字串的最小次数  dp[i][j]表示区间[i,j]的最少抽取次数 状态转移方程 if (s[i] == s[j]) dp[i][j] = (j-i == 1)?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/other/o-dp%E5%9B%9E%E6%96%87%E4%B8%B2%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/" />
@@ -29,7 +30,8 @@
 <meta property="article:modified_time" content="2020-04-08T20:41:58+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dp回文串问题整理"/>
-<meta name="twitter:description" content="回文串dp问题
+<meta name="twitter:description" content="[TOC]
+回文串dp问题
 判断最长回文串  bool dp[i][j]表示从[i,j]这一段是否为回文串 状态转移方程：dp[i][j] = (s[i] == s[j] &amp;&amp; (j-i == 1||dp[i&#43;1]dp[j-1]))?true:false (j &gt; i) j-i == 1 是对aa这种两个字符呈对称形式的情况  // // main.cpp // 5回文子串 // // Created by 陈冉飞 on 2020/4/6. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &lt;iostream&gt;using namespace std; #define maxn 10010char s[maxn]; int main(int argc, const char * argv[]) { scanf(&#34;%s&#34;,s); int len = strlen(s),ans = 0; bool dp[len][len]; for (int i = 0; i &lt; len; i&#43;&#43;) dp[i][i] = true; for (int j = 1; j &lt; len; j&#43;&#43;) for (int i = 0; i &lt; j; i&#43;&#43;) if (s[i] == s[j] &amp;&amp; (j-i == 1 || dp[i&#43;1][j-1])) {dp[i][j] = true;ans = max(ans,j-i&#43;1);} else dp[i][j] = false; printf(&#34;%d\n&#34;,ans); return 0; } 以回文串形式抽取字串的最小次数  dp[i][j]表示区间[i,j]的最少抽取次数 状态转移方程 if (s[i] == s[j]) dp[i][j] = (j-i == 1)?"/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
@@ -64,7 +66,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<p><strong>回文串dp问题</strong></p>
+			<p>[TOC]</p>
+<p><strong>回文串dp问题</strong></p>
 <h2 id="判断最长回文串">判断最长回文串</h2>
 <ul>
 <li><code>bool dp[i][j]</code>表示从[i,j]这一段是否为回文串</li>

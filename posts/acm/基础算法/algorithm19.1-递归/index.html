@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm19.1 递归 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm19.1 递归" />
-<meta property="og:description" content="递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
+<meta property="og:description" content="[TOC]
+递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
 两种方案：
  第一种，先输入进来，然后整体进行递归，递归的参数就是这个整体字串 第二种，边输入边递归，这样就可以利用一些getchar，char字符来进行输入的直接判断（例如如果字串一部分为ADD567，如果不知道长度的的话还有遍历判断，如果直接边输入边解析，那就可以直接利用cin来直接分割，cin&raquo;字串&raquo;数字，就自动分割了）   指令移动 https://www.luogu.com.cn/problem/P1322
 #include &lt;iostream&gt;using namespace std; int solve() { char c; string tp; int num, ans, d; while (cin&gt;&gt;c) { if (c == &#39;]&#39;) break; cin&gt;&gt;tp&gt;&gt;num; if (c == &#39;R&#39;) { d = getchar(); ans &#43;= num*solve(); d = getchar(); } if (c == &#39;B&#39;) d = getchar(), ans -= num; if (c == &#39;F&#39;) d = getchar(), ans &#43;= num; if (d == int(&#39;]&#39;)) break; } return ans; } int main() { printf(&#34;%d\n&#34;, solve()); return 0; } " />
@@ -31,7 +32,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm19.1 递归"/>
-<meta name="twitter:description" content="递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
+<meta name="twitter:description" content="[TOC]
+递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
 两种方案：
  第一种，先输入进来，然后整体进行递归，递归的参数就是这个整体字串 第二种，边输入边递归，这样就可以利用一些getchar，char字符来进行输入的直接判断（例如如果字串一部分为ADD567，如果不知道长度的的话还有遍历判断，如果直接边输入边解析，那就可以直接利用cin来直接分割，cin&raquo;字串&raquo;数字，就自动分割了）   指令移动 https://www.luogu.com.cn/problem/P1322
 #include &lt;iostream&gt;using namespace std; int solve() { char c; string tp; int num, ans, d; while (cin&gt;&gt;c) { if (c == &#39;]&#39;) break; cin&gt;&gt;tp&gt;&gt;num; if (c == &#39;R&#39;) { d = getchar(); ans &#43;= num*solve(); d = getchar(); } if (c == &#39;B&#39;) d = getchar(), ans -= num; if (c == &#39;F&#39;) d = getchar(), ans &#43;= num; if (d == int(&#39;]&#39;)) break; } return ans; } int main() { printf(&#34;%d\n&#34;, solve()); return 0; } "/>
@@ -68,7 +70,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="递归">递归</h2>
+			<p>[TOC]</p>
+<h2 id="递归">递归</h2>
 <blockquote>
 <p>主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】</p>
 <p>两种方案：</p>

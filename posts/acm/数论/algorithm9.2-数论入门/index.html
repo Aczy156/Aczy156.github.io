@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm9.2 数论入门 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm9.2 数论入门" />
-<meta property="og:description" content="数论基础 最大公约数gcd int gcd(int a,int b) { return (b&gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
+<meta property="og:description" content="[TOC]
+数论基础 最大公约数gcd int gcd(int a,int b) { return (b&gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
 int gcd(int a, int b) { return (b&lt;=0)?a:gcd(b, a%b); } 最大公约数[gcd]与最小公倍数[gld]乘积 == 这两个数的乘积 a*b = gcd(a, b)*gld()
 最小公倍数[gld] 可以利用最大公约数倒推回去，也就是gld(a, b)=a*b/gcd(a, b)
 质数 判断1～n中的所有质数
@@ -36,7 +37,8 @@ prime是质数列表，isprime
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm9.2 数论入门"/>
-<meta name="twitter:description" content="数论基础 最大公约数gcd int gcd(int a,int b) { return (b&gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
+<meta name="twitter:description" content="[TOC]
+数论基础 最大公约数gcd int gcd(int a,int b) { return (b&gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
 int gcd(int a, int b) { return (b&lt;=0)?a:gcd(b, a%b); } 最大公约数[gcd]与最小公倍数[gld]乘积 == 这两个数的乘积 a*b = gcd(a, b)*gld()
 最小公倍数[gld] 可以利用最大公约数倒推回去，也就是gld(a, b)=a*b/gcd(a, b)
 质数 判断1～n中的所有质数
@@ -78,7 +80,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="数论基础">数论基础</h2>
+			<p>[TOC]</p>
+<h2 id="数论基础">数论基础</h2>
 <h3 id="最大公约数gcd">最大公约数gcd</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">gcd</span>(<span style="color:#66d9ef">int</span> a,<span style="color:#66d9ef">int</span> b) { <span style="color:#66d9ef">return</span> (b<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)<span style="color:#f92672">?</span>gcd(b, a<span style="color:#f92672">%</span>b)<span style="color:#f92672">:</span>a; }
 </code></pre></div><p>利用的就是欧几里得原理</p>

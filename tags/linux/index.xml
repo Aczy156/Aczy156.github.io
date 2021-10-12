@@ -18,7 +18,8 @@
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</guid>
-      <description>Linux常见配置 查看配置 - neofetch  mac: brew install neofetch centos: sudo dnf install neofetch  terminal 水平分割 - tmux 切换文件权限 - chown 切换单个文件权限：chown 用户:群组 path_of_file
+      <description>[TOC]
+Linux常见配置 查看配置 - neofetch  mac: brew install neofetch centos: sudo dnf install neofetch  terminal 水平分割 - tmux 切换文件权限 - chown 切换单个文件权限：chown 用户:群组 path_of_file
 eg: chown aczy156:staff orange
 递归切换这个file和里边递归的所有file
 eg:</description>
@@ -30,7 +31,8 @@ eg:</description>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</guid>
-      <description>综合了https://blog.csdn.net/wojiaopanpan/article/details/7286430 博客的一些指令以及一些过去的一些积累。
+      <description>[TOC]
+ 综合了https://blog.csdn.net/wojiaopanpan/article/details/7286430 博客的一些指令以及一些过去的一些积累。
  基本指令 mv cp ls (ls -l 查看该目录下面文件的具体信息，包括权限归属) chown 切换权限归属 chown -R aczy156 file-name （-R为当前目录以及这个目录下边的所有文件） chroot chroot /mnt，在配置arch并利用arch安装驱动系统安装好后，把root权交给新安装的那个系统的一个操作 chmod +x 目录 给目录 cd cd 空，默认进入root文件，也就是相当于cd ～ cd .. 两个点为进入上一级目录 pwd 当前目录的path open 打开某个文件夹（open . 打开当前的目录的文件夹） mkdir vim fdisk cfdisk df -hl 看所有的存储空间使用情况 mount mkfs :q（退出模式） :wq move rm []删除 rm -rf xx [删除目录的,也就是文件夹]删除某个文件 cd rm rf .删除所有文件 xrandr 不加参数：查看分辨率 cvt 1024 768 参数为分辨率的x和y
  日常使用 os config file 系统文件 config.</description>
     </item>

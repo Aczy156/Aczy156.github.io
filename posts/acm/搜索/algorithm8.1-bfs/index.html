@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm8.1 BFS | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm8.1 BFS" />
-<meta property="og:description" content="bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
+<meta property="og:description" content="[TOC]
+bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
 题目大意：最多可到达的格点数
 #include &lt;iostream&gt;using namespace std; #define maxn 23int n, m, dir[4][2]={{0, 1}, {0, -1}, {1, 0}, {-1, 0}}, ans=1, vis[maxn][maxn]; char mp[maxn][maxn]; #include &lt;queue&gt;struct node{ int x, y; node(int x,int y): x(x), y(y){} }; queue&lt;node&gt; q; void bfs(int x, int y) { q.push(node(x, y)); vis[x][y] = 1; while (!q.empty()) { node nw = q.front();q.pop(); for (int i = 0; i &lt; 4; &#43;&#43;i) { int nx = nw." />
 <meta property="og:type" content="article" />
@@ -30,7 +31,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm8.1 BFS"/>
-<meta name="twitter:description" content="bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
+<meta name="twitter:description" content="[TOC]
+bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
 题目大意：最多可到达的格点数
 #include &lt;iostream&gt;using namespace std; #define maxn 23int n, m, dir[4][2]={{0, 1}, {0, -1}, {1, 0}, {-1, 0}}, ans=1, vis[maxn][maxn]; char mp[maxn][maxn]; #include &lt;queue&gt;struct node{ int x, y; node(int x,int y): x(x), y(y){} }; queue&lt;node&gt; q; void bfs(int x, int y) { q.push(node(x, y)); vis[x][y] = 1; while (!q.empty()) { node nw = q.front();q.pop(); for (int i = 0; i &lt; 4; &#43;&#43;i) { int nx = nw."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
@@ -66,7 +68,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="bfs">bfs</h2>
+			<p>[TOC]</p>
+<h2 id="bfs">bfs</h2>
 <h3 id="模版-最多可到达">[模版] 最多可到达</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1683">https://www.luogu.com.cn/problem/P1683</a></p>
 <p>题目大意：最多可到达的格点数</p>

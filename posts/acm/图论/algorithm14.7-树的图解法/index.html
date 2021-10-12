@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm14.7 树的图解法 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm14.7 树的图解法" />
-<meta property="og:description" content="树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
+<meta property="og:description" content="[TOC]
+树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
  树的深度：【图中其他所有点】 离 【根节点对应的图中的节点】 距离最远的 树的宽度：图中距离 【根节点对应的图中的节点】 各个不同距离中，个数最多的点（例如，距离为1的点有2个，距离为2的点有3个，距离为3的点有1个，所以宽度为3） LCA问题：可以通过图论中的最短路来解决=》floyd直接暴力出来   基础转换 https://www.luogu.com.cn/problem/P3884
 #include &lt;iostream&gt;using namespace std; const int maxn = 105; const int inf = 1e8&#43;9; int n, d[maxn][maxn], ta, tb, depth, w[maxn], width = 1, ans; int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) if (i != j) d[i][j] = inf; for (int i = 1; i &lt; n; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); d[ta][tb] = 1; d[tb][ta] = 2; } for (int k = 1; k &lt;= n; &#43;&#43;k) for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) d[i][j] = min(d[i][j], d[i][k]&#43;d[k][j]); scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); for (int i = 1; i &lt;= n; &#43;&#43;i) { depth = max(depth, d[1][i]); w[d[1][i]]&#43;&#43;; } for (int i = 1; i &lt;= depth&#43;1; &#43;&#43;i) width = max(width, w[i]); printf(&#34;%d\n%d\n%d\n&#34;, depth&#43;1, width, d[ta][tb]); return 0; } " />
 <meta property="og:type" content="article" />
@@ -30,7 +31,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm14.7 树的图解法"/>
-<meta name="twitter:description" content="树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
+<meta name="twitter:description" content="[TOC]
+树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
  树的深度：【图中其他所有点】 离 【根节点对应的图中的节点】 距离最远的 树的宽度：图中距离 【根节点对应的图中的节点】 各个不同距离中，个数最多的点（例如，距离为1的点有2个，距离为2的点有3个，距离为3的点有1个，所以宽度为3） LCA问题：可以通过图论中的最短路来解决=》floyd直接暴力出来   基础转换 https://www.luogu.com.cn/problem/P3884
 #include &lt;iostream&gt;using namespace std; const int maxn = 105; const int inf = 1e8&#43;9; int n, d[maxn][maxn], ta, tb, depth, w[maxn], width = 1, ans; int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) if (i != j) d[i][j] = inf; for (int i = 1; i &lt; n; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); d[ta][tb] = 1; d[tb][ta] = 2; } for (int k = 1; k &lt;= n; &#43;&#43;k) for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) d[i][j] = min(d[i][j], d[i][k]&#43;d[k][j]); scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); for (int i = 1; i &lt;= n; &#43;&#43;i) { depth = max(depth, d[1][i]); w[d[1][i]]&#43;&#43;; } for (int i = 1; i &lt;= depth&#43;1; &#43;&#43;i) width = max(width, w[i]); printf(&#34;%d\n%d\n%d\n&#34;, depth&#43;1, width, d[ta][tb]); return 0; } "/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
@@ -66,7 +68,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="树的图解法">树的图解法</h2>
+			<p>[TOC]</p>
+<h2 id="树的图解法">树的图解法</h2>
 <blockquote>
 <p>树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】</p>
 <ul>

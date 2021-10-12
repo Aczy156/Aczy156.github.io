@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm11.6 数据结构 线性表 队列 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm11.6 数据结构 线性表 队列" />
-<meta property="og:description" content="数据结构 线性表 - 队列  1、STL库中的queue
+<meta property="og:description" content="[TOC]
+数据结构 线性表 - 队列  1、STL库中的queue
 2、手写队列
  利用「顺序表」实现：用数组来模拟容器，用front来作为队首，用rear来作为队尾 利用「链接表」实现：用链表实现  链首做为队首，链尾做为队尾：队尾添加O(n)，查看队首O(1)，栈顶移除O(1) 链首做为队尾，链尾做为队首：栈顶添加O(1)，查看栈顶O(n)，栈顶移除O(n)    3、利用「顺序表」手写队列的溢出问题
  假溢出「仅限于用顺序表/数组实现的队列」  出现的原因：由于队首front和队尾rear两个索引在一直往后推延，这样前面用过的地址空间就无法重复使用，在量巨大的情况下就会导致超过地址本来可承受的。 解决方案：通过搞成循环队列，这样原来用过的地址就可以进行重复利用，也不用回收   真溢出「仅限于循环队列，无论是哪种方式实现的」  出现的原因：循环队列不是普通队列的固定长度，所以一直往里边添加的话总会有溢出的时候。     " />
@@ -31,7 +32,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm11.6 数据结构 线性表 队列"/>
-<meta name="twitter:description" content="数据结构 线性表 - 队列  1、STL库中的queue
+<meta name="twitter:description" content="[TOC]
+数据结构 线性表 - 队列  1、STL库中的queue
 2、手写队列
  利用「顺序表」实现：用数组来模拟容器，用front来作为队首，用rear来作为队尾 利用「链接表」实现：用链表实现  链首做为队首，链尾做为队尾：队尾添加O(n)，查看队首O(1)，栈顶移除O(1) 链首做为队尾，链尾做为队首：栈顶添加O(1)，查看栈顶O(n)，栈顶移除O(n)    3、利用「顺序表」手写队列的溢出问题
  假溢出「仅限于用顺序表/数组实现的队列」  出现的原因：由于队首front和队尾rear两个索引在一直往后推延，这样前面用过的地址空间就无法重复使用，在量巨大的情况下就会导致超过地址本来可承受的。 解决方案：通过搞成循环队列，这样原来用过的地址就可以进行重复利用，也不用回收   真溢出「仅限于循环队列，无论是哪种方式实现的」  出现的原因：循环队列不是普通队列的固定长度，所以一直往里边添加的话总会有溢出的时候。     "/>
@@ -68,7 +70,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="数据结构-线性表---队列">数据结构 线性表 - 队列</h2>
+			<p>[TOC]</p>
+<h2 id="数据结构-线性表---队列">数据结构 线性表 - 队列</h2>
 <blockquote>
 <p>1、STL库中的queue</p>
 <p>2、手写队列</p>

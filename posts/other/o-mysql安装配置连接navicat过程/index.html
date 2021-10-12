@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Mysql安装、配置、连接navicat过程 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Mysql安装、配置、连接navicat过程" />
-<meta property="og:description" content="Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
+<meta property="og:description" content="[TOC]
+Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
 配置环境变量 按win键，输入“查看高级系统设置”-&gt;编辑系统变量中的PATH-&gt;添加下载的mysql的bin目录。 eg：C:\Program Files\MySQL\MySQL Server 8.0\bin 按win键，输入cmd，右击通过管理员权限打开
  进入mysql文件下的bin目录cd &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin&quot;(目录不同电脑不同，通过tab自动弹出的是最准的) mysqld --initialize --console记录下来初始化的密码  mysqld install mysqld --console 可以测试一下当前的数据库是否安装好：  登陆mysql -u root -p,密码是上面初始化的那个。 执行show databases;如果报错，可以通过修改密码解决。alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;youpassword&#39;    设置密码加密方式 此步可以解决navicat可视化管理本地mysql或者其他IP的MySQL的连接失败的情况
  首先登陆mysql -u root -p,如果改了密码了就是自己改的，如果没有改过密码就是原来初始话的那个密码 然后更改加密方式： alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;youpassword&#39;  最后navicat可以连接成功 " />
@@ -31,7 +32,8 @@
 <meta property="article:modified_time" content="2020-03-17T21:54:42+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Mysql安装、配置、连接navicat过程"/>
-<meta name="twitter:description" content="Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
+<meta name="twitter:description" content="[TOC]
+Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
 配置环境变量 按win键，输入“查看高级系统设置”-&gt;编辑系统变量中的PATH-&gt;添加下载的mysql的bin目录。 eg：C:\Program Files\MySQL\MySQL Server 8.0\bin 按win键，输入cmd，右击通过管理员权限打开
  进入mysql文件下的bin目录cd &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin&quot;(目录不同电脑不同，通过tab自动弹出的是最准的) mysqld --initialize --console记录下来初始化的密码  mysqld install mysqld --console 可以测试一下当前的数据库是否安装好：  登陆mysql -u root -p,密码是上面初始化的那个。 执行show databases;如果报错，可以通过修改密码解决。alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;youpassword&#39;    设置密码加密方式 此步可以解决navicat可视化管理本地mysql或者其他IP的MySQL的连接失败的情况
  首先登陆mysql -u root -p,如果改了密码了就是自己改的，如果没有改过密码就是原来初始话的那个密码 然后更改加密方式： alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;youpassword&#39;  最后navicat可以连接成功 "/>
@@ -68,7 +70,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="windows环境下配置mysql环境">Windows环境下配置mysql环境</h2>
+			<p>[TOC]</p>
+<h2 id="windows环境下配置mysql环境">Windows环境下配置mysql环境</h2>
 <h2 id="安装包下载">安装包下载</h2>
 <p>清华源可以直接下载.msi 安装引导。
 <a href="https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/">https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/</a></p>

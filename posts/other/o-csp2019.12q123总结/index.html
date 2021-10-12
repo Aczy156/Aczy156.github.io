@@ -21,7 +21,8 @@
 	<meta name="application-name" content="CSP[2019.12]1.2.3题总结 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="CSP[2019.12]1.2.3题总结" />
-<meta property="og:description" content="CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
+<meta property="og:description" content="[TOC]
+CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
 // // main.cpp // [201912-1]count-num // // Created by 陈冉飞 on 2020/2/9. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &lt;iostream&gt;using namespace std; int cnt = 0,num = 0,n,a[4]; bool check(int num){ if (num%7 == 0) return true; while (num &gt; 0) { if (num%10 == 7) return true; num/=10; } return false;; } int main(int argc, const char * argv[]) { scanf(&#34;%d&#34;,&amp;n); while (cnt &lt; n) { num&#43;&#43;; if (check(num)) {a[(num-1)%4]&#43;&#43;;cnt--;} cnt&#43;&#43;; } printf(&#34;%d\n%d\n%d\n%d\n&#34;,a[0],a[1],a[2],a[3]); return 0; } 第二题 一开始想复杂了，想成搜索了，后来网页往下滚动看到了1e3果断循环暴力，结果还真是，，。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/other/o-csp2019.12q123%E6%80%BB%E7%BB%93/" />
@@ -29,7 +30,8 @@
 <meta property="article:modified_time" content="2020-02-09T21:54:27+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CSP[2019.12]1.2.3题总结"/>
-<meta name="twitter:description" content="CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
+<meta name="twitter:description" content="[TOC]
+CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
 // // main.cpp // [201912-1]count-num // // Created by 陈冉飞 on 2020/2/9. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &lt;iostream&gt;using namespace std; int cnt = 0,num = 0,n,a[4]; bool check(int num){ if (num%7 == 0) return true; while (num &gt; 0) { if (num%10 == 7) return true; num/=10; } return false;; } int main(int argc, const char * argv[]) { scanf(&#34;%d&#34;,&amp;n); while (cnt &lt; n) { num&#43;&#43;; if (check(num)) {a[(num-1)%4]&#43;&#43;;cnt--;} cnt&#43;&#43;; } printf(&#34;%d\n%d\n%d\n%d\n&#34;,a[0],a[1],a[2],a[3]); return 0; } 第二题 一开始想复杂了，想成搜索了，后来网页往下滚动看到了1e3果断循环暴力，结果还真是，，。"/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
@@ -64,7 +66,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="csp201912123题总结">CSP[2019.12]1.2.3题总结</h2>
+			<p>[TOC]</p>
+<h2 id="csp201912123题总结">CSP[2019.12]1.2.3题总结</h2>
 <h3 id="1题">1题</h3>
 <p>找7倍数或者含有7的数。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">//

@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Common_Algorithm | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Common_Algorithm" />
-<meta property="og:description" content="最短路 hdu2544
+<meta property="og:description" content="[TOC]
+最短路 hdu2544
  dijkstra找距离当前点中未被刷新过距离起点最值的最小值(!vis[j] &amp;&amp; min(d[j]))拿来刷新到其他点的距离 如果d[v] &#43; mp[v][j] &lt; d[j]就刷新到j点的距离，j点要是未被刷新的点。  void dijkstra(){ for (int i = 0; i &lt; n; i&#43;&#43;) d[i] = mp[0][i]; vis[0] = 1; for (int i = 0; i &lt; n; i&#43;&#43;) { tem = INF;v = 0; for (int j = 0; j &lt; n; j&#43;&#43;) if (!vis[j] &amp;&amp; d[j] &lt;= tem){ tem = d[j]; v = j; } vis[v] = 1; for (int j = 0; j &lt; n; j&#43;&#43;) if (!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/other/o-common_algorithm/" />
@@ -29,7 +30,8 @@
 <meta property="article:modified_time" content="2020-04-08T20:42:26+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Common_Algorithm"/>
-<meta name="twitter:description" content="最短路 hdu2544
+<meta name="twitter:description" content="[TOC]
+最短路 hdu2544
  dijkstra找距离当前点中未被刷新过距离起点最值的最小值(!vis[j] &amp;&amp; min(d[j]))拿来刷新到其他点的距离 如果d[v] &#43; mp[v][j] &lt; d[j]就刷新到j点的距离，j点要是未被刷新的点。  void dijkstra(){ for (int i = 0; i &lt; n; i&#43;&#43;) d[i] = mp[0][i]; vis[0] = 1; for (int i = 0; i &lt; n; i&#43;&#43;) { tem = INF;v = 0; for (int j = 0; j &lt; n; j&#43;&#43;) if (!vis[j] &amp;&amp; d[j] &lt;= tem){ tem = d[j]; v = j; } vis[v] = 1; for (int j = 0; j &lt; n; j&#43;&#43;) if (!"/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
@@ -64,7 +66,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="最短路">最短路</h2>
+			<p>[TOC]</p>
+<h2 id="最短路">最短路</h2>
 <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2544">hdu2544</a></p>
 <ul>
 <li>dijkstra找距离当前点中未被刷新过距离起点最值的最小值(<code>!vis[j] &amp;&amp; min(d[j])</code>)拿来刷新到其他点的距离</li>

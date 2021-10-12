@@ -21,7 +21,8 @@
 	<meta name="application-name" content=" | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="" />
-<meta property="og:description" content="CF719 div3 补题  https://codeforces.com/contest/1520
+<meta property="og:description" content="[TOC]
+CF719 div3 补题  https://codeforces.com/contest/1520
  A 题目大意：看字串中是否有重复出现的，连续一段出现可以，中间隔着其他的，然后再次出现就不行了。
 思路：用map来维护前面所出现过的所有字符，看是否存在
 #include &lt;bits/stdc&#43;&#43;.h&gt;using namespace std; int t, n; #include &lt;map&gt;map&lt;char, int&gt; m; char s[55]; int main() { scanf(&#34;%d&#34;, &amp;t); while (t--) { int flag = 0; m.clear(); scanf(&#34;%d%s&#34;, &amp;n, s); m[s[0]] = 1; for (int i = 1; i &lt; strlen(s); &#43;&#43;i) { if (s[i] != s[i - 1] &amp;&amp; m.count(s[i])) flag = 1; else m[s[i]] = 1; } if (flag) printf(&#34;NO\n&#34;); else printf(&#34;YES\n&#34;); } return 0; } B 题目大意：找1～n范围中，所有数都相同的数（1 2 88 444是，101 67 1239不是）" />
@@ -31,7 +32,8 @@
 <meta property="article:modified_time" content="2020-02-04T16:12:46+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="CF719 div3 补题  https://codeforces.com/contest/1520
+<meta name="twitter:description" content="[TOC]
+CF719 div3 补题  https://codeforces.com/contest/1520
  A 题目大意：看字串中是否有重复出现的，连续一段出现可以，中间隔着其他的，然后再次出现就不行了。
 思路：用map来维护前面所出现过的所有字符，看是否存在
 #include &lt;bits/stdc&#43;&#43;.h&gt;using namespace std; int t, n; #include &lt;map&gt;map&lt;char, int&gt; m; char s[55]; int main() { scanf(&#34;%d&#34;, &amp;t); while (t--) { int flag = 0; m.clear(); scanf(&#34;%d%s&#34;, &amp;n, s); m[s[0]] = 1; for (int i = 1; i &lt; strlen(s); &#43;&#43;i) { if (s[i] != s[i - 1] &amp;&amp; m.count(s[i])) flag = 1; else m[s[i]] = 1; } if (flag) printf(&#34;NO\n&#34;); else printf(&#34;YES\n&#34;); } return 0; } B 题目大意：找1～n范围中，所有数都相同的数（1 2 88 444是，101 67 1239不是）"/>
@@ -68,7 +70,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="cf719-div3-补题">CF719 div3 补题</h2>
+			<p>[TOC]</p>
+<h2 id="cf719-div3-补题">CF719 div3 补题</h2>
 <blockquote>
 <p><a href="https://codeforces.com/contest/1520">https://codeforces.com/contest/1520</a></p>
 </blockquote>

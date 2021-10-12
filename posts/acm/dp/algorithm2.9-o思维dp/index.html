@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm2.9 dp思维 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm2.9 dp思维" />
-<meta property="og:description" content="思维 &amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
+<meta property="og:description" content="[TOC]
+思维 &amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
 题目大意：
 1、结合贪心思想，永远把相邻的最小的给加进去，ans &#43;= min(cost[i-1], cost[i])
 2、状态的推进更新，例如str=&quot;aaa&quot;，cost分别为4 3 5，在更新4 3时候就要把状态退后，用这两个的最大的去比【因为最大的才是真正留下来的】，所以要用cost[i] = max(cost[i-1], cost[i])来保留状态
@@ -34,7 +35,8 @@ int minCost(string s, vector&lt;int&gt;&amp; cost) { int ans = 0; for (int i = 1
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm2.9 dp思维"/>
-<meta name="twitter:description" content="思维 &amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
+<meta name="twitter:description" content="[TOC]
+思维 &amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
 题目大意：
 1、结合贪心思想，永远把相邻的最小的给加进去，ans &#43;= min(cost[i-1], cost[i])
 2、状态的推进更新，例如str=&quot;aaa&quot;，cost分别为4 3 5，在更新4 3时候就要把状态退后，用这两个的最大的去比【因为最大的才是真正留下来的】，所以要用cost[i] = max(cost[i-1], cost[i])来保留状态
@@ -74,7 +76,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="思维--dp">思维 &amp; dp</h2>
+			<p>[TOC]</p>
+<h2 id="思维--dp">思维 &amp; dp</h2>
 <h3 id="leetcode1578-valid-palindrome">Leetcode1578-valid-palindrome</h3>
 <p><a href="https://leetcode-cn.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/">1578. 避免重复字母的最小删除成本</a></p>
 <p>题目大意：</p>

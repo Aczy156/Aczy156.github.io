@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm14.1 最短路-dijkstra | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm14.1 最短路-dijkstra" />
-<meta property="og:description" content="最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
+<meta property="og:description" content="[TOC]
+最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
  裸的dijkstra&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &lt;iostream&gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&lt;&lt;31)-1; void dijkstra(){ for (int i = 1; i &lt;= n; &#43;&#43;i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = INF,v = 0; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!" />
 <meta property="og:type" content="article" />
@@ -30,7 +31,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm14.1 最短路-dijkstra"/>
-<meta name="twitter:description" content="最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
+<meta name="twitter:description" content="[TOC]
+最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
  裸的dijkstra&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &lt;iostream&gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&lt;&lt;31)-1; void dijkstra(){ for (int i = 1; i &lt;= n; &#43;&#43;i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = INF,v = 0; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!"/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
@@ -66,7 +68,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="最短路">最短路</h2>
+			<p>[TOC]</p>
+<h2 id="最短路">最短路</h2>
 <blockquote>
 <p>博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程</p>
 <p><a href="https://blog.csdn.net/qq_43345204/article/details/115360233?spm=1001.2014.3001.5501">我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)</a></p>

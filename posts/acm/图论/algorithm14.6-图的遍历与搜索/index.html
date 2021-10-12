@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm14.6 图的遍历与搜索 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm14.6 图的遍历与搜索" />
-<meta property="og:description" content="图的遍历与搜索 模版 dfs &amp; bfs https://www.luogu.com.cn/problem/P5318
+<meta property="og:description" content="[TOC]
+图的遍历与搜索 模版 dfs &amp; bfs https://www.luogu.com.cn/problem/P5318
 #include &lt;iostream&gt;using namespace std; #define maxpoint 100010#define maxedge 1000010int n, m, ta, tb, vis[maxpoint]; struct ed { int from, to; bool operator &lt; (const ed e) const { if (from == e.from) return to &gt; e.to;return from &gt;e.from;} }t[maxedge]; struct node { int to, next; }edge[maxedge];int head[maxpoint], tot; #include &lt;queue&gt;queue&lt;int&gt;pq; #include &lt;cstring&gt;#define cl(a, b) memset(a, b, sizeof(a))#include &lt;algorithm&gt; void addedge(int from, int to) { edge[&#43;&#43;tot]." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/" />
@@ -29,7 +30,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm14.6 图的遍历与搜索"/>
-<meta name="twitter:description" content="图的遍历与搜索 模版 dfs &amp; bfs https://www.luogu.com.cn/problem/P5318
+<meta name="twitter:description" content="[TOC]
+图的遍历与搜索 模版 dfs &amp; bfs https://www.luogu.com.cn/problem/P5318
 #include &lt;iostream&gt;using namespace std; #define maxpoint 100010#define maxedge 1000010int n, m, ta, tb, vis[maxpoint]; struct ed { int from, to; bool operator &lt; (const ed e) const { if (from == e.from) return to &gt; e.to;return from &gt;e.from;} }t[maxedge]; struct node { int to, next; }edge[maxedge];int head[maxpoint], tot; #include &lt;queue&gt;queue&lt;int&gt;pq; #include &lt;cstring&gt;#define cl(a, b) memset(a, b, sizeof(a))#include &lt;algorithm&gt; void addedge(int from, int to) { edge[&#43;&#43;tot]."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
@@ -64,7 +66,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="图的遍历与搜索">图的遍历与搜索</h2>
+			<p>[TOC]</p>
+<h2 id="图的遍历与搜索">图的遍历与搜索</h2>
 <h3 id="模版-dfs--bfs">模版 dfs &amp; bfs</h3>
 <p><a href="https://www.luogu.com.cn/problem/P5318">https://www.luogu.com.cn/problem/P5318</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">

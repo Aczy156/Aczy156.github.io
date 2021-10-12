@@ -18,7 +18,8 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
-      <description>数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
+      <description>[TOC]
+数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
 题目大意：有规则抽取特定位置索引
 1、删除、首尾添加、排序等等 =&amp;gt; vector
 #include &amp;lt;iostream&amp;gt;using namespace std; int n, m, idx=0; #include &amp;lt;vector&amp;gt;vector&amp;lt;int&amp;gt; b; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) b.push_back(i); while (b.size() &amp;gt; 1) { idx = (idx+m-1)%b.size(); printf(&amp;#34;%d &amp;#34;, b[idx]); b.erase(b.begin()+idx); } printf(&amp;#34;%d\n&amp;#34;, b[0]); return 0; } 前&amp;amp;中&amp;amp;后缀 https://www.luogu.com.cn/problem/P1449
@@ -33,7 +34,8 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/</guid>
-      <description>数据结构 线性表 - 链表  1、STL库中的list，直接可以使用的链表
+      <description>[TOC]
+数据结构 线性表 - 链表  1、STL库中的list，直接可以使用的链表
 补：手写链表的基本结构以及名词区分：
 基本结构就是指向第一个元素的指针（包含有第一个元素地址的变量）+后面一串的包含后序节点地址的节点
 区分头指针、头节点、首元素节点
@@ -46,29 +48,30 @@
     
     <item>
       <title>Algorithm11.2 数据结构 堆与堆优化</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</guid>
-      <description>数据结构 堆 &amp;amp; 手写堆  用到堆优化的思路不一定是用堆，也可能是通过利用优先队列进行优化
-堆：
- 分类：最大堆、最小堆 过程：首先按照完全二叉树的形式，将序列填补到初始的堆中   堆的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&amp;gt; 可以用堆进行优化
-https://www.luogu.com.cn/problem/P3378
-手写堆 实现 获取区间前几大/最大 1、数据结构：一个模拟堆的数组myheap
-2、堆的基本操作：
- insert：插入新的元素 myheap[1]：获取堆顶元素 deletetop：删除堆顶元素  3、【下面范例都是小顶堆】
-插入新的元素 =&amp;gt; 从堆底往堆顶移动索引
-while (idx &amp;gt; 1) { if (myheap[idx] &amp;lt; myheap[idx&amp;gt;&amp;gt;1]) { swap(myheap[idx], myheap[idx&amp;gt;&amp;gt;1]); idx &amp;gt;&amp;gt;= 1; } } 删除堆顶元素 =&amp;gt; 从堆顶网堆底移动索引
-int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; size &amp;amp;&amp;amp; myheap[son] &amp;gt; myheap[son+1]) son++; if (myheap[son] &amp;lt; myheap[idx]) { swap(myheap[son], myheap[idx]); idx &amp;lt;&amp;lt;= 1; } } 完整代码：</description>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86/</guid>
+      <description>[TOC]
+数据结构 堆 &amp;amp; 手写堆  堆：
+ 分类：最大堆、最小堆 过程：首先按照完全二叉树的形式，将序列填补到初始的堆中  （堆-附加：利用堆的性质来判断是否是堆：「PAT1147」，判断方法就是直接对给定的层次遍历的序列来判断，是否满足a[i] &amp;gt; a[2&amp;lt;&amp;lt;i] &amp;amp;&amp;amp; a[i] &amp;gt; a[2&amp;lt;&amp;lt;i|1]或者a[i] &amp;lt; a[2&amp;lt;&amp;lt;i] &amp;amp;&amp;amp; a[i] &amp;lt; a[2&amp;lt;&amp;lt;i|1] ，来查看是否是最大堆或者最小堆
+用到堆优化的思路不一定是用堆，也可能是通过利用优先队列进行优化【堆的优化的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&amp;gt; 可以用堆进行优化】
+用到堆的方式：
+ 手写堆：「例如下面的P3378手写堆 // P1631RMQ问题」的up/down方法来维护堆 直接利用优先队列来优化复杂度，优化的方式就是直接拿堆顶，进而取堆顶得到最大最小 或者 堆结构带来的排序「P2085取前最小」的每次拿堆顶，然后在线插入新的元素之后重新自动排序获取下一次的堆顶。   判断堆是否为最大堆、最小堆 https://pintia.cn/problem-sets/994805342720868352/problems/994805342821531648
+1、判断是否是最大堆最小堆：直接判断父节点与两个子节点的的大小关系。
+可以通过维护两个变量is_max = 1 / is_min = 1，当存在有子节点小于父节点=&amp;gt;不满足最小堆了把is_min = 0；当存在有子节点大于父节点=&amp;gt;不满足最小堆了把is_max = 0
+最后看is_max和is_min两个变量，是否是最大最小堆。
+// 从底部往上遍历 for (int j = 2; j &amp;lt;= m; ++j) { if (a[j] &amp;gt; a[j/2]) is_big = 0; else is_small = 0; } https://www.</description>
     </item>
     
     <item>
       <title>Algorithm11.3 数据结构 线性表 栈</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</guid>
-      <description>数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/</guid>
+      <description>[TOC]
+数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
 2、通过手写栈
  利用「顺序表」实现：用数组来模拟容器，用变量来作为栈顶 利用「链接表』实现：用链表实现  链首做为栈底，链尾做为栈顶：栈顶添加O(n)，查看栈顶O(n)，栈顶移除O(n) 链首做为栈顶，链尾做为栈底：栈顶添加O(1)，查看栈顶O(1)，栈顶移除O(1)     进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
 题目大意：给定进栈顺序和出栈顺序，根据进栈顺序来比对出栈顺序是否正确
@@ -78,11 +81,12 @@ int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; si
     
     <item>
       <title>Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
-      <description>数据结构 树 二叉树 性质 建树、前中后序遍历  树相关 遍历操作：
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>[TOC]
+数据结构 树 二叉树 性质 建树、前中后序遍历  树相关 遍历操作：
  【递归】先根遍历、后根遍历。看所有儿子节点和根节点的遍历顺序 【非递归】也是用队列先进先出作为数据结构来存    二叉树相关 两种实现方式：（基本的树结构是两种，如果转换为图进行储存也是可以的）
   「顺序表」结构体数组实现
   「链接表」二叉链表实现
@@ -96,13 +100,14 @@ int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; si
     </item>
     
     <item>
-      <title>Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</link>
+      <title>Algorithm11.5 数据结构 二叉类型相关树结构-哈夫曼树/二叉搜索树/红黑树/B&#43;树</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E6%A0%91%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91b&#43;%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</guid>
-      <description>数据结构 哈夫曼树  实现方式：
- 二叉链表实现【实现和二叉树的二叉链表实现方式几乎一样，链接： 二叉树-二叉链表实现 】   二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E6%A0%91%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91b&#43;%E6%A0%91/</guid>
+      <description>[TOC]
+二叉类型相关数据结构 哈夫曼树 性质 实现-二叉链表 二叉链表实现 - 利用链表来链接起树的结构
+1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。
 struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[maxn];; 2、新增的数据结构：也就是huffman[maxn]，起作用就是储存所有的节点的。
 对应的思路，每次挑出节点中值最小的两个，然后把这两个节点合成一个，然后进行排序，并把新产生的节点放到优先队列中，然后再选出两个最小的，一直这么迭代下去。
  通过一个vis数组，来将右儿子给闭掉，然后将左儿子的值更新为他们所形成的父亲节点的值。  node * HuffmanTree() { for (int i = 0; i &amp;lt; n - 1; i++) { for (int j = 0; j &amp;lt; n; ++j) if (!vis[j]) pq.push({huffman[j].data, j}); ll = pq.top().idx;pq.pop(); rr = pq.top().idx; while (!pq.empty()) pq.pop(); vis[rr] = 1; node * lnode = new node {huffman[ll].</description>
@@ -114,7 +119,8 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%98%9F%E5%88%97/</guid>
-      <description>数据结构 线性表 - 队列  1、STL库中的queue
+      <description>[TOC]
+数据结构 线性表 - 队列  1、STL库中的queue
 2、手写队列
  利用「顺序表」实现：用数组来模拟容器，用front来作为队首，用rear来作为队尾 利用「链接表」实现：用链表实现  链首做为队首，链尾做为队尾：队尾添加O(n)，查看队首O(1)，栈顶移除O(1) 链首做为队尾，链尾做为队首：栈顶添加O(1)，查看栈顶O(n)，栈顶移除O(n)    3、利用「顺序表」手写队列的溢出问题
  假溢出「仅限于用顺序表/数组实现的队列」  出现的原因：由于队首front和队尾rear两个索引在一直往后推延，这样前面用过的地址空间就无法重复使用，在量巨大的情况下就会导致超过地址本来可承受的。 解决方案：通过搞成循环队列，这样原来用过的地址就可以进行重复利用，也不用回收   真溢出「仅限于循环队列，无论是哪种方式实现的」  出现的原因：循环队列不是普通队列的固定长度，所以一直往里边添加的话总会有溢出的时候。     </description>
@@ -126,7 +132,8 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84st%E8%A1%A8/</guid>
-      <description>ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
+      <description>[TOC]
+ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
 https://www.luogu.com.cn/problem/P3865
 模版 - ST表 题目大意：得到范围内（Range）最大值（Max）的若干次查询（Query）=&amp;gt;RMQ问题
 1、倍增思想，核心就是二倍二倍的获取最大值，类似于二叉树结构的遍历过程，复杂度为O(nlogn)。
@@ -143,7 +150,8 @@ int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); 
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
-      <description>数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
+      <description>[TOC]
+数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
 模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数
 eg：8(10) &amp;amp; -8(10) = 8 =&amp;gt; 根据树状数组结构图，就是8个节点
 eg：4(10) &amp;amp; -4(10) = 4 =&amp;gt; 根据树状数组结构图，就是4个节点
@@ -162,7 +170,8 @@ int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
-      <description>数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
+      <description>[TOC]
+数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
  基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
 1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
 2、再将每个位置反向赋值回去。
@@ -176,7 +185,8 @@ for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i].v
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
-      <description>数据结构 区间问题  单个区间 区间最值「典型数据结构问题」：
+      <description>[TOC]
+数据结构 区间问题  单个区间 区间最值「典型数据结构问题」：
  固定长度区间，然后滑动询问：  单调队列 RMQ [Range maximum/minimun Query] 线段树   不固定长度，随意起点和终点：  RMQ [Range maximum/minimun Query] 线段树    区间最长递增子序列「LIS问题」：
  线性dp  区间逆序对数/区间相互交换次数：
  归并排序，记录逆序对数 树状数组  区间其他问题：

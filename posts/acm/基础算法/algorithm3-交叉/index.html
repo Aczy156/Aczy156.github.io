@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm3 交叉 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm3 交叉" />
-<meta property="og:description" content="交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
+<meta property="og:description" content="[TOC]
+交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
 1、题目大意是允许相邻的两个牌堆交叉换牌
 2、解决方案就是把交叉换成单向，然后通过单边尽头单向遍历简化问题【单边尽头单向可以的原因就是每次至少保证满足1个，然后就算是其他的中间往两边的，也最多了，每次只能满足一个，所以不如直接 单边 尽头 =&gt; 方便遍历】
 #include &lt;iostream&gt;using namespace std; #define maxn 105int n, a[maxn], sum = 0, ans = 0; int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 0; i &lt; n; i&#43;&#43;) {scanf(&#34;%d&#34;, &amp;a[i]);sum &#43;= a[i];} sum /= n; for (int i = 0; i &lt; n - 1; &#43;&#43;i) if (a[i] != sum) { a[i &#43; 1] -= (sum - a[i]); ans&#43;&#43;; } printf(&#34;%d\n&#34;, ans); return 0; } " />
@@ -31,7 +32,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm3 交叉"/>
-<meta name="twitter:description" content="交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
+<meta name="twitter:description" content="[TOC]
+交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
 1、题目大意是允许相邻的两个牌堆交叉换牌
 2、解决方案就是把交叉换成单向，然后通过单边尽头单向遍历简化问题【单边尽头单向可以的原因就是每次至少保证满足1个，然后就算是其他的中间往两边的，也最多了，每次只能满足一个，所以不如直接 单边 尽头 =&gt; 方便遍历】
 #include &lt;iostream&gt;using namespace std; #define maxn 105int n, a[maxn], sum = 0, ans = 0; int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 0; i &lt; n; i&#43;&#43;) {scanf(&#34;%d&#34;, &amp;a[i]);sum &#43;= a[i];} sum /= n; for (int i = 0; i &lt; n - 1; &#43;&#43;i) if (a[i] != sum) { a[i &#43; 1] -= (sum - a[i]); ans&#43;&#43;; } printf(&#34;%d\n&#34;, ans); return 0; } "/>
@@ -68,7 +70,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="交叉">交叉</h2>
+			<p>[TOC]</p>
+<h2 id="交叉">交叉</h2>
 <h3 id="交换纸牌使之数量相等">交换纸牌：使之数量相等</h3>
 <p>题目链接：https://www.luogu.com.cn/problem/P1031</p>
 <p>1、题目大意是允许相邻的两个牌堆<strong>交叉换牌</strong></p>

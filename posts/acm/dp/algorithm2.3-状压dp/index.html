@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm2.3 状压dp | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm2.3 状压dp" />
-<meta property="og:description" content="状压dp  主要特征：n较小 =&gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
+<meta property="og:description" content="[TOC]
+状压dp  主要特征：n较小 =&gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
 主要思路：就是将本来某一行的状态是或否的唯二的两种【可能本来需要用数组来储存的】 =&gt; 通过用二进制【01来进行储存】
 主要原因：用于解决情况之间的耦合性太复杂（就例如八皇后，看上下左右斜上下这些，直接通过压缩成字符串的状态然后来进行位运算即可），如果直接循环遍历去判断的话太麻烦，所以通过状态压缩，
  把本来是需要用数组表示的数据结构=&gt;用一个字串直接整体表示 把本来需要循环来计算的=&gt;用位运算来计算   互不侵犯：https://www.luogu.com.cn/problem/P1896
@@ -36,7 +37,8 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm2.3 状压dp"/>
-<meta name="twitter:description" content="状压dp  主要特征：n较小 =&gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
+<meta name="twitter:description" content="[TOC]
+状压dp  主要特征：n较小 =&gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
 主要思路：就是将本来某一行的状态是或否的唯二的两种【可能本来需要用数组来储存的】 =&gt; 通过用二进制【01来进行储存】
 主要原因：用于解决情况之间的耦合性太复杂（就例如八皇后，看上下左右斜上下这些，直接通过压缩成字符串的状态然后来进行位运算即可），如果直接循环遍历去判断的话太麻烦，所以通过状态压缩，
  把本来是需要用数组表示的数据结构=&gt;用一个字串直接整体表示 把本来需要循环来计算的=&gt;用位运算来计算   互不侵犯：https://www.luogu.com.cn/problem/P1896
@@ -78,7 +80,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="状压dp">状压dp</h2>
+			<p>[TOC]</p>
+<h2 id="状压dp">状压dp</h2>
 <blockquote>
 <p>主要特征：n较小 =&gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】</p>
 <p>主要思路：就是将本来某一行的状态是或否的唯二的两种【可能本来需要用数组来储存的】 =&gt; 通过用二进制【01来进行储存】</p>

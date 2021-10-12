@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm14.3 拓扑图 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm14.3 拓扑图" />
-<meta property="og:description" content="拓扑图 https://www.luogu.com.cn/problem/P4017
+<meta property="og:description" content="[TOC]
+拓扑图 https://www.luogu.com.cn/problem/P4017
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
 2、根据入度、出度来看是否添加进入队列。
 #include &lt;iostream&gt;using namespace std; #define maxn 5005int n, m, mp[maxn][maxn], in[maxn], out[maxn], ta, tb, ans[maxn], final; #include &lt;queue&gt;queue&lt;int&gt; q; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); mp[ta][tb] = 1; out[ta]&#43;&#43;;in[tb]&#43;&#43;; } for (int i = 1; i &lt;= n; &#43;&#43;i) if (!in[i]) {ans[i] = 1;q.push(i);} while (!q.empty()) { int nw = q.front();q.pop(); for (int i = 1; i &lt;= n; &#43;&#43;i){ if (mp[nw][i]) { ans[i] &#43;= ans[nw];ans[i] %= 80112002; in[i]--; if (!" />
@@ -31,7 +32,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm14.3 拓扑图"/>
-<meta name="twitter:description" content="拓扑图 https://www.luogu.com.cn/problem/P4017
+<meta name="twitter:description" content="[TOC]
+拓扑图 https://www.luogu.com.cn/problem/P4017
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
 2、根据入度、出度来看是否添加进入队列。
 #include &lt;iostream&gt;using namespace std; #define maxn 5005int n, m, mp[maxn][maxn], in[maxn], out[maxn], ta, tb, ans[maxn], final; #include &lt;queue&gt;queue&lt;int&gt; q; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); mp[ta][tb] = 1; out[ta]&#43;&#43;;in[tb]&#43;&#43;; } for (int i = 1; i &lt;= n; &#43;&#43;i) if (!in[i]) {ans[i] = 1;q.push(i);} while (!q.empty()) { int nw = q.front();q.pop(); for (int i = 1; i &lt;= n; &#43;&#43;i){ if (mp[nw][i]) { ans[i] &#43;= ans[nw];ans[i] %= 80112002; in[i]--; if (!"/>
@@ -68,7 +70,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="拓扑图">拓扑图</h2>
+			<p>[TOC]</p>
+<h2 id="拓扑图">拓扑图</h2>
 <p><a href="https://www.luogu.com.cn/problem/P4017">https://www.luogu.com.cn/problem/P4017</a></p>
 <p>1、图存储的数据结构：邻接矩阵，<code>mp[a][b]</code>，等于1的时候表示的是</p>
 <p>2、根据入度、出度来看是否添加进入队列。</p>

@@ -18,7 +18,8 @@
       <pubDate>Sun, 07 Jun 2020 19:03:25 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-%E9%98%BF%E9%87%8C%E4%BA%91centos7%E9%83%A8%E7%BD%B2javaweb_jar_war_nginx/</guid>
-      <description>(一)第一部分：最基本的jar包运行(无需配置tomcat) [http://60.205.183.114:8081/]
+      <description>[TOC]
+(一)第一部分：最基本的jar包运行(无需配置tomcat) [http://60.205.183.114:8081/]
  1、配置阿里云(Esc学生服务器、镜像Centos7.7)，并远程连接进入终端。 2、安装并配置JDK(参考https://www.jianshu.com/p/093413f2a04f) a)安装jdk。 b)寻找jdk路径配置环境变量。 c)简单的Java hello world测试确保安装成功。 3、安装并配置mysql(mariadb)(参考https://blog.csdn.net/DaSo_CSDN/article/details/54754936) a)安装mysql、mariadb server。 b)systemctl 开启服务。 c) 打开端口。(阿里云要在控制台打开，参考https://yq.aliyun.com/articles/701181) d) 更改mysql 的root密码，对应于项目配置文件中的密码。 4、利用scp进行文件传输(参考https://www.cnblogs.com/tugenhua0707/p/8278772.html) a)传输spring maven 的快照版本用于测试。 b)传输数据库sql文件。 5、导入数据库 a)创建sql文件对应的数据库。 b)利用文件重定向运行sql文件。 c)检查数据库是否导入成功 6、运行jar文件，控制台获取公网IP，本机输入IP:8081测试。 7、设置后台运行(已设置：http://60.205.183.114:8081/) a)contrl+c中止。 b)然后通过nohup 和 &amp;amp; 来后台运行。 c)ps通过pid来停止后台运行进程。  运行结果 整体过程:
 [root@iZ2ze4r3b4xcztbcsey08cZ ~]# history 1 MAKRER=SHOW_LOCALE;printf $MAKRER&amp;#34;&amp;#34;; locale; MAKRER=SHOW_LOCALE;printf $MAKRER&amp;#34;&amp;#34;; 2 yum install -y mysql 3 yum install -y mariadb-server mariadb 4 systemctl start mariadb 5 systemctl enable mariadb 6 yum install -y mysql-devel 7 firewall-cmd --zone=public --add-port=3306/tcp --permanent 8 CHECK_TYPE=SHELL; echo &amp;#34;INFO=${CHECK_TYPE}PID=$$PPID=$PPIDTTY=$(tty)SHELL=$0HOME=$HOMEPWD=$PWD| CHECK_SHELL_END&amp;#34; 9 ls 10 ifconfig 11 ls 12 yum list 13 java -version 14 ls 15 yum search java-1.</description>
     </item>
@@ -29,7 +30,8 @@
       <pubDate>Sun, 05 Apr 2020 17:13:50 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description> Virtualenv用于为某个项目新配置一个独立的python环境而产生 环境为macOS pip安装virtualvenvsudo pip install virtualenv
+      <description>[TOC]
+ Virtualenv用于为某个项目新配置一个独立的python环境而产生 环境为macOS pip安装virtualvenvsudo pip install virtualenv
  mac如果有安装Xcode，则在/usr/bin中自带有python2.7，可用于配置python2.7的相关环境 而自己装配的python3则在/usr/local/bin中，可用于python3的相关环境
 第一种方法：
  通过在创建项目之前，先开好一个venv mkdir newproject cd newproject 指定python版本(以自带的python2.7为例) virtualenv -p /usr/bin venv2.7 激活当前的虚拟环境 source venv/bin/activate [然后可以通过pip list 查看当前的这个虚拟环境中都有什么以来,此时因为已经成为虚拟环境，在指令前面会变成(venv)localhost:newproject aczy156$:，会多出一个(venv),会显示出此时的python版本、已经安装的各种库函数(博主手动安装的numpy pyzmq，剩下的自带的)]  在pycharm中选择virtualenv作为环境，然后选择对应的版本的interpreter(博主在这一步的时候打开之后pycharm直接识别到了创建好的venv，都是默认选好的了)  在新的空目录下选择virtualenv，然后location是这个目录下存放库的文件，可以起名为venv，interpreter为python版本。 此时就配置好虚拟环境了。
@@ -42,7 +44,8 @@
       <pubDate>Tue, 17 Mar 2020 21:54:42 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/</guid>
-      <description>Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
+      <description>[TOC]
+Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
 配置环境变量 按win键，输入“查看高级系统设置”-&amp;gt;编辑系统变量中的PATH-&amp;gt;添加下载的mysql的bin目录。 eg：C:\Program Files\MySQL\MySQL Server 8.0\bin 按win键，输入cmd，右击通过管理员权限打开
  进入mysql文件下的bin目录cd &amp;quot;C:\Program Files\MySQL\MySQL Server 8.0\bin&amp;quot;(目录不同电脑不同，通过tab自动弹出的是最准的) mysqld --initialize --console记录下来初始化的密码  mysqld install mysqld --console 可以测试一下当前的数据库是否安装好：  登陆mysql -u root -p,密码是上面初始化的那个。 执行show databases;如果报错，可以通过修改密码解决。alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;youpassword&#39;    设置密码加密方式 此步可以解决navicat可视化管理本地mysql或者其他IP的MySQL的连接失败的情况
  首先登陆mysql -u root -p,如果改了密码了就是自己改的，如果没有改过密码就是原来初始话的那个密码 然后更改加密方式： alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;youpassword&#39;  最后navicat可以连接成功 </description>
@@ -54,7 +57,8 @@
       <pubDate>Thu, 20 Feb 2020 18:01:06 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-%E5%88%A9%E7%94%A8sshkey%E5%AE%9E%E7%8E%B0%E5%8D%95%E5%8F%B0%E6%9C%BA%E5%99%A8%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E6%88%B7/</guid>
-      <description>踩过的坑 用户在搭建第二个博客的时候[有特殊需求的情况下]，经过搜索发现一个GitHub账户只能有一个GitHub page，然而当我在利用第二个账户push的时候，总显示 Git push ERROR: Repository not found fatal:这种无法正常连接的报错，
+      <description>[TOC]
+踩过的坑 用户在搭建第二个博客的时候[有特殊需求的情况下]，经过搜索发现一个GitHub账户只能有一个GitHub page，然而当我在利用第二个账户push的时候，总显示 Git push ERROR: Repository not found fatal:这种无法正常连接的报错，
  一开始以为分枝问题，各种git remote -v的调试，各种重置，添加的，然后还是不行 后来经过Google 发现一个email只能绑定一个sshkey，然后传输利用ssh进行匹配 然后在利用ssh-add进行添加的时候配置添加好第二个key(记得不可以名字重复，不然会覆盖)之后在配置config的时候要注意不能改host。(在下边详细说) 在最后pushd时候在原来随便的一个测试项目中发生了一件尴尬的画面，测试的时候两个账号push的时候串了，后来发现在两个push的时候发布者不是取决于项目的clone的那个账号，而是当时git config中设置的email对应的账号。 然后在选取好账号后就可以进行push了。  配置两个ssh key详解： 先列一下其他的人写的，真的很详细了已经https://gist.github.com/jexchan/2351996 主要是在最后的配置config的时候， 我改了这些地方，最后两个email都可以顺利通过ssh进行连接，(感觉第一行和中间那个像注释的东西貌似不用改，，，但也没试过，，，)，产生了两个ssh key之后把内容拷贝到GitHub就不说了，教程很多也没什么坑。</description>
     </item>
     

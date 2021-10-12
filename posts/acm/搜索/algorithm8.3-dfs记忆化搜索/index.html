@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm8.3 DFS 记忆化搜索 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm8.3 DFS 记忆化搜索" />
-<meta property="og:description" content="DFS 记忆化搜索 用于相邻依赖 =&gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式&#43;dp的存储思想，把dp数组融合到dfs搜索的过程中。
+<meta property="og:description" content="[TOC]
+DFS 记忆化搜索 用于相邻依赖 =&gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式&#43;dp的存储思想，把dp数组融合到dfs搜索的过程中。
 [模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
 题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。
 1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
@@ -33,7 +34,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm8.3 DFS 记忆化搜索"/>
-<meta name="twitter:description" content="DFS 记忆化搜索 用于相邻依赖 =&gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式&#43;dp的存储思想，把dp数组融合到dfs搜索的过程中。
+<meta name="twitter:description" content="[TOC]
+DFS 记忆化搜索 用于相邻依赖 =&gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式&#43;dp的存储思想，把dp数组融合到dfs搜索的过程中。
 [模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
 题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。
 1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
@@ -72,7 +74,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="dfs-记忆化搜索">DFS 记忆化搜索</h2>
+			<p>[TOC]</p>
+<h2 id="dfs-记忆化搜索">DFS 记忆化搜索</h2>
 <h3 id="用于相邻依赖--涂色相邻的不能相同连续递增连续递减">用于相邻依赖 =&gt; 涂色：相邻的不能相同；连续递增/连续递减</h3>
 <p>搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。</p>
 <h3 id="模版-记忆化搜索---优化重复递归调用">[模版] 记忆化搜索 - 优化重复递归调用</h3>

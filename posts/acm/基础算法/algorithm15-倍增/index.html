@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm15 倍增 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm15 倍增" />
-<meta property="og:description" content="倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
+<meta property="og:description" content="[TOC]
+倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
 #include &lt;iostream&gt;using namespace std; int w[8] = {1, 2, 3, 5, 10, 20}, t; #include &lt;bitset&gt;bitset&lt;1010&gt; s; int main() { s[0] = 1; for (int i = 0; i &lt; 6; &#43;&#43;i) { scanf(&#34;%d&#34;, &amp;t); for (int j = 0; j &lt; t; &#43;&#43;j) s |= s&lt;&lt;w[i]; } printf(&#34;Total=%d\n&#34;, s.count()-1); return 0; } " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/" />
@@ -29,7 +30,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm15 倍增"/>
-<meta name="twitter:description" content="倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
+<meta name="twitter:description" content="[TOC]
+倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
 #include &lt;iostream&gt;using namespace std; int w[8] = {1, 2, 3, 5, 10, 20}, t; #include &lt;bitset&gt;bitset&lt;1010&gt; s; int main() { s[0] = 1; for (int i = 0; i &lt; 6; &#43;&#43;i) { scanf(&#34;%d&#34;, &amp;t); for (int j = 0; j &lt; t; &#43;&#43;j) s |= s&lt;&lt;w[i]; } printf(&#34;Total=%d\n&#34;, s.count()-1); return 0; } "/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
@@ -64,7 +66,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="倍增">倍增</h2>
+			<p>[TOC]</p>
+<h2 id="倍增">倍增</h2>
 <h3 id="拼凑砝码">拼凑砝码</h3>
 <p><a href="https://www.luogu.com.cn/problem/P2347">https://www.luogu.com.cn/problem/P2347</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">

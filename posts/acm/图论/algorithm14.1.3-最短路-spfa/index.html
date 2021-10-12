@@ -21,14 +21,16 @@
 	<meta name="application-name" content="Algorithm14.3 最短路-SPFA | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm14.3 最短路-SPFA" />
-<meta property="og:description" content="最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&lt;nd&gt; spf; void spfa(int s) { for (int i = 1; i &lt;= n; &#43;&#43;i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &gt; d[nwpos]&#43;edge[i].cost) { d[to] = d[nwpos]&#43;edge[i].cost; if (!" />
+<meta property="og:description" content="[TOC]
+最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&lt;nd&gt; spf; void spfa(int s) { for (int i = 1; i &lt;= n; &#43;&#43;i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &gt; d[nwpos]&#43;edge[i].cost) { d[to] = d[nwpos]&#43;edge[i]." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-%E6%9C%80%E7%9F%AD%E8%B7%AF-spfa/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm14.3 最短路-SPFA"/>
-<meta name="twitter:description" content="最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&lt;nd&gt; spf; void spfa(int s) { for (int i = 1; i &lt;= n; &#43;&#43;i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &gt; d[nwpos]&#43;edge[i].cost) { d[to] = d[nwpos]&#43;edge[i].cost; if (!"/>
+<meta name="twitter:description" content="[TOC]
+最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&lt;nd&gt; spf; void spfa(int s) { for (int i = 1; i &lt;= n; &#43;&#43;i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &gt; d[nwpos]&#43;edge[i].cost) { d[to] = d[nwpos]&#43;edge[i]."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -62,7 +64,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="最短路-spfa">最短路-SPFA</h2>
+			<p>[TOC]</p>
+<h2 id="最短路-spfa">最短路-SPFA</h2>
 <h3 id="spfa">SPFA</h3>
 <ul>
 <li>数据结构类似于Dijkstra，也是d数组和vi/vis数组</li>

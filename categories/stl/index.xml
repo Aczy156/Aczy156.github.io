@@ -18,7 +18,8 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/stl/algorithm20.1-stl-map/</guid>
-      <description>STL - map  【注意，此处的map是指的c++STL的map，c++STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
+      <description>[TOC]
+STL - map  【注意，此处的map是指的c++STL的map，c++STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
 map底层：红黑树（一种非严格意义上的平衡二叉树）【利用二叉树来进行查询、插入、删除=&amp;gt;O(logn)】map内部所有的数据都是无重复+有序的
 map有序性：map的key需要定义operator &amp;lt;。一般的数据类型系统已经确定了（如果是结构体做key的话，需要重载小于号。）
   unordered_map底层：hash_value【利用哈希来进行查询、插入、删除=&amp;gt;O(1)】unordered_map内部的数据只保证无重复 （不能保证有序）
@@ -37,7 +38,8 @@ set唯一，而multiset不唯一，可重复，但是两者都保持的是有序
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/stl/algorithm20.2-stl-set/</guid>
-      <description>STL - set set基础语法整理博客：
+      <description>[TOC]
+STL - set set基础语法整理博客：
 https://www.luogu.com.cn/blog/communist/stl-zheng-li-zhi-set
  set底层：红黑树
 set关键字唯一性【类似于map中的key，只出现一次】：保证set中所有元素只出现一次
@@ -49,7 +51,7 @@ multiset关键字不唯一，可重复性
 map有序，而unordered_map的无序性，但是两者都保持的是key唯一。
 set唯一，而multiset不唯一，可重复，但是两者都保持的是有序。
  basic
-int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); set&amp;lt;int&amp;gt; s(a+1, a+1+n); auto iter = s.begin(); // 输出，发现保证了有序性  while (iter != s.end()) { printf(&amp;#34;%d &amp;#34;, *iter);iter++; } // 然后再插入新的元素，查看是否有去重复  cin&amp;gt;&amp;gt;t; s.insert(t); cout&amp;lt;&amp;lt;endl; auto iter2 = s.begin(); while (iter2 !</description>
+int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); set&amp;lt;int&amp;gt; s(a+1, a+1+n); auto iter = s.begin(); // 输出，发现保证了有序性  while (iter != s.end()) { printf(&amp;#34;%d &amp;#34;, *iter);iter++; } // 然后再插入新的元素，查看是否有去重复  cin&amp;gt;&amp;gt;t; s.insert(t); cout&amp;lt;&amp;lt;endl; auto iter2 = s.</description>
     </item>
     
   </channel>

@@ -18,7 +18,8 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/</guid>
-      <description>字符串 &amp;amp; 回文串 Leetcode125-valid-palindrome 题目链接：valid-palindrome
+      <description>[TOC]
+字符串 &amp;amp; 回文串 Leetcode125-valid-palindrome 题目链接：valid-palindrome
 C/C++ - basic 利用toupper()、tolower()转换大小写
 bool isPalindrome(string s) { // remove invalid char and transform to lower case  string str = &amp;#34;&amp;#34;; for(int i = 0; i &amp;lt; s.length(); i++) if (s[i] &amp;lt;= &amp;#39;Z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;A&amp;#39; || s[i] &amp;lt;= &amp;#39;z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;a&amp;#39; || s[i] &amp;lt;= &amp;#39;9&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;0&amp;#39;) str += tolower(s[i]); // check  int l = str.size(); for (int i = 0; i &amp;lt; str.</description>
     </item>
@@ -29,7 +30,8 @@ bool isPalindrome(string s) { // remove invalid char and transform to lower case
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E6%8B%86%E5%88%86-%E6%8B%BC%E6%8E%A5/</guid>
-      <description>字符串 &amp;amp; 匹配（拆分） 字串匹配之后替换 =&amp;gt; map进行映射，将要映射的成分进行映射 https://www.luogu.com.cn/problem/P1603
+      <description>[TOC]
+字符串 &amp;amp; 匹配（拆分） 字串匹配之后替换 =&amp;gt; map进行映射，将要映射的成分进行映射 https://www.luogu.com.cn/problem/P1603
 题目大意：给六个字符串，然后如果有映射的进行映射为数字，没有的就不映射。输出最后映射完的结果
 1、准备数据结构：用于匹配的map字典=&amp;gt;将字符串与数字进行映射
 2、易错：第一位随便匹配，后面的位数如果是1位的话，拼接到一起之前要补0，例如如果是5，要输出05。
@@ -44,7 +46,8 @@ int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
-      <description>字符串 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
+      <description>[TOC]
+字符串 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
  [模版] 点名问题 https://www.luogu.com.cn/problem/P2580
 题目大意：给出若干个人的名字，多次询问看某个询问是否是第一次出现 &amp;amp; 重复出现【字典树最基本的应用】 &amp;amp; 错误名字
 1、数据结构：
@@ -63,7 +66,8 @@ val[maxn]用来记录索引到这个点的值，例如学生名字是索引的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</guid>
-      <description>二分  查找的几种：
+      <description>[TOC]
+二分  查找的几种：
  暴力遍历：O(n) 折半查找/二分查找：O(log2n) 哈希：O(1)  其中，二分就是折半查找。
  关键点：等于号的选取、l/r的区间范围的更改、check函数
 整数二分
@@ -78,7 +82,8 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
-      <description>数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
+      <description>[TOC]
+数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
 题目大意：有规则抽取特定位置索引
 1、删除、首尾添加、排序等等 =&amp;gt; vector
 #include &amp;lt;iostream&amp;gt;using namespace std; int n, m, idx=0; #include &amp;lt;vector&amp;gt;vector&amp;lt;int&amp;gt; b; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) b.push_back(i); while (b.size() &amp;gt; 1) { idx = (idx+m-1)%b.size(); printf(&amp;#34;%d &amp;#34;, b[idx]); b.erase(b.begin()+idx); } printf(&amp;#34;%d\n&amp;#34;, b[0]); return 0; } 前&amp;amp;中&amp;amp;后缀 https://www.luogu.com.cn/problem/P1449
@@ -93,7 +98,8 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%93%BE%E8%A1%A8/</guid>
-      <description>数据结构 线性表 - 链表  1、STL库中的list，直接可以使用的链表
+      <description>[TOC]
+数据结构 线性表 - 链表  1、STL库中的list，直接可以使用的链表
 补：手写链表的基本结构以及名词区分：
 基本结构就是指向第一个元素的指针（包含有第一个元素地址的变量）+后面一串的包含后序节点地址的节点
 区分头指针、头节点、首元素节点
@@ -106,29 +112,30 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     
     <item>
       <title>Algorithm11.2 数据结构 堆与堆优化</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86%E6%89%8B%E5%86%99%E5%A0%86/</guid>
-      <description>数据结构 堆 &amp;amp; 手写堆  用到堆优化的思路不一定是用堆，也可能是通过利用优先队列进行优化
-堆：
- 分类：最大堆、最小堆 过程：首先按照完全二叉树的形式，将序列填补到初始的堆中   堆的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&amp;gt; 可以用堆进行优化
-https://www.luogu.com.cn/problem/P3378
-手写堆 实现 获取区间前几大/最大 1、数据结构：一个模拟堆的数组myheap
-2、堆的基本操作：
- insert：插入新的元素 myheap[1]：获取堆顶元素 deletetop：删除堆顶元素  3、【下面范例都是小顶堆】
-插入新的元素 =&amp;gt; 从堆底往堆顶移动索引
-while (idx &amp;gt; 1) { if (myheap[idx] &amp;lt; myheap[idx&amp;gt;&amp;gt;1]) { swap(myheap[idx], myheap[idx&amp;gt;&amp;gt;1]); idx &amp;gt;&amp;gt;= 1; } } 删除堆顶元素 =&amp;gt; 从堆顶网堆底移动索引
-int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; size &amp;amp;&amp;amp; myheap[son] &amp;gt; myheap[son+1]) son++; if (myheap[son] &amp;lt; myheap[idx]) { swap(myheap[son], myheap[idx]); idx &amp;lt;&amp;lt;= 1; } } 完整代码：</description>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86/</guid>
+      <description>[TOC]
+数据结构 堆 &amp;amp; 手写堆  堆：
+ 分类：最大堆、最小堆 过程：首先按照完全二叉树的形式，将序列填补到初始的堆中  （堆-附加：利用堆的性质来判断是否是堆：「PAT1147」，判断方法就是直接对给定的层次遍历的序列来判断，是否满足a[i] &amp;gt; a[2&amp;lt;&amp;lt;i] &amp;amp;&amp;amp; a[i] &amp;gt; a[2&amp;lt;&amp;lt;i|1]或者a[i] &amp;lt; a[2&amp;lt;&amp;lt;i] &amp;amp;&amp;amp; a[i] &amp;lt; a[2&amp;lt;&amp;lt;i|1] ，来查看是否是最大堆或者最小堆
+用到堆优化的思路不一定是用堆，也可能是通过利用优先队列进行优化【堆的优化的应用场景：解决重复排序问题，每添加一个新的元素【在线更新】，都要重新排一次序 =&amp;gt; 可以用堆进行优化】
+用到堆的方式：
+ 手写堆：「例如下面的P3378手写堆 // P1631RMQ问题」的up/down方法来维护堆 直接利用优先队列来优化复杂度，优化的方式就是直接拿堆顶，进而取堆顶得到最大最小 或者 堆结构带来的排序「P2085取前最小」的每次拿堆顶，然后在线插入新的元素之后重新自动排序获取下一次的堆顶。   判断堆是否为最大堆、最小堆 https://pintia.cn/problem-sets/994805342720868352/problems/994805342821531648
+1、判断是否是最大堆最小堆：直接判断父节点与两个子节点的的大小关系。
+可以通过维护两个变量is_max = 1 / is_min = 1，当存在有子节点小于父节点=&amp;gt;不满足最小堆了把is_min = 0；当存在有子节点大于父节点=&amp;gt;不满足最小堆了把is_max = 0
+最后看is_max和is_min两个变量，是否是最大最小堆。
+// 从底部往上遍历 for (int j = 2; j &amp;lt;= m; ++j) { if (a[j] &amp;gt; a[j/2]) is_big = 0; else is_small = 0; } https://www.</description>
     </item>
     
     <item>
       <title>Algorithm11.3 数据结构 线性表 栈</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E6%A0%88%E5%8D%95%E8%B0%83%E6%A0%88/</guid>
-      <description>数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/</guid>
+      <description>[TOC]
+数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
 2、通过手写栈
  利用「顺序表」实现：用数组来模拟容器，用变量来作为栈顶 利用「链接表』实现：用链表实现  链首做为栈底，链尾做为栈顶：栈顶添加O(n)，查看栈顶O(n)，栈顶移除O(n) 链首做为栈顶，链尾做为栈底：栈顶添加O(1)，查看栈顶O(1)，栈顶移除O(1)     进出栈顺序问题 - 利用STL库中的栈进行实现 https://www.luogu.com.cn/problem/P4387
 题目大意：给定进栈顺序和出栈顺序，根据进栈顺序来比对出栈顺序是否正确
@@ -138,11 +145,12 @@ int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; si
     
     <item>
       <title>Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91%E5%BB%BA%E5%89%8D%E4%B8%AD%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86/</guid>
-      <description>数据结构 树 二叉树 性质 建树、前中后序遍历  树相关 遍历操作：
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <description>[TOC]
+数据结构 树 二叉树 性质 建树、前中后序遍历  树相关 遍历操作：
  【递归】先根遍历、后根遍历。看所有儿子节点和根节点的遍历顺序 【非递归】也是用队列先进先出作为数据结构来存    二叉树相关 两种实现方式：（基本的树结构是两种，如果转换为图进行储存也是可以的）
   「顺序表」结构体数组实现
   「链接表」二叉链表实现
@@ -156,13 +164,14 @@ int son = idx&amp;lt;&amp;lt;1; while (son &amp;lt;= size) { if (son &amp;lt; si
     </item>
     
     <item>
-      <title>Algorithm11.5 数据结构 哈夫曼树 哈夫曼编码</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</link>
+      <title>Algorithm11.5 数据结构 二叉类型相关树结构-哈夫曼树/二叉搜索树/红黑树/B&#43;树</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E6%A0%91%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91b&#43;%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%E4%BA%8C%E5%8F%89%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0&#43;%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0/</guid>
-      <description>数据结构 哈夫曼树  实现方式：
- 二叉链表实现【实现和二叉树的二叉链表实现方式几乎一样，链接： 二叉树-二叉链表实现 】   二叉链表实现 - 利用链表来链接起树的结构 1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E6%A0%91%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91b&#43;%E6%A0%91/</guid>
+      <description>[TOC]
+二叉类型相关数据结构 哈夫曼树 性质 实现-二叉链表 二叉链表实现 - 利用链表来链接起树的结构
+1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。
 struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[maxn];; 2、新增的数据结构：也就是huffman[maxn]，起作用就是储存所有的节点的。
 对应的思路，每次挑出节点中值最小的两个，然后把这两个节点合成一个，然后进行排序，并把新产生的节点放到优先队列中，然后再选出两个最小的，一直这么迭代下去。
  通过一个vis数组，来将右儿子给闭掉，然后将左儿子的值更新为他们所形成的父亲节点的值。  node * HuffmanTree() { for (int i = 0; i &amp;lt; n - 1; i++) { for (int j = 0; j &amp;lt; n; ++j) if (!vis[j]) pq.push({huffman[j].data, j}); ll = pq.top().idx;pq.pop(); rr = pq.top().idx; while (!pq.empty()) pq.pop(); vis[rr] = 1; node * lnode = new node {huffman[ll].</description>
@@ -174,7 +183,8 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8-%E9%98%9F%E5%88%97/</guid>
-      <description>数据结构 线性表 - 队列  1、STL库中的queue
+      <description>[TOC]
+数据结构 线性表 - 队列  1、STL库中的queue
 2、手写队列
  利用「顺序表」实现：用数组来模拟容器，用front来作为队首，用rear来作为队尾 利用「链接表」实现：用链表实现  链首做为队首，链尾做为队尾：队尾添加O(n)，查看队首O(1)，栈顶移除O(1) 链首做为队尾，链尾做为队首：栈顶添加O(1)，查看栈顶O(n)，栈顶移除O(n)    3、利用「顺序表」手写队列的溢出问题
  假溢出「仅限于用顺序表/数组实现的队列」  出现的原因：由于队首front和队尾rear两个索引在一直往后推延，这样前面用过的地址空间就无法重复使用，在量巨大的情况下就会导致超过地址本来可承受的。 解决方案：通过搞成循环队列，这样原来用过的地址就可以进行重复利用，也不用回收   真溢出「仅限于循环队列，无论是哪种方式实现的」  出现的原因：循环队列不是普通队列的固定长度，所以一直往里边添加的话总会有溢出的时候。     </description>
@@ -186,7 +196,8 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
-      <description>并查集 模版-查看两个元素是否在一个集合中 https://www.luogu.com.cn/problem/P1551
+      <description>[TOC]
+并查集 模版-查看两个元素是否在一个集合中 https://www.luogu.com.cn/problem/P1551
 题目大意：
 1、findfa写法：return fa[x]==x?x:findfa(fa[x]);
  如果fa[x] == x，则代表这个节点就是代表这个集合的中心。 如果fa[x] != x，继续递归往上找，findfa(fa[x])  「路径压缩，把一条线的树结构给压缩成一个矮宽胖的类似于dom树结构的样式」：return fa[x]==x?x:fa[x]=findfa(fa[x]);
@@ -200,7 +211,8 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</guid>
-      <description>前缀和与差分  压缩时间复杂度：只要降一个等级的复杂度即可达到题解的情况
+      <description>[TOC]
+前缀和与差分  压缩时间复杂度：只要降一个等级的复杂度即可达到题解的情况
  经典情景：
  求和 计算个数   【下边的时间复杂度分析只针对选取左上和右下的端点】
 O(n^2) =&amp;gt; O(n) ：一维上选取和最大的子区间
@@ -218,7 +230,8 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</guid>
-      <description>图论 四种数据结构存储形式 存纯边【无点集的一点关系】 // 数据结构：结构体「起点、终点、权重」 struct node { int from, to, cost; bool operator &amp;lt; (const node n) const{return cost &amp;lt; n.cost;} // kruskal初始化 =&amp;gt; 边权排序 }edge[maxedge]; // 遍历 for (int i = 1; i &amp;lt;= number_of_edge; i++) { int from = edge[i].from, to = edge[i].to, cost = edge[i].cost; } 邻接矩阵 // 数据结构：二维数组 int mp[maxpoint][maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 1; j &amp;lt;= number_of_point; j++) { int from = i, to = j, cost = mp[i][j]; } } 邻接表 // 数据结构：向量+结构体「终点、权重」 struct node { int to, cost; }; vector&amp;lt;node&amp;gt; b[maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 0; j &amp;lt; b[i].</description>
+      <description>[TOC]
+图论 四种数据结构存储形式 存纯边【无点集的一点关系】 // 数据结构：结构体「起点、终点、权重」 struct node { int from, to, cost; bool operator &amp;lt; (const node n) const{return cost &amp;lt; n.cost;} // kruskal初始化 =&amp;gt; 边权排序 }edge[maxedge]; // 遍历 for (int i = 1; i &amp;lt;= number_of_edge; i++) { int from = edge[i].from, to = edge[i].to, cost = edge[i].cost; } 邻接矩阵 // 数据结构：二维数组 int mp[maxpoint][maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 1; j &amp;lt;= number_of_point; j++) { int from = i, to = j, cost = mp[i][j]; } } 邻接表 // 数据结构：向量+结构体「终点、权重」 struct node { int to, cost; }; vector&amp;lt;node&amp;gt; b[maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 0; j &amp;lt; b[i].</description>
     </item>
     
     <item>
@@ -227,7 +240,8 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</guid>
-      <description>最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
+      <description>[TOC]
+最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
  裸的dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&amp;lt;&amp;lt;31)-1; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &amp;lt;= n; ++i) { tem = INF,v = 0; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
     </item>
@@ -238,7 +252,8 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</guid>
-      <description>最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www.</description>
+      <description>[TOC]
+最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www.</description>
     </item>
     
     <item>
@@ -247,7 +262,8 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
-      <description>最小生成树  几种数据给出形式以及对应的解决方案
+      <description>[TOC]
+最小生成树  几种数据给出形式以及对应的解决方案
 1、点a 点b 边ab权值 =&amp;gt; 邻接表vector来存 =&amp;gt; 优先kruskal
 2、一个矩阵 =&amp;gt; 邻接矩阵来存【适合存点少线多的，也就是稠密图，如果稀疏的话，空间就爆炸了】 =&amp;gt; 优先prim（当然也可以手动提取，但是这样提取会很麻烦，因为边很多，有多少点就要考虑点个数平方个的边）
 两种解决方案的大致思路：
@@ -263,7 +279,8 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</guid>
-      <description>拓扑图 https://www.luogu.com.cn/problem/P4017
+      <description>[TOC]
+拓扑图 https://www.luogu.com.cn/problem/P4017
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
 2、根据入度、出度来看是否添加进入队列。
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 5005int n, m, mp[maxn][maxn], in[maxn], out[maxn], ta, tb, ans[maxn], final; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt; q; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); mp[ta][tb] = 1; out[ta]++;in[tb]++; } for (int i = 1; i &amp;lt;= n; ++i) if (!in[i]) {ans[i] = 1;q.push(i);} while (!q.empty()) { int nw = q.front();q.pop(); for (int i = 1; i &amp;lt;= n; ++i){ if (mp[nw][i]) { ans[i] += ans[nw];ans[i] %= 80112002; in[i]--; if (!</description>
@@ -275,7 +292,8 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-%E6%9C%80%E7%9F%AD%E8%B7%AF-spfa/</guid>
-      <description>最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&amp;lt;nd&amp;gt; spf; void spfa(int s) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &amp;gt; d[nwpos]+edge[i].cost) { d[to] = d[nwpos]+edge[i].cost; if (!</description>
+      <description>[TOC]
+最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&amp;lt;nd&amp;gt; spf; void spfa(int s) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &amp;gt; d[nwpos]+edge[i].cost) { d[to] = d[nwpos]+edge[i].</description>
     </item>
     
     <item>
@@ -284,7 +302,8 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
-      <description>LCA最近公共祖先 dfs深搜
+      <description>[TOC]
+LCA最近公共祖先 dfs深搜
  更新depth深度数组 depth[maxpoint] 更新p爬升数组 p[maxpoint][21]  LCA
  利用depth深度数组来进行爬升之前的微调 =&amp;gt; 将两个节点调整到同一高度 利用p数组来进行爬升，获取最近公共祖先  模版 LCA https://www.luogu.com.cn/problem/P3379
 1、数据结构：
@@ -300,7 +319,8 @@ void dfs(int from, int fa) { depth[from] = depth[fa] + 1; // 更新depth深度�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</guid>
-      <description>二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
+      <description>[TOC]
+二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
 二分图变式 关押罪犯：两个监狱，
 https://www.luogu.com.cn/problem/P1525</description>
     </item>
@@ -311,7 +331,8 @@ https://www.luogu.com.cn/problem/P1525</description>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5.1-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</guid>
-      <description>二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
+      <description>[TOC]
+二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
 二分图变式 关押罪犯：两个监狱，
 https://www.luogu.com.cn/problem/P1525</description>
     </item>
@@ -322,7 +343,8 @@ https://www.luogu.com.cn/problem/P1525</description>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</guid>
-      <description>图的遍历与搜索 模版 dfs &amp;amp; bfs https://www.luogu.com.cn/problem/P5318
+      <description>[TOC]
+图的遍历与搜索 模版 dfs &amp;amp; bfs https://www.luogu.com.cn/problem/P5318
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxpoint 100010#define maxedge 1000010int n, m, ta, tb, vis[maxpoint]; struct ed { int from, to; bool operator &amp;lt; (const ed e) const { if (from == e.from) return to &amp;gt; e.to;return from &amp;gt;e.from;} }t[maxedge]; struct node { int to, next; }edge[maxedge];int head[maxpoint], tot; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt;pq; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a))#include &amp;lt;algorithm&amp;gt; void addedge(int from, int to) { edge[++tot].</description>
     </item>
     
@@ -332,7 +354,8 @@ https://www.luogu.com.cn/problem/P1525</description>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</guid>
-      <description>树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
+      <description>[TOC]
+树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
  树的深度：【图中其他所有点】 离 【根节点对应的图中的节点】 距离最远的 树的宽度：图中距离 【根节点对应的图中的节点】 各个不同距离中，个数最多的点（例如，距离为1的点有2个，距离为2的点有3个，距离为3的点有1个，所以宽度为3） LCA问题：可以通过图论中的最短路来解决=》floyd直接暴力出来   基础转换 https://www.luogu.com.cn/problem/P3884
 #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = 1e8+9; int n, d[maxn][maxn], ta, tb, depth, w[maxn], width = 1, ans; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt; n; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); d[ta][tb] = 1; d[tb][ta] = 2; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); for (int i = 1; i &amp;lt;= n; ++i) { depth = max(depth, d[1][i]); w[d[1][i]]++; } for (int i = 1; i &amp;lt;= depth+1; ++i) width = max(width, w[i]); printf(&amp;#34;%d\n%d\n%d\n&amp;#34;, depth+1, width, d[ta][tb]); return 0; } </description>
     </item>
@@ -343,7 +366,8 @@ https://www.luogu.com.cn/problem/P1525</description>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</guid>
-      <description>倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
+      <description>[TOC]
+倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
 #include &amp;lt;iostream&amp;gt;using namespace std; int w[8] = {1, 2, 3, 5, 10, 20}, t; #include &amp;lt;bitset&amp;gt;bitset&amp;lt;1010&amp;gt; s; int main() { s[0] = 1; for (int i = 0; i &amp;lt; 6; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); for (int j = 0; j &amp;lt; t; ++j) s |= s&amp;lt;&amp;lt;w[i]; } printf(&amp;#34;Total=%d\n&amp;#34;, s.count()-1); return 0; } </description>
     </item>
     
@@ -353,7 +377,8 @@ https://www.luogu.com.cn/problem/P1525</description>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</guid>
-      <description>高精度 &amp;amp; 大数运算 （一）高精度除法-高精度除低精度 &amp;lt; 高精度加法 &amp;lt; 高精度乘法 &amp;lt; 高精度减法 &amp;lt; 高精度除法-高精度除高精度
+      <description>[TOC]
+高精度 &amp;amp; 大数运算 （一）高精度除法-高精度除低精度 &amp;lt; 高精度加法 &amp;lt; 高精度乘法 &amp;lt; 高精度减法 &amp;lt; 高精度除法-高精度除高精度
 （二）语言：python，Java的四则运算自带高精度；C/C++需要利用字符串/字符数组来读取大数并开数组存放然后通过模拟竖式运算来计算。
 大数加法 https://www.luogu.com.cn/problem/P1601
 1、读入用字符数组读入。
@@ -368,7 +393,8 @@ https://www.luogu.com.cn/problem/P1525</description>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84st%E8%A1%A8/</guid>
-      <description>ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
+      <description>[TOC]
+ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
 https://www.luogu.com.cn/problem/P3865
 模版 - ST表 题目大意：得到范围内（Range）最大值（Max）的若干次查询（Query）=&amp;gt;RMQ问题
 1、倍增思想，核心就是二倍二倍的获取最大值，类似于二叉树结构的遍历过程，复杂度为O(nlogn)。
@@ -385,7 +411,8 @@ int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); 
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
-      <description>数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
+      <description>[TOC]
+数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
 模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数
 eg：8(10) &amp;amp; -8(10) = 8 =&amp;gt; 根据树状数组结构图，就是8个节点
 eg：4(10) &amp;amp; -4(10) = 4 =&amp;gt; 根据树状数组结构图，就是4个节点
@@ -404,7 +431,8 @@ int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</guid>
-      <description>递推与递归 斐波那契数列 （高精度） https://www.luogu.com.cn/problem/P1255
+      <description>[TOC]
+递推与递归 斐波那契数列 （高精度） https://www.luogu.com.cn/problem/P1255
 (相似题目：https://www.luogu.com.cn/problem/P2437)
 题目大意：上楼梯，一次上一步或者一次上两步，问上n阶的楼梯可以有多少种走法
 1、递推公式：d[i] = d[i-1]+d[i-2];
@@ -419,7 +447,8 @@ AC代码：
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</guid>
-      <description>递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
+      <description>[TOC]
+递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
 两种方案：
  第一种，先输入进来，然后整体进行递归，递归的参数就是这个整体字串 第二种，边输入边递归，这样就可以利用一些getchar，char字符来进行输入的直接判断（例如如果字串一部分为ADD567，如果不知道长度的的话还有遍历判断，如果直接边输入边解析，那就可以直接利用cin来直接分割，cin&amp;raquo;字串&amp;raquo;数字，就自动分割了）   指令移动 https://www.luogu.com.cn/problem/P1322
 #include &amp;lt;iostream&amp;gt;using namespace std; int solve() { char c; string tp; int num, ans, d; while (cin&amp;gt;&amp;gt;c) { if (c == &amp;#39;]&amp;#39;) break; cin&amp;gt;&amp;gt;tp&amp;gt;&amp;gt;num; if (c == &amp;#39;R&amp;#39;) { d = getchar(); ans += num*solve(); d = getchar(); } if (c == &amp;#39;B&amp;#39;) d = getchar(), ans -= num; if (c == &amp;#39;F&amp;#39;) d = getchar(), ans += num; if (d == int(&amp;#39;]&amp;#39;)) break; } return ans; } int main() { printf(&amp;#34;%d\n&amp;#34;, solve()); return 0; } </description>
@@ -431,9 +460,10 @@ AC代码：
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
-      <description>背包dp   01背包：每种物品仅一个  体积逆序遍历   完全背包：每种物品有无限个  体积升序遍历   多重背包：每种物品有具体个数  外层是体积逆序遍历  内层是个数遍历     分组背包：每种物品仅一个，且不同物品有自己所属的组别 多维代价背包：每种物品不仅占用空间，而且占用金钱 多维目的背包：每种物品不仅具有价值1，而且具有价值2   01背包-装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
+      <description>[TOC]
+背包dp   01背包：每种物品仅一个  体积逆序遍历   完全背包：每种物品有无限个  体积升序遍历   多重背包：每种物品有具体个数  外层是体积逆序遍历  内层是个数遍历     分组背包：每种物品仅一个，且不同物品有自己所属的组别 多维代价背包：每种物品不仅占用空间，而且占用金钱 多维目的背包：每种物品不仅具有价值1，而且具有价值2   01背包 装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
 题目大意：
-#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 01背包-固定容量 最大价值 https://www.</description>
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 固定容量 最大价值 https://www.</description>
     </item>
     
     <item>
@@ -442,7 +472,8 @@ AC代码：
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</guid>
-      <description>坐标系dp  区域最大：
+      <description>[TOC]
+坐标系dp  区域最大：
  最大正方形 &amp;lt;-&amp;gt; 最大正方形变式 最大矩形（包括正方形）   最大正方形 https://www.luogu.com.cn/problem/P1387
  题目大意：给出一个二维坐标系中，找出里边全部是1的一个正方形的最大长度
  初始化：维护一个dp[maxn][maxn],dp[i][j]表示在第i，j的这个点上的最大正方形
@@ -457,7 +488,8 @@ if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))+1; 完整
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
-      <description>区间dp 区间基本提取 https://www.luogu.com.cn/problem/P2426
+      <description>[TOC]
+区间dp 区间基本提取 https://www.luogu.com.cn/problem/P2426
 题目大意：删除一段数组的数，代价为这个区间的左右端点值的差的绝对值*长度，求全部删去的最大代价。
 区间DP的水题，维护一个dp二维数组，然后三层遍历左右端点+中间割点，利用状态转移方程dp[i][j] = max(dp[i][j], dp[i][k]+dp[k+1][j])即可。
 注意：要上来初始化一下，初始化的值就是运算法则算出来的，而dp所做的就是排列组合来搜索组合。
@@ -470,7 +502,8 @@ if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))+1; 完整
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</guid>
-      <description>状压dp  主要特征：n较小 =&amp;gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
+      <description>[TOC]
+状压dp  主要特征：n较小 =&amp;gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
 主要思路：就是将本来某一行的状态是或否的唯二的两种【可能本来需要用数组来储存的】 =&amp;gt; 通过用二进制【01来进行储存】
 主要原因：用于解决情况之间的耦合性太复杂（就例如八皇后，看上下左右斜上下这些，直接通过压缩成字符串的状态然后来进行位运算即可），如果直接循环遍历去判断的话太麻烦，所以通过状态压缩，
  把本来是需要用数组表示的数据结构=&amp;gt;用一个字串直接整体表示 把本来需要循环来计算的=&amp;gt;用位运算来计算   互不侵犯：https://www.luogu.com.cn/problem/P1896
@@ -487,7 +520,8 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</guid>
-      <description>树型dp  题目风格：给出树上的每个节点的值，然后给出
+      <description>[TOC]
+树型dp  题目风格：给出树上的每个节点的值，然后给出
 思路：
  利用链式前向星存储  对于n叉树的话，这样存储最好，因为这样在每一层的节点对于他的子叶遍历时直接用链式前向星挨个遍历即可 对于二叉树的话，可以直接用二叉链表储存，用链式前向星也可以   在递归当前节点时，递归他的所有叶子结点 在递归回来之后，修改dp数组，递归出来之后其子树的值是被更新过的，所以此时可以进行更新   最大子树和 https://www.luogu.com.cn/problem/P1122
 题目大意：获取该棵树中最大的子树和
@@ -501,7 +535,8 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</guid>
-      <description>计数dp  典型：
+      <description>[TOC]
+计数dp  典型：
  对一个区域进行划分，划分种类  随意划分：P1025，直接给定一个数以及要划分的份数，然后看这个数有多少种分法 按照给定的要求划分：P1077，直接卡死了每一个点上的约定范围 按照递增/递减的方式划分：P1806，直接按照递增着划分      随意划分 https://www.luogu.com.cn/problem/P1025
 按照给定要求划分 https://www.luogu.com.cn/problem/P1077
 递增/递减划分 https://www.luogu.com.cn/problem/P1806
@@ -516,7 +551,8 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</guid>
-      <description>线性dp 时间线问题 https://www.luogu.com.cn/problem/P1095
+      <description>[TOC]
+线性dp 时间线问题 https://www.luogu.com.cn/problem/P1095
 题目大意：时间线上，每秒钟 =&amp;gt; 可以选择a方式，属性c变化1；可以选择b方式，属性c变化2。
 1、dp[i]表示在时间为i的时候，最远可到达的距离。
 2、预处理：由于已知了a方式更好，那么可以优先通过a方式对数据dp进行预处理
@@ -530,7 +566,8 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</guid>
-      <description>基础dp 数字三角形 https://www.luogu.com.cn/problem/P1216
+      <description>[TOC]
+基础dp 数字三角形 https://www.luogu.com.cn/problem/P1216
 题目大意：给一个三角形矩阵，然后从上往下走，怎么才能走的总量最大。
 1、// 上往下 =&amp;gt; 初始化三角形的上边两条边
 初始化：dp[i][0] = dp[i-1][0]+a[i][0], dp[i][i] = dp[i-1][i-1]+a[i][i]; 状态转移方程：dp[i][j] = max(dp[i-1][j-1],dp[i-1][j])+a[i][j];
@@ -545,7 +582,8 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</guid>
-      <description>思维 &amp;amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
+      <description>[TOC]
+思维 &amp;amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
 题目大意：
 1、结合贪心思想，永远把相邻的最小的给加进去，ans += min(cost[i-1], cost[i])
 2、状态的推进更新，例如str=&amp;quot;aaa&amp;quot;，cost分别为4 3 5，在更新4 3时候就要把状态退后，用这两个的最大的去比【因为最大的才是真正留下来的】，所以要用cost[i] = max(cost[i-1], cost[i])来保留状态
@@ -560,7 +598,8 @@ int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; fo
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/stl/algorithm20.1-stl-map/</guid>
-      <description>STL - map  【注意，此处的map是指的c++STL的map，c++STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
+      <description>[TOC]
+STL - map  【注意，此处的map是指的c++STL的map，c++STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
 map底层：红黑树（一种非严格意义上的平衡二叉树）【利用二叉树来进行查询、插入、删除=&amp;gt;O(logn)】map内部所有的数据都是无重复+有序的
 map有序性：map的key需要定义operator &amp;lt;。一般的数据类型系统已经确定了（如果是结构体做key的话，需要重载小于号。）
   unordered_map底层：hash_value【利用哈希来进行查询、插入、删除=&amp;gt;O(1)】unordered_map内部的数据只保证无重复 （不能保证有序）
@@ -579,7 +618,8 @@ set唯一，而multiset不唯一，可重复，但是两者都保持的是有序
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/stl/algorithm20.2-stl-set/</guid>
-      <description>STL - set set基础语法整理博客：
+      <description>[TOC]
+STL - set set基础语法整理博客：
 https://www.luogu.com.cn/blog/communist/stl-zheng-li-zhi-set
  set底层：红黑树
 set关键字唯一性【类似于map中的key，只出现一次】：保证set中所有元素只出现一次
@@ -591,7 +631,7 @@ multiset关键字不唯一，可重复性
 map有序，而unordered_map的无序性，但是两者都保持的是key唯一。
 set唯一，而multiset不唯一，可重复，但是两者都保持的是有序。
  basic
-int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); set&amp;lt;int&amp;gt; s(a+1, a+1+n); auto iter = s.begin(); // 输出，发现保证了有序性  while (iter != s.end()) { printf(&amp;#34;%d &amp;#34;, *iter);iter++; } // 然后再插入新的元素，查看是否有去重复  cin&amp;gt;&amp;gt;t; s.insert(t); cout&amp;lt;&amp;lt;endl; auto iter2 = s.begin(); while (iter2 !</description>
+int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); set&amp;lt;int&amp;gt; s(a+1, a+1+n); auto iter = s.begin(); // 输出，发现保证了有序性  while (iter != s.end()) { printf(&amp;#34;%d &amp;#34;, *iter);iter++; } // 然后再插入新的元素，查看是否有去重复  cin&amp;gt;&amp;gt;t; s.insert(t); cout&amp;lt;&amp;lt;endl; auto iter2 = s.</description>
     </item>
     
     <item>
@@ -600,7 +640,8 @@ int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%8D%9A%E5%BC%88%E8%AE%BA/algorithm21-%E5%8D%9A%E5%BC%88%E8%AE%BA/</guid>
-      <description>博弈论    巴什博弈 【bash game】 威佐夫博弈 【Wythoff game】 尼姆博弈 【Nimm game】 斐波那契博弈   巴什博弈 题目大意：
+      <description>[TOC]
+博弈论    巴什博弈 【bash game】 威佐夫博弈 【Wythoff game】 尼姆博弈 【Nimm game】 斐波那契博弈   巴什博弈 题目大意：
  情景：一堆两人。 方式：每人每回合拿1～m个。 问题：给定石头总数，问先手是否必胜。  思路：先手在石头总数为n%(1+m) == 0的时候必败，在其余时候必胜。因为先手可以总保证在每回合让自己和对手拿的总数为(1+m)个，所以到最后一轮对手无论拿1～m个都没用，都必败。
 威佐夫博弈 题目大意：
  情景：两堆两人。 方式：每人每回合 从一堆中拿若干个 或者 从两堆中各拿相同个。 问题：给定两堆石头数量，问先手是否必胜。  尼姆博弈 题目大意：
@@ -615,7 +656,8 @@ int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
-      <description>数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
+      <description>[TOC]
+数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
  基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
 1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
 2、再将每个位置反向赋值回去。
@@ -629,7 +671,8 @@ for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i].v
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
-      <description>数据结构 区间问题  单个区间 区间最值「典型数据结构问题」：
+      <description>[TOC]
+数据结构 区间问题  单个区间 区间最值「典型数据结构问题」：
  固定长度区间，然后滑动询问：  单调队列 RMQ [Range maximum/minimun Query] 线段树   不固定长度，随意起点和终点：  RMQ [Range maximum/minimun Query] 线段树    区间最长递增子序列「LIS问题」：
  线性dp  区间逆序对数/区间相互交换次数：
  归并排序，记录逆序对数 树状数组  区间其他问题：
@@ -649,7 +692,8 @@ https://www.luogu.com.cn/problem/P1886
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</guid>
-      <description>交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
+      <description>[TOC]
+交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
 1、题目大意是允许相邻的两个牌堆交叉换牌
 2、解决方案就是把交叉换成单向，然后通过单边尽头单向遍历简化问题【单边尽头单向可以的原因就是每次至少保证满足1个，然后就算是其他的中间往两边的，也最多了，每次只能满足一个，所以不如直接 单边 尽头 =&amp;gt; 方便遍历】
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 105int n, a[maxn], sum = 0, ans = 0; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 0; i &amp;lt; n; i++) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i]);sum += a[i];} sum /= n; for (int i = 0; i &amp;lt; n - 1; ++i) if (a[i] != sum) { a[i + 1] -= (sum - a[i]); ans++; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } </description>
@@ -661,7 +705,8 @@ https://www.luogu.com.cn/problem/P1886
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</guid>
-      <description>排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
+      <description>[TOC]
+排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
  冒泡排序【稳定】：$O(n^2)$ 最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」 选择排序【不稳定】：$O(n^2)$ 「拿到合适的然后放置」选择出最值以及最值的索引，然后进行交换。 插入排序三种：「拿到然后找合适的地方放置一个/多个」  直接插入【稳定】：$O(n^2)$ 对每次拿到的数，从一端到另一端暴力查找，找到合适的位置插入进去 折半插入【稳定】：$O(nlog_2^n)$ 在选择合适的位置的时候，会进行二分折半查找，找到合适位置插入进去 希尔插入【不稳定】：$O(n^{1.3})\sim O(n^2)$ 更复杂的插入排序过程，三大步，首先对半分，两半一对一匹配进行插入排序；然后对半分的两类内部分别进行插入，然后对整体进行插入排序。    递归 二分与合并：$O(n*log_2^n)$
  快速排序【不稳定】：首先移动，然后「合理的分割」 归并排序【稳定】：「分割」，然后「合理的合并」  递归 桶 多分与合并：
  计数排序：n个数n个桶，然后把n个桶再合并 桶排序：n个数k个桶，k个桶各自进行排序，然后再把k个桶合并 基数排序【稳定】：n个数10个桶，10个桶为首位/尾位的是个数字对应的数。  思路一：先合并，然后再根据首位/尾位的下面一位接着入桶 思路二：对每一个桶分别根据下一位再重新进小小桶，然后对小小桶进行合并，再对大桶进行合并    其他： $$ O(n*log_n2) $$
@@ -669,8 +714,7 @@ https://www.luogu.com.cn/problem/P1886
 1、递归完了回来将要排序的时候，两个范围注意，左边小于等于mid，右边小于等于r，然后右边的起点也是mid+1。
 2、******递归
 快速排序 题目链接：https://www.luogu.com.cn/problem/P1177
-1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
-2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。</description>
+1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}</description>
     </item>
     
     <item>
@@ -679,10 +723,11 @@ https://www.luogu.com.cn/problem/P1886
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</guid>
-      <description>排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&amp;gt; 一遍扫，模拟即可 仅可以交换相邻的 =&amp;gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp;amp; 顶部最小 最大：priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq;
+      <description>[TOC]
+排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&amp;gt; 一遍扫，模拟即可 仅可以交换相邻的 =&amp;gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp;amp; 顶部最小 最大：priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq;
 最小：priority_queue&amp;lt;int&amp;gt; pq;
 https://www.luogu.com.cn/problem/P3378
-#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq; int m, op, t; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); while (m--) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;op); switch (op) { case 1: scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);pq.push(t);break; case 2: printf(&amp;#34;%d\n&amp;#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;amp;&amp;amp; 直接利用优先队列实现的排序 https://www.</description>
+#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq; int m, op, t; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); while (m--) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;op); switch (op) { case 1: scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);pq.push(t);break; case 2: printf(&amp;#34;%d\n&amp;#34;, pq.top());break; case 3: pq.</description>
     </item>
     
     <item>
@@ -691,7 +736,8 @@ https://www.luogu.com.cn/problem/P3378
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</guid>
-      <description>贪心问题  装袋问题：
+      <description>[TOC]
+贪心问题  装袋问题：
 结构体排序问题 // 排序贪心：
  装袋问题-每个袋子限制个数为两个 https://www.luogu.com.cn/problem/P1094
 题目大意：给出若干个不同容量的东西，给出限定的最大容量的袋子，然后最少用多少个袋子装完这些不同容量东西
@@ -706,7 +752,8 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</guid>
-      <description>二分  一些第一眼看上去是用贪心解决，但实际上是需要用其他算法解决的问题
+      <description>[TOC]
+二分  一些第一眼看上去是用贪心解决，但实际上是需要用其他算法解决的问题
  https://www.luogu.com.cn/problem/P1570【看起来是贪心，实际上是找出答案的范围然后二分出结果】
 题目大意：选取m个，然后问怎么选，才能保证属性a求和比上属性b求和的值最大
 思路一：【贪心】按照属性a和属性b的比值进行排序，然后贪心的选取前m个。单个的VS求和的，有冲突
@@ -721,7 +768,8 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
-      <description>分治问题 最典型：分形 &amp;amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
+      <description>[TOC]
+分治问题 最典型：分形 &amp;amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
  矩阵的分治：https://www.luogu.com.cn/problem/P5461
 题目大意：正方形矩阵，分成四块，左上全赦免（为零），然后对剩下其他部分接着分成四块，一直这样下去。输出最后矩阵
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxl 1030int n, a[maxl][maxl]; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a))#include &amp;lt;cmath&amp;gt; void draw(int x, int y, int h) { if (h == 2) {a[x+1][y] = a[x][y+1] = a[x+1][y+1] = 1;return;} int nowh = h&amp;gt;&amp;gt;1; draw(x+nowh, y, nowh); draw(x, y+nowh, nowh); draw(x+nowh, y+nowh, nowh); } void print() { for (int i = 1; i &amp;lt;= n; ++i) { for (int j = 1; j &amp;lt;= n; ++j) { printf(&amp;#34;%d &amp;#34;, a[i][j]); } printf(&amp;#34;\n&amp;#34;); } } int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); n = pow(2, n); cl(a, 0); // init  draw(1, 1, n); // draw  print(); // print  return 0; } 分形-谢尔宾斯基三角：https://www.</description>
@@ -733,7 +781,8 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</guid>
-      <description>bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
+      <description>[TOC]
+bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
 题目大意：最多可到达的格点数
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 23int n, m, dir[4][2]={{0, 1}, {0, -1}, {1, 0}, {-1, 0}}, ans=1, vis[maxn][maxn]; char mp[maxn][maxn]; #include &amp;lt;queue&amp;gt;struct node{ int x, y; node(int x,int y): x(x), y(y){} }; queue&amp;lt;node&amp;gt; q; void bfs(int x, int y) { q.push(node(x, y)); vis[x][y] = 1; while (!q.empty()) { node nw = q.front();q.pop(); for (int i = 0; i &amp;lt; 4; ++i) { int nx = nw.</description>
     </item>
@@ -744,7 +793,8 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</guid>
-      <description>dfs  向深递归
+      <description>[TOC]
+dfs  向深递归
  传参的确定 =&amp;gt; 可以利用好递归调用栈机制 状态的判断 =&amp;gt; 递归到每一层之后，所有参数共同组合决定出一个状态，这个状态维护是否重复   [数组一维模版 &amp;amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
 #include &amp;lt;iostream&amp;gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &amp;lt; n; ++i) printf(&amp;#34;%5d&amp;#34;, a[i]); printf(&amp;#34;\n&amp;#34;); return; } for (int i = 1; i &amp;lt;= n; ++i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l+1); vis[i] = 0; } } } int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); dfs(0); return 0; } 素数环 &amp;amp; 分层 https://www.</description>
     </item>
@@ -755,7 +805,8 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
-      <description>DFS进阶-TLE情况的解决方案  解决方案
+      <description>[TOC]
+DFS进阶-TLE情况的解决方案  解决方案
  「一」通过剪枝缩小搜索范围 「二」记忆化搜索 - 添加一个v数组 // dp数组，来记录DFS所有触及到的状态，防止再次访问 「其他」DP解决   https://www.luogu.com.cn/problem/P1077
 「一」剪枝缩小搜索范围 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
 // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans++;return;} for (int i = 0; i &amp;lt;= a[l+1]; ++i) { cnt+=i;dfs(l+1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
@@ -768,7 +819,8 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
-      <description>DFS 记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。
+      <description>[TOC]
+DFS 记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。
 [模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
 题目大意：纯粹的重复递归调用，极限的话20 * 20 * 20次不同的计算要被一直算，如果可以记录下来，那么这么多次运算只需要算一遍。
 1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
@@ -777,14 +829,28 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
     </item>
     
     <item>
-      <title>Algorithm8.5 搜索思维题</title>
+      <title>Algorithm8.5 搜索思维题 &amp; 数字题目类型整合</title>
       <link>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</guid>
-      <description>搜索思维题  特点：可以用搜索，但是可能会T或者需要剪枝过多
+      <description>[TOC]
+搜索思维题  特点：可以用搜索，但是可能会T或者需要剪枝过多
  特殊地图（某方向固定长度）起点到终点 + 特殊走法：考虑按照特殊方向进行模拟 特殊走法（不允许往某个方向走）：考虑直接全盘dp   特殊地图起点到终点-特殊走法：  两行地图 特殊走法，只往一边走更优  特殊走法：  某单个方向不能走  // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans++;return;} for (int i = 0; i &amp;lt;= a[l+1]; ++i) { cnt+=i;dfs(l+1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
 int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } for (int i = 0; i &amp;lt;= a[l+1]; ++i) dfs(l+1, cnt+i); } 记忆化搜索 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm8.6 数字类型题目整合</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</guid>
+      <description>[TOC]
+数字类型题目整合  数字题目类型整合：
+ 若干个数相加组合成目标数的方案总和 小于等于4个数的平方的和组合成目标数的方案总和 给定一个数，问随意将这个数进行拆解，然后拆解得到的数做乘积，求乘积最大值   dfs转计数dp 问题1:若干个数相加组合成目标数的方案总和-可用dfs+剪枝出来 https://www.luogu.com.cn/problem/P1025
+1、计数问题，dfs暴力搜
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxtotal 205#define maxn 8int n, total, ans, dp[maxn][maxtotal]; void dfs(int last, int l, int val){ if (l == n) { if (val == total) ans++; return; } for (int i = last; val+i*(n-l)&amp;lt;=total; ++i) dfs(i, l+1, val+i); } int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;total, &amp;amp;n); dfs(1, 0, 0); printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } 2、利用dp实现</description>
     </item>
     
     <item>
@@ -793,7 +859,8 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</guid>
-      <description>数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
+      <description>[TOC]
+数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
 题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。
 https://www.luogu.com.cn/problem/P1372
 题目大意：给定1～n，求这里边任意k个数的最大公约数是多少
@@ -807,7 +874,8 @@ https://www.luogu.com.cn/problem/P1372
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
-      <description>数论 数学基础  常用：
+      <description>[TOC]
+数论 数学基础  常用：
  进制转换  数学思维：
 1、找到一段序列中出现奇数次/偶数次的
 2、找到一段区间中可以用平方差计算得到的个数
@@ -822,7 +890,8 @@ scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {sc
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</guid>
-      <description>数论基础 最大公约数gcd int gcd(int a,int b) { return (b&amp;gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
+      <description>[TOC]
+数论基础 最大公约数gcd int gcd(int a,int b) { return (b&amp;gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
 int gcd(int a, int b) { return (b&amp;lt;=0)?a:gcd(b, a%b); } 最大公约数[gcd]与最小公倍数[gld]乘积 == 这两个数的乘积 a*b = gcd(a, b)*gld()
 最小公倍数[gld] 可以利用最大公约数倒推回去，也就是gld(a, b)=a*b/gcd(a, b)
 质数 判断1～n中的所有质数
@@ -839,7 +908,8 @@ prime是质数列表，isprime
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</guid>
-      <description>组合数 基本的排列组合数 A(n, m)和C(n, m)
+      <description>[TOC]
+组合数 基本的排列组合数 A(n, m)和C(n, m)
 第二类Stirling数 数学意义：把n个数划分成k个集合
 实际意义：将n个球分到k个相同的盒子
 // 递归写法 ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow(2, (n-1)*1.0)-1; else return stirling(n-1, k-1)+k*stirling(n-1, k); } // 非递归写法  第二类Stirling数的变形 数学意义：把n个数划分成k个不同的集合
@@ -854,7 +924,8 @@ ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</guid>
-      <description>数据结构 STL 用法整合 linklist #include &amp;lt;list&amp;gt; list&amp;lt;int&amp;gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map // 功能描述 =&amp;gt; 查找出现单次的,并尽可能的节省空间 #include &amp;lt;map&amp;gt; map&amp;lt;int, bool&amp;gt; m; for (1~n) { cin&amp;gt;&amp;gt;t; if (m.count(t)) m.erase(t); // m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项  else m[t] = true; } // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&amp;lt;int, bool&amp;gt;::iterator iter = m.</description>
+      <description>[TOC]
+数据结构 STL 用法整合 linklist #include &amp;lt;list&amp;gt; list&amp;lt;int&amp;gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map // 功能描述 =&amp;gt; 查找出现单次的,并尽可能的节省空间 #include &amp;lt;map&amp;gt; map&amp;lt;int, bool&amp;gt; m; for (1~n) { cin&amp;gt;&amp;gt;t; if (m.count(t)) m.erase(t); // m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项  else m[t] = true; } // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&amp;lt;int, bool&amp;gt;::iterator iter = m.</description>
     </item>
     
     <item>
@@ -863,7 +934,8 @@ ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-common_algorithm/</guid>
-      <description>最短路 hdu2544
+      <description>[TOC]
+最短路 hdu2544
  dijkstra找距离当前点中未被刷新过距离起点最值的最小值(!vis[j] &amp;amp;&amp;amp; min(d[j]))拿来刷新到其他点的距离 如果d[v] + mp[v][j] &amp;lt; d[j]就刷新到j点的距离，j点要是未被刷新的点。  void dijkstra(){ for (int i = 0; i &amp;lt; n; i++) d[i] = mp[0][i]; vis[0] = 1; for (int i = 0; i &amp;lt; n; i++) { tem = INF;v = 0; for (int j = 0; j &amp;lt; n; j++) if (!vis[j] &amp;amp;&amp;amp; d[j] &amp;lt;= tem){ tem = d[j]; v = j; } vis[v] = 1; for (int j = 0; j &amp;lt; n; j++) if (!</description>
     </item>
     
@@ -873,7 +945,8 @@ ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/pta/pta/</guid>
-      <description>PTA1000-1099 1000  题目大意：求a+b
+      <description>[TOC]
+PTA1000-1099 1000  题目大意：求a+b
   【易错】输出格式的标准化：每3位来一个逗号（利用循环+取余进行输出）  1007  题目大意：最大子区间
   子区间中有可能穿插着负数。（因此不能一到负数就重置起终点，而是要等到当前临时的sum小于0了，再重置起终点） 重置终点的情况为sum&amp;gt;ans，此时才是正确的重置起终点的时机。 【易错】特殊情况考虑：对于全是负数的情况，此时ans为0，但是ans为0不一定全是负数，因为有可能存在0 0 0这样的子区间。  1008  题目大意：直接模拟楼层上下变化即可
  1012  题目大意：给出n个人的平均成绩、c语言、数学、英语，输出所有人排名最高的科目以及排名。（如果有相同的按照平均成绩&amp;gt;c语言&amp;gt;数学&amp;gt;英语顺序输出）
@@ -890,7 +963,8 @@ ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow
       <pubDate>Wed, 08 Apr 2020 20:41:58 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-dp%E5%9B%9E%E6%96%87%E4%B8%B2%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/</guid>
-      <description>回文串dp问题
+      <description>[TOC]
+回文串dp问题
 判断最长回文串  bool dp[i][j]表示从[i,j]这一段是否为回文串 状态转移方程：dp[i][j] = (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1||dp[i+1]dp[j-1]))?true:false (j &amp;gt; i) j-i == 1 是对aa这种两个字符呈对称形式的情况  // // main.cpp // 5回文子串 // // Created by 陈冉飞 on 2020/4/6. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010char s[maxn]; int main(int argc, const char * argv[]) { scanf(&amp;#34;%s&amp;#34;,s); int len = strlen(s),ans = 0; bool dp[len][len]; for (int i = 0; i &amp;lt; len; i++) dp[i][i] = true; for (int j = 1; j &amp;lt; len; j++) for (int i = 0; i &amp;lt; j; i++) if (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1 || dp[i+1][j-1])) {dp[i][j] = true;ans = max(ans,j-i+1);} else dp[i][j] = false; printf(&amp;#34;%d\n&amp;#34;,ans); return 0; } 以回文串形式抽取字串的最小次数  dp[i][j]表示区间[i,j]的最少抽取次数 状态转移方程 if (s[i] == s[j]) dp[i][j] = (j-i == 1)?</description>
     </item>
     
@@ -900,7 +974,8 @@ ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow
       <pubDate>Sun, 09 Feb 2020 21:54:27 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-csp2019.12q123%E6%80%BB%E7%BB%93/</guid>
-      <description>CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
+      <description>[TOC]
+CSP[2019.12]1.2.3题总结 1题 找7倍数或者含有7的数。
 // // main.cpp // [201912-1]count-num // // Created by 陈冉飞 on 2020/2/9. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &amp;lt;iostream&amp;gt;using namespace std; int cnt = 0,num = 0,n,a[4]; bool check(int num){ if (num%7 == 0) return true; while (num &amp;gt; 0) { if (num%10 == 7) return true; num/=10; } return false;; } int main(int argc, const char * argv[]) { scanf(&amp;#34;%d&amp;#34;,&amp;amp;n); while (cnt &amp;lt; n) { num++; if (check(num)) {a[(num-1)%4]++;cnt--;} cnt++; } printf(&amp;#34;%d\n%d\n%d\n%d\n&amp;#34;,a[0],a[1],a[2],a[3]); return 0; } 第二题 一开始想复杂了，想成搜索了，后来网页往下滚动看到了1e3果断循环暴力，结果还真是，，。</description>
     </item>
     
@@ -910,7 +985,8 @@ ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow
       <pubDate>Tue, 04 Feb 2020 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</guid>
-      <description>POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
+      <description>[TOC]
+POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
 卷包裹法 思路：
  点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大) 从点集的第一个点开始找上凸包。  如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。 如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。   从点集的最后一个点开始找下凸包。  判断点在线的左边还是右边：利用叉积(几何意义就是通过比较斜率，利用叉积的大小可以防止斜率为零或者无穷的情况)
 Graham扫描法 思路：
@@ -925,7 +1001,8 @@ int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test14-keras/</guid>
-      <description>keras.models  Model Sequential  Keras.Input 区分于keras.layers.Input 或者区分于
+      <description>[TOC]
+keras.models  Model Sequential  Keras.Input 区分于keras.layers.Input 或者区分于
 keras.layers 适用于含有神经元的网络  Dropout / SpatialDropout Dense 全连接层  用于处理图像-卷积  Convention卷积：Conv1D，Conv2D 和 Conv3D Pooling池化：MaxPooling1D,MaxPooling2D, GlobalMaxPooling1D   用于NLP处理-序列模型  LSTM / Bidirectional LSTM GRU Cu  CuDNNLSTM：这个是在老版本(在V_tensorflow &amp;lt; 2.0.0)中支持的，在新的tensorflow和独立出来的keras中都是没有的，所以如果使用的话，需要1:调整tensorflow的版本小于2.0.0、2:不使用自带的独立出来的keras，而是使用tensorflow内置的keras CUDNNGRU    一些不常用的keras库 keras.engine 底层控制驱动引擎，keras.engine.topology中的Layer来自定义keras神经网络模型中的某一层(是层，不是神经元)
 keras.initializers &amp;ndash; 初始化 keras.regularizers &amp;ndash; 正则化 keras.constraints &amp;ndash; 约束(以层为对象进行) keras.concatenate &amp;ndash; 用于连接 </description>
     </item>
@@ -936,7 +1013,8 @@ keras.initializers &amp;ndash; 初始化 keras.regularizers &amp;ndash; 正则�
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test14.1-pytorch/</guid>
-      <description>pytorch类比keras但区别 keras的所有子库基本都是复数，包括models, layers, optimizers等等
+      <description>[TOC]
+pytorch类比keras但区别 keras的所有子库基本都是复数，包括models, layers, optimizers等等
 而torch大部分都是单数
 torch.model ?
 torch.input ?
@@ -951,7 +1029,8 @@ torch.optim torch.optim.Adam()
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</guid>
-      <description>工具配备：
+      <description>[TOC]
+工具配备：
 深度学习框架：
 ​	常用：pytorch
 神经网络框架：
@@ -968,11 +1047,12 @@ Graph embedding [把整个表进行嵌入]   node embedding
       <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test13-pandas/</guid>
-      <description>数据类型相关 在处理脏数据的时候：
+      <description>[TOC]
+数据类型相关 在处理脏数据的时候：
 通过data[col][raw].dtype来查看元素的类型
 通过data[col][raw].astype = specific_data_type来切换单元格的属性
 截取 1）.loc,.iloc,.ix,只加第一个参数如.loc([1,2]),.iloc([2:3]),.ix[2]…则进行的是行选择 2）.loc,.at，选列是只能是列名，不能是position 3）.iloc,.iat，选列是只能是position，不能是列名 4）df[]只能进行行选择，或列选择，不能同时进行列选择，列选择只能是列名。
-sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Male 3.31 23.68 4 Female 3.61 24.59 print df.loc[1:3, [&amp;#39;total_bill&amp;#39;, &amp;#39;tip&amp;#39;]] print df.loc[1:3, &amp;#39;tip&amp;#39;: &amp;#39;total_bill&amp;#39;] print df.iloc[1:3, [1, 2]] print df.iloc[1:3, 1: 3] total_bill tip 1 10.34 1.66 2 23.68 3.50 3 23.68 3.31 -------------------- tip total_bill 1 1.66 10.34 2 3.50 23.68 3 3.</description>
+sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Male 3.31 23.68 4 Female 3.61 24.59 print df.loc[1:3, [&amp;#39;total_bill&amp;#39;, &amp;#39;tip&amp;#39;]] print df.loc[1:3, &amp;#39;tip&amp;#39;: &amp;#39;total_bill&amp;#39;] print df.iloc[1:3, [1, 2]] print df.iloc[1:3, 1: 3] total_bill tip 1 10.34 1.66 2 23.68 3.50 3 23.68 3.31 -------------------- tip total_bill 1 1.66 10.34 2 3.50 23.</description>
     </item>
     
     <item>
@@ -981,7 +1061,8 @@ sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Mal
       <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test13.1-numpy/</guid>
-      <description>np.zeros np.zeros(size) 初始化为长度为size，内容为0的矢量「秩=1」==》既不是行向量也不是列向量【a.T=a即可以验证】
+      <description>[TOC]
+np.zeros np.zeros(size) 初始化为长度为size，内容为0的矢量「秩=1」==》既不是行向量也不是列向量【a.T=a即可以验证】
 a = np.zeros(array_size)
 np.zero(size_x, size_y) 初始化为二维的「秩=2」==》如果让此时的size_y=1,那就是个列向量；如果让此时的size_x=1,那就是个行向量
 ![image-20201206171734156](/Users/aczy156/Library/Application Support/typora-user-images/image-20201206171734156.png)
@@ -997,7 +1078,7 @@ np 广播
 a = np.random.rand(array_size)
 c = a+5 # 加上一个常数但是numpy会自动转换成一个n为向量，来和前面的格式对齐，最后就是[a[0]+5, a[1]+5, ……]
 np.exp/np.expm1/np.log/np.log1p 做//做对数logv1,logv2……
-v = np.zero(100)</description>
+v = np.</description>
     </item>
     
     <item>
@@ -1006,7 +1087,8 @@ v = np.zero(100)</description>
       <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</guid>
-      <description>/input目录下的数据是read_only格式 可以通过copy一份到/working
+      <description>[TOC]
+/input目录下的数据是read_only格式 可以通过copy一份到/working
 两个路径：
  input路径： /kaggle/input/ working路径：/kaggle/working/  利用Linux指令进行copy
 !cp -r /kaggle/input/ new_folder_name
@@ -1035,7 +1117,8 @@ input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进
       <pubDate>Tue, 28 Jan 2020 22:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test12-cvtarget-detection/</guid>
-      <description>CV Target Detection YOLO R-CNN &amp;amp; Fast R-CNN </description>
+      <description>[TOC]
+CV Target Detection YOLO R-CNN &amp;amp; Fast R-CNN </description>
     </item>
     
     <item>
@@ -1044,7 +1127,8 @@ input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进
       <pubDate>Tue, 28 Jan 2020 21:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test11-cvimage-segmentation/</guid>
-      <description>CV-Image Segmentation 图像分割 传统分割方法 理解：
+      <description>[TOC]
+CV-Image Segmentation 图像分割 传统分割方法 理解：
  把图像分割成若干个块 每个块都有相同点 [可以利用拓广性来进行延伸]  基本方法：
   基于阈值的图像分割：按照灰度值进行提取，直接归成纯白色和纯黑色
   基于区域的图像分割：延伸合并 &amp;amp; 分裂 【两个可逆的过程】
@@ -1067,11 +1151,12 @@ input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进
       <pubDate>Tue, 28 Jan 2020 20:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test10-mlxgboost-lightgbm-catboost/</guid>
-      <description>Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix来进行转换
+      <description>[TOC]
+Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix来进行转换
   然后通过xgb的train()来进行训练
   for fold_n (train_idx, val_idx) in enumerate(folds.split(X)): train_data = xgb.DMatrix(data=X_train) val_data = xgb.DMatrix(data=X_val) model = xgb.train() Lightgbm 0 相关预处理 a) 中文属性的问题，需要编码，不然无法训练
 1 普通训练 2 对于利用交叉训练的 几个组成成分
- oof: out-of-folds clf: classifier trn_idx, val_idx: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合 lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。   # 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns) features = [&amp;#39;feature1&amp;#39;, &amp;#39;feature2&amp;#39;, &amp;#39;feature3&amp;#39;, &amp;#39;feature4&amp;#39;] cat_feats = [&amp;#39;feature1&amp;#39;, &amp;#39;feature4&amp;#39;] # oof, predictions oof = np.zeros(len(train)) prediction = np.</description>
+ oof: out-of-folds clf: classifier trn_idx, val_idx: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合 lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。   # 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns) features = [&amp;#39;feature1&amp;#39;, &amp;#39;feature2&amp;#39;, &amp;#39;feature3&amp;#39;, &amp;#39;feature4&amp;#39;] cat_feats = [&amp;#39;feature1&amp;#39;, &amp;#39;feature4&amp;#39;] # oof, predictions oof = np.</description>
     </item>
     
     <item>
@@ -1080,7 +1165,8 @@ input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进
       <pubDate>Tue, 28 Jan 2020 19:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
-      <description>numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
+      <description>[TOC]
+numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
 print(&amp;#39;data_np shape is: &amp;#39;, np.size(data_np, 0), np.size(data_np, 1), np.size(data_np, 2)) 需要进行维度变化的 按照维度求最值 【根据axis来选择对应的维度，然后提取最大值】 ==&amp;gt; axis=x,就是第x的维度提取最值，最后那个维度变成一，dim--
 array([[0, 1, 2], [9, 4, 5], [6, 7, 8], [10, 11, 12]]) # 当前维度(4, 3) print(np.max(a)) #全局最大 8 print(np.max(a,axis=0)) #每列最大 =&amp;gt; 第一个维度的长度变为1，所以向量的长度变为3 [6 7 8] print(np.max(a,axis=1)) #每行最大 =&amp;gt; 第二个维度的长度变为1，所以向量的长度变为4 [2 5 8]import plotly.express as px fig = px.pie(data, name=&amp;#39;attr&amp;#39;) 类似于Dataframe的value_counts() 实质还是要通过形成dataframe数据结构来进行
 pd.Series(numpy_data).value_counts().plot.bar()
@@ -1094,7 +1180,8 @@ ls = list(set([&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;a&amp;#39;])) 
       <pubDate>Tue, 28 Jan 2020 18:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</guid>
-      <description>Python - 广播机制 Python - apply [维持原来的维度数]
+      <description>[TOC]
+Python - 广播机制 Python - apply [维持原来的维度数]
 应用场景：对于一个DataFrame
 1、利用函数进行apply
 然后通过给apply传入一个参数是一个映射的函数apply(func)，然后进行映射的方式就是func函数所表达的方式
@@ -1112,7 +1199,8 @@ train[&amp;#39;new_length&amp;#39;] = train[&amp;#39;text&amp;#39;].apply(lambda
       <pubDate>Tue, 28 Jan 2020 17:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</guid>
-      <description>Credit Card Frauds Detection 处理样本分布不均问题：Imbalance Datasets distribution 几种可行的解决方案：
+      <description>[TOC]
+Credit Card Frauds Detection 处理样本分布不均问题：Imbalance Datasets distribution 几种可行的解决方案：
  采样方法  under-sampling 欠采样 over-sampling 过采样   集成学习+阈值调整 *  根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
 import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr&amp;#39;, color=&amp;#39;attr&amp;#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&amp;gt;bar】import matplotlib.pyplot as plt
 eg1:
@@ -1126,7 +1214,8 @@ df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [多个属�
       <pubDate>Tue, 28 Jan 2020 16:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
-      <description>CV-数据增强 手动人工数据增强   数据为非图形化的数据「本身不是图片」
+      <description>[TOC]
+CV-数据增强 手动人工数据增强   数据为非图形化的数据「本身不是图片」
  例如Digit Recognization，通过把所有像素点放进了表格里边    数据为图形化的数据「本身是图片」
  例如Facial Keypoints Detection，通过对已经是图片的进行变形。 变形包括：  垂直镜像对称 mirroring on vertical axis 旋转类 rotation  水平翻转 horizontal flip 旋转增强 rotation augmentation   色彩转换 color shifting  亮度增强 brightness augmentation RGB变化 RGB shifting (PCA采样，AlexNet PCA色彩增强)   剪裁类 shearing  转移/移动增强 shifit agumentation 随机剪裁 random cropping   变形类 warping  局部变形 local warping   随机噪声增强 random-noise augmentation      利用albumentations进行数据增强 要点：</description>
     </item>
@@ -1137,7 +1226,8 @@ df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [多个属�
       <pubDate>Tue, 28 Jan 2020 15:15:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</guid>
-      <description>NLP 工具库 NLP &amp;ndash; nltk [natural language toolkit] NLP &amp;ndash; gensim NLP 语料库 NLP &amp;ndash; GloVe全局动态库  GloVe 50D GloVe 100D GloVe 200D GloVe 300D  一些其他的具有标准参考的库 String库 punctuation 【标点符号】
+      <description>[TOC]
+NLP 工具库 NLP &amp;ndash; nltk [natural language toolkit] NLP &amp;ndash; gensim NLP 语料库 NLP &amp;ndash; GloVe全局动态库  GloVe 50D GloVe 100D GloVe 200D GloVe 300D  一些其他的具有标准参考的库 String库 punctuation 【标点符号】
 import string collections defaultdict 【默认字典】
 Counter
 from collection import defaultdict from collection import Counter </description>
@@ -1149,7 +1239,8 @@ from collection import defaultdict from collection import Counter </description>
       <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
-      <description>NLP 1、数据清洗 data cleaning  清洗html中的残留的tag：BeautifulSoup 清洗标点：正则表达式 清洗常用的没有实际意义的词语(a, the)：nltk中的stepwords  # import basic dependencies from bs4 import BeautifulSoup import re from nltk.corpus import stopwords # 具体使用 # html残留tag：用BeautifulSoup，实例化对象，然后通过get_text()获取 bs = BeautifulSoup(train[&amp;#39;text_content&amp;#39;][index], &amp;#39;lxml&amp;#39;) print(&amp;#39;origin content:\n{}\nafter use BeautifulSoup to clean html tag:\n{}\n&amp;#39;, train[&amp;#39;text_content&amp;#39;][index], bs.get_text()) # 标点符号：正则表达式 letters_only = re.sub(&amp;#39;[^a-zA-Z]&amp;#39;, &amp;#39;&amp;#39;, bs.get_text()) print(&amp;#39;origin content:\n{}\nafter use re:\n{}\n&amp;#39;, bs.get_text(), letters_only) # 用nltk中导入的stopwords来删除一些常见的没有用的单词，a，the…… # 先转换成小写lower case，然后分割split，最后用nltk中的stepwords lower_case = letters_only.lower() words = lower_case.split() stopwords.words(&amp;#39;english&amp;#39;)[:20] words = [word for word in words if not word in stopwords.</description>
+      <description>[TOC]
+NLP 1、数据清洗 data cleaning  清洗html中的残留的tag：BeautifulSoup 清洗标点：正则表达式 清洗常用的没有实际意义的词语(a, the)：nltk中的stepwords  # import basic dependencies from bs4 import BeautifulSoup import re from nltk.corpus import stopwords # 具体使用 # html残留tag：用BeautifulSoup，实例化对象，然后通过get_text()获取 bs = BeautifulSoup(train[&amp;#39;text_content&amp;#39;][index], &amp;#39;lxml&amp;#39;) print(&amp;#39;origin content:\n{}\nafter use BeautifulSoup to clean html tag:\n{}\n&amp;#39;, train[&amp;#39;text_content&amp;#39;][index], bs.get_text()) # 标点符号：正则表达式 letters_only = re.sub(&amp;#39;[^a-zA-Z]&amp;#39;, &amp;#39;&amp;#39;, bs.get_text()) print(&amp;#39;origin content:\n{}\nafter use re:\n{}\n&amp;#39;, bs.get_text(), letters_only) # 用nltk中导入的stopwords来删除一些常见的没有用的单词，a，the…… # 先转换成小写lower case，然后分割split，最后用nltk中的stepwords lower_case = letters_only.lower() words = lower_case.split() stopwords.words(&amp;#39;english&amp;#39;)[:20] words = [word for word in words if not word in stopwords.</description>
     </item>
     
     <item>
@@ -1158,7 +1249,8 @@ from collection import defaultdict from collection import Counter </description>
       <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</guid>
-      <description>NLP punctuations - 标点 puncts = [&amp;#39;,&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;&amp;#34;&amp;#39;, &amp;#39;:&amp;#39;, &amp;#39;)&amp;#39;, &amp;#39;(&amp;#39;, &amp;#39;-&amp;#39;, &amp;#39;!&amp;#39;, &amp;#39;?&amp;#39;, &amp;#39;|&amp;#39;, &amp;#39;;&amp;#39;, &amp;#34;&amp;#39;&amp;#34;, &amp;#39;$&amp;#39;, &amp;#39;&amp;amp;&amp;#39;, &amp;#39;/&amp;#39;, &amp;#39;[&amp;#39;, &amp;#39;]&amp;#39;, &amp;#39;&amp;gt;&amp;#39;, &amp;#39;%&amp;#39;, &amp;#39;=&amp;#39;, &amp;#39;#&amp;#39;, &amp;#39;*&amp;#39;, &amp;#39;+&amp;#39;, &amp;#39;\\&amp;#39;, &amp;#39;•&amp;#39;, &amp;#39;~&amp;#39;, &amp;#39;@&amp;#39;, &amp;#39;£&amp;#39;, &amp;#39;·&amp;#39;, &amp;#39;_&amp;#39;, &amp;#39;{&amp;#39;, &amp;#39;}&amp;#39;, &amp;#39;©&amp;#39;, &amp;#39;^&amp;#39;, &amp;#39;®&amp;#39;, &amp;#39;`&amp;#39;, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;→&amp;#39;, &amp;#39;°&amp;#39;, &amp;#39;€&amp;#39;, &amp;#39;™&amp;#39;, &amp;#39;›&amp;#39;, &amp;#39;♥&amp;#39;, &amp;#39;←&amp;#39;, &amp;#39;×&amp;#39;, &amp;#39;§&amp;#39;, &amp;#39;″&amp;#39;, &amp;#39;′&amp;#39;, &amp;#39;Â&amp;#39;, &amp;#39;█&amp;#39;, &amp;#39;½&amp;#39;, &amp;#39;à&amp;#39;, &amp;#39;…&amp;#39;, &amp;#39;“&amp;#39;, &amp;#39;★&amp;#39;, &amp;#39;”&amp;#39;, &amp;#39;–&amp;#39;, &amp;#39;●&amp;#39;, &amp;#39;â&amp;#39;, &amp;#39;►&amp;#39;, &amp;#39;−&amp;#39;, &amp;#39;¢&amp;#39;, &amp;#39;²&amp;#39;, &amp;#39;¬&amp;#39;, &amp;#39;░&amp;#39;, &amp;#39;¶&amp;#39;, &amp;#39;↑&amp;#39;, &amp;#39;±&amp;#39;, &amp;#39;¿&amp;#39;, &amp;#39;▾&amp;#39;, &amp;#39;═&amp;#39;, &amp;#39;¦&amp;#39;, &amp;#39;║&amp;#39;, &amp;#39;―&amp;#39;, &amp;#39;¥&amp;#39;, &amp;#39;▓&amp;#39;, &amp;#39;—&amp;#39;, &amp;#39;‹&amp;#39;, &amp;#39;─&amp;#39;, &amp;#39;▒&amp;#39;, &amp;#39;：&amp;#39;, &amp;#39;¼&amp;#39;, &amp;#39;⊕&amp;#39;, &amp;#39;▼&amp;#39;, &amp;#39;▪&amp;#39;, &amp;#39;†&amp;#39;, &amp;#39;■&amp;#39;, &amp;#39;’&amp;#39;, &amp;#39;▀&amp;#39;, &amp;#39;¨&amp;#39;, &amp;#39;▄&amp;#39;, &amp;#39;♫&amp;#39;, &amp;#39;☆&amp;#39;, &amp;#39;é&amp;#39;, &amp;#39;¯&amp;#39;, &amp;#39;♦&amp;#39;, &amp;#39;¤&amp;#39;, &amp;#39;▲&amp;#39;, &amp;#39;è&amp;#39;, &amp;#39;¸&amp;#39;, &amp;#39;¾&amp;#39;, &amp;#39;Ã&amp;#39;, &amp;#39;⋅&amp;#39;, &amp;#39;‘&amp;#39;, &amp;#39;∞&amp;#39;, &amp;#39;∙&amp;#39;, &amp;#39;）&amp;#39;, &amp;#39;↓&amp;#39;, &amp;#39;、&amp;#39;, &amp;#39;│&amp;#39;, &amp;#39;（&amp;#39;, &amp;#39;»&amp;#39;, &amp;#39;，&amp;#39;, &amp;#39;♪&amp;#39;, &amp;#39;╩&amp;#39;, &amp;#39;╚&amp;#39;, &amp;#39;³&amp;#39;, &amp;#39;・&amp;#39;, &amp;#39;╦&amp;#39;, &amp;#39;╣&amp;#39;, &amp;#39;╔&amp;#39;, &amp;#39;╗&amp;#39;, &amp;#39;▬&amp;#39;, &amp;#39;❤&amp;#39;, &amp;#39;ï&amp;#39;, &amp;#39;Ø&amp;#39;, &amp;#39;¹&amp;#39;, &amp;#39;≤&amp;#39;, &amp;#39;‡&amp;#39;, &amp;#39;√&amp;#39;, ] fasttext mispell - 一些省略成引号的 mispell_dict = {&amp;#34;ain&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;aren&amp;#39;t&amp;#34;: &amp;#34;are not&amp;#34;,&amp;#34;can&amp;#39;t&amp;#34;: &amp;#34;cannot&amp;#34;, &amp;#34;&amp;#39;cause&amp;#34;: &amp;#34;because&amp;#34;, &amp;#34;could&amp;#39;ve&amp;#34;: &amp;#34;could have&amp;#34;, &amp;#34;couldn&amp;#39;t&amp;#34;: &amp;#34;could not&amp;#34;, &amp;#34;didn&amp;#39;t&amp;#34;: &amp;#34;did not&amp;#34;, &amp;#34;doesn&amp;#39;t&amp;#34;: &amp;#34;does not&amp;#34;, &amp;#34;don&amp;#39;t&amp;#34;: &amp;#34;do not&amp;#34;, &amp;#34;hadn&amp;#39;t&amp;#34;: &amp;#34;had not&amp;#34;, &amp;#34;hasn&amp;#39;t&amp;#34;: &amp;#34;has not&amp;#34;, &amp;#34;haven&amp;#39;t&amp;#34;: &amp;#34;have not&amp;#34;, &amp;#34;he&amp;#39;d&amp;#34;: &amp;#34;he would&amp;#34;,&amp;#34;he&amp;#39;ll&amp;#34;: &amp;#34;he will&amp;#34;, &amp;#34;he&amp;#39;s&amp;#34;: &amp;#34;he is&amp;#34;, &amp;#34;how&amp;#39;d&amp;#34;: &amp;#34;how did&amp;#34;, &amp;#34;how&amp;#39;d&amp;#39;y&amp;#34;: &amp;#34;how do you&amp;#34;, &amp;#34;how&amp;#39;ll&amp;#34;: &amp;#34;how will&amp;#34;, &amp;#34;how&amp;#39;s&amp;#34;: &amp;#34;how is&amp;#34;, &amp;#34;I&amp;#39;d&amp;#34;: &amp;#34;I would&amp;#34;, &amp;#34;I&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;I would have&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#34;: &amp;#34;I will&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;I will have&amp;#34;,&amp;#34;I&amp;#39;m&amp;#34;: &amp;#34;I am&amp;#34;, &amp;#34;I&amp;#39;ve&amp;#34;: &amp;#34;I have&amp;#34;, &amp;#34;i&amp;#39;d&amp;#34;: &amp;#34;i would&amp;#34;, &amp;#34;i&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;i would have&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#34;: &amp;#34;i will&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;i will have&amp;#34;,&amp;#34;i&amp;#39;m&amp;#34;: &amp;#34;i am&amp;#34;, &amp;#34;i&amp;#39;ve&amp;#34;: &amp;#34;i have&amp;#34;, &amp;#34;isn&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;it&amp;#39;d&amp;#34;: &amp;#34;it would&amp;#34;, &amp;#34;it&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;it would have&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#34;: &amp;#34;it will&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;it will have&amp;#34;,&amp;#34;it&amp;#39;s&amp;#34;: &amp;#34;it is&amp;#34;, &amp;#34;let&amp;#39;s&amp;#34;: &amp;#34;let us&amp;#34;, &amp;#34;ma&amp;#39;am&amp;#34;: &amp;#34;madam&amp;#34;, &amp;#34;mayn&amp;#39;t&amp;#34;: &amp;#34;may not&amp;#34;, &amp;#34;might&amp;#39;ve&amp;#34;: &amp;#34;might have&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#34;: &amp;#34;might not&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;might not have&amp;#34;, &amp;#34;must&amp;#39;ve&amp;#34;: &amp;#34;must have&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#34;: &amp;#34;must not&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;must not have&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#34;: &amp;#34;need not&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;need not have&amp;#34;,&amp;#34;o&amp;#39;clock&amp;#34;: &amp;#34;of the clock&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#34;: &amp;#34;ought not&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;ought not have&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;sha&amp;#39;n&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;shall not have&amp;#34;, &amp;#34;she&amp;#39;d&amp;#34;: &amp;#34;she would&amp;#34;, &amp;#34;she&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;she would have&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#34;: &amp;#34;she will&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;she will have&amp;#34;, &amp;#34;she&amp;#39;s&amp;#34;: &amp;#34;she is&amp;#34;, &amp;#34;should&amp;#39;ve&amp;#34;: &amp;#34;should have&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#34;: &amp;#34;should not&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;should not have&amp;#34;, &amp;#34;so&amp;#39;ve&amp;#34;: &amp;#34;so have&amp;#34;,&amp;#34;so&amp;#39;s&amp;#34;: &amp;#34;so as&amp;#34;, &amp;#34;this&amp;#39;s&amp;#34;: &amp;#34;this is&amp;#34;,&amp;#34;that&amp;#39;d&amp;#34;: &amp;#34;that would&amp;#34;, &amp;#34;that&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;that would have&amp;#34;, &amp;#34;that&amp;#39;s&amp;#34;: &amp;#34;that is&amp;#34;, &amp;#34;there&amp;#39;d&amp;#34;: &amp;#34;there would&amp;#34;, &amp;#34;there&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;there would have&amp;#34;, &amp;#34;there&amp;#39;s&amp;#34;: &amp;#34;there is&amp;#34;, &amp;#34;here&amp;#39;s&amp;#34;: &amp;#34;here is&amp;#34;,&amp;#34;they&amp;#39;d&amp;#34;: &amp;#34;they would&amp;#34;, &amp;#34;they&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;they would have&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#34;: &amp;#34;they will&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;they will have&amp;#34;, &amp;#34;they&amp;#39;re&amp;#34;: &amp;#34;they are&amp;#34;, &amp;#34;they&amp;#39;ve&amp;#34;: &amp;#34;they have&amp;#34;, &amp;#34;to&amp;#39;ve&amp;#34;: &amp;#34;to have&amp;#34;, &amp;#34;wasn&amp;#39;t&amp;#34;: &amp;#34;was not&amp;#34;, &amp;#34;we&amp;#39;d&amp;#34;: &amp;#34;we would&amp;#34;, &amp;#34;we&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;we would have&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#34;: &amp;#34;we will&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;we will have&amp;#34;, &amp;#34;we&amp;#39;re&amp;#34;: &amp;#34;we are&amp;#34;, &amp;#34;we&amp;#39;ve&amp;#34;: &amp;#34;we have&amp;#34;, &amp;#34;weren&amp;#39;t&amp;#34;: &amp;#34;were not&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#34;: &amp;#34;what will&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;what will have&amp;#34;, &amp;#34;what&amp;#39;re&amp;#34;: &amp;#34;what are&amp;#34;, &amp;#34;what&amp;#39;s&amp;#34;: &amp;#34;what is&amp;#34;, &amp;#34;what&amp;#39;ve&amp;#34;: &amp;#34;what have&amp;#34;, &amp;#34;when&amp;#39;s&amp;#34;: &amp;#34;when is&amp;#34;, &amp;#34;when&amp;#39;ve&amp;#34;: &amp;#34;when have&amp;#34;, &amp;#34;where&amp;#39;d&amp;#34;: &amp;#34;where did&amp;#34;, &amp;#34;where&amp;#39;s&amp;#34;: &amp;#34;where is&amp;#34;, &amp;#34;where&amp;#39;ve&amp;#34;: &amp;#34;where have&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#34;: &amp;#34;who will&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;who will have&amp;#34;, &amp;#34;who&amp;#39;s&amp;#34;: &amp;#34;who is&amp;#34;, &amp;#34;who&amp;#39;ve&amp;#34;: &amp;#34;who have&amp;#34;, &amp;#34;why&amp;#39;s&amp;#34;: &amp;#34;why is&amp;#34;, &amp;#34;why&amp;#39;ve&amp;#34;: &amp;#34;why have&amp;#34;, &amp;#34;will&amp;#39;ve&amp;#34;: &amp;#34;will have&amp;#34;, &amp;#34;won&amp;#39;t&amp;#34;: &amp;#34;will not&amp;#34;, &amp;#34;won&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;will not have&amp;#34;, &amp;#34;would&amp;#39;ve&amp;#34;: &amp;#34;would have&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#34;: &amp;#34;would not&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;would not have&amp;#34;, &amp;#34;y&amp;#39;all&amp;#34;: &amp;#34;you all&amp;#34;, &amp;#34;y&amp;#39;all&amp;#39;d&amp;#34;: &amp;#34;you all would&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you all would have&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;re&amp;#34;: &amp;#34;you all are&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;ve&amp;#34;: &amp;#34;you all have&amp;#34;,&amp;#34;you&amp;#39;d&amp;#34;: &amp;#34;you would&amp;#34;, &amp;#34;you&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you would have&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#34;: &amp;#34;you will&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;you will have&amp;#34;, &amp;#34;you&amp;#39;re&amp;#34;: &amp;#34;you are&amp;#34;, &amp;#34;you&amp;#39;ve&amp;#34;: &amp;#34;you have&amp;#34;, &amp;#39;colour&amp;#39;: &amp;#39;color&amp;#39;, &amp;#39;centre&amp;#39;: &amp;#39;center&amp;#39;, &amp;#39;favourite&amp;#39;: &amp;#39;favorite&amp;#39;, &amp;#39;travelling&amp;#39;: &amp;#39;traveling&amp;#39;, &amp;#39;counselling&amp;#39;: &amp;#39;counseling&amp;#39;, &amp;#39;theatre&amp;#39;: &amp;#39;theater&amp;#39;, &amp;#39;cancelled&amp;#39;: &amp;#39;canceled&amp;#39;, &amp;#39;labour&amp;#39;: &amp;#39;labor&amp;#39;, &amp;#39;organisation&amp;#39;: &amp;#39;organization&amp;#39;, &amp;#39;wwii&amp;#39;: &amp;#39;world war 2&amp;#39;, &amp;#39;citicise&amp;#39;: &amp;#39;criticize&amp;#39;, &amp;#39;youtu &amp;#39;: &amp;#39;youtube &amp;#39;, &amp;#39;Qoura&amp;#39;: &amp;#39;Quora&amp;#39;, &amp;#39;sallary&amp;#39;: &amp;#39;salary&amp;#39;, &amp;#39;Whta&amp;#39;: &amp;#39;What&amp;#39;, &amp;#39;narcisist&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;howdo&amp;#39;: &amp;#39;how do&amp;#39;, &amp;#39;whatare&amp;#39;: &amp;#39;what are&amp;#39;, &amp;#39;howcan&amp;#39;: &amp;#39;how can&amp;#39;, &amp;#39;howmuch&amp;#39;: &amp;#39;how much&amp;#39;, &amp;#39;howmany&amp;#39;: &amp;#39;how many&amp;#39;, &amp;#39;whydo&amp;#39;: &amp;#39;why do&amp;#39;, &amp;#39;doI&amp;#39;: &amp;#39;do I&amp;#39;, &amp;#39;theBest&amp;#39;: &amp;#39;the best&amp;#39;, &amp;#39;howdoes&amp;#39;: &amp;#39;how does&amp;#39;, &amp;#39;mastrubation&amp;#39;: &amp;#39;masturbation&amp;#39;, &amp;#39;mastrubate&amp;#39;: &amp;#39;masturbate&amp;#39;, &amp;#34;mastrubating&amp;#34;: &amp;#39;masturbating&amp;#39;, &amp;#39;pennis&amp;#39;: &amp;#39;penis&amp;#39;, &amp;#39;Etherium&amp;#39;: &amp;#39;Ethereum&amp;#39;, &amp;#39;narcissit&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;bigdata&amp;#39;: &amp;#39;big data&amp;#39;, &amp;#39;2k17&amp;#39;: &amp;#39;2017&amp;#39;, &amp;#39;2k18&amp;#39;: &amp;#39;2018&amp;#39;, &amp;#39;qouta&amp;#39;: &amp;#39;quota&amp;#39;, &amp;#39;exboyfriend&amp;#39;: &amp;#39;ex boyfriend&amp;#39;, &amp;#39;airhostess&amp;#39;: &amp;#39;air hostess&amp;#39;, &amp;#34;whst&amp;#34;: &amp;#39;what&amp;#39;, &amp;#39;watsapp&amp;#39;: &amp;#39;whatsapp&amp;#39;, &amp;#39;demonitisation&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonitization&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonetisation&amp;#39;: &amp;#39;demonetization&amp;#39;} </description>
+      <description>[TOC]
+NLP punctuations - 标点 puncts = [&amp;#39;,&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;&amp;#34;&amp;#39;, &amp;#39;:&amp;#39;, &amp;#39;)&amp;#39;, &amp;#39;(&amp;#39;, &amp;#39;-&amp;#39;, &amp;#39;!&amp;#39;, &amp;#39;?&amp;#39;, &amp;#39;|&amp;#39;, &amp;#39;;&amp;#39;, &amp;#34;&amp;#39;&amp;#34;, &amp;#39;$&amp;#39;, &amp;#39;&amp;amp;&amp;#39;, &amp;#39;/&amp;#39;, &amp;#39;[&amp;#39;, &amp;#39;]&amp;#39;, &amp;#39;&amp;gt;&amp;#39;, &amp;#39;%&amp;#39;, &amp;#39;=&amp;#39;, &amp;#39;#&amp;#39;, &amp;#39;*&amp;#39;, &amp;#39;+&amp;#39;, &amp;#39;\\&amp;#39;, &amp;#39;•&amp;#39;, &amp;#39;~&amp;#39;, &amp;#39;@&amp;#39;, &amp;#39;£&amp;#39;, &amp;#39;·&amp;#39;, &amp;#39;_&amp;#39;, &amp;#39;{&amp;#39;, &amp;#39;}&amp;#39;, &amp;#39;©&amp;#39;, &amp;#39;^&amp;#39;, &amp;#39;®&amp;#39;, &amp;#39;`&amp;#39;, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;→&amp;#39;, &amp;#39;°&amp;#39;, &amp;#39;€&amp;#39;, &amp;#39;™&amp;#39;, &amp;#39;›&amp;#39;, &amp;#39;♥&amp;#39;, &amp;#39;←&amp;#39;, &amp;#39;×&amp;#39;, &amp;#39;§&amp;#39;, &amp;#39;″&amp;#39;, &amp;#39;′&amp;#39;, &amp;#39;Â&amp;#39;, &amp;#39;█&amp;#39;, &amp;#39;½&amp;#39;, &amp;#39;à&amp;#39;, &amp;#39;…&amp;#39;, &amp;#39;“&amp;#39;, &amp;#39;★&amp;#39;, &amp;#39;”&amp;#39;, &amp;#39;–&amp;#39;, &amp;#39;●&amp;#39;, &amp;#39;â&amp;#39;, &amp;#39;►&amp;#39;, &amp;#39;−&amp;#39;, &amp;#39;¢&amp;#39;, &amp;#39;²&amp;#39;, &amp;#39;¬&amp;#39;, &amp;#39;░&amp;#39;, &amp;#39;¶&amp;#39;, &amp;#39;↑&amp;#39;, &amp;#39;±&amp;#39;, &amp;#39;¿&amp;#39;, &amp;#39;▾&amp;#39;, &amp;#39;═&amp;#39;, &amp;#39;¦&amp;#39;, &amp;#39;║&amp;#39;, &amp;#39;―&amp;#39;, &amp;#39;¥&amp;#39;, &amp;#39;▓&amp;#39;, &amp;#39;—&amp;#39;, &amp;#39;‹&amp;#39;, &amp;#39;─&amp;#39;, &amp;#39;▒&amp;#39;, &amp;#39;：&amp;#39;, &amp;#39;¼&amp;#39;, &amp;#39;⊕&amp;#39;, &amp;#39;▼&amp;#39;, &amp;#39;▪&amp;#39;, &amp;#39;†&amp;#39;, &amp;#39;■&amp;#39;, &amp;#39;’&amp;#39;, &amp;#39;▀&amp;#39;, &amp;#39;¨&amp;#39;, &amp;#39;▄&amp;#39;, &amp;#39;♫&amp;#39;, &amp;#39;☆&amp;#39;, &amp;#39;é&amp;#39;, &amp;#39;¯&amp;#39;, &amp;#39;♦&amp;#39;, &amp;#39;¤&amp;#39;, &amp;#39;▲&amp;#39;, &amp;#39;è&amp;#39;, &amp;#39;¸&amp;#39;, &amp;#39;¾&amp;#39;, &amp;#39;Ã&amp;#39;, &amp;#39;⋅&amp;#39;, &amp;#39;‘&amp;#39;, &amp;#39;∞&amp;#39;, &amp;#39;∙&amp;#39;, &amp;#39;）&amp;#39;, &amp;#39;↓&amp;#39;, &amp;#39;、&amp;#39;, &amp;#39;│&amp;#39;, &amp;#39;（&amp;#39;, &amp;#39;»&amp;#39;, &amp;#39;，&amp;#39;, &amp;#39;♪&amp;#39;, &amp;#39;╩&amp;#39;, &amp;#39;╚&amp;#39;, &amp;#39;³&amp;#39;, &amp;#39;・&amp;#39;, &amp;#39;╦&amp;#39;, &amp;#39;╣&amp;#39;, &amp;#39;╔&amp;#39;, &amp;#39;╗&amp;#39;, &amp;#39;▬&amp;#39;, &amp;#39;❤&amp;#39;, &amp;#39;ï&amp;#39;, &amp;#39;Ø&amp;#39;, &amp;#39;¹&amp;#39;, &amp;#39;≤&amp;#39;, &amp;#39;‡&amp;#39;, &amp;#39;√&amp;#39;, ] fasttext mispell - 一些省略成引号的 mispell_dict = {&amp;#34;ain&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;aren&amp;#39;t&amp;#34;: &amp;#34;are not&amp;#34;,&amp;#34;can&amp;#39;t&amp;#34;: &amp;#34;cannot&amp;#34;, &amp;#34;&amp;#39;cause&amp;#34;: &amp;#34;because&amp;#34;, &amp;#34;could&amp;#39;ve&amp;#34;: &amp;#34;could have&amp;#34;, &amp;#34;couldn&amp;#39;t&amp;#34;: &amp;#34;could not&amp;#34;, &amp;#34;didn&amp;#39;t&amp;#34;: &amp;#34;did not&amp;#34;, &amp;#34;doesn&amp;#39;t&amp;#34;: &amp;#34;does not&amp;#34;, &amp;#34;don&amp;#39;t&amp;#34;: &amp;#34;do not&amp;#34;, &amp;#34;hadn&amp;#39;t&amp;#34;: &amp;#34;had not&amp;#34;, &amp;#34;hasn&amp;#39;t&amp;#34;: &amp;#34;has not&amp;#34;, &amp;#34;haven&amp;#39;t&amp;#34;: &amp;#34;have not&amp;#34;, &amp;#34;he&amp;#39;d&amp;#34;: &amp;#34;he would&amp;#34;,&amp;#34;he&amp;#39;ll&amp;#34;: &amp;#34;he will&amp;#34;, &amp;#34;he&amp;#39;s&amp;#34;: &amp;#34;he is&amp;#34;, &amp;#34;how&amp;#39;d&amp;#34;: &amp;#34;how did&amp;#34;, &amp;#34;how&amp;#39;d&amp;#39;y&amp;#34;: &amp;#34;how do you&amp;#34;, &amp;#34;how&amp;#39;ll&amp;#34;: &amp;#34;how will&amp;#34;, &amp;#34;how&amp;#39;s&amp;#34;: &amp;#34;how is&amp;#34;, &amp;#34;I&amp;#39;d&amp;#34;: &amp;#34;I would&amp;#34;, &amp;#34;I&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;I would have&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#34;: &amp;#34;I will&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;I will have&amp;#34;,&amp;#34;I&amp;#39;m&amp;#34;: &amp;#34;I am&amp;#34;, &amp;#34;I&amp;#39;ve&amp;#34;: &amp;#34;I have&amp;#34;, &amp;#34;i&amp;#39;d&amp;#34;: &amp;#34;i would&amp;#34;, &amp;#34;i&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;i would have&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#34;: &amp;#34;i will&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;i will have&amp;#34;,&amp;#34;i&amp;#39;m&amp;#34;: &amp;#34;i am&amp;#34;, &amp;#34;i&amp;#39;ve&amp;#34;: &amp;#34;i have&amp;#34;, &amp;#34;isn&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;it&amp;#39;d&amp;#34;: &amp;#34;it would&amp;#34;, &amp;#34;it&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;it would have&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#34;: &amp;#34;it will&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;it will have&amp;#34;,&amp;#34;it&amp;#39;s&amp;#34;: &amp;#34;it is&amp;#34;, &amp;#34;let&amp;#39;s&amp;#34;: &amp;#34;let us&amp;#34;, &amp;#34;ma&amp;#39;am&amp;#34;: &amp;#34;madam&amp;#34;, &amp;#34;mayn&amp;#39;t&amp;#34;: &amp;#34;may not&amp;#34;, &amp;#34;might&amp;#39;ve&amp;#34;: &amp;#34;might have&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#34;: &amp;#34;might not&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;might not have&amp;#34;, &amp;#34;must&amp;#39;ve&amp;#34;: &amp;#34;must have&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#34;: &amp;#34;must not&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;must not have&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#34;: &amp;#34;need not&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;need not have&amp;#34;,&amp;#34;o&amp;#39;clock&amp;#34;: &amp;#34;of the clock&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#34;: &amp;#34;ought not&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;ought not have&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;sha&amp;#39;n&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;shall not have&amp;#34;, &amp;#34;she&amp;#39;d&amp;#34;: &amp;#34;she would&amp;#34;, &amp;#34;she&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;she would have&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#34;: &amp;#34;she will&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;she will have&amp;#34;, &amp;#34;she&amp;#39;s&amp;#34;: &amp;#34;she is&amp;#34;, &amp;#34;should&amp;#39;ve&amp;#34;: &amp;#34;should have&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#34;: &amp;#34;should not&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;should not have&amp;#34;, &amp;#34;so&amp;#39;ve&amp;#34;: &amp;#34;so have&amp;#34;,&amp;#34;so&amp;#39;s&amp;#34;: &amp;#34;so as&amp;#34;, &amp;#34;this&amp;#39;s&amp;#34;: &amp;#34;this is&amp;#34;,&amp;#34;that&amp;#39;d&amp;#34;: &amp;#34;that would&amp;#34;, &amp;#34;that&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;that would have&amp;#34;, &amp;#34;that&amp;#39;s&amp;#34;: &amp;#34;that is&amp;#34;, &amp;#34;there&amp;#39;d&amp;#34;: &amp;#34;there would&amp;#34;, &amp;#34;there&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;there would have&amp;#34;, &amp;#34;there&amp;#39;s&amp;#34;: &amp;#34;there is&amp;#34;, &amp;#34;here&amp;#39;s&amp;#34;: &amp;#34;here is&amp;#34;,&amp;#34;they&amp;#39;d&amp;#34;: &amp;#34;they would&amp;#34;, &amp;#34;they&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;they would have&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#34;: &amp;#34;they will&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;they will have&amp;#34;, &amp;#34;they&amp;#39;re&amp;#34;: &amp;#34;they are&amp;#34;, &amp;#34;they&amp;#39;ve&amp;#34;: &amp;#34;they have&amp;#34;, &amp;#34;to&amp;#39;ve&amp;#34;: &amp;#34;to have&amp;#34;, &amp;#34;wasn&amp;#39;t&amp;#34;: &amp;#34;was not&amp;#34;, &amp;#34;we&amp;#39;d&amp;#34;: &amp;#34;we would&amp;#34;, &amp;#34;we&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;we would have&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#34;: &amp;#34;we will&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;we will have&amp;#34;, &amp;#34;we&amp;#39;re&amp;#34;: &amp;#34;we are&amp;#34;, &amp;#34;we&amp;#39;ve&amp;#34;: &amp;#34;we have&amp;#34;, &amp;#34;weren&amp;#39;t&amp;#34;: &amp;#34;were not&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#34;: &amp;#34;what will&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;what will have&amp;#34;, &amp;#34;what&amp;#39;re&amp;#34;: &amp;#34;what are&amp;#34;, &amp;#34;what&amp;#39;s&amp;#34;: &amp;#34;what is&amp;#34;, &amp;#34;what&amp;#39;ve&amp;#34;: &amp;#34;what have&amp;#34;, &amp;#34;when&amp;#39;s&amp;#34;: &amp;#34;when is&amp;#34;, &amp;#34;when&amp;#39;ve&amp;#34;: &amp;#34;when have&amp;#34;, &amp;#34;where&amp;#39;d&amp;#34;: &amp;#34;where did&amp;#34;, &amp;#34;where&amp;#39;s&amp;#34;: &amp;#34;where is&amp;#34;, &amp;#34;where&amp;#39;ve&amp;#34;: &amp;#34;where have&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#34;: &amp;#34;who will&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;who will have&amp;#34;, &amp;#34;who&amp;#39;s&amp;#34;: &amp;#34;who is&amp;#34;, &amp;#34;who&amp;#39;ve&amp;#34;: &amp;#34;who have&amp;#34;, &amp;#34;why&amp;#39;s&amp;#34;: &amp;#34;why is&amp;#34;, &amp;#34;why&amp;#39;ve&amp;#34;: &amp;#34;why have&amp;#34;, &amp;#34;will&amp;#39;ve&amp;#34;: &amp;#34;will have&amp;#34;, &amp;#34;won&amp;#39;t&amp;#34;: &amp;#34;will not&amp;#34;, &amp;#34;won&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;will not have&amp;#34;, &amp;#34;would&amp;#39;ve&amp;#34;: &amp;#34;would have&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#34;: &amp;#34;would not&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;would not have&amp;#34;, &amp;#34;y&amp;#39;all&amp;#34;: &amp;#34;you all&amp;#34;, &amp;#34;y&amp;#39;all&amp;#39;d&amp;#34;: &amp;#34;you all would&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you all would have&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;re&amp;#34;: &amp;#34;you all are&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;ve&amp;#34;: &amp;#34;you all have&amp;#34;,&amp;#34;you&amp;#39;d&amp;#34;: &amp;#34;you would&amp;#34;, &amp;#34;you&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you would have&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#34;: &amp;#34;you will&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;you will have&amp;#34;, &amp;#34;you&amp;#39;re&amp;#34;: &amp;#34;you are&amp;#34;, &amp;#34;you&amp;#39;ve&amp;#34;: &amp;#34;you have&amp;#34;, &amp;#39;colour&amp;#39;: &amp;#39;color&amp;#39;, &amp;#39;centre&amp;#39;: &amp;#39;center&amp;#39;, &amp;#39;favourite&amp;#39;: &amp;#39;favorite&amp;#39;, &amp;#39;travelling&amp;#39;: &amp;#39;traveling&amp;#39;, &amp;#39;counselling&amp;#39;: &amp;#39;counseling&amp;#39;, &amp;#39;theatre&amp;#39;: &amp;#39;theater&amp;#39;, &amp;#39;cancelled&amp;#39;: &amp;#39;canceled&amp;#39;, &amp;#39;labour&amp;#39;: &amp;#39;labor&amp;#39;, &amp;#39;organisation&amp;#39;: &amp;#39;organization&amp;#39;, &amp;#39;wwii&amp;#39;: &amp;#39;world war 2&amp;#39;, &amp;#39;citicise&amp;#39;: &amp;#39;criticize&amp;#39;, &amp;#39;youtu &amp;#39;: &amp;#39;youtube &amp;#39;, &amp;#39;Qoura&amp;#39;: &amp;#39;Quora&amp;#39;, &amp;#39;sallary&amp;#39;: &amp;#39;salary&amp;#39;, &amp;#39;Whta&amp;#39;: &amp;#39;What&amp;#39;, &amp;#39;narcisist&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;howdo&amp;#39;: &amp;#39;how do&amp;#39;, &amp;#39;whatare&amp;#39;: &amp;#39;what are&amp;#39;, &amp;#39;howcan&amp;#39;: &amp;#39;how can&amp;#39;, &amp;#39;howmuch&amp;#39;: &amp;#39;how much&amp;#39;, &amp;#39;howmany&amp;#39;: &amp;#39;how many&amp;#39;, &amp;#39;whydo&amp;#39;: &amp;#39;why do&amp;#39;, &amp;#39;doI&amp;#39;: &amp;#39;do I&amp;#39;, &amp;#39;theBest&amp;#39;: &amp;#39;the best&amp;#39;, &amp;#39;howdoes&amp;#39;: &amp;#39;how does&amp;#39;, &amp;#39;mastrubation&amp;#39;: &amp;#39;masturbation&amp;#39;, &amp;#39;mastrubate&amp;#39;: &amp;#39;masturbate&amp;#39;, &amp;#34;mastrubating&amp;#34;: &amp;#39;masturbating&amp;#39;, &amp;#39;pennis&amp;#39;: &amp;#39;penis&amp;#39;, &amp;#39;Etherium&amp;#39;: &amp;#39;Ethereum&amp;#39;, &amp;#39;narcissit&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;bigdata&amp;#39;: &amp;#39;big data&amp;#39;, &amp;#39;2k17&amp;#39;: &amp;#39;2017&amp;#39;, &amp;#39;2k18&amp;#39;: &amp;#39;2018&amp;#39;, &amp;#39;qouta&amp;#39;: &amp;#39;quota&amp;#39;, &amp;#39;exboyfriend&amp;#39;: &amp;#39;ex boyfriend&amp;#39;, &amp;#39;airhostess&amp;#39;: &amp;#39;air hostess&amp;#39;, &amp;#34;whst&amp;#34;: &amp;#39;what&amp;#39;, &amp;#39;watsapp&amp;#39;: &amp;#39;whatsapp&amp;#39;, &amp;#39;demonitisation&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonitization&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonetisation&amp;#39;: &amp;#39;demonetization&amp;#39;} </description>
     </item>
     
     <item>
@@ -1167,7 +1259,8 @@ from collection import defaultdict from collection import Counter </description>
       <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</guid>
-      <description>NLP - 词嵌入 </description>
+      <description>[TOC]
+NLP - 词嵌入 </description>
     </item>
     
     <item>
@@ -1176,7 +1269,8 @@ from collection import defaultdict from collection import Counter </description>
       <pubDate>Tue, 28 Jan 2020 14:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</guid>
-      <description>Feature Engineering&amp;ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
+      <description>[TOC]
+Feature Engineering&amp;ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
 df = pd.concat([train, test]) 用:来分割，:num表示num之前的所有，num:num之后的所有，:就是没有界限，所有的
 train = df[:len_of_train] test = df[len_of_test:] 2、提前添加属性拼接、利用属性拆分
 train[&amp;#39;type&amp;#39;] = &amp;#39;train&amp;#39; test[&amp;#39;type&amp;#39;] = &amp;#39;test&amp;#39; df = pd.concat([train, test]) train = df[df[&amp;#39;type&amp;#39;] == &amp;#39;train&amp;#39;] test = df[df[&amp;#39;type&amp;#39;] == &amp;#39;test&amp;#39;] 最后需要把拼接的时候，造成的test多了一个结果(也就是要预测的那个属性)属性给去掉
@@ -1193,7 +1287,8 @@ shops[&amp;#39;newAttr&amp;#39;] = shops[&amp;#39;oriAttr&amp;#39;].str.split(&a
       <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</guid>
-      <description>数据可视化&amp;ndash;categorical data 离散数据 直方图类型 [单个属性]： 根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
+      <description>[TOC]
+数据可视化&amp;ndash;categorical data 离散数据 直方图类型 [单个属性]： 根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
 import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr&amp;#39;, color=&amp;#39;attr&amp;#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&amp;gt;bar】import matplotlib.pyplot as plt
 eg1:
 plt.bar(data.attr.value_counts().index, data.attr.value_counts().values) eg2:
@@ -1207,7 +1302,8 @@ df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [单个属�
       <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</guid>
-      <description>数据可视化 &amp;ndash; 通过sklearn.metrics直接plot from sklearn.metrics import plot_precision_recall_curve
+      <description>[TOC]
+数据可视化 &amp;ndash; 通过sklearn.metrics直接plot from sklearn.metrics import plot_precision_recall_curve
 from sklearn.metrics import plot_roc_curve
 from sklearn.metrics import plot_confusion_matrix
 1、三个参数，分别是classifier、X_test / X_train / X_val、y_test / y_train / y_val，把模型+数据集传入方法中，然后直接进行预测，并把预测出来的数据和本来就有的y_test进行运算。
@@ -1231,7 +1327,8 @@ def plot_roc_curve_(y_true, y_pred): # Compute ROC curve and ROC area(auc) fpr, 
       <pubDate>Tue, 28 Jan 2020 12:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test2-%E5%8E%86%E6%AC%A1%E6%AF%94%E8%B5%9B/</guid>
-      <description>[Kaggle] House Price 结构化数据(表格)、回归问题(预测房价)
+      <description>[TOC]
+[Kaggle] House Price 结构化数据(表格)、回归问题(预测房价)
 2020.4.20 House Prices V1.0
 
 [Kaggle] TMDB Box Office Prediction 结构化数据(表格，表格拼接)、回归问题
@@ -1261,7 +1358,8 @@ def plot_roc_curve_(y_true, y_pred): # Compute ROC curve and ROC area(auc) fpr, 
       <pubDate>Tue, 28 Jan 2020 04:05:44 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/mldl/test-ifly_temperature_predict/</guid>
-      <description>描述 随着计算机技术的发展，我国逐渐实现了从传统农业到现代农业的转变，正逐步迈向智慧农业。温室是现代农业技术应用的典型场景，其内部环境具有可操作性，能人为形成适宜植物生长的小型封闭生态系统，提升农产品的产量和质量，因此被广泛应用于农业生产中。在温室的各项环境因子中，作物对温度最为敏感。温度的高低影响植株细胞的酶活性，从而影响作物的生长速度、产量和质量，因此温度对作物生长发育影响极大。为了保证农产品的产量和质量，应保证作物正常生长，需对温室温度进行精确的调控。
+      <description>[TOC]
+描述 随着计算机技术的发展，我国逐渐实现了从传统农业到现代农业的转变，正逐步迈向智慧农业。温室是现代农业技术应用的典型场景，其内部环境具有可操作性，能人为形成适宜植物生长的小型封闭生态系统，提升农产品的产量和质量，因此被广泛应用于农业生产中。在温室的各项环境因子中，作物对温度最为敏感。温度的高低影响植株细胞的酶活性，从而影响作物的生长速度、产量和质量，因此温度对作物生长发育影响极大。为了保证农产品的产量和质量，应保证作物正常生长，需对温室温度进行精确的调控。
 二、赛事任务 温室温度调控需要对温室温度进行精准的预测，本次大赛提供了中国农业大学涿州实验站的温室温度数据作为样本，参赛选手需基于提供的样本构建模型，预测温室温度变化情况。
 三、评审规则 1.数据说明： 本次比赛为参赛选手提供了温室内外的部分传感器数据，包括温室内的温度、湿度、气压以及温室外的温度、湿度、气压。
 本次比赛分为初赛和复赛两个阶段，初赛阶段提供约30天的传感器数据，其中前20天的数据作为训练数据，后10天的数据用于做温度预测；复赛阶段提供约15天的传感器数据，其中前10天的数据作为训练数据，后5天的数据用于做温度预测。

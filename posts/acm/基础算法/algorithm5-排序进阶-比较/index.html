@@ -21,20 +21,22 @@
 	<meta name="application-name" content="Algorithm5 Advanced Sort | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm5 Advanced Sort" />
-<meta property="og:description" content="排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&gt; 一遍扫，模拟即可 仅可以交换相邻的 =&gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
+<meta property="og:description" content="[TOC]
+排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&gt; 一遍扫，模拟即可 仅可以交换相邻的 =&gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
 最小：priority_queue&lt;int&gt; pq;
 https://www.luogu.com.cn/problem/P3378
-#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;&amp; 直接利用优先队列实现的排序 https://www." />
+#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm5 Advanced Sort"/>
-<meta name="twitter:description" content="排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&gt; 一遍扫，模拟即可 仅可以交换相邻的 =&gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
+<meta name="twitter:description" content="[TOC]
+排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&gt; 一遍扫，模拟即可 仅可以交换相邻的 =&gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp; 顶部最小 最大：priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
 最小：priority_queue&lt;int&gt; pq;
 https://www.luogu.com.cn/problem/P3378
-#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;&amp; 直接利用优先队列实现的排序 https://www."/>
+#include &lt;iostream&gt;using namespace std; #include &lt;queue&gt;priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int m, op, t; int main() { scanf(&#34;%d&#34;, &amp;m); while (m--) { scanf(&#34;%d&#34;, &amp;op); switch (op) { case 1: scanf(&#34;%d&#34;, &amp;t);pq.push(t);break; case 2: printf(&#34;%d\n&#34;, pq.top());break; case 3: pq."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -68,7 +70,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="排序变种">排序变种</h2>
+			<p>[TOC]</p>
+<h2 id="排序变种">排序变种</h2>
 <blockquote>
 <ul>
 <li>结构体排序

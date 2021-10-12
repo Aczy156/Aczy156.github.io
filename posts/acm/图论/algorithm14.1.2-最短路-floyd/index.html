@@ -21,14 +21,16 @@
 	<meta name="application-name" content="Algorithm14.1 最短路-floyd | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm14.1 最短路-floyd" />
-<meta property="og:description" content="最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &lt;iostream&gt;using namespace std; const int maxn = 105; const int inf = (1&lt;&lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) if (i != j) d[i][j] = inf; for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d%d&#34;, &amp;ta, &amp;tb, &amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &lt;= n; &#43;&#43;k) for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) d[i][j] = min(d[i][j], d[i][k]&#43;d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www." />
+<meta property="og:description" content="[TOC]
+最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &lt;iostream&gt;using namespace std; const int maxn = 105; const int inf = (1&lt;&lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) if (i != j) d[i][j] = inf; for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d%d&#34;, &amp;ta, &amp;tb, &amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &lt;= n; &#43;&#43;k) for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) d[i][j] = min(d[i][j], d[i][k]&#43;d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm14.1 最短路-floyd"/>
-<meta name="twitter:description" content="最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &lt;iostream&gt;using namespace std; const int maxn = 105; const int inf = (1&lt;&lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) if (i != j) d[i][j] = inf; for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d%d&#34;, &amp;ta, &amp;tb, &amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &lt;= n; &#43;&#43;k) for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) d[i][j] = min(d[i][j], d[i][k]&#43;d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www."/>
+<meta name="twitter:description" content="[TOC]
+最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &lt;iostream&gt;using namespace std; const int maxn = 105; const int inf = (1&lt;&lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) if (i != j) d[i][j] = inf; for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d%d&#34;, &amp;ta, &amp;tb, &amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &lt;= n; &#43;&#43;k) for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= n; &#43;&#43;j) d[i][j] = min(d[i][j], d[i][k]&#43;d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -62,7 +64,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="最短路-floyd">最短路-floyd</h2>
+			<p>[TOC]</p>
+<h2 id="最短路-floyd">最短路-floyd</h2>
 <h3 id="基础floyd已经经过滚动数组优化d数组只有两个维度不需要k这个维度邻接矩阵用mpmaxnmaxn二维矩阵储存">基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用<code>mp[maxn][maxn]</code>二维矩阵储存】</h3>
 <ul>
 <li>核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。</li>

@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm20.1 STL map | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm20.1 STL map" />
-<meta property="og:description" content="STL - map  【注意，此处的map是指的c&#43;&#43;STL的map，c&#43;&#43;STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
+<meta property="og:description" content="[TOC]
+STL - map  【注意，此处的map是指的c&#43;&#43;STL的map，c&#43;&#43;STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
 map底层：红黑树（一种非严格意义上的平衡二叉树）【利用二叉树来进行查询、插入、删除=&gt;O(logn)】map内部所有的数据都是无重复&#43;有序的
 map有序性：map的key需要定义operator &lt;。一般的数据类型系统已经确定了（如果是结构体做key的话，需要重载小于号。）
   unordered_map底层：hash_value【利用哈希来进行查询、插入、删除=&gt;O(1)】unordered_map内部的数据只保证无重复 （不能保证有序）
@@ -38,7 +39,8 @@ set唯一，而multiset不唯一，可重复，但是两者都保持的是有序
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm20.1 STL map"/>
-<meta name="twitter:description" content="STL - map  【注意，此处的map是指的c&#43;&#43;STL的map，c&#43;&#43;STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
+<meta name="twitter:description" content="[TOC]
+STL - map  【注意，此处的map是指的c&#43;&#43;STL的map，c&#43;&#43;STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
 map底层：红黑树（一种非严格意义上的平衡二叉树）【利用二叉树来进行查询、插入、删除=&gt;O(logn)】map内部所有的数据都是无重复&#43;有序的
 map有序性：map的key需要定义operator &lt;。一般的数据类型系统已经确定了（如果是结构体做key的话，需要重载小于号。）
   unordered_map底层：hash_value【利用哈希来进行查询、插入、删除=&gt;O(1)】unordered_map内部的数据只保证无重复 （不能保证有序）
@@ -82,7 +84,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="stl---map">STL - map</h2>
+			<p>[TOC]</p>
+<h2 id="stl---map">STL - map</h2>
 <blockquote>
 <p>【注意，此处的map是指的c++STL的map，c++STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】</p>
 <p>map底层：红黑树（一种非严格意义上的平衡二叉树）【利用二叉树来进行查询、插入、删除=&gt;O(logn)】map内部所有的数据都是<strong>无重复</strong>+<em>有序的</em></p>

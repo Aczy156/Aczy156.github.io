@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm4 十种排序 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm4 十种排序" />
-<meta property="og:description" content="排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
+<meta property="og:description" content="[TOC]
+排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
  冒泡排序【稳定】：$O(n^2)$ 最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」 选择排序【不稳定】：$O(n^2)$ 「拿到合适的然后放置」选择出最值以及最值的索引，然后进行交换。 插入排序三种：「拿到然后找合适的地方放置一个/多个」  直接插入【稳定】：$O(n^2)$ 对每次拿到的数，从一端到另一端暴力查找，找到合适的位置插入进去 折半插入【稳定】：$O(nlog_2^n)$ 在选择合适的位置的时候，会进行二分折半查找，找到合适位置插入进去 希尔插入【不稳定】：$O(n^{1.3})\sim O(n^2)$ 更复杂的插入排序过程，三大步，首先对半分，两半一对一匹配进行插入排序；然后对半分的两类内部分别进行插入，然后对整体进行插入排序。    递归 二分与合并：$O(n*log_2^n)$
  快速排序【不稳定】：首先移动，然后「合理的分割」 归并排序【稳定】：「分割」，然后「合理的合并」  递归 桶 多分与合并：
  计数排序：n个数n个桶，然后把n个桶再合并 桶排序：n个数k个桶，k个桶各自进行排序，然后再把k个桶合并 基数排序【稳定】：n个数10个桶，10个桶为首位/尾位的是个数字对应的数。  思路一：先合并，然后再根据首位/尾位的下面一位接着入桶 思路二：对每一个桶分别根据下一位再重新进小小桶，然后对小小桶进行合并，再对大桶进行合并    其他： $$ O(n*log_n2) $$
@@ -29,15 +30,15 @@
 1、递归完了回来将要排序的时候，两个范围注意，左边小于等于mid，右边小于等于r，然后右边的起点也是mid&#43;1。
 2、******递归
 快速排序 题目链接：https://www.luogu.com.cn/problem/P1177
-1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
-2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。" />
+1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm4 十种排序"/>
-<meta name="twitter:description" content="排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
+<meta name="twitter:description" content="[TOC]
+排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
  冒泡排序【稳定】：$O(n^2)$ 最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」 选择排序【不稳定】：$O(n^2)$ 「拿到合适的然后放置」选择出最值以及最值的索引，然后进行交换。 插入排序三种：「拿到然后找合适的地方放置一个/多个」  直接插入【稳定】：$O(n^2)$ 对每次拿到的数，从一端到另一端暴力查找，找到合适的位置插入进去 折半插入【稳定】：$O(nlog_2^n)$ 在选择合适的位置的时候，会进行二分折半查找，找到合适位置插入进去 希尔插入【不稳定】：$O(n^{1.3})\sim O(n^2)$ 更复杂的插入排序过程，三大步，首先对半分，两半一对一匹配进行插入排序；然后对半分的两类内部分别进行插入，然后对整体进行插入排序。    递归 二分与合并：$O(n*log_2^n)$
  快速排序【不稳定】：首先移动，然后「合理的分割」 归并排序【稳定】：「分割」，然后「合理的合并」  递归 桶 多分与合并：
  计数排序：n个数n个桶，然后把n个桶再合并 桶排序：n个数k个桶，k个桶各自进行排序，然后再把k个桶合并 基数排序【稳定】：n个数10个桶，10个桶为首位/尾位的是个数字对应的数。  思路一：先合并，然后再根据首位/尾位的下面一位接着入桶 思路二：对每一个桶分别根据下一位再重新进小小桶，然后对小小桶进行合并，再对大桶进行合并    其他： $$ O(n*log_n2) $$
@@ -45,8 +46,7 @@
 1、递归完了回来将要排序的时候，两个范围注意，左边小于等于mid，右边小于等于r，然后右边的起点也是mid&#43;1。
 2、******递归
 快速排序 题目链接：https://www.luogu.com.cn/problem/P1177
-1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
-2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。"/>
+1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}"/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -80,7 +80,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="排序">排序</h2>
+			<p>[TOC]</p>
+<h2 id="排序">排序</h2>
 <p>排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。
 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快
 <img src="https://i1.wp.com/i.stack.imgur.com/spHFh.png" alt="height of a binary tree" style="zoom:80%;" /></p>

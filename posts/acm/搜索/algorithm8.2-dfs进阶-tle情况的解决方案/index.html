@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm8.2 DFS进阶-TLE情况的解决方案 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm8.2 DFS进阶-TLE情况的解决方案" />
-<meta property="og:description" content="DFS进阶-TLE情况的解决方案  解决方案
+<meta property="og:description" content="[TOC]
+DFS进阶-TLE情况的解决方案  解决方案
  「一」通过剪枝缩小搜索范围 「二」记忆化搜索 - 添加一个v数组 // dp数组，来记录DFS所有触及到的状态，防止再次访问 「其他」DP解决   https://www.luogu.com.cn/problem/P1077
 「一」剪枝缩小搜索范围 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
 // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans&#43;&#43;;return;} for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) { cnt&#43;=i;dfs(l&#43;1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
@@ -32,7 +33,8 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans&#43;&#43;;re
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm8.2 DFS进阶-TLE情况的解决方案"/>
-<meta name="twitter:description" content="DFS进阶-TLE情况的解决方案  解决方案
+<meta name="twitter:description" content="[TOC]
+DFS进阶-TLE情况的解决方案  解决方案
  「一」通过剪枝缩小搜索范围 「二」记忆化搜索 - 添加一个v数组 // dp数组，来记录DFS所有触及到的状态，防止再次访问 「其他」DP解决   https://www.luogu.com.cn/problem/P1077
 「一」剪枝缩小搜索范围 关键是找清楚搜索维度的变量变化，找清楚哪些是递归进入的变量，哪些。该题一开始就看作的是层上dfs，然后通过l来作为依据进行搜索，l来作为return的依据，写出如下代码：
 // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans&#43;&#43;;return;} for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) { cnt&#43;=i;dfs(l&#43;1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
@@ -70,7 +72,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="dfs进阶-tle情况的解决方案">DFS进阶-TLE情况的解决方案</h2>
+			<p>[TOC]</p>
+<h2 id="dfs进阶-tle情况的解决方案">DFS进阶-TLE情况的解决方案</h2>
 <blockquote>
 <p>解决方案</p>
 <ul>

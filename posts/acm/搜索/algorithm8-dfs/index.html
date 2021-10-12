@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm8.2 DFS | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm8.2 DFS" />
-<meta property="og:description" content="dfs  向深递归
+<meta property="og:description" content="[TOC]
+dfs  向深递归
  传参的确定 =&gt; 可以利用好递归调用栈机制 状态的判断 =&gt; 递归到每一层之后，所有参数共同组合决定出一个状态，这个状态维护是否重复   [数组一维模版 &amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
 #include &lt;iostream&gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &lt; n; &#43;&#43;i) printf(&#34;%5d&#34;, a[i]); printf(&#34;\n&#34;); return; } for (int i = 1; i &lt;= n; &#43;&#43;i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l&#43;1); vis[i] = 0; } } } int main() { scanf(&#34;%d&#34;, &amp;n); dfs(0); return 0; } 素数环 &amp; 分层 https://www." />
 <meta property="og:type" content="article" />
@@ -30,7 +31,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm8.2 DFS"/>
-<meta name="twitter:description" content="dfs  向深递归
+<meta name="twitter:description" content="[TOC]
+dfs  向深递归
  传参的确定 =&gt; 可以利用好递归调用栈机制 状态的判断 =&gt; 递归到每一层之后，所有参数共同组合决定出一个状态，这个状态维护是否重复   [数组一维模版 &amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
 #include &lt;iostream&gt;using namespace std; int n, a[12], vis[12]; void dfs(int l) { if (l == n) { for (int i = 0; i &lt; n; &#43;&#43;i) printf(&#34;%5d&#34;, a[i]); printf(&#34;\n&#34;); return; } for (int i = 1; i &lt;= n; &#43;&#43;i) { if (!vis[i]) { a[l] = i;vis[i] = 1; dfs(l&#43;1); vis[i] = 0; } } } int main() { scanf(&#34;%d&#34;, &amp;n); dfs(0); return 0; } 素数环 &amp; 分层 https://www."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
@@ -66,7 +68,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="dfs">dfs</h2>
+			<p>[TOC]</p>
+<h2 id="dfs">dfs</h2>
 <blockquote>
 <p>向深递归</p>
 <ul>

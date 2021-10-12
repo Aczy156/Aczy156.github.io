@@ -21,7 +21,8 @@
 	<meta name="application-name" content="POJ1113 凸包算法 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="POJ1113 凸包算法" />
-<meta property="og:description" content="POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
+<meta property="og:description" content="[TOC]
+POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
 卷包裹法 思路：
  点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大) 从点集的第一个点开始找上凸包。  如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。 如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。   从点集的最后一个点开始找下凸包。  判断点在线的左边还是右边：利用叉积(几何意义就是通过比较斜率，利用叉积的大小可以防止斜率为零或者无穷的情况)
 Graham扫描法 思路：
@@ -34,7 +35,8 @@ int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.
 <meta property="article:modified_time" content="2020-02-04T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="POJ1113 凸包算法"/>
-<meta name="twitter:description" content="POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
+<meta name="twitter:description" content="[TOC]
+POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
 卷包裹法 思路：
  点集预处理，以横坐标为准从小到大(横坐标相同以纵坐标从小到大) 从点集的第一个点开始找上凸包。  如果要添加的点在凸包的点集中最新添加的两个点所形成的直线的右边，将改点添加进凸包的点集。 如果在左边，把凸包点集中最靠后的点移除，再判断，直到在右边就添加。   从点集的最后一个点开始找下凸包。  判断点在线的左边还是右边：利用叉积(几何意义就是通过比较斜率，利用叉积的大小可以防止斜率为零或者无穷的情况)
 Graham扫描法 思路：
@@ -74,7 +76,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="poj1113-凸包算法">POJ1113-凸包算法</h2>
+			<p>[TOC]</p>
+<h2 id="poj1113-凸包算法">POJ1113-凸包算法</h2>
 <p>题目链接：<a href="http://poj.org/problem?id=1113">http://poj.org/problem?id=1113</a>
 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。</p>
 <h2 id="卷包裹法">卷包裹法</h2>

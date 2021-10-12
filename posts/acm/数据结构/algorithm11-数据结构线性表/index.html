@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm11 数据结构 线性表 整合 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm11 数据结构 线性表 整合" />
-<meta property="og:description" content="数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
+<meta property="og:description" content="[TOC]
+数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
 题目大意：有规则抽取特定位置索引
 1、删除、首尾添加、排序等等 =&gt; vector
 #include &lt;iostream&gt;using namespace std; int n, m, idx=0; #include &lt;vector&gt;vector&lt;int&gt; b; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) b.push_back(i); while (b.size() &gt; 1) { idx = (idx&#43;m-1)%b.size(); printf(&#34;%d &#34;, b[idx]); b.erase(b.begin()&#43;idx); } printf(&#34;%d\n&#34;, b[0]); return 0; } 前&amp;中&amp;后缀 https://www.luogu.com.cn/problem/P1449
@@ -34,7 +35,8 @@
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm11 数据结构 线性表 整合"/>
-<meta name="twitter:description" content="数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
+<meta name="twitter:description" content="[TOC]
+数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
 题目大意：有规则抽取特定位置索引
 1、删除、首尾添加、排序等等 =&gt; vector
 #include &lt;iostream&gt;using namespace std; int n, m, idx=0; #include &lt;vector&gt;vector&lt;int&gt; b; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) b.push_back(i); while (b.size() &gt; 1) { idx = (idx&#43;m-1)%b.size(); printf(&#34;%d &#34;, b[idx]); b.erase(b.begin()&#43;idx); } printf(&#34;%d\n&#34;, b[0]); return 0; } 前&amp;中&amp;后缀 https://www.luogu.com.cn/problem/P1449
@@ -74,7 +76,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="数据结构-线性表-杂乱整合">数据结构 线性表 杂乱整合</h2>
+			<p>[TOC]</p>
+<h2 id="数据结构-线性表-杂乱整合">数据结构 线性表 杂乱整合</h2>
 <h3 id="约瑟夫问题">约瑟夫问题</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1996">https://www.luogu.com.cn/problem/P1996</a></p>
 <p>题目大意：有规则抽取特定位置索引</p>

@@ -21,7 +21,8 @@
 	<meta name="application-name" content="4 Feature Engineering 几种编码整合 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="4 Feature Engineering 几种编码整合" />
-<meta property="og:description" content="Feature Engineering&ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
+<meta property="og:description" content="[TOC]
+Feature Engineering&ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
 df = pd.concat([train, test]) 用:来分割，:num表示num之前的所有，num:num之后的所有，:就是没有界限，所有的
 train = df[:len_of_train] test = df[len_of_test:] 2、提前添加属性拼接、利用属性拆分
 train[&#39;type&#39;] = &#39;train&#39; test[&#39;type&#39;] = &#39;test&#39; df = pd.concat([train, test]) train = df[df[&#39;type&#39;] == &#39;train&#39;] test = df[df[&#39;type&#39;] == &#39;test&#39;] 最后需要把拼接的时候，造成的test多了一个结果(也就是要预测的那个属性)属性给去掉
@@ -36,7 +37,8 @@ shops[&#39;newAttr&#39;] = shops[&#39;oriAttr&#39;].str.split(&#39;&#39;).map(la
 <meta property="article:modified_time" content="2020-01-28T14:05:44+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="4 Feature Engineering 几种编码整合"/>
-<meta name="twitter:description" content="Feature Engineering&ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
+<meta name="twitter:description" content="[TOC]
+Feature Engineering&ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
 df = pd.concat([train, test]) 用:来分割，:num表示num之前的所有，num:num之后的所有，:就是没有界限，所有的
 train = df[:len_of_train] test = df[len_of_test:] 2、提前添加属性拼接、利用属性拆分
 train[&#39;type&#39;] = &#39;train&#39; test[&#39;type&#39;] = &#39;test&#39; df = pd.concat([train, test]) train = df[df[&#39;type&#39;] == &#39;train&#39;] test = df[df[&#39;type&#39;] == &#39;test&#39;] 最后需要把拼接的时候，造成的test多了一个结果(也就是要预测的那个属性)属性给去掉
@@ -78,7 +80,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="feature-engineering--拼接拆分数据">Feature Engineering&ndash;拼接、拆分数据</h2>
+			<p>[TOC]</p>
+<h2 id="feature-engineering--拼接拆分数据">Feature Engineering&ndash;拼接、拆分数据</h2>
 <p>1、直接根据数据量拼接、拆分</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>concat([train, test])
 </code></pre></div><p>用<code>:</code>来分割，<code>:num</code>表示num之前的所有，<code>num:</code>num之后的所有，<code>:</code>就是没有界限，所有的</p>

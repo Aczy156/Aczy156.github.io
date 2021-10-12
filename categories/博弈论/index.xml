@@ -18,7 +18,8 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%8D%9A%E5%BC%88%E8%AE%BA/algorithm21-%E5%8D%9A%E5%BC%88%E8%AE%BA/</guid>
-      <description>博弈论    巴什博弈 【bash game】 威佐夫博弈 【Wythoff game】 尼姆博弈 【Nimm game】 斐波那契博弈   巴什博弈 题目大意：
+      <description>[TOC]
+博弈论    巴什博弈 【bash game】 威佐夫博弈 【Wythoff game】 尼姆博弈 【Nimm game】 斐波那契博弈   巴什博弈 题目大意：
  情景：一堆两人。 方式：每人每回合拿1～m个。 问题：给定石头总数，问先手是否必胜。  思路：先手在石头总数为n%(1+m) == 0的时候必败，在其余时候必胜。因为先手可以总保证在每回合让自己和对手拿的总数为(1+m)个，所以到最后一轮对手无论拿1～m个都没用，都必败。
 威佐夫博弈 题目大意：
  情景：两堆两人。 方式：每人每回合 从一堆中拿若干个 或者 从两堆中各拿相同个。 问题：给定两堆石头数量，问先手是否必胜。  尼姆博弈 题目大意：

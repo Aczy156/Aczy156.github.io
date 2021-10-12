@@ -18,7 +18,8 @@
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/tool/t-git%E8%AF%AD%E6%B3%95/</guid>
-      <description>Git 基础： 定义：版本控制管理工具
+      <description>[TOC]
+Git 基础： 定义：版本控制管理工具
 几个位置：
  工作区  版本库   暂存区 仓库  本地仓库 远端仓库    基础语法 git init 【修改】初始化当前目录变成可以用git进行接管的文件目录。在整个工作区中会产生一个.git文件，存放版本库。
 git add . git add README.md 【移动】将该目录的所有文件/README.md文件添加到缓存区

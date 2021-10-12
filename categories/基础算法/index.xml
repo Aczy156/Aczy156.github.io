@@ -18,7 +18,8 @@
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</guid>
-      <description>二分  查找的几种：
+      <description>[TOC]
+二分  查找的几种：
  暴力遍历：O(n) 折半查找/二分查找：O(log2n) 哈希：O(1)  其中，二分就是折半查找。
  关键点：等于号的选取、l/r的区间范围的更改、check函数
 整数二分
@@ -33,7 +34,8 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
-      <description>并查集 模版-查看两个元素是否在一个集合中 https://www.luogu.com.cn/problem/P1551
+      <description>[TOC]
+并查集 模版-查看两个元素是否在一个集合中 https://www.luogu.com.cn/problem/P1551
 题目大意：
 1、findfa写法：return fa[x]==x?x:findfa(fa[x]);
  如果fa[x] == x，则代表这个节点就是代表这个集合的中心。 如果fa[x] != x，继续递归往上找，findfa(fa[x])  「路径压缩，把一条线的树结构给压缩成一个矮宽胖的类似于dom树结构的样式」：return fa[x]==x?x:fa[x]=findfa(fa[x]);
@@ -47,7 +49,8 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</guid>
-      <description>前缀和与差分  压缩时间复杂度：只要降一个等级的复杂度即可达到题解的情况
+      <description>[TOC]
+前缀和与差分  压缩时间复杂度：只要降一个等级的复杂度即可达到题解的情况
  经典情景：
  求和 计算个数   【下边的时间复杂度分析只针对选取左上和右下的端点】
 O(n^2) =&amp;gt; O(n) ：一维上选取和最大的子区间
@@ -65,7 +68,8 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</guid>
-      <description>倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
+      <description>[TOC]
+倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
 #include &amp;lt;iostream&amp;gt;using namespace std; int w[8] = {1, 2, 3, 5, 10, 20}, t; #include &amp;lt;bitset&amp;gt;bitset&amp;lt;1010&amp;gt; s; int main() { s[0] = 1; for (int i = 0; i &amp;lt; 6; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); for (int j = 0; j &amp;lt; t; ++j) s |= s&amp;lt;&amp;lt;w[i]; } printf(&amp;#34;Total=%d\n&amp;#34;, s.count()-1); return 0; } </description>
     </item>
     
@@ -75,7 +79,8 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</guid>
-      <description>递推与递归 斐波那契数列 （高精度） https://www.luogu.com.cn/problem/P1255
+      <description>[TOC]
+递推与递归 斐波那契数列 （高精度） https://www.luogu.com.cn/problem/P1255
 (相似题目：https://www.luogu.com.cn/problem/P2437)
 题目大意：上楼梯，一次上一步或者一次上两步，问上n阶的楼梯可以有多少种走法
 1、递推公式：d[i] = d[i-1]+d[i-2];
@@ -90,7 +95,8 @@ AC代码：
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</guid>
-      <description>递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
+      <description>[TOC]
+递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
 两种方案：
  第一种，先输入进来，然后整体进行递归，递归的参数就是这个整体字串 第二种，边输入边递归，这样就可以利用一些getchar，char字符来进行输入的直接判断（例如如果字串一部分为ADD567，如果不知道长度的的话还有遍历判断，如果直接边输入边解析，那就可以直接利用cin来直接分割，cin&amp;raquo;字串&amp;raquo;数字，就自动分割了）   指令移动 https://www.luogu.com.cn/problem/P1322
 #include &amp;lt;iostream&amp;gt;using namespace std; int solve() { char c; string tp; int num, ans, d; while (cin&amp;gt;&amp;gt;c) { if (c == &amp;#39;]&amp;#39;) break; cin&amp;gt;&amp;gt;tp&amp;gt;&amp;gt;num; if (c == &amp;#39;R&amp;#39;) { d = getchar(); ans += num*solve(); d = getchar(); } if (c == &amp;#39;B&amp;#39;) d = getchar(), ans -= num; if (c == &amp;#39;F&amp;#39;) d = getchar(), ans += num; if (d == int(&amp;#39;]&amp;#39;)) break; } return ans; } int main() { printf(&amp;#34;%d\n&amp;#34;, solve()); return 0; } </description>
@@ -102,7 +108,8 @@ AC代码：
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</guid>
-      <description>交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
+      <description>[TOC]
+交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
 1、题目大意是允许相邻的两个牌堆交叉换牌
 2、解决方案就是把交叉换成单向，然后通过单边尽头单向遍历简化问题【单边尽头单向可以的原因就是每次至少保证满足1个，然后就算是其他的中间往两边的，也最多了，每次只能满足一个，所以不如直接 单边 尽头 =&amp;gt; 方便遍历】
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 105int n, a[maxn], sum = 0, ans = 0; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 0; i &amp;lt; n; i++) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i]);sum += a[i];} sum /= n; for (int i = 0; i &amp;lt; n - 1; ++i) if (a[i] != sum) { a[i + 1] -= (sum - a[i]); ans++; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } </description>
@@ -114,7 +121,8 @@ AC代码：
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</guid>
-      <description>排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
+      <description>[TOC]
+排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
  冒泡排序【稳定】：$O(n^2)$ 最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」 选择排序【不稳定】：$O(n^2)$ 「拿到合适的然后放置」选择出最值以及最值的索引，然后进行交换。 插入排序三种：「拿到然后找合适的地方放置一个/多个」  直接插入【稳定】：$O(n^2)$ 对每次拿到的数，从一端到另一端暴力查找，找到合适的位置插入进去 折半插入【稳定】：$O(nlog_2^n)$ 在选择合适的位置的时候，会进行二分折半查找，找到合适位置插入进去 希尔插入【不稳定】：$O(n^{1.3})\sim O(n^2)$ 更复杂的插入排序过程，三大步，首先对半分，两半一对一匹配进行插入排序；然后对半分的两类内部分别进行插入，然后对整体进行插入排序。    递归 二分与合并：$O(n*log_2^n)$
  快速排序【不稳定】：首先移动，然后「合理的分割」 归并排序【稳定】：「分割」，然后「合理的合并」  递归 桶 多分与合并：
  计数排序：n个数n个桶，然后把n个桶再合并 桶排序：n个数k个桶，k个桶各自进行排序，然后再把k个桶合并 基数排序【稳定】：n个数10个桶，10个桶为首位/尾位的是个数字对应的数。  思路一：先合并，然后再根据首位/尾位的下面一位接着入桶 思路二：对每一个桶分别根据下一位再重新进小小桶，然后对小小桶进行合并，再对大桶进行合并    其他： $$ O(n*log_n2) $$
@@ -122,8 +130,7 @@ AC代码：
 1、递归完了回来将要排序的时候，两个范围注意，左边小于等于mid，右边小于等于r，然后右边的起点也是mid+1。
 2、******递归
 快速排序 题目链接：https://www.luogu.com.cn/problem/P1177
-1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}
-2、找分块的标准数的部分快排的核心思想就是找一个数，来作为分块标准，而不是找一个分割的数的索引，因为索引的话，会随着swap()变换而导致本来已经确定的数变化。</description>
+1、所有排序算法的函数形式都是可以写成sort_algorithm(int[] arr, int l,int r){}</description>
     </item>
     
     <item>
@@ -132,10 +139,11 @@ AC代码：
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</guid>
-      <description>排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&amp;gt; 一遍扫，模拟即可 仅可以交换相邻的 =&amp;gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp;amp; 顶部最小 最大：priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq;
+      <description>[TOC]
+排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&amp;gt; 一遍扫，模拟即可 仅可以交换相邻的 =&amp;gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp;amp; 顶部最小 最大：priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq;
 最小：priority_queue&amp;lt;int&amp;gt; pq;
 https://www.luogu.com.cn/problem/P3378
-#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq; int m, op, t; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); while (m--) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;op); switch (op) { case 1: scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);pq.push(t);break; case 2: printf(&amp;#34;%d\n&amp;#34;, pq.top());break; case 3: pq.pop();break; } } return 0; } 结合结构体的排序 &amp;amp;&amp;amp; 直接利用优先队列实现的排序 https://www.</description>
+#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq; int m, op, t; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;m); while (m--) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;op); switch (op) { case 1: scanf(&amp;#34;%d&amp;#34;, &amp;amp;t);pq.push(t);break; case 2: printf(&amp;#34;%d\n&amp;#34;, pq.top());break; case 3: pq.</description>
     </item>
     
     <item>
@@ -144,7 +152,8 @@ https://www.luogu.com.cn/problem/P3378
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</guid>
-      <description>贪心问题  装袋问题：
+      <description>[TOC]
+贪心问题  装袋问题：
 结构体排序问题 // 排序贪心：
  装袋问题-每个袋子限制个数为两个 https://www.luogu.com.cn/problem/P1094
 题目大意：给出若干个不同容量的东西，给出限定的最大容量的袋子，然后最少用多少个袋子装完这些不同容量东西
@@ -159,7 +168,8 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</guid>
-      <description>二分  一些第一眼看上去是用贪心解决，但实际上是需要用其他算法解决的问题
+      <description>[TOC]
+二分  一些第一眼看上去是用贪心解决，但实际上是需要用其他算法解决的问题
  https://www.luogu.com.cn/problem/P1570【看起来是贪心，实际上是找出答案的范围然后二分出结果】
 题目大意：选取m个，然后问怎么选，才能保证属性a求和比上属性b求和的值最大
 思路一：【贪心】按照属性a和属性b的比值进行排序，然后贪心的选取前m个。单个的VS求和的，有冲突
@@ -174,7 +184,8 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
-      <description>分治问题 最典型：分形 &amp;amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
+      <description>[TOC]
+分治问题 最典型：分形 &amp;amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
  矩阵的分治：https://www.luogu.com.cn/problem/P5461
 题目大意：正方形矩阵，分成四块，左上全赦免（为零），然后对剩下其他部分接着分成四块，一直这样下去。输出最后矩阵
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxl 1030int n, a[maxl][maxl]; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a))#include &amp;lt;cmath&amp;gt; void draw(int x, int y, int h) { if (h == 2) {a[x+1][y] = a[x][y+1] = a[x+1][y+1] = 1;return;} int nowh = h&amp;gt;&amp;gt;1; draw(x+nowh, y, nowh); draw(x, y+nowh, nowh); draw(x+nowh, y+nowh, nowh); } void print() { for (int i = 1; i &amp;lt;= n; ++i) { for (int j = 1; j &amp;lt;= n; ++j) { printf(&amp;#34;%d &amp;#34;, a[i][j]); } printf(&amp;#34;\n&amp;#34;); } } int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); n = pow(2, n); cl(a, 0); // init  draw(1, 1, n); // draw  print(); // print  return 0; } 分形-谢尔宾斯基三角：https://www.</description>

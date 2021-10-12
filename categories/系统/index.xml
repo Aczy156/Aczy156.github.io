@@ -18,7 +18,8 @@
       <pubDate>Mon, 20 Jul 2020 21:45:10 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</guid>
-      <description>首先 Authored By Aczy156
+      <description>[TOC]
+首先 Authored By Aczy156
 CPU 1型号 1AMD芯片U移动端都具备核显，G为具备核显的，并且后缀无论是否有X，都可以超频，主板也都可以超，芯片组都支持CPU超频。 不同芯片组主板都支持超频，intel只有Z系列芯片组支持CPU超频 2intel有较为古老的赛扬、奔腾、至强系列、M系列(M3,M5,M7，后来M7并入i3)，低电压，用于超级本、轻薄本等；以及现在主流的有i系列（i3,i5,i7,i9）
 2架构 Intel 一代Nehalem、二代SandyBridge、三代IvyBridge、四代Haswell、五代Broadwell、六代Skylake、七代Kabylake，八代Coffee lake，第九代Coffee Lake-Refresh ，第十代Ice Lake
 AMD AMD的架构有诸如推土机（bulldozer 中文译名推土机）、打桩机(piledriver 中文译名打桩机)、压路机(streamroller 中文译名压路机)、以及最新的Ryzen系列采用的Zen架构等等。 zen架构有1系zen，2系zen+，3系zen2（移动端从2系开始，2系zen，3系zen+，4系zen2）
@@ -40,7 +41,8 @@ BGA：intel所有低压CPU采用的封装方式 BGA的全称叫做“ball grid a
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</guid>
-      <description>Linux常见配置 查看配置 - neofetch  mac: brew install neofetch centos: sudo dnf install neofetch  terminal 水平分割 - tmux 切换文件权限 - chown 切换单个文件权限：chown 用户:群组 path_of_file
+      <description>[TOC]
+Linux常见配置 查看配置 - neofetch  mac: brew install neofetch centos: sudo dnf install neofetch  terminal 水平分割 - tmux 切换文件权限 - chown 切换单个文件权限：chown 用户:群组 path_of_file
 eg: chown aczy156:staff orange
 递归切换这个file和里边递归的所有file
 eg:</description>
@@ -52,7 +54,8 @@ eg:</description>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
       <guid>http://www.chenranfei.online/posts/other/o-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</guid>
-      <description>综合了https://blog.csdn.net/wojiaopanpan/article/details/7286430 博客的一些指令以及一些过去的一些积累。
+      <description>[TOC]
+ 综合了https://blog.csdn.net/wojiaopanpan/article/details/7286430 博客的一些指令以及一些过去的一些积累。
  基本指令 mv cp ls (ls -l 查看该目录下面文件的具体信息，包括权限归属) chown 切换权限归属 chown -R aczy156 file-name （-R为当前目录以及这个目录下边的所有文件） chroot chroot /mnt，在配置arch并利用arch安装驱动系统安装好后，把root权交给新安装的那个系统的一个操作 chmod +x 目录 给目录 cd cd 空，默认进入root文件，也就是相当于cd ～ cd .. 两个点为进入上一级目录 pwd 当前目录的path open 打开某个文件夹（open . 打开当前的目录的文件夹） mkdir vim fdisk cfdisk df -hl 看所有的存储空间使用情况 mount mkfs :q（退出模式） :wq move rm []删除 rm -rf xx [删除目录的,也就是文件夹]删除某个文件 cd rm rf .删除所有文件 xrandr 不加参数：查看分辨率 cvt 1024 768 参数为分辨率的x和y
  日常使用 os config file 系统文件 config.</description>
     </item>

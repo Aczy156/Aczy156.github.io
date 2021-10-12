@@ -21,7 +21,8 @@
 	<meta name="application-name" content="9 几种常用数据类型 | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="9 几种常用数据类型" />
-<meta property="og:description" content="numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
+<meta property="og:description" content="[TOC]
+numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
 print(&#39;data_np shape is: &#39;, np.size(data_np, 0), np.size(data_np, 1), np.size(data_np, 2)) 需要进行维度变化的 按照维度求最值 【根据axis来选择对应的维度，然后提取最大值】 ==&gt; axis=x,就是第x的维度提取最值，最后那个维度变成一，dim--
 array([[0, 1, 2], [9, 4, 5], [6, 7, 8], [10, 11, 12]]) # 当前维度(4, 3) print(np.max(a)) #全局最大 8 print(np.max(a,axis=0)) #每列最大 =&gt; 第一个维度的长度变为1，所以向量的长度变为3 [6 7 8] print(np.max(a,axis=1)) #每行最大 =&gt; 第二个维度的长度变为1，所以向量的长度变为4 [2 5 8]import plotly.express as px fig = px.pie(data, name=&#39;attr&#39;) 类似于Dataframe的value_counts() 实质还是要通过形成dataframe数据结构来进行
 pd.Series(numpy_data).value_counts().plot.bar()
@@ -33,7 +34,8 @@ ls = list(set([&#39;a&#39;, &#39;b&#39;, &#39;a&#39;])) numpy去重，不仅可�
 <meta property="article:modified_time" content="2020-01-28T19:05:44+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="9 几种常用数据类型"/>
-<meta name="twitter:description" content="numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
+<meta name="twitter:description" content="[TOC]
+numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
 print(&#39;data_np shape is: &#39;, np.size(data_np, 0), np.size(data_np, 1), np.size(data_np, 2)) 需要进行维度变化的 按照维度求最值 【根据axis来选择对应的维度，然后提取最大值】 ==&gt; axis=x,就是第x的维度提取最值，最后那个维度变成一，dim--
 array([[0, 1, 2], [9, 4, 5], [6, 7, 8], [10, 11, 12]]) # 当前维度(4, 3) print(np.max(a)) #全局最大 8 print(np.max(a,axis=0)) #每列最大 =&gt; 第一个维度的长度变为1，所以向量的长度变为3 [6 7 8] print(np.max(a,axis=1)) #每行最大 =&gt; 第二个维度的长度变为1，所以向量的长度变为4 [2 5 8]import plotly.express as px fig = px.pie(data, name=&#39;attr&#39;) 类似于Dataframe的value_counts() 实质还是要通过形成dataframe数据结构来进行
 pd.Series(numpy_data).value_counts().plot.bar()
@@ -72,7 +74,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="numpy-数据类型">numpy 数据类型</h2>
+			<p>[TOC]</p>
+<h2 id="numpy-数据类型">numpy 数据类型</h2>
 <h3 id="查看维度数dim">查看维度数dim</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 </code></pre></div><h3 id="查看各个维度的长度">查看各个维度的长度</h3>

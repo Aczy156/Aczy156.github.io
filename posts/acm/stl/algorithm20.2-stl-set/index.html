@@ -21,7 +21,8 @@
 	<meta name="application-name" content="Algorithm20.2 STL set | Aczy156" />
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm20.2 STL set" />
-<meta property="og:description" content="STL - set set基础语法整理博客：
+<meta property="og:description" content="[TOC]
+STL - set set基础语法整理博客：
 https://www.luogu.com.cn/blog/communist/stl-zheng-li-zhi-set
  set底层：红黑树
 set关键字唯一性【类似于map中的key，只出现一次】：保证set中所有元素只出现一次
@@ -33,14 +34,15 @@ multiset关键字不唯一，可重复性
 map有序，而unordered_map的无序性，但是两者都保持的是key唯一。
 set唯一，而multiset不唯一，可重复，但是两者都保持的是有序。
  basic
-int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); set&lt;int&gt; s(a&#43;1, a&#43;1&#43;n); auto iter = s.begin(); // 输出，发现保证了有序性  while (iter != s.end()) { printf(&#34;%d &#34;, *iter);iter&#43;&#43;; } // 然后再插入新的元素，查看是否有去重复  cin&gt;&gt;t; s.insert(t); cout&lt;&lt;endl; auto iter2 = s.begin(); while (iter2 !" />
+int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); set&lt;int&gt; s(a&#43;1, a&#43;1&#43;n); auto iter = s.begin(); // 输出，发现保证了有序性  while (iter != s.end()) { printf(&#34;%d &#34;, *iter);iter&#43;&#43;; } // 然后再插入新的元素，查看是否有去重复  cin&gt;&gt;t; s.insert(t); cout&lt;&lt;endl; auto iter2 = s." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/stl/algorithm20.2-stl-set/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm20.2 STL set"/>
-<meta name="twitter:description" content="STL - set set基础语法整理博客：
+<meta name="twitter:description" content="[TOC]
+STL - set set基础语法整理博客：
 https://www.luogu.com.cn/blog/communist/stl-zheng-li-zhi-set
  set底层：红黑树
 set关键字唯一性【类似于map中的key，只出现一次】：保证set中所有元素只出现一次
@@ -52,7 +54,7 @@ multiset关键字不唯一，可重复性
 map有序，而unordered_map的无序性，但是两者都保持的是key唯一。
 set唯一，而multiset不唯一，可重复，但是两者都保持的是有序。
  basic
-int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); set&lt;int&gt; s(a&#43;1, a&#43;1&#43;n); auto iter = s.begin(); // 输出，发现保证了有序性  while (iter != s.end()) { printf(&#34;%d &#34;, *iter);iter&#43;&#43;; } // 然后再插入新的元素，查看是否有去重复  cin&gt;&gt;t; s.insert(t); cout&lt;&lt;endl; auto iter2 = s.begin(); while (iter2 !"/>
+int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); set&lt;int&gt; s(a&#43;1, a&#43;1&#43;n); auto iter = s.begin(); // 输出，发现保证了有序性  while (iter != s.end()) { printf(&#34;%d &#34;, *iter);iter&#43;&#43;; } // 然后再插入新的元素，查看是否有去重复  cin&gt;&gt;t; s.insert(t); cout&lt;&lt;endl; auto iter2 = s."/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -86,7 +88,8 @@ MathJax.Hub.Config({
 		
 
 		<section class="body">
-			<h2 id="stl---set">STL - set</h2>
+			<p>[TOC]</p>
+<h2 id="stl---set">STL - set</h2>
 <p>set基础语法整理博客：</p>
 <p><a href="https://www.luogu.com.cn/blog/communist/stl-zheng-li-zhi-set">https://www.luogu.com.cn/blog/communist/stl-zheng-li-zhi-set</a></p>
 <blockquote>
