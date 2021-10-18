@@ -150,5 +150,16 @@ int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; fo
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1] (注意对圈的边界的人的特判)  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;t); // init  dp[0][0] = 1; for (int i = 1; i &amp;lt; t; ++i) for (int j = 0; j &amp;lt; n; ++j) if (j == 0) dp[i][j] = dp[i-1][1]+dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]+dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1]; printf(&amp;#34;%d\n&amp;#34;, dp[t-1][0]); return 0; } </description>
     </item>
     
+    <item>
+      <title>kuangbin 1 简单搜索</title>
+      <link>http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</guid>
+      <description>[TOC]
+kuangbin 1 简单搜索 A B 题目大意：三维迷宫，注意多组数据存在的初始化的问题即可。
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 33; int n, m, k, bgn, bgm, bgk, edn, edm, edk, dir[6][3] = {{1, 0, 0}, {-1, 0, 0}, {0, 1, 0}, {0, -1, 0}, {0, 0, 1}, {0, 0, -1}}, vis[maxn][maxn][maxn], flag; char mp[maxn][maxn][maxn]; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a)) struct node { int x, y, k, step; node(int x, int y, int k, int step):x(x), y(y), k(k), step(step){} }; #include &amp;lt;queue&amp;gt;queue&amp;lt;node&amp;gt; q; void bfs() { vis[bgn][bgm][bgk] = 1; q.</description>
+    </item>
+    
   </channel>
 </rss>

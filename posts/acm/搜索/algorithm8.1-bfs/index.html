@@ -67,7 +67,7 @@ MathJax.Hub.Config({
     <li><a href="#bfs">bfs</a>
       <ul>
         <li><a href="#模版-最多可到达">[模版] 最多可到达</a></li>
-        <li><a href="#最短步数">最短步数</a></li>
+        <li><a href="#最少步数">最少步数</a></li>
         <li><a href="#最短路径">最短路径</a></li>
         <li><a href="#基本联通块数">[基本]联通块数</a></li>
         <li><a href="#联通块数--染色">联通块数 + 染色</a></li>
@@ -126,9 +126,9 @@ queue<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;
 
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre></div><h3 id="最短步数">最短步数</h3>
+</code></pre></div><h3 id="最少步数">最少步数</h3>
 <p><a href="https://www.luogu.com.cn/problem/P1746">https://www.luogu.com.cn/problem/P1746</a></p>
-<p>题目大意：从地图上的起点到终点所需要的最短步数</p>
+<p>题目大意：从地图上的起点到终点所需要的最少步数</p>
 <p>1、在模版的基础上，对结构体（也就是node）增加一个属性val，用来记录蔓延到当前的点所需要的步数。</p>
 <p>2、还是要去维护一个vis数组来避免重复猜，虽然最短步数=&gt;到了终点立马跳出，但是如果一直到不了的话，不加vis数组就永远跳不出。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
@@ -218,6 +218,57 @@ queue<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">&gt;
         <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
             scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>mp[i][j]);
         bfs(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>AC代码：</p>
+<p>通过在节点中添加一个属性<code>pre</code>，用来表示这个节点的前继节点是谁。</p>
+<p>易错：在创建bfs的数据结构queue的时候，队列中的数据类型应该是指向结构体的指针，所以应该表示为<code>queue&lt;node *&gt; q;</code></p>
+<p>区分<strong>结构体</strong>与指向结构体的指针，在写代码的过程中，可以发现指向结构体的指针在调用其属性时是通过<code>-&gt;</code>进行调用，而结构体是通过<code>.</code>进行调用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">int</span> mp[<span style="color:#ae81ff">6</span>][<span style="color:#ae81ff">6</span>], dir[<span style="color:#ae81ff">4</span>][<span style="color:#ae81ff">2</span>]<span style="color:#f92672">=</span>{{<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>}, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}}, vis[<span style="color:#ae81ff">6</span>][<span style="color:#ae81ff">6</span>];
+
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+    <span style="color:#66d9ef">int</span> x, y;
+    node <span style="color:#f92672">*</span> pre;
+};
+
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> b;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">printtrack</span>(node <span style="color:#f92672">*</span> nw) {
+    <span style="color:#66d9ef">while</span> (nw) {
+        b.push_back(make_pair(nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>x, nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>y));
+        nw <span style="color:#f92672">=</span> nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>pre;
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> b.size()<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#f92672">-</span><span style="color:#f92672">-</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">(%d, %d)</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, b[i].first<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, b[i].second<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+}
+
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>queue<span style="color:#f92672">&lt;</span>node <span style="color:#f92672">*</span><span style="color:#f92672">&gt;</span> q;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bfs</span>(){
+    vis[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    node <span style="color:#f92672">*</span> tmnode <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node;
+    tmnode<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>x <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, tmnode<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>y <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, tmnode<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>pre <span style="color:#f92672">=</span> NULL;
+    q.push(tmnode);
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>q.empty()) {
+        node <span style="color:#f92672">*</span> nw <span style="color:#f92672">=</span> q.front();q.pop();
+        <span style="color:#66d9ef">if</span> (nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>x <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>y <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>) {printtrack(nw);<span style="color:#66d9ef">return</span>;}
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            <span style="color:#66d9ef">int</span> nx <span style="color:#f92672">=</span> nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>x<span style="color:#f92672">+</span>dir[i][<span style="color:#ae81ff">0</span>], ny <span style="color:#f92672">=</span> nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>y<span style="color:#f92672">+</span>dir[i][<span style="color:#ae81ff">1</span>];
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[nx][ny] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>mp[nx][ny] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> nx <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> nx <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> ny <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> ny <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>) {
+                node <span style="color:#f92672">*</span> ntnode <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node();
+                ntnode<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>x <span style="color:#f92672">=</span> nx, ntnode<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>y <span style="color:#f92672">=</span> ny;ntnode<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>pre <span style="color:#f92672">=</span> nw;
+                vis[nx][ny] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; q.push(ntnode);
+            }
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>mp[i][j]);
+    bfs();
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><h3 id="基本联通块数">[基本]联通块数</h3>

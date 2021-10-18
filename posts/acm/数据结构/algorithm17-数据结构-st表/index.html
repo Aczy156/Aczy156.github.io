@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm17 数据结构ST表 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm17 数据结构ST表 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm17 数据结构ST表 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm17 数据结构ST表 | Aczy156" />
+	<meta name="application-name" content="Algorithm17 数据结构ST表 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm17 数据结构ST表" />
+<meta property="og:description" content="[TOC]
+ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
+https://www.luogu.com.cn/problem/P3865
+模版 - ST表 题目大意：得到范围内（Range）最大值（Max）的若干次查询（Query）=&gt;RMQ问题
+1、倍增思想，核心就是二倍二倍的获取最大值，类似于二叉树结构的遍历过程，复杂度为O(nlogn)。
+maxx[i][j]二维数组：维护的数据结构，表示[i, i&#43;pow(2, j)-1]区间的最大值。=&gt;i表示区间的起点，j表示倍增的倍数。所以在初始化的时候j所需要max的就是两个j-1倍数的区间来比较最大值(其中两个区间的起点分别是i和i&#43;1&lt;&lt;(j-1))，也就是在这个倍增的倍数情况下，需要把起点往后挪的长度。
+maxx[i][j] = max(maxx[i][j-1], max[i&#43;(1&lt;&lt;(j-1))][j-1]); 2、查询的时候反向解析
+利用query函数来进行解析：先找到该区间对应的倍数，然后再顺着区间的右边界找到对应的查找区间，可以考虑到这个区间不一定是刚好划分好的二倍的区间，所以可以通过拼接子区间来获取最大的
+int k = log2(r-l&#43;1); return max(maxx[l][k], maxx[r-(1&lt;&lt;k)&#43;1][k]); 3、注意数组不要开太大，因为倍增最多也就是21倍，2的21次方这么大的区间长度
+#include &lt;iostream&gt;using namespace std; #define maxn 1000010int n, m, a[maxn], maxx[maxn][21], ta, tb; // maxx[i][j]表示[i, i&#43;pow(2, j)-1]的区间的最大值  inline int read() { char c=getchar();int x=0,f=1; while(c&lt;&#39;0&#39;||c&gt;&#39;9&#39;){if(c==&#39;-&#39;)f=-1;c=getchar();} while(c&gt;=&#39;0&#39;&amp;&amp;c&lt;=&#39;9&#39;){x=x*10&#43;c-&#39;0&#39;;c=getchar();} return x*f; } // init maxx数组，通过迭代j来2倍率的速度进行初始化=&gt;填补maxx数组 void init() { for (int i = 1; i &lt;= n; &#43;&#43;i) maxx[i][0] = a[i]; for (int j = 1; j &lt;= 21; &#43;&#43;j) for (int i = 1; i&#43;(1&lt;&lt;j)-1 &lt;= n; &#43;&#43;i) maxx[i][j] = max(maxx[i][j-1], maxx[i&#43;(1&lt;&lt;(j-1))][j-1]); } int query(int l, int r) { int k = log2(r-l&#43;1); return max(maxx[l][k], maxx[r-(1&lt;&lt;k)&#43;1][k]); } int main() { n = read();m = read(); for (int i = 1; i &lt;= n; &#43;&#43;i) a[i] = read(); init(); while (m--) { ta = read();tb = read(); printf(&#34;%d\n&#34;, query(ta, tb)); } return 0; } RMQ模版-最大和最小都有 【类似https://www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm17 数据结构ST表"/>
+<meta name="twitter:description" content="[TOC]
+ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
+https://www.luogu.com.cn/problem/P3865
+模版 - ST表 题目大意：得到范围内（Range）最大值（Max）的若干次查询（Query）=&gt;RMQ问题
+1、倍增思想，核心就是二倍二倍的获取最大值，类似于二叉树结构的遍历过程，复杂度为O(nlogn)。
+maxx[i][j]二维数组：维护的数据结构，表示[i, i&#43;pow(2, j)-1]区间的最大值。=&gt;i表示区间的起点，j表示倍增的倍数。所以在初始化的时候j所需要max的就是两个j-1倍数的区间来比较最大值(其中两个区间的起点分别是i和i&#43;1&lt;&lt;(j-1))，也就是在这个倍增的倍数情况下，需要把起点往后挪的长度。
+maxx[i][j] = max(maxx[i][j-1], max[i&#43;(1&lt;&lt;(j-1))][j-1]); 2、查询的时候反向解析
+利用query函数来进行解析：先找到该区间对应的倍数，然后再顺着区间的右边界找到对应的查找区间，可以考虑到这个区间不一定是刚好划分好的二倍的区间，所以可以通过拼接子区间来获取最大的
+int k = log2(r-l&#43;1); return max(maxx[l][k], maxx[r-(1&lt;&lt;k)&#43;1][k]); 3、注意数组不要开太大，因为倍增最多也就是21倍，2的21次方这么大的区间长度
+#include &lt;iostream&gt;using namespace std; #define maxn 1000010int n, m, a[maxn], maxx[maxn][21], ta, tb; // maxx[i][j]表示[i, i&#43;pow(2, j)-1]的区间的最大值  inline int read() { char c=getchar();int x=0,f=1; while(c&lt;&#39;0&#39;||c&gt;&#39;9&#39;){if(c==&#39;-&#39;)f=-1;c=getchar();} while(c&gt;=&#39;0&#39;&amp;&amp;c&lt;=&#39;9&#39;){x=x*10&#43;c-&#39;0&#39;;c=getchar();} return x*f; } // init maxx数组，通过迭代j来2倍率的速度进行初始化=&gt;填补maxx数组 void init() { for (int i = 1; i &lt;= n; &#43;&#43;i) maxx[i][0] = a[i]; for (int j = 1; j &lt;= 21; &#43;&#43;j) for (int i = 1; i&#43;(1&lt;&lt;j)-1 &lt;= n; &#43;&#43;i) maxx[i][j] = max(maxx[i][j-1], maxx[i&#43;(1&lt;&lt;(j-1))][j-1]); } int query(int l, int r) { int k = log2(r-l&#43;1); return max(maxx[l][k], maxx[r-(1&lt;&lt;k)&#43;1][k]); } int main() { n = read();m = read(); for (int i = 1; i &lt;= n; &#43;&#43;i) a[i] = read(); init(); while (m--) { ta = read();tb = read(); printf(&#34;%d\n&#34;, query(ta, tb)); } return 0; } RMQ模版-最大和最小都有 【类似https://www."/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#st表-可重复贡献问题--rmqminmax--区间gcd">ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd</a>
+      <ul>
+        <li><a href="#模版---st表">模版 - ST表</a></li>
+        <li><a href="#rmq模版-最大和最小都有">RMQ模版-最大和最小都有</a></li>
+        <li><a href="#可重复贡献的例子区间gcd">可重复贡献的例子：区间gcd</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm17 数据结构ST表</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="st表-可重复贡献问题--rmqminmax--区间gcd">ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd</h2>
+<p>区间min/max/gcd 区分与线段树 ？？？</p>
+<p><a href="https://www.luogu.com.cn/problem/P3865">https://www.luogu.com.cn/problem/P3865</a></p>
+<h3 id="模版---st表">模版 - ST表</h3>
+<p>题目大意：得到范围内（Range）最大值（Max）的若干次查询（Query）=&gt;RMQ问题</p>
+<p>1、倍增思想，核心就是二倍二倍的获取最大值，类似于二叉树结构的遍历过程，复杂度为O(nlogn)。</p>
+<p><code>maxx[i][j]</code>二维数组：维护的数据结构，表示<code>[i, i+pow(2, j)-1]</code>区间的最大值。=&gt;i表示区间的起点，j表示倍增的倍数。所以在初始化的时候j所需要max的就是两个j-1倍数的区间来比较最大值(其中两个区间的起点分别是<code>i</code>和<code>i+1&lt;&lt;(j-1))</code>，也就是在这个倍增的倍数情况下，需要把起点往后挪的长度。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">maxx[i][j] <span style="color:#f92672">=</span> max(maxx[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], max[i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+</code></pre></div><p>2、查询的时候反向解析</p>
+<p>利用query函数来进行解析：先找到该区间对应的倍数，然后再顺着区间的右边界找到对应的查找区间，可以考虑到这个区间不一定是刚好划分好的二倍的区间，所以可以通过拼接子区间来获取最大的</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> log2(r<span style="color:#f92672">-</span>l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>(maxx[l][k], maxx[r<span style="color:#f92672">-</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>k)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][k]);
+</code></pre></div><p>3、注意数组不要开太大，因为倍增最多也就是21倍，2的21次方这么大的区间长度</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 1000010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, a[maxn], maxx[maxn][<span style="color:#ae81ff">21</span>], ta, tb; <span style="color:#75715e">// maxx[i][j]表示[i, i+pow(2, j)-1]的区间的最大值
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">read</span>()
+{
+    <span style="color:#66d9ef">char</span> c<span style="color:#f92672">=</span>getchar();<span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,f<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">while</span>(c<span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">|</span><span style="color:#f92672">|</span>c<span style="color:#f92672">&gt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">9</span><span style="color:#e6db74">&#39;</span>){<span style="color:#66d9ef">if</span>(c<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span>)f<span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;c<span style="color:#f92672">=</span>getchar();}
+    <span style="color:#66d9ef">while</span>(c<span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span>c<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">9</span><span style="color:#e6db74">&#39;</span>){x<span style="color:#f92672">=</span>x<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>c<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>;c<span style="color:#f92672">=</span>getchar();}
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>f;
+}
+
+<span style="color:#75715e">// init maxx数组，通过迭代j来2倍率的速度进行初始化=&gt;填补maxx数组
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) maxx[i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> a[i];
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>j)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+            maxx[i][j] <span style="color:#f92672">=</span> max(maxx[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], maxx[i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">query</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r) {
+    <span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> log2(r<span style="color:#f92672">-</span>l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">return</span> max(maxx[l][k], maxx[r<span style="color:#f92672">-</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>k)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][k]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    n <span style="color:#f92672">=</span> read();m <span style="color:#f92672">=</span> read();
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) a[i] <span style="color:#f92672">=</span> read();
+    init();
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        ta <span style="color:#f92672">=</span> read();tb <span style="color:#f92672">=</span> read();
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, query(ta, tb));
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+</code></pre></div><h3 id="rmq模版-最大和最小都有">RMQ模版-最大和最小都有</h3>
+<p>【类似https://www.luogu.com.cn/problem/P2880】</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 1000010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, a[maxn], maxx[maxn][<span style="color:#ae81ff">21</span>], minn[maxn][<span style="color:#ae81ff">21</span>], ta, tb;
+
+<span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">read</span>()
+{
+    <span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,f<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;<span style="color:#66d9ef">char</span> ch<span style="color:#f92672">=</span>getchar();
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>isdigit(ch)){<span style="color:#66d9ef">if</span> (ch<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span>) f<span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;ch<span style="color:#f92672">=</span>getchar();}
+    <span style="color:#66d9ef">while</span> (isdigit(ch)){x<span style="color:#f92672">=</span>x<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>ch<span style="color:#f92672">-</span><span style="color:#ae81ff">48</span>;ch<span style="color:#f92672">=</span>getchar();}
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>f;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {minn[i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> a[i]; maxx[i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> a[i];}
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>j)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i){
+            maxx[i][j] <span style="color:#f92672">=</span> max(maxx[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], maxx[i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+            minn[i][j] <span style="color:#f92672">=</span> min(minn[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], minn[i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+        }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">query_max</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r) {
+    <span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> log2(r<span style="color:#f92672">-</span>l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">return</span> max(maxx[l][k], maxx[r<span style="color:#f92672">-</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>k)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][k]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">query_min</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r) {
+    <span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> log2(r<span style="color:#f92672">-</span>l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">return</span> min(minn[l][k], minn[r<span style="color:#f92672">-</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>k)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][k]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    n <span style="color:#f92672">=</span> read();m <span style="color:#f92672">=</span> read();
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) a[i] <span style="color:#f92672">=</span> read();
+    init();
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        ta <span style="color:#f92672">=</span> read();tb <span style="color:#f92672">=</span> read();
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, query_min(ta, tb), query_max(ta, tb));
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="可重复贡献的例子区间gcd">可重复贡献的例子：区间gcd</h3>
+<p><a href="https://www.luogu.com.cn/problem/P1890">https://www.luogu.com.cn/problem/P1890</a></p>
+<p>1、理解init初始化的时候的范围：外层遍历倍数j，内层遍历起点i，保证起点i+上层倍数j的倍增的结果不能爆掉n，此时要考虑的是整体长度，所以是j的倍增，也就是<code>i+(j&lt;&lt;1)-1 &lt;= n</code></p>
+<p>2、利用倍增的二倍过程进行筛选的原理是利用两个下层j-1的来进行比较min/max/gcd，然后再更新上层j。注意起点此时就要考虑的是下层的长度，也就是<code>(1&lt;&lt;(j-1))</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 1005</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, a[maxn], gcdd[maxn][<span style="color:#ae81ff">21</span>], ta, tb;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cmath&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">gcd</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {<span style="color:#66d9ef">return</span> b<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">?</span>gcd(b, a<span style="color:#f92672">%</span>b)<span style="color:#f92672">:</span>a;}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">init</span>(){
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) gcdd[i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> a[i];
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>j)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+            gcdd[i][j] <span style="color:#f92672">=</span> gcd(gcdd[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], gcdd[i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">query_gcd</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r) {
+    <span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> log2(r<span style="color:#f92672">-</span>l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">return</span> gcd(gcdd[l][k], gcdd[r<span style="color:#f92672">-</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>k)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][k]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a[i]);
+    init();
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb);
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, query_gcd(ta, tb));
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

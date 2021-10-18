@@ -25,27 +25,52 @@ bool isPalindrome(string s) { // remove invalid char and transform to lower case
     </item>
     
     <item>
-      <title>Algorithm1.1 字符串-匹配</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E6%8B%86%E5%88%86-%E6%8B%BC%E6%8E%A5/</link>
+      <title>Algorithm1.0 字符串 排序</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E6%8B%86%E5%88%86-%E6%8B%BC%E6%8E%A5/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</guid>
       <description>[TOC]
-字符串 &amp;amp; 匹配（拆分） 字串匹配之后替换 =&amp;gt; map进行映射，将要映射的成分进行映射 https://www.luogu.com.cn/problem/P1603
+字符串排序 数字字符串的排序 (直接用数字排序即可) https://www.luogu.com.cn/problem/P3955
+思路：首先按照长度排序，然后如果长度相等了，在直接字符串比较大小
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e3+9; int n, q, l; string s[maxn], sq; #include &amp;lt;algorithm&amp;gt; bool cmp(string s1, string s2) { if (s1.length() == s2.length()) return s1 &amp;lt; s2; return s1.length() &amp;lt; s2.length(); } int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;q); for (int i = 1; i &amp;lt;= n; ++i) cin&amp;gt;&amp;gt;s[i]; sort(s+1, s+1+n, cmp); for (int i = 1; i &amp;lt;= q; ++i) { cin&amp;gt;&amp;gt;l&amp;gt;&amp;gt;sq; int fd = 0; for (int j = 1; j &amp;lt;= n; ++j) { if (l &amp;gt; s[j].</description>
+    </item>
+    
+    <item>
+      <title>Algorithm1.1 字符串 匹配</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</guid>
+      <description>[TOC]
+字符串匹配 尾部匹配 https://www.luogu.com.cn/problem/P3955
+两个思路：
+ 利用string 字符串匹配 利用数字看相等，利用数字的话通过取模截取有效部分  利用取模截取有用部分的方法：
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e3+9; int s[maxn], n, q, sq, l, mod[11] = {0, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000}; #include &amp;lt;algorithm&amp;gt; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;q); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, s+i); sort(s+1, s+1+n); for (int i = 1; i &amp;lt;= q; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;l, &amp;amp;sq); int fd = 0; for (int j = 1; j &amp;lt;= n; ++j) if (s[j]%mod[l] == sq) {fd = 1; cout&amp;lt;&amp;lt;s[j]&amp;lt;&amp;lt;endl; break;} if (fd) continue; else puts(&amp;#34;-1&amp;#34;); } return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm1.1 字符串-map匹配</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%A0%E5%B0%84/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%A0%E5%B0%84/</guid>
+      <description>[TOC]
+字符串映射 利用map进行字串匹配、替换 https://www.luogu.com.cn/problem/P1603
 题目大意：给六个字符串，然后如果有映射的进行映射为数字，没有的就不映射。输出最后映射完的结果
 1、准备数据结构：用于匹配的map字典=&amp;gt;将字符串与数字进行映射
 2、易错：第一位随便匹配，后面的位数如果是1位的话，拼接到一起之前要补0，例如如果是5，要输出05。
 声明字符串映射的数据结构map
 // 声明map map&amp;lt;string, int&amp;gt; mp; // 进行映射 mp[&amp;#34;one&amp;#34;] = 1; mp[&amp;#34;two&amp;#34;] = 2; /* ……*/ mp[&amp;#34;nineteen&amp;#34;] = 19; mp[&amp;#34;twenty&amp;#34;] = 20; mp[&amp;#34;one&amp;#34;] = 1; 进行匹配：
-int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp[str]){ int cnt = mp[str]*mp[str]%100; if (!cnt) continue; ans[idx++] = cnt; } } sort(ans, ans+idx); printf(&amp;#34;%d&amp;#34;, ans[0]); for (int i = 1; i &amp;lt; idx; ++i) { if (ans[i] &amp;lt; 10) printf(&amp;#34;0&amp;#34;); printf(&amp;#34;%d&amp;#34;, ans[i]); } return 0; } https://www.</description>
+int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp[str]){ int cnt = mp[str]*mp[str]%100; if (!cnt) continue; ans[idx++] = cnt; } } sort(ans, ans+idx); printf(&amp;#34;%d&amp;#34;, ans[0]); for (int i = 1; i &amp;lt; idx; ++i) { if (ans[i] &amp;lt; 10) printf(&amp;#34;0&amp;#34;); printf(&amp;#34;%d&amp;#34;, ans[i]); } return 0; } 两个map进行正向反向映射 https://www.</description>
     </item>
     
     <item>
-      <title>Algorithm1.2 字符串 Trie树</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</link>
+      <title>Algorithm1.3 Trie树</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.3-%E5%AD%97%E5%85%B8%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2trie%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.3-%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
       <description>[TOC]
 字符串 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
  [模版] 点名问题 https://www.luogu.com.cn/problem/P2580

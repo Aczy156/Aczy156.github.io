@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm11.6 数据结构 队列 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm11.6 数据结构 队列 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm11.6 数据结构 队列 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm11.6 数据结构 队列 | Aczy156" />
+	<meta name="application-name" content="Algorithm11.6 数据结构 队列 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm11.6 数据结构 队列" />
+<meta property="og:description" content="[TOC]
+数据结构 线性表 - 队列  1、STL库中的queue
+2、手写队列
+ 利用「顺序表」实现：用数组来模拟容器，用front来作为队首，用rear来作为队尾 利用「链接表」实现：用链表实现  链首做为队首，链尾做为队尾：队尾添加O(n)，查看队首O(1)，栈顶移除O(1) 链首做为队尾，链尾做为队首：栈顶添加O(1)，查看栈顶O(n)，栈顶移除O(n)    3、利用「顺序表」手写队列的溢出问题
+ 假溢出「仅限于用顺序表/数组实现的队列」  出现的原因：由于队首front和队尾rear两个索引在一直往后推延，这样前面用过的地址空间就无法重复使用，在量巨大的情况下就会导致超过地址本来可承受的。 解决方案：通过搞成循环队列，这样原来用过的地址就可以进行重复利用，也不用回收   真溢出「仅限于循环队列，无论是哪种方式实现的」  出现的原因：循环队列不是普通队列的固定长度，所以一直往里边添加的话总会有溢出的时候。     " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm11.6 数据结构 队列"/>
+<meta name="twitter:description" content="[TOC]
+数据结构 线性表 - 队列  1、STL库中的queue
+2、手写队列
+ 利用「顺序表」实现：用数组来模拟容器，用front来作为队首，用rear来作为队尾 利用「链接表」实现：用链表实现  链首做为队首，链尾做为队尾：队尾添加O(n)，查看队首O(1)，栈顶移除O(1) 链首做为队尾，链尾做为队首：栈顶添加O(1)，查看栈顶O(n)，栈顶移除O(n)    3、利用「顺序表」手写队列的溢出问题
+ 假溢出「仅限于用顺序表/数组实现的队列」  出现的原因：由于队首front和队尾rear两个索引在一直往后推延，这样前面用过的地址空间就无法重复使用，在量巨大的情况下就会导致超过地址本来可承受的。 解决方案：通过搞成循环队列，这样原来用过的地址就可以进行重复利用，也不用回收   真溢出「仅限于循环队列，无论是哪种方式实现的」  出现的原因：循环队列不是普通队列的固定长度，所以一直往里边添加的话总会有溢出的时候。     "/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数据结构-线性表---队列">数据结构 线性表 - 队列</a></li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm11.6 数据结构 队列</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="数据结构-线性表---队列">数据结构 线性表 - 队列</h2>
+<blockquote>
+<p>1、STL库中的queue</p>
+<p>2、手写队列</p>
+<ul>
+<li>利用「顺序表」实现：用<strong>数组</strong>来模拟容器，用front来作为队首，用rear来作为队尾</li>
+<li>利用「链接表」实现：用链表实现
+<ul>
+<li>链首做为队首，链尾做为队尾：队尾添加O(n)，查看队首O(1)，栈顶移除O(1)</li>
+<li>链首做为队尾，链尾做为队首：栈顶添加O(1)，查看栈顶O(n)，栈顶移除O(n)</li>
+</ul>
+</li>
+</ul>
+<p>3、利用「顺序表」手写队列的溢出问题</p>
+<ul>
+<li>假溢出「仅限于用顺序表/数组实现的队列」
+<ul>
+<li>出现的原因：由于队首front和队尾rear两个索引在一直往后推延，这样前面用过的地址空间就无法重复使用，在量巨大的情况下就会导致超过地址本来可承受的。</li>
+<li>解决方案：通过搞成循环队列，这样原来用过的地址就可以进行重复利用，也不用回收</li>
+</ul>
+</li>
+<li>真溢出「仅限于循环队列，无论是哪种方式实现的」
+<ul>
+<li>出现的原因：循环队列不是普通队列的固定长度，所以一直往里边添加的话总会有溢出的时候。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>
