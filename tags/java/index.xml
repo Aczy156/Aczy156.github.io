@@ -24,5 +24,16 @@ Java Web 最基础JavaWeb：Web-INF工程 过程：
  空工程，没有依赖/或者类似maven的包管理工具，所以依赖需要手动倒入，各种jar包。 两种配置servlet的写法中：  利用.xml配置文件的写法，容易忘记写servlet-class标签，这样就无法响应servlet 利用标签的写法，会利用name属性去找对应的类，找不到对应的类就会出问题，直接在tomcat容器里跑不起来。   tomcat配置内容，artifact配置注意会默认有war_exploded这个出现在链接里，也即是最后打包之后放在tomcat里边的内容，链接里要加入的。如果想删除，不仅要在server里边删除，也要在「deployment」部署里边删除  </description>
     </item>
     
+    <item>
+      <title>PyTorch RNN TextCNN</title>
+      <link>http://www.chenranfei.online/posts/project/pytorch-rnn-textcnn/</link>
+      <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/project/pytorch-rnn-textcnn/</guid>
+      <description>[TOC]
+PyTorch RNN TextCNN PyTorch RNN  数据预处理：通过numpy模拟产生数据，然后利用matplotlib来渲染数据   目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
+ 整体项目文件类型：该项目所对应的文件类型要修改 =&amp;gt; 右键选中当前project--&amp;gt;Mark Directory as --&amp;gt; Sources Root. （修改了之后的该项目所对应的文件性质应该呈现蓝色） 相互引用的文件命名：所有的命名中都不可以出现- (间隔符)，但是可以_ (下划线)  </description>
+    </item>
+    
   </channel>
 </rss>
