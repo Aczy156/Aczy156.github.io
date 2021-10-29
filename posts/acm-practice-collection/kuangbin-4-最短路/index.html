@@ -22,7 +22,8 @@
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="kuangbin 4 最短路" />
 <meta property="og:description" content="[TOC]
-kuangbin 4 最短路 A 单源最短路 Dijkstra 题目大意：单起点最短路，用Dijkstra解决
+kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
+ A 单源最短路 Dijkstra 链式前向星 题目大意：单起点最短路，用Dijkstra解决
 #include &lt;iostream&gt;using namespace std; const int maxpoint = 1e3&#43;9; const int maxedges = 2e3&#43;9; const int inf = (1&lt;&lt;31)-1; int n, m, ta, tb, tc, d[maxpoint], tem, vis[maxpoint], v; struct node { int to, nt, val; }edges[maxedges&lt;&lt;1];int head[maxpoint], tot; void addedge(int from, int to, int val) { edges[&#43;&#43;tot].to = to; edges[tot].val = val; edges[tot].nt = head[from]; head[from] = tot; } void dijkstra(int bg, int ed) { for (int i = 1; i &lt;= n; &#43;&#43;i) d[i] = inf; d[bg] = 0; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = inf; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/" />
@@ -31,7 +32,8 @@ kuangbin 4 最短路 A 单源最短路 Dijkstra 题目大意：单起点最短�
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="kuangbin 4 最短路"/>
 <meta name="twitter:description" content="[TOC]
-kuangbin 4 最短路 A 单源最短路 Dijkstra 题目大意：单起点最短路，用Dijkstra解决
+kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
+ A 单源最短路 Dijkstra 链式前向星 题目大意：单起点最短路，用Dijkstra解决
 #include &lt;iostream&gt;using namespace std; const int maxpoint = 1e3&#43;9; const int maxedges = 2e3&#43;9; const int inf = (1&lt;&lt;31)-1; int n, m, ta, tb, tc, d[maxpoint], tem, vis[maxpoint], v; struct node { int to, nt, val; }edges[maxedges&lt;&lt;1];int head[maxpoint], tot; void addedge(int from, int to, int val) { edges[&#43;&#43;tot].to = to; edges[tot].val = val; edges[tot].nt = head[from]; head[from] = tot; } void dijkstra(int bg, int ed) { for (int i = 1; i &lt;= n; &#43;&#43;i) d[i] = inf; d[bg] = 0; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = inf; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!"/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
@@ -64,14 +66,14 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="#kuangbin-4-最短路">kuangbin 4 最短路</a>
       <ul>
-        <li><a href="#a-单源最短路-dijkstra">A 单源最短路 Dijkstra</a></li>
+        <li><a href="#a-单源最短路-dijkstra-链式前向星">A 单源最短路 Dijkstra 链式前向星</a></li>
         <li><a href="#b">B</a></li>
         <li><a href="#c">C</a></li>
-        <li><a href="#d">D</a></li>
+        <li><a href="#d-反向建图-dijkstra-链式前向星">D 反向建图 Dijkstra 链式前向星</a></li>
         <li><a href="#e">E</a></li>
         <li><a href="#f">F</a></li>
-        <li><a href="#g">G</a></li>
-        <li><a href="#h">H</a></li>
+        <li><a href="#g-单源最短路-dijkstra-邻接矩阵">G 单源最短路 Dijkstra 邻接矩阵</a></li>
+        <li><a href="#h-传递闭包-floyd-邻接矩阵">H 传递闭包 Floyd 邻接矩阵</a></li>
         <li><a href="#i">I</a></li>
         <li><a href="#j">J</a></li>
         <li><a href="#k">K</a></li>
@@ -97,7 +99,10 @@ MathJax.Hub.Config({
 		<section class="body">
 			<p>[TOC]</p>
 <h2 id="kuangbin-4-最短路">kuangbin 4 最短路</h2>
-<h3 id="a-单源最短路-dijkstra">A 单源最短路 Dijkstra</h3>
+<blockquote>
+<p><a href="https://vjudge.ppsucxtt.cn/contest/66569">https://vjudge.ppsucxtt.cn/contest/66569</a></p>
+</blockquote>
+<h3 id="a-单源最短路-dijkstra-链式前向星">A 单源最短路 Dijkstra 链式前向星</h3>
 <p>题目大意：单起点最短路，用Dijkstra解决</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
@@ -142,12 +147,88 @@ MathJax.Hub.Config({
 }
 </code></pre></div><h3 id="b">B</h3>
 <h3 id="c">C</h3>
-<h3 id="d">D</h3>
-<h3 id="e">E</h3>
+<h3 id="d-反向建图-dijkstra-链式前向星">D 反向建图 Dijkstra 链式前向星</h3>
+<p>题意：所有其他点去某一个特定的点来回总距离的最大值</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxpoint <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxedges <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> inf <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">31</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">int</span> n, m, k, from[maxedges<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>], to[maxedges<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>], val[maxedges<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>], d[maxpoint], tem, vis[maxpoint], v, ans[maxpoint], fin;
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+    <span style="color:#66d9ef">int</span> to, nt, val;
+}edges[maxedges<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>];<span style="color:#66d9ef">int</span> head[maxpoint], tot;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addedge</span>(<span style="color:#66d9ef">int</span> from, <span style="color:#66d9ef">int</span> to, <span style="color:#66d9ef">int</span> val) {
+    edges[<span style="color:#f92672">+</span><span style="color:#f92672">+</span>tot].to <span style="color:#f92672">=</span> to;
+    edges[tot].nt <span style="color:#f92672">=</span> head[from];
+    edges[tot].val <span style="color:#f92672">=</span> val;
+    head[from] <span style="color:#f92672">=</span> tot;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> bg) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) d[i] <span style="color:#f92672">=</span> inf;
+    d[bg] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        tem <span style="color:#f92672">=</span> inf;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[j] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> tem <span style="color:#f92672">&gt;</span> d[j]) tem <span style="color:#f92672">=</span> d[v<span style="color:#f92672">=</span>j];
+        vis[v] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> head[v]; j; j<span style="color:#f92672">=</span>edges[j].nt) {
+            <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edges[j].to;
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> d[to] <span style="color:#f92672">&gt;</span> d[v]<span style="color:#f92672">+</span>edges[j].val) d[to] <span style="color:#f92672">=</span> d[v]<span style="color:#f92672">+</span>edges[j].val;
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>k);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, from<span style="color:#f92672">+</span>i, to<span style="color:#f92672">+</span>i, val<span style="color:#f92672">+</span>i);
+    <span style="color:#75715e">// 正向建图
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) addedge(from[i], to[i], val[i]);
+    dijkstra(k);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) ans[i] <span style="color:#f92672">=</span> d[i];
+    tot <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;cl(vis, <span style="color:#ae81ff">0</span>);cl(d, <span style="color:#ae81ff">0</span>);cl(head, <span style="color:#ae81ff">0</span>);
+    <span style="color:#75715e">// 反向建图
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) addedge(to[i], from[i], val[i]);
+    dijkstra(k);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) fin <span style="color:#f92672">=</span> max(fin, d[i]<span style="color:#f92672">+</span>ans[i]);
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, fin);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="e">E</h3>
 <h3 id="f">F</h3>
-<h3 id="g">G</h3>
-<h3 id="h">H</h3>
-<h3 id="i">I</h3>
+<h3 id="g-单源最短路-dijkstra-邻接矩阵">G 单源最短路 Dijkstra 邻接矩阵</h3>
+<p>CE：compile error</p>
+<h3 id="h-传递闭包-floyd-邻接矩阵">H 传递闭包 Floyd 邻接矩阵</h3>
+<p>题意：问有多少人的排名是确定的 =&gt; 转换为有多少人满足于其他人的相互关系是全部知道的，全部知道的话，就可以精确确定这个人所在的位置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">109</span>;
+<span style="color:#66d9ef">int</span> n, m, mp[maxn][maxn], ta, tb, ans;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb);
+        mp[ta][tb] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    }
+    <span style="color:#75715e">// floyd
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; k <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>k)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+                <span style="color:#66d9ef">if</span> (mp[i][k] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> mp[k][j]) mp[i][j] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">int</span> tem <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+            <span style="color:#66d9ef">if</span> (mp[i][j] <span style="color:#f92672">|</span><span style="color:#f92672">|</span> mp[j][i]) tem<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        <span style="color:#66d9ef">if</span> (tem <span style="color:#f92672">=</span><span style="color:#f92672">=</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) ans<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="i">I</h3>
 <h3 id="j">J</h3>
 <h3 id="k">K</h3>
 <h3 id="l">L</h3>

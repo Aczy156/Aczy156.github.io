@@ -37,24 +37,11 @@ bool isPalindrome(string s) { // remove invalid char and transform to lower case
     </item>
     
     <item>
-      <title>Algorithm1.1 字符串 匹配</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D/</guid>
-      <description>[TOC]
-字符串匹配 尾部匹配 https://www.luogu.com.cn/problem/P3955
-两个思路：
- 利用string 字符串匹配 利用数字看相等，利用数字的话通过取模截取有效部分  利用取模截取有用部分的方法：
-#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e3+9; int s[maxn], n, q, sq, l, mod[11] = {0, 10, 100, 1000, 10000, 100000, 1000000, 10000000, 100000000, 1000000000}; #include &amp;lt;algorithm&amp;gt; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;q); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, s+i); sort(s+1, s+1+n); for (int i = 1; i &amp;lt;= q; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;l, &amp;amp;sq); int fd = 0; for (int j = 1; j &amp;lt;= n; ++j) if (s[j]%mod[l] == sq) {fd = 1; cout&amp;lt;&amp;lt;s[j]&amp;lt;&amp;lt;endl; break;} if (fd) continue; else puts(&amp;#34;-1&amp;#34;); } return 0; } </description>
-    </item>
-    
-    <item>
       <title>Algorithm1.1 字符串-map匹配</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%A0%E5%B0%84/</link>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC%E6%98%A0%E5%B0%84%E5%8C%B9%E9%85%8D/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%A0%E5%B0%84/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC%E6%98%A0%E5%B0%84%E5%8C%B9%E9%85%8D/</guid>
       <description>[TOC]
 字符串映射 利用map进行字串匹配、替换 https://www.luogu.com.cn/problem/P1603
 题目大意：给六个字符串，然后如果有映射的进行映射为数字，没有的就不映射。输出最后映射完的结果
@@ -63,26 +50,6 @@ bool isPalindrome(string s) { // remove invalid char and transform to lower case
 声明字符串映射的数据结构map
 // 声明map map&amp;lt;string, int&amp;gt; mp; // 进行映射 mp[&amp;#34;one&amp;#34;] = 1; mp[&amp;#34;two&amp;#34;] = 2; /* ……*/ mp[&amp;#34;nineteen&amp;#34;] = 19; mp[&amp;#34;twenty&amp;#34;] = 20; mp[&amp;#34;one&amp;#34;] = 1; 进行匹配：
 int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp[str]){ int cnt = mp[str]*mp[str]%100; if (!cnt) continue; ans[idx++] = cnt; } } sort(ans, ans+idx); printf(&amp;#34;%d&amp;#34;, ans[0]); for (int i = 1; i &amp;lt; idx; ++i) { if (ans[i] &amp;lt; 10) printf(&amp;#34;0&amp;#34;); printf(&amp;#34;%d&amp;#34;, ans[i]); } return 0; } 两个map进行正向反向映射 https://www.</description>
-    </item>
-    
-    <item>
-      <title>Algorithm1.3 Trie树</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.3-%E5%AD%97%E5%85%B8%E6%A0%91/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.3-%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
-      <description>[TOC]
-字符串 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
- [模版] 点名问题 https://www.luogu.com.cn/problem/P2580
-题目大意：给出若干个人的名字，多次询问看某个询问是否是第一次出现 &amp;amp; 重复出现【字典树最基本的应用】 &amp;amp; 错误名字
-1、数据结构：
-ch[maxn][字符串的涉及字符空间]，一般字典树第二维都是26，26个字母
-val[maxn]用来记录索引到这个点的值，例如学生名字是索引的字典，这个学生的各个成绩就是val这个值，exist[maxn]用来记录是否存在或者重复访问
-2、常用操作：
-插入insert：
-查找query：
- 是否存在或者重复访问，访问exist数组 字符串对应的值，访问val数组  AC代码：只需访问exist，看是否存在或者重复访问
-#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;cstring&amp;gt;#define maxn 500010struct trie { int nex[maxn][26], cnt; int exist[maxn]; // 0 没出现；1 第一出现；2 重复出现  int val[maxn]; // -1 查不到这个人的对应的值  void insert(char *s) { int p = 0, l = strlen(s); for (int i = 0; i &amp;lt; l; i++) { int c = s[i] - &amp;#39;a&amp;#39;; if (!</description>
     </item>
     
     <item>
@@ -260,25 +227,36 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
     </item>
     
     <item>
-      <title>Algorithm14.1 最短路-dijkstra</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</link>
+      <title>Algorithm14.1.1 Dijkstra</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</guid>
       <description>[TOC]
 最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- 裸的dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&amp;lt;&amp;lt;31)-1; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &amp;lt;= n; ++i) { tem = INF,v = 0; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
+ Dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&amp;lt;&amp;lt;31)-1; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &amp;lt;= n; ++i) { tem = INF,v = 0; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
     </item>
     
     <item>
-      <title>Algorithm14.1 最短路-floyd</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</link>
+      <title>Algorithm14.1.2 Floyd</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</guid>
       <description>[TOC]
-最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www.</description>
+最短路-Floyd Floyd - 最短路 （已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】
+ 核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 最小环 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.1.3 SPFA</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</guid>
+      <description>[TOC]
+最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&amp;lt;nd&amp;gt; spf; void spfa(int s) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &amp;gt; d[nwpos]+edge[i].cost) { d[to] = d[nwpos]+edge[i].</description>
     </item>
     
     <item>
@@ -309,16 +287,6 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
 2、根据入度、出度来看是否添加进入队列。
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 5005int n, m, mp[maxn][maxn], in[maxn], out[maxn], ta, tb, ans[maxn], final; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt; q; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); mp[ta][tb] = 1; out[ta]++;in[tb]++; } for (int i = 1; i &amp;lt;= n; ++i) if (!in[i]) {ans[i] = 1;q.push(i);} while (!q.empty()) { int nw = q.front();q.pop(); for (int i = 1; i &amp;lt;= n; ++i){ if (mp[nw][i]) { ans[i] += ans[nw];ans[i] %= 80112002; in[i]--; if (!</description>
-    </item>
-    
-    <item>
-      <title>Algorithm14.3 最短路-SPFA</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-%E6%9C%80%E7%9F%AD%E8%B7%AF-spfa/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-%E6%9C%80%E7%9F%AD%E8%B7%AF-spfa/</guid>
-      <description>[TOC]
-最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&amp;lt;nd&amp;gt; spf; void spfa(int s) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &amp;gt; d[nwpos]+edge[i].cost) { d[to] = d[nwpos]+edge[i].</description>
     </item>
     
     <item>
@@ -477,6 +445,29 @@ AC代码：
 两种方案：
  第一种，先输入进来，然后整体进行递归，递归的参数就是这个整体字串 第二种，边输入边递归，这样就可以利用一些getchar，char字符来进行输入的直接判断（例如如果字串一部分为ADD567，如果不知道长度的的话还有遍历判断，如果直接边输入边解析，那就可以直接利用cin来直接分割，cin&amp;raquo;字串&amp;raquo;数字，就自动分割了）   指令移动 https://www.luogu.com.cn/problem/P1322
 #include &amp;lt;iostream&amp;gt;using namespace std; int solve() { char c; string tp; int num, ans, d; while (cin&amp;gt;&amp;gt;c) { if (c == &amp;#39;]&amp;#39;) break; cin&amp;gt;&amp;gt;tp&amp;gt;&amp;gt;num; if (c == &amp;#39;R&amp;#39;) { d = getchar(); ans += num*solve(); d = getchar(); } if (c == &amp;#39;B&amp;#39;) d = getchar(), ans -= num; if (c == &amp;#39;F&amp;#39;) d = getchar(), ans += num; if (d == int(&amp;#39;]&amp;#39;)) break; } return ans; } int main() { printf(&amp;#34;%d\n&amp;#34;, solve()); return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm2 字符串数据结构 Trie树</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84trie%E6%A0%91/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84trie%E6%A0%91/</guid>
+      <description>[TOC]
+字符串 数据结构 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
+demo：Trie树维护的字典：[he, his, hers, she]，要从字典里查到的单词：his
+构建Trie树：
+ node节点结构体：  当前节点的值 存放指向下一层node节点指针的List（最多26个=&amp;gt;26个字母）   bool数组：标记某一个节点是否是尾部节点【例如下图中的trie树双层圈的都是】  通过root往下查询某一个待测字串：
+ 查找正确：  到双层圈的节点 =&amp;gt; 完成完全匹配 未到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配   查找错误：  空指针 =&amp;gt; 直接从root根节点就无法匹配 未找到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配     [模版] 点名问题 https://www.luogu.com.cn/problem/P2580
+题目大意：给出若干个人的名字，多次询问看某个询问是否是第一次出现 &amp;amp; 重复出现【字典树最基本的应用】 &amp;amp; 错误名字
+1、数据结构：
+ch[maxn][字符串的涉及字符空间]，一般字典树第二维都是26，26个字母
+val[maxn]用来记录索引到这个点的值，例如学生名字是索引的字典，这个学生的各个成绩就是val这个值，exist[maxn]用来记录是否存在或者重复访问
+2、常用操作：
+插入insert：
+查找query：
+ 是否存在或者重复访问，访问exist数组 字符串对应的值，访问val数组  AC代码：只需访问exist，看是否存在或者重复访问
+#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;cstring&amp;gt;#define maxn 500010struct trie { int nex[maxn][26], cnt; int exist[maxn]; // 0 没出现；1 第一出现；2 重复出现  int val[maxn]; // -1 查不到这个人的对应的值  void insert(char *s) { int p = 0, l = strlen(s); for (int i = 0; i &amp;lt; l; i++) { int c = s[i] - &amp;#39;a&amp;#39;; if (!</description>
     </item>
     
     <item>
@@ -712,6 +703,29 @@ https://www.luogu.com.cn/problem/P1886
     </item>
     
     <item>
+      <title>Algorithm3 KMP</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm3-kmp/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm3-kmp/</guid>
+      <description>[TOC]
+字符串 KMP  工程开发中的应用：浏览器的搜索框内容提示功能
+demo：Trie树维护的字典：[he, his, hers, she]，要从字典里查到的单词：his
+构建Trie树：利用一个bool数组来标记某一个节点是否是尾部节点【例如下图中的trie树双层圈的都是】
+通过root往下查询某一个待测字串：
+ 查找正确：  到双层圈的节点 =&amp;gt; 完成完全匹配 未到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配   查找错误：  空指针 =&amp;gt; 直接从root根节点就无法匹配 未找到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配     [模版] 点名问题 https://www.luogu.com.cn/problem/P2580
+题目大意：给出若干个人的名字，多次询问看某个询问是否是第一次出现 &amp;amp; 重复出现【字典树最基本的应用】 &amp;amp; 错误名字
+1、数据结构：
+ch[maxn][字符串的涉及字符空间]，一般字典树第二维都是26，26个字母
+val[maxn]用来记录索引到这个点的值，例如学生名字是索引的字典，这个学生的各个成绩就是val这个值，exist[maxn]用来记录是否存在或者重复访问
+2、常用操作：
+插入insert：
+查找query：
+ 是否存在或者重复访问，访问exist数组 字符串对应的值，访问val数组  AC代码：只需访问exist，看是否存在或者重复访问
+#include &amp;lt;iostream&amp;gt;using namespace std; #include &amp;lt;cstring&amp;gt;#define maxn 500010struct trie { int nex[maxn][26], cnt; int exist[maxn]; // 0 没出现；1 第一出现；2 重复出现  int val[maxn]; // -1 查不到这个人的对应的值  void insert(char *s) { int p = 0, l = strlen(s); for (int i = 0; i &amp;lt; l; i++) { int c = s[i] - &amp;#39;a&amp;#39;; if (!</description>
+    </item>
+    
+    <item>
       <title>Algorithm3 交叉</title>
       <link>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
@@ -722,6 +736,29 @@ https://www.luogu.com.cn/problem/P1886
 1、题目大意是允许相邻的两个牌堆交叉换牌
 2、解决方案就是把交叉换成单向，然后通过单边尽头单向遍历简化问题【单边尽头单向可以的原因就是每次至少保证满足1个，然后就算是其他的中间往两边的，也最多了，每次只能满足一个，所以不如直接 单边 尽头 =&amp;gt; 方便遍历】
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 105int n, a[maxn], sum = 0, ans = 0; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 0; i &amp;lt; n; i++) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i]);sum += a[i];} sum /= n; for (int i = 0; i &amp;lt; n - 1; ++i) if (a[i] != sum) { a[i + 1] -= (sum - a[i]); ans++; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm4 AC自动机</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</guid>
+      <description>[TOC]
+字符串 AC自动机  demo：AC自动机维护：[he, his, hers, she]，要查询的单词：his
+过程一：构建Trie树：
+ node节点结构体：  当前节点的值 存放指向下一层node节点指针的List（最多26个=&amp;gt;26个字母） fail失效指针：用来找最长相同后缀，节省从头查找的时间 【特殊】对于是某一个p的结尾节点的，这个特殊的节点储存更多信息   利用一个bool数组来标记某一个节点是否是尾部节点【例如下图中的trie树双层圈的都是】  过程二：构建AC自动机
+完善fail指针
+过程三：输入待测字串进行测试
+通过root往下查询某一个待测字串：
+ 查找正确：  到双层圈的节点 =&amp;gt; 完成完全匹配 未到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配   查找错误：  空指针 =&amp;gt; 直接从root根节点就无法匹配 未找到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配     方法一：利用链表实现
+数据结构：结构体和指向结构体的指针
+方法二：利用数组实现
+数据结构：利用数组维护结构体，trie树所维护的数组维护树结构
+pos表示当前的节点
+ 当pos为1时表示当前节点为根节点，那么他的所有儿子的值就是trie[pos][i] (trie[1][i])所蕴含的值 当pos为其他值时表示当前节点为其他节点  fail指针：
+当构造AC自动机的时候要初始化fail指针：
+    当利用AC自动机进行搜索的时候：</description>
     </item>
     
     <item>
@@ -961,7 +998,8 @@ kuangbin 1 简单搜索 A B 「BFS」三维迷宫 题目大意：三维迷宫，
       
       <guid>http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
       <description>[TOC]
-kuangbin 4 最短路 A 单源最短路 Dijkstra 题目大意：单起点最短路，用Dijkstra解决
+kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
+ A 单源最短路 Dijkstra 链式前向星 题目大意：单起点最短路，用Dijkstra解决
 #include &amp;lt;iostream&amp;gt;using namespace std; const int maxpoint = 1e3+9; const int maxedges = 2e3+9; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, ta, tb, tc, d[maxpoint], tem, vis[maxpoint], v; struct node { int to, nt, val; }edges[maxedges&amp;lt;&amp;lt;1];int head[maxpoint], tot; void addedge(int from, int to, int val) { edges[++tot].to = to; edges[tot].val = val; edges[tot].nt = head[from]; head[from] = tot; } void dijkstra(int bg, int ed) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = inf; d[bg] = 0; for (int i = 1; i &amp;lt;= n; ++i) { tem = inf; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
     </item>
     

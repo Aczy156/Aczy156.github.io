@@ -168,7 +168,8 @@ kuangbin 1 简单搜索 A B 「BFS」三维迷宫 题目大意：三维迷宫，
       
       <guid>http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
       <description>[TOC]
-kuangbin 4 最短路 A 单源最短路 Dijkstra 题目大意：单起点最短路，用Dijkstra解决
+kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
+ A 单源最短路 Dijkstra 链式前向星 题目大意：单起点最短路，用Dijkstra解决
 #include &amp;lt;iostream&amp;gt;using namespace std; const int maxpoint = 1e3+9; const int maxedges = 2e3+9; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, ta, tb, tc, d[maxpoint], tem, vis[maxpoint], v; struct node { int to, nt, val; }edges[maxedges&amp;lt;&amp;lt;1];int head[maxpoint], tot; void addedge(int from, int to, int val) { edges[++tot].to = to; edges[tot].val = val; edges[tot].nt = head[from]; head[from] = tot; } void dijkstra(int bg, int ed) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = inf; d[bg] = 0; for (int i = 1; i &amp;lt;= n; ++i) { tem = inf; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
     </item>
     

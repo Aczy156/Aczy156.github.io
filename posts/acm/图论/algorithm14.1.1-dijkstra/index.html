@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm14.1.1 Dijkstra - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm14.1.1 Dijkstra | Aczy156" />
+	<meta name="twitter:title" content="Algorithm14.1.1 Dijkstra | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm14.1.1 Dijkstra | Aczy156" />
+	<meta name="application-name" content="Algorithm14.1.1 Dijkstra | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm14.1.1 Dijkstra" />
+<meta property="og:description" content="[TOC]
+最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
+我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
+ Dijkstra&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &lt;iostream&gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&lt;&lt;31)-1; void dijkstra(){ for (int i = 1; i &lt;= n; &#43;&#43;i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = INF,v = 0; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm14.1.1 Dijkstra"/>
+<meta name="twitter:description" content="[TOC]
+最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
+我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
+ Dijkstra&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &lt;iostream&gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&lt;&lt;31)-1; void dijkstra(){ for (int i = 1; i &lt;= n; &#43;&#43;i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = INF,v = 0; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!"/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#最短路">最短路</a>
+      <ul>
+        <li><a href="#dijkstra邻接矩阵用mpmaxnmaxn二维矩阵储存">Dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】</a></li>
+        <li><a href="#dijkstra邻接表结构体用vector向量来进行储存">Dijkstra+邻接表【结构体+用vector向量来进行储存】</a></li>
+        <li><a href="#dijkstra链式前向星结构体">Dijkstra+链式前向星【结构体】</a></li>
+        <li><a href="#dijkstra链式前向星多源最短路">Dijkstra+链式前向星+多源最短路</a></li>
+        <li><a href="#dijkstra链式前向星双向建图">Dijkstra+链式前向星+双向建图</a></li>
+        <li><a href="#堆优化dijkstra提高效率">堆优化Dijkstra提高效率</a></li>
+        <li><a href="#反向建图堆优化">反向建图、堆优化</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm14.1.1 Dijkstra</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="最短路">最短路</h2>
+<blockquote>
+<p>博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程</p>
+<p><a href="https://blog.csdn.net/qq_43345204/article/details/115360233?spm=1001.2014.3001.5501">我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)</a></p>
+</blockquote>
+<h3 id="dijkstra邻接矩阵用mpmaxnmaxn二维矩阵储存">Dijkstra+邻接矩阵【用<code>mp[maxn][maxn]</code>二维矩阵储存】</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 10010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> INF <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">31</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(){
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dis[i] <span style="color:#f92672">=</span> mp[bg][i];
+    vis[bg] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        tem <span style="color:#f92672">=</span> INF,v <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[j] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> dis[j] <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> tem) tem <span style="color:#f92672">=</span> dis[v<span style="color:#f92672">=</span>j];
+        vis[v] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[j] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> dis[v]<span style="color:#f92672">+</span>mp[v][j] <span style="color:#f92672">&lt;</span> dis[j]) dis[j] <span style="color:#f92672">=</span> dis[v]<span style="color:#f92672">+</span>mp[v][j];
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld </span><span style="color:#e6db74">&#34;</span>, dis[i]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%lld%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>bg);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%lld%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc);
+        mp[ta][tb] <span style="color:#f92672">=</span> mp[tb][ta] <span style="color:#f92672">=</span> tc;
+    }
+    dijkstra();
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="dijkstra邻接表结构体用vector向量来进行储存">Dijkstra+邻接表【结构体+用vector向量来进行储存】</h3>
+<p>数据结构：（详细的邻接表vector实现见 <a href="http://chenranfei.online/post/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/">Algorithm14.0 图论 数据结构存储形式</a> ）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> edge{<span style="color:#66d9ef">int</span> to, cost;};
+vector<span style="color:#f92672">&lt;</span>edge<span style="color:#f92672">&gt;</span> gh[maxn];
+</code></pre></div><p><a href="https://www.luogu.com.cn/problem/P3371">https://www.luogu.com.cn/problem/P3371</a></p>
+<p>题目大意：最短路模版</p>
+<p>1、值的初始化=&gt;dis数组除了dis[自身]全部初始化为INF。</p>
+<p>2、过程：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">遍历所有点
+	遍历每个点的时候都重新遍历一边dis最短距离数组，从最短距离数组里选出最短的 值-tem 和 索引-v
+	利用获取到的这个dis最短距离数组中的最小的，来更新邻接表gh[v]中的所有节点的距离，也就是gh[v]的所有to，更新方式是dis[to] = min(dis[to], dis[v]+cost)来更新
+</code></pre></div><p>AC代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxn 50010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, bg, dis[maxn], vis[maxn], ta, tb, tc, tem, v;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> edge{
+    <span style="color:#66d9ef">int</span> to, cost;
+};
+vector<span style="color:#f92672">&lt;</span>edge<span style="color:#f92672">&gt;</span> gh[maxn];
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> INF <span style="color:#f92672">=</span> <span style="color:#ae81ff">2147483647</span>;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dis[i] <span style="color:#f92672">=</span> INF;
+    dis[bg] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        tem <span style="color:#f92672">=</span> INF, v <span style="color:#f92672">=</span> bg;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[j] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> dis[j] <span style="color:#f92672">&lt;</span> tem) tem <span style="color:#f92672">=</span> dis[v<span style="color:#f92672">=</span>j];
+        vis[v] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> gh[v].size(); <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+            <span style="color:#66d9ef">int</span> tg <span style="color:#f92672">=</span> gh[v][j].to;
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[tg] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> dis[tg] <span style="color:#f92672">&gt;</span> dis[v]<span style="color:#f92672">+</span>gh[v][j].cost) dis[tg]<span style="color:#f92672">=</span>dis[v]<span style="color:#f92672">+</span>gh[v][j].cost;
+        }
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, dis[i]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>bg);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        edge teme;
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>teme.to, <span style="color:#f92672">&amp;</span>teme.cost);
+        gh[ta].push_back(teme);
+    }
+    dijkstra();
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="dijkstra链式前向星结构体">Dijkstra+链式前向星【结构体】</h3>
+<p>1、用链式前向星来存储图结构</p>
+<p>2、跑裸的Dijkstra</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxpoint 100010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define maxedge 200010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define INF 2147483647</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, s, ta, tb, tc, dis[maxpoint], vis[maxpoint], v, tem<span style="color:#f92672">=</span>INF;
+<span style="color:#66d9ef">struct</span> node {
+    <span style="color:#66d9ef">int</span> to, next, cost;
+}edge[maxedge]; <span style="color:#66d9ef">int</span> head[maxpoint], tot;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addedge</span>(<span style="color:#66d9ef">int</span> from, <span style="color:#66d9ef">int</span> to, <span style="color:#66d9ef">int</span> cost) {
+    edge[<span style="color:#f92672">+</span><span style="color:#f92672">+</span>tot].to <span style="color:#f92672">=</span> to;
+    edge[tot].next <span style="color:#f92672">=</span> head[from];
+    edge[tot].cost <span style="color:#f92672">=</span> cost;
+    head[from] <span style="color:#f92672">=</span> tot;
+}
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e"> * 非堆优化
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dis[i] <span style="color:#f92672">=</span> INF;
+    dis[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        tem <span style="color:#f92672">=</span> INF;v <span style="color:#f92672">=</span> s;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[j] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> dis[j] <span style="color:#f92672">&lt;</span> tem) tem <span style="color:#f92672">=</span> dis[v<span style="color:#f92672">=</span>j];
+        vis[v] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> head[v]; j; j<span style="color:#f92672">=</span>edge[j].next) {
+            <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edge[j].to;
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> dis[to] <span style="color:#f92672">&gt;</span> dis[v]<span style="color:#f92672">+</span>edge[j].cost) dis[to] <span style="color:#f92672">=</span> dis[v]<span style="color:#f92672">+</span>edge[j].cost;
+        }
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, dis[i]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>s);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc);
+        addedge(ta, tb, tc);
+    }
+    dijkstra();
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="dijkstra链式前向星多源最短路">Dijkstra+链式前向星+多源最短路</h3>
+<p>在给dijkstra传参的时候把当前的源头给传进去，这样就可以进行不同源头的最短路计算了。</p>
+<p><em>注意：多源最短路要进行多次的Dijkstra，所以在每次跑完了都要刷新vis/dis数组。</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxpoint 1005</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define maxedge 100010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define INF 2147483647</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, ta, tb, tc, dis[maxpoint], vis[maxpoint], v, tem<span style="color:#f92672">=</span>INF, ans;
+<span style="color:#66d9ef">struct</span> node {
+    <span style="color:#66d9ef">int</span> to, next, cost;
+}edge[maxedge];<span style="color:#66d9ef">int</span> head[maxpoint], tot;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addedge</span>(<span style="color:#66d9ef">int</span> from, <span style="color:#66d9ef">int</span> to, <span style="color:#66d9ef">int</span> cost) {
+    edge[<span style="color:#f92672">+</span><span style="color:#f92672">+</span>tot].to <span style="color:#f92672">=</span> to;
+    edge[tot].next <span style="color:#f92672">=</span> head[from];
+    edge[tot].cost <span style="color:#f92672">=</span> cost;
+    head[from] <span style="color:#f92672">=</span> tot;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> s) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dis[i] <span style="color:#f92672">=</span> INF;
+    dis[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    vis[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        v<span style="color:#f92672">=</span>s;tem<span style="color:#f92672">=</span>INF;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[j] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> tem <span style="color:#f92672">&gt;</span> dis[j]) tem <span style="color:#f92672">=</span> dis[v<span style="color:#f92672">=</span>j];
+        vis[v] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> head[v]; j; j<span style="color:#f92672">=</span>edge[j].next) {
+            <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edge[j].to;
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> dis[to] <span style="color:#f92672">&gt;</span> dis[v]<span style="color:#f92672">+</span>edge[j].cost) dis[to] <span style="color:#f92672">=</span> dis[v]<span style="color:#f92672">+</span>edge[j].cost;
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc);
+        addedge(ta, tb, tc);
+    }
+    dijkstra(<span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> dis[i];
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        cl(vis, <span style="color:#ae81ff">0</span>);
+        dijkstra(i);
+        ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> dis[<span style="color:#ae81ff">1</span>];
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="dijkstra链式前向星双向建图">Dijkstra+链式前向星+双向建图</h3>
+<p>【双向建图限制于有向图，无向图就没有双向建图一说了】</p>
+<p><a href="https://www.luogu.com.cn/problem/P1629">https://www.luogu.com.cn/problem/P1629</a></p>
+<p>题目大意：从固定点去其他所有点，然后从所有去过的点返回。</p>
+<p>1、反向建图：【类似于：并查集里边的反集=&gt;通过把范围增大到二倍来实现反集；】</p>
+<ul>
+<li>声明的数据结构规模扩大2倍，<code>edge[maxpoint&lt;&lt;1]</code> <code>head[maxponit&lt;&lt;1]</code> <code>dis[maxpoint&lt;&lt;1]</code></li>
+<li>反向建图的时候，在1~n的数组范围内正向建图，在n+1~n&laquo;1范围内反向建图</li>
+<li>在跑裸的dijkstra注意索引。正向是1～n，反向n+1~n&laquo;1</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/*
+</span><span style="color:#75715e"> * 正反方向两面建图
+</span><span style="color:#75715e"> */</span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>using namespace std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxpoint 1005</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define maxedge 100010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define INF 2147483647</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, ta, tb, tc, dis[maxpoint<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>], vis[maxpoint<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>], v, tem<span style="color:#f92672">=</span>INF, ans;
+<span style="color:#66d9ef">struct</span> node {
+    <span style="color:#66d9ef">int</span> to, next, cost;
+}edge[maxedge<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>];<span style="color:#66d9ef">int</span> head[maxpoint<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>], tot;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addedge</span>(<span style="color:#66d9ef">int</span> from, <span style="color:#66d9ef">int</span> to, <span style="color:#66d9ef">int</span> cost) {
+    edge[<span style="color:#f92672">+</span><span style="color:#f92672">+</span>tot].to <span style="color:#f92672">=</span> to;
+    edge[tot].next <span style="color:#f92672">=</span> head[from];
+    edge[tot].cost <span style="color:#f92672">=</span> cost;
+    head[from] <span style="color:#f92672">=</span> tot;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> s) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dis[i] <span style="color:#f92672">=</span> INF;
+    dis[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    vis[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        v<span style="color:#f92672">=</span>s;tem<span style="color:#f92672">=</span>INF;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[j] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> tem <span style="color:#f92672">&gt;</span> dis[j]) tem <span style="color:#f92672">=</span> dis[v<span style="color:#f92672">=</span>j];
+        vis[v] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> head[v]; j; j<span style="color:#f92672">=</span>edge[j].next) {
+            <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edge[j].to;
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> dis[to] <span style="color:#f92672">&gt;</span> dis[v]<span style="color:#f92672">+</span>edge[j].cost) dis[to] <span style="color:#f92672">=</span> dis[v]<span style="color:#f92672">+</span>edge[j].cost;
+        }
+    }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">reverse_dijkstra</span>(<span style="color:#66d9ef">int</span> s) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dis[i] <span style="color:#f92672">=</span> INF;
+    dis[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    vis[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        v<span style="color:#f92672">=</span>s;tem<span style="color:#f92672">=</span>INF;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[j] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> tem <span style="color:#f92672">&gt;</span> dis[j]) tem <span style="color:#f92672">=</span> dis[v<span style="color:#f92672">=</span>j];
+        vis[v] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> head[v]; j; j<span style="color:#f92672">=</span>edge[j].next) {
+            <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edge[j].to;
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to] <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> dis[to] <span style="color:#f92672">&gt;</span> dis[v]<span style="color:#f92672">+</span>edge[j].cost) dis[to] <span style="color:#f92672">=</span> dis[v]<span style="color:#f92672">+</span>edge[j].cost;
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc);
+        addedge(ta, tb, tc);
+        addedge(tb<span style="color:#f92672">+</span>n, ta<span style="color:#f92672">+</span>n, tc); <span style="color:#75715e">// 反向建图
+</span><span style="color:#75715e"></span>    }
+    dijkstra(<span style="color:#ae81ff">1</span>);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> dis[i];
+    cl(vis, <span style="color:#ae81ff">0</span>);
+    reverse_dijkstra(<span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>n);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">+</span>n; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> dis[i];
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="堆优化dijkstra提高效率">堆优化Dijkstra提高效率</h3>
+<p>解决题目：数据增强的最短路，洛谷P4779</p>
+<p><a href="https://www.luogu.com.cn/problem/P4779">https://www.luogu.com.cn/problem/P4779</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">define maxpoint 100010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define maxedge 200010</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define INF 2147483647</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n, m, s, ta, tb, tc, dis[maxpoint], vis[maxpoint], v, tem<span style="color:#f92672">=</span>INF;
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+    <span style="color:#66d9ef">int</span> to, next, cost;
+}edge[maxedge]; <span style="color:#66d9ef">int</span> head[maxpoint], tot;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">nd</span> {
+    <span style="color:#66d9ef">int</span> dis, pos;
+    nd(<span style="color:#66d9ef">int</span> dis, <span style="color:#66d9ef">int</span> pos)<span style="color:#f92672">:</span> dis(dis), pos(pos) {}
+    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> nd n) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> dis <span style="color:#f92672">&gt;</span> n.dis;}
+};
+priority_queue<span style="color:#f92672">&lt;</span>nd<span style="color:#f92672">&gt;</span> pq;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addedge</span>(<span style="color:#66d9ef">int</span> from, <span style="color:#66d9ef">int</span> to, <span style="color:#66d9ef">int</span> cost) {
+    edge[<span style="color:#f92672">+</span><span style="color:#f92672">+</span>tot].to <span style="color:#f92672">=</span> to;
+    edge[tot].next <span style="color:#f92672">=</span> head[from];
+    edge[tot].cost <span style="color:#f92672">=</span> cost;
+    head[from] <span style="color:#f92672">=</span> tot;
+}
+
+<span style="color:#75715e">/*
+</span><span style="color:#75715e"> * 堆优化
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dis[i] <span style="color:#f92672">=</span> INF;
+    dis[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    pq.push(nd(<span style="color:#ae81ff">0</span>, s));
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
+        nd nw <span style="color:#f92672">=</span> pq.top();pq.pop();
+        <span style="color:#66d9ef">int</span> from <span style="color:#f92672">=</span> nw.pos;
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[from]) {
+            vis[from] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> head[from]; i; i<span style="color:#f92672">=</span>edge[i].next) {
+                <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edge[i].to;
+                <span style="color:#66d9ef">if</span> (dis[to] <span style="color:#f92672">&gt;</span> dis[from]<span style="color:#f92672">+</span>edge[i].cost) {
+                    dis[to] <span style="color:#f92672">=</span> dis[from]<span style="color:#f92672">+</span>edge[i].cost;
+                    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to]) pq.push(nd(dis[to], to));
+                }
+            }
+        }
+    }
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, dis[i]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m, <span style="color:#f92672">&amp;</span>s);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc);
+        addedge(ta, tb, tc);
+    }
+    dijkstra();
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>利用make_pair来进行优化结构体，不要写一个新的结构体，也不需要重载运算符，直接利用pair，pair+priority_queue默认按照第一个元素进行排序</p>
+<ul>
+<li>堆优化Dijkstra</li>
+<li>spfa</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">typedef</span> pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> pii;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span>pii<span style="color:#f92672">&gt;</span> pq;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> s, <span style="color:#66d9ef">int</span> e) {
+  memset(d, inf, <span style="color:#66d9ef">sizeof</span>(d));d[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  pq.push(make_pair(<span style="color:#ae81ff">0</span>, s));
+  <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
+    <span style="color:#66d9ef">int</span> nwid <span style="color:#f92672">=</span> pq.top().second;pq.pop();
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[nwid]) {
+      vis[nwid] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> head[nwid]; i; i <span style="color:#f92672">=</span> edges[i].nt) {
+      	<span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edges[i].to;
+        <span style="color:#66d9ef">if</span> (d[to] <span style="color:#f92672">&gt;</span> d[nwid]<span style="color:#f92672">+</span>edges[i].val) {
+          d[to] <span style="color:#f92672">=</span> d[nwid]<span style="color:#f92672">+</span>edges[i].val;
+          <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to]) pq.push(make_pair(d[to], to));
+        }
+      }
+    }
+  }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">spfa</span>(<span style="color:#66d9ef">int</span> s, <span style="color:#66d9ef">int</span> e) {
+  memset(d, inf, <span style="color:#66d9ef">sizeof</span>(d));d[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  pq.push(make_pair(<span style="color:#ae81ff">0</span>, s));
+  <span style="color:#66d9ef">while</span> ()
+}
+</code></pre></div><p>堆优化Dijkstra：</p>
+<p><a href="https://www.luogu.com.cn/problem/P1339">https://www.luogu.com.cn/problem/P1339</a></p>
+<p>核心模块：数据结构和非堆优化的一样，都是<code>dis[], tem, vis[], v</code>,只不过在堆优化运用priority_queue优化的过程中，需要首先push进一个两端为bg-bg且长度为0的一条边</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> bg, <span style="color:#66d9ef">int</span> ed) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) dis[i] <span style="color:#f92672">=</span> inf;
+    dis[bg] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    pq.push({bg, <span style="color:#ae81ff">0</span>});
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
+        <span style="color:#66d9ef">int</span> nw <span style="color:#f92672">=</span> pq.top().idx;pq.pop();
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[nw]) {
+            vis[nw] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> head[nw]; i; i<span style="color:#f92672">=</span>edges[i].next) {
+                <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edges[i].to;
+                <span style="color:#66d9ef">if</span> (dis[to] <span style="color:#f92672">&gt;</span> dis[nw]<span style="color:#f92672">+</span>edges[i].val) {
+                    dis[to] <span style="color:#f92672">=</span> dis[nw]<span style="color:#f92672">+</span>edges[i].val;
+                    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to]) pq.push({to, dis[to]});
+                }
+            }
+        }
+    }
+    <span style="color:#66d9ef">return</span> dis[ed];
+}
+</code></pre></div><h3 id="反向建图堆优化">反向建图、堆优化</h3>
+<blockquote>
+<p>给出若干个点，得到每个点到指定点的最短来回距离</p>
+<ul>
+<li>所有点到指定点的来路距离=》单终点最短路 =》反向建图</li>
+<li>指定点往其他所有点的去的距离=》单源（头）最短路</li>
+</ul>
+</blockquote>
+<p>注意：用堆优化的时候</p>
+<ul>
+<li>也是要两层的判断是否扫过了<code>!vis</code></li>
+<li>初始化的时候也是要将d数组按照inf与0进行初始化。</li>
+</ul>
+
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

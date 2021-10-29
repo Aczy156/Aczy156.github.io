@@ -23,25 +23,36 @@
     </item>
     
     <item>
-      <title>Algorithm14.1 最短路-dijkstra</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</link>
+      <title>Algorithm14.1.1 Dijkstra</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-%E6%9C%80%E7%9F%AD%E8%B7%AF-dijkstra/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</guid>
       <description>[TOC]
 最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- 裸的dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&amp;lt;&amp;lt;31)-1; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &amp;lt;= n; ++i) { tem = INF,v = 0; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
+ Dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&amp;lt;&amp;lt;31)-1; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &amp;lt;= n; ++i) { tem = INF,v = 0; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
     </item>
     
     <item>
-      <title>Algorithm14.1 最短路-floyd</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</link>
+      <title>Algorithm14.1.2 Floyd</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-%E6%9C%80%E7%9F%AD%E8%B7%AF-floyd/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</guid>
       <description>[TOC]
-最短路-floyd 基础floyd（已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 解决最小环 https://www.</description>
+最短路-Floyd Floyd - 最短路 （已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】
+ 核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 最小环 https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm14.1.3 SPFA</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</guid>
+      <description>[TOC]
+最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&amp;lt;nd&amp;gt; spf; void spfa(int s) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &amp;gt; d[nwpos]+edge[i].cost) { d[to] = d[nwpos]+edge[i].</description>
     </item>
     
     <item>
@@ -72,16 +83,6 @@
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
 2、根据入度、出度来看是否添加进入队列。
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 5005int n, m, mp[maxn][maxn], in[maxn], out[maxn], ta, tb, ans[maxn], final; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt; q; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb); mp[ta][tb] = 1; out[ta]++;in[tb]++; } for (int i = 1; i &amp;lt;= n; ++i) if (!in[i]) {ans[i] = 1;q.push(i);} while (!q.empty()) { int nw = q.front();q.pop(); for (int i = 1; i &amp;lt;= n; ++i){ if (mp[nw][i]) { ans[i] += ans[nw];ans[i] %= 80112002; in[i]--; if (!</description>
-    </item>
-    
-    <item>
-      <title>Algorithm14.3 最短路-SPFA</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-%E6%9C%80%E7%9F%AD%E8%B7%AF-spfa/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-%E6%9C%80%E7%9F%AD%E8%B7%AF-spfa/</guid>
-      <description>[TOC]
-最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&amp;lt;nd&amp;gt; spf; void spfa(int s) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &amp;gt; d[nwpos]+edge[i].cost) { d[to] = d[nwpos]+edge[i].</description>
     </item>
     
     <item>
