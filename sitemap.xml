@@ -23,12 +23,27 @@
   </url>
   
   <url>
-    <loc>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC/</loc>
+    <loc>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC/</loc>
     <lastmod>2021-02-01T19:03:55+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC%E6%98%A0%E5%B0%84%E5%8C%B9%E9%85%8D/</loc>
+    <lastmod>2021-02-01T19:03:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84trie%E6%A0%91/</loc>
+    <lastmod>2021-02-01T19:03:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.3-kmp/</loc>
+    <lastmod>2021-02-01T19:03:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</loc>
     <lastmod>2021-02-01T19:03:55+08:00</lastmod>
   </url>
   
@@ -168,11 +183,6 @@
   </url>
   
   <url>
-    <loc>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84trie%E6%A0%91/</loc>
-    <lastmod>2021-02-01T19:03:55+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.chenranfei.online/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</loc>
     <lastmod>2021-02-01T19:03:55+08:00</lastmod>
   </url>
@@ -243,17 +253,7 @@
   </url>
   
   <url>
-    <loc>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm3-kmp/</loc>
-    <lastmod>2021-02-01T19:03:55+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</loc>
-    <lastmod>2021-02-01T19:03:55+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</loc>
     <lastmod>2021-02-01T19:03:55+08:00</lastmod>
   </url>
   

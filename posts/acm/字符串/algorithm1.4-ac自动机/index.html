@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm1.4 AC自动机 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm1.4 AC自动机 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm1.4 AC自动机 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm1.4 AC自动机 | Aczy156" />
+	<meta name="application-name" content="Algorithm1.4 AC自动机 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm1.4 AC自动机" />
+<meta property="og:description" content="[TOC]
+字符串 AC自动机  demo：AC自动机维护：[he, his, hers, she]，要查询的单词：ahishers
+过程一：构建Trie树：
+ node节点结构体：  当前节点的值 存放指向下一层node节点指针的List（最多26个=&gt;26个字母） fail失效指针：用来找最长相同后缀，节省从头查找的时间 【特殊】对于是某一个p的结尾节点的，这个特殊的节点储存更多信息   利用一个bool数组来标记某一个节点是否是尾部节点【例如下图中的trie树双层圈的都是】  过程二：构建AC自动机
+完善fail指针
+过程三：输入待测字串进行测试
+通过root往下查询某一个待测字串：
+ 查找正确：  到双层圈的节点 =&gt; 完成完全匹配 未到双层圈的节点 =&gt; 完成部分(前缀)匹配   查找错误：  空指针 =&gt; 直接从root根节点就无法匹配 未找到双层圈的节点 =&gt; 完成部分(前缀)匹配     方法一：利用链表实现
+数据结构：结构体和指向结构体的指针
+方法二：利用数组实现
+1、初始化trie树「trie[][]树，cnt[]数组判定节点是否是字典终止节点」
+对应位置初始化上值，cnt数组进行初始化
+2、初始化fail指针「当前节点nw，遍历到的当前节点nw的儿子pos」
+对于当前节点，那么他的所有儿子节点就是for(i~[0, 26]) pos = trie[nw][i]表示所有儿子的值。
+ 如果当前儿子为真儿子，那么trie[nw][i]不为0 =&gt; fail[pos] = trie[fail[nw]][i];对于当前节点nw的fail指针是已知的，所以就要利用当前nw节点的fail指针来更新他的所有儿子节点的fail指针 =&gt; 真儿子的fail指针指向当前节点的fail指针对应的指向方向的节点  if (!fail[pos]) fail[pos] = 1; 此时刷新出来的指向的方向不一定有值，也就是说有可能指向的那个也是空 =&gt; 就要替换成父节点 else就正常赋值就好，赋成当前节点的fail指针指向的节点的对应方向   如果当前儿子为假儿子，可以将fail指针指向的节点相同方向的值赋过去（fail指针指向的节点有值是最好的，没有值也无所谓）相当于把fail指针指向的节点那棵树嫁接在了这个节点下边  3、利用AC自动机进行搜索「当前节点nw，pos」" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm1.4 AC自动机"/>
+<meta name="twitter:description" content="[TOC]
+字符串 AC自动机  demo：AC自动机维护：[he, his, hers, she]，要查询的单词：ahishers
+过程一：构建Trie树：
+ node节点结构体：  当前节点的值 存放指向下一层node节点指针的List（最多26个=&gt;26个字母） fail失效指针：用来找最长相同后缀，节省从头查找的时间 【特殊】对于是某一个p的结尾节点的，这个特殊的节点储存更多信息   利用一个bool数组来标记某一个节点是否是尾部节点【例如下图中的trie树双层圈的都是】  过程二：构建AC自动机
+完善fail指针
+过程三：输入待测字串进行测试
+通过root往下查询某一个待测字串：
+ 查找正确：  到双层圈的节点 =&gt; 完成完全匹配 未到双层圈的节点 =&gt; 完成部分(前缀)匹配   查找错误：  空指针 =&gt; 直接从root根节点就无法匹配 未找到双层圈的节点 =&gt; 完成部分(前缀)匹配     方法一：利用链表实现
+数据结构：结构体和指向结构体的指针
+方法二：利用数组实现
+1、初始化trie树「trie[][]树，cnt[]数组判定节点是否是字典终止节点」
+对应位置初始化上值，cnt数组进行初始化
+2、初始化fail指针「当前节点nw，遍历到的当前节点nw的儿子pos」
+对于当前节点，那么他的所有儿子节点就是for(i~[0, 26]) pos = trie[nw][i]表示所有儿子的值。
+ 如果当前儿子为真儿子，那么trie[nw][i]不为0 =&gt; fail[pos] = trie[fail[nw]][i];对于当前节点nw的fail指针是已知的，所以就要利用当前nw节点的fail指针来更新他的所有儿子节点的fail指针 =&gt; 真儿子的fail指针指向当前节点的fail指针对应的指向方向的节点  if (!fail[pos]) fail[pos] = 1; 此时刷新出来的指向的方向不一定有值，也就是说有可能指向的那个也是空 =&gt; 就要替换成父节点 else就正常赋值就好，赋成当前节点的fail指针指向的节点的对应方向   如果当前儿子为假儿子，可以将fail指针指向的节点相同方向的值赋过去（fail指针指向的节点有值是最好的，没有值也无所谓）相当于把fail指针指向的节点那棵树嫁接在了这个节点下边  3、利用AC自动机进行搜索「当前节点nw，pos」"/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#字符串-ac自动机">字符串 AC自动机</a>
+      <ul>
+        <li><a href="#板题">板题</a></li>
+        <li><a href="#多次查询">多次查询</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm1.4 AC自动机</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="字符串-ac自动机">字符串 AC自动机</h2>
+<blockquote>
+<p>demo：AC自动机维护：<code>[he, his, hers, she]</code>，要查询的单词：<code>ahishers</code></p>
+<p><strong>过程一：构建Trie树：</strong></p>
+<ul>
+<li>node节点结构体：
+<ul>
+<li>当前节点的值</li>
+<li>存放指向下一层node节点指针的List（最多26个=&gt;26个字母）</li>
+<li>fail失效指针：用来找最长相同后缀，节省从头查找的时间</li>
+<li>【特殊】对于是某一个p的结尾节点的，这个特殊的节点储存更多信息</li>
+</ul>
+</li>
+<li>利用一个bool数组来标记某一个节点是否是尾部节点【例如下图中的trie树双层圈的都是】</li>
+</ul>
+<p><img src="/Users/aczy156/Library/Application Support/typora-user-images/image-20211026101023351.png" alt="image-20211026101023351" style="zoom:20%;" /></p>
+<p><strong>过程二：构建AC自动机</strong></p>
+<p>完善fail指针</p>
+<p><img src="/Users/aczy156/Library/Application Support/typora-user-images/image-20211028231847953.png" alt="image-20211028231847953" style="zoom:20%;" /></p>
+<p><strong>过程三：输入待测字串进行测试</strong></p>
+<p>通过root往下查询某一个待测字串：</p>
+<ul>
+<li>查找正确：
+<ul>
+<li>到双层圈的节点 =&gt; 完成<strong>完全匹配</strong></li>
+<li>未到双层圈的节点 =&gt; 完成<strong>部分(前缀)匹配</strong></li>
+</ul>
+</li>
+<li>查找错误：
+<ul>
+<li>空指针 =&gt; 直接从root根节点就无法匹配</li>
+<li>未找到双层圈的节点 =&gt; 完成<strong>部分(前缀)匹配</strong></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>方法一：利用链表实现</p>
+<p>数据结构：结构体和指向结构体的指针</p>
+<p>方法二：利用数组实现</p>
+<p>1、初始化trie树「<code>trie[][]</code>树，<code>cnt[]</code>数组判定节点是否是字典终止节点」</p>
+<p>对应位置初始化上值，cnt数组进行初始化</p>
+<p>2、初始化fail指针「当前节点nw，遍历到的当前节点nw的儿子pos」</p>
+<p>对于当前节点，那么他的所有儿子节点就是<code>for(i~[0, 26]) pos = trie[nw][i]</code>表示所有儿子的值。</p>
+<ul>
+<li>如果当前儿子为真儿子，那么<code>trie[nw][i]</code>不为0 =&gt; <code>fail[pos] = trie[fail[nw]][i];</code>对于当前节点nw的fail指针是已知的，所以就要利用当前nw节点的fail指针来更新他的所有儿子节点的fail指针 =&gt; 真儿子的fail指针指向当前节点的fail指针对应的指向方向的节点
+<ul>
+<li><code>if (!fail[pos]) fail[pos] = 1; </code>此时刷新出来的指向的方向不一定有值，也就是说有可能指向的那个也是空 =&gt; 就要替换成父节点</li>
+<li><code>else</code>就正常赋值就好，赋成当前节点的fail指针指向的节点的对应方向</li>
+</ul>
+</li>
+<li>如果当前儿子为假儿子，可以将fail指针指向的节点相同方向的值赋过去（fail指针指向的节点有值是最好的，没有值也无所谓）相当于把fail指针指向的节点那棵树嫁接在了这个节点下边</li>
+</ul>
+<p>3、利用AC自动机进行搜索「当前节点nw，pos」</p>
+<h3 id="板题">板题</h3>
+<p><a href="https://www.luogu.com.cn/problem/P3808">https://www.luogu.com.cn/problem/P3808</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxnext <span style="color:#f92672">=</span> <span style="color:#ae81ff">27</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxnode <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e6</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">char</span> s[maxnode];
+<span style="color:#66d9ef">int</span> n, tot <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// tot 链式结构的计数器
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">AC_Machine</span> {
+    <span style="color:#66d9ef">int</span> trie[maxnode][maxnext];
+    <span style="color:#66d9ef">int</span> fail[maxnode];
+    <span style="color:#66d9ef">int</span> cnt[maxnode];
+
+    <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">build_trie</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>s) {
+        <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> strlen(s<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>), pos <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> len; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            <span style="color:#66d9ef">int</span> ch_idx <span style="color:#f92672">=</span> s[i]<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>;
+            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>trie[pos][ch_idx]) trie[pos][ch_idx] <span style="color:#f92672">=</span> <span style="color:#f92672">+</span><span style="color:#f92672">+</span>tot; <span style="color:#75715e">// 将新节点赋上计数器tot的值 =&gt; 计数器tot的值代表了每一个节点，是唯一的，tot不被重复
+</span><span style="color:#75715e"></span>            pos <span style="color:#f92672">=</span> trie[pos][ch_idx]; <span style="color:#75715e">// 链式前向星，遍历的时候直接可以遍历这个父节点的所有有效子节点
+</span><span style="color:#75715e"></span>        }
+        cnt[pos]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+    }
+
+    <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">build_ac_machine</span>() {
+        queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>q;
+        <span style="color:#75715e">// 预处理，根节点的真儿子fail指针指向根节点，并且真儿子入队，准备后续的广搜
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> maxnext; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            <span style="color:#66d9ef">int</span> pos <span style="color:#f92672">=</span> trie[<span style="color:#ae81ff">1</span>][i];
+            <span style="color:#66d9ef">if</span> (pos) fail[pos] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 根节点的计数器tot的值为1
+</span><span style="color:#75715e"></span>            q.push(pos);
+        }
+        <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>q.empty()) {
+            <span style="color:#66d9ef">int</span> nw <span style="color:#f92672">=</span> q.front();q.pop();
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> maxnext; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+                <span style="color:#75715e">// 通过遍历一个节点的maxnext个子儿子的trie树值，查看哪个儿子的值是自身的id标号
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">int</span> pos <span style="color:#f92672">=</span> trie[nw][i];
+                <span style="color:#66d9ef">if</span> (pos) { <span style="color:#75715e">// 找到真儿子
+</span><span style="color:#75715e"></span>                    fail[pos] <span style="color:#f92672">=</span> trie[fail[nw]][i]; <span style="color:#75715e">// 把当前节点的真儿子节点的fail指针进行定向，定向到当前节点的fail指针指向的对应当前真儿子所指向的方向（如果有=&gt;代表有的指；如果为空=&gt;代表没得指）
+</span><span style="color:#75715e"></span>                    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>fail[pos]) fail[pos] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 如果没找到的话，全部赋回给根节点root，也就是计数器tot的值为1的点
+</span><span style="color:#75715e"></span>                    q.push(pos);
+                } <span style="color:#66d9ef">else</span> { <span style="color:#75715e">// 假儿子也要进行处理
+</span><span style="color:#75715e"></span>                    trie[nw][i] <span style="color:#f92672">=</span> trie[fail[nw]][i]; <span style="color:#75715e">// 如果当前节点的假儿子在fail指针进行定向的位置有值，也可以给赋过去
+</span><span style="color:#75715e"></span>                }
+            }
+        }
+    }
+
+    <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">find</span>(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>s) {
+        <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> strlen(s<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>), pos <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>, sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> len; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            <span style="color:#66d9ef">int</span> ch_idx <span style="color:#f92672">=</span> s[i]<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>;
+            <span style="color:#66d9ef">int</span> nw <span style="color:#f92672">=</span> trie[pos][ch_idx];
+            <span style="color:#66d9ef">while</span> (nw <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> cnt[nw] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) {
+                sum <span style="color:#f92672">+</span><span style="color:#f92672">=</span> cnt[nw]; <span style="color:#75715e">// 计算查找到的次数
+</span><span style="color:#75715e"></span>                cnt[nw] <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>; <span style="color:#75715e">// 标记已经计算过
+</span><span style="color:#75715e"></span>                nw <span style="color:#f92672">=</span> fail[nw]; <span style="color:#75715e">// 利用fail指针跳转到
+</span><span style="color:#75715e"></span>            }
+            pos <span style="color:#f92672">=</span> trie[pos][ch_idx];
+        }
+        <span style="color:#66d9ef">return</span> sum;
+    }
+}acMachine;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    <span style="color:#66d9ef">while</span> (n<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, s<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+        acMachine.build_trie(s);
+    }
+    acMachine.build_ac_machine();
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, s<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, acMachine.find(s));
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="多次查询">多次查询</h3>
+<p><a href="https://acm.hdu.edu.cn/showproblem.php?pid=2222">https://acm.hdu.edu.cn/showproblem.php?pid=2222</a></p>
+
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>
