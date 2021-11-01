@@ -13,13 +13,13 @@
     
     
     <item>
-      <title>Algorithm11 数据结构 线性表 整合</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
+      <title>Algorithm11.0 数据结构 线性表</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
       <description>[TOC]
-数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
+数据结构 线性表 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
 题目大意：有规则抽取特定位置索引
 1、删除、首尾添加、排序等等 =&amp;gt; vector
 #include &amp;lt;iostream&amp;gt;using namespace std; int n, m, idx=0; #include &amp;lt;vector&amp;gt;vector&amp;lt;int&amp;gt; b; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) b.push_back(i); while (b.size() &amp;gt; 1) { idx = (idx+m-1)%b.size(); printf(&amp;#34;%d &amp;#34;, b[idx]); b.erase(b.begin()+idx); } printf(&amp;#34;%d\n&amp;#34;, b[0]); return 0; } 前&amp;amp;中&amp;amp;后缀 https://www.luogu.com.cn/problem/P1449
@@ -127,11 +127,11 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
     </item>
     
     <item>
-      <title>Algorithm17 数据结构ST表</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</link>
+      <title>Algorithm11.7 数据结构 ST表</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.7-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.7-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</guid>
       <description>[TOC]
 ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
 https://www.luogu.com.cn/problem/P3865
@@ -145,11 +145,11 @@ int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); 
     </item>
     
     <item>
-      <title>Algorithm18 数据结构 树状数组</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+      <title>Algorithm11.8 数据结构 树状数组</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
       <description>[TOC]
 数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
 模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数

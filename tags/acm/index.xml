@@ -13,25 +13,13 @@
     
     
     <item>
-      <title>Algorithm1 字符串 整合</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/</link>
+      <title>Algorithm1 字符串基本</title>
+      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B4%E5%90%88/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC/</guid>
       <description>[TOC]
-字符串 &amp;amp; 回文串 Leetcode125-valid-palindrome 题目链接：valid-palindrome
-C/C++ - basic 利用toupper()、tolower()转换大小写
-bool isPalindrome(string s) { // remove invalid char and transform to lower case  string str = &amp;#34;&amp;#34;; for(int i = 0; i &amp;lt; s.length(); i++) if (s[i] &amp;lt;= &amp;#39;Z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;A&amp;#39; || s[i] &amp;lt;= &amp;#39;z&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;a&amp;#39; || s[i] &amp;lt;= &amp;#39;9&amp;#39; &amp;amp;&amp;amp; s[i] &amp;gt;= &amp;#39;0&amp;#39;) str += tolower(s[i]); // check  int l = str.size(); for (int i = 0; i &amp;lt; str.</description>
-    </item>
-    
-    <item>
-      <title>Algorithm1.0 字符串 排序</title>
-      <link>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/</guid>
-      <description>[TOC]
-字符串排序 数字字符串的排序 (直接用数字排序即可) https://www.luogu.com.cn/problem/P3955
+字符串基本 数字字符串的排序 (直接用数字排序即可) https://www.luogu.com.cn/problem/P3955
 思路：首先按照长度排序，然后如果长度相等了，在直接字符串比较大小
 #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e3+9; int n, q, l; string s[maxn], sq; #include &amp;lt;algorithm&amp;gt; bool cmp(string s1, string s2) { if (s1.length() == s2.length()) return s1 &amp;lt; s2; return s1.length() &amp;lt; s2.length(); } int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;q); for (int i = 1; i &amp;lt;= n; ++i) cin&amp;gt;&amp;gt;s[i]; sort(s+1, s+1+n, cmp); for (int i = 1; i &amp;lt;= q; ++i) { cin&amp;gt;&amp;gt;l&amp;gt;&amp;gt;sq; int fd = 0; for (int j = 1; j &amp;lt;= n; ++j) { if (l &amp;gt; s[j].</description>
     </item>
@@ -69,13 +57,13 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     </item>
     
     <item>
-      <title>Algorithm11 数据结构 线性表 整合</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
+      <title>Algorithm11.0 数据结构 线性表</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
       <description>[TOC]
-数据结构 线性表 杂乱整合 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
+数据结构 线性表 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
 题目大意：有规则抽取特定位置索引
 1、删除、首尾添加、排序等等 =&amp;gt; vector
 #include &amp;lt;iostream&amp;gt;using namespace std; int n, m, idx=0; #include &amp;lt;vector&amp;gt;vector&amp;lt;int&amp;gt; b; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) b.push_back(i); while (b.size() &amp;gt; 1) { idx = (idx+m-1)%b.size(); printf(&amp;#34;%d &amp;#34;, b[idx]); b.erase(b.begin()+idx); } printf(&amp;#34;%d\n&amp;#34;, b[0]); return 0; } 前&amp;amp;中&amp;amp;后缀 https://www.luogu.com.cn/problem/P1449
@@ -180,6 +168,44 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
 2、手写队列
  利用「顺序表」实现：用数组来模拟容器，用front来作为队首，用rear来作为队尾 利用「链接表」实现：用链表实现  链首做为队首，链尾做为队尾：队尾添加O(n)，查看队首O(1)，栈顶移除O(1) 链首做为队尾，链尾做为队首：栈顶添加O(1)，查看栈顶O(n)，栈顶移除O(n)    3、利用「顺序表」手写队列的溢出问题
  假溢出「仅限于用顺序表/数组实现的队列」  出现的原因：由于队首front和队尾rear两个索引在一直往后推延，这样前面用过的地址空间就无法重复使用，在量巨大的情况下就会导致超过地址本来可承受的。 解决方案：通过搞成循环队列，这样原来用过的地址就可以进行重复利用，也不用回收   真溢出「仅限于循环队列，无论是哪种方式实现的」  出现的原因：循环队列不是普通队列的固定长度，所以一直往里边添加的话总会有溢出的时候。     </description>
+    </item>
+    
+    <item>
+      <title>Algorithm11.7 数据结构 ST表</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.7-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.7-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</guid>
+      <description>[TOC]
+ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
+https://www.luogu.com.cn/problem/P3865
+模版 - ST表 题目大意：得到范围内（Range）最大值（Max）的若干次查询（Query）=&amp;gt;RMQ问题
+1、倍增思想，核心就是二倍二倍的获取最大值，类似于二叉树结构的遍历过程，复杂度为O(nlogn)。
+maxx[i][j]二维数组：维护的数据结构，表示[i, i+pow(2, j)-1]区间的最大值。=&amp;gt;i表示区间的起点，j表示倍增的倍数。所以在初始化的时候j所需要max的就是两个j-1倍数的区间来比较最大值(其中两个区间的起点分别是i和i+1&amp;lt;&amp;lt;(j-1))，也就是在这个倍增的倍数情况下，需要把起点往后挪的长度。
+maxx[i][j] = max(maxx[i][j-1], max[i+(1&amp;lt;&amp;lt;(j-1))][j-1]); 2、查询的时候反向解析
+利用query函数来进行解析：先找到该区间对应的倍数，然后再顺着区间的右边界找到对应的查找区间，可以考虑到这个区间不一定是刚好划分好的二倍的区间，所以可以通过拼接子区间来获取最大的
+int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); 3、注意数组不要开太大，因为倍增最多也就是21倍，2的21次方这么大的区间长度
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 1000010int n, m, a[maxn], maxx[maxn][21], ta, tb; // maxx[i][j]表示[i, i+pow(2, j)-1]的区间的最大值  inline int read() { char c=getchar();int x=0,f=1; while(c&amp;lt;&amp;#39;0&amp;#39;||c&amp;gt;&amp;#39;9&amp;#39;){if(c==&amp;#39;-&amp;#39;)f=-1;c=getchar();} while(c&amp;gt;=&amp;#39;0&amp;#39;&amp;amp;&amp;amp;c&amp;lt;=&amp;#39;9&amp;#39;){x=x*10+c-&amp;#39;0&amp;#39;;c=getchar();} return x*f; } // init maxx数组，通过迭代j来2倍率的速度进行初始化=&amp;gt;填补maxx数组 void init() { for (int i = 1; i &amp;lt;= n; ++i) maxx[i][0] = a[i]; for (int j = 1; j &amp;lt;= 21; ++j) for (int i = 1; i+(1&amp;lt;&amp;lt;j)-1 &amp;lt;= n; ++i) maxx[i][j] = max(maxx[i][j-1], maxx[i+(1&amp;lt;&amp;lt;(j-1))][j-1]); } int query(int l, int r) { int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); } int main() { n = read();m = read(); for (int i = 1; i &amp;lt;= n; ++i) a[i] = read(); init(); while (m--) { ta = read();tb = read(); printf(&amp;#34;%d\n&amp;#34;, query(ta, tb)); } return 0; } RMQ模版-最大和最小都有 【类似https://www.</description>
+    </item>
+    
+    <item>
+      <title>Algorithm11.8 数据结构 树状数组</title>
+      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
+      <description>[TOC]
+数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
+模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数
+eg：8(10) &amp;amp; -8(10) = 8 =&amp;gt; 根据树状数组结构图，就是8个节点
+eg：4(10) &amp;amp; -4(10) = 4 =&amp;gt; 根据树状数组结构图，就是4个节点
+eg：6(10) &amp;amp; -6(10) = 2 =&amp;gt; 根据树状数组结构图，就是2个节点
+![image-20210308181959879](/Users/aczy156/Library/Application Support/typora-user-images/image-20210308181959879.png)
+1、单点修改
+=&amp;gt; 自下而上修改 =&amp;gt; c数组的索引pos从1开始往上找，但是要限定永远≤n =&amp;gt; 从下往上找的话，看当前的节点归属那个父节点范围，则需要pos+=lowbit(pos)，此时就可以直接爬升到父节点。
+void single_add(int pos, int k) { while(pos &amp;lt;= n) { c[pos] += k; pos += lowbit(pos); } } 2、区间求和「注意这个区间求的是前缀和，也就是1到pos的和。如果区间和的话，可以通过两个前缀和相减得到」
+=&amp;gt; 自上而下累加 =&amp;gt; c数组的索引pos从target目标开始往下找，但是要限定下限，不能让下限爆掉，pos≥1 =&amp;gt; 从上往下累加的话，看当前的节点归属那个的子节点，则需要pos-=lowbit(pos)，此时就可以直接下降到子节点。
+int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -= lowbit(pos); } } #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 500010int n, m, tm, tp, ta, tb, c[maxn]; int lowbit(int x) {return x &amp;amp; (-x);} void single_add(int pos, int k) { while (pos &amp;lt;= n) { c[pos] += k; pos += lowbit(pos); } } int getsum(int pos) { int ans = 0; while (pos &amp;gt;= 1) { ans += c[pos]; pos -= lowbit(pos); } return ans; } int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;tm);single_add(i, tm);} while (m--) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;tp, &amp;amp;ta, &amp;amp;tb); if (tp-1) printf(&amp;#34;%d\n&amp;#34;, getsum(tb)-getsum(ta-1)); else single_add(ta, tb); } return 0; } 模版-区间修改(操作)、单点求和(查询) 区间修改+单点求和 模版：https://www.</description>
     </item>
     
     <item>
@@ -381,44 +407,6 @@ https://www.luogu.com.cn/problem/P1525</description>
     </item>
     
     <item>
-      <title>Algorithm17 数据结构ST表</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm17-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</guid>
-      <description>[TOC]
-ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
-https://www.luogu.com.cn/problem/P3865
-模版 - ST表 题目大意：得到范围内（Range）最大值（Max）的若干次查询（Query）=&amp;gt;RMQ问题
-1、倍增思想，核心就是二倍二倍的获取最大值，类似于二叉树结构的遍历过程，复杂度为O(nlogn)。
-maxx[i][j]二维数组：维护的数据结构，表示[i, i+pow(2, j)-1]区间的最大值。=&amp;gt;i表示区间的起点，j表示倍增的倍数。所以在初始化的时候j所需要max的就是两个j-1倍数的区间来比较最大值(其中两个区间的起点分别是i和i+1&amp;lt;&amp;lt;(j-1))，也就是在这个倍增的倍数情况下，需要把起点往后挪的长度。
-maxx[i][j] = max(maxx[i][j-1], max[i+(1&amp;lt;&amp;lt;(j-1))][j-1]); 2、查询的时候反向解析
-利用query函数来进行解析：先找到该区间对应的倍数，然后再顺着区间的右边界找到对应的查找区间，可以考虑到这个区间不一定是刚好划分好的二倍的区间，所以可以通过拼接子区间来获取最大的
-int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); 3、注意数组不要开太大，因为倍增最多也就是21倍，2的21次方这么大的区间长度
-#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 1000010int n, m, a[maxn], maxx[maxn][21], ta, tb; // maxx[i][j]表示[i, i+pow(2, j)-1]的区间的最大值  inline int read() { char c=getchar();int x=0,f=1; while(c&amp;lt;&amp;#39;0&amp;#39;||c&amp;gt;&amp;#39;9&amp;#39;){if(c==&amp;#39;-&amp;#39;)f=-1;c=getchar();} while(c&amp;gt;=&amp;#39;0&amp;#39;&amp;amp;&amp;amp;c&amp;lt;=&amp;#39;9&amp;#39;){x=x*10+c-&amp;#39;0&amp;#39;;c=getchar();} return x*f; } // init maxx数组，通过迭代j来2倍率的速度进行初始化=&amp;gt;填补maxx数组 void init() { for (int i = 1; i &amp;lt;= n; ++i) maxx[i][0] = a[i]; for (int j = 1; j &amp;lt;= 21; ++j) for (int i = 1; i+(1&amp;lt;&amp;lt;j)-1 &amp;lt;= n; ++i) maxx[i][j] = max(maxx[i][j-1], maxx[i+(1&amp;lt;&amp;lt;(j-1))][j-1]); } int query(int l, int r) { int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); } int main() { n = read();m = read(); for (int i = 1; i &amp;lt;= n; ++i) a[i] = read(); init(); while (m--) { ta = read();tb = read(); printf(&amp;#34;%d\n&amp;#34;, query(ta, tb)); } return 0; } RMQ模版-最大和最小都有 【类似https://www.</description>
-    </item>
-    
-    <item>
-      <title>Algorithm18 数据结构 树状数组</title>
-      <link>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
-      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm18-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
-      <description>[TOC]
-数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
-模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数
-eg：8(10) &amp;amp; -8(10) = 8 =&amp;gt; 根据树状数组结构图，就是8个节点
-eg：4(10) &amp;amp; -4(10) = 4 =&amp;gt; 根据树状数组结构图，就是4个节点
-eg：6(10) &amp;amp; -6(10) = 2 =&amp;gt; 根据树状数组结构图，就是2个节点
-![image-20210308181959879](/Users/aczy156/Library/Application Support/typora-user-images/image-20210308181959879.png)
-1、单点修改
-=&amp;gt; 自下而上修改 =&amp;gt; c数组的索引pos从1开始往上找，但是要限定永远≤n =&amp;gt; 从下往上找的话，看当前的节点归属那个父节点范围，则需要pos+=lowbit(pos)，此时就可以直接爬升到父节点。
-void single_add(int pos, int k) { while(pos &amp;lt;= n) { c[pos] += k; pos += lowbit(pos); } } 2、区间求和「注意这个区间求的是前缀和，也就是1到pos的和。如果区间和的话，可以通过两个前缀和相减得到」
-=&amp;gt; 自上而下累加 =&amp;gt; c数组的索引pos从target目标开始往下找，但是要限定下限，不能让下限爆掉，pos≥1 =&amp;gt; 从上往下累加的话，看当前的节点归属那个的子节点，则需要pos-=lowbit(pos)，此时就可以直接下降到子节点。
-int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -= lowbit(pos); } } #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 500010int n, m, tm, tp, ta, tb, c[maxn]; int lowbit(int x) {return x &amp;amp; (-x);} void single_add(int pos, int k) { while (pos &amp;lt;= n) { c[pos] += k; pos += lowbit(pos); } } int getsum(int pos) { int ans = 0; while (pos &amp;gt;= 1) { ans += c[pos]; pos -= lowbit(pos); } return ans; } int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;tm);single_add(i, tm);} while (m--) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;tp, &amp;amp;ta, &amp;amp;tb); if (tp-1) printf(&amp;#34;%d\n&amp;#34;, getsum(tb)-getsum(ta-1)); else single_add(ta, tb); } return 0; } 模版-区间修改(操作)、单点求和(查询) 区间修改+单点求和 模版：https://www.</description>
-    </item>
-    
-    <item>
       <title>Algorithm19 递推与递归</title>
       <link>http://www.chenranfei.online/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
@@ -455,7 +443,7 @@ AC代码：
       <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84trie%E6%A0%91/</guid>
       <description>[TOC]
 字符串 数据结构 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
-demo：Trie树维护的字典：[he, his, hers, she]，要从字典里查到的单词：his
+demo：Trie树维护的字典：[he, his, hers, she]，要从字典里查到的单词：ahishers
 构建Trie树：
  node节点结构体：  当前节点的值 存放指向下一层node节点指针的List（最多26个=&amp;gt;26个字母）   bool数组：标记某一个节点是否是尾部节点【例如下图中的trie树双层圈的都是】  通过root往下查询某一个待测字串：
  查找正确：  到双层圈的节点 =&amp;gt; 完成完全匹配 未到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配   查找错误：  空指针 =&amp;gt; 直接从root根节点就无法匹配 未找到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配     [模版] 点名问题 https://www.luogu.com.cn/problem/P2580
@@ -745,7 +733,7 @@ val[maxn]用来记录索引到这个点的值，例如学生名字是索引的�
       
       <guid>http://www.chenranfei.online/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</guid>
       <description>[TOC]
-字符串 AC自动机  demo：AC自动机维护：[he, his, hers, she]，要查询的单词：his
+字符串 AC自动机  demo：AC自动机维护：[he, his, hers, she]，要查询的单词：ahishers
 过程一：构建Trie树：
  node节点结构体：  当前节点的值 存放指向下一层node节点指针的List（最多26个=&amp;gt;26个字母） fail失效指针：用来找最长相同后缀，节省从头查找的时间 【特殊】对于是某一个p的结尾节点的，这个特殊的节点储存更多信息   利用一个bool数组来标记某一个节点是否是尾部节点【例如下图中的trie树双层圈的都是】  过程二：构建AC自动机
 完善fail指针
@@ -754,11 +742,11 @@ val[maxn]用来记录索引到这个点的值，例如学生名字是索引的�
  查找正确：  到双层圈的节点 =&amp;gt; 完成完全匹配 未到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配   查找错误：  空指针 =&amp;gt; 直接从root根节点就无法匹配 未找到双层圈的节点 =&amp;gt; 完成部分(前缀)匹配     方法一：利用链表实现
 数据结构：结构体和指向结构体的指针
 方法二：利用数组实现
-数据结构：利用数组维护结构体，trie树所维护的数组维护树结构
-pos表示当前的节点
- 当pos为1时表示当前节点为根节点，那么他的所有儿子的值就是trie[pos][i] (trie[1][i])所蕴含的值 当pos为其他值时表示当前节点为其他节点  fail指针：
-当构造AC自动机的时候要初始化fail指针：
-    当利用AC自动机进行搜索的时候：</description>
+1、初始化trie树「trie[][]树，cnt[]数组判定节点是否是字典终止节点」
+对应位置初始化上值，cnt数组进行初始化
+2、初始化fail指针「当前节点nw，遍历到的当前节点nw的儿子pos」
+对于当前节点，那么他的所有儿子节点就是for(i~[0, 26]) pos = trie[nw][i]表示所有儿子的值。
+ 如果当前儿子为真儿子，那么trie[nw][i]不为0 =&amp;gt; fail[pos] = trie[fail[nw]][i];对于当前节点nw的fail指针是已知的，所以就要利用当前nw节点的fail指针来更新他的所有儿子节点的fail指针 =&amp;gt; 真儿子的fail指针指向当前节点的fail指针对应的指向方向的节点  if (!fail[pos]) fail[pos] = 1; 此时刷新出来的指向的方向不一定有值，也就是说有可能指向的那个也是空 =&amp;gt; 就要替换成父节点 else就正常赋值就好，赋成当前节点的fail指针指向的节点的对应方向   如果当前儿子为假儿子，可以将fail指针指向的节点相同方向的值赋过去（fail指针指向的节点有值是最好的，没有值也无所谓）相当于把fail指针指向的节点那棵树嫁接在了这个节点下边  3、利用AC自动机进行搜索「当前节点nw，pos」</description>
     </item>
     
     <item>
