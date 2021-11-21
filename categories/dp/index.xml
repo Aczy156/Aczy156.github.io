@@ -145,9 +145,9 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
 题目大意：
 1、结合贪心思想，永远把相邻的最小的给加进去，ans += min(cost[i-1], cost[i])
 2、状态的推进更新，例如str=&amp;quot;aaa&amp;quot;，cost分别为4 3 5，在更新4 3时候就要把状态退后，用这两个的最大的去比【因为最大的才是真正留下来的】，所以要用cost[i] = max(cost[i-1], cost[i])来保留状态
-int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; for (int i = 1; i &amp;lt; s.length(); i++){ if (s[i] == s[i-1]){ ans += min(cost[i-1], cost[i]); cost[i] = max(cost[i-1], cost[i]); } } return ans; } 循环一圈形式的dp https://www.luogu.com.cn/problem/P1057
+int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; for (int i = 1; i &amp;lt; s.length(); i++){ if (s[i] == s[i-1]){ ans += min(cost[i-1], cost[i]); cost[i] = max(cost[i-1], cost[i]); } } return ans; } 「循环」一圈形式的dp https://www.luogu.com.cn/problem/P1057
 题目大意：
-#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1] (注意对圈的边界的人的特判)  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;t); // init  dp[0][0] = 1; for (int i = 1; i &amp;lt; t; ++i) for (int j = 0; j &amp;lt; n; ++j) if (j == 0) dp[i][j] = dp[i-1][1]+dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]+dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1]; printf(&amp;#34;%d\n&amp;#34;, dp[t-1][0]); return 0; } </description>
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1] (注意对圈的边界的人的特判)  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;t); // init  dp[0][0] = 1; for (int i = 1; i &amp;lt; t; ++i) for (int j = 0; j &amp;lt; n; ++j) if (j == 0) dp[i][j] = dp[i-1][1]+dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]+dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1]; printf(&amp;#34;%d\n&amp;#34;, dp[t-1][0]); return 0; } 「回文」判断最长回文串  bool dp[i][j]表示从[i,j]这一段是否为回文串 状态转移方程：dp[i][j] = (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1||dp[i+1]dp[j-1]))?</description>
     </item>
     
     <item>

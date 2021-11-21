@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>Python_Compiling_principle_master</title>
-      <link>http://www.chenranfei.online/posts/other/o-python_compiling_principle_master/</link>
+      <title>Python-编译原理算法</title>
+      <link>http://www.chenranfei.online/posts/project/python4-compiling_principle_master/</link>
       <pubDate>Sun, 07 Jun 2020 19:28:52 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/other/o-python_compiling_principle_master/</guid>
+      <guid>http://www.chenranfei.online/posts/project/python4-compiling_principle_master/</guid>
       <description>[TOC]
 编译原理课程作业  词法分析器 LL1分析(消去左递归、构造FIRST\FOLLOW集合、模拟) 递归下降分析 算法优先分析  项目地址源代码 https://github.com/Aczy156/Compiling-Principle-Work 项目结构 data  Grammer_for_ll1_and_RD.txt，是存放用于实验二预测分析法和实验三递归下降分析文法的测试文法 Grammer_for_OF.txt，是存放用于实验四算符优先文法的测试文法。  MultiAnalysis  LL1_analysis.py是LL1分析法的整体过程。 RecursiveDescent_analysis.py是递归下降分析的整体过程。 OperatorFirst_analysis.py是算符优先文法的整体分析过程。  tools [在MultiAnalysis中的各种文法中多次使用，所以提取出来子模块，放进工具中来模块化管理]
  Draw_Grammer.py，利用python中prettytable来专门做文法的可视化。 Eliminate_Left_Recursion.py，利用消除左递归算法来专门处理对于自上而下的文法(例如实验二中的预测分析文法和实验三的递归下降文法)的左递归的问题。 Extract_Common_Factors.py，利用LCP(最长公共前缀)来提取公因子并消除。  数据结构 (命名基本保持一致，除了在一些情境中要利用python deepcopy深备份一份或者要进行更改会命名为new_grammer/new_vn等等)：
@@ -25,22 +25,22 @@
     </item>
     
     <item>
-      <title>Python-深度学习项目</title>
-      <link>http://www.chenranfei.online/posts/project/python-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/</link>
+      <title>Python 3 Pycharm Basic Configuration</title>
+      <link>http://www.chenranfei.online/posts/python/python3-pycharm-basic-configuration/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/project/python-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>http://www.chenranfei.online/posts/python/python3-pycharm-basic-configuration/</guid>
       <description>[TOC]
-Python 深度学习项目 python-interpreter设置 - virtualenv的设置  「一」每个项目创立的时候可以跟着设置一个venv，可以从本来已有python目录直接调用 「二」自己创建一个venv，然后在命令行中一步一步安装所有需要的依赖（或者直接通过requirements.txt一步到位，安装好所有的依赖） 「三」pycharm-&amp;gt;preference-&amp;gt;interpreter中可以看到所有扫描到的virtualenv，然后每一个virtualenv都是可以作为运行环境。  可以选择原来已经设置好的venv 可以选择刚才自己创建的venv（也就是）    目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
- 整体项目文件类型：该项目所对应的文件类型要修改 =&amp;gt; 右键选中当前project--&amp;gt;Mark Directory as --&amp;gt; Sources Root. （修改了之后的该项目所对应的文件性质应该呈现蓝色） 相互引用的文件命名：所有的命名中都不可以出现- (间隔符)，但是可以_ (下划线)  </description>
+Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「一」每个项目创立的时候可以跟着设置一个venv，可以从本来已有python目录直接调用 「二」自己创建一个venv，然后在命令行中一步一步安装所有需要的依赖（或者直接通过requirements.txt一步到位，安装好所有的依赖） 「三」pycharm-&amp;gt;preference-&amp;gt;interpreter中可以看到所有扫描到的virtualenv，然后每一个virtualenv都是可以作为运行环境。  可以选择原来已经设置好的venv 可以选择刚才自己创建的venv（也就是）    python-requireme.txt 设置 - 快速安装依赖  无需install，可以直接使用（内置在pip依赖中，直接使用即可） 将当前的项目的依赖导出成requirements.txt，用来作为标记，利用freeze语法。pip freeze &amp;gt; requirements.txt 给当前的项目依赖已有的requiremes.txt快速安装全部所需依赖。pip install -r requirements.txt  目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
+ 整体项目文件类型：该项目所对应的文件类型要修改 =&amp;gt; 右键选中当前project--&amp;gt;Mark Directory as --&amp;gt; Sources Root. （修改了之后的该项目所对应的文件性质应该呈现蓝色） 相互引用的文件命名：所有的命名中都不可以出现- (间隔符)，但是可以_ (下划线)  GitHub接管项目的版本控制 在利用VCS进行控制之后，更该项目名称，无法正常继续进行GitHub操作</description>
     </item>
     
     <item>
-      <title>Python虚拟环境virtualenv的使用</title>
-      <link>http://www.chenranfei.online/posts/other/o-python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <title>Python 4 virtualenv</title>
+      <link>http://www.chenranfei.online/posts/python/python4-virtualenv/</link>
       <pubDate>Sun, 05 Apr 2020 17:13:50 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/other/o-python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83virtualenv%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
+      <guid>http://www.chenranfei.online/posts/python/python4-virtualenv/</guid>
       <description>[TOC]
  Virtualenv用于为某个项目新配置一个独立的python环境而产生 环境为macOS pip安装virtualvenvsudo pip install virtualenv
  mac如果有安装Xcode，则在/usr/bin中自带有python2.7，可用于配置python2.7的相关环境 而自己装配的python3则在/usr/local/bin中，可用于python3的相关环境
@@ -50,7 +50,7 @@ Python 深度学习项目 python-interpreter设置 - virtualenv的设置  「一
     </item>
     
     <item>
-      <title>区块链 RAFT协议详解</title>
+      <title>Other-区块链 RAFT协议详解</title>
       <link>http://www.chenranfei.online/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Tue, 17 Mar 2020 21:52:58 +0800</pubDate>
       

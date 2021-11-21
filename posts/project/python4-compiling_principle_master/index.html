@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Python-编译原理算法 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Python-编译原理算法 | Aczy156" />
+	<meta name="twitter:title" content="Python-编译原理算法 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Python-编译原理算法 | Aczy156" />
+	<meta name="application-name" content="Python-编译原理算法 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Python-编译原理算法" />
+<meta property="og:description" content="[TOC]
+编译原理课程作业  词法分析器 LL1分析(消去左递归、构造FIRST\FOLLOW集合、模拟) 递归下降分析 算法优先分析  项目地址源代码 https://github.com/Aczy156/Compiling-Principle-Work 项目结构 data  Grammer_for_ll1_and_RD.txt，是存放用于实验二预测分析法和实验三递归下降分析文法的测试文法 Grammer_for_OF.txt，是存放用于实验四算符优先文法的测试文法。  MultiAnalysis  LL1_analysis.py是LL1分析法的整体过程。 RecursiveDescent_analysis.py是递归下降分析的整体过程。 OperatorFirst_analysis.py是算符优先文法的整体分析过程。  tools [在MultiAnalysis中的各种文法中多次使用，所以提取出来子模块，放进工具中来模块化管理]
+ Draw_Grammer.py，利用python中prettytable来专门做文法的可视化。 Eliminate_Left_Recursion.py，利用消除左递归算法来专门处理对于自上而下的文法(例如实验二中的预测分析文法和实验三的递归下降文法)的左递归的问题。 Extract_Common_Factors.py，利用LCP(最长公共前缀)来提取公因子并消除。  数据结构 (命名基本保持一致，除了在一些情境中要利用python deepcopy深备份一份或者要进行更改会命名为new_grammer/new_vn等等)：
+ 文法grammer：文法在通过预处理过后，通过python中的数据结构dictionary(dict、字典)来映射，例如{&lsquo;E&rsquo;: [&lsquo;E&#43;T&rsquo;, &lsquo;T&rsquo;], &lsquo;T&rsquo;: [&lsquo;T*F&rsquo;, &lsquo;F&rsquo;], &lsquo;F&rsquo;: [&#39;(E)&#39;, &lsquo;i&rsquo;]}，用来表示通过数据预处理之后的最基本的算术表达式文法。 非终结符vn：非终结符通过list来盛放。例如[&lsquo;E&rsquo;, &lsquo;T&rsquo;, &lsquo;F&rsquo;]，用来表示通过数据预处理之后的最基本的算术表达式文法的非终结符。 终结符vt：终结符通过list来盛放。例如 [&#39;(&#39;, &lsquo;)&#39;, &lsquo;i&rsquo;, &lsquo;&#43;&rsquo;, &lsquo;*&#39;, &lsquo;#&#39;]，用来表示通过数据预处理之后的最基本的算术表达式文法的非终结符。  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/project/python4-compiling_principle_master/" />
+<meta property="article:published_time" content="2020-06-07T19:28:52+08:00" />
+<meta property="article:modified_time" content="2020-06-07T19:28:52+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python-编译原理算法"/>
+<meta name="twitter:description" content="[TOC]
+编译原理课程作业  词法分析器 LL1分析(消去左递归、构造FIRST\FOLLOW集合、模拟) 递归下降分析 算法优先分析  项目地址源代码 https://github.com/Aczy156/Compiling-Principle-Work 项目结构 data  Grammer_for_ll1_and_RD.txt，是存放用于实验二预测分析法和实验三递归下降分析文法的测试文法 Grammer_for_OF.txt，是存放用于实验四算符优先文法的测试文法。  MultiAnalysis  LL1_analysis.py是LL1分析法的整体过程。 RecursiveDescent_analysis.py是递归下降分析的整体过程。 OperatorFirst_analysis.py是算符优先文法的整体分析过程。  tools [在MultiAnalysis中的各种文法中多次使用，所以提取出来子模块，放进工具中来模块化管理]
+ Draw_Grammer.py，利用python中prettytable来专门做文法的可视化。 Eliminate_Left_Recursion.py，利用消除左递归算法来专门处理对于自上而下的文法(例如实验二中的预测分析文法和实验三的递归下降文法)的左递归的问题。 Extract_Common_Factors.py，利用LCP(最长公共前缀)来提取公因子并消除。  数据结构 (命名基本保持一致，除了在一些情境中要利用python deepcopy深备份一份或者要进行更改会命名为new_grammer/new_vn等等)：
+ 文法grammer：文法在通过预处理过后，通过python中的数据结构dictionary(dict、字典)来映射，例如{&lsquo;E&rsquo;: [&lsquo;E&#43;T&rsquo;, &lsquo;T&rsquo;], &lsquo;T&rsquo;: [&lsquo;T*F&rsquo;, &lsquo;F&rsquo;], &lsquo;F&rsquo;: [&#39;(E)&#39;, &lsquo;i&rsquo;]}，用来表示通过数据预处理之后的最基本的算术表达式文法。 非终结符vn：非终结符通过list来盛放。例如[&lsquo;E&rsquo;, &lsquo;T&rsquo;, &lsquo;F&rsquo;]，用来表示通过数据预处理之后的最基本的算术表达式文法的非终结符。 终结符vt：终结符通过list来盛放。例如 [&#39;(&#39;, &lsquo;)&#39;, &lsquo;i&rsquo;, &lsquo;&#43;&rsquo;, &lsquo;*&#39;, &lsquo;#&#39;]，用来表示通过数据预处理之后的最基本的算术表达式文法的非终结符。  "/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#编译原理课程作业">编译原理课程作业</a></li>
+    <li><a href="#项目地址源代码">项目地址源代码</a>
+      <ul>
+        <li><a href="#httpsgithubcomaczy156compiling-principle-workhttpsgithubcomaczy156compiling-principle-work">https://github.com/Aczy156/Compiling-Principle-Work</a></li>
+      </ul>
+    </li>
+    <li><a href="#项目结构">项目结构</a>
+      <ul>
+        <li><a href="#data">data</a></li>
+        <li><a href="#multianalysis">MultiAnalysis</a></li>
+        <li><a href="#tools">tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#数据结构">数据结构</a></li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Python-编译原理算法</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="编译原理课程作业">编译原理课程作业</h2>
+<ul>
+<li>词法分析器</li>
+<li>LL1分析(消去左递归、构造FIRST\FOLLOW集合、模拟)</li>
+<li>递归下降分析</li>
+<li>算法优先分析</li>
+</ul>
+<h2 id="项目地址源代码">项目地址源代码</h2>
+<h3 id="httpsgithubcomaczy156compiling-principle-workhttpsgithubcomaczy156compiling-principle-work"><a href="https://github.com/Aczy156/Compiling-Principle-Work">https://github.com/Aczy156/Compiling-Principle-Work</a></h3>
+<h2 id="项目结构">项目结构</h2>
+<h3 id="data">data</h3>
+<ul>
+<li>Grammer_for_ll1_and_RD.txt，是存放用于实验二预测分析法和实验三递归下降分析文法的测试文法</li>
+<li>Grammer_for_OF.txt，是存放用于实验四算符优先文法的测试文法。</li>
+</ul>
+<h3 id="multianalysis">MultiAnalysis</h3>
+<ul>
+<li>LL1_analysis.py是LL1分析法的整体过程。</li>
+<li>RecursiveDescent_analysis.py是递归下降分析的整体过程。</li>
+<li>OperatorFirst_analysis.py是算符优先文法的整体分析过程。</li>
+</ul>
+<h3 id="tools">tools</h3>
+<p>[在MultiAnalysis中的各种文法中多次使用，所以提取出来子模块，放进工具中来模块化管理]</p>
+<ul>
+<li>Draw_Grammer.py，利用python中prettytable来专门做文法的可视化。</li>
+<li>Eliminate_Left_Recursion.py，利用消除左递归算法来专门处理对于自上而下的文法(例如实验二中的预测分析文法和实验三的递归下降文法)的左递归的问题。</li>
+<li>Extract_Common_Factors.py，利用LCP(最长公共前缀)来提取公因子并消除。</li>
+</ul>
+<h2 id="数据结构">数据结构</h2>
+<p>(命名基本保持一致，除了在一些情境中要利用python deepcopy深备份一份或者要进行更改会命名为new_grammer/new_vn等等)：</p>
+<ul>
+<li>文法grammer：文法在通过预处理过后，通过python中的数据结构dictionary(dict、字典)来映射，例如{&lsquo;E&rsquo;: [&lsquo;E+T&rsquo;, &lsquo;T&rsquo;], &lsquo;T&rsquo;: [&lsquo;T*F&rsquo;, &lsquo;F&rsquo;], &lsquo;F&rsquo;: ['(E)', &lsquo;i&rsquo;]}，用来表示通过数据预处理之后的最基本的算术表达式文法。</li>
+<li>非终结符vn：非终结符通过list来盛放。例如[&lsquo;E&rsquo;, &lsquo;T&rsquo;, &lsquo;F&rsquo;]，用来表示通过数据预处理之后的最基本的算术表达式文法的非终结符。</li>
+<li>终结符vt：终结符通过list来盛放。例如 ['(', &lsquo;)', &lsquo;i&rsquo;, &lsquo;+&rsquo;, &lsquo;*', &lsquo;#']，用来表示通过数据预处理之后的最基本的算术表达式文法的非终结符。</li>
+</ul>
+
+		</section>
+
+		<div class="meta">Posted on Jun 7, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/python">Python</a></li>
+					
+					<li><a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86">编译原理</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

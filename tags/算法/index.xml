@@ -637,9 +637,9 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
 题目大意：
 1、结合贪心思想，永远把相邻的最小的给加进去，ans += min(cost[i-1], cost[i])
 2、状态的推进更新，例如str=&amp;quot;aaa&amp;quot;，cost分别为4 3 5，在更新4 3时候就要把状态退后，用这两个的最大的去比【因为最大的才是真正留下来的】，所以要用cost[i] = max(cost[i-1], cost[i])来保留状态
-int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; for (int i = 1; i &amp;lt; s.length(); i++){ if (s[i] == s[i-1]){ ans += min(cost[i-1], cost[i]); cost[i] = max(cost[i-1], cost[i]); } } return ans; } 循环一圈形式的dp https://www.luogu.com.cn/problem/P1057
+int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; for (int i = 1; i &amp;lt; s.length(); i++){ if (s[i] == s[i-1]){ ans += min(cost[i-1], cost[i]); cost[i] = max(cost[i-1], cost[i]); } } return ans; } 「循环」一圈形式的dp https://www.luogu.com.cn/problem/P1057
 题目大意：
-#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1] (注意对圈的边界的人的特判)  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;t); // init  dp[0][0] = 1; for (int i = 1; i &amp;lt; t; ++i) for (int j = 0; j &amp;lt; n; ++j) if (j == 0) dp[i][j] = dp[i-1][1]+dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]+dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1]; printf(&amp;#34;%d\n&amp;#34;, dp[t-1][0]); return 0; } </description>
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 32int n, t, dp[maxn][maxn]; // dp[i][j]表示第i次传球第j个人到自己手上的方式总数 // 初始化：第一次也就是第一个人是1，其他都是0。也就是dp[0][0] = 1 // 状态转移：某人某次传球到自己手上的方式总数是在上一次传到两个旁边的人手上之和 // dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1] (注意对圈的边界的人的特判)  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;t); // init  dp[0][0] = 1; for (int i = 1; i &amp;lt; t; ++i) for (int j = 0; j &amp;lt; n; ++j) if (j == 0) dp[i][j] = dp[i-1][1]+dp[i-1][n-1]; else if (j == n-1) dp[i][j] = dp[i-1][n-2]+dp[i-1][0]; else dp[i][j] = dp[i-1][j-1]+dp[i-1][j+1]; printf(&amp;#34;%d\n&amp;#34;, dp[t-1][0]); return 0; } 「回文」判断最长回文串  bool dp[i][j]表示从[i,j]这一段是否为回文串 状态转移方程：dp[i][j] = (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1||dp[i+1]dp[j-1]))?</description>
     </item>
     
     <item>
@@ -1002,22 +1002,11 @@ kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
     </item>
     
     <item>
-      <title>Common_Algorithm</title>
-      <link>http://www.chenranfei.online/posts/other/o-common_algorithm/</link>
-      <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/other/o-common_algorithm/</guid>
-      <description>[TOC]
-最短路 hdu2544
- dijkstra找距离当前点中未被刷新过距离起点最值的最小值(!vis[j] &amp;amp;&amp;amp; min(d[j]))拿来刷新到其他点的距离 如果d[v] + mp[v][j] &amp;lt; d[j]就刷新到j点的距离，j点要是未被刷新的点。  void dijkstra(){ for (int i = 0; i &amp;lt; n; i++) d[i] = mp[0][i]; vis[0] = 1; for (int i = 0; i &amp;lt; n; i++) { tem = INF;v = 0; for (int j = 0; j &amp;lt; n; j++) if (!vis[j] &amp;amp;&amp;amp; d[j] &amp;lt;= tem){ tem = d[j]; v = j; } vis[v] = 1; for (int j = 0; j &amp;lt; n; j++) if (!</description>
-    </item>
-    
-    <item>
       <title>PTA 1000-1099</title>
-      <link>http://www.chenranfei.online/posts/pta/pta/</link>
+      <link>http://www.chenranfei.online/posts/contest/pta/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/pta/pta/</guid>
+      <guid>http://www.chenranfei.online/posts/contest/pta/</guid>
       <description>[TOC]
 PTA1000-1099 1000  题目大意：求a+b
   【易错】输出格式的标准化：每3位来一个逗号（利用循环+取余进行输出）  1007  题目大意：最大子区间
@@ -1028,17 +1017,6 @@ PTA1000-1099 1000  题目大意：求a+b
   利用后序最后一个是根结点，然后从中序里边进行分割，分割出左右两块分别为这个根结点的左右儿子。 递归建树的返回内容是一个节点。递归的参数要包括中序的左右区间节点以及后序的根结点，三个参数即可 【易错】递归终点返回值问题：返回NULL的条件  1023  题目大意：给出一个数，看看这个数在乘了2之后，是否还满足和原来一样的各种数字的个数不变但是顺序变化
  1040  题目大意：找到最大的回文子串
  </description>
-    </item>
-    
-    <item>
-      <title>Dp回文串问题整理</title>
-      <link>http://www.chenranfei.online/posts/other/o-dp%E5%9B%9E%E6%96%87%E4%B8%B2%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/</link>
-      <pubDate>Wed, 08 Apr 2020 20:41:58 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/other/o-dp%E5%9B%9E%E6%96%87%E4%B8%B2%E9%97%AE%E9%A2%98%E6%95%B4%E7%90%86/</guid>
-      <description>[TOC]
-回文串dp问题
-判断最长回文串  bool dp[i][j]表示从[i,j]这一段是否为回文串 状态转移方程：dp[i][j] = (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1||dp[i+1]dp[j-1]))?true:false (j &amp;gt; i) j-i == 1 是对aa这种两个字符呈对称形式的情况  // // main.cpp // 5回文子串 // // Created by 陈冉飞 on 2020/4/6. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010char s[maxn]; int main(int argc, const char * argv[]) { scanf(&amp;#34;%s&amp;#34;,s); int len = strlen(s),ans = 0; bool dp[len][len]; for (int i = 0; i &amp;lt; len; i++) dp[i][i] = true; for (int j = 1; j &amp;lt; len; j++) for (int i = 0; i &amp;lt; j; i++) if (s[i] == s[j] &amp;amp;&amp;amp; (j-i == 1 || dp[i+1][j-1])) {dp[i][j] = true;ans = max(ans,j-i+1);} else dp[i][j] = false; printf(&amp;#34;%d\n&amp;#34;,ans); return 0; } 以回文串形式抽取字串的最小次数  dp[i][j]表示区间[i,j]的最少抽取次数 状态转移方程 if (s[i] == s[j]) dp[i][j] = (j-i == 1)?</description>
     </item>
     
     <item>
@@ -1053,11 +1031,11 @@ CSP[2019.12]1.2.3题总结 第一题 找7倍数或者含有7的数。
     </item>
     
     <item>
-      <title>POJ1113 凸包算法</title>
-      <link>http://www.chenranfei.online/posts/other/o-poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</link>
+      <title>Algorithm23 计算几何 凸包算法</title>
+      <link>http://www.chenranfei.online/posts/acm/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/algorithm23-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 04 Feb 2020 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/other/o-poj1113-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://www.chenranfei.online/posts/acm/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/algorithm23-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</guid>
       <description>[TOC]
 POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
 卷包裹法 思路：
@@ -1069,11 +1047,11 @@ int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.
     </item>
     
     <item>
-      <title>14 keras</title>
-      <link>http://www.chenranfei.online/posts/mldl/test14-keras/</link>
+      <title>Deep Learning 14 keras</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl14-keras/</link>
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test14-keras/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl14-keras/</guid>
       <description>[TOC]
 keras.models  Model Sequential  Keras.Input 区分于keras.layers.Input 或者区分于
 keras.layers 适用于含有神经元的网络  Dropout / SpatialDropout Dense 全连接层  用于处理图像-卷积  Convention卷积：Conv1D，Conv2D 和 Conv3D Pooling池化：MaxPooling1D,MaxPooling2D, GlobalMaxPooling1D   用于NLP处理-序列模型  LSTM / Bidirectional LSTM GRU Cu  CuDNNLSTM：这个是在老版本(在V_tensorflow &amp;lt; 2.0.0)中支持的，在新的tensorflow和独立出来的keras中都是没有的，所以如果使用的话，需要1:调整tensorflow的版本小于2.0.0、2:不使用自带的独立出来的keras，而是使用tensorflow内置的keras CUDNNGRU    一些不常用的keras库 keras.engine 底层控制驱动引擎，keras.engine.topology中的Layer来自定义keras神经网络模型中的某一层(是层，不是神经元)
@@ -1081,11 +1059,11 @@ keras.initializers &amp;ndash; 初始化 keras.regularizers &amp;ndash; 正则�
     </item>
     
     <item>
-      <title>14.1 pytorch</title>
-      <link>http://www.chenranfei.online/posts/mldl/test14.1-pytorch/</link>
+      <title>Deep Learning 14.1 pytorch</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl14.1-pytorch/</link>
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test14.1-pytorch/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl14.1-pytorch/</guid>
       <description>[TOC]
 pytorch类比keras但区别 keras的所有子库基本都是复数，包括models, layers, optimizers等等
 而torch大部分都是单数
@@ -1097,11 +1075,11 @@ torch.optim torch.optim.Adam()
     </item>
     
     <item>
-      <title>16 基本流程</title>
-      <link>http://www.chenranfei.online/posts/mldl/test16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</link>
+      <title>Deep Learning 16 GNN Basic</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</link>
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</guid>
       <description>[TOC]
 工具配备：
 深度学习框架：
@@ -1115,51 +1093,43 @@ Graph embedding [把整个表进行嵌入]   node embedding
     </item>
     
     <item>
-      <title>13 Pandas</title>
-      <link>http://www.chenranfei.online/posts/mldl/test13-pandas/</link>
-      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
+      <title>Deep Learning 17 优化目标</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</link>
+      <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test13-pandas/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</guid>
       <description>[TOC]
-数据类型相关 在处理脏数据的时候：
-通过data[col][raw].dtype来查看元素的类型
-通过data[col][raw].astype = specific_data_type来切换单元格的属性
-截取 1）.loc,.iloc,.ix,只加第一个参数如.loc([1,2]),.iloc([2:3]),.ix[2]…则进行的是行选择 2）.loc,.at，选列是只能是列名，不能是position 3）.iloc,.iat，选列是只能是position，不能是列名 4）df[]只能进行行选择，或列选择，不能同时进行列选择，列选择只能是列名。
-sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Male 3.31 23.68 4 Female 3.61 24.59 print df.loc[1:3, [&amp;#39;total_bill&amp;#39;, &amp;#39;tip&amp;#39;]] print df.loc[1:3, &amp;#39;tip&amp;#39;: &amp;#39;total_bill&amp;#39;] print df.iloc[1:3, [1, 2]] print df.iloc[1:3, 1: 3] total_bill tip 1 10.34 1.66 2 23.68 3.50 3 23.68 3.31 -------------------- tip total_bill 1 1.66 10.34 2 3.50 23.</description>
+优化目标 概念区分 1、整体理解：损失函数，代价函数，目标函数，熵=&amp;gt;都是最优化问题下的的优化目标，通过设定优化目标获取最优化问题的最优解
+2、设计原理：为什么要设计这样的优化目标
+ 用交叉熵的原因，交叉熵和KL散度的关系 用平方损失的原因，平方损失和最大似然的关系 添加正则子的原因，为什么能添加这样的正则子  回归问题 分类问题-熵「Entropy」 与熵相关的为信息论相关内容
+熵「Entropy」  信息量
+事件A的自信息量，A这个事件包含了多少信息
+ $s(x)=\sum_{i}P_A(x_i)log(P_A(x_i))\$
+验证：
+交叉熵「Cross Entropy」  分类问题-二分类，对数似然
+事件AB，从A的角度看，如何描述B
+ 信息论公式：
+$H(A,B)=-\sum_{i}P_A(x_i)log(P_B(x_i))\$
+对于样本集上的数据，两种表达形式，单个样本Loss &amp;amp; 整个样本集然后除样本数Cost
+Loss =&amp;gt; $L=yln\hat{y}+(1-y)ln(1-\hat{y})$​
+Cost =&amp;gt; $C=-\frac{1}{n}\sum_{x}^{}[yln\hat{y}+(1-y)ln(1-\hat{y}]\$
+验证：当真实$y=1$，如果$\hat{y}$越接近1，则损失函数Loss越小；如果$\hat{y}$越接近0，则损失函数Loss越大。因而达到忘Loss损失函数变小的方向变化。（当真实$y=0$亦然，看下图左边是$y=1$的情况，右边是$y=0$的情况）
+多分类交叉熵「Categorical Cross Entropy」  分类问题-多分类，对数似然
+ 相对熵「Relative Entropy」  衡量两个分布的不同
+事件AB，从A的角度看，B有多大不同
+ $D_{KL}(A|B)=\sum_{i}P_A(x_i)log(P_A(x_i))-\sum_{i}P_A(x_i)log(P_B(x_i))\$ （对于离散事件是求和，对于连续事件是求积分）
+相对熵包含了交叉熵的内容，$D_{KL}(A|B)=\sum_{i}P_A(x_i)log(P_A(x_i))-\sum_{i}P_A(x_i)log(P_B(x_i))=s(A)+H(A,B)\$，也就是相对熵=坐标系自己的熵+交叉熵
+验证：由于坐标系选取不同，对于事件A和事件B，从A的角度看，$D_{KL}(A|B)\neq D_{KL}(B|A)$
+交叉熵VS相对熵/KL散度 一般情况下，都用交叉熵，不用KL散度。
+首先理解分类问题的目标 =&amp;gt;看模型学习到的分布P(model)和真实分布P(real)是否接近 =&amp;gt;看模型学习到的分布P(model)和训练数据P(training)的分布是否接近 =&amp;gt;因而可以用KL散度来进行计算$D_{KL}(P(training)|P(model))$ =&amp;gt;将KL散度进行展开$D_{KL}(P(training)|P(model))=s(P(training))+H(P(training),P(model))$ =&amp;gt;由于训练数据固定，那么对应的训练数据的熵也是不变的，所以$D_{KL}$等价于交叉熵，而因为交叉熵方便计算，所以一般都使用交叉熵</description>
     </item>
     
     <item>
-      <title>13.1 Numpy</title>
-      <link>http://www.chenranfei.online/posts/mldl/test13.1-numpy/</link>
+      <title>Deep Learning 15 Kaggle一些基本问题</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test13.1-numpy/</guid>
-      <description>[TOC]
-np.zeros np.zeros(size) 初始化为长度为size，内容为0的矢量「秩=1」==》既不是行向量也不是列向量【a.T=a即可以验证】
-a = np.zeros(array_size)
-np.zero(size_x, size_y) 初始化为二维的「秩=2」==》如果让此时的size_y=1,那就是个列向量；如果让此时的size_x=1,那就是个行向量
-![image-20201206171734156](/Users/aczy156/Library/Application Support/typora-user-images/image-20201206171734156.png)
-np.random.rand(size)/ np.random/randn(size) 初始化一个长度为size，内容为0～1随机数(精确说是高斯变量)矢量==》既不是行向量也不是列向量【a.T=a即可以验证】
-a = np.random.rand(array_size)
-print(a, len(a))
-# 成功初始化一个矢量/数据 输出的是[xxx, xxx, ……, xxx], array_size
-np.dot(array_a, array_b) 做矢量/向量的乘积（点乘）=》
- 可以是下边例子的两个长度为array_size的一维向量 也可以是只要是符合矩阵乘积规则的都OK，例如(m, r) * (r, n) / (m, a) * (a, n)  a = np.random.rand(array_size)
-b = np.random.rand(array_size)
-c = np.dot(a, b)
-np 广播
-a = np.random.rand(array_size)
-c = a+5 # 加上一个常数但是numpy会自动转换成一个n为向量，来和前面的格式对齐，最后就是[a[0]+5, a[1]+5, ……]
-np.exp/np.expm1/np.log/np.log1p 做//做对数logv1,logv2……
-v = np.</description>
-    </item>
-    
-    <item>
-      <title>15 Kaggle一些基本问题</title>
-      <link>http://www.chenranfei.online/posts/mldl/test15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
-      
-      <guid>http://www.chenranfei.online/posts/mldl/test15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</guid>
       <description>[TOC]
 /input目录下的数据是read_only格式 可以通过copy一份到/working
 两个路径：
@@ -1185,21 +1155,61 @@ input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进
     </item>
     
     <item>
-      <title>12 CV Target Detection</title>
-      <link>http://www.chenranfei.online/posts/mldl/test12-cvtarget-detection/</link>
+      <title>Python 1 Pandas</title>
+      <link>http://www.chenranfei.online/posts/python/python1-pandas/</link>
+      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/python/python1-pandas/</guid>
+      <description>[TOC]
+数据类型相关 在处理脏数据的时候：
+通过data[col][raw].dtype来查看元素的类型
+通过data[col][raw].astype = specific_data_type来切换单元格的属性
+截取 1）.loc,.iloc,.ix,只加第一个参数如.loc([1,2]),.iloc([2:3]),.ix[2]…则进行的是行选择 2）.loc,.at，选列是只能是列名，不能是position 3）.iloc,.iat，选列是只能是position，不能是列名 4）df[]只能进行行选择，或列选择，不能同时进行列选择，列选择只能是列名。
+sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Male 3.31 23.68 4 Female 3.61 24.59 print df.loc[1:3, [&amp;#39;total_bill&amp;#39;, &amp;#39;tip&amp;#39;]] print df.loc[1:3, &amp;#39;tip&amp;#39;: &amp;#39;total_bill&amp;#39;] print df.iloc[1:3, [1, 2]] print df.iloc[1:3, 1: 3] total_bill tip 1 10.34 1.66 2 23.68 3.50 3 23.68 3.31 -------------------- tip total_bill 1 1.66 10.34 2 3.50 23.</description>
+    </item>
+    
+    <item>
+      <title>Python 2 Numpy</title>
+      <link>http://www.chenranfei.online/posts/python/python2-numpy/</link>
+      <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/python/python2-numpy/</guid>
+      <description>[TOC]
+np.zeros np.zeros(size) 初始化为长度为size，内容为0的矢量「秩=1」==》既不是行向量也不是列向量【a.T=a即可以验证】
+a = np.zeros(array_size)
+np.zero(size_x, size_y) 初始化为二维的「秩=2」==》如果让此时的size_y=1,那就是个列向量；如果让此时的size_x=1,那就是个行向量
+![image-20201206171734156](/Users/aczy156/Library/Application Support/typora-user-images/image-20201206171734156.png)
+np.random.rand(size)/ np.random/randn(size) 初始化一个长度为size，内容为0～1随机数(精确说是高斯变量)矢量==》既不是行向量也不是列向量【a.T=a即可以验证】
+a = np.random.rand(array_size)
+print(a, len(a))
+# 成功初始化一个矢量/数据 输出的是[xxx, xxx, ……, xxx], array_size
+np.dot(array_a, array_b) 做矢量/向量的乘积（点乘）=》
+ 可以是下边例子的两个长度为array_size的一维向量 也可以是只要是符合矩阵乘积规则的都OK，例如(m, r) * (r, n) / (m, a) * (a, n)  a = np.random.rand(array_size)
+b = np.random.rand(array_size)
+c = np.dot(a, b)
+np 广播
+a = np.random.rand(array_size)
+c = a+5 # 加上一个常数但是numpy会自动转换成一个n为向量，来和前面的格式对齐，最后就是[a[0]+5, a[1]+5, ……]
+np.exp/np.expm1/np.log/np.log1p 做//做对数logv1,logv2……
+v = np.</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning 12 CV Target Detection</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl12-cvtarget-detection/</link>
       <pubDate>Tue, 28 Jan 2020 22:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test12-cvtarget-detection/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl12-cvtarget-detection/</guid>
       <description>[TOC]
 CV Target Detection YOLO R-CNN &amp;amp; Fast R-CNN </description>
     </item>
     
     <item>
-      <title>11 CV Image Segmentation</title>
-      <link>http://www.chenranfei.online/posts/mldl/test11-cvimage-segmentation/</link>
+      <title>Deep Learning 11 CV Image Segmentation</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl11-cvimage-segmentation/</link>
       <pubDate>Tue, 28 Jan 2020 21:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test11-cvimage-segmentation/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl11-cvimage-segmentation/</guid>
       <description>[TOC]
 CV-Image Segmentation 图像分割 传统分割方法 理解：
  把图像分割成若干个块 每个块都有相同点 [可以利用拓广性来进行延伸]  基本方法：
@@ -1219,11 +1229,11 @@ CV-Image Segmentation 图像分割 传统分割方法 理解：
     </item>
     
     <item>
-      <title>10 Boosting家族</title>
-      <link>http://www.chenranfei.online/posts/mldl/test10-mlxgboost-lightgbm-catboost/</link>
+      <title>Machine Learning 10 Boosting家族</title>
+      <link>http://www.chenranfei.online/posts/mldl/ml1-mlxgboost-lightgbm-catboost/</link>
       <pubDate>Tue, 28 Jan 2020 20:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test10-mlxgboost-lightgbm-catboost/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/ml1-mlxgboost-lightgbm-catboost/</guid>
       <description>[TOC]
 Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix来进行转换
   然后通过xgb的train()来进行训练
@@ -1233,11 +1243,11 @@ Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix
     </item>
     
     <item>
-      <title>9 几种常用数据类型</title>
-      <link>http://www.chenranfei.online/posts/mldl/test9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <title>Deep Learning 9 几种常用数据类型</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Tue, 28 Jan 2020 19:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>[TOC]
 numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
 print(&amp;#39;data_np shape is: &amp;#39;, np.size(data_np, 0), np.size(data_np, 1), np.size(data_np, 2)) 需要进行维度变化的 按照维度求最值 【根据axis来选择对应的维度，然后提取最大值】 ==&amp;gt; axis=x,就是第x的维度提取最值，最后那个维度变成一，dim--
@@ -1248,11 +1258,11 @@ ls = list(set([&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;a&amp;#39;])) 
     </item>
     
     <item>
-      <title>8 Python 广播机制/apply/map/zip等</title>
-      <link>http://www.chenranfei.online/posts/mldl/test8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</link>
+      <title>Deep Learning 8 Python 广播机制/apply/map/zip等</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</link>
       <pubDate>Tue, 28 Jan 2020 18:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</guid>
       <description>[TOC]
 Python - 广播机制 Python - apply [维持原来的维度数]
 应用场景：对于一个DataFrame
@@ -1267,11 +1277,11 @@ train[&amp;#39;new_length&amp;#39;] = train[&amp;#39;text&amp;#39;].apply(lambda
     </item>
     
     <item>
-      <title>7 综合性案例 Credit Card Anomly Detection</title>
-      <link>http://www.chenranfei.online/posts/mldl/test7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</link>
+      <title>Deep Learning 7 综合性案例 Credit Card Anomly Detection</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</link>
       <pubDate>Tue, 28 Jan 2020 17:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</guid>
       <description>[TOC]
 Credit Card Frauds Detection 处理样本分布不均问题：Imbalance Datasets distribution 几种可行的解决方案：
  采样方法  under-sampling 欠采样 over-sampling 过采样   集成学习+阈值调整 *  根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
@@ -1282,11 +1292,11 @@ df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [多个属�
     </item>
     
     <item>
-      <title>6 CV</title>
-      <link>http://www.chenranfei.online/posts/mldl/test6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
+      <title>Deep Learning 6 CV</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Tue, 28 Jan 2020 16:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
       <description>[TOC]
 CV-数据增强 手动人工数据增强   数据为非图形化的数据「本身不是图片」
  例如Digit Recognization，通过把所有像素点放进了表格里边    数据为图形化的数据「本身是图片」
@@ -1294,11 +1304,11 @@ CV-数据增强 手动人工数据增强   数据为非图形化的数据「本�
     </item>
     
     <item>
-      <title>5.1 NLP 一些常用库</title>
-      <link>http://www.chenranfei.online/posts/mldl/test5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</link>
+      <title>Deep Learning 5.1 NLP 一些常用库</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</link>
       <pubDate>Tue, 28 Jan 2020 15:15:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</guid>
       <description>[TOC]
 NLP 工具库 NLP &amp;ndash; nltk [natural language toolkit] NLP &amp;ndash; gensim NLP 语料库 NLP &amp;ndash; GloVe全局动态库  GloVe 50D GloVe 100D GloVe 200D GloVe 300D  一些其他的具有标准参考的库 String库 punctuation 【标点符号】
 import string collections defaultdict 【默认字典】
@@ -1307,41 +1317,41 @@ from collection import defaultdict from collection import Counter </description>
     </item>
     
     <item>
-      <title>5 NLP基本过程</title>
-      <link>http://www.chenranfei.online/posts/mldl/test5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
+      <title>Deep Learning 5 NLP基本过程</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
       <description>[TOC]
 NLP 1、数据清洗 data cleaning  清洗html中的残留的tag：BeautifulSoup 清洗标点：正则表达式 清洗常用的没有实际意义的词语(a, the)：nltk中的stepwords  # import basic dependencies from bs4 import BeautifulSoup import re from nltk.corpus import stopwords # 具体使用 # html残留tag：用BeautifulSoup，实例化对象，然后通过get_text()获取 bs = BeautifulSoup(train[&amp;#39;text_content&amp;#39;][index], &amp;#39;lxml&amp;#39;) print(&amp;#39;origin content:\n{}\nafter use BeautifulSoup to clean html tag:\n{}\n&amp;#39;, train[&amp;#39;text_content&amp;#39;][index], bs.get_text()) # 标点符号：正则表达式 letters_only = re.sub(&amp;#39;[^a-zA-Z]&amp;#39;, &amp;#39;&amp;#39;, bs.get_text()) print(&amp;#39;origin content:\n{}\nafter use re:\n{}\n&amp;#39;, bs.get_text(), letters_only) # 用nltk中导入的stopwords来删除一些常见的没有用的单词，a，the…… # 先转换成小写lower case，然后分割split，最后用nltk中的stepwords lower_case = letters_only.lower() words = lower_case.split() stopwords.words(&amp;#39;english&amp;#39;)[:20] words = [word for word in words if not word in stopwords.</description>
     </item>
     
     <item>
-      <title>5 NLP基本过程</title>
-      <link>http://www.chenranfei.online/posts/mldl/test5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</link>
+      <title>Deep Learning 5 NLP基本过程</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</guid>
       <description>[TOC]
 NLP punctuations - 标点 puncts = [&amp;#39;,&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;&amp;#34;&amp;#39;, &amp;#39;:&amp;#39;, &amp;#39;)&amp;#39;, &amp;#39;(&amp;#39;, &amp;#39;-&amp;#39;, &amp;#39;!&amp;#39;, &amp;#39;?&amp;#39;, &amp;#39;|&amp;#39;, &amp;#39;;&amp;#39;, &amp;#34;&amp;#39;&amp;#34;, &amp;#39;$&amp;#39;, &amp;#39;&amp;amp;&amp;#39;, &amp;#39;/&amp;#39;, &amp;#39;[&amp;#39;, &amp;#39;]&amp;#39;, &amp;#39;&amp;gt;&amp;#39;, &amp;#39;%&amp;#39;, &amp;#39;=&amp;#39;, &amp;#39;#&amp;#39;, &amp;#39;*&amp;#39;, &amp;#39;+&amp;#39;, &amp;#39;\\&amp;#39;, &amp;#39;•&amp;#39;, &amp;#39;~&amp;#39;, &amp;#39;@&amp;#39;, &amp;#39;£&amp;#39;, &amp;#39;·&amp;#39;, &amp;#39;_&amp;#39;, &amp;#39;{&amp;#39;, &amp;#39;}&amp;#39;, &amp;#39;©&amp;#39;, &amp;#39;^&amp;#39;, &amp;#39;®&amp;#39;, &amp;#39;`&amp;#39;, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;→&amp;#39;, &amp;#39;°&amp;#39;, &amp;#39;€&amp;#39;, &amp;#39;™&amp;#39;, &amp;#39;›&amp;#39;, &amp;#39;♥&amp;#39;, &amp;#39;←&amp;#39;, &amp;#39;×&amp;#39;, &amp;#39;§&amp;#39;, &amp;#39;″&amp;#39;, &amp;#39;′&amp;#39;, &amp;#39;Â&amp;#39;, &amp;#39;█&amp;#39;, &amp;#39;½&amp;#39;, &amp;#39;à&amp;#39;, &amp;#39;…&amp;#39;, &amp;#39;“&amp;#39;, &amp;#39;★&amp;#39;, &amp;#39;”&amp;#39;, &amp;#39;–&amp;#39;, &amp;#39;●&amp;#39;, &amp;#39;â&amp;#39;, &amp;#39;►&amp;#39;, &amp;#39;−&amp;#39;, &amp;#39;¢&amp;#39;, &amp;#39;²&amp;#39;, &amp;#39;¬&amp;#39;, &amp;#39;░&amp;#39;, &amp;#39;¶&amp;#39;, &amp;#39;↑&amp;#39;, &amp;#39;±&amp;#39;, &amp;#39;¿&amp;#39;, &amp;#39;▾&amp;#39;, &amp;#39;═&amp;#39;, &amp;#39;¦&amp;#39;, &amp;#39;║&amp;#39;, &amp;#39;―&amp;#39;, &amp;#39;¥&amp;#39;, &amp;#39;▓&amp;#39;, &amp;#39;—&amp;#39;, &amp;#39;‹&amp;#39;, &amp;#39;─&amp;#39;, &amp;#39;▒&amp;#39;, &amp;#39;：&amp;#39;, &amp;#39;¼&amp;#39;, &amp;#39;⊕&amp;#39;, &amp;#39;▼&amp;#39;, &amp;#39;▪&amp;#39;, &amp;#39;†&amp;#39;, &amp;#39;■&amp;#39;, &amp;#39;’&amp;#39;, &amp;#39;▀&amp;#39;, &amp;#39;¨&amp;#39;, &amp;#39;▄&amp;#39;, &amp;#39;♫&amp;#39;, &amp;#39;☆&amp;#39;, &amp;#39;é&amp;#39;, &amp;#39;¯&amp;#39;, &amp;#39;♦&amp;#39;, &amp;#39;¤&amp;#39;, &amp;#39;▲&amp;#39;, &amp;#39;è&amp;#39;, &amp;#39;¸&amp;#39;, &amp;#39;¾&amp;#39;, &amp;#39;Ã&amp;#39;, &amp;#39;⋅&amp;#39;, &amp;#39;‘&amp;#39;, &amp;#39;∞&amp;#39;, &amp;#39;∙&amp;#39;, &amp;#39;）&amp;#39;, &amp;#39;↓&amp;#39;, &amp;#39;、&amp;#39;, &amp;#39;│&amp;#39;, &amp;#39;（&amp;#39;, &amp;#39;»&amp;#39;, &amp;#39;，&amp;#39;, &amp;#39;♪&amp;#39;, &amp;#39;╩&amp;#39;, &amp;#39;╚&amp;#39;, &amp;#39;³&amp;#39;, &amp;#39;・&amp;#39;, &amp;#39;╦&amp;#39;, &amp;#39;╣&amp;#39;, &amp;#39;╔&amp;#39;, &amp;#39;╗&amp;#39;, &amp;#39;▬&amp;#39;, &amp;#39;❤&amp;#39;, &amp;#39;ï&amp;#39;, &amp;#39;Ø&amp;#39;, &amp;#39;¹&amp;#39;, &amp;#39;≤&amp;#39;, &amp;#39;‡&amp;#39;, &amp;#39;√&amp;#39;, ] fasttext mispell - 一些省略成引号的 mispell_dict = {&amp;#34;ain&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;aren&amp;#39;t&amp;#34;: &amp;#34;are not&amp;#34;,&amp;#34;can&amp;#39;t&amp;#34;: &amp;#34;cannot&amp;#34;, &amp;#34;&amp;#39;cause&amp;#34;: &amp;#34;because&amp;#34;, &amp;#34;could&amp;#39;ve&amp;#34;: &amp;#34;could have&amp;#34;, &amp;#34;couldn&amp;#39;t&amp;#34;: &amp;#34;could not&amp;#34;, &amp;#34;didn&amp;#39;t&amp;#34;: &amp;#34;did not&amp;#34;, &amp;#34;doesn&amp;#39;t&amp;#34;: &amp;#34;does not&amp;#34;, &amp;#34;don&amp;#39;t&amp;#34;: &amp;#34;do not&amp;#34;, &amp;#34;hadn&amp;#39;t&amp;#34;: &amp;#34;had not&amp;#34;, &amp;#34;hasn&amp;#39;t&amp;#34;: &amp;#34;has not&amp;#34;, &amp;#34;haven&amp;#39;t&amp;#34;: &amp;#34;have not&amp;#34;, &amp;#34;he&amp;#39;d&amp;#34;: &amp;#34;he would&amp;#34;,&amp;#34;he&amp;#39;ll&amp;#34;: &amp;#34;he will&amp;#34;, &amp;#34;he&amp;#39;s&amp;#34;: &amp;#34;he is&amp;#34;, &amp;#34;how&amp;#39;d&amp;#34;: &amp;#34;how did&amp;#34;, &amp;#34;how&amp;#39;d&amp;#39;y&amp;#34;: &amp;#34;how do you&amp;#34;, &amp;#34;how&amp;#39;ll&amp;#34;: &amp;#34;how will&amp;#34;, &amp;#34;how&amp;#39;s&amp;#34;: &amp;#34;how is&amp;#34;, &amp;#34;I&amp;#39;d&amp;#34;: &amp;#34;I would&amp;#34;, &amp;#34;I&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;I would have&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#34;: &amp;#34;I will&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;I will have&amp;#34;,&amp;#34;I&amp;#39;m&amp;#34;: &amp;#34;I am&amp;#34;, &amp;#34;I&amp;#39;ve&amp;#34;: &amp;#34;I have&amp;#34;, &amp;#34;i&amp;#39;d&amp;#34;: &amp;#34;i would&amp;#34;, &amp;#34;i&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;i would have&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#34;: &amp;#34;i will&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;i will have&amp;#34;,&amp;#34;i&amp;#39;m&amp;#34;: &amp;#34;i am&amp;#34;, &amp;#34;i&amp;#39;ve&amp;#34;: &amp;#34;i have&amp;#34;, &amp;#34;isn&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;it&amp;#39;d&amp;#34;: &amp;#34;it would&amp;#34;, &amp;#34;it&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;it would have&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#34;: &amp;#34;it will&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;it will have&amp;#34;,&amp;#34;it&amp;#39;s&amp;#34;: &amp;#34;it is&amp;#34;, &amp;#34;let&amp;#39;s&amp;#34;: &amp;#34;let us&amp;#34;, &amp;#34;ma&amp;#39;am&amp;#34;: &amp;#34;madam&amp;#34;, &amp;#34;mayn&amp;#39;t&amp;#34;: &amp;#34;may not&amp;#34;, &amp;#34;might&amp;#39;ve&amp;#34;: &amp;#34;might have&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#34;: &amp;#34;might not&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;might not have&amp;#34;, &amp;#34;must&amp;#39;ve&amp;#34;: &amp;#34;must have&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#34;: &amp;#34;must not&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;must not have&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#34;: &amp;#34;need not&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;need not have&amp;#34;,&amp;#34;o&amp;#39;clock&amp;#34;: &amp;#34;of the clock&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#34;: &amp;#34;ought not&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;ought not have&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;sha&amp;#39;n&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;shall not have&amp;#34;, &amp;#34;she&amp;#39;d&amp;#34;: &amp;#34;she would&amp;#34;, &amp;#34;she&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;she would have&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#34;: &amp;#34;she will&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;she will have&amp;#34;, &amp;#34;she&amp;#39;s&amp;#34;: &amp;#34;she is&amp;#34;, &amp;#34;should&amp;#39;ve&amp;#34;: &amp;#34;should have&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#34;: &amp;#34;should not&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;should not have&amp;#34;, &amp;#34;so&amp;#39;ve&amp;#34;: &amp;#34;so have&amp;#34;,&amp;#34;so&amp;#39;s&amp;#34;: &amp;#34;so as&amp;#34;, &amp;#34;this&amp;#39;s&amp;#34;: &amp;#34;this is&amp;#34;,&amp;#34;that&amp;#39;d&amp;#34;: &amp;#34;that would&amp;#34;, &amp;#34;that&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;that would have&amp;#34;, &amp;#34;that&amp;#39;s&amp;#34;: &amp;#34;that is&amp;#34;, &amp;#34;there&amp;#39;d&amp;#34;: &amp;#34;there would&amp;#34;, &amp;#34;there&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;there would have&amp;#34;, &amp;#34;there&amp;#39;s&amp;#34;: &amp;#34;there is&amp;#34;, &amp;#34;here&amp;#39;s&amp;#34;: &amp;#34;here is&amp;#34;,&amp;#34;they&amp;#39;d&amp;#34;: &amp;#34;they would&amp;#34;, &amp;#34;they&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;they would have&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#34;: &amp;#34;they will&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;they will have&amp;#34;, &amp;#34;they&amp;#39;re&amp;#34;: &amp;#34;they are&amp;#34;, &amp;#34;they&amp;#39;ve&amp;#34;: &amp;#34;they have&amp;#34;, &amp;#34;to&amp;#39;ve&amp;#34;: &amp;#34;to have&amp;#34;, &amp;#34;wasn&amp;#39;t&amp;#34;: &amp;#34;was not&amp;#34;, &amp;#34;we&amp;#39;d&amp;#34;: &amp;#34;we would&amp;#34;, &amp;#34;we&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;we would have&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#34;: &amp;#34;we will&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;we will have&amp;#34;, &amp;#34;we&amp;#39;re&amp;#34;: &amp;#34;we are&amp;#34;, &amp;#34;we&amp;#39;ve&amp;#34;: &amp;#34;we have&amp;#34;, &amp;#34;weren&amp;#39;t&amp;#34;: &amp;#34;were not&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#34;: &amp;#34;what will&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;what will have&amp;#34;, &amp;#34;what&amp;#39;re&amp;#34;: &amp;#34;what are&amp;#34;, &amp;#34;what&amp;#39;s&amp;#34;: &amp;#34;what is&amp;#34;, &amp;#34;what&amp;#39;ve&amp;#34;: &amp;#34;what have&amp;#34;, &amp;#34;when&amp;#39;s&amp;#34;: &amp;#34;when is&amp;#34;, &amp;#34;when&amp;#39;ve&amp;#34;: &amp;#34;when have&amp;#34;, &amp;#34;where&amp;#39;d&amp;#34;: &amp;#34;where did&amp;#34;, &amp;#34;where&amp;#39;s&amp;#34;: &amp;#34;where is&amp;#34;, &amp;#34;where&amp;#39;ve&amp;#34;: &amp;#34;where have&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#34;: &amp;#34;who will&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;who will have&amp;#34;, &amp;#34;who&amp;#39;s&amp;#34;: &amp;#34;who is&amp;#34;, &amp;#34;who&amp;#39;ve&amp;#34;: &amp;#34;who have&amp;#34;, &amp;#34;why&amp;#39;s&amp;#34;: &amp;#34;why is&amp;#34;, &amp;#34;why&amp;#39;ve&amp;#34;: &amp;#34;why have&amp;#34;, &amp;#34;will&amp;#39;ve&amp;#34;: &amp;#34;will have&amp;#34;, &amp;#34;won&amp;#39;t&amp;#34;: &amp;#34;will not&amp;#34;, &amp;#34;won&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;will not have&amp;#34;, &amp;#34;would&amp;#39;ve&amp;#34;: &amp;#34;would have&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#34;: &amp;#34;would not&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;would not have&amp;#34;, &amp;#34;y&amp;#39;all&amp;#34;: &amp;#34;you all&amp;#34;, &amp;#34;y&amp;#39;all&amp;#39;d&amp;#34;: &amp;#34;you all would&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you all would have&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;re&amp;#34;: &amp;#34;you all are&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;ve&amp;#34;: &amp;#34;you all have&amp;#34;,&amp;#34;you&amp;#39;d&amp;#34;: &amp;#34;you would&amp;#34;, &amp;#34;you&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you would have&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#34;: &amp;#34;you will&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;you will have&amp;#34;, &amp;#34;you&amp;#39;re&amp;#34;: &amp;#34;you are&amp;#34;, &amp;#34;you&amp;#39;ve&amp;#34;: &amp;#34;you have&amp;#34;, &amp;#39;colour&amp;#39;: &amp;#39;color&amp;#39;, &amp;#39;centre&amp;#39;: &amp;#39;center&amp;#39;, &amp;#39;favourite&amp;#39;: &amp;#39;favorite&amp;#39;, &amp;#39;travelling&amp;#39;: &amp;#39;traveling&amp;#39;, &amp;#39;counselling&amp;#39;: &amp;#39;counseling&amp;#39;, &amp;#39;theatre&amp;#39;: &amp;#39;theater&amp;#39;, &amp;#39;cancelled&amp;#39;: &amp;#39;canceled&amp;#39;, &amp;#39;labour&amp;#39;: &amp;#39;labor&amp;#39;, &amp;#39;organisation&amp;#39;: &amp;#39;organization&amp;#39;, &amp;#39;wwii&amp;#39;: &amp;#39;world war 2&amp;#39;, &amp;#39;citicise&amp;#39;: &amp;#39;criticize&amp;#39;, &amp;#39;youtu &amp;#39;: &amp;#39;youtube &amp;#39;, &amp;#39;Qoura&amp;#39;: &amp;#39;Quora&amp;#39;, &amp;#39;sallary&amp;#39;: &amp;#39;salary&amp;#39;, &amp;#39;Whta&amp;#39;: &amp;#39;What&amp;#39;, &amp;#39;narcisist&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;howdo&amp;#39;: &amp;#39;how do&amp;#39;, &amp;#39;whatare&amp;#39;: &amp;#39;what are&amp;#39;, &amp;#39;howcan&amp;#39;: &amp;#39;how can&amp;#39;, &amp;#39;howmuch&amp;#39;: &amp;#39;how much&amp;#39;, &amp;#39;howmany&amp;#39;: &amp;#39;how many&amp;#39;, &amp;#39;whydo&amp;#39;: &amp;#39;why do&amp;#39;, &amp;#39;doI&amp;#39;: &amp;#39;do I&amp;#39;, &amp;#39;theBest&amp;#39;: &amp;#39;the best&amp;#39;, &amp;#39;howdoes&amp;#39;: &amp;#39;how does&amp;#39;, &amp;#39;mastrubation&amp;#39;: &amp;#39;masturbation&amp;#39;, &amp;#39;mastrubate&amp;#39;: &amp;#39;masturbate&amp;#39;, &amp;#34;mastrubating&amp;#34;: &amp;#39;masturbating&amp;#39;, &amp;#39;pennis&amp;#39;: &amp;#39;penis&amp;#39;, &amp;#39;Etherium&amp;#39;: &amp;#39;Ethereum&amp;#39;, &amp;#39;narcissit&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;bigdata&amp;#39;: &amp;#39;big data&amp;#39;, &amp;#39;2k17&amp;#39;: &amp;#39;2017&amp;#39;, &amp;#39;2k18&amp;#39;: &amp;#39;2018&amp;#39;, &amp;#39;qouta&amp;#39;: &amp;#39;quota&amp;#39;, &amp;#39;exboyfriend&amp;#39;: &amp;#39;ex boyfriend&amp;#39;, &amp;#39;airhostess&amp;#39;: &amp;#39;air hostess&amp;#39;, &amp;#34;whst&amp;#34;: &amp;#39;what&amp;#39;, &amp;#39;watsapp&amp;#39;: &amp;#39;whatsapp&amp;#39;, &amp;#39;demonitisation&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonitization&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonetisation&amp;#39;: &amp;#39;demonetization&amp;#39;} </description>
     </item>
     
     <item>
-      <title>5 NLP基本过程</title>
-      <link>http://www.chenranfei.online/posts/mldl/test5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</link>
+      <title>Deep Learning 5 NLP基本过程</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</link>
       <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</guid>
       <description>[TOC]
 NLP - 词嵌入 </description>
     </item>
     
     <item>
-      <title>4 Feature Engineering 几种编码整合</title>
-      <link>http://www.chenranfei.online/posts/mldl/test4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</link>
+      <title>Deep Learning 4 Feature Engineering 几种编码整合</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</link>
       <pubDate>Tue, 28 Jan 2020 14:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</guid>
       <description>[TOC]
 Feature Engineering&amp;ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
 df = pd.concat([train, test]) 用:来分割，:num表示num之前的所有，num:num之后的所有，:就是没有界限，所有的
@@ -1355,11 +1365,11 @@ shops[&amp;#39;newAttr&amp;#39;] = shops[&amp;#39;oriAttr&amp;#39;].str.split(&a
     </item>
     
     <item>
-      <title>3 数据可视化之EDA</title>
-      <link>http://www.chenranfei.online/posts/mldl/test3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</link>
+      <title>Deep Learning 3 数据可视化之EDA</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</link>
       <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</guid>
       <description>[TOC]
 数据可视化&amp;ndash;categorical data 离散数据 直方图类型 [单个属性]： 根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
 import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr&amp;#39;, color=&amp;#39;attr&amp;#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&amp;gt;bar】import matplotlib.pyplot as plt
@@ -1370,11 +1380,11 @@ df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [单个属�
     </item>
     
     <item>
-      <title>3.1 数据可视化之模型评估阶段</title>
-      <link>http://www.chenranfei.online/posts/mldl/test3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</link>
+      <title>Deep Learning 3.1 数据可视化之模型评估阶段</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</link>
       <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</guid>
       <description>[TOC]
 数据可视化 &amp;ndash; 通过sklearn.metrics直接plot from sklearn.metrics import plot_precision_recall_curve
 from sklearn.metrics import plot_roc_curve
@@ -1395,11 +1405,11 @@ def plot_roc_curve_(y_true, y_pred): # Compute ROC curve and ROC area(auc) fpr, 
     </item>
     
     <item>
-      <title>2 历次比赛</title>
-      <link>http://www.chenranfei.online/posts/mldl/test2-%E5%8E%86%E6%AC%A1%E6%AF%94%E8%B5%9B/</link>
+      <title>Deep Learning 2 Kaggle Competition</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl2-kaggle-competition/</link>
       <pubDate>Tue, 28 Jan 2020 12:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test2-%E5%8E%86%E6%AC%A1%E6%AF%94%E8%B5%9B/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl2-kaggle-competition/</guid>
       <description>[TOC]
 [Kaggle] House Price 结构化数据(表格)、回归问题(预测房价)
 2020.4.20 House Prices V1.0
@@ -1426,11 +1436,11 @@ def plot_roc_curve_(y_true, y_pred): # Compute ROC curve and ROC area(auc) fpr, 
     </item>
     
     <item>
-      <title>IFLY Temperature Predict</title>
-      <link>http://www.chenranfei.online/posts/mldl/test-ifly_temperature_predict/</link>
+      <title>Deep Learning 1 IFLY Temperature Predict</title>
+      <link>http://www.chenranfei.online/posts/mldl/dl1-ifly_temperature_predict/</link>
       <pubDate>Tue, 28 Jan 2020 04:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/test-ifly_temperature_predict/</guid>
+      <guid>http://www.chenranfei.online/posts/mldl/dl1-ifly_temperature_predict/</guid>
       <description>[TOC]
 描述 随着计算机技术的发展，我国逐渐实现了从传统农业到现代农业的转变，正逐步迈向智慧农业。温室是现代农业技术应用的典型场景，其内部环境具有可操作性，能人为形成适宜植物生长的小型封闭生态系统，提升农产品的产量和质量，因此被广泛应用于农业生产中。在温室的各项环境因子中，作物对温度最为敏感。温度的高低影响植株细胞的酶活性，从而影响作物的生长速度、产量和质量，因此温度对作物生长发育影响极大。为了保证农产品的产量和质量，应保证作物正常生长，需对温室温度进行精确的调控。
 二、赛事任务 温室温度调控需要对温室温度进行精准的预测，本次大赛提供了中国农业大学涿州实验站的温室温度数据作为样本，参赛选手需基于提供的样本构建模型，预测温室温度变化情况。

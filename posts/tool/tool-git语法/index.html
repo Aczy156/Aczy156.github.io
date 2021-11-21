@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Tool-Git语法 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Tool-Git语法 | Aczy156" />
+	<meta name="twitter:title" content="Tool-Git语法 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Tool-Git语法 | Aczy156" />
+	<meta name="application-name" content="Tool-Git语法 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Tool-Git语法" />
+<meta property="og:description" content="[TOC]
+Git 基础： 定义：版本控制管理工具
+几个位置：
+ 工作区  版本库   暂存区 仓库  本地仓库 远端仓库    基础语法 git init 【修改】初始化当前目录变成可以用git进行接管的文件目录。在整个工作区中会产生一个.git文件，存放版本库。
+git add . git add README.md 【移动】将该目录的所有文件/README.md文件添加到缓存区
+（注意，虽然移动到了暂缓区，但是还没有被提交到本地仓库，因此在add之后，查看log，还是没有记录这个版本的「此时的status显示红色」，包括查看reflog，也是没有这个版本的）然后将文件加入工作区之后「此时status显示绿色」
+git commit -m &#34;xxx 提交到本地仓库&#34; 【移动】将缓存区的文件提交到本地仓库
+git status 【查看】
+ 看缓存区是否还有尚未提交到本地仓库的文件 看缓存区文件里的内容和本地仓库文件里的内容是否有不一致的  git diff README.md 【查看】看某个文件不一致在哪里，回来类似于cat语句将不一样的地方输出出来
+git log git log --pretty=oneline 【查看】看所有的缓存区提交到本地仓库的记录（通过添加参数保证所有的内容都在一行内显示）
+git reset HEAD * 【操作】清空缓存区：移除暂存区的内容，然后利用.gitignore忽略掉不想commit的文件，然后再将对应文件添加进入缓存区
+git reflog 【查看】看到所有本地仓库的历史记录的版本号，可以利用获取到的版本好来随意移动到本地仓库的对应版本
+git reset --hard HEAD^ git reset --hard HEAD^^ git reset --hard HEAD~100 git reset --hard 6fcfc89 【前后移动&#43;修改】" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/tool/tool-git%E8%AF%AD%E6%B3%95/" />
+<meta property="article:published_time" content="2020-04-08T20:42:26+08:00" />
+<meta property="article:modified_time" content="2020-04-08T20:42:26+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tool-Git语法"/>
+<meta name="twitter:description" content="[TOC]
+Git 基础： 定义：版本控制管理工具
+几个位置：
+ 工作区  版本库   暂存区 仓库  本地仓库 远端仓库    基础语法 git init 【修改】初始化当前目录变成可以用git进行接管的文件目录。在整个工作区中会产生一个.git文件，存放版本库。
+git add . git add README.md 【移动】将该目录的所有文件/README.md文件添加到缓存区
+（注意，虽然移动到了暂缓区，但是还没有被提交到本地仓库，因此在add之后，查看log，还是没有记录这个版本的「此时的status显示红色」，包括查看reflog，也是没有这个版本的）然后将文件加入工作区之后「此时status显示绿色」
+git commit -m &#34;xxx 提交到本地仓库&#34; 【移动】将缓存区的文件提交到本地仓库
+git status 【查看】
+ 看缓存区是否还有尚未提交到本地仓库的文件 看缓存区文件里的内容和本地仓库文件里的内容是否有不一致的  git diff README.md 【查看】看某个文件不一致在哪里，回来类似于cat语句将不一样的地方输出出来
+git log git log --pretty=oneline 【查看】看所有的缓存区提交到本地仓库的记录（通过添加参数保证所有的内容都在一行内显示）
+git reset HEAD * 【操作】清空缓存区：移除暂存区的内容，然后利用.gitignore忽略掉不想commit的文件，然后再将对应文件添加进入缓存区
+git reflog 【查看】看到所有本地仓库的历史记录的版本号，可以利用获取到的版本好来随意移动到本地仓库的对应版本
+git reset --hard HEAD^ git reset --hard HEAD^^ git reset --hard HEAD~100 git reset --hard 6fcfc89 【前后移动&#43;修改】"/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#git">Git</a>
+      <ul>
+        <li><a href="#基础">基础：</a></li>
+        <li><a href="#基础语法">基础语法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Tool-Git语法</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="git">Git</h2>
+<h3 id="基础">基础：</h3>
+<p>定义：版本控制管理工具</p>
+<p>几个位置：</p>
+<ul>
+<li>工作区
+<ul>
+<li>版本库</li>
+</ul>
+</li>
+<li>暂存区</li>
+<li>仓库
+<ul>
+<li>本地仓库</li>
+<li>远端仓库</li>
+</ul>
+</li>
+</ul>
+<h3 id="基础语法">基础语法</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git init
+</code></pre></div><p>【修改】初始化当前目录变成可以用git进行接管的文件目录。在整个工作区中会产生一个.git文件，存放版本库。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git add .
+git add README.md
+</code></pre></div><p>【移动】将该目录的所有文件/README.md文件添加到<strong>缓存区</strong></p>
+<p>（注意，虽然移动到了暂缓区，但是还没有被提交到本地仓库，因此在add之后，查看log，还是没有记录这个版本的「此时的status显示红色」，包括查看reflog，也是没有这个版本的）然后将文件加入工作区之后「此时status显示绿色」</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git commit -m &#34;xxx 提交到本地仓库&#34;
+</code></pre></div><p>【移动】将<strong>缓存区</strong>的文件提交到<strong>本地仓库</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git status
+</code></pre></div><p>【查看】</p>
+<ul>
+<li>看<strong>缓存区</strong>是否还有尚未提交到<strong>本地仓库</strong>的文件</li>
+<li>看<strong>缓存区</strong>文件里的内容和<strong>本地仓库</strong>文件里的内容是否有不一致的</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git diff README.md
+</code></pre></div><p>【查看】看某个文件不一致在哪里，回来类似于cat语句将不一样的地方输出出来</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git log
+git log --pretty=oneline
+</code></pre></div><p>【查看】看所有的<strong>缓存区</strong>提交到<strong>本地仓库</strong>的记录（通过添加参数保证所有的内容都在一行内显示）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git reset HEAD *
+</code></pre></div><p>【操作】清空缓存区：移除暂存区的内容，然后利用<code>.gitignore</code>忽略掉不想commit的文件，然后再将对应文件添加进入缓存区</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git reflog
+</code></pre></div><p>【查看】看到所有<strong>本地仓库</strong>的历史记录的版本号，可以利用获取到的版本好来随意移动到本地仓库的对应版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git reset --hard HEAD^
+git reset --hard HEAD^^
+git reset --hard HEAD~100
+
+git reset --hard 6fcfc89
+</code></pre></div><p>【前后移动+修改】</p>
+<ul>
+<li>回退到<strong>本地仓库</strong>的上一个版本/上上个版本/第前100个版本【注意，此时本地的文件也跟着<u>变到了原来的内容</u>】</li>
+<li>前进到<strong>本地仓库</strong>的版本号为<code>6fcfc89</code>的版本</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># .gitignore git忽略文件写法
+
+# 用于忽略文件目录下的folder1和folder2所有文件
+folder1/
+folder2/
+venv/
+
+# 用于忽略文件目录下后缀为.sql/.class的所有文件
+*.sql
+*.class
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Apr 8, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/tool">Tool</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

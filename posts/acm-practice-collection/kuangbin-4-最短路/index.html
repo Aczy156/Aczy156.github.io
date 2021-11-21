@@ -75,7 +75,7 @@ MathJax.Hub.Config({
         <li><a href="#g-单源最短路-dijkstra-邻接矩阵">G 单源最短路 Dijkstra 邻接矩阵</a></li>
         <li><a href="#h-传递闭包-floyd-邻接矩阵">H 传递闭包 Floyd 邻接矩阵</a></li>
         <li><a href="#i">I</a></li>
-        <li><a href="#j">J</a></li>
+        <li><a href="#j-反向建图-堆优化-dijk">J 反向建图 堆优化 Dijk</a></li>
         <li><a href="#k">K</a></li>
         <li><a href="#l">L</a></li>
         <li><a href="#m">M</a></li>
@@ -229,8 +229,70 @@ MathJax.Hub.Config({
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
 </code></pre></div><h3 id="i">I</h3>
-<h3 id="j">J</h3>
-<h3 id="k">K</h3>
+<h3 id="j-反向建图-堆优化-dijk">J 反向建图 堆优化 Dijk</h3>
+<p>题意：计算点1到其他所有点的最短距离的和</p>
+<p>（会卡堆优化，不然会T；可以用pair来优化结构体，不过需要最小堆<code>priority_queue&lt;pair&lt;ll, ll&gt;, vector&lt;pair&lt;ll, ll&gt;&gt;, greater&lt;pair&lt;ll, ll&gt;&gt;&gt;;</code>）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ll;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxpoint <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e6</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">const</span> ll inf <span style="color:#f92672">=</span> <span style="color:#ae81ff">0x3f3f3f3f3f3f3f3f</span>;
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+    ll to, nt, val;
+}edges[maxpoint<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>];<span style="color:#66d9ef">int</span> head[maxpoint], tot;
+ll t, n, m, ff[maxpoint], tt[maxpoint], vv[maxpoint], ans[maxpoint], d[maxpoint], tem, vis[maxpoint], v, fin;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cstring&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define cl(a, b) memset(a, b, sizeof(a))</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addedge</span>(ll from, ll to, ll val) {
+    edges[<span style="color:#f92672">+</span><span style="color:#f92672">+</span>tot].to <span style="color:#f92672">=</span> to;
+    edges[tot].val <span style="color:#f92672">=</span> val;
+    edges[tot].nt <span style="color:#f92672">=</span> head[from];
+    head[from] <span style="color:#f92672">=</span> tot;
+}
+
+<span style="color:#75715e">// 堆优化
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>ll, ll<span style="color:#f92672">&gt;</span>, vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>ll, ll<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>, greater<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>ll, ll<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> s) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) d[i] <span style="color:#f92672">=</span> inf;
+    d[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    pq.push(make_pair(<span style="color:#ae81ff">0</span>, s));
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
+        ll nw <span style="color:#f92672">=</span> pq.top().second;pq.pop();
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[nw]) {
+            vis[nw] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> head[nw]; i; i<span style="color:#f92672">=</span>edges[i].nt) {
+                <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edges[i].to;
+                <span style="color:#66d9ef">if</span> (d[to] <span style="color:#f92672">&gt;</span> d[nw]<span style="color:#f92672">+</span>edges[i].val) {
+                    d[to] <span style="color:#f92672">=</span> d[nw]<span style="color:#f92672">+</span>edges[i].val;
+                    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to]) pq.push(make_pair(d[to], to));
+                }
+            }
+        }
+    }
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>t);
+    <span style="color:#66d9ef">while</span> (t<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        cl(d, <span style="color:#ae81ff">0</span>);cl(vis, <span style="color:#ae81ff">0</span>);cl(head, <span style="color:#ae81ff">0</span>);tot <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;fin <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%lld</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld%lld%lld</span><span style="color:#e6db74">&#34;</span>, ff<span style="color:#f92672">+</span>i, tt<span style="color:#f92672">+</span>i, vv<span style="color:#f92672">+</span>i);
+            addedge(ff[i], tt[i], vv[i]);
+        }
+        dijkstra(<span style="color:#ae81ff">1</span>);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) ans[i] <span style="color:#f92672">=</span> d[i];
+        cl(d, <span style="color:#ae81ff">0</span>);cl(vis, <span style="color:#ae81ff">0</span>);cl(head, <span style="color:#ae81ff">0</span>);tot <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) addedge(tt[i], ff[i], vv[i]);
+        dijkstra(<span style="color:#ae81ff">1</span>);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) fin <span style="color:#f92672">+</span><span style="color:#f92672">=</span> ans[i]<span style="color:#f92672">+</span>d[i];
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, fin);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="k">K</h3>
 <h3 id="l">L</h3>
 <h3 id="m">M</h3>
 <h3 id="n">N</h3>

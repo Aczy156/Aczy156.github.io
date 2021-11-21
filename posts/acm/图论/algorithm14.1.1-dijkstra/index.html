@@ -71,7 +71,10 @@ MathJax.Hub.Config({
         <li><a href="#dijkstra链式前向星结构体">Dijkstra+链式前向星【结构体】</a></li>
         <li><a href="#dijkstra链式前向星多源最短路">Dijkstra+链式前向星+多源最短路</a></li>
         <li><a href="#dijkstra链式前向星双向建图">Dijkstra+链式前向星+双向建图</a></li>
-        <li><a href="#堆优化dijkstra提高效率">堆优化Dijkstra提高效率</a></li>
+        <li><a href="#堆优化-结构体-dijkstra提高效率">堆优化-结构体-Dijkstra提高效率</a></li>
+        <li><a href="#堆优化-pair进行绑定-dijkstra提高效率">堆优化-pair进行绑定-Dijkstra提高效率</a></li>
+        <li><a href="#spfa-负权--无负圈">SPFA 负权 & 无负圈</a></li>
+        <li><a href="#bf-负权--检测负圈">BF 负权 & 检测负圈</a></li>
         <li><a href="#反向建图堆优化">反向建图、堆优化</a></li>
       </ul>
     </li>
@@ -345,7 +348,7 @@ vector<span style="color:#f92672">&lt;</span>edge<span style="color:#f92672">&gt
     printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre></div><h3 id="堆优化dijkstra提高效率">堆优化Dijkstra提高效率</h3>
+</code></pre></div><h3 id="堆优化-结构体-dijkstra提高效率">堆优化-结构体-Dijkstra提高效率</h3>
 <p>解决题目：数据增强的最短路，洛谷P4779</p>
 <p><a href="https://www.luogu.com.cn/problem/P4779">https://www.luogu.com.cn/problem/P4779</a></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
@@ -405,37 +408,30 @@ priority_queue<span style="color:#f92672">&lt;</span>nd<span style="color:#f9267
     dijkstra();
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre></div><p>利用make_pair来进行优化结构体，不要写一个新的结构体，也不需要重载运算符，直接利用pair，pair+priority_queue默认按照第一个元素进行排序</p>
+</code></pre></div><h3 id="堆优化-pair进行绑定-dijkstra提高效率">堆优化-pair进行绑定-Dijkstra提高效率</h3>
 <ul>
-<li>堆优化Dijkstra</li>
-<li>spfa</li>
+<li>利用make_pair来进行优化结构体，不要写一个新的结构体，也不需要重载运算符，直接利用pair，pair+priority_queue默认按照第一个元素进行排序</li>
+<li><strong>注意</strong>：在声明优先队列的时候要声明小顶堆<code>priority_queue&lt;pair&lt;ll, ll&gt;, vector&lt;pair&lt;ll, ll&gt;&gt;, greater&lt;pair&lt;ll, ll&gt;&gt;&gt; pq;</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">typedef</span> pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> pii;
-<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span>pii<span style="color:#f92672">&gt;</span> pq;
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> s, <span style="color:#66d9ef">int</span> e) {
-  memset(d, inf, <span style="color:#66d9ef">sizeof</span>(d));d[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-  pq.push(make_pair(<span style="color:#ae81ff">0</span>, s));
-  <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
-    <span style="color:#66d9ef">int</span> nwid <span style="color:#f92672">=</span> pq.top().second;pq.pop();
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[nwid]) {
-      vis[nwid] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-    	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> head[nwid]; i; i <span style="color:#f92672">=</span> edges[i].nt) {
-      	<span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edges[i].to;
-        <span style="color:#66d9ef">if</span> (d[to] <span style="color:#f92672">&gt;</span> d[nwid]<span style="color:#f92672">+</span>edges[i].val) {
-          d[to] <span style="color:#f92672">=</span> d[nwid]<span style="color:#f92672">+</span>edges[i].val;
-          <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to]) pq.push(make_pair(d[to], to));
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>ll, ll<span style="color:#f92672">&gt;</span>, vector<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>ll, ll<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>, greater<span style="color:#f92672">&lt;</span>pair<span style="color:#f92672">&lt;</span>ll, ll<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> pq;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> s) {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) d[i] <span style="color:#f92672">=</span> inf;
+    d[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    pq.push(make_pair(<span style="color:#ae81ff">0</span>, s));
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
+        ll nw <span style="color:#f92672">=</span> pq.top().second;pq.pop();
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[nw]) {
+            vis[nw] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> head[nw]; i; i<span style="color:#f92672">=</span>edges[i].nt) {
+                <span style="color:#66d9ef">int</span> to <span style="color:#f92672">=</span> edges[i].to;
+                <span style="color:#66d9ef">if</span> (d[to] <span style="color:#f92672">&gt;</span> d[nw]<span style="color:#f92672">+</span>edges[i].val) {
+                    d[to] <span style="color:#f92672">=</span> d[nw]<span style="color:#f92672">+</span>edges[i].val;
+                    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[to]) pq.push(make_pair(d[to], to));
+                }
+            }
         }
-      }
     }
-  }
-}
-
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">spfa</span>(<span style="color:#66d9ef">int</span> s, <span style="color:#66d9ef">int</span> e) {
-  memset(d, inf, <span style="color:#66d9ef">sizeof</span>(d));d[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-  pq.push(make_pair(<span style="color:#ae81ff">0</span>, s));
-  <span style="color:#66d9ef">while</span> ()
 }
 </code></pre></div><p>堆优化Dijkstra：</p>
 <p><a href="https://www.luogu.com.cn/problem/P1339">https://www.luogu.com.cn/problem/P1339</a></p>
@@ -459,7 +455,9 @@ priority_queue<span style="color:#f92672">&lt;</span>nd<span style="color:#f9267
     }
     <span style="color:#66d9ef">return</span> dis[ed];
 }
-</code></pre></div><h3 id="反向建图堆优化">反向建图、堆优化</h3>
+</code></pre></div><h3 id="spfa-负权--无负圈">SPFA 负权 &amp; 无负圈</h3>
+<h3 id="bf-负权--检测负圈">BF 负权 &amp; 检测负圈</h3>
+<h3 id="反向建图堆优化">反向建图、堆优化</h3>
 <blockquote>
 <p>给出若干个点，得到每个点到指定点的最短来回距离</p>
 <ul>

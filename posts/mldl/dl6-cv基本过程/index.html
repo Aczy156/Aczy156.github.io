@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Deep Learning 6 CV - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Deep Learning 6 CV | Aczy156" />
+	<meta name="twitter:title" content="Deep Learning 6 CV | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Deep Learning 6 CV | Aczy156" />
+	<meta name="application-name" content="Deep Learning 6 CV | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Deep Learning 6 CV" />
+<meta property="og:description" content="[TOC]
+CV-数据增强 手动人工数据增强   数据为非图形化的数据「本身不是图片」
+ 例如Digit Recognization，通过把所有像素点放进了表格里边    数据为图形化的数据「本身是图片」
+ 例如Facial Keypoints Detection，通过对已经是图片的进行变形。 变形包括：  垂直镜像对称 mirroring on vertical axis 旋转类 rotation  水平翻转 horizontal flip 旋转增强 rotation augmentation   色彩转换 color shifting  亮度增强 brightness augmentation RGB变化 RGB shifting (PCA采样，AlexNet PCA色彩增强)   剪裁类 shearing  转移/移动增强 shifit agumentation 随机剪裁 random cropping   变形类 warping  局部变形 local warping   随机噪声增强 random-noise augmentation      利用albumentations进行数据增强 要点：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/mldl/dl6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/" />
+<meta property="article:published_time" content="2020-01-28T16:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T16:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deep Learning 6 CV"/>
+<meta name="twitter:description" content="[TOC]
+CV-数据增强 手动人工数据增强   数据为非图形化的数据「本身不是图片」
+ 例如Digit Recognization，通过把所有像素点放进了表格里边    数据为图形化的数据「本身是图片」
+ 例如Facial Keypoints Detection，通过对已经是图片的进行变形。 变形包括：  垂直镜像对称 mirroring on vertical axis 旋转类 rotation  水平翻转 horizontal flip 旋转增强 rotation augmentation   色彩转换 color shifting  亮度增强 brightness augmentation RGB变化 RGB shifting (PCA采样，AlexNet PCA色彩增强)   剪裁类 shearing  转移/移动增强 shifit agumentation 随机剪裁 random cropping   变形类 warping  局部变形 local warping   随机噪声增强 random-noise augmentation      利用albumentations进行数据增强 要点："/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cv-数据增强">CV-数据增强</a>
+      <ul>
+        <li><a href="#手动人工数据增强">手动人工数据增强</a></li>
+        <li><a href="#利用albumentations进行数据增强">利用albumentations进行数据增强</a></li>
+      </ul>
+    </li>
+    <li><a href="#cv-调用已经有的模型">CV 调用已经有的模型</a></li>
+    <li><a href="#cv-整个过程">CV 整个过程</a></li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Deep Learning 6 CV</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="cv-数据增强">CV-数据增强</h2>
+<h3 id="手动人工数据增强">手动人工数据增强</h3>
+<ul>
+<li>
+<p>数据为非图形化的数据「本身不是图片」</p>
+<ul>
+<li>例如Digit Recognization，通过把所有像素点放进了表格里边</li>
+</ul>
+</li>
+<li>
+<p>数据为图形化的数据「本身是图片」</p>
+<ul>
+<li>例如Facial Keypoints Detection，通过对已经是图片的进行变形。</li>
+<li>变形包括：
+<ul>
+<li>垂直镜像对称 mirroring on vertical axis</li>
+<li>旋转类 rotation
+<ul>
+<li>水平翻转 horizontal flip</li>
+<li>旋转增强 rotation augmentation</li>
+</ul>
+</li>
+<li>色彩转换 color shifting
+<ul>
+<li>亮度增强 brightness augmentation</li>
+<li>RGB变化 RGB shifting (PCA采样，AlexNet PCA色彩增强)</li>
+</ul>
+</li>
+<li>剪裁类 shearing
+<ul>
+<li>转移/移动增强 shifit agumentation</li>
+<li>随机剪裁 random cropping</li>
+</ul>
+</li>
+<li>变形类 warping
+<ul>
+<li>局部变形 local warping</li>
+</ul>
+</li>
+<li>随机噪声增强 random-noise augmentation</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="利用albumentations进行数据增强">利用<code>albumentations</code>进行数据增强</h3>
+<p>要点：</p>
+<p>1、利用<code>compose</code>构造，把各种数据增强的函数/方式放进一个list中<code>[func1, func2, ……]</code>构造一个数据增强策略：</p>
+<p>2、有一个参数，在每个函数都有一个参数p，并且参数p经常设置为0.5。<code>p=0.5</code></p>
+<ul>
+<li>
+<p>利用函数进行封装</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> albumentations <span style="color:#f92672">import</span> (
+  HorizontalFlip, 
+  IAAPerspective, 
+  ShiftScaleRotate, 
+  CLAHE, 
+  RandomRotate90,
+  Transpose, 
+  ShiftScaleRotate, 
+  Blur, 
+  OpticalDistortion, 
+  GridDistortion, 
+  HueSaturationValue,
+  IAAAdditiveGaussianNoise, 
+  GaussNoise, 
+  MotionBlur, 
+  MedianBlur, 
+  IAAPiecewiseAffine,
+  IAASharpen, 
+  IAAEmboss, 
+  RandomBrightnessContrast, 
+  Flip, 
+  OneOf, 
+  Compose
+)
+  
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">augment_flips_color</span>(p<span style="color:#f92672">=</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>):
+    <span style="color:#66d9ef">return</span> Compose([
+        CLAHE(),
+        RandomRotate90(),
+        Transpose(),
+        ShiftScaleRotate(shift_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">0.0625</span>, scale_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">0.50</span>, rotate_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>, p<span style="color:#f92672">=</span><span style="color:#f92672">.</span><span style="color:#ae81ff">75</span>),
+        Blur(blur_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>),
+        OpticalDistortion(),
+        GridDistortion(),
+        HueSaturationValue()
+    ], p<span style="color:#f92672">=</span>p)
+</code></pre></div></li>
+</ul>
+<p>直接创建对象</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> albumentation <span style="color:#f92672">as</span> A
+
+<span style="color:#75715e"># 第一个参数就是一个存放所有数据增强策略的一个数组。</span>
+transform <span style="color:#f92672">=</span> A<span style="color:#f92672">.</span>compose([
+  A<span style="color:#f92672">.</span>ShiftScaleRotate(rotate_limit<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>, p<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>),
+    A<span style="color:#f92672">.</span>RandomBrightnessContrast(p<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>),
+    A<span style="color:#f92672">.</span>GaussianBlur(p<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>),
+    A<span style="color:#f92672">.</span>GaussNoise(var_limit<span style="color:#f92672">=</span>(<span style="color:#ae81ff">1e-5</span>, <span style="color:#ae81ff">1e-3</span>), p<span style="color:#f92672">=</span><span style="color:#ae81ff">0.5</span>),
+], keypoint_params<span style="color:#f92672">=</span>A<span style="color:#f92672">.</span>KeypointParams(format<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">xy</span><span style="color:#e6db74">&#39;</span>, remove_invisible<span style="color:#f92672">=</span>False))
+
+<span style="color:#75715e"># then data augmentation</span>
+train_loader <span style="color:#f92672">=</span> DataLoader(X_train, y_train, batch_size<span style="color:#f92672">=</span><span style="color:#ae81ff">128</span>, augmentations<span style="color:#f92672">=</span>transform)
+
+<span style="color:#75715e"># 把上面获得的数据增强传进训练的参数中</span>
+history <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>fit(train_loader,  steps_per_epoch<span style="color:#f92672">=</span>len(train_loader), validation_data<span style="color:#f92672">=</span>(X_val, y_val), epochs<span style="color:#f92672">=</span><span style="color:#ae81ff">500</span>, verbose<span style="color:#f92672">=</span>True, callbacks<span style="color:#f92672">=</span>[earlystopping, modelcheckpoint])
+</code></pre></div><h2 id="cv-调用已经有的模型">CV 调用已经有的模型</h2>
+<p>例如，下面调用深度残差网络</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 直接作为sequential序列中的一个元素add进去即可</span>
+<span style="color:#f92672">from</span> keras.applications <span style="color:#f92672">import</span> ResNet50
+
+model<span style="color:#f92672">.</span>add(ResNet50(param1<span style="color:#f92672">=</span>xxx, param2<span style="color:#f92672">=</span>xxx))
+</code></pre></div><h2 id="cv-整个过程">CV 整个过程</h2>
+<ul>
+<li>
+<p>build model</p>
+</li>
+<li>
+<p>compile</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>compile(optimizer<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">adam</span><span style="color:#e6db74">&#39;</span>, loss<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">val_loss</span><span style="color:#e6db74">&#39;</span>, metrics<span style="color:#f92672">=</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">accuracy</span><span style="color:#e6db74">&#39;</span>, m<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">mae</span><span style="color:#e6db74">&#39;</span>])
+</code></pre></div><ul>
+<li>
+<p>optimizer</p>
+<ul>
+<li>RMSprop</li>
+<li>Adam</li>
+</ul>
+</li>
+<li>
+<p>loss</p>
+<ul>
+<li><code>'val_loss'</code></li>
+<li><code>'crossentropy'</code>交叉熵</li>
+</ul>
+</li>
+<li>
+<p>metrics</p>
+<ul>
+<li><code>'accuracy'</code></li>
+<li><code>'mae'</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>fit</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">model<span style="color:#f92672">.</span>fit(X_train, y_train, validation<span style="color:#f92672">=</span>(X_val, y_val), callbacks<span style="color:#f92672">=</span>[earlystopping, modelcheckpoint])
+</code></pre></div><ul>
+<li>validation_data</li>
+<li>callbacks
+<ul>
+<li>EarlyStopping</li>
+<li>ModelCheckpoint可以利用<code>ModelCheckpoint</code>来储存最佳的停留点，也就是最佳数据。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

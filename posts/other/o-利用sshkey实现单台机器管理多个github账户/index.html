@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>利用sshKey实现单台机器管理多个GitHub账户 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Other-利用sshKey实现单台机器管理多个GitHub账户 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
@@ -13,14 +13,14 @@
 	<meta name="description" content="" />
 	<meta name="description" content="" />
 
-	<meta property="og:title" content="利用sshKey实现单台机器管理多个GitHub账户 | Aczy156" />
-	<meta name="twitter:title" content="利用sshKey实现单台机器管理多个GitHub账户 | Aczy156" />
+	<meta property="og:title" content="Other-利用sshKey实现单台机器管理多个GitHub账户 | Aczy156" />
+	<meta name="twitter:title" content="Other-利用sshKey实现单台机器管理多个GitHub账户 | Aczy156" />
 
 	<meta property="og:image" content=""/>
-	<meta itemprop="name" content="利用sshKey实现单台机器管理多个GitHub账户 | Aczy156" />
-	<meta name="application-name" content="利用sshKey实现单台机器管理多个GitHub账户 | Aczy156" />
+	<meta itemprop="name" content="Other-利用sshKey实现单台机器管理多个GitHub账户 | Aczy156" />
+	<meta name="application-name" content="Other-利用sshKey实现单台机器管理多个GitHub账户 | Aczy156" />
 	<meta property="og:site_name" content="" />
-	<meta property="og:title" content="利用sshKey实现单台机器管理多个GitHub账户" />
+	<meta property="og:title" content="Other-利用sshKey实现单台机器管理多个GitHub账户" />
 <meta property="og:description" content="[TOC]
 踩过的坑 用户在搭建第二个博客的时候[有特殊需求的情况下]，经过搜索发现一个GitHub账户只能有一个GitHub page，然而当我在利用第二个账户push的时候，总显示 Git push ERROR: Repository not found fatal:这种无法正常连接的报错，
  一开始以为分枝问题，各种git remote -v的调试，各种重置，添加的，然后还是不行 后来经过Google 发现一个email只能绑定一个sshkey，然后传输利用ssh进行匹配 然后在利用ssh-add进行添加的时候配置添加好第二个key(记得不可以名字重复，不然会覆盖)之后在配置config的时候要注意不能改host。(在下边详细说) 在最后pushd时候在原来随便的一个测试项目中发生了一件尴尬的画面，测试的时候两个账号push的时候串了，后来发现在两个push的时候发布者不是取决于项目的clone的那个账号，而是当时git config中设置的email对应的账号。 然后在选取好账号后就可以进行push了。  配置两个ssh key详解： 先列一下其他的人写的，真的很详细了已经https://gist.github.com/jexchan/2351996 主要是在最后的配置config的时候， 我改了这些地方，最后两个email都可以顺利通过ssh进行连接，(感觉第一行和中间那个像注释的东西貌似不用改，，，但也没试过，，，)，产生了两个ssh key之后把内容拷贝到GitHub就不说了，教程很多也没什么坑。" />
@@ -29,7 +29,7 @@
 <meta property="article:published_time" content="2020-02-20T18:01:06+08:00" />
 <meta property="article:modified_time" content="2020-02-20T18:01:06+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="利用sshKey实现单台机器管理多个GitHub账户"/>
+<meta name="twitter:title" content="Other-利用sshKey实现单台机器管理多个GitHub账户"/>
 <meta name="twitter:description" content="[TOC]
 踩过的坑 用户在搭建第二个博客的时候[有特殊需求的情况下]，经过搜索发现一个GitHub账户只能有一个GitHub page，然而当我在利用第二个账户push的时候，总显示 Git push ERROR: Repository not found fatal:这种无法正常连接的报错，
  一开始以为分枝问题，各种git remote -v的调试，各种重置，添加的，然后还是不行 后来经过Google 发现一个email只能绑定一个sshkey，然后传输利用ssh进行匹配 然后在利用ssh-add进行添加的时候配置添加好第二个key(记得不可以名字重复，不然会覆盖)之后在配置config的时候要注意不能改host。(在下边详细说) 在最后pushd时候在原来随便的一个测试项目中发生了一件尴尬的画面，测试的时候两个账号push的时候串了，后来发现在两个push的时候发布者不是取决于项目的clone的那个账号，而是当时git config中设置的email对应的账号。 然后在选取好账号后就可以进行push了。  配置两个ssh key详解： 先列一下其他的人写的，真的很详细了已经https://gist.github.com/jexchan/2351996 主要是在最后的配置config的时候， 我改了这些地方，最后两个email都可以顺利通过ssh进行连接，(感觉第一行和中间那个像注释的东西貌似不用改，，，但也没试过，，，)，产生了两个ssh key之后把内容拷贝到GitHub就不说了，教程很多也没什么坑。"/>
@@ -69,7 +69,7 @@ MathJax.Hub.Config({
     </aside>
 	<article>
 		<div class="title">
-			<h1 class="title">利用sshKey实现单台机器管理多个GitHub账户</h1>
+			<h1 class="title">Other-利用sshKey实现单台机器管理多个GitHub账户</h1>
 		</div>
 		
 

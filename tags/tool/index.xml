@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>T-Git语法</title>
-      <link>http://www.chenranfei.online/posts/tool/t-git%E8%AF%AD%E6%B3%95/</link>
+      <title>Tool-Git语法</title>
+      <link>http://www.chenranfei.online/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/tool/t-git%E8%AF%AD%E6%B3%95/</guid>
+      <guid>http://www.chenranfei.online/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</guid>
       <description>[TOC]
 Git 基础： 定义：版本控制管理工具
 几个位置：
@@ -28,16 +28,17 @@ git commit -m &amp;#34;xxx 提交到本地仓库&amp;#34; 【移动】将缓存�
 git status 【查看】
  看缓存区是否还有尚未提交到本地仓库的文件 看缓存区文件里的内容和本地仓库文件里的内容是否有不一致的  git diff README.md 【查看】看某个文件不一致在哪里，回来类似于cat语句将不一样的地方输出出来
 git log git log --pretty=oneline 【查看】看所有的缓存区提交到本地仓库的记录（通过添加参数保证所有的内容都在一行内显示）
+git reset HEAD * 【操作】清空缓存区：移除暂存区的内容，然后利用.gitignore忽略掉不想commit的文件，然后再将对应文件添加进入缓存区
 git reflog 【查看】看到所有本地仓库的历史记录的版本号，可以利用获取到的版本好来随意移动到本地仓库的对应版本
 git reset --hard HEAD^ git reset --hard HEAD^^ git reset --hard HEAD~100 git reset --hard 6fcfc89 【前后移动+修改】</description>
     </item>
     
     <item>
       <title>Tool-LaTex语法</title>
-      <link>http://www.chenranfei.online/posts/tool/t-latex%E8%AF%AD%E6%B3%95/</link>
+      <link>http://www.chenranfei.online/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/tool/t-latex%E8%AF%AD%E6%B3%95/</guid>
+      <guid>http://www.chenranfei.online/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</guid>
       <description>[TOC]
 LaTex语法 插入方式  inline math 行内公式 block math 块内公式  inline math $test_{latex}$
 $test_{latex}$ block math $$ test_{latex} $$

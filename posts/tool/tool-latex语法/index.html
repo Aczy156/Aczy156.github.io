@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Tool-LaTex语法 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Tool-LaTex语法 | Aczy156" />
+	<meta name="twitter:title" content="Tool-LaTex语法 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Tool-LaTex语法 | Aczy156" />
+	<meta name="application-name" content="Tool-LaTex语法 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Tool-LaTex语法" />
+<meta property="og:description" content="[TOC]
+LaTex语法 插入方式  inline math 行内公式 block math 块内公式  inline math $test_{latex}$
+$test_{latex}$ block math $$ test_{latex} $$
+$$ test_{latex} $$ 基本字符 下面基本常用字符都是inline math 写的
+   字母 实现 字母 实现     $\alpha$​ \alpha $\Alpha$ \Alpha   $\beta$ \beta $\Beta$ \Beta   $\gamma$ \gamma $\Gamma$ \Gamma   $\delta$ \delta $\Delta$ \Delta   $\epsilon$ \epsilon $\Epsilon$ \Epsilon   $\varepsilon$ \varepsilon     $\zeta$ \zeta $\Zeta$ \Zeta   $\eta$ \eta $\Eta$ \Eta   $\theta$ \theta $\Theta$ \Theta   $\vartheta$ \vartheta     $\iota$ \iota $\Iota$ \Iota   $\kappa$ \kappa $\Kappa$ \Kappa   $\lambda$ \lambda $\Lambda$ \Lambda   $\mu$ \mu $\Mu$ \Mu   $\nu$ \nu $\Nu$ \Nu   $\xi$ \xi $\Xi$ \Xi   $\omicron$ \omicron $\Omicron$ \Omicron   $\pi$ \pi $\Pi$ \Pi   $\varpi$ \varpi     $\rho$ \rho $\Rho$ \Rho   $\varrho$ \varrho     $\sigma$ \sigma $\Sigma$ \Sigma   $\varsigma$ \varsigma     $\tau$ \tau $\Tau$ \Tau   $\upsilon$ \upsilon $\Upsilon$ \Upsilon   $\phi$ \phi $\Phi$ \Phi   $\varphi$ \varphi     $\chi$ \chi $\Chi$ \Chi   $\psi$ \psi $\Psi$ \Psi   $\omega$ \omega $\Omega$ \Omega    运算符号 普通运算符号    符号 实现 名称     $\pm$ \pm 加减   $\mp$ \mp 减加   $\times$ \times 乘   $\div$ \div 除   $\cdot$ \cdot 点   $\ast$ \ast 星号   $\star$ \star 五角星   $\dagger$ \dagger 剑号   $\ddagger$ \ddagger 双剑号   $\amalg$ \amalg amalg   $\cap$ \cap 圆帽   $\cup$ \cup 圆杯   $\uplus$ \uplus 圆杯加号   $\sqcap$ \sqcap 方帽   $\sqcup$ \sqcup 方杯   $\vee$ \vee 正V   $\wedge$ \wedge 倒V   $\setminus$ \setminus 集差   $\wr$ \wr 环积   $\circ$ \circ 圆圈   $\bullet$ \bullet 实心圆   $\oslash$ \oslash 圆圈斜线   $\odot$ \odot 圆圈点   $\bigcirc$ \bigcirc 大圆圈   $\bigtriangleup$ \bigtriangleup 大正三角形   $\bigtriangledown$ \bigtriangledown 大倒三角形   $\triangleleft$ \triangleleft 左三角形   $\triangleright$ \triangleright 右三角形   $\oplus$ \oplus 圆圈加号   $\ominus$ \ominus 圆圈减号   $\otimes$ \otimes 圆圈乘号   $\bot$ \bot 倒T   $\top$ \top 正T   $\sum$ \sum 求和   $\prod$ \prod 乘积   $\int$ \int 积分   $\oint$ \oint 围道积分   $\biguplus$ \biguplus 大圆杯加号   $\bigoplus$ \bigoplus 大圆圈加号   $\bigvee$ \bigvee 大V   $\bigcap$ \bigcap 大圆帽   $\bigotimes$ \bigotimes 大圆圈乘号   $\bigwedge$ \bigwedge 大倒V   $\bigcup$ \bigcup 大圆杯   $\bigodot$ \bigodot 大圆圈点   $\bigsqcup$ \bigsqcup 大方杯    分数：\frac{} 正常大小的：$P(B_j|A)=\frac{P(B_jA)}{P(A)}$​​​" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.chenranfei.online/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/" />
+<meta property="article:published_time" content="2020-04-05T17:16:12+08:00" />
+<meta property="article:modified_time" content="2020-04-05T17:16:12+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Tool-LaTex语法"/>
+<meta name="twitter:description" content="[TOC]
+LaTex语法 插入方式  inline math 行内公式 block math 块内公式  inline math $test_{latex}$
+$test_{latex}$ block math $$ test_{latex} $$
+$$ test_{latex} $$ 基本字符 下面基本常用字符都是inline math 写的
+   字母 实现 字母 实现     $\alpha$​ \alpha $\Alpha$ \Alpha   $\beta$ \beta $\Beta$ \Beta   $\gamma$ \gamma $\Gamma$ \Gamma   $\delta$ \delta $\Delta$ \Delta   $\epsilon$ \epsilon $\Epsilon$ \Epsilon   $\varepsilon$ \varepsilon     $\zeta$ \zeta $\Zeta$ \Zeta   $\eta$ \eta $\Eta$ \Eta   $\theta$ \theta $\Theta$ \Theta   $\vartheta$ \vartheta     $\iota$ \iota $\Iota$ \Iota   $\kappa$ \kappa $\Kappa$ \Kappa   $\lambda$ \lambda $\Lambda$ \Lambda   $\mu$ \mu $\Mu$ \Mu   $\nu$ \nu $\Nu$ \Nu   $\xi$ \xi $\Xi$ \Xi   $\omicron$ \omicron $\Omicron$ \Omicron   $\pi$ \pi $\Pi$ \Pi   $\varpi$ \varpi     $\rho$ \rho $\Rho$ \Rho   $\varrho$ \varrho     $\sigma$ \sigma $\Sigma$ \Sigma   $\varsigma$ \varsigma     $\tau$ \tau $\Tau$ \Tau   $\upsilon$ \upsilon $\Upsilon$ \Upsilon   $\phi$ \phi $\Phi$ \Phi   $\varphi$ \varphi     $\chi$ \chi $\Chi$ \Chi   $\psi$ \psi $\Psi$ \Psi   $\omega$ \omega $\Omega$ \Omega    运算符号 普通运算符号    符号 实现 名称     $\pm$ \pm 加减   $\mp$ \mp 减加   $\times$ \times 乘   $\div$ \div 除   $\cdot$ \cdot 点   $\ast$ \ast 星号   $\star$ \star 五角星   $\dagger$ \dagger 剑号   $\ddagger$ \ddagger 双剑号   $\amalg$ \amalg amalg   $\cap$ \cap 圆帽   $\cup$ \cup 圆杯   $\uplus$ \uplus 圆杯加号   $\sqcap$ \sqcap 方帽   $\sqcup$ \sqcup 方杯   $\vee$ \vee 正V   $\wedge$ \wedge 倒V   $\setminus$ \setminus 集差   $\wr$ \wr 环积   $\circ$ \circ 圆圈   $\bullet$ \bullet 实心圆   $\oslash$ \oslash 圆圈斜线   $\odot$ \odot 圆圈点   $\bigcirc$ \bigcirc 大圆圈   $\bigtriangleup$ \bigtriangleup 大正三角形   $\bigtriangledown$ \bigtriangledown 大倒三角形   $\triangleleft$ \triangleleft 左三角形   $\triangleright$ \triangleright 右三角形   $\oplus$ \oplus 圆圈加号   $\ominus$ \ominus 圆圈减号   $\otimes$ \otimes 圆圈乘号   $\bot$ \bot 倒T   $\top$ \top 正T   $\sum$ \sum 求和   $\prod$ \prod 乘积   $\int$ \int 积分   $\oint$ \oint 围道积分   $\biguplus$ \biguplus 大圆杯加号   $\bigoplus$ \bigoplus 大圆圈加号   $\bigvee$ \bigvee 大V   $\bigcap$ \bigcap 大圆帽   $\bigotimes$ \bigotimes 大圆圈乘号   $\bigwedge$ \bigwedge 大倒V   $\bigcup$ \bigcup 大圆杯   $\bigodot$ \bigodot 大圆圈点   $\bigsqcup$ \bigsqcup 大方杯    分数：\frac{} 正常大小的：$P(B_j|A)=\frac{P(B_jA)}{P(A)}$​​​"/>
+<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+	
+	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://www.chenranfei.online/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#latex语法">LaTex语法</a>
+      <ul>
+        <li><a href="#插入方式">插入方式</a></li>
+        <li><a href="#基本字符">基本字符</a></li>
+        <li><a href="#运算符号">运算符号</a></li>
+        <li><a href="#矩阵表示">矩阵表示</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Tool-LaTex语法</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="latex语法">LaTex语法</h2>
+<h3 id="插入方式">插入方式</h3>
+<ul>
+<li>inline math 行内公式</li>
+<li>block math 块内公式</li>
+</ul>
+<p>inline math  $test_{latex}$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$test_{latex}$
+</code></pre></div><p>block math
+$$
+test_{latex}
+$$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$$
+test_{latex}
+$$
+</code></pre></div><h3 id="基本字符">基本字符</h3>
+<p>下面基本常用字符都是inline math 写的</p>
+<table>
+<thead>
+<tr>
+<th align="center">字母</th>
+<th align="center">实现</th>
+<th align="center">字母</th>
+<th align="center">实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">$\alpha$​</td>
+<td align="center">\alpha</td>
+<td align="center">$\Alpha$</td>
+<td align="center">\Alpha</td>
+</tr>
+<tr>
+<td align="center">$\beta$</td>
+<td align="center">\beta</td>
+<td align="center">$\Beta$</td>
+<td align="center">\Beta</td>
+</tr>
+<tr>
+<td align="center">$\gamma$</td>
+<td align="center">\gamma</td>
+<td align="center">$\Gamma$</td>
+<td align="center">\Gamma</td>
+</tr>
+<tr>
+<td align="center">$\delta$</td>
+<td align="center">\delta</td>
+<td align="center">$\Delta$</td>
+<td align="center">\Delta</td>
+</tr>
+<tr>
+<td align="center">$\epsilon$</td>
+<td align="center">\epsilon</td>
+<td align="center">$\Epsilon$</td>
+<td align="center">\Epsilon</td>
+</tr>
+<tr>
+<td align="center">$\varepsilon$</td>
+<td align="center">\varepsilon</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">$\zeta$</td>
+<td align="center">\zeta</td>
+<td align="center">$\Zeta$</td>
+<td align="center">\Zeta</td>
+</tr>
+<tr>
+<td align="center">$\eta$</td>
+<td align="center">\eta</td>
+<td align="center">$\Eta$</td>
+<td align="center">\Eta</td>
+</tr>
+<tr>
+<td align="center">$\theta$</td>
+<td align="center">\theta</td>
+<td align="center">$\Theta$</td>
+<td align="center">\Theta</td>
+</tr>
+<tr>
+<td align="center">$\vartheta$</td>
+<td align="center">\vartheta</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">$\iota$</td>
+<td align="center">\iota</td>
+<td align="center">$\Iota$</td>
+<td align="center">\Iota</td>
+</tr>
+<tr>
+<td align="center">$\kappa$</td>
+<td align="center">\kappa</td>
+<td align="center">$\Kappa$</td>
+<td align="center">\Kappa</td>
+</tr>
+<tr>
+<td align="center">$\lambda$</td>
+<td align="center">\lambda</td>
+<td align="center">$\Lambda$</td>
+<td align="center">\Lambda</td>
+</tr>
+<tr>
+<td align="center">$\mu$</td>
+<td align="center">\mu</td>
+<td align="center">$\Mu$</td>
+<td align="center">\Mu</td>
+</tr>
+<tr>
+<td align="center">$\nu$</td>
+<td align="center">\nu</td>
+<td align="center">$\Nu$</td>
+<td align="center">\Nu</td>
+</tr>
+<tr>
+<td align="center">$\xi$</td>
+<td align="center">\xi</td>
+<td align="center">$\Xi$</td>
+<td align="center">\Xi</td>
+</tr>
+<tr>
+<td align="center">$\omicron$</td>
+<td align="center">\omicron</td>
+<td align="center">$\Omicron$</td>
+<td align="center">\Omicron</td>
+</tr>
+<tr>
+<td align="center">$\pi$</td>
+<td align="center">\pi</td>
+<td align="center">$\Pi$</td>
+<td align="center">\Pi</td>
+</tr>
+<tr>
+<td align="center">$\varpi$</td>
+<td align="center">\varpi</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">$\rho$</td>
+<td align="center">\rho</td>
+<td align="center">$\Rho$</td>
+<td align="center">\Rho</td>
+</tr>
+<tr>
+<td align="center">$\varrho$</td>
+<td align="center">\varrho</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">$\sigma$</td>
+<td align="center">\sigma</td>
+<td align="center">$\Sigma$</td>
+<td align="center">\Sigma</td>
+</tr>
+<tr>
+<td align="center">$\varsigma$</td>
+<td align="center">\varsigma</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">$\tau$</td>
+<td align="center">\tau</td>
+<td align="center">$\Tau$</td>
+<td align="center">\Tau</td>
+</tr>
+<tr>
+<td align="center">$\upsilon$</td>
+<td align="center">\upsilon</td>
+<td align="center">$\Upsilon$</td>
+<td align="center">\Upsilon</td>
+</tr>
+<tr>
+<td align="center">$\phi$</td>
+<td align="center">\phi</td>
+<td align="center">$\Phi$</td>
+<td align="center">\Phi</td>
+</tr>
+<tr>
+<td align="center">$\varphi$</td>
+<td align="center">\varphi</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">$\chi$</td>
+<td align="center">\chi</td>
+<td align="center">$\Chi$</td>
+<td align="center">\Chi</td>
+</tr>
+<tr>
+<td align="center">$\psi$</td>
+<td align="center">\psi</td>
+<td align="center">$\Psi$</td>
+<td align="center">\Psi</td>
+</tr>
+<tr>
+<td align="center">$\omega$</td>
+<td align="center">\omega</td>
+<td align="center">$\Omega$</td>
+<td align="center">\Omega</td>
+</tr>
+</tbody>
+</table>
+<h3 id="运算符号">运算符号</h3>
+<h4 id="普通运算符号">普通运算符号</h4>
+<table>
+<thead>
+<tr>
+<th align="center">符号</th>
+<th align="center">实现</th>
+<th align="center">名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">$\pm$</td>
+<td align="center">\pm</td>
+<td align="center">加减</td>
+</tr>
+<tr>
+<td align="center">$\mp$</td>
+<td align="center">\mp</td>
+<td align="center">减加</td>
+</tr>
+<tr>
+<td align="center">$\times$</td>
+<td align="center">\times</td>
+<td align="center">乘</td>
+</tr>
+<tr>
+<td align="center">$\div$</td>
+<td align="center">\div</td>
+<td align="center">除</td>
+</tr>
+<tr>
+<td align="center">$\cdot$</td>
+<td align="center">\cdot</td>
+<td align="center">点</td>
+</tr>
+<tr>
+<td align="center">$\ast$</td>
+<td align="center">\ast</td>
+<td align="center">星号</td>
+</tr>
+<tr>
+<td align="center">$\star$</td>
+<td align="center">\star</td>
+<td align="center">五角星</td>
+</tr>
+<tr>
+<td align="center">$\dagger$</td>
+<td align="center">\dagger</td>
+<td align="center">剑号</td>
+</tr>
+<tr>
+<td align="center">$\ddagger$</td>
+<td align="center">\ddagger</td>
+<td align="center">双剑号</td>
+</tr>
+<tr>
+<td align="center">$\amalg$</td>
+<td align="center">\amalg</td>
+<td align="center">amalg</td>
+</tr>
+<tr>
+<td align="center">$\cap$</td>
+<td align="center">\cap</td>
+<td align="center">圆帽</td>
+</tr>
+<tr>
+<td align="center">$\cup$</td>
+<td align="center">\cup</td>
+<td align="center">圆杯</td>
+</tr>
+<tr>
+<td align="center">$\uplus$</td>
+<td align="center">\uplus</td>
+<td align="center">圆杯加号</td>
+</tr>
+<tr>
+<td align="center">$\sqcap$</td>
+<td align="center">\sqcap</td>
+<td align="center">方帽</td>
+</tr>
+<tr>
+<td align="center">$\sqcup$</td>
+<td align="center">\sqcup</td>
+<td align="center">方杯</td>
+</tr>
+<tr>
+<td align="center">$\vee$</td>
+<td align="center">\vee</td>
+<td align="center">正V</td>
+</tr>
+<tr>
+<td align="center">$\wedge$</td>
+<td align="center">\wedge</td>
+<td align="center">倒V</td>
+</tr>
+<tr>
+<td align="center">$\setminus$</td>
+<td align="center">\setminus</td>
+<td align="center">集差</td>
+</tr>
+<tr>
+<td align="center">$\wr$</td>
+<td align="center">\wr</td>
+<td align="center">环积</td>
+</tr>
+<tr>
+<td align="center">$\circ$</td>
+<td align="center">\circ</td>
+<td align="center">圆圈</td>
+</tr>
+<tr>
+<td align="center">$\bullet$</td>
+<td align="center">\bullet</td>
+<td align="center">实心圆</td>
+</tr>
+<tr>
+<td align="center">$\oslash$</td>
+<td align="center">\oslash</td>
+<td align="center">圆圈斜线</td>
+</tr>
+<tr>
+<td align="center">$\odot$</td>
+<td align="center">\odot</td>
+<td align="center">圆圈点</td>
+</tr>
+<tr>
+<td align="center">$\bigcirc$</td>
+<td align="center">\bigcirc</td>
+<td align="center">大圆圈</td>
+</tr>
+<tr>
+<td align="center">$\bigtriangleup$</td>
+<td align="center">\bigtriangleup</td>
+<td align="center">大正三角形</td>
+</tr>
+<tr>
+<td align="center">$\bigtriangledown$</td>
+<td align="center">\bigtriangledown</td>
+<td align="center">大倒三角形</td>
+</tr>
+<tr>
+<td align="center">$\triangleleft$</td>
+<td align="center">\triangleleft</td>
+<td align="center">左三角形</td>
+</tr>
+<tr>
+<td align="center">$\triangleright$</td>
+<td align="center">\triangleright</td>
+<td align="center">右三角形</td>
+</tr>
+<tr>
+<td align="center">$\oplus$</td>
+<td align="center">\oplus</td>
+<td align="center">圆圈加号</td>
+</tr>
+<tr>
+<td align="center">$\ominus$</td>
+<td align="center">\ominus</td>
+<td align="center">圆圈减号</td>
+</tr>
+<tr>
+<td align="center">$\otimes$</td>
+<td align="center">\otimes</td>
+<td align="center">圆圈乘号</td>
+</tr>
+<tr>
+<td align="center">$\bot$</td>
+<td align="center">\bot</td>
+<td align="center">倒T</td>
+</tr>
+<tr>
+<td align="center">$\top$</td>
+<td align="center">\top</td>
+<td align="center">正T</td>
+</tr>
+<tr>
+<td align="center">$\sum$</td>
+<td align="center">\sum</td>
+<td align="center">求和</td>
+</tr>
+<tr>
+<td align="center">$\prod$</td>
+<td align="center">\prod</td>
+<td align="center">乘积</td>
+</tr>
+<tr>
+<td align="center">$\int$</td>
+<td align="center">\int</td>
+<td align="center">积分</td>
+</tr>
+<tr>
+<td align="center">$\oint$</td>
+<td align="center">\oint</td>
+<td align="center">围道积分</td>
+</tr>
+<tr>
+<td align="center">$\biguplus$</td>
+<td align="center">\biguplus</td>
+<td align="center">大圆杯加号</td>
+</tr>
+<tr>
+<td align="center">$\bigoplus$</td>
+<td align="center">\bigoplus</td>
+<td align="center">大圆圈加号</td>
+</tr>
+<tr>
+<td align="center">$\bigvee$</td>
+<td align="center">\bigvee</td>
+<td align="center">大V</td>
+</tr>
+<tr>
+<td align="center">$\bigcap$</td>
+<td align="center">\bigcap</td>
+<td align="center">大圆帽</td>
+</tr>
+<tr>
+<td align="center">$\bigotimes$</td>
+<td align="center">\bigotimes</td>
+<td align="center">大圆圈乘号</td>
+</tr>
+<tr>
+<td align="center">$\bigwedge$</td>
+<td align="center">\bigwedge</td>
+<td align="center">大倒V</td>
+</tr>
+<tr>
+<td align="center">$\bigcup$</td>
+<td align="center">\bigcup</td>
+<td align="center">大圆杯</td>
+</tr>
+<tr>
+<td align="center">$\bigodot$</td>
+<td align="center">\bigodot</td>
+<td align="center">大圆圈点</td>
+</tr>
+<tr>
+<td align="center">$\bigsqcup$</td>
+<td align="center">\bigsqcup</td>
+<td align="center">大方杯</td>
+</tr>
+</tbody>
+</table>
+<h4 id="分数frac">分数：\frac{}</h4>
+<p>正常大小的：$P(B_j|A)=\frac{P(B_jA)}{P(A)}$​​​</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$P(B_j|A)=\frac{P(B_jA)}{P(A)}$
+</code></pre></div><p>不放缩大小的：$P(B_j|A)=\displaystyle\frac{P(B_jA)}{P(A)}$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$P(B_j|A)=\displaystyle\frac{P(B_jA)}{P(A)}$
+</code></pre></div><h4 id="定积分int_">定积分：\int_{}^</h4>
+<p>正常大小的：$\int_{a+1}^{b+1}f(x)dx$​​</p>
+<p>当然不放缩大小的直接通过添加<code>\displaystyle</code>来切换就好了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\int_{a+1}^{b+1}f(x)dx$
+</code></pre></div><h4 id="求和sum_">求和：\sum_{}^</h4>
+<p>是否放缩大小和上面一样：$\sum_{j=1}^{n}P(B_j)$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\sum_{j=1}^{n}P(B_j)$
+</code></pre></div><p>写成block math
+$$
+\sum_{j=1}^{n}P(B_j)
+$$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$$
+\sum_{j=1}^{n}P(B_j)
+$$			
+</code></pre></div><h4 id="平均数反集合非-字符或字符串上加横线bar-或者-overline">平均数/反/集合非-字符或字符串上加横线：\bar{} 或者 \overline</h4>
+<p>只在单个字符上加线：$\bar{A}B\bar{C}$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\bar{A}B\bar{C}$
+</code></pre></div><p>在多个字符/字符串上加线：$\overline{\bar{A}B\bar{C}}$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\overline{\bar{A}B\bar{C}}$
+</code></pre></div><h4 id="极限limlimits">极限:\lim\limits</h4>
+<p>$F_X(x)=\lim\limits_{y\to\infty}F(x,y)=F(x, +\infty)$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$F_X(x)=\lim\limits_{y\to\infty}F(x,y)=F(x, +\infty)$
+</code></pre></div><h4 id="多区间范围式">多区间范围式</h4>
+<p>$
+\begin{equation}f(x)=
+\left{
+\begin{aligned}
+\displaystyle\frac{1}{b-a} &amp;  &amp; a≤x≤b \
+0 &amp;  &amp; x&lt;a, x&gt;b
+\end{aligned}
+\right.
+\end{equation}
+$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$
+\begin{equation}f(x)=
+\left\{
+\begin{aligned}
+\displaystyle\frac{1}{b-a} &amp;  &amp; a≤x≤b \\ 
+0 &amp;  &amp; x&lt;a, x&gt;b
+\end{aligned}
+\right.
+\end{equation}
+$
+</code></pre></div><h3 id="矩阵表示">矩阵表示</h3>
+<p>利用已经有的各种matrix环境 =&gt; <code>matrix、pmatrix、bmatrix、Bmatrix、vmatrix</code>或者<code>Vmatrix</code>。</p>
+<p>（由于编译器的问题，在解析latex代码是，会将<code>\\</code>编译成一个<code>\</code>，因此需要转义，在行中间输入四个<code>\</code>，即<code>\\\\</code>，最后才得到网页中解析出来的<code>\\</code>）</p>
+<p>行列式：$\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix}$​​​​​​​​​​</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\begin{vmatrix} a &amp; b \\ c &amp; d \end{vmatrix}$
+
+为了网页渲染样式：
+$\begin{vmatrix} a &amp; b \\\\ c &amp; d \end{vmatrix}$
+</code></pre></div><p>矩阵：$\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{pmatrix}$​​​​​​​​​​​</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$\begin{pmatrix} 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \end{pmatrix}$
+
+为了网页渲染样式：
+$\begin{pmatrix} 1 &amp; 2 &amp; 3 \\\\ 4 &amp; 5 &amp; 6 \end{pmatrix}$
+</code></pre></div><p>其他：\quad 可以用于在latex中加空格</p>
+<p>后面的各式之间都有利用  <code>\quad</code> 加空格：</p>
+<p>$
+\begin{matrix} 0 &amp; 1 \\ 1 &amp; 0 \end{matrix}
+\quad
+\begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix}
+\quad
+\begin{Bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{Bmatrix}
+\quad
+\begin{Vmatrix} i &amp; 0 \\ 0 &amp; -i \end{Vmatrix}
+$</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$
+\begin{matrix} 0 &amp; 1 \\ 1 &amp; 0 \end{matrix}
+\quad
+\begin{bmatrix} 0 &amp; -1 \\ 1 &amp; 0 \end{bmatrix}
+\quad
+\begin{Bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{Bmatrix}
+\quad
+\begin{Vmatrix} i &amp; 0 \\ 0 &amp; -i \end{Vmatrix}
+$
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Apr 5, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/tool">Tool</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>
