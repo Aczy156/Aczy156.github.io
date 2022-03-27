@@ -171,12 +171,15 @@ int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
       <description>[TOC]
-数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
- 基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
-1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
-2、再将每个位置反向赋值回去。
-struct DisNum { int idx, val; bool operator &amp;lt; (const DisNum n) const { if (val == n.val) return idx &amp;lt; n.idx; return val &amp;lt; n.val; } }a[maxn]; 赋值，排序，然后再反向赋值回去
-for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i].val);a[i].idx = i;} sort(a+1, a+1+n); for (int i = 1; i &amp;lt;= n; ++i) nw[a[i].idx] = i; lower bound 将数据进行离散化 vector实现 </description>
+数据结构 离散化  本质：是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
+过程：排序-&amp;gt;去重-&amp;gt;索引（对应到stl中就是首先sort排序-&amp;gt;然后unique去重-&amp;gt;最后lowerbound二分找位置作为索引）
+demo1：1,23424,21472313246768,6594,95,0,65535313=&amp;gt;1,4,6,3,2,0,5
+demo2：32434234，32434234，43324556，8384733，98998988=&amp;gt;0,0,1,2,3
+demo3（存在需要去重的情况=&amp;gt;这种情况下是需要将重复的元素离散化为相同索引，然后起后面的索引依次往前递补）：0, 1,23424,1,0,20746768,6594,95,0,6553513=&amp;gt;1,4,1,0,6,3,2,0,5 
+ 数组实现 三个数组：a[maxn] b[maxn] c[maxn]，分别是原串、原串经排序之后的串、离散化之后的串
+三个过程：排序、去重、索引
+三个算法实现对应过程：sort排序、unique去重并获取
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e3+9; #include &amp;lt;algorithm&amp;gt;//int n = 7, a[maxn] = {0, 1,23424,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768} // 离散化 c={1,4,6,3,2,0,5} int n = 9, a[maxn] = {0, 1,23424,1,0,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,1,0,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768,6553513,20746768} // 离散化 c={1,4,1,0,6,3,2,0,5}  int main() { for (int i = 1; i &amp;lt;= n; ++i) b[i] = c[i] = a[i]; // 排序  sort(b+1, b+1+n); // 去重  int size = unique(b+1, b+1+n)-b-1; // 索引  for (int i = 1; i &amp;lt;= n; ++i) c[i] = lower_bound(b+1, b+1+size, a[i])-b-1; cout&amp;lt;&amp;lt;&amp;#34;原串 &amp;#34;;for (int i = 1; i &amp;lt;= n; ++i) printf(&amp;#34;%d &amp;#34;, a[i]); cout&amp;lt;&amp;lt;&amp;#34;\n中间排序串 &amp;#34;;for (int i = 1; i &amp;lt;= n; ++i) printf(&amp;#34;%d &amp;#34;, b[i]); cout&amp;lt;&amp;lt;&amp;#34;\n离散化串 &amp;#34;;for (int i = 1; i &amp;lt;= n; ++i) printf(&amp;#34;%d &amp;#34;, c[i]); return 0; } 结构体实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。</description>
     </item>
     
     <item>

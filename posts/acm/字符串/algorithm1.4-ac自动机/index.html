@@ -88,7 +88,9 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="#字符串-ac自动机">字符串 AC自动机</a>
       <ul>
-        <li><a href="#板题">板题</a></li>
+        <li><a href="#板题洛谷p3808-ac自动机简单版">板题：洛谷P3808 AC自动机（简单版）</a></li>
+        <li><a href="#模版洛谷p3796-ac自动机加强版">模版：洛谷P3796 AC自动机（加强版）</a></li>
+        <li><a href="#heading"></a></li>
         <li><a href="#多次查询">多次查询</a></li>
       </ul>
     </li>
@@ -156,8 +158,12 @@ MathJax.Hub.Config({
 <li>如果当前儿子为假儿子，可以将fail指针指向的节点相同方向的值赋过去（fail指针指向的节点有值是最好的，没有值也无所谓）相当于把fail指针指向的节点那棵树嫁接在了这个节点下边</li>
 </ul>
 <p>3、利用AC自动机进行搜索「当前节点nw，pos」</p>
-<h3 id="板题">板题</h3>
+<h3 id="板题洛谷p3808-ac自动机简单版">板题：洛谷P3808 AC自动机（简单版）</h3>
 <p><a href="https://www.luogu.com.cn/problem/P3808">https://www.luogu.com.cn/problem/P3808</a></p>
+<blockquote>
+<p>题目大意：给出模式串的个数以及所有模式串，然后给出主串，问在主串中可以找到的模式串的个数（<strong>特殊</strong>：如果某一个模式串被多次匹配，那么只计算一次）</p>
+</blockquote>
+<p>利用数组实现：AC代码</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
 <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxnext <span style="color:#f92672">=</span> <span style="color:#ae81ff">27</span>;
@@ -233,7 +239,101 @@ MathJax.Hub.Config({
     printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, acMachine.find(s));
     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
 }
-</code></pre></div><h3 id="多次查询">多次查询</h3>
+</code></pre></div><p>利用链式结构，实现AC自动机（通过添加一个map映射-将node和标记来进行映射，来判断节点所对应的模式串是否被标记过了）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxnext <span style="color:#f92672">=</span> <span style="color:#ae81ff">26</span>;
+<span style="color:#66d9ef">int</span> n, ans;
+string p, t;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> {
+    <span style="color:#66d9ef">char</span> val; <span style="color:#75715e">// debug
+</span><span style="color:#75715e"></span>    vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> exist;
+    node <span style="color:#f92672">*</span> child[maxnext];
+    node <span style="color:#f92672">*</span> fail;
+}<span style="color:#f92672">*</span>root;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;map&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>map<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">*</span>, <span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> mp;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">build_trie</span>(node <span style="color:#f92672">*</span> root) {
+    node <span style="color:#f92672">*</span> tem <span style="color:#f92672">=</span> root;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> p.length(); <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">int</span> ch_idx <span style="color:#f92672">=</span> p[i]<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>;
+        <span style="color:#66d9ef">if</span> (tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[ch_idx] <span style="color:#f92672">=</span><span style="color:#f92672">=</span> NULL) tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[ch_idx] <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node();
+        tem <span style="color:#f92672">=</span> tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[ch_idx];
+        tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">=</span> p[i]; <span style="color:#75715e">// 注意要等tem到下一个节点了再给赋值
+</span><span style="color:#75715e"></span>    }
+    tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>exist.push_back(p.length());
+}
+
+<span style="color:#75715e">// 遍历trie树
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">traverse</span>(node <span style="color:#f92672">*</span> root) {
+    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>val <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> maxnext; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">if</span> (root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[i] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> NULL) traverse(root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[i]);
+}
+
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>queue<span style="color:#f92672">&lt;</span>node<span style="color:#f92672">*</span><span style="color:#f92672">&gt;</span>q;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">build_ac_auto</span>(node <span style="color:#f92672">*</span> root){
+    <span style="color:#75715e">// init
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> maxnext; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">if</span> (root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[i]) {
+            root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[i]<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail <span style="color:#f92672">=</span> root;
+            q.push(root<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[i]);
+        }
+    <span style="color:#75715e">// get fail
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>q.empty()) {
+        node <span style="color:#f92672">*</span> nw <span style="color:#f92672">=</span> q.front();q.pop();
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> maxnext; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            <span style="color:#66d9ef">if</span> (nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[i]) {
+                node <span style="color:#f92672">*</span> ntnw <span style="color:#f92672">=</span> nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[i];
+                node <span style="color:#f92672">*</span> fafail <span style="color:#f92672">=</span> nw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail;
+                <span style="color:#66d9ef">while</span> (fafail <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>fafail<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[i]) fafail <span style="color:#f92672">=</span> fafail<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail;
+                <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>fafail) ntnw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail <span style="color:#f92672">=</span> root;
+                <span style="color:#66d9ef">else</span> ntnw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail <span style="color:#f92672">=</span> fafail<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[i];
+                <span style="color:#66d9ef">if</span> (ntnw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>exist.size())
+                    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> ntnw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>exist.size(); <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j)
+                        ntnw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>exist.push_back(ntnw<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>exist[j]);
+                q.push(ntnw);
+            }
+        }
+    }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">ac_auto_query</span>(node <span style="color:#f92672">*</span> root) {
+    node <span style="color:#f92672">*</span> tem <span style="color:#f92672">=</span> root;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> maxnext; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        <span style="color:#66d9ef">int</span> ch_idx <span style="color:#f92672">=</span> t[i]<span style="color:#f92672">-</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>;
+        <span style="color:#66d9ef">while</span> (tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[ch_idx]) tem <span style="color:#f92672">=</span> tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>fail;
+        <span style="color:#66d9ef">if</span> (tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[ch_idx]) tem <span style="color:#f92672">=</span> tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>child[ch_idx];
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">continue</span>;
+        <span style="color:#66d9ef">if</span>(tem<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>exist.size() <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>mp.count(tem)) ans<span style="color:#f92672">+</span><span style="color:#f92672">+</span>, mp[tem] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    }
+
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    root <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node();
+    <span style="color:#66d9ef">while</span> (n<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>p;
+        build_trie(root);
+    }
+    build_ac_auto(root);
+    cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>t;
+    ac_auto_query(root);
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="模版洛谷p3796-ac自动机加强版">模版：洛谷P3796 AC自动机（加强版）</h3>
+<p><a href="https://www.luogu.com.cn/problem/P3796">https://www.luogu.com.cn/problem/P3796</a></p>
+<blockquote>
+<p>题目大意：同样是给出模式串的个数以及所有模式串，然后给出主串，问所有给定的模式串中在主串中找到次数最多的。</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
+</code></pre></div><h3 id="heading"></h3>
+<h3 id="多次查询">多次查询</h3>
 <p><a href="https://acm.hdu.edu.cn/showproblem.php?pid=2222">https://acm.hdu.edu.cn/showproblem.php?pid=2222</a></p>
 
 		</section>
@@ -260,7 +360,7 @@ MathJax.Hub.Config({
 </main>
 <footer>
 <hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
-	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+	2022  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 
 

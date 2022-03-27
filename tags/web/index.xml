@@ -13,6 +13,28 @@
     
     
     <item>
+      <title>Java Web Spring</title>
+      <link>http://www.chenranfei.online/posts/project/java-spring/</link>
+      <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
+      
+      <guid>http://www.chenranfei.online/posts/project/java-spring/</guid>
+      <description>[TOC]
+Java Web Spring IOC [依赖注入/控制反转] 1、例子：class A中引入class B，两种方法：
+ 传统方法：在A中new一个class B的类。这样是A控制着B。 IOC：在A的构造函数中注入一个已经提前new好的class B的类。这样B还是B，不受A的控制。  2、在Spring中的使用：消除所有依赖关系 and 工厂模式
+a）消除所有依赖关系：通过控制反转提前new出需要new的类。
+b）工厂模式：用一个工厂来提前把所有需要new的类给new出来。供所有需要注入的类去注入。其中有两种工厂模式来进行对象的映射
+ 简单工厂：静态，单个唯一的工厂 工厂方法：动态，一个抽象的、产生工厂的唯一工厂+有多少个产品就有多少个具体工厂的具体工厂（这些工厂是有抽象工厂挨个产生的）。  AOP [面向切面编程] 最简单的理解：为目标对象创建一个代理对象，通过代理对象调用目标对象，并且可以在目标对象前后进行切面编程
+单例模式 Spring依赖注入的Bean实例是单例的。
+每一个类都仅有一个实例，并且提供了一个全局访问点，也就是BeanFactory，只能通过这个访问点来获取实例。（创建则是在每次初始化运行的时候创建的）
+Spring MVC [Spring 的 Handler接口] 利用适配器模式，每每需要新增/扩展一个Controller来处理请求，就直接实现接口，implement Controller，然后直接实现返回值为ModelAndView的handleRequest方法即可。
+配置文件   Maven：只要用maven进行包管理，那么必定有pom.xml，里边写了各种需要的依赖
+  Spring MVC：
+ 整个项目，命名空间、schema设置-&amp;gt;applicationContext.xml； servlet之间映射关系，URL与Controller，请求与处理请求-&amp;gt;dispatcher-servlet.xml； 其他URL的映射关系-&amp;gt;web.xml    Spring Boot：唯一的application.properties配置文件。（配置包括JDBC、Mybatis、logging等等各种都可以在这唯一的配置文件中配置）
+  运行项目 myPetStore - 利用Spring boot的jpetsotre 项目地址：https://github.com/Aczy156/myPetStore
+ clone之后，运行的时候需要注意：resource目录的目录类型没有同步为resource root，导致运行项目的时候spring容器无法识别，导致application.properties中的很多属性无法被正常提取，所以无法运行。参考博客  运行项目 NewPetStore - 前后端分离 Nuxt.</description>
+    </item>
+    
+    <item>
       <title>Java Web 项目</title>
       <link>http://www.chenranfei.online/posts/project/java-web/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>

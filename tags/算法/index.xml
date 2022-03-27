@@ -707,12 +707,15 @@ int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;
       
       <guid>http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
       <description>[TOC]
-数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
- 基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
-1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
-2、再将每个位置反向赋值回去。
-struct DisNum { int idx, val; bool operator &amp;lt; (const DisNum n) const { if (val == n.val) return idx &amp;lt; n.idx; return val &amp;lt; n.val; } }a[maxn]; 赋值，排序，然后再反向赋值回去
-for (int i = 1; i &amp;lt;= n; ++i) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i].val);a[i].idx = i;} sort(a+1, a+1+n); for (int i = 1; i &amp;lt;= n; ++i) nw[a[i].idx] = i; lower bound 将数据进行离散化 vector实现 </description>
+数据结构 离散化  本质：是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
+过程：排序-&amp;gt;去重-&amp;gt;索引（对应到stl中就是首先sort排序-&amp;gt;然后unique去重-&amp;gt;最后lowerbound二分找位置作为索引）
+demo1：1,23424,21472313246768,6594,95,0,65535313=&amp;gt;1,4,6,3,2,0,5
+demo2：32434234，32434234，43324556，8384733，98998988=&amp;gt;0,0,1,2,3
+demo3（存在需要去重的情况=&amp;gt;这种情况下是需要将重复的元素离散化为相同索引，然后起后面的索引依次往前递补）：0, 1,23424,1,0,20746768,6594,95,0,6553513=&amp;gt;1,4,1,0,6,3,2,0,5 
+ 数组实现 三个数组：a[maxn] b[maxn] c[maxn]，分别是原串、原串经排序之后的串、离散化之后的串
+三个过程：排序、去重、索引
+三个算法实现对应过程：sort排序、unique去重并获取
+#include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e3+9; #include &amp;lt;algorithm&amp;gt;//int n = 7, a[maxn] = {0, 1,23424,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768} // 离散化 c={1,4,6,3,2,0,5} int n = 9, a[maxn] = {0, 1,23424,1,0,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,1,0,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768,6553513,20746768} // 离散化 c={1,4,1,0,6,3,2,0,5}  int main() { for (int i = 1; i &amp;lt;= n; ++i) b[i] = c[i] = a[i]; // 排序  sort(b+1, b+1+n); // 去重  int size = unique(b+1, b+1+n)-b-1; // 索引  for (int i = 1; i &amp;lt;= n; ++i) c[i] = lower_bound(b+1, b+1+size, a[i])-b-1; cout&amp;lt;&amp;lt;&amp;#34;原串 &amp;#34;;for (int i = 1; i &amp;lt;= n; ++i) printf(&amp;#34;%d &amp;#34;, a[i]); cout&amp;lt;&amp;lt;&amp;#34;\n中间排序串 &amp;#34;;for (int i = 1; i &amp;lt;= n; ++i) printf(&amp;#34;%d &amp;#34;, b[i]); cout&amp;lt;&amp;lt;&amp;#34;\n离散化串 &amp;#34;;for (int i = 1; i &amp;lt;= n; ++i) printf(&amp;#34;%d &amp;#34;, c[i]); return 0; } 结构体实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。</description>
     </item>
     
     <item>
@@ -1002,21 +1005,14 @@ kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
     </item>
     
     <item>
-      <title>PTA 1000-1099</title>
-      <link>http://www.chenranfei.online/posts/contest/pta/</link>
+      <title>Contest PAT-PTA刷题系统</title>
+      <link>http://www.chenranfei.online/posts/contest/contest-pta-practice/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/contest/pta/</guid>
+      <guid>http://www.chenranfei.online/posts/contest/contest-pta-practice/</guid>
       <description>[TOC]
-PTA1000-1099 1000  题目大意：求a+b
-  【易错】输出格式的标准化：每3位来一个逗号（利用循环+取余进行输出）  1007  题目大意：最大子区间
-  子区间中有可能穿插着负数。（因此不能一到负数就重置起终点，而是要等到当前临时的sum小于0了，再重置起终点） 重置终点的情况为sum&amp;gt;ans，此时才是正确的重置起终点的时机。 【易错】特殊情况考虑：对于全是负数的情况，此时ans为0，但是ans为0不一定全是负数，因为有可能存在0 0 0这样的子区间。  1008  题目大意：直接模拟楼层上下变化即可
- 1012  题目大意：给出n个人的平均成绩、c语言、数学、英语，输出所有人排名最高的科目以及排名。（如果有相同的按照平均成绩&amp;gt;c语言&amp;gt;数学&amp;gt;英语顺序输出）
-  利用map进行string和struct结构体进行映射 【易错】排序问题：排名时分数相同的话，就需要设置并列  1013  题目大意：给出n个城，m条路，k个查询，查询内容为，当排除掉输入的这个城（这个城+与这个城相连的连线都失效）之后，联通其他所有城所需要新增的路数
-  利用kruskal的并查集维护点集思路，储存数据用线/链式前向星均可 【易错】数据边界问题：容易RE，在这个题里边，他没有限定线的个数，所以线的个数的上限应该是点数*点数  1020  题目大意：给出二叉树中序后序，求层次遍历
-  利用后序最后一个是根结点，然后从中序里边进行分割，分割出左右两块分别为这个根结点的左右儿子。 递归建树的返回内容是一个节点。递归的参数要包括中序的左右区间节点以及后序的根结点，三个参数即可 【易错】递归终点返回值问题：返回NULL的条件  1023  题目大意：给出一个数，看看这个数在乘了2之后，是否还满足和原来一样的各种数字的个数不变但是顺序变化
- 1040  题目大意：找到最大的回文子串
- </description>
+PTA1001-1099 PTA 1001  题目大意：求a+b
+  【易错】输出格式的标准化：每3位来一个逗号（利用循环+取余进行输出）  #include &amp;lt;iostream&amp;gt;using namespace std; int a, b, c, d, i; string s = &amp;#34;&amp;#34;; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;a, &amp;amp;b); c = a+b; if (c &amp;lt; 0) d = 1, c = -c; if (c == 0) {printf(&amp;#34;0&amp;#34;);return 0;} while (c) { s += &amp;#39;0&amp;#39;+c%10; c /= 10; if (!(++i%3) &amp;amp;&amp;amp; c) i=0, s += &amp;#39;,&amp;#39;; } if (d) cout&amp;lt;&amp;lt;&amp;#34;-&amp;#34;; for (int j = s.</description>
     </item>
     
     <item>
@@ -1101,7 +1097,7 @@ Graph embedding [把整个表进行嵌入]   node embedding
       <description>[TOC]
 优化目标 概念区分 1、整体理解：损失函数，代价函数，目标函数，熵=&amp;gt;都是最优化问题下的的优化目标，通过设定优化目标获取最优化问题的最优解
 2、设计原理：为什么要设计这样的优化目标
- 用交叉熵的原因，交叉熵和KL散度的关系 用平方损失的原因，平方损失和最大似然的关系 添加正则子的原因，为什么能添加这样的正则子  回归问题 分类问题-熵「Entropy」 与熵相关的为信息论相关内容
+ 用交叉熵的原因，交叉熵和KL散度的关系 用平方损失的原因，平方损失和最大似然的关系 添加正则子的原因，为什么能添加这样的正则子  回归问题 平方「Square」 平方根「Square Root」 分类问题-熵「Entropy」 与熵相关的为信息论相关内容
 熵「Entropy」  信息量
 事件A的自信息量，A这个事件包含了多少信息
  $s(x)=\sum_{i}P_A(x_i)log(P_A(x_i))\$

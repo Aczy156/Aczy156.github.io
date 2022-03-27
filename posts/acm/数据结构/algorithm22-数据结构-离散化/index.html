@@ -22,12 +22,15 @@
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Algorithm22 数据结构 离散化" />
 <meta property="og:description" content="[TOC]
-数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
- 基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
-1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
-2、再将每个位置反向赋值回去。
-struct DisNum { int idx, val; bool operator &lt; (const DisNum n) const { if (val == n.val) return idx &lt; n.idx; return val &lt; n.val; } }a[maxn]; 赋值，排序，然后再反向赋值回去
-for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;a[i].val);a[i].idx = i;} sort(a&#43;1, a&#43;1&#43;n); for (int i = 1; i &lt;= n; &#43;&#43;i) nw[a[i].idx] = i; lower bound 将数据进行离散化 vector实现 " />
+数据结构 离散化  本质：是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
+过程：排序-&gt;去重-&gt;索引（对应到stl中就是首先sort排序-&gt;然后unique去重-&gt;最后lowerbound二分找位置作为索引）
+demo1：1,23424,21472313246768,6594,95,0,65535313=&gt;1,4,6,3,2,0,5
+demo2：32434234，32434234，43324556，8384733，98998988=&gt;0,0,1,2,3
+demo3（存在需要去重的情况=&gt;这种情况下是需要将重复的元素离散化为相同索引，然后起后面的索引依次往前递补）：0, 1,23424,1,0,20746768,6594,95,0,6553513=&gt;1,4,1,0,6,3,2,0,5 
+ 数组实现 三个数组：a[maxn] b[maxn] c[maxn]，分别是原串、原串经排序之后的串、离散化之后的串
+三个过程：排序、去重、索引
+三个算法实现对应过程：sort排序、unique去重并获取
+#include &lt;iostream&gt;using namespace std; const int maxn = 1e3&#43;9; #include &lt;algorithm&gt;//int n = 7, a[maxn] = {0, 1,23424,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768} // 离散化 c={1,4,6,3,2,0,5} int n = 9, a[maxn] = {0, 1,23424,1,0,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,1,0,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768,6553513,20746768} // 离散化 c={1,4,1,0,6,3,2,0,5}  int main() { for (int i = 1; i &lt;= n; &#43;&#43;i) b[i] = c[i] = a[i]; // 排序  sort(b&#43;1, b&#43;1&#43;n); // 去重  int size = unique(b&#43;1, b&#43;1&#43;n)-b-1; // 索引  for (int i = 1; i &lt;= n; &#43;&#43;i) c[i] = lower_bound(b&#43;1, b&#43;1&#43;size, a[i])-b-1; cout&lt;&lt;&#34;原串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, a[i]); cout&lt;&lt;&#34;\n中间排序串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, b[i]); cout&lt;&lt;&#34;\n离散化串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, c[i]); return 0; } 结构体实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
@@ -35,12 +38,15 @@ for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;a[i].val);a[i]
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Algorithm22 数据结构 离散化"/>
 <meta name="twitter:description" content="[TOC]
-数据结构 离散化  实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
- 基础实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。
-1、根据val来排序，如果val相同的话，就根据idx索引递增的次序
-2、再将每个位置反向赋值回去。
-struct DisNum { int idx, val; bool operator &lt; (const DisNum n) const { if (val == n.val) return idx &lt; n.idx; return val &lt; n.val; } }a[maxn]; 赋值，排序，然后再反向赋值回去
-for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;a[i].val);a[i].idx = i;} sort(a&#43;1, a&#43;1&#43;n); for (int i = 1; i &lt;= n; &#43;&#43;i) nw[a[i].idx] = i; lower bound 将数据进行离散化 vector实现 "/>
+数据结构 离散化  本质：是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
+过程：排序-&gt;去重-&gt;索引（对应到stl中就是首先sort排序-&gt;然后unique去重-&gt;最后lowerbound二分找位置作为索引）
+demo1：1,23424,21472313246768,6594,95,0,65535313=&gt;1,4,6,3,2,0,5
+demo2：32434234，32434234，43324556，8384733，98998988=&gt;0,0,1,2,3
+demo3（存在需要去重的情况=&gt;这种情况下是需要将重复的元素离散化为相同索引，然后起后面的索引依次往前递补）：0, 1,23424,1,0,20746768,6594,95,0,6553513=&gt;1,4,1,0,6,3,2,0,5 
+ 数组实现 三个数组：a[maxn] b[maxn] c[maxn]，分别是原串、原串经排序之后的串、离散化之后的串
+三个过程：排序、去重、索引
+三个算法实现对应过程：sort排序、unique去重并获取
+#include &lt;iostream&gt;using namespace std; const int maxn = 1e3&#43;9; #include &lt;algorithm&gt;//int n = 7, a[maxn] = {0, 1,23424,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768} // 离散化 c={1,4,6,3,2,0,5} int n = 9, a[maxn] = {0, 1,23424,1,0,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,1,0,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768,6553513,20746768} // 离散化 c={1,4,1,0,6,3,2,0,5}  int main() { for (int i = 1; i &lt;= n; &#43;&#43;i) b[i] = c[i] = a[i]; // 排序  sort(b&#43;1, b&#43;1&#43;n); // 去重  int size = unique(b&#43;1, b&#43;1&#43;n)-b-1; // 索引  for (int i = 1; i &lt;= n; &#43;&#43;i) c[i] = lower_bound(b&#43;1, b&#43;1&#43;size, a[i])-b-1; cout&lt;&lt;&#34;原串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, a[i]); cout&lt;&lt;&#34;\n中间排序串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, b[i]); cout&lt;&lt;&#34;\n离散化串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, c[i]); return 0; } 结构体实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。"/>
 <script src="http://www.chenranfei.online/js/feather.min.js"></script>
 	
 	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
@@ -72,7 +78,8 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="#数据结构-离散化">数据结构 离散化</a>
       <ul>
-        <li><a href="#基础实现">基础实现</a></li>
+        <li><a href="#数组实现">数组实现</a></li>
+        <li><a href="#结构体实现">结构体实现</a></li>
         <li><a href="#lower-bound-将数据进行离散化">lower bound 将数据进行离散化</a></li>
         <li><a href="#vector实现">vector实现</a></li>
       </ul>
@@ -90,9 +97,44 @@ MathJax.Hub.Config({
 			<p>[TOC]</p>
 <h2 id="数据结构-离散化">数据结构 离散化</h2>
 <blockquote>
-<p>实质上是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序</p>
+<p>本质：是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序</p>
+<p>过程：排序-&gt;去重-&gt;索引（对应到stl中就是首先sort排序-&gt;然后unique去重-&gt;最后lowerbound二分找位置作为索引）</p>
+<p>demo1：<code>1,23424,21472313246768,6594,95,0,65535313</code>=&gt;<code>1,4,6,3,2,0,5</code></p>
+<p>demo2：<code>32434234，32434234，43324556，8384733，98998988</code>=&gt;<code>0,0,1,2,3</code></p>
+<p>demo3（存在需要去重的情况=&gt;这种情况下是需要将重复的元素离散化为相同索引，然后起后面的索引依次往前递补）：<code>0, 1,23424,1,0,20746768,6594,95,0,6553513</code>=&gt;<code>1,4,1,0,6,3,2,0,5 </code></p>
 </blockquote>
-<h3 id="基础实现">基础实现</h3>
+<h3 id="数组实现">数组实现</h3>
+<p>三个数组：<code>a[maxn]</code> <code>b[maxn]</code> <code>c[maxn]</code>，分别是原串、原串经排序之后的串、离散化之后的串</p>
+<p>三个过程：排序、去重、索引</p>
+<p>三个算法实现对应过程：sort排序、unique去重并获取</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">//int n = 7, a[maxn] = {0, 1,23424,20746768,6594,95,0,6553513}, b[maxn], c[maxn];
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 原串 a={1,23424,20746768,6594,95,0,6553513}
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 中间串 b={0,1,95,6594,23424,6553513,20746768}
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 离散化 c={1,4,6,3,2,0,5}
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>, a[maxn] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">23424</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">20746768</span>,<span style="color:#ae81ff">6594</span>,<span style="color:#ae81ff">95</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">6553513</span>}, b[maxn], c[maxn];
+<span style="color:#75715e">// 原串 a={1,23424,1,0,20746768,6594,95,0,6553513}
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 中间串 b={0,1,95,6594,23424,6553513,20746768,6553513,20746768}
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 离散化 c={1,4,1,0,6,3,2,0,5}
+</span><span style="color:#75715e"></span>
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) b[i] <span style="color:#f92672">=</span> c[i] <span style="color:#f92672">=</span> a[i];
+    <span style="color:#75715e">// 排序
+</span><span style="color:#75715e"></span>    sort(b<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>n);
+    <span style="color:#75715e">// 去重
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> size <span style="color:#f92672">=</span> unique(b<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>n)<span style="color:#f92672">-</span>b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#75715e">// 索引
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) c[i] <span style="color:#f92672">=</span> lower_bound(b<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, b<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>size, a[i])<span style="color:#f92672">-</span>b<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">原串 </span><span style="color:#e6db74">&#34;</span>;<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, a[i]);
+    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">中间排序串 </span><span style="color:#e6db74">&#34;</span>;<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, b[i]);
+    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">离散化串 </span><span style="color:#e6db74">&#34;</span>;<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, c[i]);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="结构体实现">结构体实现</h3>
 <p>数据结构：构造结构体，重载运算符（val和idx一次排序）。</p>
 <p>1、根据val来排序，如果val相同的话，就根据idx索引递增的次序</p>
 <p>2、再将每个位置反向赋值回去。</p>
@@ -134,7 +176,7 @@ sort(a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, 
 </main>
 <footer>
 <hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
-	2021  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+	2022  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 
 
