@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSU on Aczy156</title>
-    <link>http://www.chenranfei.online/categories/csu/</link>
+    <link>http://www.chenranfei.site/categories/csu/</link>
     <description>Recent content in CSU on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Tue, 04 Feb 2020 16:12:46 +0800</lastBuildDate>
     
-	<atom:link href="http://www.chenranfei.online/categories/csu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.chenranfei.site/categories/csu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Contest CSU预选赛 补题</title>
-      <link>http://www.chenranfei.online/posts/contest/contest-csu2021pre/</link>
+      <link>http://www.chenranfei.site/posts/contest/contest-csu2021pre/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/contest/contest-csu2021pre/</guid>
+      <guid>http://www.chenranfei.site/posts/contest/contest-csu2021pre/</guid>
       <description>[TOC]
 CSU 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?cid=2193
  A 题目大意：贪心，可以无限选，然后问给定容积，最大价值。

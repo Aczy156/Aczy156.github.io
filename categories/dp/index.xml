@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DP on Aczy156</title>
-    <link>http://www.chenranfei.online/categories/dp/</link>
+    <link>http://www.chenranfei.site/categories/dp/</link>
     <description>Recent content in DP on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
     
-	<atom:link href="http://www.chenranfei.online/categories/dp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.chenranfei.site/categories/dp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Algorithm2.1 背包dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
+      <link>http://www.chenranfei.site/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
+      <guid>http://www.chenranfei.site/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
       <description>[TOC]
 背包dp   01背包：每种物品仅一个  体积逆序遍历   完全背包：每种物品有无限个  体积升序遍历   多重背包：每种物品有具体个数  外层是体积逆序遍历  内层是个数遍历     分组背包：每种物品仅一个，且不同物品有自己所属的组别 多维代价背包：每种物品不仅占用空间，而且占用金钱 多维目的背包：每种物品不仅具有价值1，而且具有价值2   01背包 装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
 题目大意：
@@ -26,10 +26,10 @@
     
     <item>
       <title>Algorithm2.10 坐标系dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</link>
+      <link>http://www.chenranfei.site/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</guid>
+      <guid>http://www.chenranfei.site/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</guid>
       <description>[TOC]
 坐标系dp  区域最大：
  最大正方形 &amp;lt;-&amp;gt; 最大正方形变式 最大矩形（包括正方形）   最大正方形 https://www.luogu.com.cn/problem/P1387
@@ -42,10 +42,10 @@ if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))+1; 完整
     
     <item>
       <title>Algorithm2.2 区间dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</link>
+      <link>http://www.chenranfei.site/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
+      <guid>http://www.chenranfei.site/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
       <description>[TOC]
 区间dp 区间基本提取 https://www.luogu.com.cn/problem/P2426
 题目大意：删除一段数组的数，代价为这个区间的左右端点值的差的绝对值*长度，求全部删去的最大代价。
@@ -56,10 +56,10 @@ if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))+1; 完整
     
     <item>
       <title>Algorithm2.3 状压dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</link>
+      <link>http://www.chenranfei.site/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</guid>
+      <guid>http://www.chenranfei.site/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</guid>
       <description>[TOC]
 状压dp  主要特征：n较小 =&amp;gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
 主要思路：就是将本来某一行的状态是或否的唯二的两种【可能本来需要用数组来储存的】 =&amp;gt; 通过用二进制【01来进行储存】
@@ -74,10 +74,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.4 树型dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</link>
+      <link>http://www.chenranfei.site/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</guid>
+      <guid>http://www.chenranfei.site/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</guid>
       <description>[TOC]
 树型dp  题目风格：给出树上的每个节点的值，然后给出
 思路：
@@ -89,10 +89,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.6 计数dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</link>
+      <link>http://www.chenranfei.site/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</guid>
+      <guid>http://www.chenranfei.site/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</guid>
       <description>[TOC]
 计数dp  典型：
  对一个区域进行划分，划分种类  随意划分：P1025，直接给定一个数以及要划分的份数，然后看这个数有多少种分法 按照给定的要求划分：P1077，直接卡死了每一个点上的约定范围 按照递增/递减的方式划分：P1806，直接按照递增着划分      随意划分 https://www.luogu.com.cn/problem/P1025
@@ -105,10 +105,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.7 线性dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</link>
+      <link>http://www.chenranfei.site/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</guid>
+      <guid>http://www.chenranfei.site/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</guid>
       <description>[TOC]
 线性dp 时间线问题 https://www.luogu.com.cn/problem/P1095
 题目大意：时间线上，每秒钟 =&amp;gt; 可以选择a方式，属性c变化1；可以选择b方式，属性c变化2。
@@ -120,10 +120,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.8 基础dp</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</link>
+      <link>http://www.chenranfei.site/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</guid>
+      <guid>http://www.chenranfei.site/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</guid>
       <description>[TOC]
 基础dp 数字三角形 https://www.luogu.com.cn/problem/P1216
 题目大意：给一个三角形矩阵，然后从上往下走，怎么才能走的总量最大。
@@ -136,10 +136,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.9 dp思维</title>
-      <link>http://www.chenranfei.online/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</link>
+      <link>http://www.chenranfei.site/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</guid>
+      <guid>http://www.chenranfei.site/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</guid>
       <description>[TOC]
 思维 &amp;amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
 题目大意：
@@ -152,10 +152,10 @@ int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; fo
     
     <item>
       <title>kuangbin 1 简单搜索</title>
-      <link>http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</link>
+      <link>http://www.chenranfei.site/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</guid>
+      <guid>http://www.chenranfei.site/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</guid>
       <description>[TOC]
 kuangbin 1 简单搜索 A B 「BFS」三维迷宫 题目大意：三维迷宫，注意多组数据存在的初始化的问题即可。
 #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 33; int n, m, k, bgn, bgm, bgk, edn, edm, edk, dir[6][3] = {{1, 0, 0}, {-1, 0, 0}, {0, 1, 0}, {0, -1, 0}, {0, 0, 1}, {0, 0, -1}}, vis[maxn][maxn][maxn], flag; char mp[maxn][maxn][maxn]; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a)) struct node { int x, y, k, step; node(int x, int y, int k, int step):x(x), y(y), k(k), step(step){} }; #include &amp;lt;queue&amp;gt;queue&amp;lt;node&amp;gt; q; void bfs() { vis[bgn][bgm][bgk] = 1; q.</description>
@@ -163,10 +163,10 @@ kuangbin 1 简单搜索 A B 「BFS」三维迷宫 题目大意：三维迷宫，
     
     <item>
       <title>kuangbin 4 最短路</title>
-      <link>http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
+      <link>http://www.chenranfei.site/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
+      <guid>http://www.chenranfei.site/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
       <description>[TOC]
 kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
  A 单源最短路 Dijkstra 链式前向星 题目大意：单起点最短路，用Dijkstra解决

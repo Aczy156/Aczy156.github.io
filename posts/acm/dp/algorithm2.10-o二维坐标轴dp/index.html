@@ -30,7 +30,7 @@
 if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))&#43;1; 完整代码：
 #include &lt;iostream&gt;using namespace std; const int maxn = 105; int n, m, a[maxn][maxn], dp[maxn][maxn], ans; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[i][j]); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i-1][j], dp[i][j-1]))&#43;1, ans = max(ans, dp[i][j]); printf(&#34;%d\n&#34;, ans); return 0; } 最大矩形（包括正方形） https://leetcode-cn." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.online/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/" />
+<meta property="og:url" content="http://www.chenranfei.site/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -43,11 +43,11 @@ if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))&#43;1; �
 状态转移方程：
 if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))&#43;1; 完整代码：
 #include &lt;iostream&gt;using namespace std; const int maxn = 105; int n, m, a[maxn][maxn], dp[maxn][maxn], ans; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) scanf(&#34;%d&#34;, &amp;a[i][j]); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= m; &#43;&#43;j) if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i-1][j], dp[i][j-1]))&#43;1, ans = max(ans, dp[i][j]); printf(&#34;%d\n&#34;, ans); return 0; } 最大矩形（包括正方形） https://leetcode-cn."/>
-<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+<script src="http://www.chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -61,7 +61,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.online/">Aczy156</a>
+		<a href="http://www.chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

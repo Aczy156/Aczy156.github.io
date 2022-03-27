@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DL on Aczy156</title>
-    <link>http://www.chenranfei.online/tags/dl/</link>
+    <link>http://www.chenranfei.site/tags/dl/</link>
     <description>Recent content in DL on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Wed, 29 Jan 2020 01:05:44 +0800</lastBuildDate>
     
-	<atom:link href="http://www.chenranfei.online/tags/dl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.chenranfei.site/tags/dl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Deep Learning 17 优化目标</title>
-      <link>http://www.chenranfei.online/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</link>
+      <link>http://www.chenranfei.site/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</link>
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</guid>
+      <guid>http://www.chenranfei.site/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</guid>
       <description>[TOC]
 优化目标 概念区分 1、整体理解：损失函数，代价函数，目标函数，熵=&amp;gt;都是最优化问题下的的优化目标，通过设定优化目标获取最优化问题的最优解
 2、设计原理：为什么要设计这样的优化目标

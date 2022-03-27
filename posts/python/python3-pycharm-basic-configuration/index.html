@@ -22,22 +22,24 @@
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Python 3 Pycharm Basic Configuration" />
 <meta property="og:description" content="[TOC]
-Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「一」每个项目创立的时候可以跟着设置一个venv，可以从本来已有python目录直接调用 「二」自己创建一个venv，然后在命令行中一步一步安装所有需要的依赖（或者直接通过requirements.txt一步到位，安装好所有的依赖） 「三」pycharm-&gt;preference-&gt;interpreter中可以看到所有扫描到的virtualenv，然后每一个virtualenv都是可以作为运行环境。  可以选择原来已经设置好的venv 可以选择刚才自己创建的venv（也就是）    python-requireme.txt 设置 - 快速安装依赖  无需install，可以直接使用（内置在pip依赖中，直接使用即可） 将当前的项目的依赖导出成requirements.txt，用来作为标记，利用freeze语法。pip freeze &gt; requirements.txt 给当前的项目依赖已有的requiremes.txt快速安装全部所需依赖。pip install -r requirements.txt  目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
+Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「一」每个项目创立的时候可以跟着设置一个venv，可以从本来已有python目录直接调用 「二」自己创建一个venv，然后在命令行中一步一步安装所有需要的依赖（或者直接通过requirements.txt一步到位，安装好所有的依赖） 「三」pycharm-&gt;preference-&gt;interpreter中可以看到所有扫描到的virtualenv，然后每一个virtualenv都是可以作为运行环境。  可以选择原来已经设置好的venv 可以选择刚才自己创建的venv（也就是）    python-conda的使用 conda 创建venv
+# 查看conda已有的env conda env list # conda创建新的env，在创建的时候可以选择python版本和虚拟环境的名字 conda create --name myenv python==3.6 python-requireme.txt 设置 - 快速安装依赖  无需install，可以直接使用（内置在pip依赖中，直接使用即可） 将当前的项目的依赖导出成requirements.txt，用来作为标记，利用freeze语法。pip freeze &gt; requirements.txt 给当前的项目依赖已有的requiremes.txt快速安装全部所需依赖。pip install -r requirements.txt  目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
  整体项目文件类型：该项目所对应的文件类型要修改 =&gt; 右键选中当前project--&gt;Mark Directory as --&gt; Sources Root. （修改了之后的该项目所对应的文件性质应该呈现蓝色） 相互引用的文件命名：所有的命名中都不可以出现- (间隔符)，但是可以_ (下划线)  GitHub接管项目的版本控制 在利用VCS进行控制之后，更该项目名称，无法正常继续进行GitHub操作" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.online/posts/python/python3-pycharm-basic-configuration/" />
+<meta property="og:url" content="http://www.chenranfei.site/posts/python/python3-pycharm-basic-configuration/" />
 <meta property="article:published_time" content="2020-04-08T20:42:26+08:00" />
 <meta property="article:modified_time" content="2020-04-08T20:42:26+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Python 3 Pycharm Basic Configuration"/>
 <meta name="twitter:description" content="[TOC]
-Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「一」每个项目创立的时候可以跟着设置一个venv，可以从本来已有python目录直接调用 「二」自己创建一个venv，然后在命令行中一步一步安装所有需要的依赖（或者直接通过requirements.txt一步到位，安装好所有的依赖） 「三」pycharm-&gt;preference-&gt;interpreter中可以看到所有扫描到的virtualenv，然后每一个virtualenv都是可以作为运行环境。  可以选择原来已经设置好的venv 可以选择刚才自己创建的venv（也就是）    python-requireme.txt 设置 - 快速安装依赖  无需install，可以直接使用（内置在pip依赖中，直接使用即可） 将当前的项目的依赖导出成requirements.txt，用来作为标记，利用freeze语法。pip freeze &gt; requirements.txt 给当前的项目依赖已有的requiremes.txt快速安装全部所需依赖。pip install -r requirements.txt  目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
+Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「一」每个项目创立的时候可以跟着设置一个venv，可以从本来已有python目录直接调用 「二」自己创建一个venv，然后在命令行中一步一步安装所有需要的依赖（或者直接通过requirements.txt一步到位，安装好所有的依赖） 「三」pycharm-&gt;preference-&gt;interpreter中可以看到所有扫描到的virtualenv，然后每一个virtualenv都是可以作为运行环境。  可以选择原来已经设置好的venv 可以选择刚才自己创建的venv（也就是）    python-conda的使用 conda 创建venv
+# 查看conda已有的env conda env list # conda创建新的env，在创建的时候可以选择python版本和虚拟环境的名字 conda create --name myenv python==3.6 python-requireme.txt 设置 - 快速安装依赖  无需install，可以直接使用（内置在pip依赖中，直接使用即可） 将当前的项目的依赖导出成requirements.txt，用来作为标记，利用freeze语法。pip freeze &gt; requirements.txt 给当前的项目依赖已有的requiremes.txt快速安装全部所需依赖。pip install -r requirements.txt  目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
  整体项目文件类型：该项目所对应的文件类型要修改 =&gt; 右键选中当前project--&gt;Mark Directory as --&gt; Sources Root. （修改了之后的该项目所对应的文件性质应该呈现蓝色） 相互引用的文件命名：所有的命名中都不可以出现- (间隔符)，但是可以_ (下划线)  GitHub接管项目的版本控制 在利用VCS进行控制之后，更该项目名称，无法正常继续进行GitHub操作"/>
-<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+<script src="http://www.chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -51,7 +53,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.online/">Aczy156</a>
+		<a href="http://www.chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -65,6 +67,7 @@ MathJax.Hub.Config({
     <li><a href="#python-深度学习项目">Python 深度学习项目</a>
       <ul>
         <li><a href="#python-interpreter-设置---virtualenv的设置">python-interpreter 设置 - virtualenv的设置</a></li>
+        <li><a href="#python-conda的使用">python-conda的使用</a></li>
         <li><a href="#python-requiremetxt-设置---快速安装依赖">python-requireme.txt 设置 - 快速安装依赖</a></li>
         <li><a href="#目录结构">目录结构</a></li>
         <li><a href="#分开目录结构之后文件之间相互引用">分开目录结构之后文件之间相互引用</a></li>
@@ -94,7 +97,14 @@ MathJax.Hub.Config({
 </ul>
 </li>
 </ul>
-<h3 id="python-requiremetxt-设置---快速安装依赖">python-requireme.txt 设置 - 快速安装依赖</h3>
+<h3 id="python-conda的使用">python-conda的使用</h3>
+<p>conda 创建venv</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># 查看conda已有的env
+conda env list
+# conda创建新的env，在创建的时候可以选择python版本和虚拟环境的名字
+conda create --name myenv python==3.6
+
+</code></pre></div><h3 id="python-requiremetxt-设置---快速安装依赖">python-requireme.txt 设置 - 快速安装依赖</h3>
 <ul>
 <li>无需install，可以直接使用（内置在pip依赖中，直接使用即可）</li>
 <li>将当前的项目的依赖导出成<code>requirements.txt</code>，用来作为标记，利用freeze语法。<code>pip freeze &gt; requirements.txt</code></li>

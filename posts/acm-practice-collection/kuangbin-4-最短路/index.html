@@ -26,7 +26,7 @@ kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
  A 单源最短路 Dijkstra 链式前向星 题目大意：单起点最短路，用Dijkstra解决
 #include &lt;iostream&gt;using namespace std; const int maxpoint = 1e3&#43;9; const int maxedges = 2e3&#43;9; const int inf = (1&lt;&lt;31)-1; int n, m, ta, tb, tc, d[maxpoint], tem, vis[maxpoint], v; struct node { int to, nt, val; }edges[maxedges&lt;&lt;1];int head[maxpoint], tot; void addedge(int from, int to, int val) { edges[&#43;&#43;tot].to = to; edges[tot].val = val; edges[tot].nt = head[from]; head[from] = tot; } void dijkstra(int bg, int ed) { for (int i = 1; i &lt;= n; &#43;&#43;i) d[i] = inf; d[bg] = 0; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = inf; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.online/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/" />
+<meta property="og:url" content="http://www.chenranfei.site/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -35,11 +35,11 @@ kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
 kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
  A 单源最短路 Dijkstra 链式前向星 题目大意：单起点最短路，用Dijkstra解决
 #include &lt;iostream&gt;using namespace std; const int maxpoint = 1e3&#43;9; const int maxedges = 2e3&#43;9; const int inf = (1&lt;&lt;31)-1; int n, m, ta, tb, tc, d[maxpoint], tem, vis[maxpoint], v; struct node { int to, nt, val; }edges[maxedges&lt;&lt;1];int head[maxpoint], tot; void addedge(int from, int to, int val) { edges[&#43;&#43;tot].to = to; edges[tot].val = val; edges[tot].nt = head[from]; head[from] = tot; } void dijkstra(int bg, int ed) { for (int i = 1; i &lt;= n; &#43;&#43;i) d[i] = inf; d[bg] = 0; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = inf; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!"/>
-<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+<script src="http://www.chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.online/">Aczy156</a>
+		<a href="http://www.chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

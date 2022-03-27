@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Aczy156的模版 on Aczy156</title>
-    <link>http://www.chenranfei.online/categories/aczy156%E7%9A%84%E6%A8%A1%E7%89%88/</link>
+    <link>http://www.chenranfei.site/categories/aczy156%E7%9A%84%E6%A8%A1%E7%89%88/</link>
     <description>Recent content in Aczy156的模版 on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
     
-	<atom:link href="http://www.chenranfei.online/categories/aczy156%E7%9A%84%E6%A8%A1%E7%89%88/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.chenranfei.site/categories/aczy156%E7%9A%84%E6%A8%A1%E7%89%88/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Summary1.2 数据结构 STL整合</title>
-      <link>http://www.chenranfei.online/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</link>
+      <link>http://www.chenranfei.site/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</guid>
+      <guid>http://www.chenranfei.site/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</guid>
       <description>[TOC]
 数据结构 STL 用法整合 linklist #include &amp;lt;list&amp;gt; list&amp;lt;int&amp;gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map // 功能描述 =&amp;gt; 查找出现单次的,并尽可能的节省空间 #include &amp;lt;map&amp;gt; map&amp;lt;int, bool&amp;gt; m; for (1~n) { cin&amp;gt;&amp;gt;t; if (m.count(t)) m.erase(t); // m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项  else m[t] = true; } // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&amp;lt;int, bool&amp;gt;::iterator iter = m.</description>
     </item>
     
     <item>
       <title>Summary1 Aczy156的算法模版</title>
-      <link>http://www.chenranfei.online/posts/acm-summary/summary1-%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</link>
+      <link>http://www.chenranfei.site/posts/acm-summary/summary1-%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm-summary/summary1-%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</guid>
+      <guid>http://www.chenranfei.site/posts/acm-summary/summary1-%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</guid>
       <description>[TOC]
 Aczy156的算法模版 常用 表示无穷大（int的上限）：
 // int的最大值就是2的31次方-1 #define INF (1&amp;lt;&amp;lt;31)-1// 用库中定义的INT_MAX #include &amp;lt;climits&amp;gt;#define INF INT_MAXdouble 四舍五入的变式：永远舍和永远入：
@@ -38,10 +38,10 @@ char ch scanf(&amp;#34;%c&amp;#34;, &amp;amp;ch); // 前面要加空格 char s[1
     
     <item>
       <title>Summary1.1 Aczy156的基础数据结构手写实现</title>
-      <link>http://www.chenranfei.online/posts/acm-summary/summary1.1-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0/</link>
+      <link>http://www.chenranfei.site/posts/acm-summary/summary1.1-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/acm-summary/summary1.1-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>http://www.chenranfei.site/posts/acm-summary/summary1.1-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0/</guid>
       <description>[TOC]
 Aczy156的基础数据结构手写实现 数据结构的实现 链表
 堆

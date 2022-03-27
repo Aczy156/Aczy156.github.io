@@ -32,7 +32,7 @@ demo3（存在需要去重的情况=&gt;这种情况下是需要将重复的元�
 三个算法实现对应过程：sort排序、unique去重并获取
 #include &lt;iostream&gt;using namespace std; const int maxn = 1e3&#43;9; #include &lt;algorithm&gt;//int n = 7, a[maxn] = {0, 1,23424,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768} // 离散化 c={1,4,6,3,2,0,5} int n = 9, a[maxn] = {0, 1,23424,1,0,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,1,0,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768,6553513,20746768} // 离散化 c={1,4,1,0,6,3,2,0,5}  int main() { for (int i = 1; i &lt;= n; &#43;&#43;i) b[i] = c[i] = a[i]; // 排序  sort(b&#43;1, b&#43;1&#43;n); // 去重  int size = unique(b&#43;1, b&#43;1&#43;n)-b-1; // 索引  for (int i = 1; i &lt;= n; &#43;&#43;i) c[i] = lower_bound(b&#43;1, b&#43;1&#43;size, a[i])-b-1; cout&lt;&lt;&#34;原串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, a[i]); cout&lt;&lt;&#34;\n中间排序串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, b[i]); cout&lt;&lt;&#34;\n离散化串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, c[i]); return 0; } 结构体实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.online/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/" />
+<meta property="og:url" content="http://www.chenranfei.site/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -47,11 +47,11 @@ demo3（存在需要去重的情况=&gt;这种情况下是需要将重复的元�
 三个过程：排序、去重、索引
 三个算法实现对应过程：sort排序、unique去重并获取
 #include &lt;iostream&gt;using namespace std; const int maxn = 1e3&#43;9; #include &lt;algorithm&gt;//int n = 7, a[maxn] = {0, 1,23424,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768} // 离散化 c={1,4,6,3,2,0,5} int n = 9, a[maxn] = {0, 1,23424,1,0,20746768,6594,95,0,6553513}, b[maxn], c[maxn]; // 原串 a={1,23424,1,0,20746768,6594,95,0,6553513} // 中间串 b={0,1,95,6594,23424,6553513,20746768,6553513,20746768} // 离散化 c={1,4,1,0,6,3,2,0,5}  int main() { for (int i = 1; i &lt;= n; &#43;&#43;i) b[i] = c[i] = a[i]; // 排序  sort(b&#43;1, b&#43;1&#43;n); // 去重  int size = unique(b&#43;1, b&#43;1&#43;n)-b-1; // 索引  for (int i = 1; i &lt;= n; &#43;&#43;i) c[i] = lower_bound(b&#43;1, b&#43;1&#43;size, a[i])-b-1; cout&lt;&lt;&#34;原串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, a[i]); cout&lt;&lt;&#34;\n中间排序串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, b[i]); cout&lt;&lt;&#34;\n离散化串 &#34;;for (int i = 1; i &lt;= n; &#43;&#43;i) printf(&#34;%d &#34;, c[i]); return 0; } 结构体实现 数据结构：构造结构体，重载运算符（val和idx一次排序）。"/>
-<script src="http://www.chenranfei.online/js/feather.min.js"></script>
+<script src="http://www.chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.online/css/fonts.css" rel="stylesheet">
+	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.online/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -65,7 +65,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.online/">Aczy156</a>
+		<a href="http://www.chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

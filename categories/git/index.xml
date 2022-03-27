@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Aczy156</title>
-    <link>http://www.chenranfei.online/categories/git/</link>
+    <link>http://www.chenranfei.site/categories/git/</link>
     <description>Recent content in Git on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Wed, 08 Apr 2020 20:42:26 +0800</lastBuildDate>
     
-	<atom:link href="http://www.chenranfei.online/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.chenranfei.site/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tool-Git语法</title>
-      <link>http://www.chenranfei.online/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</link>
+      <link>http://www.chenranfei.site/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>http://www.chenranfei.online/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</guid>
+      <guid>http://www.chenranfei.site/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</guid>
       <description>[TOC]
 Git 基础定义 定义：版本控制管理工具
 几个位置：
