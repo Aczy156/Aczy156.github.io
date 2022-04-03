@@ -30,7 +30,7 @@
 priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int main() { scanf(&#34;%d%d&#34;, &amp;k, &amp;n); for (int i = 0; i &lt; n; &#43;&#43;i) { scanf(&#34;%d&#34;, &amp;tem); pq.push(tem); } while (true){ int tmp1 = pq.top();pq.pop(); int tmp2 = pq.top();pq.pop(); cout&lt;&lt;tmp1&lt;&lt;&#34;&#34;&lt;&lt;tmp2&lt;&lt;endl; if (tmp1 &#43; tmp2 &gt; k) {pq.push(tmp1);pq.push(tmp2);break;} else pq.push(tmp1&#43;tmp2); } printf(&#34;%d\n&#34;, pq.size()); return 0; } 思路2【正确】：由于题目还有一个附加条件=&gt;每个袋子最多两个（=&gt;也在一定程度上约束了两个）用双指针，首尾各一个，分别用来指代放在袋子的两个：够了就放一个袋子里，指针都往中间移动；不够就只把大的往中间移。前提是排好序
 #include &lt;iostream&gt;using namespace std; #define maxn 30010int k, n, tem, a[maxn], ans = 0; #include &lt;algorithm&gt; int main() { scanf(&#34;%d%d&#34;, &amp;k, &amp;n); for (int i = 0; i &lt; n; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;a[i]); sort(a, a&#43;n); int fidx = 0, eidx = n-1; while (fidx &lt;= eidx) if (a[fidx] &#43; a[eidx] &lt;= k) fidx&#43;&#43;, eidx--, ans&#43;&#43;; else eidx--, ans&#43;&#43;; printf(&#34;%d\n&#34;, ans); return 0; } 装袋问题-无限制个数的装袋 排序贪心 https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.site/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/" />
+<meta property="og:url" content="http://chenranfei.site/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -43,11 +43,11 @@ priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int main() 
 思路1【错误】：维护一个优先队列，每次取顶上两个，然后放一块。不行的原因，一些特殊情况，例如袋子100，物品分别为20、20、30、50、60，如果顺次加起来的话，=&gt;30、40、50、60=&gt;50、60、70，最后三个袋子，最少装袋是两个，20&#43;20&#43;60和30&#43;50。
 priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq; int main() { scanf(&#34;%d%d&#34;, &amp;k, &amp;n); for (int i = 0; i &lt; n; &#43;&#43;i) { scanf(&#34;%d&#34;, &amp;tem); pq.push(tem); } while (true){ int tmp1 = pq.top();pq.pop(); int tmp2 = pq.top();pq.pop(); cout&lt;&lt;tmp1&lt;&lt;&#34;&#34;&lt;&lt;tmp2&lt;&lt;endl; if (tmp1 &#43; tmp2 &gt; k) {pq.push(tmp1);pq.push(tmp2);break;} else pq.push(tmp1&#43;tmp2); } printf(&#34;%d\n&#34;, pq.size()); return 0; } 思路2【正确】：由于题目还有一个附加条件=&gt;每个袋子最多两个（=&gt;也在一定程度上约束了两个）用双指针，首尾各一个，分别用来指代放在袋子的两个：够了就放一个袋子里，指针都往中间移动；不够就只把大的往中间移。前提是排好序
 #include &lt;iostream&gt;using namespace std; #define maxn 30010int k, n, tem, a[maxn], ans = 0; #include &lt;algorithm&gt; int main() { scanf(&#34;%d%d&#34;, &amp;k, &amp;n); for (int i = 0; i &lt; n; &#43;&#43;i) scanf(&#34;%d&#34;, &amp;a[i]); sort(a, a&#43;n); int fidx = 0, eidx = n-1; while (fidx &lt;= eidx) if (a[fidx] &#43; a[eidx] &lt;= k) fidx&#43;&#43;, eidx--, ans&#43;&#43;; else eidx--, ans&#43;&#43;; printf(&#34;%d\n&#34;, ans); return 0; } 装袋问题-无限制个数的装袋 排序贪心 https://www."/>
-<script src="http://www.chenranfei.site/js/feather.min.js"></script>
+<script src="http://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -61,7 +61,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.site/">Aczy156</a>
+		<a href="http://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

@@ -27,7 +27,7 @@
 2、根据入度、出度来看是否添加进入队列。
 #include &lt;iostream&gt;using namespace std; #define maxn 5005int n, m, mp[maxn][maxn], in[maxn], out[maxn], ta, tb, ans[maxn], final; #include &lt;queue&gt;queue&lt;int&gt; q; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); mp[ta][tb] = 1; out[ta]&#43;&#43;;in[tb]&#43;&#43;; } for (int i = 1; i &lt;= n; &#43;&#43;i) if (!in[i]) {ans[i] = 1;q.push(i);} while (!q.empty()) { int nw = q.front();q.pop(); for (int i = 1; i &lt;= n; &#43;&#43;i){ if (mp[nw][i]) { ans[i] &#43;= ans[nw];ans[i] %= 80112002; in[i]--; if (!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/" />
+<meta property="og:url" content="http://chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -37,11 +37,11 @@
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
 2、根据入度、出度来看是否添加进入队列。
 #include &lt;iostream&gt;using namespace std; #define maxn 5005int n, m, mp[maxn][maxn], in[maxn], out[maxn], ta, tb, ans[maxn], final; #include &lt;queue&gt;queue&lt;int&gt; q; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); mp[ta][tb] = 1; out[ta]&#43;&#43;;in[tb]&#43;&#43;; } for (int i = 1; i &lt;= n; &#43;&#43;i) if (!in[i]) {ans[i] = 1;q.push(i);} while (!q.empty()) { int nw = q.front();q.pop(); for (int i = 1; i &lt;= n; &#43;&#43;i){ if (mp[nw][i]) { ans[i] &#43;= ans[nw];ans[i] %= 80112002; in[i]--; if (!"/>
-<script src="http://www.chenranfei.site/js/feather.min.js"></script>
+<script src="http://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.site/">Aczy156</a>
+		<a href="http://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

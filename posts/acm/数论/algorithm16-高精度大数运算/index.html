@@ -30,7 +30,7 @@
 3、输出的时候特判进位位是否需要单独输出
 #include &lt;iostream&gt;using namespace std; #define maxn 100005char sa[maxn], sb[maxn]; int a[maxn], b[maxn], ans[maxn], lena, lenb ,lenans, ap; #include &lt;cmath&gt;#include &lt;string.h&gt; void read() { lena = strlen(sa);lenb = strlen(sb); lenans = max(lena, lenb); for (int i = 0; i &lt; lena; &#43;&#43;i) a[i] = sa[lena-1-i] - &#39;0&#39;; for (int i = 0; i &lt; lenb; &#43;&#43;i) b[i] = sb[lenb-1-i] - &#39;0&#39;; } void add(int a[], int b[]) { for (int i = 0; i &lt; lenans; &#43;&#43;i) { ans[i] = a[i]&#43;b[i]&#43;ap; ap = ans[i]/10; ans[i]%=10; } } void write() { if (ap) printf(&#34;%d&#34;, ap); for (int i = lenans-1; i &gt;= 0; --i) printf(&#34;%d&#34;, ans[i]); } int main() { scanf(&#34;%s%s&#34;, sa, sb); read(); add(a, b); write(); return 0; } 大数减法 https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.site/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/" />
+<meta property="og:url" content="http://chenranfei.site/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -43,11 +43,11 @@
 2、做加法通过考虑进位位。
 3、输出的时候特判进位位是否需要单独输出
 #include &lt;iostream&gt;using namespace std; #define maxn 100005char sa[maxn], sb[maxn]; int a[maxn], b[maxn], ans[maxn], lena, lenb ,lenans, ap; #include &lt;cmath&gt;#include &lt;string.h&gt; void read() { lena = strlen(sa);lenb = strlen(sb); lenans = max(lena, lenb); for (int i = 0; i &lt; lena; &#43;&#43;i) a[i] = sa[lena-1-i] - &#39;0&#39;; for (int i = 0; i &lt; lenb; &#43;&#43;i) b[i] = sb[lenb-1-i] - &#39;0&#39;; } void add(int a[], int b[]) { for (int i = 0; i &lt; lenans; &#43;&#43;i) { ans[i] = a[i]&#43;b[i]&#43;ap; ap = ans[i]/10; ans[i]%=10; } } void write() { if (ap) printf(&#34;%d&#34;, ap); for (int i = lenans-1; i &gt;= 0; --i) printf(&#34;%d&#34;, ans[i]); } int main() { scanf(&#34;%s%s&#34;, sa, sb); read(); add(a, b); write(); return 0; } 大数减法 https://www."/>
-<script src="http://www.chenranfei.site/js/feather.min.js"></script>
+<script src="http://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -61,7 +61,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.site/">Aczy156</a>
+		<a href="http://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

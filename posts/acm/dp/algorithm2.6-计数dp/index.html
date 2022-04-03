@@ -30,7 +30,7 @@
 =&gt;每次只需要把自己前面所有的点的值都加起来即可
 #include &lt;iostream&gt;using namespace std; typedef long long ll; const int maxn = 509; ll n, dp[maxn]; int main() { scanf(&#34;%lld&#34;, &amp;n); dp[0] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = n; j &gt;= i; --j) dp[j] &#43;= dp[j-i]; printf(&#34;%lld\n&#34;, dp[n]-1); return 0; } " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.site/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/" />
+<meta property="og:url" content="http://chenranfei.site/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -43,11 +43,11 @@
 每一步都有可能是从任意之前的某一步跳过来的，因为只要保证递增就好了。也就是第一次是1次，那么第2次必定第一次的次数递增上来，那么第三次必定包括第一次和第二次递增上来。
 =&gt;每次只需要把自己前面所有的点的值都加起来即可
 #include &lt;iostream&gt;using namespace std; typedef long long ll; const int maxn = 509; ll n, dp[maxn]; int main() { scanf(&#34;%lld&#34;, &amp;n); dp[0] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = n; j &gt;= i; --j) dp[j] &#43;= dp[j-i]; printf(&#34;%lld\n&#34;, dp[n]-1); return 0; } "/>
-<script src="http://www.chenranfei.site/js/feather.min.js"></script>
+<script src="http://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -61,7 +61,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.site/">Aczy156</a>
+		<a href="http://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

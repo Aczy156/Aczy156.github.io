@@ -29,7 +29,7 @@
 对于该题：
  数据结构：链式前向星储存，然后通过维护一个dp[i]数组，表示第i个节点为根的子树的最大和。 dp状态转移方程：dp[x] = max(dp[x], dp[x]&#43;dp[to]);  #include &lt;iostream&gt;using namespace std; const int maxn = 2e4&#43;9; int n, dp[maxn], in[maxn], ta, tb; struct node { int to, next; }edges[maxn&lt;&lt;1];int head[maxn], tot; void addedge(int from, int to) { edges[&#43;&#43;tot].to = to; edges[tot].next = head[from]; head[from] = tot; in[to]&#43;&#43;; } void tree_dp(int x) { for (int i = head[x]; i; i=edges[i]." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.site/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/" />
+<meta property="og:url" content="http://chenranfei.site/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -41,11 +41,11 @@
 题目大意：获取该棵树中最大的子树和
 对于该题：
  数据结构：链式前向星储存，然后通过维护一个dp[i]数组，表示第i个节点为根的子树的最大和。 dp状态转移方程：dp[x] = max(dp[x], dp[x]&#43;dp[to]);  #include &lt;iostream&gt;using namespace std; const int maxn = 2e4&#43;9; int n, dp[maxn], in[maxn], ta, tb; struct node { int to, next; }edges[maxn&lt;&lt;1];int head[maxn], tot; void addedge(int from, int to) { edges[&#43;&#43;tot].to = to; edges[tot].next = head[from]; head[from] = tot; in[to]&#43;&#43;; } void tree_dp(int x) { for (int i = head[x]; i; i=edges[i]."/>
-<script src="http://www.chenranfei.site/js/feather.min.js"></script>
+<script src="http://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -59,7 +59,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.site/">Aczy156</a>
+		<a href="http://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

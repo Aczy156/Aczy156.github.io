@@ -37,7 +37,7 @@
 对于当前节点，那么他的所有儿子节点就是for(i~[0, 26]) pos = trie[nw][i]表示所有儿子的值。
  如果当前儿子为真儿子，那么trie[nw][i]不为0 =&gt; fail[pos] = trie[fail[nw]][i];对于当前节点nw的fail指针是已知的，所以就要利用当前nw节点的fail指针来更新他的所有儿子节点的fail指针 =&gt; 真儿子的fail指针指向当前节点的fail指针对应的指向方向的节点  if (!fail[pos]) fail[pos] = 1; 此时刷新出来的指向的方向不一定有值，也就是说有可能指向的那个也是空 =&gt; 就要替换成父节点 else就正常赋值就好，赋成当前节点的fail指针指向的节点的对应方向   如果当前儿子为假儿子，可以将fail指针指向的节点相同方向的值赋过去（fail指针指向的节点有值是最好的，没有值也无所谓）相当于把fail指针指向的节点那棵树嫁接在了这个节点下边  3、利用AC自动机进行搜索「当前节点nw，pos」" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.site/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/" />
+<meta property="og:url" content="http://chenranfei.site/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -57,11 +57,11 @@
 2、初始化fail指针「当前节点nw，遍历到的当前节点nw的儿子pos」
 对于当前节点，那么他的所有儿子节点就是for(i~[0, 26]) pos = trie[nw][i]表示所有儿子的值。
  如果当前儿子为真儿子，那么trie[nw][i]不为0 =&gt; fail[pos] = trie[fail[nw]][i];对于当前节点nw的fail指针是已知的，所以就要利用当前nw节点的fail指针来更新他的所有儿子节点的fail指针 =&gt; 真儿子的fail指针指向当前节点的fail指针对应的指向方向的节点  if (!fail[pos]) fail[pos] = 1; 此时刷新出来的指向的方向不一定有值，也就是说有可能指向的那个也是空 =&gt; 就要替换成父节点 else就正常赋值就好，赋成当前节点的fail指针指向的节点的对应方向   如果当前儿子为假儿子，可以将fail指针指向的节点相同方向的值赋过去（fail指针指向的节点有值是最好的，没有值也无所谓）相当于把fail指针指向的节点那棵树嫁接在了这个节点下边  3、利用AC自动机进行搜索「当前节点nw，pos」"/>
-<script src="http://www.chenranfei.site/js/feather.min.js"></script>
+<script src="http://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -75,7 +75,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.site/">Aczy156</a>
+		<a href="http://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

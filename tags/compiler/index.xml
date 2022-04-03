@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Compiler on Aczy156</title>
-    <link>http://www.chenranfei.site/tags/compiler/</link>
+    <link>http://chenranfei.site/tags/compiler/</link>
     <description>Recent content in Compiler on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Wed, 08 Apr 2020 20:42:26 +0800</lastBuildDate>
     
-	<atom:link href="http://www.chenranfei.site/tags/compiler/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://chenranfei.site/tags/compiler/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>C Compiler</title>
-      <link>http://www.chenranfei.site/posts/project/c-compilerclangmingwgcc/</link>
+      <link>http://chenranfei.site/posts/project/c-compilerclangmingwgcc/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>http://www.chenranfei.site/posts/project/c-compilerclangmingwgcc/</guid>
+      <guid>http://chenranfei.site/posts/project/c-compilerclangmingwgcc/</guid>
       <description>[TOC]
 C Compiler Clang MinGW GCC FSort中的线程问题 在Clang和MinGW编译器中都可以正常编译，但是经过Clang编译之后，可以正常运行；而</description>
     </item>

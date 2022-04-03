@@ -35,7 +35,7 @@ https://www.luogu.com.cn/problem/P1886
  往里边push：无脑每次往里边push 往外拿：每次先遍历，遍历到索引不在合适的区间内的，然后给pop掉【理解成从堆里把不符合的内容揪出来】 输出顶的：直接每次把堆顶拿出来  数据结构：通过pair来将值和索引进行绑定，【借助优先队列】默认对值进行排序，根据（less选取最大）（greater选取最小）对堆进行更新。
 #include &lt;iostream&gt;using namespace std; const int maxn = 1e6&#43;9; int n, k, a[maxn], ans_max[maxn], ans_min[maxn], idx; typedef pair&lt;int, int&gt; pr; #include &lt;queue&gt;priority_queue&lt;pr, vector&lt;pr&gt;, less&lt;pr&gt;&gt; pq_max; priority_queue&lt;pr, vector&lt;pr&gt;, greater&lt;pr&gt;&gt; pq_min; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;k); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); for (int i = 1; i &lt;= n; &#43;&#43;i) { pq_max." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.chenranfei.site/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" />
+<meta property="og:url" content="http://chenranfei.site/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -53,11 +53,11 @@ https://www.luogu.com.cn/problem/P1886
  「单调队列思路」思路：维护一个优先队列（也就是堆结构），然后往里边push，往外拿，输出顶的
  往里边push：无脑每次往里边push 往外拿：每次先遍历，遍历到索引不在合适的区间内的，然后给pop掉【理解成从堆里把不符合的内容揪出来】 输出顶的：直接每次把堆顶拿出来  数据结构：通过pair来将值和索引进行绑定，【借助优先队列】默认对值进行排序，根据（less选取最大）（greater选取最小）对堆进行更新。
 #include &lt;iostream&gt;using namespace std; const int maxn = 1e6&#43;9; int n, k, a[maxn], ans_max[maxn], ans_min[maxn], idx; typedef pair&lt;int, int&gt; pr; #include &lt;queue&gt;priority_queue&lt;pr, vector&lt;pr&gt;, less&lt;pr&gt;&gt; pq_max; priority_queue&lt;pr, vector&lt;pr&gt;, greater&lt;pr&gt;&gt; pq_min; int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;k); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); for (int i = 1; i &lt;= n; &#43;&#43;i) { pq_max."/>
-<script src="http://www.chenranfei.site/js/feather.min.js"></script>
+<script src="http://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://www.chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://www.chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -71,7 +71,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://www.chenranfei.site/">Aczy156</a>
+		<a href="http://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		
