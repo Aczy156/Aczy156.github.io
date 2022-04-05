@@ -27,7 +27,7 @@ Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.ms
  进入mysql文件下的bin目录cd &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin&quot;(目录不同电脑不同，通过tab自动弹出的是最准的) mysqld --initialize --console记录下来初始化的密码  mysqld install mysqld --console 可以测试一下当前的数据库是否安装好：  登陆mysql -u root -p,密码是上面初始化的那个。 执行show databases;如果报错，可以通过修改密码解决。alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;youpassword&#39;    设置密码加密方式 此步可以解决navicat可视化管理本地mysql或者其他IP的MySQL的连接失败的情况
  首先登陆mysql -u root -p,如果改了密码了就是自己改的，如果没有改过密码就是原来初始话的那个密码 然后更改加密方式： alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;youpassword&#39;  最后navicat可以连接成功 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://chenranfei.site/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/" />
+<meta property="og:url" content="https://chenranfei.site/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/" />
 <meta property="article:published_time" content="2020-03-17T21:54:42+08:00" />
 <meta property="article:modified_time" content="2020-03-17T21:54:42+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -37,11 +37,11 @@ Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.ms
 配置环境变量 按win键，输入“查看高级系统设置”-&gt;编辑系统变量中的PATH-&gt;添加下载的mysql的bin目录。 eg：C:\Program Files\MySQL\MySQL Server 8.0\bin 按win键，输入cmd，右击通过管理员权限打开
  进入mysql文件下的bin目录cd &quot;C:\Program Files\MySQL\MySQL Server 8.0\bin&quot;(目录不同电脑不同，通过tab自动弹出的是最准的) mysqld --initialize --console记录下来初始化的密码  mysqld install mysqld --console 可以测试一下当前的数据库是否安装好：  登陆mysql -u root -p,密码是上面初始化的那个。 执行show databases;如果报错，可以通过修改密码解决。alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;youpassword&#39;    设置密码加密方式 此步可以解决navicat可视化管理本地mysql或者其他IP的MySQL的连接失败的情况
  首先登陆mysql -u root -p,如果改了密码了就是自己改的，如果没有改过密码就是原来初始话的那个密码 然后更改加密方式： alter user &#39;root&#39;@&#39;localhost&#39; identified with mysql_native_password by &#39;youpassword&#39;  最后navicat可以连接成功 "/>
-<script src="http://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

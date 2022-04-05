@@ -32,7 +32,7 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
 2、遍历层次：遍历各个层-&gt;遍历某一层所有的可能的状态-&gt;遍历所需要的国王的个数-&gt;遍历上一行的状态查看是否冲突sit[j]&amp;sit[t] sit[j]&gt;&gt;1&amp;sit[t] sit[j]&lt;&lt;1&amp;sit[t] ，查看这些状态是否冲突
 #include &lt;iostream&gt;using namespace std; #define maxn 10#define maxsit (1&lt;&lt;10)&#43;50#define maxk 105int n, k, sit[maxk], cnt_sit, num[maxk]; // dp[i][j][s] 表示在第i行，这一行的状态为j（二进制所转换成的十进制之后的数），放了s个目标 的总方案数 typedef long long LL; LL dp[maxn][maxsit][maxk], ans=0; // 首先预处理单独这一行，可能的状态，相互之间不冲突，也就是没有相邻的。【注意是线性的，不是环形的，也就是说101这种的是完全可以的】 void init() { for (int i = 0; i &lt; (1&lt;&lt;n); &#43;&#43;i) { if (i &amp; (i&lt;&lt;1)) continue; int sum = 0; for (int j = 0; j &lt; n; &#43;&#43;j) if (i &amp; (1&lt;&lt;j)) sum&#43;&#43;; sit[&#43;&#43;cnt_sit] = i; num[cnt_sit] = sum; } } void solve() { dp[0][1][0] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= cnt_sit; &#43;&#43;j) for (int l = num[j]; l &lt;= k; &#43;&#43;l) for (int t = 1; t &lt;= cnt_sit; &#43;&#43;t) if (!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://chenranfei.site/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/" />
+<meta property="og:url" content="https://chenranfei.site/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -47,11 +47,11 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
 dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王的个数为s个，此时的种类数量。
 2、遍历层次：遍历各个层-&gt;遍历某一层所有的可能的状态-&gt;遍历所需要的国王的个数-&gt;遍历上一行的状态查看是否冲突sit[j]&amp;sit[t] sit[j]&gt;&gt;1&amp;sit[t] sit[j]&lt;&lt;1&amp;sit[t] ，查看这些状态是否冲突
 #include &lt;iostream&gt;using namespace std; #define maxn 10#define maxsit (1&lt;&lt;10)&#43;50#define maxk 105int n, k, sit[maxk], cnt_sit, num[maxk]; // dp[i][j][s] 表示在第i行，这一行的状态为j（二进制所转换成的十进制之后的数），放了s个目标 的总方案数 typedef long long LL; LL dp[maxn][maxsit][maxk], ans=0; // 首先预处理单独这一行，可能的状态，相互之间不冲突，也就是没有相邻的。【注意是线性的，不是环形的，也就是说101这种的是完全可以的】 void init() { for (int i = 0; i &lt; (1&lt;&lt;n); &#43;&#43;i) { if (i &amp; (i&lt;&lt;1)) continue; int sum = 0; for (int j = 0; j &lt; n; &#43;&#43;j) if (i &amp; (1&lt;&lt;j)) sum&#43;&#43;; sit[&#43;&#43;cnt_sit] = i; num[cnt_sit] = sum; } } void solve() { dp[0][1][0] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = 1; j &lt;= cnt_sit; &#43;&#43;j) for (int l = num[j]; l &lt;= k; &#43;&#43;l) for (int t = 1; t &lt;= cnt_sit; &#43;&#43;t) if (!"/>
-<script src="http://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -65,7 +65,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		

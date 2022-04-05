@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Office on Aczy156</title>
-    <link>http://chenranfei.site/tags/office/</link>
+    <link>https://chenranfei.site/tags/office/</link>
     <description>Recent content in Office on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Sun, 05 Apr 2020 17:16:12 +0800</lastBuildDate>
     
-	<atom:link href="http://chenranfei.site/tags/office/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.site/tags/office/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tool-Office-插件使用</title>
-      <link>http://chenranfei.site/posts/tool/tool-office-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</link>
+      <link>https://chenranfei.site/posts/tool/tool-office-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>http://chenranfei.site/posts/tool/tool-office-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://chenranfei.site/posts/tool/tool-office-%E6%8F%92%E4%BB%B6%E4%BD%BF%E7%94%A8/</guid>
       <description>[TOC]
 Office 插件工具使用 文献管理工具 - Zotero 安装 直接在Zotero中配置选项，然后会自动下载插件，与Chrome或Office建立连接。
  文献管理（manage）「Zotero connect with Chrome」 文献引用（citation）「Zotero connect with Office」  使用 文献引用，设置引用风格：有China National Standard GB/T 7714-2015(numeric, 中文)，依据其他论文种类还有其他的风格。

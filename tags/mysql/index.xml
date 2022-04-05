@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL on Aczy156</title>
-    <link>http://chenranfei.site/tags/mysql/</link>
+    <link>https://chenranfei.site/tags/mysql/</link>
     <description>Recent content in MySQL on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Tue, 17 Mar 2020 21:54:42 +0800</lastBuildDate>
     
-	<atom:link href="http://chenranfei.site/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.site/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Other-Mysql安装、配置、连接navicat过程</title>
-      <link>http://chenranfei.site/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/</link>
+      <link>https://chenranfei.site/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Tue, 17 Mar 2020 21:54:42 +0800</pubDate>
       
-      <guid>http://chenranfei.site/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/</guid>
+      <guid>https://chenranfei.site/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/</guid>
       <description>[TOC]
 Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
 配置环境变量 按win键，输入“查看高级系统设置”-&amp;gt;编辑系统变量中的PATH-&amp;gt;添加下载的mysql的bin目录。 eg：C:\Program Files\MySQL\MySQL Server 8.0\bin 按win键，输入cmd，右击通过管理员权限打开

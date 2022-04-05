@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>搜索 on Aczy156</title>
-    <link>http://chenranfei.site/categories/%E6%90%9C%E7%B4%A2/</link>
+    <link>https://chenranfei.site/categories/%E6%90%9C%E7%B4%A2/</link>
     <description>Recent content in 搜索 on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
     
-	<atom:link href="http://chenranfei.site/categories/%E6%90%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.site/categories/%E6%90%9C%E7%B4%A2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Algorithm8.1 BFS</title>
-      <link>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</link>
+      <link>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</guid>
+      <guid>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</guid>
       <description>[TOC]
 bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
 题目大意：最多可到达的格点数
@@ -26,10 +26,10 @@ bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
     
     <item>
       <title>Algorithm8.2 DFS</title>
-      <link>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</link>
+      <link>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</guid>
+      <guid>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</guid>
       <description>[TOC]
 dfs  向深递归
  传参的确定 =&amp;gt; 可以利用好递归调用栈机制 状态的判断 =&amp;gt; 递归到每一层之后，所有参数共同组合决定出一个状态，这个状态维护是否重复   [数组一维模版 &amp;amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
@@ -38,10 +38,10 @@ dfs  向深递归
     
     <item>
       <title>Algorithm8.2 DFS进阶-TLE情况的解决方案</title>
-      <link>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <link>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <guid>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
       <description>[TOC]
 DFS进阶-TLE情况的解决方案  解决方案
  「一」通过剪枝缩小搜索范围 「二」记忆化搜索 - 添加一个v数组 // dp数组，来记录DFS所有触及到的状态，防止再次访问 「其他」DP解决   https://www.luogu.com.cn/problem/P1077
@@ -52,10 +52,10 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
     
     <item>
       <title>Algorithm8.3 DFS 记忆化搜索</title>
-      <link>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
+      <link>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
+      <guid>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
       <description>[TOC]
 DFS 记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。
 [模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
@@ -67,10 +67,10 @@ DFS 记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同�
     
     <item>
       <title>Algorithm8.5 搜索思维题 &amp; 数字题目类型整合</title>
-      <link>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</link>
+      <link>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</guid>
+      <guid>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</guid>
       <description>[TOC]
 搜索思维题  特点：可以用搜索，但是可能会T或者需要剪枝过多
  特殊地图（某方向固定长度）起点到终点 + 特殊走法：考虑按照特殊方向进行模拟 特殊走法（不允许往某个方向走）：考虑直接全盘dp   特殊地图起点到终点-特殊走法：  两行地图 特殊走法，只往一边走更优  特殊走法：  某单个方向不能走  // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans++;return;} for (int i = 0; i &amp;lt;= a[l+1]; ++i) { cnt+=i;dfs(l+1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
@@ -79,10 +79,10 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
     
     <item>
       <title>Algorithm8.6 数字类型题目整合</title>
-      <link>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</link>
+      <link>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>http://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</guid>
+      <guid>https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</guid>
       <description>[TOC]
 数字类型题目整合  数字题目类型整合：
  若干个数相加组合成目标数的方案总和 小于等于4个数的平方的和组合成目标数的方案总和 给定一个数，问随意将这个数进行拆解，然后拆解得到的数做乘积，求乘积最大值   dfs转计数dp 问题1:若干个数相加组合成目标数的方案总和-可用dfs+剪枝出来 https://www.luogu.com.cn/problem/P1025

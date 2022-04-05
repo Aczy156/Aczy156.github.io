@@ -29,7 +29,7 @@
  通过在路径中对fa进行赋值，来保证路径上的fa都是那个父亲节点 可以看出指向关系的根。（类似题目找到某个节点的最终指向）  2、存放同个集合的关系：如果findfa(a)!=findafa(b)=&gt;就可以直接让找到的顶上的直接赋给另一个的顶上。也即fa[findfa(a)]=findafa(b)或者fa[findfa(b)]=findafa(a)
 #include &lt;iostream&gt;using namespace std; #define maxn 5005int n, m, p, fa[maxn], ta, tb; int findfa(int x){return fa[x] == x?x:findfa(fa[x]);} int main() { scanf(&#34;%d%d%d&#34;, &amp;n, &amp;m, &amp;p); // init  for (int i = 1; i &lt;= n; &#43;&#43;i) fa[i]=i; for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); if (findfa(ta) !" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://chenranfei.site/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/" />
+<meta property="og:url" content="https://chenranfei.site/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -41,11 +41,11 @@
  如果fa[x] == x，则代表这个节点就是代表这个集合的中心。 如果fa[x] != x，继续递归往上找，findfa(fa[x])  「路径压缩，把一条线的树结构给压缩成一个矮宽胖的类似于dom树结构的样式」：return fa[x]==x?x:fa[x]=findfa(fa[x]);
  通过在路径中对fa进行赋值，来保证路径上的fa都是那个父亲节点 可以看出指向关系的根。（类似题目找到某个节点的最终指向）  2、存放同个集合的关系：如果findfa(a)!=findafa(b)=&gt;就可以直接让找到的顶上的直接赋给另一个的顶上。也即fa[findfa(a)]=findafa(b)或者fa[findfa(b)]=findafa(a)
 #include &lt;iostream&gt;using namespace std; #define maxn 5005int n, m, p, fa[maxn], ta, tb; int findfa(int x){return fa[x] == x?x:findfa(fa[x]);} int main() { scanf(&#34;%d%d%d&#34;, &amp;n, &amp;m, &amp;p); // init  for (int i = 1; i &lt;= n; &#43;&#43;i) fa[i]=i; for (int i = 1; i &lt;= m; &#43;&#43;i) { scanf(&#34;%d%d&#34;, &amp;ta, &amp;tb); if (findfa(ta) !"/>
-<script src="http://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.site/js/feather.min.js"></script>
 	
-	<link href="http://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -59,7 +59,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="http://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.site/">Aczy156</a>
 	</div>
 	<nav>
 		
