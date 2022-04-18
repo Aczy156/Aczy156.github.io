@@ -31,7 +31,9 @@
       <description>[TOC]
 最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- Dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&amp;lt;&amp;lt;31)-1; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &amp;lt;= n; ++i) { tem = INF,v = 0; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
+ My-Template 邻接矩阵 or 链式前向星-普通
+邻接矩阵 or 链式前向星-堆优化
+struct nd {int pos, val;} priority_queue&amp;lt;nd&amp;gt; pq; int d[maxpoint], d1, d2; // 用于临时储存两个点到起点的距离，分别是u点到s点的距离以及v点到s点的距离 int vis[maxpoint]; int u, v; // 用于获取边的两个点的坐标，其中u是承接从优先队列中获得的点的位置，v是通过遍历邻接表获得的  void dijkstra(int s, int e) { for (int i = 1; i &amp;lt;= n; i++) d[i] = INF; dis[s] = 0; pq.push({s, dis[s]}); while (!pq.empty()) { u = pq.top().pos, d1 = pq.top().val;pq.pop(); if (!vis[u]) { vis[u] = 1; for (auto tm : G[u]) { v = tm.</description>
     </item>
     
     <item>

@@ -343,7 +343,9 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
       <description>[TOC]
 最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- Dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&amp;lt;&amp;lt;31)-1; void dijkstra(){ for (int i = 1; i &amp;lt;= n; ++i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &amp;lt;= n; ++i) { tem = INF,v = 0; for (int j = 1; j &amp;lt;= n; ++j) if (!</description>
+ My-Template 邻接矩阵 or 链式前向星-普通
+邻接矩阵 or 链式前向星-堆优化
+struct nd {int pos, val;} priority_queue&amp;lt;nd&amp;gt; pq; int d[maxpoint], d1, d2; // 用于临时储存两个点到起点的距离，分别是u点到s点的距离以及v点到s点的距离 int vis[maxpoint]; int u, v; // 用于获取边的两个点的坐标，其中u是承接从优先队列中获得的点的位置，v是通过遍历邻接表获得的  void dijkstra(int s, int e) { for (int i = 1; i &amp;lt;= n; i++) d[i] = INF; dis[s] = 0; pq.push({s, dis[s]}); while (!pq.empty()) { u = pq.top().pos, d1 = pq.top().val;pq.pop(); if (!vis[u]) { vis[u] = 1; for (auto tm : G[u]) { v = tm.</description>
     </item>
     
     <item>
@@ -1356,16 +1358,28 @@ CF719 div3 补题  https://codeforces.com/contest/1520
     </item>
     
     <item>
-      <title>Contest CSU预选赛 补题</title>
+      <title>Contest CSU 2021 预选赛 补题</title>
       <link>https://chenranfei.site/posts/contest/contest-csu2021pre/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
       <guid>https://chenranfei.site/posts/contest/contest-csu2021pre/</guid>
       <description>[TOC]
-CSU 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?cid=2193
+CSU 2021 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?cid=2193
  A 题目大意：贪心，可以无限选，然后问给定容积，最大价值。
 思路永远选单位价值最大的，然后逐级取余。
 #include &amp;lt;iostream&amp;gt;using namespace std; int a, ans; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;a); ans += (a/16)*227; a %= 16; ans += (a/8)*109; a %= 8; ans += (a/4)*49; a %= 4; ans += (a/2)*23; a %= 2; ans += a*10; printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } B C D </description>
+    </item>
+    
+    <item>
+      <title>Contest CSU 2022 预选赛 补题</title>
+      <link>https://chenranfei.site/posts/contest/contest-csu2022pre/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>https://chenranfei.site/posts/contest/contest-csu2022pre/</guid>
+      <description>[TOC]
+CSU 2022 预选赛 补题 A 题目大意：计算期望。概率*次数，其中，概率会随着次数的增加，按照一定规律进行变化。
+进行模拟即可。
+#include &amp;lt;iostream&amp;gt;using namespace std; double a, b, c, d, e, na; int n, T; double ans, base; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;T); for (int i = 0; i &amp;lt; T; ++i) { ans = 0;base = 1.0; scanf(&amp;#34;%lf%lf%lf%lf%lf%d&amp;#34;, &amp;amp;a, &amp;amp;b, &amp;amp;c, &amp;amp;d, &amp;amp;e, &amp;amp;n); na = a; int j; for (j = 1; j &amp;lt;= n; ++j) { ans += base*a*j; base *= (1-a)*1.</description>
     </item>
     
     <item>
@@ -1604,16 +1618,34 @@ CV-Image Segmentation 图像分割 传统分割方法 理解：
     
     <item>
       <title>Machine Learning 10 Boosting家族</title>
-      <link>https://chenranfei.site/posts/mldl/ml1-mlxgboost-lightgbm-catboost/</link>
+      <link>https://chenranfei.site/posts/mldl/ml1-xgboost-lightgbm-catboost/</link>
       <pubDate>Tue, 28 Jan 2020 20:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/mldl/ml1-mlxgboost-lightgbm-catboost/</guid>
+      <guid>https://chenranfei.site/posts/mldl/ml1-xgboost-lightgbm-catboost/</guid>
       <description>[TOC]
 Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix来进行转换
   然后通过xgb的train()来进行训练
   for fold_n (train_idx, val_idx) in enumerate(folds.split(X)): train_data = xgb.DMatrix(data=X_train) val_data = xgb.DMatrix(data=X_val) model = xgb.train() Lightgbm 0 相关预处理 a) 中文属性的问题，需要编码，不然无法训练
 1 普通训练 2 对于利用交叉训练的 几个组成成分
  oof: out-of-folds clf: classifier trn_idx, val_idx: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合 lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。   # 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns) features = [&amp;#39;feature1&amp;#39;, &amp;#39;feature2&amp;#39;, &amp;#39;feature3&amp;#39;, &amp;#39;feature4&amp;#39;] cat_feats = [&amp;#39;feature1&amp;#39;, &amp;#39;feature4&amp;#39;] # oof, predictions oof = np.</description>
+    </item>
+    
+    <item>
+      <title>Machine Learning 2 SVM</title>
+      <link>https://chenranfei.site/posts/mldl/ml2-svm/</link>
+      <pubDate>Tue, 28 Jan 2020 20:05:44 +0800</pubDate>
+      
+      <guid>https://chenranfei.site/posts/mldl/ml2-svm/</guid>
+      <description>[TOC]
+SVM 背景 解决线性不可分的问题（最基础的，异或问题）
+原理 数据形式-向量 向量 =&amp;gt; 表示一个数据的特征向量（不同特征的值）
+ 一元n维向量：两个数据之间的相似性 二元n-m维向量：两个数据之间相似的特征个数  数据预处理-核函数与维度映射函数 核函数Kernel、维度映射函数$\phi$
+ 核函数Kernel 维度映射函数$\phi$  经过预处理之后数据可以理解为是在新的特征空间中的运算/比较。
+注意：核函数、维度映射函数针对的是两个向量的运算过程。
+数据运算 1、运算方式-点积dot =&amp;gt; 度量相似性（点积得到的标量越大，那么这两个向量越相似）
+原本的计算点积可以看到，X、Y这两个向量最基础的维度进行运算 $$ X\cdot Y = \left{ x_1, x_2, ……x_n\right} \cdot \left{ y_1, y_2, ……y_n\right} = x_1y_1+x_2y_2+……x_ny_n $$ 通过核函数的计算点积其中，如果$\phi$是映射到二阶的话（默认都是从一元n维「一阶」升到一元$n^2$维「二阶」），$n^2$维的原因是任意两个元素都要进行相乘，所以导致最后是n*n个「二阶」。一般来说，核函数对于向量的提升都是从维度大幅提升，比如原来n维提升到m维。 $$ k(X, Y) = \phi(X)\cdot \phi(Y) \
+X = \left{ x_1, x_2, ……x_n\right} \
+\phi(X) = \left{x_1^2,\ x_2^2,\ ……\ x_n^2,\ x_1x_2,\ x_1x_3,\ …… \ x_1x_n \right} $$ 2、相似度计算公式</description>
     </item>
     
     <item>

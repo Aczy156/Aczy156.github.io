@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Machine Learning 2 SVM - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Machine Learning 2 SVM | Aczy156" />
+	<meta name="twitter:title" content="Machine Learning 2 SVM | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Machine Learning 2 SVM | Aczy156" />
+	<meta name="application-name" content="Machine Learning 2 SVM | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Machine Learning 2 SVM" />
+<meta property="og:description" content="[TOC]
+SVM 背景 解决线性不可分的问题（最基础的，异或问题）
+原理 数据形式-向量 向量 =&gt; 表示一个数据的特征向量（不同特征的值）
+ 一元n维向量：两个数据之间的相似性 二元n-m维向量：两个数据之间相似的特征个数  数据预处理-核函数与维度映射函数 核函数Kernel、维度映射函数$\phi$
+ 核函数Kernel 维度映射函数$\phi$  经过预处理之后数据可以理解为是在新的特征空间中的运算/比较。
+注意：核函数、维度映射函数针对的是两个向量的运算过程。
+数据运算 1、运算方式-点积dot =&gt; 度量相似性（点积得到的标量越大，那么这两个向量越相似）
+原本的计算点积可以看到，X、Y这两个向量最基础的维度进行运算 $$ X\cdot Y = \left{ x_1, x_2, ……x_n\right} \cdot \left{ y_1, y_2, ……y_n\right} = x_1y_1&#43;x_2y_2&#43;……x_ny_n $$ 通过核函数的计算点积其中，如果$\phi$是映射到二阶的话（默认都是从一元n维「一阶」升到一元$n^2$维「二阶」），$n^2$维的原因是任意两个元素都要进行相乘，所以导致最后是n*n个「二阶」。一般来说，核函数对于向量的提升都是从维度大幅提升，比如原来n维提升到m维。 $$ k(X, Y) = \phi(X)\cdot \phi(Y) \
+X = \left{ x_1, x_2, ……x_n\right} \
+\phi(X) = \left{x_1^2,\ x_2^2,\ ……\ x_n^2,\ x_1x_2,\ x_1x_3,\ …… \ x_1x_n \right} $$ 2、相似度计算公式" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenranfei.site/posts/mldl/ml2-svm/" />
+<meta property="article:published_time" content="2020-01-28T20:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T20:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Machine Learning 2 SVM"/>
+<meta name="twitter:description" content="[TOC]
+SVM 背景 解决线性不可分的问题（最基础的，异或问题）
+原理 数据形式-向量 向量 =&gt; 表示一个数据的特征向量（不同特征的值）
+ 一元n维向量：两个数据之间的相似性 二元n-m维向量：两个数据之间相似的特征个数  数据预处理-核函数与维度映射函数 核函数Kernel、维度映射函数$\phi$
+ 核函数Kernel 维度映射函数$\phi$  经过预处理之后数据可以理解为是在新的特征空间中的运算/比较。
+注意：核函数、维度映射函数针对的是两个向量的运算过程。
+数据运算 1、运算方式-点积dot =&gt; 度量相似性（点积得到的标量越大，那么这两个向量越相似）
+原本的计算点积可以看到，X、Y这两个向量最基础的维度进行运算 $$ X\cdot Y = \left{ x_1, x_2, ……x_n\right} \cdot \left{ y_1, y_2, ……y_n\right} = x_1y_1&#43;x_2y_2&#43;……x_ny_n $$ 通过核函数的计算点积其中，如果$\phi$是映射到二阶的话（默认都是从一元n维「一阶」升到一元$n^2$维「二阶」），$n^2$维的原因是任意两个元素都要进行相乘，所以导致最后是n*n个「二阶」。一般来说，核函数对于向量的提升都是从维度大幅提升，比如原来n维提升到m维。 $$ k(X, Y) = \phi(X)\cdot \phi(Y) \
+X = \left{ x_1, x_2, ……x_n\right} \
+\phi(X) = \left{x_1^2,\ x_2^2,\ ……\ x_n^2,\ x_1x_2,\ x_1x_3,\ …… \ x_1x_n \right} $$ 2、相似度计算公式"/>
+<script src="https://chenranfei.site/js/feather.min.js"></script>
+	
+	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://chenranfei.site/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#svm">SVM</a>
+      <ul>
+        <li><a href="#背景">背景</a></li>
+        <li><a href="#原理">原理</a></li>
+        <li><a href="#目的">目的</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Machine Learning 2 SVM</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="svm">SVM</h2>
+<h3 id="背景">背景</h3>
+<p>解决线性不可分的问题（最基础的，异或问题）</p>
+<h3 id="原理">原理</h3>
+<h4 id="数据形式-向量">数据形式-向量</h4>
+<p>向量 =&gt; 表示一个数据的特征向量（不同特征的值）</p>
+<ul>
+<li>一元n维向量：两个数据之间的相似性</li>
+<li>二元n-m维向量：两个数据之间相似的特征个数</li>
+</ul>
+<h4 id="数据预处理-核函数与维度映射函数">数据预处理-核函数与维度映射函数</h4>
+<p>核函数Kernel、维度映射函数$\phi$</p>
+<ul>
+<li>核函数Kernel</li>
+<li>维度映射函数$\phi$</li>
+</ul>
+<p>经过预处理之后数据可以理解为是在<strong>新的特征空间中</strong>的运算/比较。</p>
+<p>注意：核函数、维度映射函数针对的是<u>两个向量的运算过程</u>。</p>
+<h4 id="数据运算">数据运算</h4>
+<p>1、运算方式-点积dot =&gt; 度量相似性（点积得到的标量越大，那么这两个向量越相似）</p>
+<p>原本的计算点积可以看到，X、Y这两个向量最基础的维度进行运算
+$$
+X\cdot Y  = \left{ x_1, x_2, ……x_n\right} \cdot \left{ y_1, y_2, ……y_n\right} = x_1y_1+x_2y_2+……x_ny_n
+$$
+通过<strong>核函数</strong>的计算点积其中，如果$\phi$是映射到二阶的话（默认都是从一元n维「一阶」升到一元$n^2$维「二阶」），$n^2$维的原因是任意两个元素都要进行相乘，所以导致最后是n*n个「二阶」。一般来说，核函数对于向量的提升都是从维度大幅提升，比如原来n维提升到m维。
+$$
+k(X, Y) = \phi(X)\cdot \phi(Y) \<br>
+X = \left{ x_1, x_2, ……x_n\right} \<br>
+\phi(X) = \left{x_1^2,\ x_2^2,\ ……\ x_n^2,\ x_1x_2,\ x_1x_3,\ …… \ x_1x_n \right}
+$$
+2、相似度计算公式</p>
+<ul>
+<li>两个向量夹角的余弦值「cos」（原始数据+经过核函数处理之后的高阶数据）</li>
+<li>两个向量的欧氏距离「d」（原始数据+经过核函数处理之后的高阶数据）</li>
+</ul>
+<p>$$
+\cos(X, Y) = \frac{X\cdot Y}{|X||Y|}= \frac{X\cdot Y}{\sqrt{X\cdot X}\sqrt{Y\cdot Y}} \<br>
+d(X, Y) = \sqrt{{||X-Y||}^2} = \sqrt{X\cdot X -2X\cdot Y+Y\cdot Y} \<br>
+\cos&rsquo;(X, Y) = \frac {k(X, Y)}{\sqrt{k(X, X)}\sqrt{k(Y, Y)}} \<br>
+d&rsquo;(X, Y) = \sqrt{k(X, X) -2k(X, Y)+k(Y,Y)} \<br>
+$$</p>
+<h3 id="目的">目的</h3>
+<p>对于数据输入x、y满足$y=wx+b$这种线性解不存在。不过通过核函数进行映射，也就是$f(y) = wf(x)+b$存在线性解，使得数据线性可分的情况。(在高阶特征空间中找到解)</p>
+
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2022  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

@@ -26,16 +26,28 @@ CF719 div3 补题  https://codeforces.com/contest/1520
     </item>
     
     <item>
-      <title>Contest CSU预选赛 补题</title>
+      <title>Contest CSU 2021 预选赛 补题</title>
       <link>https://chenranfei.site/posts/contest/contest-csu2021pre/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
       <guid>https://chenranfei.site/posts/contest/contest-csu2021pre/</guid>
       <description>[TOC]
-CSU 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?cid=2193
+CSU 2021 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?cid=2193
  A 题目大意：贪心，可以无限选，然后问给定容积，最大价值。
 思路永远选单位价值最大的，然后逐级取余。
 #include &amp;lt;iostream&amp;gt;using namespace std; int a, ans; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;a); ans += (a/16)*227; a %= 16; ans += (a/8)*109; a %= 8; ans += (a/4)*49; a %= 4; ans += (a/2)*23; a %= 2; ans += a*10; printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } B C D </description>
+    </item>
+    
+    <item>
+      <title>Contest CSU 2022 预选赛 补题</title>
+      <link>https://chenranfei.site/posts/contest/contest-csu2022pre/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>https://chenranfei.site/posts/contest/contest-csu2022pre/</guid>
+      <description>[TOC]
+CSU 2022 预选赛 补题 A 题目大意：计算期望。概率*次数，其中，概率会随着次数的增加，按照一定规律进行变化。
+进行模拟即可。
+#include &amp;lt;iostream&amp;gt;using namespace std; double a, b, c, d, e, na; int n, T; double ans, base; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;T); for (int i = 0; i &amp;lt; T; ++i) { ans = 0;base = 1.0; scanf(&amp;#34;%lf%lf%lf%lf%lf%d&amp;#34;, &amp;amp;a, &amp;amp;b, &amp;amp;c, &amp;amp;d, &amp;amp;e, &amp;amp;n); na = a; int j; for (j = 1; j &amp;lt;= n; ++j) { ans += base*a*j; base *= (1-a)*1.</description>
     </item>
     
     <item>

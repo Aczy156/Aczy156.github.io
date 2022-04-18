@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Machine Learning 10 Boosting家族 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Machine Learning 10 Boosting家族 | Aczy156" />
+	<meta name="twitter:title" content="Machine Learning 10 Boosting家族 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Machine Learning 10 Boosting家族 | Aczy156" />
+	<meta name="application-name" content="Machine Learning 10 Boosting家族 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Machine Learning 10 Boosting家族" />
+<meta property="og:description" content="[TOC]
+Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix来进行转换
+  然后通过xgb的train()来进行训练
+  for fold_n (train_idx, val_idx) in enumerate(folds.split(X)): train_data = xgb.DMatrix(data=X_train) val_data = xgb.DMatrix(data=X_val) model = xgb.train() Lightgbm 0 相关预处理 a) 中文属性的问题，需要编码，不然无法训练
+1 普通训练 2 对于利用交叉训练的 几个组成成分
+ oof: out-of-folds clf: classifier trn_idx, val_idx: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合 lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。   # 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns) features = [&#39;feature1&#39;, &#39;feature2&#39;, &#39;feature3&#39;, &#39;feature4&#39;] cat_feats = [&#39;feature1&#39;, &#39;feature4&#39;] # oof, predictions oof = np." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenranfei.site/posts/mldl/ml1-xgboost-lightgbm-catboost/" />
+<meta property="article:published_time" content="2020-01-28T20:05:44+08:00" />
+<meta property="article:modified_time" content="2020-01-28T20:05:44+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Machine Learning 10 Boosting家族"/>
+<meta name="twitter:description" content="[TOC]
+Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix来进行转换
+  然后通过xgb的train()来进行训练
+  for fold_n (train_idx, val_idx) in enumerate(folds.split(X)): train_data = xgb.DMatrix(data=X_train) val_data = xgb.DMatrix(data=X_val) model = xgb.train() Lightgbm 0 相关预处理 a) 中文属性的问题，需要编码，不然无法训练
+1 普通训练 2 对于利用交叉训练的 几个组成成分
+ oof: out-of-folds clf: classifier trn_idx, val_idx: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合 lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。   # 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns) features = [&#39;feature1&#39;, &#39;feature2&#39;, &#39;feature3&#39;, &#39;feature4&#39;] cat_feats = [&#39;feature1&#39;, &#39;feature4&#39;] # oof, predictions oof = np."/>
+<script src="https://chenranfei.site/js/feather.min.js"></script>
+	
+	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://chenranfei.site/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#xgboost">Xgboost</a>
+      <ul>
+        <li><a href="#1-普通训练">1 普通训练</a></li>
+        <li><a href="#2-对于利用交叉训练的">2 对于利用交叉训练的</a></li>
+      </ul>
+    </li>
+    <li><a href="#lightgbm">Lightgbm</a>
+      <ul>
+        <li><a href="#0-相关预处理">0 相关预处理</a></li>
+        <li><a href="#1-普通训练-1">1 普通训练</a></li>
+        <li><a href="#2-对于利用交叉训练的-1">2 对于利用交叉训练的</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Machine Learning 10 Boosting家族</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="xgboost">Xgboost</h2>
+<h3 id="1-普通训练">1 普通训练</h3>
+<h3 id="2-对于利用交叉训练的">2 对于利用交叉训练的</h3>
+<ul>
+<li>
+<p>首先需要利用<code>DMatrix</code>来进行转换</p>
+</li>
+<li>
+<p>然后通过xgb的<code>train()</code>来进行训练</p>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">for</span> fold_n (train_idx, val_idx) <span style="color:#f92672">in</span> enumerate(folds<span style="color:#f92672">.</span>split(X)):
+	train_data <span style="color:#f92672">=</span> xgb<span style="color:#f92672">.</span>DMatrix(data<span style="color:#f92672">=</span>X_train)
+	val_data <span style="color:#f92672">=</span> xgb<span style="color:#f92672">.</span>DMatrix(data<span style="color:#f92672">=</span>X_val)
+  model <span style="color:#f92672">=</span> xgb<span style="color:#f92672">.</span>train()
+</code></pre></div><h2 id="lightgbm">Lightgbm</h2>
+<h3 id="0-相关预处理">0 相关预处理</h3>
+<p>a) 中文属性的问题，需要编码，不然无法训练</p>
+<h3 id="1-普通训练-1">1 普通训练</h3>
+<h3 id="2-对于利用交叉训练的-1">2 对于利用交叉训练的</h3>
+<p>几个组成成分</p>
+<ul>
+<li><code>oof</code>: out-of-folds</li>
+<li><code>clf</code>: classifier</li>
+<li><code>trn_idx</code>, <code>val_idx</code>: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合</li>
+<li>lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。</li>
+<li></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns)</span>
+features <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">feature1</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">feature2</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">feature3</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">feature4</span><span style="color:#e6db74">&#39;</span>]
+cat_feats <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">feature1</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">feature4</span><span style="color:#e6db74">&#39;</span>]
+
+<span style="color:#75715e"># oof, predictions</span>
+oof <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(len(train))
+prediction <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>zeros(len(train))
+
+<span style="color:#66d9ef">for</span> fold_n, (trn_idx, val_idx) <span style="color:#f92672">in</span> enumerate(folds<span style="color:#f92672">.</span>split(X))
+	<span style="color:#75715e"># 利用idx来找到交叉验证集  </span>
+	trn_data, val_data <span style="color:#f92672">=</span> lgb<span style="color:#f92672">.</span>Dataset(X[trn_idx], label<span style="color:#f92672">=</span>target[trn_idx]), lgb<span style="color:#f92672">.</span>Dataset(X[val_idx], label<span style="color:#f92672">=</span>target[val_idx])
+  <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">  (如果需要的话，可能要通过iloc结合features来获取需要的提取的一些属性的数据)</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">  trn_data, val_data = lgb.Dataset(X.iloc[trn_idx][features], label=target[trn_idx]), lgb.Dataset(X.iloc[val_idx][features], label=target[val_idx])</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">  </span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+  clf <span style="color:#f92672">=</span> lgb<span style="color:#f92672">.</span>train(param, trn_data, epochs, valid_sets<span style="color:#f92672">=</span>[trn_data, val_data], verbose_eval<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>, early_stopping_rounds<span style="color:#f92672">=</span>early_stopping_rounds, categorical_feature<span style="color:#f92672">=</span>cat_feats)
+ 	oof <span style="color:#f92672">=</span> clf<span style="color:#f92672">.</span>predict(train<span style="color:#f92672">.</span>iloc[trn_idx][features], num_iteration<span style="color:#f92672">=</span>clf<span style="color:#f92672">.</span>best_iteration)
+  
+  fold_importance_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame()
+  fold_importance_df[<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Feature</span><span style="color:#e6db74">&#39;</span>] <span style="color:#f92672">=</span> [map_columns[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> num_features]
+  
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Jan 28, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2022  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

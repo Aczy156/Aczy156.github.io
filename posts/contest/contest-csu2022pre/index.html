@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Contest CSU 2022 预选赛 补题 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Contest CSU 2022 预选赛 补题 | Aczy156" />
+	<meta name="twitter:title" content="Contest CSU 2022 预选赛 补题 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Contest CSU 2022 预选赛 补题 | Aczy156" />
+	<meta name="application-name" content="Contest CSU 2022 预选赛 补题 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Contest CSU 2022 预选赛 补题" />
+<meta property="og:description" content="[TOC]
+CSU 2022 预选赛 补题 A 题目大意：计算期望。概率*次数，其中，概率会随着次数的增加，按照一定规律进行变化。
+进行模拟即可。
+#include &lt;iostream&gt;using namespace std; double a, b, c, d, e, na; int n, T; double ans, base; int main() { scanf(&#34;%d&#34;, &amp;T); for (int i = 0; i &lt; T; &#43;&#43;i) { ans = 0;base = 1.0; scanf(&#34;%lf%lf%lf%lf%lf%d&#34;, &amp;a, &amp;b, &amp;c, &amp;d, &amp;e, &amp;n); na = a; int j; for (j = 1; j &lt;= n; &#43;&#43;j) { ans &#43;= base*a*j; base *= (1-a)*1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenranfei.site/posts/contest/contest-csu2022pre/" />
+<meta property="article:published_time" content="2020-02-04T16:12:46+08:00" />
+<meta property="article:modified_time" content="2020-02-04T16:12:46+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Contest CSU 2022 预选赛 补题"/>
+<meta name="twitter:description" content="[TOC]
+CSU 2022 预选赛 补题 A 题目大意：计算期望。概率*次数，其中，概率会随着次数的增加，按照一定规律进行变化。
+进行模拟即可。
+#include &lt;iostream&gt;using namespace std; double a, b, c, d, e, na; int n, T; double ans, base; int main() { scanf(&#34;%d&#34;, &amp;T); for (int i = 0; i &lt; T; &#43;&#43;i) { ans = 0;base = 1.0; scanf(&#34;%lf%lf%lf%lf%lf%d&#34;, &amp;a, &amp;b, &amp;c, &amp;d, &amp;e, &amp;n); na = a; int j; for (j = 1; j &lt;= n; &#43;&#43;j) { ans &#43;= base*a*j; base *= (1-a)*1."/>
+<script src="https://chenranfei.site/js/feather.min.js"></script>
+	
+	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://chenranfei.site/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#csu-2022-预选赛-补题">CSU 2022 预选赛 补题</a>
+      <ul>
+        <li><a href="#a">A</a></li>
+        <li><a href="#b">B</a></li>
+        <li><a href="#c">C</a></li>
+        <li><a href="#d">D</a></li>
+        <li><a href="#e">E</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Contest CSU 2022 预选赛 补题</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="csu-2022-预选赛-补题">CSU 2022 预选赛 补题</h2>
+<h3 id="a">A</h3>
+<p>题目大意：计算期望。概率*次数，其中，概率会随着次数的增加，按照一定规律进行变化。</p>
+<p>进行模拟即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+
+<span style="color:#66d9ef">double</span> a, b, c, d, e, na;
+<span style="color:#66d9ef">int</span> n, T;
+<span style="color:#66d9ef">double</span> ans, base;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>T);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> T; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;base <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>;
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lf%lf%lf%lf%lf%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>a, <span style="color:#f92672">&amp;</span>b, <span style="color:#f92672">&amp;</span>c, <span style="color:#f92672">&amp;</span>d, <span style="color:#f92672">&amp;</span>e, <span style="color:#f92672">&amp;</span>n);
+        na <span style="color:#f92672">=</span> a;
+        <span style="color:#66d9ef">int</span> j;
+        <span style="color:#66d9ef">for</span> (j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>j) {
+            ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> base<span style="color:#f92672">*</span>a<span style="color:#f92672">*</span>j;
+            base <span style="color:#f92672">*</span><span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>a)<span style="color:#f92672">*</span><span style="color:#ae81ff">1.0</span>;
+        }
+        <span style="color:#66d9ef">while</span> (na <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>) {
+            na <span style="color:#f92672">+</span><span style="color:#f92672">=</span> e;
+            <span style="color:#66d9ef">if</span> (na <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) na <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>;
+            ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> base<span style="color:#f92672">*</span>na<span style="color:#f92672">*</span>j;
+            j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+            base <span style="color:#f92672">*</span><span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>na)<span style="color:#f92672">*</span><span style="color:#ae81ff">1.0</span>;
+
+        }
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%.4lf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="b">B</h3>
+<h3 id="c">C</h3>
+<p>题目大意：最短路。会卡时间。需要堆优化。</p>
+<p>注意权重是进行累乘。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> pair<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">double</span><span style="color:#f92672">&gt;</span> Pair;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxpoints <span style="color:#f92672">=</span> <span style="color:#ae81ff">2e3</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>, maxedges <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e5</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+vector<span style="color:#f92672">&lt;</span>Pair<span style="color:#f92672">&gt;</span> G[maxpoints];
+<span style="color:#66d9ef">int</span> n, m, ta, tb, bg, ed;
+<span style="color:#66d9ef">double</span> tc;
+
+<span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">nd</span> {
+    <span style="color:#66d9ef">int</span> pos;
+    <span style="color:#66d9ef">double</span> dis;
+    nd(<span style="color:#66d9ef">int</span> pos, <span style="color:#66d9ef">double</span> dis)<span style="color:#f92672">:</span> pos(pos), dis(dis){}
+    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> nd n) <span style="color:#66d9ef">const</span> {
+        <span style="color:#66d9ef">return</span> dis <span style="color:#f92672">&lt;</span> n.dis;
+    }
+};
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span>nd<span style="color:#f92672">&gt;</span> pq;
+
+<span style="color:#66d9ef">double</span> d[maxpoints] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>}, d1, d2;
+<span style="color:#66d9ef">int</span> vis[maxpoints] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">0</span>};
+<span style="color:#66d9ef">int</span> u, v;
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> s, <span style="color:#66d9ef">int</span> e) {
+    d[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span>;
+    pq.push({s, d[s]});
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
+        u <span style="color:#f92672">=</span> pq.top().pos, d1 <span style="color:#f92672">=</span> pq.top().dis;pq.pop();
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[u]) {
+            vis[u] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> tm : G[u]) {
+                v <span style="color:#f92672">=</span> tm.first, d2 <span style="color:#f92672">=</span> tm.second;
+                <span style="color:#66d9ef">if</span> (d[v] <span style="color:#f92672">&lt;</span> d1<span style="color:#f92672">*</span>d2) {
+                    d[v] <span style="color:#f92672">=</span> d1<span style="color:#f92672">*</span>d2;
+                    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[v]) pq.push({v, d[v]});
+                }
+            }
+        }
+
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%.4lf</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">100</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span>d[e]);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n, <span style="color:#f92672">&amp;</span>m);
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d%lf</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ta, <span style="color:#f92672">&amp;</span>tb, <span style="color:#f92672">&amp;</span>tc);
+        G[ta].push_back(make_pair(tb, <span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">*</span>tc<span style="color:#f92672">/</span><span style="color:#ae81ff">100.0</span>));
+        G[tb].push_back(make_pair(ta, <span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">*</span>tc<span style="color:#f92672">/</span><span style="color:#ae81ff">100.0</span>));
+    }
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>bg, <span style="color:#f92672">&amp;</span>ed);
+    dijkstra(bg, ed);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><h3 id="d">D</h3>
+<h3 id="e">E</h3>
+<p>题目大意：斐波那契数列</p>
+<p>递推，然后递推的过程中要取余。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">int</span> m;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxm <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e6</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> f[maxm];
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> mod <span style="color:#f92672">=</span> <span style="color:#ae81ff">998244353</span>;
+<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> ans <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>m); <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (m <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) {
+        cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+    }
+    <span style="color:#66d9ef">if</span> (m <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>) {
+        cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">3</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+    }
+    f[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;f[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;f[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> f[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>f[<span style="color:#ae81ff">2</span>];
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        f[i] <span style="color:#f92672">=</span> f[i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>f[i<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>];f[i] <span style="color:#f92672">%</span><span style="color:#f92672">=</span> mod;
+        ans <span style="color:#f92672">+</span><span style="color:#f92672">=</span> f[i]; ans <span style="color:#f92672">%</span><span style="color:#f92672">=</span> mod;
+    }
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, ans<span style="color:#f92672">+</span><span style="color:#ae81ff">3</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 4, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E6%AF%94%E8%B5%9B">比赛</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2022  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

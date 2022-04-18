@@ -24,7 +24,9 @@
 <meta property="og:description" content="[TOC]
 最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- Dijkstra&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &lt;iostream&gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&lt;&lt;31)-1; void dijkstra(){ for (int i = 1; i &lt;= n; &#43;&#43;i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = INF,v = 0; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!" />
+ My-Template 邻接矩阵 or 链式前向星-普通
+邻接矩阵 or 链式前向星-堆优化
+struct nd {int pos, val;} priority_queue&lt;nd&gt; pq; int d[maxpoint], d1, d2; // 用于临时储存两个点到起点的距离，分别是u点到s点的距离以及v点到s点的距离 int vis[maxpoint]; int u, v; // 用于获取边的两个点的坐标，其中u是承接从优先队列中获得的点的位置，v是通过遍历邻接表获得的  void dijkstra(int s, int e) { for (int i = 1; i &lt;= n; i&#43;&#43;) d[i] = INF; dis[s] = 0; pq.push({s, dis[s]}); while (!pq.empty()) { u = pq.top().pos, d1 = pq.top().val;pq.pop(); if (!vis[u]) { vis[u] = 1; for (auto tm : G[u]) { v = tm." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
@@ -34,7 +36,9 @@
 <meta name="twitter:description" content="[TOC]
 最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
 我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- Dijkstra&#43;邻接矩阵【用mp[maxn][maxn]二维矩阵储存】 #include &lt;iostream&gt;using namespace std; #define maxn 10010typedef long long ll; ll n, m, bg, dis[maxn], vis[maxn], mp[maxn][maxn], ta, tb, tc, tem, v; const int INF = (1&lt;&lt;31)-1; void dijkstra(){ for (int i = 1; i &lt;= n; &#43;&#43;i) dis[i] = mp[bg][i]; vis[bg] = 1; for (int i = 1; i &lt;= n; &#43;&#43;i) { tem = INF,v = 0; for (int j = 1; j &lt;= n; &#43;&#43;j) if (!"/>
+ My-Template 邻接矩阵 or 链式前向星-普通
+邻接矩阵 or 链式前向星-堆优化
+struct nd {int pos, val;} priority_queue&lt;nd&gt; pq; int d[maxpoint], d1, d2; // 用于临时储存两个点到起点的距离，分别是u点到s点的距离以及v点到s点的距离 int vis[maxpoint]; int u, v; // 用于获取边的两个点的坐标，其中u是承接从优先队列中获得的点的位置，v是通过遍历邻接表获得的  void dijkstra(int s, int e) { for (int i = 1; i &lt;= n; i&#43;&#43;) d[i] = INF; dis[s] = 0; pq.push({s, dis[s]}); while (!pq.empty()) { u = pq.top().pos, d1 = pq.top().val;pq.pop(); if (!vis[u]) { vis[u] = 1; for (auto tm : G[u]) { v = tm."/>
 <script src="https://chenranfei.site/js/feather.min.js"></script>
 	
 	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
@@ -66,6 +70,7 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="#最短路">最短路</a>
       <ul>
+        <li><a href="#my-template">My-Template</a></li>
         <li><a href="#dijkstra邻接矩阵用mpmaxnmaxn二维矩阵储存">Dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】</a></li>
         <li><a href="#dijkstra邻接表结构体用vector向量来进行储存">Dijkstra+邻接表【结构体+用vector向量来进行储存】</a></li>
         <li><a href="#dijkstra链式前向星结构体">Dijkstra+链式前向星【结构体】</a></li>
@@ -94,7 +99,34 @@ MathJax.Hub.Config({
 <p>博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程</p>
 <p><a href="https://blog.csdn.net/qq_43345204/article/details/115360233?spm=1001.2014.3001.5501">我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)</a></p>
 </blockquote>
-<h3 id="dijkstra邻接矩阵用mpmaxnmaxn二维矩阵储存">Dijkstra+邻接矩阵【用<code>mp[maxn][maxn]</code>二维矩阵储存】</h3>
+<h3 id="my-template">My-Template</h3>
+<p>邻接矩阵 or 链式前向星-普通</p>
+<p>邻接矩阵 or 链式前向星-堆优化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">nd</span> {<span style="color:#66d9ef">int</span> pos, val;}
+priority_queue<span style="color:#f92672">&lt;</span>nd<span style="color:#f92672">&gt;</span> pq;
+<span style="color:#66d9ef">int</span> d[maxpoint], d1, d2; <span style="color:#75715e">// 用于临时储存两个点到起点的距离，分别是u点到s点的距离以及v点到s点的距离
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> vis[maxpoint];
+<span style="color:#66d9ef">int</span> u, v; <span style="color:#75715e">// 用于获取边的两个点的坐标，其中u是承接从优先队列中获得的点的位置，v是通过遍历邻接表获得的
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">dijkstra</span>(<span style="color:#66d9ef">int</span> s, <span style="color:#66d9ef">int</span> e) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) d[i] <span style="color:#f92672">=</span> INF;
+  dis[s] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  pq.push({s, dis[s]});
+  <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>pq.empty()) {
+    u <span style="color:#f92672">=</span> pq.top().pos, d1 <span style="color:#f92672">=</span> pq.top().val;pq.pop();
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[u]) {
+      vis[u] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> tm : G[u]) {
+        v <span style="color:#f92672">=</span> tm.first, d2 <span style="color:#f92672">=</span> tm.second;
+        <span style="color:#66d9ef">if</span> (d[v] <span style="color:#f92672">&lt;</span> d1<span style="color:#f92672">+</span>d2) {
+          d[v] <span style="color:#f92672">=</span> d1<span style="color:#f92672">+</span>d2;
+          <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>vis[v]) pq.push({v, d[v]});
+        }
+      }
+    }
+  }
+}
+</code></pre></div><h3 id="dijkstra邻接矩阵用mpmaxnmaxn二维矩阵储存">Dijkstra+邻接矩阵【用<code>mp[maxn][maxn]</code>二维矩阵储存】</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>using namespace std;
 <span style="color:#75715e">#</span><span style="color:#75715e">define maxn 10010</span><span style="color:#75715e">

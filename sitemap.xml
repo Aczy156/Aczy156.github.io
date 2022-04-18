@@ -653,6 +653,11 @@
   </url>
   
   <url>
+    <loc>https://chenranfei.site/posts/contest/contest-csu2022pre/</loc>
+    <lastmod>2020-02-04T16:12:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://chenranfei.site/posts/contest/contest-ict-pfind/</loc>
     <lastmod>2020-02-04T16:12:46+08:00</lastmod>
   </url>
@@ -733,7 +738,12 @@
   </url>
   
   <url>
-    <loc>https://chenranfei.site/posts/mldl/ml1-mlxgboost-lightgbm-catboost/</loc>
+    <loc>https://chenranfei.site/posts/mldl/ml1-xgboost-lightgbm-catboost/</loc>
+    <lastmod>2020-01-28T20:05:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://chenranfei.site/posts/mldl/ml2-svm/</loc>
     <lastmod>2020-01-28T20:05:44+08:00</lastmod>
   </url>
   
