@@ -70,6 +70,8 @@ MathJax.Hub.Config({
         <li><a href="#queue">queue</a></li>
         <li><a href="#priority_queue">priority_queue</a></li>
         <li><a href="#upperbound--lowerbound">upperbound & lowerbound</a></li>
+        <li><a href="#auto">auto</a></li>
+        <li><a href="#regex">regex</a></li>
       </ul>
     </li>
   </ul>
@@ -214,6 +216,29 @@ priority_queue<span style="color:#f92672">&lt;</span>node, vector<span style="co
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> pos3 <span style="color:#f92672">=</span> lowerbound(b, b<span style="color:#f92672">+</span>n, <span style="color:#ae81ff">7</span>); <span style="color:#75715e">// 小于等于7的边界 =&gt; 3
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> pos4 <span style="color:#f92672">=</span> lowerbound(b, b<span style="color:#f92672">+</span>n, <span style="color:#ae81ff">7</span>); <span style="color:#75715e">// 小于7的边界 =&gt; 4
 </span><span style="color:#75715e"></span>}
+</code></pre></div><h3 id="auto">auto</h3>
+<p>基于范围遍历 Range-Based-For （C++11之后支持）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> vec {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>,<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>,<span style="color:#ae81ff">10</span>};
+cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">修改前</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span><span style="color:#f92672">&amp;</span> n :vec) <span style="color:#75715e">// 将遍历的变量声明为引用类型，即可以修改内容
+</span><span style="color:#75715e"></span>    std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> n<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">修改后</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> j : vec)
+    std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> j;
+
+std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string<span style="color:#f92672">&gt;</span> strs;
+cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">修改前</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> s :strs) { <span style="color:#75715e">// 将遍历的变量声明为引用类型，即可以修改内容
+</span><span style="color:#75715e"></span>    std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> n<span style="color:#f92672">+</span>;
+}
+</code></pre></div><h3 id="regex">regex</h3>
+<p>正则表达式 <u>Reg</u>ular <u>Ex</u>pression （C++11之后支持）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;regex&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>regex reg(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">s+</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// 以空格进行分割
+</span><span style="color:#75715e"></span>            std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string<span style="color:#f92672">&gt;</span> v(std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>sregex_token_iterator(s.begin(), s.end(), reg, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
+                                       std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>sregex_token_iterator());
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span>ss: v) {std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>ss<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>;}
 </code></pre></div>
 		</section>
 
