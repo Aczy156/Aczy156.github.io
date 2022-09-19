@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm24 数据结构 线段树 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Algorithm24 数据结构 线段树 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm24 数据结构 线段树 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Algorithm24 数据结构 线段树 | Aczy156" />
+	<meta name="application-name" content="Algorithm24 数据结构 线段树 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Algorithm24 数据结构 线段树" />
+<meta property="og:description" content="[TOC]
+数据结构 线段树  查询/计算方式：区间查询、单点修改、区级修改、单点查询
+查询/维护的值：区间和、
+ 基础区间查询 #include &lt;iostream&gt;using namespace std; const int maxn = 1e6&#43;9; int n, a[maxn&lt;&lt;1], sum[maxn&lt;&lt;1]; // a原数组 sum区间求和数组  void pushup(int k) { sum[k] = sum[k&lt;&lt;1]&#43;sum[k&lt;&lt;1|1]; } void build(int k, int l, int r) { if (l == r) { scanf(&#34;%d&#34;, a&#43;k); sum[k] = a[k]; return; } int mid = (l&#43;r)&gt;&gt;1; build(k&lt;&lt;1, l, mid); build(k&lt;&lt;1|1, mid&#43;1, r); pushup(k); } int query(int k, int l, int r, int ll, int rr) { int mid = (l&#43;r)&gt;&gt;1; if (ll &lt;= l &amp;&amp; r &lt;= rr) return sum[k]; if (rr &lt;= mid) return query(k&lt;&lt;1, l, mid, ll, rr); else if (ll &gt;= mid&#43;1) return query(k&lt;&lt;1|1, mid&#43;1, r, ll, rr); else return query(k&lt;&lt;1, l, mid, ll, mid)&#43;query(k&lt;&lt;1|1, mid&#43;1, r, mid&#43;1, rr); } int main() { scanf(&#34;%d&#34;, &amp;n); build(1, 1, n); while (m--) { scanf(&#34;%d%d&#34;, &amp;tl, &amp;tr); printf(&#34;%d\n&#34;, query(1, 1, n, tl, tr)); } return 0; } //5 //5 4 3 2 1 //4 //1 5 //1 2 //3 5 //2 4 线段树逆序对 poj2299" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chenranfei.site/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm24-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/" />
+<meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
+<meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Algorithm24 数据结构 线段树"/>
+<meta name="twitter:description" content="[TOC]
+数据结构 线段树  查询/计算方式：区间查询、单点修改、区级修改、单点查询
+查询/维护的值：区间和、
+ 基础区间查询 #include &lt;iostream&gt;using namespace std; const int maxn = 1e6&#43;9; int n, a[maxn&lt;&lt;1], sum[maxn&lt;&lt;1]; // a原数组 sum区间求和数组  void pushup(int k) { sum[k] = sum[k&lt;&lt;1]&#43;sum[k&lt;&lt;1|1]; } void build(int k, int l, int r) { if (l == r) { scanf(&#34;%d&#34;, a&#43;k); sum[k] = a[k]; return; } int mid = (l&#43;r)&gt;&gt;1; build(k&lt;&lt;1, l, mid); build(k&lt;&lt;1|1, mid&#43;1, r); pushup(k); } int query(int k, int l, int r, int ll, int rr) { int mid = (l&#43;r)&gt;&gt;1; if (ll &lt;= l &amp;&amp; r &lt;= rr) return sum[k]; if (rr &lt;= mid) return query(k&lt;&lt;1, l, mid, ll, rr); else if (ll &gt;= mid&#43;1) return query(k&lt;&lt;1|1, mid&#43;1, r, ll, rr); else return query(k&lt;&lt;1, l, mid, ll, mid)&#43;query(k&lt;&lt;1|1, mid&#43;1, r, mid&#43;1, rr); } int main() { scanf(&#34;%d&#34;, &amp;n); build(1, 1, n); while (m--) { scanf(&#34;%d%d&#34;, &amp;tl, &amp;tr); printf(&#34;%d\n&#34;, query(1, 1, n, tl, tr)); } return 0; } //5 //5 4 3 2 1 //4 //1 5 //1 2 //3 5 //2 4 线段树逆序对 poj2299"/>
+<script src="https://chenranfei.site/js/feather.min.js"></script>
+	
+	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="https://chenranfei.site/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数据结构-线段树">数据结构 线段树</a>
+      <ul>
+        <li><a href="#基础区间查询">基础区间查询</a></li>
+        <li><a href="#线段树逆序对">线段树逆序对</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Algorithm24 数据结构 线段树</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="数据结构-线段树">数据结构 线段树</h2>
+<blockquote>
+<p>查询/计算方式：区间查询、单点修改、区级修改、单点查询</p>
+<p>查询/维护的值：区间和、</p>
+</blockquote>
+<h3 id="基础区间查询">基础区间查询</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e6</span><span style="color:#f92672">+</span><span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">int</span> n, a[maxn<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>], sum[maxn<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>]; <span style="color:#75715e">// a原数组 sum区间求和数组
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pushup</span>(<span style="color:#66d9ef">int</span> k) {
+    sum[k] <span style="color:#f92672">=</span> sum[k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>sum[k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">|</span><span style="color:#ae81ff">1</span>];
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">build</span>(<span style="color:#66d9ef">int</span> k, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r) {
+    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">=</span><span style="color:#f92672">=</span> r) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, a<span style="color:#f92672">+</span>k);
+        sum[k] <span style="color:#f92672">=</span> a[k];
+        <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> (l<span style="color:#f92672">+</span>r)<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+    build(k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>, l, mid);
+    build(k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">|</span><span style="color:#ae81ff">1</span>, mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, r);
+    pushup(k);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">query</span>(<span style="color:#66d9ef">int</span> k, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> ll, <span style="color:#66d9ef">int</span> rr) {
+    <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> (l<span style="color:#f92672">+</span>r)<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (ll <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> l <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> r <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> rr) <span style="color:#66d9ef">return</span> sum[k];
+    <span style="color:#66d9ef">if</span> (rr <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> mid) <span style="color:#66d9ef">return</span> query(k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>, l, mid, ll, rr);
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (ll <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> query(k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">|</span><span style="color:#ae81ff">1</span>, mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, r, ll, rr);
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> query(k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>, l, mid, ll, mid)<span style="color:#f92672">+</span>query(k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">|</span><span style="color:#ae81ff">1</span>, mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, r, mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, rr);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n);
+    build(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, n);
+    <span style="color:#66d9ef">while</span> (m<span style="color:#f92672">-</span><span style="color:#f92672">-</span>) {
+        scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>tl, <span style="color:#f92672">&amp;</span>tr);
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, query(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, n, tl, tr));
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+
+<span style="color:#75715e">//5
+</span><span style="color:#75715e"></span><span style="color:#75715e">//5 4 3 2 1
+</span><span style="color:#75715e"></span><span style="color:#75715e">//4
+</span><span style="color:#75715e"></span><span style="color:#75715e">//1 5
+</span><span style="color:#75715e"></span><span style="color:#75715e">//1 2
+</span><span style="color:#75715e"></span><span style="color:#75715e">//3 5
+</span><span style="color:#75715e"></span><span style="color:#75715e">//2 4
+</span></code></pre></div><h3 id="线段树逆序对">线段树逆序对</h3>
+<p><a href="http://poj.org/problem?id=2299">poj2299</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> maxn <span style="color:#f92672">=</span> <span style="color:#ae81ff">5e5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">9</span>;
+<span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> a[maxn], b[maxn];
+<span style="color:#66d9ef">int</span> n, rev[maxn <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">2</span>];
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pushup</span>(<span style="color:#66d9ef">int</span> k) {
+    rev[k] <span style="color:#f92672">=</span> rev[k <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span> rev[k <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span>];
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">build</span>(<span style="color:#66d9ef">int</span> k, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r) {
+    rev[k] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">=</span><span style="color:#f92672">=</span> r) <span style="color:#66d9ef">return</span>;
+    <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> (l <span style="color:#f92672">+</span> r) <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>;
+    build(k <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>, l, mid);
+    build(k <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span>, mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r);
+    pushup(k);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update</span>(<span style="color:#66d9ef">int</span> k, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> pos) {
+    <span style="color:#66d9ef">if</span> (l <span style="color:#f92672">=</span><span style="color:#f92672">=</span> r <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> pos <span style="color:#f92672">=</span><span style="color:#f92672">=</span> l) {
+        rev[k]<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+        <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> (l<span style="color:#f92672">+</span>r)<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">if</span> (pos <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> mid) update(k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span>, l, mid, pos);
+    <span style="color:#66d9ef">else</span> update(k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1</span><span style="color:#f92672">|</span><span style="color:#ae81ff">1</span>, mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, r, pos);
+    pushup(k);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">query</span>(<span style="color:#66d9ef">int</span> k, <span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r, <span style="color:#66d9ef">int</span> ll, <span style="color:#66d9ef">int</span> rr) {
+    <span style="color:#66d9ef">if</span> (ll <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> l <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> r <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> rr) <span style="color:#66d9ef">return</span> rev[k];
+    <span style="color:#66d9ef">int</span> mid <span style="color:#f92672">=</span> (l <span style="color:#f92672">+</span> r) <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>, total_rev <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">if</span> (ll <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> mid) total_rev <span style="color:#f92672">+</span><span style="color:#f92672">=</span> query(k <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span>, l, mid, ll, rr);
+    <span style="color:#66d9ef">if</span> (rr <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> mid<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>) total_rev <span style="color:#f92672">+</span><span style="color:#f92672">=</span> query(k <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">|</span><span style="color:#ae81ff">1</span>, mid <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, r, ll, rr);
+    <span style="color:#66d9ef">return</span> total_rev;
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#66d9ef">while</span> (scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>n) <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> n) {
+        build(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, n);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#e6db74">&#34;</span>, a <span style="color:#f92672">+</span> i);
+            b[i] <span style="color:#f92672">=</span> a[i];
+        }
+        sort(b, b <span style="color:#f92672">+</span> n);
+        <span style="color:#66d9ef">int</span> len <span style="color:#f92672">=</span> unique(b, b<span style="color:#f92672">+</span>n)<span style="color:#f92672">-</span>b;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) a[i] <span style="color:#f92672">=</span> lower_bound(b, b <span style="color:#f92672">+</span> len, a[i]) <span style="color:#f92672">-</span> b <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> total <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+            total <span style="color:#f92672">+</span><span style="color:#f92672">=</span> query(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, n, a[i], n);
+            update(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, n, a[i]);
+        }
+        printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, total);
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p><a href="https://images2017.cnblogs.com/blog/1327999/201801/1327999-20180130212117531-1506943248.png">https://images2017.cnblogs.com/blog/1327999/201801/1327999-20180130212117531-1506943248.png</a></p>
+<p>思路：</p>
+<ul>
+<li>从前往后根据出现的位次，计算<u>这个值对应的位次到结束的位置的区间和</u>。</li>
+<li>找到这一段的区间和，这一段区间和代表在这个数出现之前，就<u>被之前比他更大的数给标记</u>了。</li>
+<li>然后查完区间和之后，就计算出了和这个数有逆序关系的数量，然后进行<u>累加</u>。</li>
+<li>最后标记本次位置上的值，方便后面的数统计和这个数的逆序数关系。</li>
+</ul>
+<p>要点：</p>
+<ul>
+<li><strong>离散化</strong>原因：原数组<code>a[i]</code>会爆int，开longlong的大小，这样的话，查询一棵线段树的话，就会非常的费时间，中间很长一段都是0。</li>
+<li>线段树复杂度分析：<code>O(nlogn)</code>，离散化nlogn，然后后来遍历数组n，然后遍历到数之后，来一次的线段树logn区间查询。</li>
+</ul>
+
+		</section>
+
+		<div class="meta">Posted on Feb 1, 2021</div>
+
+		<div class="post-tags">
+			
+			
+			<nav class="nav tags">
+				<ul class="tags">
+					
+					<li><a href="/tags/acm">ACM</a></li>
+					
+					<li><a href="/tags/%E7%AE%97%E6%B3%95">算法</a></li>
+					
+				</ul>
+			</nav>
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2022  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

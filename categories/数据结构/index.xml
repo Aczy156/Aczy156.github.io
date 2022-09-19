@@ -203,5 +203,17 @@ https://www.luogu.com.cn/problem/P1886
 #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e6+9; int n, k, a[maxn], ans_max[maxn], ans_min[maxn], idx; typedef pair&amp;lt;int, int&amp;gt; pr; #include &amp;lt;queue&amp;gt;priority_queue&amp;lt;pr, vector&amp;lt;pr&amp;gt;, less&amp;lt;pr&amp;gt;&amp;gt; pq_max; priority_queue&amp;lt;pr, vector&amp;lt;pr&amp;gt;, greater&amp;lt;pr&amp;gt;&amp;gt; pq_min; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;k); for (int i = 1; i &amp;lt;= n; ++i) scanf(&amp;#34;%d&amp;#34;, a+i); for (int i = 1; i &amp;lt;= n; ++i) { pq_max.</description>
     </item>
     
+    <item>
+      <title>Algorithm24 数据结构 线段树</title>
+      <link>https://chenranfei.site/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm24-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://chenranfei.site/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm24-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</guid>
+      <description>[TOC]
+数据结构 线段树  查询/计算方式：区间查询、单点修改、区级修改、单点查询
+查询/维护的值：区间和、
+ 基础区间查询 #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 1e6+9; int n, a[maxn&amp;lt;&amp;lt;1], sum[maxn&amp;lt;&amp;lt;1]; // a原数组 sum区间求和数组  void pushup(int k) { sum[k] = sum[k&amp;lt;&amp;lt;1]+sum[k&amp;lt;&amp;lt;1|1]; } void build(int k, int l, int r) { if (l == r) { scanf(&amp;#34;%d&amp;#34;, a+k); sum[k] = a[k]; return; } int mid = (l+r)&amp;gt;&amp;gt;1; build(k&amp;lt;&amp;lt;1, l, mid); build(k&amp;lt;&amp;lt;1|1, mid+1, r); pushup(k); } int query(int k, int l, int r, int ll, int rr) { int mid = (l+r)&amp;gt;&amp;gt;1; if (ll &amp;lt;= l &amp;amp;&amp;amp; r &amp;lt;= rr) return sum[k]; if (rr &amp;lt;= mid) return query(k&amp;lt;&amp;lt;1, l, mid, ll, rr); else if (ll &amp;gt;= mid+1) return query(k&amp;lt;&amp;lt;1|1, mid+1, r, ll, rr); else return query(k&amp;lt;&amp;lt;1, l, mid, ll, mid)+query(k&amp;lt;&amp;lt;1|1, mid+1, r, mid+1, rr); } int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); build(1, 1, n); while (m--) { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;tl, &amp;amp;tr); printf(&amp;#34;%d\n&amp;#34;, query(1, 1, n, tl, tr)); } return 0; } //5 //5 4 3 2 1 //4 //1 5 //1 2 //3 5 //2 4 线段树逆序对 poj2299</description>
+    </item>
+    
   </channel>
 </rss>
