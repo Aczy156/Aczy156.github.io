@@ -23,17 +23,22 @@
     </item>
     
     <item>
-      <title>Algorithm14.1.1 Dijkstra</title>
+      <title>Algorithm14.1 最短路</title>
       <link>https://chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>https://chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</guid>
       <description>[TOC]
-最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
-我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- My-Template 邻接矩阵 or 链式前向星-普通
-邻接矩阵 or 链式前向星-堆优化
-struct nd {int pos, val;} priority_queue&amp;lt;nd&amp;gt; pq; int d[maxpoint], d1, d2; // 用于临时储存两个点到起点的距离，分别是u点到s点的距离以及v点到s点的距离 int vis[maxpoint]; int u, v; // 用于获取边的两个点的坐标，其中u是承接从优先队列中获得的点的位置，v是通过遍历邻接表获得的  void dijkstra(int s, int e) { for (int i = 1; i &amp;lt;= n; i++) d[i] = INF; dis[s] = 0; pq.push({s, dis[s]}); while (!pq.empty()) { u = pq.top().pos, d1 = pq.top().val;pq.pop(); if (!vis[u]) { vis[u] = 1; for (auto tm : G[u]) { v = tm.</description>
+最短路 三大思路  Basic：Floyd Greedy：Dijkstra DP：Bellman-Ford、SPFA      Greedy DP Basic     代表方法 Dijkstra Bellman-Ford Floyd   数据结构 d[i]表示到起点的最小距离 d[i]表示到起点的最小距离 d[i][j]表示i、j两点之间的最小距离   思路
+(V为点，E为边) 1. 从所有其他点中找到距离起点最小的点argmin{d[i])}
+2. 用距离起点最小的点和当前点来更新所有其他点
+3. 复杂度$O(V^2)$ 1. 用所有其他点来更新当前点
+2. 复杂度$O(V^2)$ 1. 选取起点i、中间点k、终点j三个点。
+2. 用d[i][k]和d[k][j]来更新d[i][j]
+3. 复杂度$O(V^3)$   优化思路 1. 寻找当前距离最小的点过程：优化从所有其他点中找到距离起点最小的点 =&amp;gt; 利用优先队列/堆来不断选取距离最小的d
+2. 刷新其他点距离的点集过程：将所有其他点缩小为相邻的点集 =&amp;gt; 通过邻接表、链式前向星找相邻点 SPFA
+1. 优化所有其他点：将所有其他点缩小为相邻的点集 =&amp;gt; 通过邻接表、链式前向星找相邻点
+2. 优化当前点：维护队列，所有接触到的、没进队列的点都需要进队列被更新一次，从而逐步筛选出所有需要被更新的当前点。    优化方法详细 1.</description>
     </item>
     
     <item>

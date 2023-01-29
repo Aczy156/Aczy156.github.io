@@ -353,17 +353,22 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
     </item>
     
     <item>
-      <title>Algorithm14.1.1 Dijkstra</title>
+      <title>Algorithm14.1 最短路</title>
       <link>https://chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
       <guid>https://chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</guid>
       <description>[TOC]
-最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
-我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- My-Template 邻接矩阵 or 链式前向星-普通
-邻接矩阵 or 链式前向星-堆优化
-struct nd {int pos, val;} priority_queue&amp;lt;nd&amp;gt; pq; int d[maxpoint], d1, d2; // 用于临时储存两个点到起点的距离，分别是u点到s点的距离以及v点到s点的距离 int vis[maxpoint]; int u, v; // 用于获取边的两个点的坐标，其中u是承接从优先队列中获得的点的位置，v是通过遍历邻接表获得的  void dijkstra(int s, int e) { for (int i = 1; i &amp;lt;= n; i++) d[i] = INF; dis[s] = 0; pq.push({s, dis[s]}); while (!pq.empty()) { u = pq.top().pos, d1 = pq.top().val;pq.pop(); if (!vis[u]) { vis[u] = 1; for (auto tm : G[u]) { v = tm.</description>
+最短路 三大思路  Basic：Floyd Greedy：Dijkstra DP：Bellman-Ford、SPFA      Greedy DP Basic     代表方法 Dijkstra Bellman-Ford Floyd   数据结构 d[i]表示到起点的最小距离 d[i]表示到起点的最小距离 d[i][j]表示i、j两点之间的最小距离   思路
+(V为点，E为边) 1. 从所有其他点中找到距离起点最小的点argmin{d[i])}
+2. 用距离起点最小的点和当前点来更新所有其他点
+3. 复杂度$O(V^2)$ 1. 用所有其他点来更新当前点
+2. 复杂度$O(V^2)$ 1. 选取起点i、中间点k、终点j三个点。
+2. 用d[i][k]和d[k][j]来更新d[i][j]
+3. 复杂度$O(V^3)$   优化思路 1. 寻找当前距离最小的点过程：优化从所有其他点中找到距离起点最小的点 =&amp;gt; 利用优先队列/堆来不断选取距离最小的d
+2. 刷新其他点距离的点集过程：将所有其他点缩小为相邻的点集 =&amp;gt; 通过邻接表、链式前向星找相邻点 SPFA
+1. 优化所有其他点：将所有其他点缩小为相邻的点集 =&amp;gt; 通过邻接表、链式前向星找相邻点
+2. 优化当前点：维护队列，所有接触到的、没进队列的点都需要进队列被更新一次，从而逐步筛选出所有需要被更新的当前点。    优化方法详细 1.</description>
     </item>
     
     <item>
@@ -544,9 +549,17 @@ AC代码：
       
       <guid>https://chenranfei.site/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
       <description>[TOC]
-背包dp   01背包：每种物品仅一个  体积逆序遍历   完全背包：每种物品有无限个  体积升序遍历   多重背包：每种物品有具体个数  外层是体积逆序遍历  内层是个数遍历     分组背包：每种物品仅一个，且不同物品有自己所属的组别 多维代价背包：每种物品不仅占用空间，而且占用金钱 多维目的背包：每种物品不仅具有价值1，而且具有价值2   01背包 装配组合//路径问题 https://www.luogu.com.cn/problem/P1164
-题目大意：
-#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 102#define maxm 10010int n, m, a[maxn], dp[maxm]; // dp[i]表示容量为i的到达种类 // 初始化：只知道到给定容量的这些的到达次数是1，所以直接 dp[a[j]] = 1; // 状态转移方程：dp[i] = dp[i-a[j]]  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int j = 0; j &amp;lt; n; ++j) scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[j]); // init  dp[0] = 1; for (int j = 0; j &amp;lt; n; ++j) for (int i = m; i &amp;gt;= a[i]; --i) dp[i] += dp[i-a[j]]; printf(&amp;#34;%d\n&amp;#34;, dp[m]); return 0; } 固定容量 最大价值 https://www.</description>
+背包dp 背包问题总结   01背包：每种物品仅一个
+ 最大化所有物品的总价值：基础01背包 组成当前容量的物品组合数：装配组合问题、路径问题    完全背包：每种物品有无限个
+  多重背包：每种物品有具体个数
+  分组背包：每种物品仅一个，且不同物品有自己所属的组别
+  多维代价背包：每种物品不仅占用空间，而且占用金钱
+  多维目的背包：每种物品不仅具有价值1，而且具有价值2
+  01背包 固定容量 最大价值 题目一
+https://www.luogu.com.cn/problem/P1048
+题目大意：给定背包容量，将价值总和最大化。
+思路：dp[j]表示容量为j的最大价值。将当前dp[0]~dp[j]这j个容量/状态/问题，通过第i个商品转移到dp[-w[i]]~dp[j-w[i]]，n个商品就有n次刷新j个状态的过程。
+#include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 1005int t, m, val[maxn], c[maxn], dp[maxn]; // dp[j]代表在容量为j的最大价值  int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;t, &amp;amp;m); for (int i = 0; i &amp;lt; m; ++i) scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;c[i], &amp;amp;val[i]); for (int i = 0; i &amp;lt; m; ++i) for (int j = t; j &amp;gt;= c[i] ; --j) dp[j] = max(dp[j], dp[j-c[i]]+val[i]); printf(&amp;#34;%d\n&amp;#34;, dp[t]); return 0; } 题目二</description>
     </item>
     
     <item>
@@ -758,8 +771,11 @@ demo3（存在需要去重的情况=&amp;gt;这种情况下是需要将重复的
       
       <guid>https://chenranfei.site/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>[TOC]
-数据结构 区间问题  单个区间 区间最值「典型数据结构问题」：
- 固定长度区间，然后滑动询问：  单调队列 RMQ [Range maximum/minimun Query] 线段树   不固定长度，随意起点和终点：  RMQ [Range maximum/minimun Query] 线段树    区间最长递增子序列「LIS问题」：
+数据结构 区间问题  单个区间 区间求和：
+  单次查询： *
+  多次查询：
+ 【固定长度的滑动窗口】单调队列（适用于固定串口） 【不固定长度，任意起点终点】RMQ [Range maximum/minimun Query] 【不固定长度，任意起点终点】线段树    区间最值：
+区间最长递增子序列「LIS问题」：
  线性dp  区间逆序对数/区间相互交换次数：
  归并排序，记录逆序对数 树状数组  区间其他问题：
  求区间中连续抽出相同高度之后的总次数：「思维问题」同时抽取转换为一次遍历  两个区间  最长公共子序列「LCS问题」   区间最值-固定长度区间+滑动询问 https://www.luogu.com.cn/problem/P2032
@@ -795,6 +811,18 @@ https://www.luogu.com.cn/problem/P1886
 1、题目大意是允许相邻的两个牌堆交叉换牌
 2、解决方案就是把交叉换成单向，然后通过单边尽头单向遍历简化问题【单边尽头单向可以的原因就是每次至少保证满足1个，然后就算是其他的中间往两边的，也最多了，每次只能满足一个，所以不如直接 单边 尽头 =&amp;gt; 方便遍历】
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxn 105int n, a[maxn], sum = 0, ans = 0; int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 0; i &amp;lt; n; i++) {scanf(&amp;#34;%d&amp;#34;, &amp;amp;a[i]);sum += a[i];} sum /= n; for (int i = 0; i &amp;lt; n - 1; ++i) if (a[i] != sum) { a[i + 1] -= (sum - a[i]); ans++; } printf(&amp;#34;%d\n&amp;#34;, ans); return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Algorithm30 倍增</title>
+      <link>https://chenranfei.site/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</link>
+      <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
+      
+      <guid>https://chenranfei.site/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</guid>
+      <description>[TOC]
+线性规划 基础知识  最优化问题 线性代数  理解矩阵运算：
+ 前面矩阵的每行$$\times$$后面矩阵的每列 不同  拼 https://www.luogu.com.cn/problem/P2347
+#include &amp;lt;iostream&amp;gt;using namespace std; int w[8] = {1, 2, 3, 5, 10, 20}, t; #include &amp;lt;bitset&amp;gt;bitset&amp;lt;1010&amp;gt; s; int main() { s[0] = 1; for (int i = 0; i &amp;lt; 6; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); for (int j = 0; j &amp;lt; t; ++j) s |= s&amp;lt;&amp;lt;w[i]; } printf(&amp;#34;Total=%d\n&amp;#34;, s.count()-1); return 0; } </description>
     </item>
     
     <item>

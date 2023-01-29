@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm14.1.1 Dijkstra - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Algorithm14.1 最短路 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 	<link rel="manifest" href="/site.webmanifest">
@@ -13,32 +13,42 @@
 	<meta name="description" content="" />
 	<meta name="description" content="" />
 
-	<meta property="og:title" content="Algorithm14.1.1 Dijkstra | Aczy156" />
-	<meta name="twitter:title" content="Algorithm14.1.1 Dijkstra | Aczy156" />
+	<meta property="og:title" content="Algorithm14.1 最短路 | Aczy156" />
+	<meta name="twitter:title" content="Algorithm14.1 最短路 | Aczy156" />
 
 	<meta property="og:image" content=""/>
-	<meta itemprop="name" content="Algorithm14.1.1 Dijkstra | Aczy156" />
-	<meta name="application-name" content="Algorithm14.1.1 Dijkstra | Aczy156" />
+	<meta itemprop="name" content="Algorithm14.1 最短路 | Aczy156" />
+	<meta name="application-name" content="Algorithm14.1 最短路 | Aczy156" />
 	<meta property="og:site_name" content="" />
-	<meta property="og:title" content="Algorithm14.1.1 Dijkstra" />
+	<meta property="og:title" content="Algorithm14.1 最短路" />
 <meta property="og:description" content="[TOC]
-最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
-我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- My-Template 邻接矩阵 or 链式前向星-普通
-邻接矩阵 or 链式前向星-堆优化
-struct nd {int pos, val;} priority_queue&lt;nd&gt; pq; int d[maxpoint], d1, d2; // 用于临时储存两个点到起点的距离，分别是u点到s点的距离以及v点到s点的距离 int vis[maxpoint]; int u, v; // 用于获取边的两个点的坐标，其中u是承接从优先队列中获得的点的位置，v是通过遍历邻接表获得的  void dijkstra(int s, int e) { for (int i = 1; i &lt;= n; i&#43;&#43;) d[i] = INF; dis[s] = 0; pq.push({s, dis[s]}); while (!pq.empty()) { u = pq.top().pos, d1 = pq.top().val;pq.pop(); if (!vis[u]) { vis[u] = 1; for (auto tm : G[u]) { v = tm." />
+最短路 三大思路  Basic：Floyd Greedy：Dijkstra DP：Bellman-Ford、SPFA      Greedy DP Basic     代表方法 Dijkstra Bellman-Ford Floyd   数据结构 d[i]表示到起点的最小距离 d[i]表示到起点的最小距离 d[i][j]表示i、j两点之间的最小距离   思路
+(V为点，E为边) 1. 从所有其他点中找到距离起点最小的点argmin{d[i])}
+2. 用距离起点最小的点和当前点来更新所有其他点
+3. 复杂度$O(V^2)$ 1. 用所有其他点来更新当前点
+2. 复杂度$O(V^2)$ 1. 选取起点i、中间点k、终点j三个点。
+2. 用d[i][k]和d[k][j]来更新d[i][j]
+3. 复杂度$O(V^3)$   优化思路 1. 寻找当前距离最小的点过程：优化从所有其他点中找到距离起点最小的点 =&gt; 利用优先队列/堆来不断选取距离最小的d
+2. 刷新其他点距离的点集过程：将所有其他点缩小为相邻的点集 =&gt; 通过邻接表、链式前向星找相邻点 SPFA
+1. 优化所有其他点：将所有其他点缩小为相邻的点集 =&gt; 通过邻接表、链式前向星找相邻点
+2. 优化当前点：维护队列，所有接触到的、没进队列的点都需要进队列被更新一次，从而逐步筛选出所有需要被更新的当前点。    优化方法详细 1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Algorithm14.1.1 Dijkstra"/>
+<meta name="twitter:title" content="Algorithm14.1 最短路"/>
 <meta name="twitter:description" content="[TOC]
-最短路  博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程
-我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)
- My-Template 邻接矩阵 or 链式前向星-普通
-邻接矩阵 or 链式前向星-堆优化
-struct nd {int pos, val;} priority_queue&lt;nd&gt; pq; int d[maxpoint], d1, d2; // 用于临时储存两个点到起点的距离，分别是u点到s点的距离以及v点到s点的距离 int vis[maxpoint]; int u, v; // 用于获取边的两个点的坐标，其中u是承接从优先队列中获得的点的位置，v是通过遍历邻接表获得的  void dijkstra(int s, int e) { for (int i = 1; i &lt;= n; i&#43;&#43;) d[i] = INF; dis[s] = 0; pq.push({s, dis[s]}); while (!pq.empty()) { u = pq.top().pos, d1 = pq.top().val;pq.pop(); if (!vis[u]) { vis[u] = 1; for (auto tm : G[u]) { v = tm."/>
+最短路 三大思路  Basic：Floyd Greedy：Dijkstra DP：Bellman-Ford、SPFA      Greedy DP Basic     代表方法 Dijkstra Bellman-Ford Floyd   数据结构 d[i]表示到起点的最小距离 d[i]表示到起点的最小距离 d[i][j]表示i、j两点之间的最小距离   思路
+(V为点，E为边) 1. 从所有其他点中找到距离起点最小的点argmin{d[i])}
+2. 用距离起点最小的点和当前点来更新所有其他点
+3. 复杂度$O(V^2)$ 1. 用所有其他点来更新当前点
+2. 复杂度$O(V^2)$ 1. 选取起点i、中间点k、终点j三个点。
+2. 用d[i][k]和d[k][j]来更新d[i][j]
+3. 复杂度$O(V^3)$   优化思路 1. 寻找当前距离最小的点过程：优化从所有其他点中找到距离起点最小的点 =&gt; 利用优先队列/堆来不断选取距离最小的d
+2. 刷新其他点距离的点集过程：将所有其他点缩小为相邻的点集 =&gt; 通过邻接表、链式前向星找相邻点 SPFA
+1. 优化所有其他点：将所有其他点缩小为相邻的点集 =&gt; 通过邻接表、链式前向星找相邻点
+2. 优化当前点：维护队列，所有接触到的、没进队列的点都需要进队列被更新一次，从而逐步筛选出所有需要被更新的当前点。    优化方法详细 1."/>
 <script src="https://chenranfei.site/js/feather.min.js"></script>
 	
 	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
@@ -70,6 +80,7 @@ MathJax.Hub.Config({
   <ul>
     <li><a href="#最短路">最短路</a>
       <ul>
+        <li><a href="#三大思路">三大思路</a></li>
         <li><a href="#my-template">My-Template</a></li>
         <li><a href="#dijkstra邻接矩阵用mpmaxnmaxn二维矩阵储存">Dijkstra+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】</a></li>
         <li><a href="#dijkstra邻接表结构体用vector向量来进行储存">Dijkstra+邻接表【结构体+用vector向量来进行储存】</a></li>
@@ -88,13 +99,67 @@ MathJax.Hub.Config({
     </aside>
 	<article>
 		<div class="title">
-			<h1 class="title">Algorithm14.1.1 Dijkstra</h1>
+			<h1 class="title">Algorithm14.1 最短路</h1>
 		</div>
 		
 
 		<section class="body">
 			<p>[TOC]</p>
 <h2 id="最短路">最短路</h2>
+<h3 id="三大思路">三大思路</h3>
+<ul>
+<li>Basic：Floyd</li>
+<li>Greedy：Dijkstra</li>
+<li>DP：Bellman-Ford、SPFA</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Greedy</th>
+<th>DP</th>
+<th>Basic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>代表方法</td>
+<td>Dijkstra</td>
+<td>Bellman-Ford</td>
+<td>Floyd</td>
+</tr>
+<tr>
+<td>数据结构</td>
+<td><code>d[i]</code>表示到起点的最小距离</td>
+<td><code>d[i]</code>表示到起点的最小距离</td>
+<td><code>d[i][j]</code>表示i、j两点之间的最小距离</td>
+</tr>
+<tr>
+<td>思路<br />(V为点，E为边)</td>
+<td>1. 从所有其他点中找到距离起点最小的点<code>argmin{d[i])}</code><br />2. 用<u>距离起点最小的点</u>和<u>当前点</u>来更新<em><strong>所有其他点</strong></em><br />3. 复杂度$O(V^2)$</td>
+<td>1. 用<u>所有其他点</u>来更新<em><strong>当前点</strong></em><br />2. 复杂度$O(V^2)$</td>
+<td>1. 选取起点i、中间点k、终点j三个点。<br />2. 用<code>d[i][k]</code>和<code>d[k][j]</code>来更新<code>d[i][j]</code><br />3. 复杂度$O(V^3)$</td>
+</tr>
+<tr>
+<td>优化思路</td>
+<td>1. 寻找当前距离最小的点过程：优化从所有其他点中找到距离起点最小的点 =&gt; 利用优先队列/堆来不断选取距离最小的d<br />2. 刷新其他点距离的点集过程：将所有其他点缩小为相邻的点集 =&gt; 通过邻接表、链式前向星找相邻点</td>
+<td>SPFA<br />1. 优化所有其他点：将所有其他点缩小为相邻的点集 =&gt; 通过邻接表、链式前向星找相邻点<br />2. 优化当前点：维护队列，所有接触到的、没进队列的点都需要进队列被更新一次，从而逐步筛选出所有需要被更新的当前点。</td>
+<td></td>
+</tr>
+<tr>
+<td>优化方法详细</td>
+<td>1. 从优先队列中取队首，也即d最小的点。<br />2. 从邻接表中找到这个点的所有邻接点，将值进行更新。<br />3. 复杂度$O(E\log{V})$</td>
+<td>1. 把当前点放在队列中（最初放的是起点s）<br />2. 从邻接表中找到这个点的所有邻接点，先松弛，后依据进入次数进入队列。<br />3. 复杂度$O(KE)$，其中K&laquo;E。</td>
+<td></td>
+</tr>
+<tr>
+<td>适用情况</td>
+<td>1. 最短路且存在负权环：在筛选d的时候，负权环会让相同的最小的d不断变小<br />2. 最长路且存在正权环。</td>
+<td>对于重复进入队列点，即为存在负权环、正权环</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>博客引流：我的CSDN博客，关于最短路优化历程，洛谷P3379和P4779的优化历程</p>
 <p><a href="https://blog.csdn.net/qq_43345204/article/details/115360233?spm=1001.2014.3001.5501">我的CSDN博客 洛谷P3371、P4779 最短路Dijikstra优化历程(邻接矩阵-＞邻接表-＞链式前向星-＞堆优化)</a></p>
@@ -527,7 +592,7 @@ priority_queue<span style="color:#f92672">&lt;</span>nd<span style="color:#f9267
 </main>
 <footer>
 <hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
-	2022  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+	2023  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 
 
