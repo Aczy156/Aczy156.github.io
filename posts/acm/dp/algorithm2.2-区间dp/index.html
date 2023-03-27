@@ -28,7 +28,7 @@
 注意：要上来初始化一下，初始化的值就是运算法则算出来的，而dp所做的就是排列组合来搜索组合。
 #include &lt;iostream&gt;using namespace std; const int maxn = 105; int n, a[maxn], dp[maxn][maxn]; // dp[i][j] 表示区间[i, j]所获得的最大价值 // dp[i][j] = max(dp[i][j], dp[i][k]&#43;dp[k&#43;1][j]);  int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int l = 0; l&#43;i &lt;= n; &#43;&#43;l) if (l == 0) dp[i][i&#43;l] = a[i]; else dp[i][i&#43;l] = abs(a[i]-a[i&#43;l])*(l&#43;1); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = i&#43;1; j &lt;= n; &#43;&#43;j) for (int k = i; k &lt;= j; &#43;&#43;k) dp[i][j] = max(dp[i][j], dp[i][k]&#43;dp[k&#43;1][j]); printf(&#34;%d\n&#34;, dp[1][n]); return 0; } 石子合并（线型） 石子合并（环形） https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.site/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/" />
+<meta property="og:url" content="https://chenranfei.xyz/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -39,11 +39,11 @@
 区间DP的水题，维护一个dp二维数组，然后三层遍历左右端点&#43;中间割点，利用状态转移方程dp[i][j] = max(dp[i][j], dp[i][k]&#43;dp[k&#43;1][j])即可。
 注意：要上来初始化一下，初始化的值就是运算法则算出来的，而dp所做的就是排列组合来搜索组合。
 #include &lt;iostream&gt;using namespace std; const int maxn = 105; int n, a[maxn], dp[maxn][maxn]; // dp[i][j] 表示区间[i, j]所获得的最大价值 // dp[i][j] = max(dp[i][j], dp[i][k]&#43;dp[k&#43;1][j]);  int main() { scanf(&#34;%d&#34;, &amp;n); for (int i = 1; i &lt;= n; &#43;&#43;i) scanf(&#34;%d&#34;, a&#43;i); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int l = 0; l&#43;i &lt;= n; &#43;&#43;l) if (l == 0) dp[i][i&#43;l] = a[i]; else dp[i][i&#43;l] = abs(a[i]-a[i&#43;l])*(l&#43;1); for (int i = 1; i &lt;= n; &#43;&#43;i) for (int j = i&#43;1; j &lt;= n; &#43;&#43;j) for (int k = i; k &lt;= j; &#43;&#43;k) dp[i][j] = max(dp[i][j], dp[i][k]&#43;dp[k&#43;1][j]); printf(&#34;%d\n&#34;, dp[1][n]); return 0; } 石子合并（线型） 石子合并（环形） https://www."/>
-<script src="https://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -57,7 +57,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

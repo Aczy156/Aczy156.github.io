@@ -34,7 +34,7 @@ https://www.luogu.com.cn/problem/P1048
 思路：dp[j]表示容量为j的最大价值。将当前dp[0]~dp[j]这j个容量/状态/问题，通过第i个商品转移到dp[-w[i]]~dp[j-w[i]]，n个商品就有n次刷新j个状态的过程。
 #include &lt;iostream&gt;using namespace std; #define maxn 1005int t, m, val[maxn], c[maxn], dp[maxn]; // dp[j]代表在容量为j的最大价值  int main() { scanf(&#34;%d%d&#34;, &amp;t, &amp;m); for (int i = 0; i &lt; m; &#43;&#43;i) scanf(&#34;%d%d&#34;, &amp;c[i], &amp;val[i]); for (int i = 0; i &lt; m; &#43;&#43;i) for (int j = t; j &gt;= c[i] ; --j) dp[j] = max(dp[j], dp[j-c[i]]&#43;val[i]); printf(&#34;%d\n&#34;, dp[t]); return 0; } 题目二" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.site/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/" />
+<meta property="og:url" content="https://chenranfei.xyz/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -51,11 +51,11 @@ https://www.luogu.com.cn/problem/P1048
 题目大意：给定背包容量，将价值总和最大化。
 思路：dp[j]表示容量为j的最大价值。将当前dp[0]~dp[j]这j个容量/状态/问题，通过第i个商品转移到dp[-w[i]]~dp[j-w[i]]，n个商品就有n次刷新j个状态的过程。
 #include &lt;iostream&gt;using namespace std; #define maxn 1005int t, m, val[maxn], c[maxn], dp[maxn]; // dp[j]代表在容量为j的最大价值  int main() { scanf(&#34;%d%d&#34;, &amp;t, &amp;m); for (int i = 0; i &lt; m; &#43;&#43;i) scanf(&#34;%d%d&#34;, &amp;c[i], &amp;val[i]); for (int i = 0; i &lt; m; &#43;&#43;i) for (int j = t; j &gt;= c[i] ; --j) dp[j] = max(dp[j], dp[j-c[i]]&#43;val[i]); printf(&#34;%d\n&#34;, dp[t]); return 0; } 题目二"/>
-<script src="https://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -69,7 +69,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

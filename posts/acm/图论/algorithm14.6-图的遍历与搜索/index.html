@@ -25,7 +25,7 @@
 图的遍历与搜索 模版 dfs &amp; bfs https://www.luogu.com.cn/problem/P5318
 #include &lt;iostream&gt;using namespace std; #define maxpoint 100010#define maxedge 1000010int n, m, ta, tb, vis[maxpoint]; struct ed { int from, to; bool operator &lt; (const ed e) const { if (from == e.from) return to &gt; e.to;return from &gt;e.from;} }t[maxedge]; struct node { int to, next; }edge[maxedge];int head[maxpoint], tot; #include &lt;queue&gt;queue&lt;int&gt;pq; #include &lt;cstring&gt;#define cl(a, b) memset(a, b, sizeof(a))#include &lt;algorithm&gt; void addedge(int from, int to) { edge[&#43;&#43;tot]." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/" />
+<meta property="og:url" content="https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -33,11 +33,11 @@
 <meta name="twitter:description" content="[TOC]
 图的遍历与搜索 模版 dfs &amp; bfs https://www.luogu.com.cn/problem/P5318
 #include &lt;iostream&gt;using namespace std; #define maxpoint 100010#define maxedge 1000010int n, m, ta, tb, vis[maxpoint]; struct ed { int from, to; bool operator &lt; (const ed e) const { if (from == e.from) return to &gt; e.to;return from &gt;e.from;} }t[maxedge]; struct node { int to, next; }edge[maxedge];int head[maxpoint], tot; #include &lt;queue&gt;queue&lt;int&gt;pq; #include &lt;cstring&gt;#define cl(a, b) memset(a, b, sizeof(a))#include &lt;algorithm&gt; void addedge(int from, int to) { edge[&#43;&#43;tot]."/>
-<script src="https://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -51,7 +51,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

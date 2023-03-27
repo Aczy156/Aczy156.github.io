@@ -29,7 +29,7 @@
 3、状态转移方程：dp[i] = max(dp[i], dp[i-1]&#43;17)
 #include &lt;iostream&gt;using namespace std; #define maxn 300010int m, s, t, dp[maxn]; int main() { scanf(&#34;%d%d%d&#34;, &amp;m, &amp;s, &amp;t); // 预处理  for (int i = 1; i &lt;= t; &#43;&#43;i) if (m &gt;= 10) {m-=10;dp[i] = dp[i-1]&#43;60;} else {m&#43;=4;dp[i] = dp[i-1];} // 状态转移  for (int i = 1; i &lt;= t; &#43;&#43;i) dp[i] = max(dp[i], dp[i-1]&#43;17); if (dp[t] &gt;= s) { printf(&#34;Yes\n&#34;); for (int i = 1; i &lt;= t; &#43;&#43;i) if (dp[i] &gt;= s) {printf(&#34;%d\n&#34;, i);break;} } else printf(&#34;No\n%d&#34;, dp[t]); return 0; } https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.site/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/" />
+<meta property="og:url" content="https://chenranfei.xyz/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -41,11 +41,11 @@
 2、预处理：由于已知了a方式更好，那么可以优先通过a方式对数据dp进行预处理
 3、状态转移方程：dp[i] = max(dp[i], dp[i-1]&#43;17)
 #include &lt;iostream&gt;using namespace std; #define maxn 300010int m, s, t, dp[maxn]; int main() { scanf(&#34;%d%d%d&#34;, &amp;m, &amp;s, &amp;t); // 预处理  for (int i = 1; i &lt;= t; &#43;&#43;i) if (m &gt;= 10) {m-=10;dp[i] = dp[i-1]&#43;60;} else {m&#43;=4;dp[i] = dp[i-1];} // 状态转移  for (int i = 1; i &lt;= t; &#43;&#43;i) dp[i] = max(dp[i], dp[i-1]&#43;17); if (dp[t] &gt;= s) { printf(&#34;Yes\n&#34;); for (int i = 1; i &lt;= t; &#43;&#43;i) if (dp[i] &gt;= s) {printf(&#34;%d\n&#34;, i);break;} } else printf(&#34;No\n%d&#34;, dp[t]); return 0; } https://www."/>
-<script src="https://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -59,7 +59,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

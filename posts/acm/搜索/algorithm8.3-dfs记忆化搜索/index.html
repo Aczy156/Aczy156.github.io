@@ -29,7 +29,7 @@ DFS 记忆化搜索 用于相邻依赖 =&gt; 涂色：相邻的不能相同；�
 2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return
 #include &lt;iostream&gt;using namespace std; #define maxn 25typedef long long ll; ll ta, tb, tc, dp[maxn][maxn][maxn]; ll dfs(int a, int b, int c) { if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0) return 1; if (a &gt; 20 || b &gt; 20 || c &gt; 20) return dfs(20, 20, 20); if (dp[a][b][c]) return dp[a][b][c]; if (a &lt; b &amp;&amp; b &lt; c) return dp[a][b][c] = dfs(a, b, c-1) &#43; dfs(a, b-1, c-1) - dfs(a, b-1, c); else return dp[a][b][c] = dfs(a-1, b, c) &#43; dfs(a-1, b-1, c) &#43; dfs(a-1, b, c-1) - dfs(a-1, b-1, c-1); } int main() { while (scanf(&#34;%lld%lld%lld&#34;, &amp;ta, &amp;tb, &amp;tc) &amp;&amp; !" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" />
+<meta property="og:url" content="https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -41,11 +41,11 @@ DFS 记忆化搜索 用于相邻依赖 =&gt; 涂色：相邻的不能相同；�
 1、用dp来记录下来每次的递归结果，也就是return之前先给dp附上值。return dp=w();
 2、注意return的时候，看看边界条件，特判条件放在前面先return；递归条件放后面return
 #include &lt;iostream&gt;using namespace std; #define maxn 25typedef long long ll; ll ta, tb, tc, dp[maxn][maxn][maxn]; ll dfs(int a, int b, int c) { if (a &lt;= 0 || b &lt;= 0 || c &lt;= 0) return 1; if (a &gt; 20 || b &gt; 20 || c &gt; 20) return dfs(20, 20, 20); if (dp[a][b][c]) return dp[a][b][c]; if (a &lt; b &amp;&amp; b &lt; c) return dp[a][b][c] = dfs(a, b, c-1) &#43; dfs(a, b-1, c-1) - dfs(a, b-1, c); else return dp[a][b][c] = dfs(a-1, b, c) &#43; dfs(a-1, b-1, c) &#43; dfs(a-1, b, c-1) - dfs(a-1, b-1, c-1); } int main() { while (scanf(&#34;%lld%lld%lld&#34;, &amp;ta, &amp;tb, &amp;tc) &amp;&amp; !"/>
-<script src="https://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -59,7 +59,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

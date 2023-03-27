@@ -2,22 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Aczy156</title>
-    <link>https://chenranfei.site/categories/git/</link>
+    <link>https://chenranfei.xyz/categories/git/</link>
     <description>Recent content in Git on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Wed, 08 Apr 2020 20:42:26 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.site/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.xyz/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Tool-Git语法</title>
-      <link>https://chenranfei.site/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</link>
+      <title>Tool-Clion用法</title>
+      <link>https://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</guid>
+      <guid>https://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/</guid>
+      <description>[TOC]
+Clion用法 CMakeLists.txt写法 cmake扫描目录的所有cpp文件，可以在一个项目中跑所有的代码，运行所有的main函数
+cmake_minimum_required(VERSION 3.15)project(CCFCSP)set(CMAKE_CXX_STANDARD 14)# 遍历项目根目录下所有的 .cpp 文件 file (GLOB files *.cpp)foreach (file ${files}) string(REGEX REPLACE &amp;#34;.+/(.+)\\..*&amp;#34; &amp;#34;\\1&amp;#34; exe ${file}) add_executable (${exe} ${file}) message (\ \ \ \ --\ src/${exe}.cpp\ will\ be\ compiled\ to\ bin/${exe})endforeach ()注意：要保证每次新建的时候不修改CMakeLists.txt。在new cpp source file的时候，不勾选自动修改CMakeLists文件
+模版代码修改 在clion的系统设置中进行修改=&amp;gt;找到新建c source file 的对应内容，第一行要写成#[[#include]]# &amp;lt;iostream&amp;gt;，然后后面是自动化的内容。
+#[[#include]]# &amp;lt;iostream&amp;gt; using namespace std; int main() { return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Tool-Git语法</title>
+      <link>https://chenranfei.xyz/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
+      
+      <guid>https://chenranfei.xyz/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</guid>
       <description>[TOC]
 Git 基础定义 定义：版本控制管理工具
 几个位置：

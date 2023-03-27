@@ -26,7 +26,7 @@
  特殊地图（某方向固定长度）起点到终点 &#43; 特殊走法：考虑按照特殊方向进行模拟 特殊走法（不允许往某个方向走）：考虑直接全盘dp   特殊地图起点到终点-特殊走法：  两行地图 特殊走法，只往一边走更优  特殊走法：  某单个方向不能走  // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans&#43;&#43;;return;} for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) { cnt&#43;=i;dfs(l&#43;1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
 int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans&#43;&#43;;return; } for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) dfs(l&#43;1, cnt&#43;i); } 记忆化搜索 https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.site/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/" />
+<meta property="og:url" content="https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -35,11 +35,11 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans&#43;&#43;;re
 搜索思维题  特点：可以用搜索，但是可能会T或者需要剪枝过多
  特殊地图（某方向固定长度）起点到终点 &#43; 特殊走法：考虑按照特殊方向进行模拟 特殊走法（不允许往某个方向走）：考虑直接全盘dp   特殊地图起点到终点-特殊走法：  两行地图 特殊走法，只往一边走更优  特殊走法：  某单个方向不能走  // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans&#43;&#43;;return;} for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) { cnt&#43;=i;dfs(l&#43;1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
 int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans&#43;&#43;;return; } for (int i = 0; i &lt;= a[l&#43;1]; &#43;&#43;i) dfs(l&#43;1, cnt&#43;i); } 记忆化搜索 https://www."/>
-<script src="https://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

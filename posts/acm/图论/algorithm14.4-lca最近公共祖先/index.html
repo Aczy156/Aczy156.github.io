@@ -31,7 +31,7 @@ struct node { int to, next; }edge[maxpoint&lt;&lt;1]; int head[maxpoint], tot; /
 void addedge(int from, int to) { edge[&#43;&#43;tot].to = to; edge[tot].next = head[from]; head[from] = tot; }  LCA的数据结构：depth[maxpoint]和p[maxpoint][21]  dfs构造depth深度数组和p爬升数组
 void dfs(int from, int fa) { depth[from] = depth[fa] &#43; 1; // 更新depth深度数组  for (int i = 1; (1&lt;&lt;i) &lt;= depth[from]; &#43;&#43;i) p[from][i] = p[p[from][i-1]][i-1]; // 更新p爬升数组  for (int i = head[from]; i; i=edge[i]." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.site/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" />
+<meta property="og:url" content="https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -45,11 +45,11 @@ LCA最近公共祖先 dfs深搜
 struct node { int to, next; }edge[maxpoint&lt;&lt;1]; int head[maxpoint], tot; // 注意：edge边的数量要开到二倍，因为 添加边 =&gt;利用tot全局索引指引。
 void addedge(int from, int to) { edge[&#43;&#43;tot].to = to; edge[tot].next = head[from]; head[from] = tot; }  LCA的数据结构：depth[maxpoint]和p[maxpoint][21]  dfs构造depth深度数组和p爬升数组
 void dfs(int from, int fa) { depth[from] = depth[fa] &#43; 1; // 更新depth深度数组  for (int i = 1; (1&lt;&lt;i) &lt;= depth[from]; &#43;&#43;i) p[from][i] = p[p[from][i-1]][i-1]; // 更新p爬升数组  for (int i = head[from]; i; i=edge[i]."/>
-<script src="https://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -63,7 +63,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

@@ -28,7 +28,7 @@ Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix
 1 普通训练 2 对于利用交叉训练的 几个组成成分
  oof: out-of-folds clf: classifier trn_idx, val_idx: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合 lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。   # 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns) features = [&#39;feature1&#39;, &#39;feature2&#39;, &#39;feature3&#39;, &#39;feature4&#39;] cat_feats = [&#39;feature1&#39;, &#39;feature4&#39;] # oof, predictions oof = np." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.site/posts/mldl/ml1-xgboost-lightgbm-catboost/" />
+<meta property="og:url" content="https://chenranfei.xyz/posts/mldl/ml1-xgboost-lightgbm-catboost/" />
 <meta property="article:published_time" content="2020-01-28T20:05:44+08:00" />
 <meta property="article:modified_time" content="2020-01-28T20:05:44+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -39,11 +39,11 @@ Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix
   for fold_n (train_idx, val_idx) in enumerate(folds.split(X)): train_data = xgb.DMatrix(data=X_train) val_data = xgb.DMatrix(data=X_val) model = xgb.train() Lightgbm 0 相关预处理 a) 中文属性的问题，需要编码，不然无法训练
 1 普通训练 2 对于利用交叉训练的 几个组成成分
  oof: out-of-folds clf: classifier trn_idx, val_idx: 是用来在交叉验证 中用来索引到数据的，因为是需要交叉验证，选取特定的集合 lightgbm需要用lgb.Dataset 来获取他特有的数据的格式。   # 两个其他的特殊 属性数组，一个储存的是得到数据的属性的数组(如果是整个数据集的所有属性的话，那features=train.columns) features = [&#39;feature1&#39;, &#39;feature2&#39;, &#39;feature3&#39;, &#39;feature4&#39;] cat_feats = [&#39;feature1&#39;, &#39;feature4&#39;] # oof, predictions oof = np."/>
-<script src="https://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -57,7 +57,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

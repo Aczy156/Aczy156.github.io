@@ -2,22 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tool on Aczy156</title>
-    <link>https://chenranfei.site/tags/tool/</link>
+    <link>https://chenranfei.xyz/tags/tool/</link>
     <description>Recent content in Tool on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Wed, 08 Apr 2020 20:42:26 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.site/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.xyz/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Tool-Git语法</title>
-      <link>https://chenranfei.site/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</link>
+      <title>Tool-Clion用法</title>
+      <link>https://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</guid>
+      <guid>https://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/</guid>
+      <description>[TOC]
+Clion用法 CMakeLists.txt写法 cmake扫描目录的所有cpp文件，可以在一个项目中跑所有的代码，运行所有的main函数
+cmake_minimum_required(VERSION 3.15)project(CCFCSP)set(CMAKE_CXX_STANDARD 14)# 遍历项目根目录下所有的 .cpp 文件 file (GLOB files *.cpp)foreach (file ${files}) string(REGEX REPLACE &amp;#34;.+/(.+)\\..*&amp;#34; &amp;#34;\\1&amp;#34; exe ${file}) add_executable (${exe} ${file}) message (\ \ \ \ --\ src/${exe}.cpp\ will\ be\ compiled\ to\ bin/${exe})endforeach ()注意：要保证每次新建的时候不修改CMakeLists.txt。在new cpp source file的时候，不勾选自动修改CMakeLists文件
+模版代码修改 在clion的系统设置中进行修改=&amp;gt;找到新建c source file 的对应内容，第一行要写成#[[#include]]# &amp;lt;iostream&amp;gt;，然后后面是自动化的内容。
+#[[#include]]# &amp;lt;iostream&amp;gt; using namespace std; int main() { return 0; } </description>
+    </item>
+    
+    <item>
+      <title>Tool-Git语法</title>
+      <link>https://chenranfei.xyz/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
+      
+      <guid>https://chenranfei.xyz/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</guid>
       <description>[TOC]
 Git 基础定义 定义：版本控制管理工具
 几个位置：
@@ -35,10 +48,10 @@ git reset --hard HEAD^ git reset --hard HEAD^^ git reset --hard HEAD~100 git res
     
     <item>
       <title>Tool-LaTex语法</title>
-      <link>https://chenranfei.site/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</link>
+      <link>https://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</guid>
+      <guid>https://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</guid>
       <description>[TOC]
 LaTex语法 插入方式  inline math 行内公式 block math 块内公式  inline math $test_{latex}$
 $test_{latex}$ block math $$ test_{latex} $$
@@ -48,10 +61,10 @@ $$ test_{latex} $$ 基本字符 下面基本常用字符都是inline math 写的
     
     <item>
       <title>Tool-vscode-快捷键</title>
-      <link>https://chenranfei.site/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <link>https://chenranfei.xyz/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <guid>https://chenranfei.xyz/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>[TOC]
 vscode 快捷键 多光标  option+comman+up/down（上下，开启多光标） 结合搜索功能的多光标，通过搜索定位到多光标：command+F定位，然后comand+shift+L  </description>
     </item>

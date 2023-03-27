@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>比赛 on Aczy156</title>
-    <link>https://chenranfei.site/tags/%E6%AF%94%E8%B5%9B/</link>
+    <link>https://chenranfei.xyz/tags/%E6%AF%94%E8%B5%9B/</link>
     <description>Recent content in 比赛 on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Tue, 04 Feb 2020 16:12:46 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.site/tags/%E6%AF%94%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.xyz/tags/%E6%AF%94%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Contest CF719 div3 补题</title>
-      <link>https://chenranfei.site/posts/contest/contest-cf719-div3/</link>
+      <link>https://chenranfei.xyz/posts/contest/contest-cf719-div3/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/contest/contest-cf719-div3/</guid>
+      <guid>https://chenranfei.xyz/posts/contest/contest-cf719-div3/</guid>
       <description>[TOC]
 CF719 div3 补题  https://codeforces.com/contest/1520
  A 题目大意：看字串中是否有重复出现的，连续一段出现可以，中间隔着其他的，然后再次出现就不行了。
@@ -27,10 +27,10 @@ CF719 div3 补题  https://codeforces.com/contest/1520
     
     <item>
       <title>Contest CSU 2021 预选赛 补题</title>
-      <link>https://chenranfei.site/posts/contest/contest-csu2021pre/</link>
+      <link>https://chenranfei.xyz/posts/contest/contest-csu2021pre/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/contest/contest-csu2021pre/</guid>
+      <guid>https://chenranfei.xyz/posts/contest/contest-csu2021pre/</guid>
       <description>[TOC]
 CSU 2021 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?cid=2193
  A 题目大意：贪心，可以无限选，然后问给定容积，最大价值。
@@ -40,10 +40,10 @@ CSU 2021 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?
     
     <item>
       <title>Contest CSU 2022 预选赛 补题</title>
-      <link>https://chenranfei.site/posts/contest/contest-csu2022pre/</link>
+      <link>https://chenranfei.xyz/posts/contest/contest-csu2022pre/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/contest/contest-csu2022pre/</guid>
+      <guid>https://chenranfei.xyz/posts/contest/contest-csu2022pre/</guid>
       <description>[TOC]
 CSU 2022 预选赛 补题 A 题目大意：计算期望。概率*次数，其中，概率会随着次数的增加，按照一定规律进行变化。
 进行模拟即可。
@@ -52,10 +52,10 @@ CSU 2022 预选赛 补题 A 题目大意：计算期望。概率*次数，其中
     
     <item>
       <title>Contest ICT pFind</title>
-      <link>https://chenranfei.site/posts/contest/contest-ict-pfind/</link>
+      <link>https://chenranfei.xyz/posts/contest/contest-ict-pfind/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/contest/contest-ict-pfind/</guid>
+      <guid>https://chenranfei.xyz/posts/contest/contest-ict-pfind/</guid>
       <description>[TOC]
 ICT pFind  机试：共五道，前两个签到，第三个大数乘法，第四个区间最值问题，第五个数据结构二叉树问题
  机试-1 题目大意：将二维数组进行翻转

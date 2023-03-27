@@ -2,211 +2,211 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Aczy156</title>
-    <link>https://chenranfei.site/tags/</link>
+    <link>https://chenranfei.xyz/tags/</link>
     <description>Recent content in Tags on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Thu, 02 Jun 2022 15:43:12 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.site/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Article</title>
-      <link>https://chenranfei.site/tags/article/</link>
+      <link>https://chenranfei.xyz/tags/article/</link>
       <pubDate>Thu, 02 Jun 2022 15:43:12 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/article/</guid>
+      <guid>https://chenranfei.xyz/tags/article/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ACM</title>
-      <link>https://chenranfei.site/tags/acm/</link>
+      <link>https://chenranfei.xyz/tags/acm/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/acm/</guid>
+      <guid>https://chenranfei.xyz/tags/acm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>算法</title>
-      <link>https://chenranfei.site/tags/%E7%AE%97%E6%B3%95/</link>
+      <link>https://chenranfei.xyz/tags/%E7%AE%97%E6%B3%95/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://chenranfei.xyz/tags/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>硬件</title>
-      <link>https://chenranfei.site/tags/%E7%A1%AC%E4%BB%B6/</link>
+      <link>https://chenranfei.xyz/tags/%E7%A1%AC%E4%BB%B6/</link>
       <pubDate>Mon, 20 Jul 2020 21:45:10 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/%E7%A1%AC%E4%BB%B6/</guid>
+      <guid>https://chenranfei.xyz/tags/%E7%A1%AC%E4%BB%B6/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://chenranfei.site/tags/python/</link>
+      <link>https://chenranfei.xyz/tags/python/</link>
       <pubDate>Sun, 07 Jun 2020 19:28:52 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/python/</guid>
+      <guid>https://chenranfei.xyz/tags/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>编译原理</title>
-      <link>https://chenranfei.site/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
+      <link>https://chenranfei.xyz/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</link>
       <pubDate>Sun, 07 Jun 2020 19:28:52 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</guid>
+      <guid>https://chenranfei.xyz/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/</guid>
       <description></description>
     </item>
     
     <item>
       <title>JavaWeb</title>
-      <link>https://chenranfei.site/tags/javaweb/</link>
+      <link>https://chenranfei.xyz/tags/javaweb/</link>
       <pubDate>Sun, 07 Jun 2020 19:03:25 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/javaweb/</guid>
+      <guid>https://chenranfei.xyz/tags/javaweb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>环境&amp;部署</title>
-      <link>https://chenranfei.site/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/</link>
+      <link>https://chenranfei.xyz/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Sun, 07 Jun 2020 19:03:25 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/</guid>
+      <guid>https://chenranfei.xyz/tags/%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C</title>
-      <link>https://chenranfei.site/tags/c/</link>
+      <link>https://chenranfei.xyz/tags/c/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/c/</guid>
+      <guid>https://chenranfei.xyz/tags/c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Compiler</title>
-      <link>https://chenranfei.site/tags/compiler/</link>
+      <link>https://chenranfei.xyz/tags/compiler/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/compiler/</guid>
+      <guid>https://chenranfei.xyz/tags/compiler/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://chenranfei.site/tags/java/</link>
+      <link>https://chenranfei.xyz/tags/java/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/java/</guid>
+      <guid>https://chenranfei.xyz/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tool</title>
-      <link>https://chenranfei.site/tags/tool/</link>
+      <link>https://chenranfei.xyz/tags/tool/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/tool/</guid>
+      <guid>https://chenranfei.xyz/tags/tool/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Web</title>
-      <link>https://chenranfei.site/tags/web/</link>
+      <link>https://chenranfei.xyz/tags/web/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/web/</guid>
+      <guid>https://chenranfei.xyz/tags/web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://chenranfei.site/tags/linux/</link>
+      <link>https://chenranfei.xyz/tags/linux/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/linux/</guid>
+      <guid>https://chenranfei.xyz/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Office</title>
-      <link>https://chenranfei.site/tags/office/</link>
+      <link>https://chenranfei.xyz/tags/office/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/office/</guid>
+      <guid>https://chenranfei.xyz/tags/office/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>https://chenranfei.site/tags/mysql/</link>
+      <link>https://chenranfei.xyz/tags/mysql/</link>
       <pubDate>Tue, 17 Mar 2020 21:54:42 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/mysql/</guid>
+      <guid>https://chenranfei.xyz/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RAFT</title>
-      <link>https://chenranfei.site/tags/raft/</link>
+      <link>https://chenranfei.xyz/tags/raft/</link>
       <pubDate>Tue, 17 Mar 2020 21:52:58 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/raft/</guid>
+      <guid>https://chenranfei.xyz/tags/raft/</guid>
       <description></description>
     </item>
     
     <item>
       <title>区块链</title>
-      <link>https://chenranfei.site/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
+      <link>https://chenranfei.xyz/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</link>
       <pubDate>Tue, 17 Mar 2020 21:52:58 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</guid>
+      <guid>https://chenranfei.xyz/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://chenranfei.site/tags/git/</link>
+      <link>https://chenranfei.xyz/tags/git/</link>
       <pubDate>Thu, 20 Feb 2020 18:01:06 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/git/</guid>
+      <guid>https://chenranfei.xyz/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vue</title>
-      <link>https://chenranfei.site/tags/vue/</link>
+      <link>https://chenranfei.xyz/tags/vue/</link>
       <pubDate>Sun, 16 Feb 2020 12:19:14 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/vue/</guid>
+      <guid>https://chenranfei.xyz/tags/vue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>比赛</title>
-      <link>https://chenranfei.site/tags/%E6%AF%94%E8%B5%9B/</link>
+      <link>https://chenranfei.xyz/tags/%E6%AF%94%E8%B5%9B/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/%E6%AF%94%E8%B5%9B/</guid>
+      <guid>https://chenranfei.xyz/tags/%E6%AF%94%E8%B5%9B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DL</title>
-      <link>https://chenranfei.site/tags/dl/</link>
+      <link>https://chenranfei.xyz/tags/dl/</link>
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.site/tags/dl/</guid>
+      <guid>https://chenranfei.xyz/tags/dl/</guid>
       <description></description>
     </item>
     

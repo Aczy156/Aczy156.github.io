@@ -26,7 +26,7 @@
 查询/维护的值：区间和、
  基础区间查询 #include &lt;iostream&gt;using namespace std; const int maxn = 1e6&#43;9; int n, a[maxn&lt;&lt;1], sum[maxn&lt;&lt;1]; // a原数组 sum区间求和数组  void pushup(int k) { sum[k] = sum[k&lt;&lt;1]&#43;sum[k&lt;&lt;1|1]; } void build(int k, int l, int r) { if (l == r) { scanf(&#34;%d&#34;, a&#43;k); sum[k] = a[k]; return; } int mid = (l&#43;r)&gt;&gt;1; build(k&lt;&lt;1, l, mid); build(k&lt;&lt;1|1, mid&#43;1, r); pushup(k); } int query(int k, int l, int r, int ll, int rr) { int mid = (l&#43;r)&gt;&gt;1; if (ll &lt;= l &amp;&amp; r &lt;= rr) return sum[k]; if (rr &lt;= mid) return query(k&lt;&lt;1, l, mid, ll, rr); else if (ll &gt;= mid&#43;1) return query(k&lt;&lt;1|1, mid&#43;1, r, ll, rr); else return query(k&lt;&lt;1, l, mid, ll, mid)&#43;query(k&lt;&lt;1|1, mid&#43;1, r, mid&#43;1, rr); } int main() { scanf(&#34;%d&#34;, &amp;n); build(1, 1, n); while (m--) { scanf(&#34;%d%d&#34;, &amp;tl, &amp;tr); printf(&#34;%d\n&#34;, query(1, 1, n, tl, tr)); } return 0; } //5 //5 4 3 2 1 //4 //1 5 //1 2 //3 5 //2 4 线段树逆序对 poj2299" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.site/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm24-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/" />
+<meta property="og:url" content="https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm24-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -35,11 +35,11 @@
 数据结构 线段树  查询/计算方式：区间查询、单点修改、区级修改、单点查询
 查询/维护的值：区间和、
  基础区间查询 #include &lt;iostream&gt;using namespace std; const int maxn = 1e6&#43;9; int n, a[maxn&lt;&lt;1], sum[maxn&lt;&lt;1]; // a原数组 sum区间求和数组  void pushup(int k) { sum[k] = sum[k&lt;&lt;1]&#43;sum[k&lt;&lt;1|1]; } void build(int k, int l, int r) { if (l == r) { scanf(&#34;%d&#34;, a&#43;k); sum[k] = a[k]; return; } int mid = (l&#43;r)&gt;&gt;1; build(k&lt;&lt;1, l, mid); build(k&lt;&lt;1|1, mid&#43;1, r); pushup(k); } int query(int k, int l, int r, int ll, int rr) { int mid = (l&#43;r)&gt;&gt;1; if (ll &lt;= l &amp;&amp; r &lt;= rr) return sum[k]; if (rr &lt;= mid) return query(k&lt;&lt;1, l, mid, ll, rr); else if (ll &gt;= mid&#43;1) return query(k&lt;&lt;1|1, mid&#43;1, r, ll, rr); else return query(k&lt;&lt;1, l, mid, ll, mid)&#43;query(k&lt;&lt;1|1, mid&#43;1, r, mid&#43;1, rr); } int main() { scanf(&#34;%d&#34;, &amp;n); build(1, 1, n); while (m--) { scanf(&#34;%d%d&#34;, &amp;tl, &amp;tr); printf(&#34;%d\n&#34;, query(1, 1, n, tl, tr)); } return 0; } //5 //5 4 3 2 1 //4 //1 5 //1 2 //3 5 //2 4 线段树逆序对 poj2299"/>
-<script src="https://chenranfei.site/js/feather.min.js"></script>
+<script src="https://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.site/css/fonts.css" rel="stylesheet">
+	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.site/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -53,7 +53,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.site/">Aczy156</a>
+		<a href="https://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

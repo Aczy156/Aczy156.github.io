@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>硬件 on Aczy156</title>
-    <link>https://chenranfei.site/tags/%E7%A1%AC%E4%BB%B6/</link>
+    <link>https://chenranfei.xyz/tags/%E7%A1%AC%E4%BB%B6/</link>
     <description>Recent content in 硬件 on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Mon, 20 Jul 2020 21:45:10 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.site/tags/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.xyz/tags/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Other-WF 中南大学网络服务队2020招新 硬件组培训知识</title>
-      <link>https://chenranfei.site/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</link>
+      <link>https://chenranfei.xyz/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Mon, 20 Jul 2020 21:45:10 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</guid>
+      <guid>https://chenranfei.xyz/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</guid>
       <description>[TOC]
 首先 Authored By Aczy156
 CPU 1型号 1AMD芯片U移动端都具备核显，G为具备核显的，并且后缀无论是否有X，都可以超频，主板也都可以超，芯片组都支持CPU超频。 不同芯片组主板都支持超频，intel只有Z系列芯片组支持CPU超频 2intel有较为古老的赛扬、奔腾、至强系列、M系列(M3,M5,M7，后来M7并入i3)，低电压，用于超级本、轻薄本等；以及现在主流的有i系列（i3,i5,i7,i9）

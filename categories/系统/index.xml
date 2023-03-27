@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>系统 on Aczy156</title>
-    <link>https://chenranfei.site/categories/%E7%B3%BB%E7%BB%9F/</link>
+    <link>https://chenranfei.xyz/categories/%E7%B3%BB%E7%BB%9F/</link>
     <description>Recent content in 系统 on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Mon, 20 Jul 2020 21:45:10 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.site/categories/%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.xyz/categories/%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Other-WF 中南大学网络服务队2020招新 硬件组培训知识</title>
-      <link>https://chenranfei.site/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</link>
+      <link>https://chenranfei.xyz/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Mon, 20 Jul 2020 21:45:10 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</guid>
+      <guid>https://chenranfei.xyz/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</guid>
       <description>[TOC]
 首先 Authored By Aczy156
 CPU 1型号 1AMD芯片U移动端都具备核显，G为具备核显的，并且后缀无论是否有X，都可以超频，主板也都可以超，芯片组都支持CPU超频。 不同芯片组主板都支持超频，intel只有Z系列芯片组支持CPU超频 2intel有较为古老的赛扬、奔腾、至强系列、M系列(M3,M5,M7，后来M7并入i3)，低电压，用于超级本、轻薄本等；以及现在主流的有i系列（i3,i5,i7,i9）
@@ -37,10 +37,10 @@ BGA：intel所有低压CPU采用的封装方式 BGA的全称叫做“ball grid a
     
     <item>
       <title>Tool-Linux-常用配置</title>
-      <link>https://chenranfei.site/posts/tool/tool-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</link>
+      <link>https://chenranfei.xyz/posts/tool/tool-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/tool/tool-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://chenranfei.xyz/posts/tool/tool-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</guid>
       <description>[TOC]
 Linux常见配置 查看配置 - neofetch  mac: brew install neofetch centos: sudo dnf install neofetch  terminal 水平分割 - tmux 切换文件权限 - chown 切换单个文件权限：chown 用户:群组 path_of_file
 eg: chown aczy156:staff orange
@@ -50,10 +50,10 @@ eg:</description>
     
     <item>
       <title>Tool-Linux-指令整理</title>
-      <link>https://chenranfei.site/posts/tool/tool-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</link>
+      <link>https://chenranfei.xyz/posts/tool/tool-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/tool/tool-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</guid>
+      <guid>https://chenranfei.xyz/posts/tool/tool-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</guid>
       <description>[TOC]
  综合了https://blog.csdn.net/wojiaopanpan/article/details/7286430 博客的一些指令以及一些过去的一些积累。
  基本指令 mv cp ls (ls -l 查看该目录下面文件的具体信息，包括权限归属) chown 切换权限归属 chown -R aczy156 file-name （-R为当前目录以及这个目录下边的所有文件） chroot chroot /mnt，在配置arch并利用arch安装驱动系统安装好后，把root权交给新安装的那个系统的一个操作 chmod +x 目录 给目录 cd cd 空，默认进入root文件，也就是相当于cd ～ cd .. 两个点为进入上一级目录 pwd 当前目录的path open 打开某个文件夹（open . 打开当前的目录的文件夹） mkdir vim fdisk cfdisk df -hl 看所有的存储空间使用情况 mount mkfs :q（退出模式） :wq move rm []删除 rm -rf xx [删除目录的,也就是文件夹]删除某个文件 cd rm rf .删除所有文件 xrandr 不加参数：查看分辨率 cvt 1024 768 参数为分辨率的x和y
@@ -62,10 +62,10 @@ eg:</description>
     
     <item>
       <title>Tool-Office-使用</title>
-      <link>https://chenranfei.site/posts/tool/tool-office-%E4%BD%BF%E7%94%A8/</link>
+      <link>https://chenranfei.xyz/posts/tool/tool-office-%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/tool/tool-office-%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://chenranfei.xyz/posts/tool/tool-office-%E4%BD%BF%E7%94%A8/</guid>
       <description>[TOC]
 Office 工具使用 文献管理工具 - Zotero 安装 直接在Zotero中配置选项，然后会自动下载插件，与Chrome或Office建立连接。
  文献管理（manage）「Zotero connect with Chrome」 文献引用（citation）「Zotero connect with Office」  使用 文献引用，设置引用风格：有China National Standard GB/T 7714-2015(numeric, 中文)，依据其他论文种类还有其他的风格。
@@ -77,10 +77,10 @@ Office 工具使用 文献管理工具 - Zotero 安装 直接在Zotero中配置�
     
     <item>
       <title>Tool-vscode-快捷键</title>
-      <link>https://chenranfei.site/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <link>https://chenranfei.xyz/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <guid>https://chenranfei.xyz/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>[TOC]
 vscode 快捷键 多光标  option+comman+up/down（上下，开启多光标） 结合搜索功能的多光标，通过搜索定位到多光标：command+F定位，然后comand+shift+L  </description>
     </item>

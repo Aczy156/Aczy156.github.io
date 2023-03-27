@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Aczy156</title>
-    <link>https://chenranfei.site/tags/python/</link>
+    <link>https://chenranfei.xyz/tags/python/</link>
     <description>Recent content in Python on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Sun, 07 Jun 2020 19:28:52 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.site/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://chenranfei.xyz/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Python-编译原理算法</title>
-      <link>https://chenranfei.site/posts/project/python4-compiling_principle_master/</link>
+      <link>https://chenranfei.xyz/posts/project/python4-compiling_principle_master/</link>
       <pubDate>Sun, 07 Jun 2020 19:28:52 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/project/python4-compiling_principle_master/</guid>
+      <guid>https://chenranfei.xyz/posts/project/python4-compiling_principle_master/</guid>
       <description>[TOC]
 编译原理课程作业  词法分析器 LL1分析(消去左递归、构造FIRST\FOLLOW集合、模拟) 递归下降分析 算法优先分析  项目地址源代码 https://github.com/Aczy156/Compiling-Principle-Work 项目结构 data  Grammer_for_ll1_and_RD.txt，是存放用于实验二预测分析法和实验三递归下降分析文法的测试文法 Grammer_for_OF.txt，是存放用于实验四算符优先文法的测试文法。  MultiAnalysis  LL1_analysis.py是LL1分析法的整体过程。 RecursiveDescent_analysis.py是递归下降分析的整体过程。 OperatorFirst_analysis.py是算符优先文法的整体分析过程。  tools [在MultiAnalysis中的各种文法中多次使用，所以提取出来子模块，放进工具中来模块化管理]
  Draw_Grammer.py，利用python中prettytable来专门做文法的可视化。 Eliminate_Left_Recursion.py，利用消除左递归算法来专门处理对于自上而下的文法(例如实验二中的预测分析文法和实验三的递归下降文法)的左递归的问题。 Extract_Common_Factors.py，利用LCP(最长公共前缀)来提取公因子并消除。  数据结构 (命名基本保持一致，除了在一些情境中要利用python deepcopy深备份一份或者要进行更改会命名为new_grammer/new_vn等等)：
@@ -26,10 +26,10 @@
     
     <item>
       <title>Python 3 Pycharm Basic Configuration</title>
-      <link>https://chenranfei.site/posts/python/python3-pycharm-basic-configuration/</link>
+      <link>https://chenranfei.xyz/posts/python/python3-pycharm-basic-configuration/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/python/python3-pycharm-basic-configuration/</guid>
+      <guid>https://chenranfei.xyz/posts/python/python3-pycharm-basic-configuration/</guid>
       <description>[TOC]
 Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「一」每个项目创立的时候可以跟着设置一个venv，可以从本来已有python目录直接调用 「二」自己创建一个venv，然后在命令行中一步一步安装所有需要的依赖（或者直接通过requirements.txt一步到位，安装好所有的依赖） 「三」pycharm-&amp;gt;preference-&amp;gt;interpreter中可以看到所有扫描到的virtualenv，然后每一个virtualenv都是可以作为运行环境。  可以选择原来已经设置好的venv 可以选择刚才自己创建的venv（也就是）    python-conda的使用 conda 创建venv
 # 查看conda已有的env conda env list # conda创建新的env，在创建的时候可以选择python版本和虚拟环境的名字 conda create --name myenv python==3.6 python-requireme.txt 设置 - 快速安装依赖  无需install，可以直接使用（内置在pip依赖中，直接使用即可） 将当前的项目的依赖导出成requirements.txt，用来作为标记，利用freeze语法。pip freeze &amp;gt; requirements.txt 给当前的项目依赖已有的requiremes.txt快速安装全部所需依赖。pip install -r requirements.txt  目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
@@ -38,10 +38,10 @@ Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「�
     
     <item>
       <title>Python 4 virtualenv</title>
-      <link>https://chenranfei.site/posts/python/python4-virtualenv/</link>
+      <link>https://chenranfei.xyz/posts/python/python4-virtualenv/</link>
       <pubDate>Sun, 05 Apr 2020 17:13:50 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/python/python4-virtualenv/</guid>
+      <guid>https://chenranfei.xyz/posts/python/python4-virtualenv/</guid>
       <description>[TOC]
  Virtualenv用于为某个项目新配置一个独立的python环境而产生 环境为macOS pip安装virtualvenvsudo pip install virtualenv
  mac如果有安装Xcode，则在/usr/bin中自带有python2.7，可用于配置python2.7的相关环境 而自己装配的python3则在/usr/local/bin中，可用于python3的相关环境
@@ -52,10 +52,10 @@ Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「�
     
     <item>
       <title>Other-区块链 RAFT协议详解</title>
-      <link>https://chenranfei.site/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</link>
+      <link>https://chenranfei.xyz/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Tue, 17 Mar 2020 21:52:58 +0800</pubDate>
       
-      <guid>https://chenranfei.site/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</guid>
+      <guid>https://chenranfei.xyz/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</guid>
       <description>[TOC]
 基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。 RAFT包括三种节点：leader、follower、candidate RAFT协议算法中包括三个基本组件动作，   Leader Election，用来模拟在每次联盟链上选出当前的Leader的操作，即向其他的follower发布并传递请求：在图中的表示形式是每个节点处于follower状态，并自动转化为candidate，然后对自己投票，并发起RequestVoteRPC，随后等待联盟链上的其他节点的回应：  当前节点获得超过半数节点的投票，赢得选举成为Leader，此时该节点所代表的联盟链上的成员可以对其他follower进行指示，可以进行相应的操作。 如果参加选举的节点有多个，也即在有多个成员申请修改链上内容的权限：如果其他节点赢得选举，该节点成为Leader，当前节点接收到对方心跳 ，当前节点变为follower。 选举超时，没有节点赢得选举，当前节点自增任期，重新发起选举：所有申请修改的成员都没有得到响应成功，要重新申请，只到结果呈现为情况1、情况2.    Normal Operation(basic log replication)，用来每次client给每个节点发送请求的过程，每次请求就是一个指令，用来模拟在联盟链中每一个节点需要做的操作。  leader接受请求后，把指令（Entry）追加到leader的操作日志中，然后对follower发起AppendEntries操作，尝试让操作指令(Entry)追加到Followers的操作日志中。如果有Follower不可用，则一直尝试 一旦Leader接受到多数（Quorums）Follower的回应，Leader就会进行commit操作，每一台节点服务器会把操作指令交给状态机处理。这样就保证了各节点的状态的一致性 各服务器状态机处理完成之后，Leader将结果返回给Client。     在这里插入图片描述
  对于Normal Operation中的特殊情况例如发生了网络分区，RAFT同样可以以较高的容错性解决该情况，由于部分节点的心跳跳动周期之后没有leader的响应，节点认定为 leader down ，然后重新选举，这是产生双网络之后，有两个client分别为两个leader传达命令，在此情况下两个网络中的节点会有两种不同的指令，但是当修复网络分区之后，两个leader会通过查看期限，最终会统一为一个leader，使整个网络还是保持一致性。     Safety
