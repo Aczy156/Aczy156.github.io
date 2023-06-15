@@ -22,20 +22,26 @@
 	<meta property="og:site_name" content="" />
 	<meta property="og:title" content="Summary1.2 数据结构 STL整合" />
 <meta property="og:description" content="[TOC]
-数据结构 STL 用法整合 linklist #include &lt;list&gt; list&lt;int&gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map // 功能描述 =&gt; 查找出现单次的,并尽可能的节省空间 #include &lt;map&gt; map&lt;int, bool&gt; m; for (1~n) { cin&gt;&gt;t; if (m.count(t)) m.erase(t); // m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项  else m[t] = true; } // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&lt;int, bool&gt;::iterator iter = m." />
+数据结构 STL 用法整合 linklist 链表
+#include &lt;list&gt; list&lt;int&gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map 功能：映射。
+性质：有序性=&gt;根据key有序排列，唯一性=&gt;根据key唯一。
+// 功能描述 =&gt; 查找出现单次的,并尽可能的节省空间 #include &lt;map&gt; map&lt;int, bool&gt; m; // map两种遍历方式 // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&lt;int, bool&gt;::iterator iter = m." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.xyz/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/" />
+<meta property="og:url" content="http://chenranfei.xyz/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Summary1.2 数据结构 STL整合"/>
 <meta name="twitter:description" content="[TOC]
-数据结构 STL 用法整合 linklist #include &lt;list&gt; list&lt;int&gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map // 功能描述 =&gt; 查找出现单次的,并尽可能的节省空间 #include &lt;map&gt; map&lt;int, bool&gt; m; for (1~n) { cin&gt;&gt;t; if (m.count(t)) m.erase(t); // m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项  else m[t] = true; } // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&lt;int, bool&gt;::iterator iter = m."/>
-<script src="https://chenranfei.xyz/js/feather.min.js"></script>
+数据结构 STL 用法整合 linklist 链表
+#include &lt;list&gt; list&lt;int&gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map 功能：映射。
+性质：有序性=&gt;根据key有序排列，唯一性=&gt;根据key唯一。
+// 功能描述 =&gt; 查找出现单次的,并尽可能的节省空间 #include &lt;map&gt; map&lt;int, bool&gt; m; // map两种遍历方式 // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&lt;int, bool&gt;::iterator iter = m."/>
+<script src="http://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -49,7 +55,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.xyz/">Aczy156</a>
+		<a href="http://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		
@@ -65,13 +71,13 @@ MathJax.Hub.Config({
         <li><a href="#linklist">linklist</a></li>
         <li><a href="#map">map</a></li>
         <li><a href="#set">set</a></li>
-        <li><a href="#unique">unique</a></li>
+        <li><a href="#unique-与-离散化">unique 与 离散化</a></li>
         <li><a href="#vector">vector</a></li>
         <li><a href="#queue">queue</a></li>
         <li><a href="#priority_queue">priority_queue</a></li>
         <li><a href="#upperbound--lowerbound">upperbound & lowerbound</a></li>
         <li><a href="#auto">auto</a></li>
-        <li><a href="#regex">regex</a></li>
+        <li><a href="#regex-模糊匹配">regex 模糊匹配</a></li>
       </ul>
     </li>
   </ul>
@@ -87,6 +93,7 @@ MathJax.Hub.Config({
 			<p>[TOC]</p>
 <h2 id="数据结构-stl-用法整合">数据结构 STL 用法整合</h2>
 <h3 id="linklist">linklist</h3>
+<p>链表</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;list&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> linklist;
@@ -106,18 +113,15 @@ list<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span
 </span><span style="color:#75715e"></span>	<span style="color:#66d9ef">int</span> linklistlen <span style="color:#f92672">=</span> linklist.size();
 }
 </code></pre></div><h3 id="map">map</h3>
+<p>功能：映射。</p>
+<p>性质：有序性=&gt;根据key有序排列，唯一性=&gt;根据key唯一。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 功能描述 =&gt; 查找出现单次的,并尽可能的节省空间
 </span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;map&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span> m;
 
-<span style="color:#66d9ef">for</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">~</span>n) {
-  cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>t;
-  <span style="color:#66d9ef">if</span> (m.count(t))  m.erase(t); <span style="color:#75715e">// m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">else</span> m[t] <span style="color:#f92672">=</span> true;
-}
-
-<span style="color:#75715e">// map利用迭代器进行遍历，需要设置迭代器并且指向对应的map
+<span style="color:#75715e">// map两种遍历方式
+</span><span style="color:#75715e"></span><span style="color:#75715e">// map利用迭代器进行遍历，需要设置迭代器并且指向对应的map
 </span><span style="color:#75715e"></span>map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">bool</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">:</span><span style="color:#f92672">:</span>iterator iter <span style="color:#f92672">=</span> m.begin(); 
 <span style="color:#75715e">// 或者通过auto来声明：
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">auto</span> iter2 <span style="color:#f92672">=</span> m.begin();
@@ -129,11 +133,45 @@ map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> [k, v]<span style="color:#f92672">:</span> m) cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">key = </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>k<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">       value = </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>v<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;
 
 
+<span style="color:#75715e">// map边遍历边移除
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">~</span>n) {
+  cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>t;
+  <span style="color:#66d9ef">if</span> (m.count(t))  m.erase(t); <span style="color:#75715e">// m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">else</span> m[t] <span style="color:#f92672">=</span> true;
+}
+
 <span style="color:#75715e">// 迭代器的移动 =&gt; 迭代器只能进行自增操作，也即只能进行 iter++或者iter--，无法进行其他操作
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (iter<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>first <span style="color:#f92672">&gt;</span> (<span style="color:#f92672">-</span><span style="color:#f92672">-</span>iter)<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>first) {printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">当前迭代器的key比他前面的迭代器的key的值要大</span><span style="color:#e6db74">&#34;</span>);}
 </code></pre></div><h3 id="set">set</h3>
-<h3 id="unique">unique</h3>
-<h3 id="vector">vector</h3>
+<p>功能：集合，内部关联（没有value的map），元素在具体位置</p>
+<p>性质：唯一性，有序性。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;set&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>set<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> s;
+
+s.insert(<span style="color:#ae81ff">1</span>);
+s.insert(<span style="color:#ae81ff">4</span>);
+s.insert(<span style="color:#ae81ff">2</span>);
+s.insert(<span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i: s) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, i); <span style="color:#75715e">// 1 2 4 首先会有序，其次会把重复的删掉
+</span></code></pre></div><h3 id="unique-与-离散化">unique 与 离散化</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">int</span> a[<span style="color:#ae81ff">10</span>]<span style="color:#960050;background-color:#1e0010">和</span>b[<span style="color:#ae81ff">10</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">90</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">1</span>}, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; <span style="color:#75715e">// 数据
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 去重
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> newn <span style="color:#f92672">=</span> unique(a, a<span style="color:#f92672">+</span>n)<span style="color:#f92672">-</span>a; <span style="color:#75715e">// 利用unique去重，返回的值是去重之后的数组的长度
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> newn; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, a[i]); <span style="color:#75715e">// 7 1 90 1 4 5 1 
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 区间语法
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 0~n-1 =&gt; n =&gt; sort(a, a+n), unique(a, a+n)-a
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 1~n =&gt; n =&gt; sort(a+1, a+n+1), unique(a+1, a+n+1)-a-1
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 离散化（首先排序，然后去重得到真实位次，最后进行对应）
+</span><span style="color:#75715e"></span>sort(a, a<span style="color:#f92672">+</span>n); <span style="color:#75715e">// 首先排序
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> nn <span style="color:#f92672">=</span> unique(a, a<span style="color:#f92672">+</span>n)<span style="color:#f92672">-</span>a; <span style="color:#75715e">// 然后得到真实的每个数的位次
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) b[i] <span style="color:#f92672">=</span> lower_bound(a, a<span style="color:#f92672">+</span>nn, b[i])<span style="color:#f92672">-</span>a;
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d </span><span style="color:#e6db74">&#34;</span>, b[i]);
+
+</code></pre></div><h3 id="vector">vector</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> b;
 <span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
@@ -159,7 +197,18 @@ map<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>
   <span style="color:#75715e">// 易错：vector移除队尾元素
 </span><span style="color:#75715e"></span>  b.erase(b.end()); <span style="color:#75715e">// 会报错，因为b.end()实质上不是向量的最后一个，而是最后一个的下一个，就像find函数，看他是否有找到的实质就是看迭代器是否到了最后一个之后的end，而不是最后一个
 </span><span style="color:#75715e"></span>  b.pop_back(); <span style="color:#75715e">// 正确写法
-</span><span style="color:#75715e"></span>}
+</span><span style="color:#75715e"></span>  
+  <span style="color:#75715e">// 三种遍历方式
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> b.size(); i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {b[i]}
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> num: b) {num} <span style="color:#f92672">/</span> <span style="color:#66d9ef">for</span> (node nd: b) {nd.x, nd.y}
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> it <span style="color:#f92672">=</span> b.begin(); it <span style="color:#f92672">!</span><span style="color:#f92672">=</span> b.end();) {it<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>x, it<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>y}
+  
+  <span style="color:#75715e">// 边遍历，边移除=&gt;在遍历的时候防止因为越界而报错（通过索引来进行访问，但是不方便移除操作；通过iterator进行访问，方便移除，并且方便将指针指向下一个元素）
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> it <span style="color:#f92672">=</span> b.begin(); it <span style="color:#f92672">!</span><span style="color:#f92672">=</span> b.end();) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#960050;background-color:#1e0010">条</span><span style="color:#960050;background-color:#1e0010">件</span>) it <span style="color:#f92672">=</span> b.erase(it); <span style="color:#75715e">// 保证移除之后指针不会错误
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">else</span> it<span style="color:#f92672">+</span><span style="color:#f92672">+</span>; <span style="color:#75715e">// 不移除的话指针自动变化
+</span><span style="color:#75715e"></span>  }
+}
 </code></pre></div><h3 id="queue">queue</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> q;
@@ -232,13 +281,78 @@ cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</sp
 <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> s :strs) { <span style="color:#75715e">// 将遍历的变量声明为引用类型，即可以修改内容
 </span><span style="color:#75715e"></span>    std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> n<span style="color:#f92672">+</span>;
 }
-</code></pre></div><h3 id="regex">regex</h3>
+</code></pre></div><h3 id="regex-模糊匹配">regex 模糊匹配</h3>
 <p>正则表达式 <u>Reg</u>ular <u>Ex</u>pression （C++11之后支持）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;regex&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>regex reg(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">s+</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// 以空格进行分割
-</span><span style="color:#75715e"></span>            std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string<span style="color:#f92672">&gt;</span> v(std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>sregex_token_iterator(s.begin(), s.end(), reg, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),
-                                       std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>sregex_token_iterator());
-<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span>ss: v) {std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>ss<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>;}
+<ul>
+<li><code>regex()</code>:解析正则项规则</li>
+<li><code>regex_match(被匹配字串, 采用regex封装的匹配**字串**)</code>:查看被匹配字串是否和被regex封装的拿去匹配的内容<u>完全匹配</u>，完全匹配返回true，不完全匹配返回false。
+<ul>
+<li>smatch=&gt;得到regex的匹配结果</li>
+</ul>
+</li>
+<li><code>regex_search(被匹配字串, 采用regex封装的匹配**子串**)</code>:查看被匹配子串中有没有符合被regex封装的拿去匹配的部分，这样就有可能返回很多。
+<ul>
+<li>sregex_iterator=&gt;得到search的匹配结果</li>
+</ul>
+</li>
+<li><code>regex_replace(被匹配字串，采用regex封装的匹配字串，被替换字串)</code>：查看被匹配字串中有没有符合被regex封装的拿去匹配的部分，并进行替换</li>
+<li>获取到多个模糊匹配单元=&gt;整个算一个，下边部分匹配每个部分各自用括号括起来。（所以想获取到单独的值的话，从索引为1的地方开始遍历，因为第0的位置）</li>
+</ul>
+<p>regex进行包装的部分，(以下全是regex引擎所识别的字符串，对于c代码的话，首先要进行转义)</p>
+<ul>
+<li>\d匹配数字大类：后面数字接长度
+<ul>
+<li>\d{1}：一位的数字</li>
+<li>\d{4}：四位的数字</li>
+<li>\d+：不限制位数的数字</li>
+</ul>
+</li>
+<li>.匹配所有：后面数字接长度
+<ul>
+<li>.+：不限制位数的所有字符</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;regex&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    string str1 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">abc123def456xyz789t1</span><span style="color:#e6db74">&#34;</span>;
+    string str2 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">123456789</span><span style="color:#e6db74">&#34;</span>;
+
+    <span style="color:#75715e">// 完全匹配-固定字串
+</span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>regex_match(str1, regex(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">123</span><span style="color:#e6db74">&#34;</span>))<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 0 完全匹配不同
+</span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>regex_match(str2, regex(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">123</span><span style="color:#e6db74">&#34;</span>))<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 0 完全匹配不同
+</span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>regex_match(str1, regex(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">123456789</span><span style="color:#e6db74">&#34;</span>))<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 0
+</span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>regex_match(str2, regex(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">123456789</span><span style="color:#e6db74">&#34;</span>))<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 1 完全匹配，字符串一模一样
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// 完全匹配-仅通配符
+</span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>regex_match(str1, regex(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d+</span><span style="color:#e6db74">&#34;</span>))<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 0 完全匹配不同，因为要求的全是数字，而被匹配中有字符串
+</span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>regex_match(str2, regex(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d+</span><span style="color:#e6db74">&#34;</span>))<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 1 完全匹配，被匹配字符串中只有数字
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// 完全匹配-存在外部字符+通配符
+</span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>regex_match(str1, regex(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">abc123def456xyz(</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d+)</span><span style="color:#e6db74">&#34;</span>))<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 1 完全匹配，前面要相同部分，后面是通配部分
+</span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>regex_match(str2, regex(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">abc123def456xyz(</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d+)</span><span style="color:#e6db74">&#34;</span>))<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>; <span style="color:#75715e">// 0 完全匹配不同，前面就不同。
+</span><span style="color:#75715e"></span>
+    printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-------------</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+
+    <span style="color:#75715e">// 搜索=&gt;返回列表，用smatch
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 搜索-固定子串
+</span><span style="color:#75715e"></span>    smatch search_result;
+<span style="color:#75715e">//    regex_search(str1, search_result, regex(&#34;123&#34;)); // 用承接的smatch穿进去来得到值
+</span><span style="color:#75715e"></span><span style="color:#75715e">//    cout&lt;&lt;search_result.size()&lt;&lt;&#34;\n&#34;;
+</span><span style="color:#75715e"></span><span style="color:#75715e">//    for (int i = 0; i &lt; search_result.size(); ++i) {
+</span><span style="color:#75715e"></span><span style="color:#75715e">//        cout&lt;&lt;search_result[i]&lt;&lt;&#34;\n&#34;;;
+</span><span style="color:#75715e"></span><span style="color:#75715e">//    }
+</span><span style="color:#75715e"></span>    regex_search(str1, search_result, regex(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">abc(</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d+)def(</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d+)xyz(</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d+)t(</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">d+)</span><span style="color:#e6db74">&#34;</span>)); <span style="color:#75715e">// 用承接的smatch穿进去来得到值
+</span><span style="color:#75715e"></span>    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>search_result.size()<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> search_result.size(); <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) {
+        cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>search_result[i]<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>;;
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
 </code></pre></div>
 		</section>
 

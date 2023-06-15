@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Summary1 基础用法模版 - Aczy156</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:description" content="" />
+	<meta name="twitter:description" content="" />
+	<meta name="description" content="" />
+	<meta name="description" content="" />
+
+	<meta property="og:title" content="Summary1 基础用法模版 | Aczy156" />
+	<meta name="twitter:title" content="Summary1 基础用法模版 | Aczy156" />
+
+	<meta property="og:image" content=""/>
+	<meta itemprop="name" content="Summary1 基础用法模版 | Aczy156" />
+	<meta name="application-name" content="Summary1 基础用法模版 | Aczy156" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:title" content="Summary1 基础用法模版" />
+<meta property="og:description" content="[TOC]
+算法模版 常用 表示无穷大（int的上限）：
+// int的最大值就是2的31次方-1 #define INF (1&lt;&lt;31)-1// 用库中定义的INT_MAX #include &lt;climits&gt;#define INF INT_MAXdouble 四舍五入的变式：永远舍和永远入：
+double a = 0.656, b = 0.651; printf(&#34;%.2lf %2lf&#34;, a-0.05, b-0.05); // 都会往下舍，变为0.65 0.65 printf(&#34;%.2lf %2lf&#34;, a&#43;0.05, b&#43;0.05); // 都会往上入，变为0.66 0.66 字符 &amp; 字符串的scanf读入
+char ch scanf(&#34;%c&#34;, &amp;ch); // 前面要加空格 char s[10]; scanf(&#34;%s&#34;, s); scanf字符串读入(对于流输入输出进行优化)
+// 数据：2007-06-23-11:59 2007-06-23-12:00 int by, ey, bm, em, bd, ed, bh, eh, bmin, emin; scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;by, &amp;bm, &amp;bd, &amp;bh, &amp;bmin); scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;ey, &amp;em, &amp;ed, &amp;eh, &amp;emin); // 即可获取 char a; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;bd&gt;&gt;a&gt;&gt;bh&gt;&gt;a&gt;&gt;bmin; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;ed&gt;&gt;a&gt;&gt;eh&gt;&gt;a&gt;&gt;emin; // 也可以获取 判断字符是大写字母还是小写字母还是数字" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://chenranfei.xyz/posts/acm-summary/summary1-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E6%A8%A1%E7%89%88/" />
+<meta property="article:published_time" content="2020-02-04T16:12:46+08:00" />
+<meta property="article:modified_time" content="2020-02-04T16:12:46+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Summary1 基础用法模版"/>
+<meta name="twitter:description" content="[TOC]
+算法模版 常用 表示无穷大（int的上限）：
+// int的最大值就是2的31次方-1 #define INF (1&lt;&lt;31)-1// 用库中定义的INT_MAX #include &lt;climits&gt;#define INF INT_MAXdouble 四舍五入的变式：永远舍和永远入：
+double a = 0.656, b = 0.651; printf(&#34;%.2lf %2lf&#34;, a-0.05, b-0.05); // 都会往下舍，变为0.65 0.65 printf(&#34;%.2lf %2lf&#34;, a&#43;0.05, b&#43;0.05); // 都会往上入，变为0.66 0.66 字符 &amp; 字符串的scanf读入
+char ch scanf(&#34;%c&#34;, &amp;ch); // 前面要加空格 char s[10]; scanf(&#34;%s&#34;, s); scanf字符串读入(对于流输入输出进行优化)
+// 数据：2007-06-23-11:59 2007-06-23-12:00 int by, ey, bm, em, bd, ed, bh, eh, bmin, emin; scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;by, &amp;bm, &amp;bd, &amp;bh, &amp;bmin); scanf(&#34;%d-%d-%d-%d:%d&#34;, &amp;ey, &amp;em, &amp;ed, &amp;eh, &amp;emin); // 即可获取 char a; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;bd&gt;&gt;a&gt;&gt;bh&gt;&gt;a&gt;&gt;bmin; cin&gt;&gt;by&gt;&gt;a&gt;&gt;bm&gt;&gt;a&gt;&gt;ed&gt;&gt;a&gt;&gt;eh&gt;&gt;a&gt;&gt;emin; // 也可以获取 判断字符是大写字母还是小写字母还是数字"/>
+<script src="http://chenranfei.xyz/js/feather.min.js"></script>
+	
+	<link href="http://chenranfei.xyz/css/fonts.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.xyz/css/main.css" />
+	
+	
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+        messageStyle: "none", // 載入 MathJax 檔案時不要顯示訊息
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} // 搜尋內文 $ 符號
+      });
+</script>
+</head>
+<body>
+        <div class="content"><header>
+	<div class="main">
+		<a href="http://chenranfei.xyz/">Aczy156</a>
+	</div>
+	<nav>
+		
+	</nav>
+</header>
+
+<main>
+	<aside>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#算法模版">算法模版</a>
+      <ul>
+        <li><a href="#常用">常用</a></li>
+        <li><a href="#io">io</a></li>
+        <li><a href="#结构体">结构体</a></li>
+        <li><a href="#数据结构">数据结构</a></li>
+        <li><a href="#数学">数学</a></li>
+        <li><a href="#基础算法">基础算法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </aside>
+	<article>
+		<div class="title">
+			<h1 class="title">Summary1 基础用法模版</h1>
+		</div>
+		
+
+		<section class="body">
+			<p>[TOC]</p>
+<h2 id="算法模版">算法模版</h2>
+<h3 id="常用">常用</h3>
+<p>表示无穷大（int的上限）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// int的最大值就是2的31次方-1
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define INF (1&lt;&lt;31)-1</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 用库中定义的INT_MAX
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;climits&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define INF INT_MAX</span><span style="color:#75715e">
+</span></code></pre></div><p>double 四舍五入的变式：永远舍和永远入：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">double</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.656</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.651</span>;
+printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%.2lf %2lf</span><span style="color:#e6db74">&#34;</span>, a<span style="color:#f92672">-</span><span style="color:#ae81ff">0.05</span>, b<span style="color:#f92672">-</span><span style="color:#ae81ff">0.05</span>); <span style="color:#75715e">// 都会往下舍，变为0.65 0.65
+</span><span style="color:#75715e"></span>printf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%.2lf %2lf</span><span style="color:#e6db74">&#34;</span>, a<span style="color:#f92672">+</span><span style="color:#ae81ff">0.05</span>, b<span style="color:#f92672">+</span><span style="color:#ae81ff">0.05</span>); <span style="color:#75715e">// 都会往上入，变为0.66 0.66
+</span></code></pre></div><p>字符 &amp; 字符串的scanf读入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">char</span> ch
+<span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> %c</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ch); <span style="color:#75715e">// 前面要加空格
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> s[<span style="color:#ae81ff">10</span>];
+scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, s); 
+</code></pre></div><p>scanf字符串读入(对于流输入输出进行优化)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 数据：2007-06-23-11:59  2007-06-23-12:00
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> by, ey, bm, em, bd, ed, bh, eh, bmin, emin;
+scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d-%d-%d-%d:%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>by, <span style="color:#f92672">&amp;</span>bm, <span style="color:#f92672">&amp;</span>bd, <span style="color:#f92672">&amp;</span>bh, <span style="color:#f92672">&amp;</span>bmin);
+scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d-%d-%d-%d:%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>ey, <span style="color:#f92672">&amp;</span>em, <span style="color:#f92672">&amp;</span>ed, <span style="color:#f92672">&amp;</span>eh, <span style="color:#f92672">&amp;</span>emin); <span style="color:#75715e">// 即可获取
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> a;
+cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>by<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bm<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bd<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bh<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bmin;
+cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>by<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>bm<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>ed<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>eh<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>emin; <span style="color:#75715e">// 也可以获取
+</span></code></pre></div><p>判断字符是大写字母还是小写字母还是数字</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">string str;
+<span style="color:#66d9ef">char</span> ch;
+
+<span style="color:#75715e">// 判断
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (isupper(str[i])) <span style="color:#75715e">// 判断大写字母
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (isupper(ch)) <span style="color:#75715e">// 判断大写字母
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (islower(ch)) <span style="color:#75715e">// 判断小写字母
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (isalnum(str[i])) <span style="color:#75715e">// 判断数字
+</span><span style="color:#75715e"></span>  
+<span style="color:#75715e">// 转换
+</span><span style="color:#75715e"></span>cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(<span style="color:#66d9ef">char</span>)toupper(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">a</span><span style="color:#e6db74">&#39;</span>); <span style="color:#75715e">// A
+</span><span style="color:#75715e"></span>cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(<span style="color:#66d9ef">char</span>)tolower(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">D</span><span style="color:#e6db74">&#39;</span>); <span style="color:#75715e">// d
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> num <span style="color:#f92672">=</span> stoi(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">123</span><span style="color:#e6db74">&#34;</span>); <span style="color:#75715e">// 123
+</span></code></pre></div><p>字符串常用操作：插入、删除、替换、拷贝</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">string str1<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">We can insert a string</span><span style="color:#e6db74">&#34;</span>;
+string str2<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">a str into </span><span style="color:#e6db74">&#34;</span>;
+
+<span style="color:#75715e">// insert 插入
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>str1.insert(<span style="color:#ae81ff">14</span>,str2)<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; <span style="color:#75715e">//在字符串指定位置index=14前面插入指定字符串 //We can insert a str into a string
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>str1.insert(<span style="color:#ae81ff">14</span>,str2,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">9</span>)<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;<span style="color:#75715e">//在字符串指定位置前面插入指定字符串的子串（从指定索引开始的指定个数的字符） //2后面的9个数字 //We can insert str into a str into a string
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>str1.insert(<span style="color:#ae81ff">14</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">test hello</span><span style="color:#e6db74">&#34;</span>,<span style="color:#ae81ff">5</span>)<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;<span style="color:#75715e">//插入指定字符串的前n个字符     //插入了5个元素 //We can insert test str into a str into a string
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>str1.insert(<span style="color:#ae81ff">14</span>,<span style="color:#ae81ff">6</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">*</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; <span style="color:#75715e">//插入n个同样字符到字符串中 //We can insert ******test str into a str into a string
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// replace 插入
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>str1.replace(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">may</span><span style="color:#e6db74">&#34;</span>)<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;<span style="color:#75715e">//替换指定索引开始的指定长度的子串 //We may insert ******test str into a str into a string
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>str1.replace(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">can could</span><span style="color:#e6db74">&#34;</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>)<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; <span style="color:#75715e">//用给定字符串的指定子串来进行替换//例如以下。实际上使用的是could来进行替换 //We could insert ******test str into a str into a string
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>str1.replace(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">can could</span><span style="color:#e6db74">&#34;</span>,<span style="color:#ae81ff">3</span>)<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; <span style="color:#75715e">//使用给定字符串的前n个字符来进行替换：can //We can insert ******test str into a str into a string
+</span><span style="color:#75715e"></span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>str1.replace(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>,<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">*</span><span style="color:#e6db74">&#39;</span>)<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; <span style="color:#75715e">//使用指定个数的反复字符来进行替换 //We ***** insert ******test str into a str into a string
+</span><span style="color:#75715e"></span>string word<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">We</span><span style="color:#e6db74">&#34;</span>;
+size_t index<span style="color:#f92672">=</span>str1.find(word);
+<span style="color:#66d9ef">if</span>(index<span style="color:#f92672">!</span><span style="color:#f92672">=</span>string<span style="color:#f92672">:</span><span style="color:#f92672">:</span>npos)
+    <span style="color:#75715e">//删除指定索引开始的指定长度的字符
+</span><span style="color:#75715e"></span>    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>str1.erase(index,word.length())<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; <span style="color:#75715e">// ***** insert ******test str into a str into a string
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// erase 移除
+</span><span style="color:#75715e"></span>string <span style="color:#a6e22e">str3</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">1234567890</span><span style="color:#e6db74">&#34;</span>);
+str3.erase(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>);  <span style="color:#75715e">//把脚标为2开始的字符，连同其之后的3个字符全部删除 //1267890
+</span><span style="color:#75715e"></span>str3.erase(<span style="color:#ae81ff">2</span>);    <span style="color:#75715e">//把脚标为2及其之后的所有字符全部删除 //12
+</span><span style="color:#75715e"></span>str3.erase();     <span style="color:#75715e">//清空所有字符 //
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// find 查找
+</span><span style="color:#75715e"></span><span style="color:#75715e">//关于npos，找不到都会返回这个 //  Value returned by various member functions when they fail. //static const size_type	npos = static_cast&lt;size_type&gt;(-1);
+</span><span style="color:#75715e"></span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string str4 (<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">There are two needles in this haystack with needles.</span><span style="color:#e6db74">&#34;</span>); std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string str5 (<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">needle</span><span style="color:#e6db74">&#34;</span>);
+<span style="color:#75715e">// different member versions of find in the same order as above:
+</span><span style="color:#75715e"></span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>size_t found <span style="color:#f92672">=</span> str4.find(str5);
+<span style="color:#66d9ef">if</span> (found<span style="color:#f92672">!</span><span style="color:#f92672">=</span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string<span style="color:#f92672">:</span><span style="color:#f92672">:</span>npos)
+   cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">first &#39;needle&#39; found at: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> found <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">&#39;</span>;    <span style="color:#75715e">//输出14
+</span><span style="color:#75715e"></span>   found<span style="color:#f92672">=</span>str4.find(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">needles are small</span><span style="color:#e6db74">&#34;</span>,found<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">6</span>); <span style="color:#75715e">//在str中的第(found+1)位开始搜索，搜索&#34;needles are small&#34;字符串中的前6位，找到索引位置。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (found<span style="color:#f92672">!</span><span style="color:#f92672">=</span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string<span style="color:#f92672">:</span><span style="color:#f92672">:</span>npos)
+   cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">second &#39;needle&#39; found at: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> found <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">&#39;</span>;   <span style="color:#75715e">//输出44
+</span><span style="color:#75715e"></span>   found<span style="color:#f92672">=</span>str4.find(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">haystack</span><span style="color:#e6db74">&#34;</span>);
+<span style="color:#66d9ef">if</span> (found<span style="color:#f92672">!</span><span style="color:#f92672">=</span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string<span style="color:#f92672">:</span><span style="color:#f92672">:</span>npos)
+   cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;haystack&#39; also found at: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> found <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">&#39;</span>;   <span style="color:#75715e">//输出30
+</span><span style="color:#75715e"></span>   found<span style="color:#f92672">=</span>str4.find(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span>);
+<span style="color:#66d9ef">if</span> (found<span style="color:#f92672">!</span><span style="color:#f92672">=</span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string<span style="color:#f92672">:</span><span style="color:#f92672">:</span>npos)
+   cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Period found at: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> found <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">&#39;</span>;            <span style="color:#75715e">//输出51
+</span><span style="color:#75715e"></span>   <span style="color:#75715e">// let&#39;s replace the first needle:
+</span><span style="color:#75715e"></span>   str4.replace(str4.find(str5),str5.length(),<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">preposition</span><span style="color:#e6db74">&#34;</span>);  <span style="color:#75715e">//replace 用法
+</span><span style="color:#75715e"></span>   cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> str4 <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">\n</span><span style="color:#e6db74">&#39;</span>;
+ 
+<span style="color:#75715e">//     find_first_of(), find_last_of(), //find_first_not_of(), find_last_not_of()
+</span><span style="color:#75715e"></span>string temp6 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">cag sdme</span><span style="color:#e6db74">&#34;</span>; string temp7 <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">na me</span><span style="color:#e6db74">&#34;</span>;
+size_t where <span style="color:#f92672">=</span> temp6.find_first_of(temp7);     <span style="color:#75715e">//也可以直接写  temp1.find_first_of(&#34;name&#34;);
+</span><span style="color:#75715e"></span>cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">find_first_of: </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>where<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;          <span style="color:#75715e">//输出索引 1  这里是temp6的索引 1    temp7中的字母第一次在temp6出现的相同字母为 a
+</span><span style="color:#75715e"></span>size_t where2 <span style="color:#f92672">=</span> temp6.find_last_of(temp7);
+cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">find_first_of: </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>where2<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;         <span style="color:#75715e">//输出索引 7  这里是temp6的索引 7   temp7中的字母最后一次在temp6出现的相同字母为 e
+</span><span style="color:#75715e"></span>size_t where3 <span style="color:#f92672">=</span> temp6.find_last_not_of(temp7);
+cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">find_last_not_of: </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>where3<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;      <span style="color:#75715e">//输出索引 5  这里是temp6的索引 5  temp7中的字母最后一次在temp6中的不同是 d
+</span><span style="color:#75715e"></span>size_t where4 <span style="color:#f92672">=</span> temp6.find_first_not_of(temp7);
+cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">find_first_not_of: </span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>where4<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl;    <span style="color:#75715e">//输出索引 0  这里是temp6的索引 0  temp7中的字母第一次在temp6中的不同是 
+</span></code></pre></div><p>cin读入提速</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">ios<span style="color:#f92672">:</span><span style="color:#f92672">:</span>sync_with_stdio(false);
+</code></pre></div><p>scanf // getline+cin读入一整行：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// scanf
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">char</span> s[maxn];
+scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%[^</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">]</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>s); <span style="color:#75715e">// 注意，此时传入的变量名就类似于读入数字，不可以类似于数组或者字符串数组的那种直接传地址了
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// getline+cin
+</span><span style="color:#75715e"></span>string str1, str2;
+getline(cin, str1); <span style="color:#75715e">// 注意，出现了getline之后，单独使用cin会失效
+</span><span style="color:#75715e"></span>getline(cin, str2);
+
+<span style="color:#75715e">// 解决方案
+</span><span style="color:#75715e"></span>cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>a;
+getchar(); <span style="color:#75715e">// 中间添加getchar将多余的读了进去就好了
+</span><span style="color:#75715e"></span>getline(cin, b);
+</code></pre></div><p>字符串不告诉有多少，读着读着就消失了 scanf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">char</span> s[maxn];
+<span style="color:#66d9ef">while</span>(<span style="color:#f92672">~</span>scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span>, s)) {
+  <span style="color:#75715e">// 对s字符数组进行操作
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#75715e">// cin + eof
+</span><span style="color:#75715e"></span>string str;
+<span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>cin.eof()) {
+  cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>str;
+  <span style="color:#75715e">// 对str字符串进行操作
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>字符串当作数字使用，通过数字排序来代表字典序</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>string strs[maxn];
+
+<span style="color:#75715e">// 直接将字符串字典序排序
+</span><span style="color:#75715e"></span>sort(strs<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, strs<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>n); <span style="color:#75715e">// 按照字典序排序
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 将字符串进行拼接然后保证拼接出来的字串字典序最大 =&gt; 拼接直接求和，重载一下求和所比较的内容即可
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">cmp</span>(string a, string b) {<span style="color:#66d9ef">return</span> a<span style="color:#f92672">+</span>b <span style="color:#f92672">&gt;</span> b<span style="color:#f92672">+</span>a;}
+sort(strs<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>, strs<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span>n, cmp);
+</code></pre></div><p>声明一段地址空间：c用malloc，c++用new</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">node nw <span style="color:#f92672">=</span> (node)malloc(<span style="color:#66d9ef">sizeof</span>(node)); <span style="color:#75715e">// c写法，声明一个结构体
+</span><span style="color:#75715e"></span>node nw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node();
+node <span style="color:#f92672">*</span> point_node <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node(); <span style="color:#75715e">// c++写法，声明一个指向结构体的指针（point to struct）
+</span><span style="color:#75715e"></span>node <span style="color:#f92672">*</span> point_node_2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node {param1, param2};
+
+<span style="color:#75715e">// 注意如果用malloc(c)来new一个的话，强制转换要为(node*)的类型，但是size不是指针的size，而是结构体的size
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 如果用typedef 来进行声明的简化 =&gt; 然后就可以用point_node 来代替node*
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">*</span> pnode;
+node <span style="color:#f92672">*</span> point_node3 <span style="color:#f92672">=</span> (node<span style="color:#f92672">*</span>)malloc(<span style="color:#66d9ef">sizeof</span>(node)); <span style="color:#75715e">// C写法，利用malloc
+</span><span style="color:#75715e"></span>pnode point_node4 <span style="color:#f92672">=</span> (pnode)malloc(<span style="color:#66d9ef">sizeof</span>(node)); <span style="color:#75715e">// C写法，利用malloc然后利用typedef来进行简化
+</span><span style="color:#75715e"></span>pnode point_node5 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node {param1, param2};
+</code></pre></div><p>其他写法：（对于之前声明的，可以先判断是否为NULL，如果为NULL的话，直接给他赋一个值就好）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">if</span> (nw <span style="color:#f92672">=</span><span style="color:#f92672">=</span> NULL) {
+  nw <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> node(); <span style="color:#75715e">// 在为NULL的情况下，直接new一个新的节点
+</span><span style="color:#75715e"></span>  nw.l <span style="color:#f92672">=</span> nw.r <span style="color:#f92672">=</span> NULL;nw.val <span style="color:#f92672">=</span> val;
+}
+</code></pre></div><h3 id="io">io</h3>
+<p>快速读入</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">read</span>()
+{
+    <span style="color:#66d9ef">int</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,f<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;<span style="color:#66d9ef">char</span> ch<span style="color:#f92672">=</span>getchar();
+    <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span>isdigit(ch)){<span style="color:#66d9ef">if</span> (ch<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span>) f<span style="color:#f92672">=</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;ch<span style="color:#f92672">=</span>getchar();}
+    <span style="color:#66d9ef">while</span> (isdigit(ch)){x<span style="color:#f92672">=</span>x<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>ch<span style="color:#f92672">-</span><span style="color:#ae81ff">48</span>;ch<span style="color:#f92672">=</span>getchar();}
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">*</span>f;
+}
+</code></pre></div><h3 id="结构体">结构体</h3>
+<p>构造函数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> node{
+  <span style="color:#66d9ef">int</span> a, b;
+  string str;
+}
+p.push(node(aa, bb)); <span style="color:#75715e">// 第一种
+</span><span style="color:#75715e"></span>p.push({aa, bb, str}); <span style="color:#75715e">// 第二种
+</span></code></pre></div><p>结构体中-重载运算符</p>
+<p>让结构体在排序的时候可以以重载后的&lt;进行排序，此时来比较的重载后的比较结构体的方式【所以重载之后要返回bool】</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">struct</span> node{
+  <span style="color:#66d9ef">int</span> a, b;
+  <span style="color:#75715e">// 方法1
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> node n) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> a<span style="color:#f92672">*</span>b <span style="color:#f92672">&lt;</span> n.a<span style="color:#f92672">*</span>n.b;}
+  <span style="color:#75715e">// 方法2
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> node<span style="color:#f92672">&amp;</span> n) {<span style="color:#66d9ef">return</span> a<span style="color:#f92672">*</span>b <span style="color:#f92672">&lt;</span> n.a<span style="color:#f92672">*</span>n.b;} 
+}
+</code></pre></div><p>类中-重载运算符</p>
+<p>类里边重载，目的是为了让两个类可以进行四则运算所以对他进行重载，最终肯定返回的是一个类【所以重载之后要返回类testClass】</p>
+<p>（两个对象进行比较得到 =&gt; 是/否， 两个对象做四则运算 =&gt; 得到一个新的对象）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">testClass</span>{
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">int</span> a, b;
+	testClass(){}
+  testClass(<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>a<span style="color:#f92672">=</span>tc.a;<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>b<span style="color:#f92672">=</span>tc.b;}
+  testClass(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>a <span style="color:#f92672">=</span> a;<span style="color:#66d9ef">this</span><span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>b <span style="color:#f92672">=</span> b;}
+  <span style="color:#75715e">// 下边在类里边重载的话，用类返回 -- 两种写法
+</span><span style="color:#75715e"></span>  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">+</span> (<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">testClass</span>(a<span style="color:#f92672">+</span>tc.a, b<span style="color:#f92672">+</span>tc.b);}
+  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">-</span> (<span style="color:#66d9ef">const</span> testClass tc) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">testClass</span>(a<span style="color:#f92672">-</span>tc.a, b<span style="color:#f92672">-</span>tc.b);}
+  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">*</span> (<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">testClass</span>(a<span style="color:#f92672">*</span>tc.a, b<span style="color:#f92672">*</span>tc.b);}
+  testClass <span style="color:#66d9ef">operator</span> <span style="color:#f92672">/</span> (<span style="color:#66d9ef">const</span> testClass tc) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">testClass</span>(a<span style="color:#f92672">/</span>tc.a, b<span style="color:#f92672">/</span>tc.b);}
+  
+  <span style="color:#75715e">// 注意 &gt; &lt; 的重载，这个重载之后的结果返回的是bool
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> testClass tc) <span style="color:#66d9ef">const</span> {<span style="color:#66d9ef">return</span> a <span style="color:#f92672">&lt;</span> tc.a;}
+  <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&gt;</span> (<span style="color:#66d9ef">const</span> testClass<span style="color:#f92672">&amp;</span> tc) {<span style="color:#66d9ef">return</span> a <span style="color:#f92672">&lt;</span> tc.a;}
+  
+  <span style="color:#75715e">// 重载输入输出，返回的应该是输入输出流这个对象（然后处理的这个实体对象应该是要被处理的对象）=&gt; 注意都没有const，需要修改这个参数的话就不能加const
+</span><span style="color:#75715e"></span>  istream<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> (istream<span style="color:#f92672">&amp;</span> input, testClass<span style="color:#f92672">&amp;</span> tc) {input<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>tc.a<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>tc.b;<span style="color:#66d9ef">return</span> input;}
+  ostream<span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> (ostream<span style="color:#f92672">&amp;</span> output, testClass<span style="color:#f92672">&amp;</span> tc) {output<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>tc.a<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>tc.b;<span style="color:#66d9ef">return</span> output;}
+};
+
+
+<span style="color:#75715e">// 类测试代码
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+    testClass t1, t2;
+    cin<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>t1<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>t2;
+    testClass t3, t4, t5;
+    t3 <span style="color:#f92672">=</span> t1<span style="color:#f92672">+</span>t2;t4 <span style="color:#f92672">=</span> t1<span style="color:#f92672">-</span>t2;t5 <span style="color:#f92672">=</span> t1<span style="color:#f92672">*</span>t2;
+    cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>t3<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>t4<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; cout<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>t5<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>endl; <span style="color:#75715e">// 注意不可以直接cout&lt;&lt;t1+t2&lt;&lt;endl;这样是报错的
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><hr>
+<h3 id="数据结构">数据结构</h3>
+<p>ST表-区间最大最小gcd(RMQ)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">// 初始化
+</span><span style="color:#75715e"></span>scanf(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, <span style="color:#f92672">&amp;</span>minn[i][<span style="color:#ae81ff">0</span>]);maxx[i][<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> minn[i][<span style="color:#ae81ff">0</span>];
+<span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; j <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) 
+  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>j)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) 
+    minn[i][j] <span style="color:#f92672">=</span> min(minn[i][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>], minn[i<span style="color:#f92672">+</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>))][j<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]);
+
+<span style="color:#75715e">// 查询-解析倍率k并返回区间最值
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">query</span>(<span style="color:#66d9ef">int</span> l, <span style="color:#66d9ef">int</span> r) {
+  <span style="color:#66d9ef">int</span> k <span style="color:#f92672">=</span> log2(r<span style="color:#f92672">-</span>l<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
+  <span style="color:#66d9ef">return</span> min(minn[l][k], minn[r<span style="color:#f92672">-</span>(<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>k)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>][k]);
+}
+</code></pre></div><hr>
+<h3 id="数学">数学</h3>
+<p>最大公约数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">gcd</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {<span style="color:#66d9ef">return</span> b<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span><span style="color:#f92672">:</span>gcd(a<span style="color:#f92672">%</span>b, b)<span style="color:#f92672">:</span>a;}
+</code></pre></div><p>最小公倍数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">gcd(a, b)<span style="color:#f92672">*</span>gld(a, b) <span style="color:#f92672">=</span> a<span style="color:#f92672">*</span>b
+</code></pre></div><p>快速幂</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">quickPower</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> k) {
+  <span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, base<span style="color:#f92672">=</span>a;
+  <span style="color:#66d9ef">while</span>(k <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#66d9ef">if</span> (k <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) ans<span style="color:#f92672">*</span><span style="color:#f92672">=</span>base;
+    base<span style="color:#f92672">*</span><span style="color:#f92672">=</span>base;
+    k <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  }
+  <span style="color:#66d9ef">return</span> ans;
+}
+</code></pre></div><p>快速幂取余数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">quickPowerWithMod</span>(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> k, <span style="color:#66d9ef">int</span> mod) {
+  <span style="color:#66d9ef">int</span> ans<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, base<span style="color:#f92672">=</span>a;
+  <span style="color:#66d9ef">while</span>(k <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+    <span style="color:#66d9ef">if</span> (k <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">1</span>) {ans<span style="color:#f92672">*</span><span style="color:#f92672">=</span>base; ans<span style="color:#f92672">%</span><span style="color:#f92672">=</span>mod;}
+    base<span style="color:#f92672">*</span><span style="color:#f92672">=</span>base; base<span style="color:#f92672">%</span><span style="color:#f92672">=</span>mode;
+    k <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  }
+}
+</code></pre></div><p>约数打表初始化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> b[maxn]; <span style="color:#75715e">// maxn为要找到约数的界限
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> maxn; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>i; j <span style="color:#f92672">&lt;</span> maxn; j<span style="color:#f92672">+</span><span style="color:#f92672">=</span>i)
+            b[j].push_back(i);
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i:b[<span style="color:#ae81ff">8</span>]) {} <span style="color:#75715e">// 1 2 4 =&gt; 得到了8的所有约数，不包括自己本身
+</span></code></pre></div><p>排列组合数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">ll <span style="color:#a6e22e">factorial</span>(ll n) {
+    ll fc <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">for</span> (ll i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> n; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) fc <span style="color:#f92672">*</span><span style="color:#f92672">=</span> i;
+    <span style="color:#66d9ef">return</span> fc;
+}
+
+<span style="color:#75715e">// Cnm
+</span><span style="color:#75715e"></span>ll <span style="color:#a6e22e">combo</span>(ll n, ll m) {<span style="color:#66d9ef">return</span> factorial(n) <span style="color:#f92672">/</span> (factorial(m) <span style="color:#f92672">*</span> factorial(n <span style="color:#f92672">-</span> m));}
+
+<span style="color:#75715e">// Anm
+</span><span style="color:#75715e"></span>ll <span style="color:#a6e22e">permutation</span>(ll n, ll m) {<span style="color:#66d9ef">return</span> factorial(n) <span style="color:#f92672">/</span> factorial(n <span style="color:#f92672">-</span> m);}
+</code></pre></div><p>高精度</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/* 组成部分 (5)：全局变量N；结构体的变量=&gt;用来描述高精度数；重载的加减乘除以及其他运算符号；重载的输入输出流*/</span>
+
+<span style="color:#75715e">// 全局变量N 最大的精度
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> <span style="color:#ae81ff">2005</span>;
+
+<span style="color:#66d9ef">struct</span> BigInt {
+    <span style="color:#75715e">// 结构体变量
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> len, s[N];
+    
+    <span style="color:#75715e">// 构造函数
+</span><span style="color:#75715e"></span>    BigInt() {memset(s, <span style="color:#ae81ff">0</span>, <span style="color:#66d9ef">sizeof</span>(s));len <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;}
+    BigInt(<span style="color:#66d9ef">int</span> num) { <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> num; }
+    BigInt(<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>num) { <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> num; }
+
+    <span style="color:#75715e">// 重载的各种运算符号
+</span><span style="color:#75715e"></span>    BigInt operator<span style="color:#f92672">=</span>(<span style="color:#66d9ef">int</span> num) {
+        <span style="color:#66d9ef">char</span> c[N];
+        sprintf(c, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">&#34;</span>, num);
+        <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> c;
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>this;
+    }
+
+    BigInt operator<span style="color:#f92672">=</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>num) {
+        len <span style="color:#f92672">=</span> strlen(num);
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) s[i] <span style="color:#f92672">=</span> num[len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> i] <span style="color:#f92672">-</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>;
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>this;
+    }
+
+    string str() {
+        string res <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) res <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span>) (s[i] <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0</span><span style="color:#e6db74">&#39;</span>) <span style="color:#f92672">+</span> res;
+        <span style="color:#66d9ef">return</span> res;
+    }
+
+    <span style="color:#66d9ef">void</span> clean() {<span style="color:#66d9ef">while</span> (len <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span> <span style="color:#f92672">!</span>s[len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]) len<span style="color:#f92672">-</span><span style="color:#f92672">-</span>;}
+
+    BigInt operator <span style="color:#f92672">+</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        BigInt c;
+        c.len <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, g <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; g <span style="color:#f92672">|</span><span style="color:#f92672">|</span> i <span style="color:#f92672">&lt;</span> len <span style="color:#f92672">|</span><span style="color:#f92672">|</span> i <span style="color:#f92672">&lt;</span> b.len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+            <span style="color:#66d9ef">int</span> x <span style="color:#f92672">=</span> g;
+            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span> len) x <span style="color:#f92672">+</span><span style="color:#f92672">=</span> s[i];
+            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span> b.len) x <span style="color:#f92672">+</span><span style="color:#f92672">=</span> b.s[i];
+            c.s[c.len<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>;
+            g <span style="color:#f92672">=</span> x <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>;
+        }
+        <span style="color:#66d9ef">return</span> c;
+    }
+
+    BigInt operator <span style="color:#f92672">-</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        BigInt c;
+        c.len <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">int</span> x;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, g <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+            x <span style="color:#f92672">=</span> s[i] <span style="color:#f92672">-</span> g;
+            <span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span> b.len) x <span style="color:#f92672">-</span><span style="color:#f92672">=</span> b.s[i];
+            <span style="color:#66d9ef">if</span> (x <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) g <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+            <span style="color:#66d9ef">else</span> {
+                x <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+                g <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+            };
+            c.s[c.len<span style="color:#f92672">+</span><span style="color:#f92672">+</span>] <span style="color:#f92672">=</span> x;
+        }
+        c.clean();
+        <span style="color:#66d9ef">return</span> c;
+    }
+
+    BigInt operator <span style="color:#f92672">*</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        BigInt c;
+        c.len <span style="color:#f92672">=</span> len <span style="color:#f92672">+</span> b.len;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> len; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; j <span style="color:#f92672">&lt;</span> b.len; j<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) c.s[i <span style="color:#f92672">+</span> j] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> s[i] <span style="color:#f92672">*</span> b.s[j];
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> c.len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i<span style="color:#f92672">+</span><span style="color:#f92672">+</span>) {
+            c.s[i <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">+</span><span style="color:#f92672">=</span> c.s[i] <span style="color:#f92672">/</span> <span style="color:#ae81ff">10</span>;
+            c.s[i] <span style="color:#f92672">%</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+        }
+        c.clean();
+        <span style="color:#66d9ef">return</span> c;
+    }
+
+    <span style="color:#66d9ef">bool</span> operator <span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        <span style="color:#66d9ef">if</span> (len <span style="color:#f92672">!</span><span style="color:#f92672">=</span> b.len) <span style="color:#66d9ef">return</span> len <span style="color:#f92672">&lt;</span> b.len;
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> len <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i<span style="color:#f92672">-</span><span style="color:#f92672">-</span>)
+            <span style="color:#66d9ef">if</span> (s[i] <span style="color:#f92672">!</span><span style="color:#f92672">=</span> b.s[i]) <span style="color:#66d9ef">return</span> s[i] <span style="color:#f92672">&lt;</span> b.s[i];
+        <span style="color:#66d9ef">return</span> false;
+    }
+
+    BigInt operator <span style="color:#f92672">+</span><span style="color:#f92672">=</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>this <span style="color:#f92672">+</span> b;
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>this;
+    }
+
+    BigInt operator <span style="color:#f92672">-</span><span style="color:#f92672">=</span> (<span style="color:#66d9ef">const</span> BigInt <span style="color:#f92672">&amp;</span>b) {
+        <span style="color:#f92672">*</span>this <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>this <span style="color:#f92672">-</span> b;
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">*</span>this;
+    }
+};
+
+<span style="color:#75715e">// 重载的输入输出流
+</span><span style="color:#75715e"></span>istream <span style="color:#f92672">&amp;</span>operator<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span>(istream <span style="color:#f92672">&amp;</span>in, BigInt <span style="color:#f92672">&amp;</span>x) {
+    string s;
+    in <span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span> s;
+    x <span style="color:#f92672">=</span> s.c_str();
+    <span style="color:#66d9ef">return</span> in;
+}
+
+ostream <span style="color:#f92672">&amp;</span>operator<span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span>(ostream <span style="color:#f92672">&amp;</span>out, BigInt <span style="color:#f92672">&amp;</span>x) {
+    out <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> x.str();
+    <span style="color:#66d9ef">return</span> out;
+}
+</code></pre></div><p>时间</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#75715e">// 判断闰年
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">isRun</span>(<span style="color:#66d9ef">int</span> y) {
+  <span style="color:#66d9ef">if</span> (y<span style="color:#f92672">%</span><span style="color:#ae81ff">4</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) 
+    <span style="color:#66d9ef">if</span> (y<span style="color:#f92672">%</span><span style="color:#ae81ff">100</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) 
+      <span style="color:#66d9ef">if</span> (y<span style="color:#f92672">%</span><span style="color:#ae81ff">400</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> true;
+      <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> false;
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> true;
+  <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">return</span> false;
+}
+<span style="color:#75715e">// 计算到0000年1月1日00:00的总时间（得分钟数）
+</span><span style="color:#75715e"></span>ull <span style="color:#a6e22e">calTime</span>(<span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> m, <span style="color:#66d9ef">int</span> d, <span style="color:#66d9ef">int</span> h, <span style="color:#66d9ef">int</span> min) {
+    ull ans, days <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> y; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i)
+        <span style="color:#66d9ef">if</span> (isRun(i)) days <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">366</span>;
+        <span style="color:#66d9ef">else</span> days <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">365</span>;
+    <span style="color:#66d9ef">if</span> (isRun(y)) month[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">29</span>;
+    <span style="color:#66d9ef">else</span> month[<span style="color:#ae81ff">2</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">28</span>;
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> m; <span style="color:#f92672">+</span><span style="color:#f92672">+</span>i) days <span style="color:#f92672">+</span><span style="color:#f92672">=</span> month[i];
+    ans <span style="color:#f92672">=</span> (days<span style="color:#f92672">+</span>d<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">*</span><span style="color:#ae81ff">1440</span><span style="color:#f92672">+</span>h<span style="color:#f92672">*</span><span style="color:#ae81ff">60</span><span style="color:#f92672">+</span>min;
+    <span style="color:#66d9ef">return</span> ans;
+}
+<span style="color:#75715e">// 得区间段的总时间
+</span><span style="color:#75715e"></span>ull period_time <span style="color:#f92672">=</span> calTime(ed_time)<span style="color:#f92672">-</span>calTime(bg_time);
+</code></pre></div><hr>
+<h3 id="基础算法">基础算法</h3>
+<p>二分-整数</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">check</span>(<span style="color:#66d9ef">int</span> tg) {
+  <span style="color:#66d9ef">if</span>() <span style="color:#66d9ef">return</span> true;
+  <span style="color:#66d9ef">return</span> false;
+}
+<span style="color:#75715e">// 初始化二分的左右边界以及中间索引和值 l, r, mid, ans
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> l <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, r <span style="color:#f92672">=</span> maxx, mid, ans;
+<span style="color:#66d9ef">while</span> (l<span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span>r) {
+  mid <span style="color:#f92672">=</span> (l<span style="color:#f92672">+</span>r)<span style="color:#f92672">&gt;</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">int</span> tm <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">if</span> (check(mid)) l <span style="color:#f92672">=</span> (ans<span style="color:#f92672">=</span>mid)<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">else</span> r <span style="color:#f92672">=</span> mid<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+}
+</code></pre></div>
+		</section>
+
+		<div class="meta">Posted on Feb 4, 2020</div>
+
+		<div class="post-tags">
+			
+			
+			
+		</div>
+	</article>
+	
+</main>
+<footer>
+<hr><a class="soc" href="https://github.com/Aczy156" title="GitHub"><i data-feather="github"></i></a>|⚡️
+	2023  © Aczy156 |  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168772474-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>
+      feather.replace()
+</script></div>
+    </body>
+</html>

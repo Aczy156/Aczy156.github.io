@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>基础算法 on Aczy156</title>
-    <link>https://chenranfei.xyz/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</link>
+    <link>http://chenranfei.xyz/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</link>
     <description>Recent content in 基础算法 on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.xyz/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://chenranfei.xyz/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Algorithm10 二分</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</guid>
       <description>[TOC]
 二分  查找的几种：
  暴力遍历：O(n) 折半查找/二分查找：O(log2n) 哈希：O(1)  其中，二分就是折半查找。
@@ -30,10 +30,10 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     
     <item>
       <title>Algorithm12 并查集</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
       <description>[TOC]
 并查集 模版-查看两个元素是否在一个集合中 https://www.luogu.com.cn/problem/P1551
 题目大意：
@@ -45,10 +45,10 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     
     <item>
       <title>Algorithm13 前缀和与差分</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</guid>
       <description>[TOC]
 前缀和与差分  压缩时间复杂度：只要降一个等级的复杂度即可达到题解的情况
  经典情景：
@@ -64,10 +64,10 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
     
     <item>
       <title>Algorithm15 倍增</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</guid>
       <description>[TOC]
 倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
 #include &amp;lt;iostream&amp;gt;using namespace std; int w[8] = {1, 2, 3, 5, 10, 20}, t; #include &amp;lt;bitset&amp;gt;bitset&amp;lt;1010&amp;gt; s; int main() { s[0] = 1; for (int i = 0; i &amp;lt; 6; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); for (int j = 0; j &amp;lt; t; ++j) s |= s&amp;lt;&amp;lt;w[i]; } printf(&amp;#34;Total=%d\n&amp;#34;, s.count()-1); return 0; } </description>
@@ -75,10 +75,10 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
     
     <item>
       <title>Algorithm19 递推与递归</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</guid>
       <description>[TOC]
 递推与递归 斐波那契数列 （高精度） https://www.luogu.com.cn/problem/P1255
 (相似题目：https://www.luogu.com.cn/problem/P2437)
@@ -91,10 +91,10 @@ AC代码：
     
     <item>
       <title>Algorithm19.1 递归</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</guid>
       <description>[TOC]
 递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
 两种方案：
@@ -104,10 +104,10 @@ AC代码：
     
     <item>
       <title>Algorithm3 交叉</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</guid>
       <description>[TOC]
 交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
 1、题目大意是允许相邻的两个牌堆交叉换牌
@@ -117,10 +117,10 @@ AC代码：
     
     <item>
       <title>Algorithm30 倍增</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</guid>
       <description>[TOC]
 线性规划 基础知识  最优化问题 线性代数  理解矩阵运算：
  前面矩阵的每行$$\times$$后面矩阵的每列 不同  拼 https://www.luogu.com.cn/problem/P2347
@@ -129,10 +129,10 @@ AC代码：
     
     <item>
       <title>Algorithm4 十种排序</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</guid>
       <description>[TOC]
 排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
  冒泡排序【稳定】：$O(n^2)$ 最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」 选择排序【不稳定】：$O(n^2)$ 「拿到合适的然后放置」选择出最值以及最值的索引，然后进行交换。 插入排序三种：「拿到然后找合适的地方放置一个/多个」  直接插入【稳定】：$O(n^2)$ 对每次拿到的数，从一端到另一端暴力查找，找到合适的位置插入进去 折半插入【稳定】：$O(nlog_2^n)$ 在选择合适的位置的时候，会进行二分折半查找，找到合适位置插入进去 希尔插入【不稳定】：$O(n^{1.3})\sim O(n^2)$ 更复杂的插入排序过程，三大步，首先对半分，两半一对一匹配进行插入排序；然后对半分的两类内部分别进行插入，然后对整体进行插入排序。    递归 二分与合并：$O(n*log_2^n)$
@@ -147,10 +147,10 @@ AC代码：
     
     <item>
       <title>Algorithm5 Advanced Sort</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</guid>
       <description>[TOC]
 排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&amp;gt; 一遍扫，模拟即可 仅可以交换相邻的 =&amp;gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp;amp; 顶部最小 最大：priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq;
 最小：priority_queue&amp;lt;int&amp;gt; pq;
@@ -160,10 +160,10 @@ https://www.luogu.com.cn/problem/P3378
     
     <item>
       <title>Algorithm6 贪心问题</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</guid>
       <description>[TOC]
 贪心问题  装袋问题：
 结构体排序问题 // 排序贪心：
@@ -176,10 +176,10 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
     
     <item>
       <title>Algorithm6.1 贪心 VS 其他算法</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</guid>
       <description>[TOC]
 二分  一些第一眼看上去是用贪心解决，但实际上是需要用其他算法解决的问题
  https://www.luogu.com.cn/problem/P1570【看起来是贪心，实际上是找出答案的范围然后二分出结果】
@@ -192,10 +192,10 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
     
     <item>
       <title>Algorithm7 分治算法 &amp; 快速幂</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
       <description>[TOC]
 分治问题 最典型：分形 &amp;amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
  矩阵的分治：https://www.luogu.com.cn/problem/P5461

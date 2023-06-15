@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About Me on Aczy156</title>
-    <link>https://chenranfei.xyz/posts/</link>
+    <link>http://chenranfei.xyz/posts/</link>
     <description>Recent content in About Me on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Thu, 14 Jan 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://chenranfei.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://chenranfei.xyz/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Article-我与中南</title>
-      <link>https://chenranfei.xyz/posts/article/article-%E6%88%91%E4%B8%8E%E4%B8%AD%E5%8D%97/</link>
+      <link>http://chenranfei.xyz/posts/article/article-%E6%88%91%E4%B8%8E%E4%B8%AD%E5%8D%97/</link>
       <pubDate>Thu, 02 Jun 2022 15:43:12 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/article/article-%E6%88%91%E4%B8%8E%E4%B8%AD%E5%8D%97/</guid>
+      <guid>http://chenranfei.xyz/posts/article/article-%E6%88%91%E4%B8%8E%E4%B8%AD%E5%8D%97/</guid>
       <description>毕业季，看完毕晚心生感慨，遂写此文。
 感谢亲爱的npy帮我润色文章～
  我与中南  今年的夏季，仿佛比以往更加的闷热、潮湿。加之最近一个月阴雨连绵，水汽混着泥土的味道向人们鼻腔中疯狂蔓延。或许是因为夏季也不忍离别的到来，只能默默地独自落泪，连绵的大雨是它无尽的眷恋。看完毕业晚会的那天晚上，我慢慢地在校园里走着，心中五味杂陈、感慨良多。回到宿舍的我，匆匆洗漱完毕就上了床躺着，我仿佛做了一个悠长绵远的梦……
@@ -32,10 +32,10 @@
     
     <item>
       <title>Academic Profile</title>
-      <link>https://chenranfei.xyz/posts/academic/</link>
+      <link>http://chenranfei.xyz/posts/academic/</link>
       <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/academic/</guid>
+      <guid>http://chenranfei.xyz/posts/academic/</guid>
       <description>Introduction I’m a junior undergraduate student studying Software Engineering at Central South University (CSU). I’m expected to graduate in 2022.
 My real name is Ranfei Chen.
 Experience  More Resources  Projects &amp;nbsp;
@@ -45,10 +45,10 @@ Experience  More Resources  Projects &amp;nbsp;
     
     <item>
       <title>Algorithm1.0 字符串基本</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.0-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC/</guid>
       <description>[TOC]
 字符串基本 数字字符串的排序 (直接用数字排序即可) https://www.luogu.com.cn/problem/P3955
 思路：首先按照长度排序，然后如果长度相等了，在直接字符串比较大小
@@ -57,10 +57,10 @@ Experience  More Resources  Projects &amp;nbsp;
     
     <item>
       <title>Algorithm1.1 字符串-map匹配</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC%E6%98%A0%E5%B0%84%E5%8C%B9%E9%85%8D/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC%E6%98%A0%E5%B0%84%E5%8C%B9%E9%85%8D/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC%E6%98%A0%E5%B0%84%E5%8C%B9%E9%85%8D/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9F%BA%E6%9C%AC%E6%98%A0%E5%B0%84%E5%8C%B9%E9%85%8D/</guid>
       <description>[TOC]
 字符串映射 利用map进行字串匹配、替换 https://www.luogu.com.cn/problem/P1603
 题目大意：给六个字符串，然后如果有映射的进行映射为数字，没有的就不映射。输出最后映射完的结果
@@ -73,10 +73,10 @@ int main() { for (int i = 0; i &amp;lt; 6; ++i) { cin&amp;gt;&amp;gt;str; if (mp
     
     <item>
       <title>Algorithm1.2 字符串数据结构 Trie树</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84trie%E6%A0%91/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84trie%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84trie%E6%A0%91/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84trie%E6%A0%91/</guid>
       <description>[TOC]
 字符串 数据结构 Trie树  工程开发中的应用：浏览器的搜索框内容提示功能
 demo：Trie树维护的字典：[he, his, hers, she]，要从字典里查到的单词：ahishers
@@ -96,10 +96,10 @@ val[maxn]用来记录索引到这个点的值，例如学生名字是索引的�
     
     <item>
       <title>Algorithm1.3 KMP</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.3-kmp/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.3-kmp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.3-kmp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.3-kmp/</guid>
       <description>[TOC]
 字符串 KMP  工程开发中的应用：浏览器的搜索框内容提示功能
 demo：Trie树维护的字典：[he, his, hers, she]，要从字典里查到的单词：his
@@ -119,10 +119,10 @@ val[maxn]用来记录索引到这个点的值，例如学生名字是索引的�
     
     <item>
       <title>Algorithm1.4 AC自动机</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%AD%97%E7%AC%A6%E4%B8%B2/algorithm1.4-ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</guid>
       <description>[TOC]
 字符串 AC自动机  demo：AC自动机维护：[he, his, hers, she]，要查询的单词：ahishers
 过程一：构建Trie树：
@@ -142,10 +142,10 @@ val[maxn]用来记录索引到这个点的值，例如学生名字是索引的�
     
     <item>
       <title>Algorithm10 二分</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm10-%E4%BA%8C%E5%88%86/</guid>
       <description>[TOC]
 二分  查找的几种：
  暴力遍历：O(n) 折半查找/二分查找：O(log2n) 哈希：O(1)  其中，二分就是折半查找。
@@ -158,10 +158,10 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     
     <item>
       <title>Algorithm11.0 数据结构 线性表</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%80%A7%E8%A1%A8/</guid>
       <description>[TOC]
 数据结构 线性表 约瑟夫问题 https://www.luogu.com.cn/problem/P1996
 题目大意：有规则抽取特定位置索引
@@ -174,10 +174,10 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     
     <item>
       <title>Algorithm11.1 数据结构 链表</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%93%BE%E8%A1%A8/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%93%BE%E8%A1%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%93%BE%E8%A1%A8/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.1-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%93%BE%E8%A1%A8/</guid>
       <description>[TOC]
 数据结构 线性表 - 链表  1、STL库中的list，直接可以使用的链表
 补：手写链表的基本结构以及名词区分：
@@ -192,10 +192,10 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     
     <item>
       <title>Algorithm11.2 数据结构 堆</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%A0%86/</guid>
       <description>[TOC]
 数据结构 堆 &amp;amp; 手写堆  堆：
  分类：最大堆、最小堆 过程：首先按照完全二叉树的形式，将序列填补到初始的堆中  （堆-附加：利用堆的性质来判断是否是堆：「PAT1147」，判断方法就是直接对给定的层次遍历的序列来判断，是否满足a[i] &amp;gt; a[2&amp;lt;&amp;lt;i] &amp;amp;&amp;amp; a[i] &amp;gt; a[2&amp;lt;&amp;lt;i|1]或者a[i] &amp;lt; a[2&amp;lt;&amp;lt;i] &amp;amp;&amp;amp; a[i] &amp;lt; a[2&amp;lt;&amp;lt;i|1] ，来查看是否是最大堆或者最小堆
@@ -210,10 +210,10 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     
     <item>
       <title>Algorithm11.3 数据结构 栈</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.3-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%88/</guid>
       <description>[TOC]
 数据结构 线性表 - 栈  1、通过STL库中的stack，直接可以使用的链表
 2、通过手写栈
@@ -225,10 +225,10 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     
     <item>
       <title>Algorithm11.4 数据结构 树 二叉树 性质 建树 前中后序遍历</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.4-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E6%A0%91/</guid>
       <description>[TOC]
 数据结构 树 二叉树 性质 建树、前中后序遍历  树相关 遍历操作：
  【递归】先根遍历、后根遍历。看所有儿子节点和根节点的遍历顺序 【非递归】也是用队列先进先出作为数据结构来存    二叉树相关 两种实现方式：（基本的树结构是两种，如果转换为图进行储存也是可以的）
@@ -245,10 +245,10 @@ while (l + 1 &amp;lt; r) { mid = (l + r) / 2; if (f(mid)) l = mid; else r = mid;
     
     <item>
       <title>Algorithm11.5 数据结构 二叉类型相关树结构-哈夫曼树/二叉搜索树/红黑树/B&#43;树</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E6%A0%91%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91b&#43;%E6%A0%91/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E6%A0%91%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91b&#43;%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E6%A0%91%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91b&#43;%E6%A0%91/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.5-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E4%BA%8C%E5%8F%89%E7%B1%BB%E5%9E%8B%E7%9B%B8%E5%85%B3%E6%A0%91%E7%BB%93%E6%9E%84-%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91b&#43;%E6%A0%91/</guid>
       <description>[TOC]
 二叉类型相关数据结构 哈夫曼树 性质 实现-二叉链表 二叉链表实现 - 利用链表来链接起树的结构
 1、节点中有两个指向叶子结点的指针。结构体的因为是二叉链表，所以和二叉树的类似。
@@ -259,10 +259,10 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
     
     <item>
       <title>Algorithm11.6 数据结构 队列</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.6-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E9%98%9F%E5%88%97/</guid>
       <description>[TOC]
 数据结构 线性表 - 队列  1、STL库中的queue
 2、手写队列
@@ -272,10 +272,10 @@ struct node(){ int data; node * lchild; node * rchild; } *huffmantree, huffman[m
     
     <item>
       <title>Algorithm11.7 数据结构 ST表</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.7-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.7-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.7-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.7-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-st%E8%A1%A8/</guid>
       <description>[TOC]
 ST表-可重复贡献问题 // RMQ（Min/Max） // 区间gcd 区间min/max/gcd 区分与线段树 ？？？
 https://www.luogu.com.cn/problem/P3865
@@ -290,10 +290,10 @@ int k = log2(r-l+1); return max(maxx[l][k], maxx[r-(1&amp;lt;&amp;lt;k)+1][k]); 
     
     <item>
       <title>Algorithm11.8 数据结构 树状数组</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
       <description>[TOC]
 数据结构 树状数组 https://www.luogu.com.cn/problem/P3374
 模版-区间求和(查询)、单点修改(操作) 0、lowbit()看当前节点的归属情况/看当前节点所管辖的节点的个数
@@ -310,10 +310,10 @@ int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -
     
     <item>
       <title>Algorithm12 并查集</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm12-%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
       <description>[TOC]
 并查集 模版-查看两个元素是否在一个集合中 https://www.luogu.com.cn/problem/P1551
 题目大意：
@@ -325,10 +325,10 @@ int getsum(int pos) { int ans = 0; while(pos &amp;gt;= 1) { ans += c[pos]; pos -
     
     <item>
       <title>Algorithm13 前缀和与差分</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm13-%E5%89%8D%E7%BC%80%E5%92%8C%E4%B8%8E%E5%B7%AE%E5%88%86/</guid>
       <description>[TOC]
 前缀和与差分  压缩时间复杂度：只要降一个等级的复杂度即可达到题解的情况
  经典情景：
@@ -344,20 +344,20 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
     
     <item>
       <title>Algorithm14.0 图论 数据结构存储形式</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</guid>
       <description>[TOC]
 图论 四种数据结构存储形式 存纯边【无点集的一点关系】 // 数据结构：结构体「起点、终点、权重」 struct node { int from, to, cost; bool operator &amp;lt; (const node n) const{return cost &amp;lt; n.cost;} // kruskal初始化 =&amp;gt; 边权排序 }edge[maxedge]; // 遍历 for (int i = 1; i &amp;lt;= number_of_edge; i++) { int from = edge[i].from, to = edge[i].to, cost = edge[i].cost; } 邻接矩阵 // 数据结构：二维数组 int mp[maxpoint][maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 1; j &amp;lt;= number_of_point; j++) { int from = i, to = j, cost = mp[i][j]; } } 邻接表 // 数据结构：向量+结构体「终点、权重」 struct node { int to, cost; }; vector&amp;lt;node&amp;gt; b[maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 0; j &amp;lt; b[i].</description>
     </item>
     
     <item>
       <title>Algorithm14.1 最短路</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</guid>
       <description>[TOC]
 最短路 三大思路  Basic：Floyd Greedy：Dijkstra DP：Bellman-Ford、SPFA      Greedy DP Basic     代表方法 Dijkstra Bellman-Ford Floyd   数据结构 d[i]表示到起点的最小距离 d[i]表示到起点的最小距离 d[i][j]表示i、j两点之间的最小距离   思路
 (V为点，E为边) 1. 从所有其他点中找到距离起点最小的点argmin{d[i])}
@@ -373,10 +373,10 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
     
     <item>
       <title>Algorithm14.1.2 Floyd</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</guid>
       <description>[TOC]
 最短路-Floyd Floyd - 最短路 （已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】
  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 最小环 https://www.</description>
@@ -384,20 +384,20 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
     
     <item>
       <title>Algorithm14.1.3 SPFA</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</guid>
       <description>[TOC]
 最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&amp;lt;nd&amp;gt; spf; void spfa(int s) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &amp;gt; d[nwpos]+edge[i].cost) { d[to] = d[nwpos]+edge[i].</description>
     </item>
     
     <item>
       <title>Algorithm14.2 最小生成树</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
       <description>[TOC]
 最小生成树  几种数据给出形式以及对应的解决方案
 1、点a 点b 边ab权值 =&amp;gt; 邻接表vector来存 =&amp;gt; 优先kruskal
@@ -411,10 +411,10 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
     
     <item>
       <title>Algorithm14.3 拓扑图</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</guid>
       <description>[TOC]
 拓扑图 https://www.luogu.com.cn/problem/P4017
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
@@ -424,10 +424,10 @@ O(n^5) =&amp;gt; O(n^4) ：定位了子区间之后，再加上一层遍历的�
     
     <item>
       <title>Algorithm14.4 最近公共祖先(LCA)</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
       <description>[TOC]
 LCA最近公共祖先 dfs深搜
  更新depth深度数组 depth[maxpoint] 更新p爬升数组 p[maxpoint][21]  LCA
@@ -441,10 +441,10 @@ void dfs(int from, int fa) { depth[from] = depth[fa] + 1; // 更新depth深度�
     
     <item>
       <title>Algorithm14.5 二分图-最大匹配</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</guid>
       <description>[TOC]
 二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
 二分图变式 关押罪犯：两个监狱，
@@ -453,10 +453,10 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm14.5.1 二分图-染色</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5.1-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5.1-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5.1-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5.1-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</guid>
       <description>[TOC]
 二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
 二分图变式 关押罪犯：两个监狱，
@@ -465,10 +465,10 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm14.6 图的遍历与搜索</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</guid>
       <description>[TOC]
 图的遍历与搜索 模版 dfs &amp;amp; bfs https://www.luogu.com.cn/problem/P5318
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxpoint 100010#define maxedge 1000010int n, m, ta, tb, vis[maxpoint]; struct ed { int from, to; bool operator &amp;lt; (const ed e) const { if (from == e.from) return to &amp;gt; e.to;return from &amp;gt;e.from;} }t[maxedge]; struct node { int to, next; }edge[maxedge];int head[maxpoint], tot; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt;pq; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a))#include &amp;lt;algorithm&amp;gt; void addedge(int from, int to) { edge[++tot].</description>
@@ -476,10 +476,10 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm14.7 树的图解法</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</guid>
       <description>[TOC]
 树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
  树的深度：【图中其他所有点】 离 【根节点对应的图中的节点】 距离最远的 树的宽度：图中距离 【根节点对应的图中的节点】 各个不同距离中，个数最多的点（例如，距离为1的点有2个，距离为2的点有3个，距离为3的点有1个，所以宽度为3） LCA问题：可以通过图论中的最短路来解决=》floyd直接暴力出来   基础转换 https://www.luogu.com.cn/problem/P3884
@@ -488,10 +488,10 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm15 倍增</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm15-%E5%80%8D%E5%A2%9E/</guid>
       <description>[TOC]
 倍增 拼凑砝码 https://www.luogu.com.cn/problem/P2347
 #include &amp;lt;iostream&amp;gt;using namespace std; int w[8] = {1, 2, 3, 5, 10, 20}, t; #include &amp;lt;bitset&amp;gt;bitset&amp;lt;1010&amp;gt; s; int main() { s[0] = 1; for (int i = 0; i &amp;lt; 6; ++i) { scanf(&amp;#34;%d&amp;#34;, &amp;amp;t); for (int j = 0; j &amp;lt; t; ++j) s |= s&amp;lt;&amp;lt;w[i]; } printf(&amp;#34;Total=%d\n&amp;#34;, s.count()-1); return 0; } </description>
@@ -499,10 +499,10 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm16 高精度&amp;大数运算</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</guid>
       <description>[TOC]
 高精度 &amp;amp; 大数运算 （一）高精度除法-高精度除低精度 &amp;lt; 高精度加法 &amp;lt; 高精度乘法 &amp;lt; 高精度减法 &amp;lt; 高精度除法-高精度除高精度
 （二）语言：python，Java的四则运算自带高精度；C/C++需要利用字符串/字符数组来读取大数并开数组存放然后通过模拟竖式运算来计算。
@@ -515,10 +515,10 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm19 递推与递归</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19-%E9%80%92%E6%8E%A8%E4%B8%8E%E9%80%92%E5%BD%92/</guid>
       <description>[TOC]
 递推与递归 斐波那契数列 （高精度） https://www.luogu.com.cn/problem/P1255
 (相似题目：https://www.luogu.com.cn/problem/P2437)
@@ -531,10 +531,10 @@ AC代码：
     
     <item>
       <title>Algorithm19.1 递归</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm19.1-%E9%80%92%E5%BD%92/</guid>
       <description>[TOC]
 递归  主要题型：对于一个字串，然后子字串同样进行递归【带有优先级的计算式】
 两种方案：
@@ -544,10 +544,10 @@ AC代码：
     
     <item>
       <title>Algorithm2.1 背包dp</title>
-      <link>https://chenranfei.xyz/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
+      <link>http://chenranfei.xyz/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/dp/algorithm2.1-%E8%83%8C%E5%8C%85dp/</guid>
       <description>[TOC]
 背包dp 背包问题总结   01背包：每种物品仅一个
  最大化所有物品的总价值：基础01背包 组成当前容量的物品组合数：装配组合问题、路径问题    完全背包：每种物品有无限个
@@ -564,10 +564,10 @@ https://www.luogu.com.cn/problem/P1048
     
     <item>
       <title>Algorithm2.10 坐标系dp</title>
-      <link>https://chenranfei.xyz/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</link>
+      <link>http://chenranfei.xyz/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/dp/algorithm2.10-o%E4%BA%8C%E7%BB%B4%E5%9D%90%E6%A0%87%E8%BD%B4dp/</guid>
       <description>[TOC]
 坐标系dp  区域最大：
  最大正方形 &amp;lt;-&amp;gt; 最大正方形变式 最大矩形（包括正方形）   最大正方形 https://www.luogu.com.cn/problem/P1387
@@ -580,10 +580,10 @@ if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))+1; 完整
     
     <item>
       <title>Algorithm2.2 区间dp</title>
-      <link>https://chenranfei.xyz/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</link>
+      <link>http://chenranfei.xyz/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/dp/algorithm2.2-%E5%8C%BA%E9%97%B4dp/</guid>
       <description>[TOC]
 区间dp 区间基本提取 https://www.luogu.com.cn/problem/P2426
 题目大意：删除一段数组的数，代价为这个区间的左右端点值的差的绝对值*长度，求全部删去的最大代价。
@@ -594,10 +594,10 @@ if (a[i][j]) dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))+1; 完整
     
     <item>
       <title>Algorithm2.3 状压dp</title>
-      <link>https://chenranfei.xyz/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</link>
+      <link>http://chenranfei.xyz/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/dp/algorithm2.3-%E7%8A%B6%E5%8E%8Bdp/</guid>
       <description>[TOC]
 状压dp  主要特征：n较小 =&amp;gt; 暴搜或者状压。【所以主要特征就是可以通过暴力搜索搜出来，但是不能过题，需要用dp，把所有要搜索到的状态压缩到一个01字串中，每个字符都表示】
 主要思路：就是将本来某一行的状态是或否的唯二的两种【可能本来需要用数组来储存的】 =&amp;gt; 通过用二进制【01来进行储存】
@@ -612,10 +612,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.4 树型dp</title>
-      <link>https://chenranfei.xyz/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</link>
+      <link>http://chenranfei.xyz/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/dp/algorithm2.4-%E6%A0%91%E5%9E%8Bdp/</guid>
       <description>[TOC]
 树型dp  题目风格：给出树上的每个节点的值，然后给出
 思路：
@@ -627,10 +627,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.6 计数dp</title>
-      <link>https://chenranfei.xyz/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</link>
+      <link>http://chenranfei.xyz/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/dp/algorithm2.6-%E8%AE%A1%E6%95%B0dp/</guid>
       <description>[TOC]
 计数dp  典型：
  对一个区域进行划分，划分种类  随意划分：P1025，直接给定一个数以及要划分的份数，然后看这个数有多少种分法 按照给定的要求划分：P1077，直接卡死了每一个点上的约定范围 按照递增/递减的方式划分：P1806，直接按照递增着划分      随意划分 https://www.luogu.com.cn/problem/P1025
@@ -643,10 +643,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.7 线性dp</title>
-      <link>https://chenranfei.xyz/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</link>
+      <link>http://chenranfei.xyz/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/dp/algorithm2.7-%E7%BA%BF%E6%80%A7dp/</guid>
       <description>[TOC]
 线性dp 时间线问题 https://www.luogu.com.cn/problem/P1095
 题目大意：时间线上，每秒钟 =&amp;gt; 可以选择a方式，属性c变化1；可以选择b方式，属性c变化2。
@@ -658,10 +658,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.8 基础dp</title>
-      <link>https://chenranfei.xyz/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</link>
+      <link>http://chenranfei.xyz/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/dp/algorithm2.8-o%E5%9F%BA%E7%A1%80dp/</guid>
       <description>[TOC]
 基础dp 数字三角形 https://www.luogu.com.cn/problem/P1216
 题目大意：给一个三角形矩阵，然后从上往下走，怎么才能走的总量最大。
@@ -674,10 +674,10 @@ dp[i][j][s]表示在第i行，且第i行的状态为j时，他所需要的国王
     
     <item>
       <title>Algorithm2.9 dp思维</title>
-      <link>https://chenranfei.xyz/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</link>
+      <link>http://chenranfei.xyz/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/dp/algorithm2.9-o%E6%80%9D%E7%BB%B4dp/</guid>
       <description>[TOC]
 思维 &amp;amp; dp Leetcode1578-valid-palindrome 1578. 避免重复字母的最小删除成本
 题目大意：
@@ -690,10 +690,10 @@ int minCost(string s, vector&amp;lt;int&amp;gt;&amp;amp; cost) { int ans = 0; fo
     
     <item>
       <title>Algorithm20.1 STL map</title>
-      <link>https://chenranfei.xyz/posts/acm/stl/algorithm20.1-stl-map/</link>
+      <link>http://chenranfei.xyz/posts/acm/stl/algorithm20.1-stl-map/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/stl/algorithm20.1-stl-map/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/stl/algorithm20.1-stl-map/</guid>
       <description>[TOC]
 STL - map  【注意，此处的map是指的c++STL的map，c++STL的map的底层时红黑树，而Java的map的底层是哈希，类似于unordered_map，本质不同】
 map底层：红黑树（一种非严格意义上的平衡二叉树）【利用二叉树来进行查询、插入、删除=&amp;gt;O(logn)】map内部所有的数据都是无重复+有序的
@@ -710,10 +710,10 @@ set唯一，而multiset不唯一，可重复，但是两者都保持的是有序
     
     <item>
       <title>Algorithm20.2 STL set</title>
-      <link>https://chenranfei.xyz/posts/acm/stl/algorithm20.2-stl-set/</link>
+      <link>http://chenranfei.xyz/posts/acm/stl/algorithm20.2-stl-set/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/stl/algorithm20.2-stl-set/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/stl/algorithm20.2-stl-set/</guid>
       <description>[TOC]
 STL - set set基础语法整理博客：
 https://www.luogu.com.cn/blog/communist/stl-zheng-li-zhi-set
@@ -732,10 +732,10 @@ int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;
     
     <item>
       <title>Algorithm21 博弈论</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%8D%9A%E5%BC%88%E8%AE%BA/algorithm21-%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%8D%9A%E5%BC%88%E8%AE%BA/algorithm21-%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%8D%9A%E5%BC%88%E8%AE%BA/algorithm21-%E5%8D%9A%E5%BC%88%E8%AE%BA/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%8D%9A%E5%BC%88%E8%AE%BA/algorithm21-%E5%8D%9A%E5%BC%88%E8%AE%BA/</guid>
       <description>[TOC]
 博弈论    巴什博弈 【bash game】 威佐夫博弈 【Wythoff game】 尼姆博弈 【Nimm game】 斐波那契博弈   巴什博弈 题目大意：
  情景：一堆两人。 方式：每人每回合拿1～m个。 问题：给定石头总数，问先手是否必胜。  思路：先手在石头总数为n%(1+m) == 0的时候必败，在其余时候必胜。因为先手可以总保证在每回合让自己和对手拿的总数为(1+m)个，所以到最后一轮对手无论拿1～m个都没用，都必败。
@@ -748,10 +748,10 @@ int main() { scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;
     
     <item>
       <title>Algorithm22 数据结构 离散化</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm22-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%A6%BB%E6%95%A3%E5%8C%96/</guid>
       <description>[TOC]
 数据结构 离散化  本质：是一种哈希，将原数组进行哈希映射，映射前后仍然保持全序/偏序
 过程：排序-&amp;gt;去重-&amp;gt;索引（对应到stl中就是首先sort排序-&amp;gt;然后unique去重-&amp;gt;最后lowerbound二分找位置作为索引）
@@ -766,10 +766,10 @@ demo3（存在需要去重的情况=&amp;gt;这种情况下是需要将重复的
     
     <item>
       <title>Algorithm23 数据结构 区间问题</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm23-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%8C%BA%E9%97%B4%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/</guid>
       <description>[TOC]
 数据结构 区间问题  单个区间 区间求和：
   单次查询： *
@@ -790,10 +790,10 @@ https://www.luogu.com.cn/problem/P1886
     
     <item>
       <title>Algorithm24 数据结构 线段树</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm24-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm24-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm24-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm24-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BA%BF%E6%AE%B5%E6%A0%91/</guid>
       <description>[TOC]
 数据结构 线段树  查询/计算方式：区间查询、单点修改、区级修改、单点查询
 查询/维护的值：区间和、
@@ -802,10 +802,10 @@ https://www.luogu.com.cn/problem/P1886
     
     <item>
       <title>Algorithm3 交叉</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm3-%E4%BA%A4%E5%8F%89/</guid>
       <description>[TOC]
 交叉 交换纸牌：使之数量相等 题目链接：https://www.luogu.com.cn/problem/P1031
 1、题目大意是允许相邻的两个牌堆交叉换牌
@@ -815,10 +815,10 @@ https://www.luogu.com.cn/problem/P1886
     
     <item>
       <title>Algorithm30 倍增</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm30-%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92/</guid>
       <description>[TOC]
 线性规划 基础知识  最优化问题 线性代数  理解矩阵运算：
  前面矩阵的每行$$\times$$后面矩阵的每列 不同  拼 https://www.luogu.com.cn/problem/P2347
@@ -827,10 +827,10 @@ https://www.luogu.com.cn/problem/P1886
     
     <item>
       <title>Algorithm4 十种排序</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm4-%E6%8E%92%E5%BA%8F%E5%AE%9E%E7%8E%B0/</guid>
       <description>[TOC]
 排序 排序时间复杂度中的 $log_x^n$ 中以x为底n的对数通常x是取2的。 详细计算：通过k-叉树的计算次数，可以得到，最底层想覆盖n个数，那么就要$k^{depth}=n$ 然后也就得到$depth=log_k^n$ 也就是要depth次搜索，才能从最上层搜到最下层，所以log的值是和k叉树是有关系的，如果k叉越大，那么搜到最底层的速度也就越快  暴力遍历：
  冒泡排序【稳定】：$O(n^2)$ 最大的往后冒泡，保证「每次提取最大」的，然后「放到最后」 选择排序【不稳定】：$O(n^2)$ 「拿到合适的然后放置」选择出最值以及最值的索引，然后进行交换。 插入排序三种：「拿到然后找合适的地方放置一个/多个」  直接插入【稳定】：$O(n^2)$ 对每次拿到的数，从一端到另一端暴力查找，找到合适的位置插入进去 折半插入【稳定】：$O(nlog_2^n)$ 在选择合适的位置的时候，会进行二分折半查找，找到合适位置插入进去 希尔插入【不稳定】：$O(n^{1.3})\sim O(n^2)$ 更复杂的插入排序过程，三大步，首先对半分，两半一对一匹配进行插入排序；然后对半分的两类内部分别进行插入，然后对整体进行插入排序。    递归 二分与合并：$O(n*log_2^n)$
@@ -845,10 +845,10 @@ https://www.luogu.com.cn/problem/P1886
     
     <item>
       <title>Algorithm5 Advanced Sort</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm5-%E6%8E%92%E5%BA%8F%E8%BF%9B%E9%98%B6-%E6%AF%94%E8%BE%83/</guid>
       <description>[TOC]
 排序变种   结构体排序  结构体封装题目要求的实体 结构体封装大数的类，来进行运算   排序过程：计算交换次数  交换任意一对 =&amp;gt; 一遍扫，模拟即可 仅可以交换相邻的 =&amp;gt; 树状数组 // 归并排序     用优先队列实现的顶部最大 &amp;amp; 顶部最小 最大：priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;&amp;gt; pq;
 最小：priority_queue&amp;lt;int&amp;gt; pq;
@@ -858,10 +858,10 @@ https://www.luogu.com.cn/problem/P3378
     
     <item>
       <title>Algorithm6 贪心问题</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6-%E8%B4%AA%E5%BF%83/</guid>
       <description>[TOC]
 贪心问题  装袋问题：
 结构体排序问题 // 排序贪心：
@@ -874,10 +874,10 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
     
     <item>
       <title>Algorithm6.1 贪心 VS 其他算法</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm6.1-%E8%B4%AA%E5%BF%83vs%E5%85%B6%E4%BB%96/</guid>
       <description>[TOC]
 二分  一些第一眼看上去是用贪心解决，但实际上是需要用其他算法解决的问题
  https://www.luogu.com.cn/problem/P1570【看起来是贪心，实际上是找出答案的范围然后二分出结果】
@@ -890,10 +890,10 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
     
     <item>
       <title>Algorithm7 分治算法 &amp; 快速幂</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/algorithm7-%E5%88%86%E6%B2%BB-%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
       <description>[TOC]
 分治问题 最典型：分形 &amp;amp; 矩阵的分治  矩形分治的 统一解法 // 模版：数据结构用一个统一的数组来存储 图//矩阵 结构【init】，然后 分形//分治 递归【draw】，最后再画出来【print】（或者有的时候需要输出分治的过程）
  矩阵的分治：https://www.luogu.com.cn/problem/P5461
@@ -903,10 +903,10 @@ priority_queue&amp;lt;int, vector&amp;lt;int&amp;gt;, greater&amp;lt;int&amp;gt;
     
     <item>
       <title>Algorithm8.1 BFS</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.1-bfs/</guid>
       <description>[TOC]
 bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
 题目大意：最多可到达的格点数
@@ -915,10 +915,10 @@ bfs [模版] 最多可到达 https://www.luogu.com.cn/problem/P1683
     
     <item>
       <title>Algorithm8.2 DFS</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8-dfs/</guid>
       <description>[TOC]
 dfs  向深递归
  传参的确定 =&amp;gt; 可以利用好递归调用栈机制 状态的判断 =&amp;gt; 递归到每一层之后，所有参数共同组合决定出一个状态，这个状态维护是否重复   [数组一维模版 &amp;amp; 分层] 全排列 https://www.luogu.com.cn/problem/P1706
@@ -927,10 +927,10 @@ dfs  向深递归
     
     <item>
       <title>Algorithm8.2 DFS进阶-TLE情况的解决方案</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.2-dfs%E8%BF%9B%E9%98%B6-tle%E6%83%85%E5%86%B5%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
       <description>[TOC]
 DFS进阶-TLE情况的解决方案  解决方案
  「一」通过剪枝缩小搜索范围 「二」记忆化搜索 - 添加一个v数组 // dp数组，来记录DFS所有触及到的状态，防止再次访问 「其他」DP解决   https://www.luogu.com.cn/problem/P1077
@@ -941,10 +941,10 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
     
     <item>
       <title>Algorithm8.3 DFS 记忆化搜索</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.3-dfs%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
       <description>[TOC]
 DFS 记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同；连续递增/连续递减 搜索的形式+dp的存储思想，把dp数组融合到dfs搜索的过程中。
 [模版] 记忆化搜索 - 优化重复递归调用 https://www.luogu.com.cn/problem/P1464
@@ -956,10 +956,10 @@ DFS 记忆化搜索 用于相邻依赖 =&amp;gt; 涂色：相邻的不能相同�
     
     <item>
       <title>Algorithm8.5 搜索思维题 &amp; 数字题目类型整合</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.5-%E6%90%9C%E7%B4%A2%E6%80%9D%E7%BB%B4%E9%A2%98/</guid>
       <description>[TOC]
 搜索思维题  特点：可以用搜索，但是可能会T或者需要剪枝过多
  特殊地图（某方向固定长度）起点到终点 + 特殊走法：考虑按照特殊方向进行模拟 特殊走法（不允许往某个方向走）：考虑直接全盘dp   特殊地图起点到终点-特殊走法：  两行地图 特殊走法，只往一边走更优  特殊走法：  某单个方向不能走  // 搜索 int cnt, ans; void dfs(int l) { if (l == n) { if (cnt == m) ans++;return;} for (int i = 0; i &amp;lt;= a[l+1]; ++i) { cnt+=i;dfs(l+1);cnt-=i; } } 可以看到其实cnt，（本来是一个全局变量）也可以写成递归的一个依据，因为进入之前与之后有相反操作，因此优化
@@ -968,10 +968,10 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
     
     <item>
       <title>Algorithm8.6 数字类型题目整合</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/</guid>
       <description>[TOC]
 数字类型题目整合  数字题目类型整合：
  若干个数相加组合成目标数的方案总和 小于等于4个数的平方的和组合成目标数的方案总和 给定一个数，问随意将这个数进行拆解，然后拆解得到的数做乘积，求乘积最大值   dfs转计数dp 问题1:若干个数相加组合成目标数的方案总和-可用dfs+剪枝出来 https://www.luogu.com.cn/problem/P1025
@@ -981,10 +981,10 @@ int ans; void dfs(int l, int cnt) { if (l == n) { if (cnt == m) ans++;return; } 
     
     <item>
       <title>Algorithm9 数论其他汇总</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</guid>
       <description>[TOC]
 数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
 题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。
@@ -996,10 +996,10 @@ https://www.luogu.com.cn/problem/P1372
     
     <item>
       <title>Algorithm9.1 数论 数学基础</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
       <description>[TOC]
 数论 数学基础  常用：
  进制转换  数学思维：
@@ -1012,10 +1012,10 @@ scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {sc
     
     <item>
       <title>Algorithm9.2 数论入门</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</guid>
       <description>[TOC]
 数论基础 最大公约数gcd int gcd(int a,int b) { return (b&amp;gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
 int gcd(int a, int b) { return (b&amp;lt;=0)?a:gcd(b, a%b); } 最大公约数[gcd]与最小公倍数[gld]乘积 == 这两个数的乘积 a*b = gcd(a, b)*gld()
@@ -1030,10 +1030,10 @@ prime是质数列表，isprime
     
     <item>
       <title>Algorithm9.3 组合数</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</guid>
       <description>[TOC]
 组合数 基本的排列组合数 A(n, m)和C(n, m)
 第二类Stirling数 数学意义：把n个数划分成k个集合
@@ -1046,10 +1046,10 @@ ll stirling(int n, int k){ if (k==n || k==1) return 1; else if (k==2) return pow
     
     <item>
       <title>kuangbin 1 简单搜索</title>
-      <link>https://chenranfei.xyz/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</link>
+      <link>http://chenranfei.xyz/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</guid>
+      <guid>http://chenranfei.xyz/posts/acm-practice-collection/kuangbin-1-%E7%AE%80%E5%8D%95%E6%90%9C%E7%B4%A2/</guid>
       <description>[TOC]
 kuangbin 1 简单搜索 A B 「BFS」三维迷宫 题目大意：三维迷宫，注意多组数据存在的初始化的问题即可。
 #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 33; int n, m, k, bgn, bgm, bgk, edn, edm, edk, dir[6][3] = {{1, 0, 0}, {-1, 0, 0}, {0, 1, 0}, {0, -1, 0}, {0, 0, 1}, {0, 0, -1}}, vis[maxn][maxn][maxn], flag; char mp[maxn][maxn][maxn]; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a)) struct node { int x, y, k, step; node(int x, int y, int k, int step):x(x), y(y), k(k), step(step){} }; #include &amp;lt;queue&amp;gt;queue&amp;lt;node&amp;gt; q; void bfs() { vis[bgn][bgm][bgk] = 1; q.</description>
@@ -1057,10 +1057,10 @@ kuangbin 1 简单搜索 A B 「BFS」三维迷宫 题目大意：三维迷宫，
     
     <item>
       <title>kuangbin 4 最短路</title>
-      <link>https://chenranfei.xyz/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
+      <link>http://chenranfei.xyz/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
+      <guid>http://chenranfei.xyz/posts/acm-practice-collection/kuangbin-4-%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
       <description>[TOC]
 kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
  A 单源最短路 Dijkstra 链式前向星 题目大意：单起点最短路，用Dijkstra解决
@@ -1069,20 +1069,23 @@ kuangbin 4 最短路  https://vjudge.ppsucxtt.cn/contest/66569
     
     <item>
       <title>Summary1.2 数据结构 STL整合</title>
-      <link>https://chenranfei.xyz/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</link>
+      <link>http://chenranfei.xyz/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</guid>
+      <guid>http://chenranfei.xyz/posts/acm-summary/summary1.2-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-stl%E6%95%B4%E5%90%88/</guid>
       <description>[TOC]
-数据结构 STL 用法整合 linklist #include &amp;lt;list&amp;gt; list&amp;lt;int&amp;gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map // 功能描述 =&amp;gt; 查找出现单次的,并尽可能的节省空间 #include &amp;lt;map&amp;gt; map&amp;lt;int, bool&amp;gt; m; for (1~n) { cin&amp;gt;&amp;gt;t; if (m.count(t)) m.erase(t); // m.count(t) 返回0或1，数出现次数，map只允许一个key出现一次，所以只有0或1 m.erase(t)移除掉t的key所对应的那个项  else m[t] = true; } // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&amp;lt;int, bool&amp;gt;::iterator iter = m.</description>
+数据结构 STL 用法整合 linklist 链表
+#include &amp;lt;list&amp;gt; list&amp;lt;int&amp;gt; linklist; int main() { // 往链表头部插入元素  linklist.push_front(2); // 2  linklist.push_front(1); // 1 2  // 往链表尾部插入元素  linklist.push_back(3); // 1 2 3  // 链表排序  linklist.sort(); // 链表去重  linklist.unique(); // 链表长度 	int linklistlen = linklist.size(); } map 功能：映射。
+性质：有序性=&amp;gt;根据key有序排列，唯一性=&amp;gt;根据key唯一。
+// 功能描述 =&amp;gt; 查找出现单次的,并尽可能的节省空间 #include &amp;lt;map&amp;gt; map&amp;lt;int, bool&amp;gt; m; // map两种遍历方式 // map利用迭代器进行遍历，需要设置迭代器并且指向对应的map map&amp;lt;int, bool&amp;gt;::iterator iter = m.</description>
     </item>
     
     <item>
       <title>Other-WF 中南大学网络服务队2020招新 硬件组培训知识</title>
-      <link>https://chenranfei.xyz/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</link>
+      <link>http://chenranfei.xyz/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</link>
       <pubDate>Mon, 20 Jul 2020 21:45:10 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</guid>
+      <guid>http://chenranfei.xyz/posts/other/o-wf-%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E9%98%9F2020%E6%8B%9B%E6%96%B0-%E7%A1%AC%E4%BB%B6%E7%BB%84%E7%9F%A5%E8%AF%86/</guid>
       <description>[TOC]
 首先 Authored By Aczy156
 CPU 1型号 1AMD芯片U移动端都具备核显，G为具备核显的，并且后缀无论是否有X，都可以超频，主板也都可以超，芯片组都支持CPU超频。 不同芯片组主板都支持超频，intel只有Z系列芯片组支持CPU超频 2intel有较为古老的赛扬、奔腾、至强系列、M系列(M3,M5,M7，后来M7并入i3)，低电压，用于超级本、轻薄本等；以及现在主流的有i系列（i3,i5,i7,i9）
@@ -1102,10 +1105,10 @@ BGA：intel所有低压CPU采用的封装方式 BGA的全称叫做“ball grid a
     
     <item>
       <title>Python-编译原理算法</title>
-      <link>https://chenranfei.xyz/posts/project/python4-compiling_principle_master/</link>
+      <link>http://chenranfei.xyz/posts/project/python4-compiling_principle_master/</link>
       <pubDate>Sun, 07 Jun 2020 19:28:52 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/project/python4-compiling_principle_master/</guid>
+      <guid>http://chenranfei.xyz/posts/project/python4-compiling_principle_master/</guid>
       <description>[TOC]
 编译原理课程作业  词法分析器 LL1分析(消去左递归、构造FIRST\FOLLOW集合、模拟) 递归下降分析 算法优先分析  项目地址源代码 https://github.com/Aczy156/Compiling-Principle-Work 项目结构 data  Grammer_for_ll1_and_RD.txt，是存放用于实验二预测分析法和实验三递归下降分析文法的测试文法 Grammer_for_OF.txt，是存放用于实验四算符优先文法的测试文法。  MultiAnalysis  LL1_analysis.py是LL1分析法的整体过程。 RecursiveDescent_analysis.py是递归下降分析的整体过程。 OperatorFirst_analysis.py是算符优先文法的整体分析过程。  tools [在MultiAnalysis中的各种文法中多次使用，所以提取出来子模块，放进工具中来模块化管理]
  Draw_Grammer.py，利用python中prettytable来专门做文法的可视化。 Eliminate_Left_Recursion.py，利用消除左递归算法来专门处理对于自上而下的文法(例如实验二中的预测分析文法和实验三的递归下降文法)的左递归的问题。 Extract_Common_Factors.py，利用LCP(最长公共前缀)来提取公因子并消除。  数据结构 (命名基本保持一致，除了在一些情境中要利用python deepcopy深备份一份或者要进行更改会命名为new_grammer/new_vn等等)：
@@ -1114,10 +1117,10 @@ BGA：intel所有低压CPU采用的封装方式 BGA的全称叫做“ball grid a
     
     <item>
       <title>阿里云CentOS7部署JavaWeb_jar_war_nginx</title>
-      <link>https://chenranfei.xyz/posts/project/o-%E9%98%BF%E9%87%8C%E4%BA%91centos7%E9%83%A8%E7%BD%B2javaweb_jar_war_nginx/</link>
+      <link>http://chenranfei.xyz/posts/project/o-%E9%98%BF%E9%87%8C%E4%BA%91centos7%E9%83%A8%E7%BD%B2javaweb_jar_war_nginx/</link>
       <pubDate>Sun, 07 Jun 2020 19:03:25 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/project/o-%E9%98%BF%E9%87%8C%E4%BA%91centos7%E9%83%A8%E7%BD%B2javaweb_jar_war_nginx/</guid>
+      <guid>http://chenranfei.xyz/posts/project/o-%E9%98%BF%E9%87%8C%E4%BA%91centos7%E9%83%A8%E7%BD%B2javaweb_jar_war_nginx/</guid>
       <description>[TOC]
 (一)第一部分：最基本的jar包运行(无需配置tomcat) [http://60.205.183.114:8081/]
  1、配置阿里云(Esc学生服务器、镜像Centos7.7)，并远程连接进入终端。 2、安装并配置JDK(参考https://www.jianshu.com/p/093413f2a04f) a)安装jdk。 b)寻找jdk路径配置环境变量。 c)简单的Java hello world测试确保安装成功。 3、安装并配置mysql(mariadb)(参考https://blog.csdn.net/DaSo_CSDN/article/details/54754936) a)安装mysql、mariadb server。 b)systemctl 开启服务。 c) 打开端口。(阿里云要在控制台打开，参考https://yq.aliyun.com/articles/701181) d) 更改mysql 的root密码，对应于项目配置文件中的密码。 4、利用scp进行文件传输(参考https://www.cnblogs.com/tugenhua0707/p/8278772.html) a)传输spring maven 的快照版本用于测试。 b)传输数据库sql文件。 5、导入数据库 a)创建sql文件对应的数据库。 b)利用文件重定向运行sql文件。 c)检查数据库是否导入成功 6、运行jar文件，控制台获取公网IP，本机输入IP:8081测试。 7、设置后台运行(已设置：http://60.205.183.114:8081/) a)contrl+c中止。 b)然后通过nohup 和 &amp;amp; 来后台运行。 c)ps通过pid来停止后台运行进程。  运行结果 整体过程:
@@ -1126,20 +1129,20 @@ BGA：intel所有低压CPU采用的封装方式 BGA的全称叫做“ball grid a
     
     <item>
       <title>C Compiler</title>
-      <link>https://chenranfei.xyz/posts/project/c-compilerclangmingwgcc/</link>
+      <link>http://chenranfei.xyz/posts/project/c-compilerclangmingwgcc/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/project/c-compilerclangmingwgcc/</guid>
+      <guid>http://chenranfei.xyz/posts/project/c-compilerclangmingwgcc/</guid>
       <description>[TOC]
 C Compiler Clang MinGW GCC FSort中的线程问题 在Clang和MinGW编译器中都可以正常编译，但是经过Clang编译之后，可以正常运行；而</description>
     </item>
     
     <item>
       <title>Contest PAT-PTA刷题系统</title>
-      <link>https://chenranfei.xyz/posts/contest/contest-pta-practice/</link>
+      <link>http://chenranfei.xyz/posts/contest/contest-pta-practice/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/contest/contest-pta-practice/</guid>
+      <guid>http://chenranfei.xyz/posts/contest/contest-pta-practice/</guid>
       <description>[TOC]
 PTA1001-1099 PTA 1001  题目大意：求a+b
   【易错】输出格式的标准化：每3位来一个逗号（利用循环+取余进行输出）  #include &amp;lt;iostream&amp;gt;using namespace std; int a, b, c, d, i; string s = &amp;#34;&amp;#34;; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;a, &amp;amp;b); c = a+b; if (c &amp;lt; 0) d = 1, c = -c; if (c == 0) {printf(&amp;#34;0&amp;#34;);return 0;} while (c) { s += &amp;#39;0&amp;#39;+c%10; c /= 10; if (!(++i%3) &amp;amp;&amp;amp; c) i=0, s += &amp;#39;,&amp;#39;; } if (d) cout&amp;lt;&amp;lt;&amp;#34;-&amp;#34;; for (int j = s.</description>
@@ -1147,10 +1150,10 @@ PTA1001-1099 PTA 1001  题目大意：求a+b
     
     <item>
       <title>Java Web Spring</title>
-      <link>https://chenranfei.xyz/posts/project/java-spring/</link>
+      <link>http://chenranfei.xyz/posts/project/java-spring/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/project/java-spring/</guid>
+      <guid>http://chenranfei.xyz/posts/project/java-spring/</guid>
       <description>[TOC]
 Java Web Spring IOC [依赖注入/控制反转] 1、例子：class A中引入class B，两种方法：
  传统方法：在A中new一个class B的类。这样是A控制着B。 IOC：在A的构造函数中注入一个已经提前new好的class B的类。这样B还是B，不受A的控制。  2、在Spring中的使用：消除所有依赖关系 and 工厂模式
@@ -1169,10 +1172,10 @@ Spring MVC [Spring 的 Handler接口] 利用适配器模式，每每需要新增
     
     <item>
       <title>Java Web 项目</title>
-      <link>https://chenranfei.xyz/posts/project/java-web/</link>
+      <link>http://chenranfei.xyz/posts/project/java-web/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/project/java-web/</guid>
+      <guid>http://chenranfei.xyz/posts/project/java-web/</guid>
       <description>[TOC]
 Java Web 最基础JavaWeb：Web-INF工程 过程：
  直接创建基础Java项目 利用创建出来的空Java项目，添加「框架支持」“Add Frameworks Support” 利用Java EE中的Web Application 即可构建最最最基本的Java web框架  易错点：
@@ -1181,10 +1184,10 @@ Java Web 最基础JavaWeb：Web-INF工程 过程：
     
     <item>
       <title>Python 3 Pycharm Basic Configuration</title>
-      <link>https://chenranfei.xyz/posts/python/python3-pycharm-basic-configuration/</link>
+      <link>http://chenranfei.xyz/posts/python/python3-pycharm-basic-configuration/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/python/python3-pycharm-basic-configuration/</guid>
+      <guid>http://chenranfei.xyz/posts/python/python3-pycharm-basic-configuration/</guid>
       <description>[TOC]
 Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「一」每个项目创立的时候可以跟着设置一个venv，可以从本来已有python目录直接调用 「二」自己创建一个venv，然后在命令行中一步一步安装所有需要的依赖（或者直接通过requirements.txt一步到位，安装好所有的依赖） 「三」pycharm-&amp;gt;preference-&amp;gt;interpreter中可以看到所有扫描到的virtualenv，然后每一个virtualenv都是可以作为运行环境。  可以选择原来已经设置好的venv 可以选择刚才自己创建的venv（也就是）    python-conda的使用 conda 创建venv
 # 查看conda已有的env conda env list # conda创建新的env，在创建的时候可以选择python版本和虚拟环境的名字 conda create --name myenv python==3.6 python-requireme.txt 设置 - 快速安装依赖  无需install，可以直接使用（内置在pip依赖中，直接使用即可） 将当前的项目的依赖导出成requirements.txt，用来作为标记，利用freeze语法。pip freeze &amp;gt; requirements.txt 给当前的项目依赖已有的requiremes.txt快速安装全部所需依赖。pip install -r requirements.txt  目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
@@ -1193,10 +1196,10 @@ Python 深度学习项目 python-interpreter 设置 - virtualenv的设置  「�
     
     <item>
       <title>Python PyTorch RNN TextCNN</title>
-      <link>https://chenranfei.xyz/posts/project/pytorch-rnn-textcnn/</link>
+      <link>http://chenranfei.xyz/posts/project/pytorch-rnn-textcnn/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/project/pytorch-rnn-textcnn/</guid>
+      <guid>http://chenranfei.xyz/posts/project/pytorch-rnn-textcnn/</guid>
       <description>[TOC]
 PyTorch RNN TextCNN PyTorch RNN  数据预处理：通过numpy模拟产生数据，然后利用matplotlib来渲染数据   目录结构  config：存放全局变量（超参数） data-preparation：做数据预处理 models：存放所有的模型，用来进行调用 train：模型训练的整个过程  分开目录结构之后文件之间相互引用 无法相互引用的两大原因：
  整体项目文件类型：该项目所对应的文件类型要修改 =&amp;gt; 右键选中当前project--&amp;gt;Mark Directory as --&amp;gt; Sources Root. （修改了之后的该项目所对应的文件性质应该呈现蓝色） 相互引用的文件命名：所有的命名中都不可以出现- (间隔符)，但是可以_ (下划线)  </description>
@@ -1204,10 +1207,10 @@ PyTorch RNN TextCNN PyTorch RNN  数据预处理：通过numpy模拟产生数据
     
     <item>
       <title>Tool-Clion用法</title>
-      <link>https://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/</link>
+      <link>http://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/</guid>
+      <guid>http://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/</guid>
       <description>[TOC]
 Clion用法 CMakeLists.txt写法 cmake扫描目录的所有cpp文件，可以在一个项目中跑所有的代码，运行所有的main函数
 cmake_minimum_required(VERSION 3.15)project(CCFCSP)set(CMAKE_CXX_STANDARD 14)# 遍历项目根目录下所有的 .cpp 文件 file (GLOB files *.cpp)foreach (file ${files}) string(REGEX REPLACE &amp;#34;.+/(.+)\\..*&amp;#34; &amp;#34;\\1&amp;#34; exe ${file}) add_executable (${exe} ${file}) message (\ \ \ \ --\ src/${exe}.cpp\ will\ be\ compiled\ to\ bin/${exe})endforeach ()注意：要保证每次新建的时候不修改CMakeLists.txt。在new cpp source file的时候，不勾选自动修改CMakeLists文件
@@ -1217,10 +1220,10 @@ cmake_minimum_required(VERSION 3.15)project(CCFCSP)set(CMAKE_CXX_STANDARD 14)# �
     
     <item>
       <title>Tool-Git语法</title>
-      <link>https://chenranfei.xyz/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</link>
+      <link>http://chenranfei.xyz/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Wed, 08 Apr 2020 20:42:26 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</guid>
+      <guid>http://chenranfei.xyz/posts/tool/tool-git%E8%AF%AD%E6%B3%95/</guid>
       <description>[TOC]
 Git 基础定义 定义：版本控制管理工具
 几个位置：
@@ -1237,11 +1240,21 @@ git reset --hard HEAD^ git reset --hard HEAD^^ git reset --hard HEAD~100 git res
     </item>
     
     <item>
-      <title>Tool-LaTex语法</title>
-      <link>https://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</link>
+      <title>Tool-CompileEnv</title>
+      <link>http://chenranfei.xyz/posts/tool/tool-compileenv-/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</guid>
+      <guid>http://chenranfei.xyz/posts/tool/tool-compileenv-/</guid>
+      <description>[TOC]
+Compile C++ 之 g++ &amp;amp; gcc  option+comman+up/down（上下，开启多光标） 结合搜索功能的多光标，通过搜索定位到多光标：command+F定位，然后comand+shift+L  </description>
+    </item>
+    
+    <item>
+      <title>Tool-LaTex语法</title>
+      <link>http://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
+      
+      <guid>http://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</guid>
       <description>[TOC]
 LaTex语法 插入方式  inline math 行内公式 block math 块内公式  inline math $test_{latex}$
 $test_{latex}$ block math $$ test_{latex} $$
@@ -1251,10 +1264,10 @@ $$ test_{latex} $$ 基本字符 下面基本常用字符都是inline math 写的
     
     <item>
       <title>Tool-Linux-常用配置</title>
-      <link>https://chenranfei.xyz/posts/tool/tool-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</link>
+      <link>http://chenranfei.xyz/posts/tool/tool-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/tool/tool-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</guid>
+      <guid>http://chenranfei.xyz/posts/tool/tool-linux-%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</guid>
       <description>[TOC]
 Linux常见配置 查看配置 - neofetch  mac: brew install neofetch centos: sudo dnf install neofetch  terminal 水平分割 - tmux 切换文件权限 - chown 切换单个文件权限：chown 用户:群组 path_of_file
 eg: chown aczy156:staff orange
@@ -1264,10 +1277,10 @@ eg:</description>
     
     <item>
       <title>Tool-Linux-指令整理</title>
-      <link>https://chenranfei.xyz/posts/tool/tool-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</link>
+      <link>http://chenranfei.xyz/posts/tool/tool-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/tool/tool-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</guid>
+      <guid>http://chenranfei.xyz/posts/tool/tool-linux-%E6%8C%87%E4%BB%A4%E6%95%B4%E7%90%86/</guid>
       <description>[TOC]
  综合了https://blog.csdn.net/wojiaopanpan/article/details/7286430 博客的一些指令以及一些过去的一些积累。
  基本指令 mv cp ls (ls -l 查看该目录下面文件的具体信息，包括权限归属) chown 切换权限归属 chown -R aczy156 file-name （-R为当前目录以及这个目录下边的所有文件） chroot chroot /mnt，在配置arch并利用arch安装驱动系统安装好后，把root权交给新安装的那个系统的一个操作 chmod +x 目录 给目录 cd cd 空，默认进入root文件，也就是相当于cd ～ cd .. 两个点为进入上一级目录 pwd 当前目录的path open 打开某个文件夹（open . 打开当前的目录的文件夹） mkdir vim fdisk cfdisk df -hl 看所有的存储空间使用情况 mount mkfs :q（退出模式） :wq move rm []删除 rm -rf xx [删除目录的,也就是文件夹]删除某个文件 cd rm rf .删除所有文件 xrandr 不加参数：查看分辨率 cvt 1024 768 参数为分辨率的x和y
@@ -1276,10 +1289,10 @@ eg:</description>
     
     <item>
       <title>Tool-Office-使用</title>
-      <link>https://chenranfei.xyz/posts/tool/tool-office-%E4%BD%BF%E7%94%A8/</link>
+      <link>http://chenranfei.xyz/posts/tool/tool-office-%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/tool/tool-office-%E4%BD%BF%E7%94%A8/</guid>
+      <guid>http://chenranfei.xyz/posts/tool/tool-office-%E4%BD%BF%E7%94%A8/</guid>
       <description>[TOC]
 Office 工具使用 文献管理工具 - Zotero 安装 直接在Zotero中配置选项，然后会自动下载插件，与Chrome或Office建立连接。
  文献管理（manage）「Zotero connect with Chrome」 文献引用（citation）「Zotero connect with Office」  使用 文献引用，设置引用风格：有China National Standard GB/T 7714-2015(numeric, 中文)，依据其他论文种类还有其他的风格。
@@ -1291,20 +1304,20 @@ Office 工具使用 文献管理工具 - Zotero 安装 直接在Zotero中配置�
     
     <item>
       <title>Tool-vscode-快捷键</title>
-      <link>https://chenranfei.xyz/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <link>http://chenranfei.xyz/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <guid>http://chenranfei.xyz/posts/tool/tool-vscode-%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>[TOC]
 vscode 快捷键 多光标  option+comman+up/down（上下，开启多光标） 结合搜索功能的多光标，通过搜索定位到多光标：command+F定位，然后comand+shift+L  </description>
     </item>
     
     <item>
       <title>Python 4 virtualenv</title>
-      <link>https://chenranfei.xyz/posts/python/python4-virtualenv/</link>
+      <link>http://chenranfei.xyz/posts/python/python4-virtualenv/</link>
       <pubDate>Sun, 05 Apr 2020 17:13:50 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/python/python4-virtualenv/</guid>
+      <guid>http://chenranfei.xyz/posts/python/python4-virtualenv/</guid>
       <description>[TOC]
  Virtualenv用于为某个项目新配置一个独立的python环境而产生 环境为macOS pip安装virtualvenvsudo pip install virtualenv
  mac如果有安装Xcode，则在/usr/bin中自带有python2.7，可用于配置python2.7的相关环境 而自己装配的python3则在/usr/local/bin中，可用于python3的相关环境
@@ -1315,10 +1328,10 @@ vscode 快捷键 多光标  option+comman+up/down（上下，开启多光标） 
     
     <item>
       <title>Other-Mysql安装、配置、连接navicat过程</title>
-      <link>https://chenranfei.xyz/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/</link>
+      <link>http://chenranfei.xyz/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Tue, 17 Mar 2020 21:54:42 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/</guid>
+      <guid>http://chenranfei.xyz/posts/other/o-mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E8%BF%9E%E6%8E%A5navicat%E8%BF%87%E7%A8%8B/</guid>
       <description>[TOC]
 Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.msi 安装引导。 https://mirrors.tuna.tsinghua.edu.cn/mysql/downloads/
 配置环境变量 按win键，输入“查看高级系统设置”-&amp;gt;编辑系统变量中的PATH-&amp;gt;添加下载的mysql的bin目录。 eg：C:\Program Files\MySQL\MySQL Server 8.0\bin 按win键，输入cmd，右击通过管理员权限打开
@@ -1328,10 +1341,10 @@ Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.ms
     
     <item>
       <title>Other-区块链 RAFT协议详解</title>
-      <link>https://chenranfei.xyz/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</link>
+      <link>http://chenranfei.xyz/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</link>
       <pubDate>Tue, 17 Mar 2020 21:52:58 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</guid>
+      <guid>http://chenranfei.xyz/posts/other/o-%E5%8C%BA%E5%9D%97%E9%93%BE-raft%E5%8D%8F%E8%AE%AE%E8%AF%A6%E8%A7%A3/</guid>
       <description>[TOC]
 基于RAFT共同机制的用于维护分布式系统中解决分布式储存和共识机制的协议算法。 RAFT包括三种节点：leader、follower、candidate RAFT协议算法中包括三个基本组件动作，   Leader Election，用来模拟在每次联盟链上选出当前的Leader的操作，即向其他的follower发布并传递请求：在图中的表示形式是每个节点处于follower状态，并自动转化为candidate，然后对自己投票，并发起RequestVoteRPC，随后等待联盟链上的其他节点的回应：  当前节点获得超过半数节点的投票，赢得选举成为Leader，此时该节点所代表的联盟链上的成员可以对其他follower进行指示，可以进行相应的操作。 如果参加选举的节点有多个，也即在有多个成员申请修改链上内容的权限：如果其他节点赢得选举，该节点成为Leader，当前节点接收到对方心跳 ，当前节点变为follower。 选举超时，没有节点赢得选举，当前节点自增任期，重新发起选举：所有申请修改的成员都没有得到响应成功，要重新申请，只到结果呈现为情况1、情况2.    Normal Operation(basic log replication)，用来每次client给每个节点发送请求的过程，每次请求就是一个指令，用来模拟在联盟链中每一个节点需要做的操作。  leader接受请求后，把指令（Entry）追加到leader的操作日志中，然后对follower发起AppendEntries操作，尝试让操作指令(Entry)追加到Followers的操作日志中。如果有Follower不可用，则一直尝试 一旦Leader接受到多数（Quorums）Follower的回应，Leader就会进行commit操作，每一台节点服务器会把操作指令交给状态机处理。这样就保证了各节点的状态的一致性 各服务器状态机处理完成之后，Leader将结果返回给Client。     在这里插入图片描述
  对于Normal Operation中的特殊情况例如发生了网络分区，RAFT同样可以以较高的容错性解决该情况，由于部分节点的心跳跳动周期之后没有leader的响应，节点认定为 leader down ，然后重新选举，这是产生双网络之后，有两个client分别为两个leader传达命令，在此情况下两个网络中的节点会有两种不同的指令，但是当修复网络分区之后，两个leader会通过查看期限，最终会统一为一个leader，使整个网络还是保持一致性。     Safety
@@ -1340,10 +1353,10 @@ Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.ms
     
     <item>
       <title>Other-利用sshKey实现单台机器管理多个GitHub账户</title>
-      <link>https://chenranfei.xyz/posts/other/o-%E5%88%A9%E7%94%A8sshkey%E5%AE%9E%E7%8E%B0%E5%8D%95%E5%8F%B0%E6%9C%BA%E5%99%A8%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E6%88%B7/</link>
+      <link>http://chenranfei.xyz/posts/other/o-%E5%88%A9%E7%94%A8sshkey%E5%AE%9E%E7%8E%B0%E5%8D%95%E5%8F%B0%E6%9C%BA%E5%99%A8%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E6%88%B7/</link>
       <pubDate>Thu, 20 Feb 2020 18:01:06 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/other/o-%E5%88%A9%E7%94%A8sshkey%E5%AE%9E%E7%8E%B0%E5%8D%95%E5%8F%B0%E6%9C%BA%E5%99%A8%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E6%88%B7/</guid>
+      <guid>http://chenranfei.xyz/posts/other/o-%E5%88%A9%E7%94%A8sshkey%E5%AE%9E%E7%8E%B0%E5%8D%95%E5%8F%B0%E6%9C%BA%E5%99%A8%E7%AE%A1%E7%90%86%E5%A4%9A%E4%B8%AAgithub%E8%B4%A6%E6%88%B7/</guid>
       <description>[TOC]
 踩过的坑 用户在搭建第二个博客的时候[有特殊需求的情况下]，经过搜索发现一个GitHub账户只能有一个GitHub page，然而当我在利用第二个账户push的时候，总显示 Git push ERROR: Repository not found fatal:这种无法正常连接的报错，
  一开始以为分枝问题，各种git remote -v的调试，各种重置，添加的，然后还是不行 后来经过Google 发现一个email只能绑定一个sshkey，然后传输利用ssh进行匹配 然后在利用ssh-add进行添加的时候配置添加好第二个key(记得不可以名字重复，不然会覆盖)之后在配置config的时候要注意不能改host。(在下边详细说) 在最后pushd时候在原来随便的一个测试项目中发生了一件尴尬的画面，测试的时候两个账号push的时候串了，后来发现在两个push的时候发布者不是取决于项目的clone的那个账号，而是当时git config中设置的email对应的账号。 然后在选取好账号后就可以进行push了。  配置两个ssh key详解： 先列一下其他的人写的，真的很详细了已经https://gist.github.com/jexchan/2351996 主要是在最后的配置config的时候， 我改了这些地方，最后两个email都可以顺利通过ssh进行连接，(感觉第一行和中间那个像注释的东西貌似不用改，，，但也没试过，，，)，产生了两个ssh key之后把内容拷贝到GitHub就不说了，教程很多也没什么坑。</description>
@@ -1351,10 +1364,10 @@ Windows环境下配置mysql环境 安装包下载 清华源可以直接下载.ms
     
     <item>
       <title>Other-Vue_router路由跳转</title>
-      <link>https://chenranfei.xyz/posts/other/o-vue_router%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/</link>
+      <link>http://chenranfei.xyz/posts/other/o-vue_router%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/</link>
       <pubDate>Sun, 16 Feb 2020 12:19:14 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/other/o-vue_router%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/</guid>
+      <guid>http://chenranfei.xyz/posts/other/o-vue_router%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC/</guid>
       <description>[TOC]
 整体框架结构 Vue router 实现界面导航切换。.。
   由router/index.js 中的vue-router来指引不同的要跳转的界面
@@ -1368,10 +1381,10 @@ import Vue from &amp;#39;vue&amp;#39; import App from &amp;#39;.</description>
     
     <item>
       <title>Contest CSP-2019.12-1.2.3题总结</title>
-      <link>https://chenranfei.xyz/posts/contest/contest-csp-2019.12-q123%E6%80%BB%E7%BB%93/</link>
+      <link>http://chenranfei.xyz/posts/contest/contest-csp-2019.12-q123%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sun, 09 Feb 2020 21:54:27 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/contest/contest-csp-2019.12-q123%E6%80%BB%E7%BB%93/</guid>
+      <guid>http://chenranfei.xyz/posts/contest/contest-csp-2019.12-q123%E6%80%BB%E7%BB%93/</guid>
       <description>[TOC]
 CSP[2019.12]1.2.3题总结 第一题 找7倍数或者含有7的数。
 // // main.cpp // [201912-1]count-num // // Created by 陈冉飞 on 2020/2/9. // Copyright © 2020 陈冉飞. All rights reserved. //  #include &amp;lt;iostream&amp;gt;using namespace std; int cnt = 0,num = 0,n,a[4]; bool check(int num){ if (num%7 == 0) return true; while (num &amp;gt; 0) { if (num%10 == 7) return true; num/=10; } return false;; } int main(int argc, const char * argv[]) { scanf(&amp;#34;%d&amp;#34;,&amp;amp;n); while (cnt &amp;lt; n) { num++; if (check(num)) {a[(num-1)%4]++;cnt--;} cnt++; } printf(&amp;#34;%d\n%d\n%d\n%d\n&amp;#34;,a[0],a[1],a[2],a[3]); return 0; } 第二题 一开始想复杂了，想成搜索了，后来网页往下滚动看到了1e3果断循环暴力，结果还真是，，。</description>
@@ -1379,10 +1392,10 @@ CSP[2019.12]1.2.3题总结 第一题 找7倍数或者含有7的数。
     
     <item>
       <title>Other-Vue Report</title>
-      <link>https://chenranfei.xyz/posts/other/o-vue-report/</link>
+      <link>http://chenranfei.xyz/posts/other/o-vue-report/</link>
       <pubDate>Fri, 07 Feb 2020 15:54:32 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/other/o-vue-report/</guid>
+      <guid>http://chenranfei.xyz/posts/other/o-vue-report/</guid>
       <description>[TOC]
 Label &amp;amp; Tag 每一个区块(div)有对应相应的模块的索引，
  对应函数有利用@进行对应， 对应css 利用class进行对应：   因为在css也就是在整体的style标签中每个括号对应的部分都有对应的一个类型，然后在标签中通过class=“”来找到对应的样式 其他的对应css的索引的方式直接在标签中加上:style=“”，如果多个的话要加括号      //添加的只有一个属性
@@ -1413,10 +1426,10 @@ Ant Design of Vue https://www.</description>
     
     <item>
       <title>Algorithm23 计算几何 凸包算法</title>
-      <link>https://chenranfei.xyz/posts/acm/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/algorithm23-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/algorithm23-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 04 Feb 2020 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/algorithm23-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/algorithm23-%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95-%E5%87%B8%E5%8C%85%E7%AE%97%E6%B3%95/</guid>
       <description>[TOC]
 POJ1113-凸包算法 题目链接：http://poj.org/problem?id=1113 凸包算法的板题，找出凸包，计算凸包的周长加上以要求的距离为半径的圆的周长即可。
 卷包裹法 思路：
@@ -1429,10 +1442,10 @@ int cross(point a,point b,point c){ return (a.x-c.x)*(b.y-c.y)-(a.y-c.y)*(b.x-c.
     
     <item>
       <title>Contest CF719 div3 补题</title>
-      <link>https://chenranfei.xyz/posts/contest/contest-cf719-div3/</link>
+      <link>http://chenranfei.xyz/posts/contest/contest-cf719-div3/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/contest/contest-cf719-div3/</guid>
+      <guid>http://chenranfei.xyz/posts/contest/contest-cf719-div3/</guid>
       <description>[TOC]
 CF719 div3 补题  https://codeforces.com/contest/1520
  A 题目大意：看字串中是否有重复出现的，连续一段出现可以，中间隔着其他的，然后再次出现就不行了。
@@ -1442,10 +1455,10 @@ CF719 div3 补题  https://codeforces.com/contest/1520
     
     <item>
       <title>Contest CSU 2021 预选赛 补题</title>
-      <link>https://chenranfei.xyz/posts/contest/contest-csu2021pre/</link>
+      <link>http://chenranfei.xyz/posts/contest/contest-csu2021pre/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/contest/contest-csu2021pre/</guid>
+      <guid>http://chenranfei.xyz/posts/contest/contest-csu2021pre/</guid>
       <description>[TOC]
 CSU 2021 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?cid=2193
  A 题目大意：贪心，可以无限选，然后问给定容积，最大价值。
@@ -1455,10 +1468,10 @@ CSU 2021 预选赛 补题  http://acm.csu.edu.cn:20080/csuoj/contest/problemset?
     
     <item>
       <title>Contest CSU 2022 预选赛 补题</title>
-      <link>https://chenranfei.xyz/posts/contest/contest-csu2022pre/</link>
+      <link>http://chenranfei.xyz/posts/contest/contest-csu2022pre/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/contest/contest-csu2022pre/</guid>
+      <guid>http://chenranfei.xyz/posts/contest/contest-csu2022pre/</guid>
       <description>[TOC]
 CSU 2022 预选赛 补题 A 题目大意：计算期望。概率*次数，其中，概率会随着次数的增加，按照一定规律进行变化。
 进行模拟即可。
@@ -1467,10 +1480,10 @@ CSU 2022 预选赛 补题 A 题目大意：计算期望。概率*次数，其中
     
     <item>
       <title>Contest ICT pFind</title>
-      <link>https://chenranfei.xyz/posts/contest/contest-ict-pfind/</link>
+      <link>http://chenranfei.xyz/posts/contest/contest-ict-pfind/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/contest/contest-ict-pfind/</guid>
+      <guid>http://chenranfei.xyz/posts/contest/contest-ict-pfind/</guid>
       <description>[TOC]
 ICT pFind  机试：共五道，前两个签到，第三个大数乘法，第四个区间最值问题，第五个数据结构二叉树问题
  机试-1 题目大意：将二维数组进行翻转
@@ -1479,38 +1492,46 @@ ICT pFind  机试：共五道，前两个签到，第三个大数乘法，第四
     </item>
     
     <item>
-      <title>Summary1 Aczy156的算法模版</title>
-      <link>https://chenranfei.xyz/posts/acm-summary/summary1-%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</link>
+      <title>Summary1 基础用法模版</title>
+      <link>http://chenranfei.xyz/posts/acm-summary/summary1-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E6%A8%A1%E7%89%88/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm-summary/summary1-%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</guid>
+      <guid>http://chenranfei.xyz/posts/acm-summary/summary1-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E6%A8%A1%E7%89%88/</guid>
       <description>[TOC]
-Aczy156的算法模版 常用 表示无穷大（int的上限）：
+算法模版 常用 表示无穷大（int的上限）：
 // int的最大值就是2的31次方-1 #define INF (1&amp;lt;&amp;lt;31)-1// 用库中定义的INT_MAX #include &amp;lt;climits&amp;gt;#define INF INT_MAXdouble 四舍五入的变式：永远舍和永远入：
 double a = 0.656, b = 0.651; printf(&amp;#34;%.2lf %2lf&amp;#34;, a-0.05, b-0.05); // 都会往下舍，变为0.65 0.65 printf(&amp;#34;%.2lf %2lf&amp;#34;, a+0.05, b+0.05); // 都会往上入，变为0.66 0.66 字符 &amp;amp; 字符串的scanf读入
 char ch scanf(&amp;#34;%c&amp;#34;, &amp;amp;ch); // 前面要加空格 char s[10]; scanf(&amp;#34;%s&amp;#34;, s); scanf字符串读入(对于流输入输出进行优化)
-// 数据：2007-06-23-11:59 2007-06-23-12:00 int by, ey, bm, em, bd, ed, bh, eh, bmin, emin; scanf(&amp;#34;%d-%d-%d-%d:%d&amp;#34;, &amp;amp;by, &amp;amp;bm, &amp;amp;bd, &amp;amp;bh, &amp;amp;bmin); scanf(&amp;#34;%d-%d-%d-%d:%d&amp;#34;, &amp;amp;ey, &amp;amp;em, &amp;amp;ed, &amp;amp;eh, &amp;amp;emin); // 即可获取 char a; cin&amp;gt;&amp;gt;by&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bm&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bd&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bh&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bmin; cin&amp;gt;&amp;gt;by&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bm&amp;gt;&amp;gt;a&amp;gt;&amp;gt;ed&amp;gt;&amp;gt;a&amp;gt;&amp;gt;eh&amp;gt;&amp;gt;a&amp;gt;&amp;gt;emin; // 也可以获取 cin读入提速</description>
+// 数据：2007-06-23-11:59 2007-06-23-12:00 int by, ey, bm, em, bd, ed, bh, eh, bmin, emin; scanf(&amp;#34;%d-%d-%d-%d:%d&amp;#34;, &amp;amp;by, &amp;amp;bm, &amp;amp;bd, &amp;amp;bh, &amp;amp;bmin); scanf(&amp;#34;%d-%d-%d-%d:%d&amp;#34;, &amp;amp;ey, &amp;amp;em, &amp;amp;ed, &amp;amp;eh, &amp;amp;emin); // 即可获取 char a; cin&amp;gt;&amp;gt;by&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bm&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bd&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bh&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bmin; cin&amp;gt;&amp;gt;by&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bm&amp;gt;&amp;gt;a&amp;gt;&amp;gt;ed&amp;gt;&amp;gt;a&amp;gt;&amp;gt;eh&amp;gt;&amp;gt;a&amp;gt;&amp;gt;emin; // 也可以获取 判断字符是大写字母还是小写字母还是数字</description>
     </item>
     
     <item>
-      <title>Summary1.1 Aczy156的基础数据结构手写实现</title>
-      <link>https://chenranfei.xyz/posts/acm-summary/summary1.1-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0/</link>
+      <title>Summary1 常见算法模版</title>
+      <link>http://chenranfei.xyz/posts/acm-summary/summary1.1-%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm-summary/summary1.1-%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%E6%89%8B%E5%86%99%E5%AE%9E%E7%8E%B0/</guid>
+      <guid>http://chenranfei.xyz/posts/acm-summary/summary1.1-%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</guid>
       <description>[TOC]
-Aczy156的基础数据结构手写实现 数据结构的实现 链表
-堆
-STL的实现 排序算法的实现 快速排序
-归并排序</description>
+算法模版 字符串-整数表达式求值 #include stack, unordered_mapstack&amp;lt;char&amp;gt; op; //操作符栈 stack&amp;lt;int&amp;gt; num; //数字栈 unordered_map&amp;lt;char, int&amp;gt; pr{{&amp;#39;+&amp;#39;, 1}, {&amp;#39;-&amp;#39;, 1}, {&amp;#39;x&amp;#39;, 2}, {&amp;#39;/&amp;#39;, 2}}; //定义运算符优先级 void eval() { // 计算函数  int b = num.top(); num.pop(); int a = num.top(); num.pop(); char c = op.top(); op.pop(); int x; if (c == &amp;#39;+&amp;#39;) x = a + b; else if (c == &amp;#39;-&amp;#39;) x = a - b; else if (c == &amp;#39;x&amp;#39;) x = a * b; // 乘法符号区分&amp;#39;x&amp;#39;和&amp;#39;*&amp;#39;  else x = a / b; num.</description>
+    </item>
+    
+    <item>
+      <title>Summary1.3 算法板题</title>
+      <link>http://chenranfei.xyz/posts/acm-summary/summary1.3-%E7%AE%97%E6%B3%95%E6%9D%BF%E9%A2%98-copy/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>http://chenranfei.xyz/posts/acm-summary/summary1.3-%E7%AE%97%E6%B3%95%E6%9D%BF%E9%A2%98-copy/</guid>
+      <description>[TOC]
+算法模版 背包DP-01背包 for (int i = 0; i &amp;lt; m; ++i) for (int j = t; j &amp;gt;= c[i] ; --j) dp[j] = max(dp[j], dp[j-c[i]]+val[i]); 背包DP-多重背包 for (int i = 1; i &amp;lt;= n; ++i) for (int j = w; j &amp;gt;= c[i]; --j) for (int k = 1; k &amp;lt;= num[i] &amp;amp;&amp;amp; k*c[i]&amp;lt;=j; ++k) dp[j] = max(dp[j], dp[j-k*c[i]]+k*val[i]); 背包DP-多重背包二进制加速 类似于快速幂的思路，对首先将多重背包拍平成01背包，然后再跑01，将跑01的过程用快速幂加速。
+int n, m ,ta, tb ,tc, c[maxn], val[maxn], idx = 0, dp[maxn]; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); for (int j = 1; j &amp;lt;= tc; j&amp;lt;&amp;lt;=1) { c[++idx] = tb*j; val[idx] = ta*j; tc-=j; } if (tc) {c[++idx] = tb*tc;val[idx] = ta*tc;} } for (int i = 1; i &amp;lt;= idx; ++i) for (int j = m; j &amp;gt;= c[i]; --j) dp[j] = max(dp[j], dp[j-c[i]]+val[i]); printf(&amp;#34;%d\n&amp;#34;, dp[m]);} 区间DP-区间合并代价 题目大意：删除一段数组的数，代价为这个区间的左右端点值的差的绝对值*长度，求全部删去的最大代价。</description>
     </item>
     
     <item>
       <title>Summary2 Aczy156的面经</title>
-      <link>https://chenranfei.xyz/posts/acm-summary/summary2-%E9%9D%A2%E7%BB%8F/</link>
+      <link>http://chenranfei.xyz/posts/acm-summary/summary2-%E9%9D%A2%E7%BB%8F/</link>
       <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm-summary/summary2-%E9%9D%A2%E7%BB%8F/</guid>
+      <guid>http://chenranfei.xyz/posts/acm-summary/summary2-%E9%9D%A2%E7%BB%8F/</guid>
       <description>[TOC]
 Aczy156的面经 系统 1、Linux系统的进程通信方式
 管道pipeline，信号signal，消息队列message queue，共享内存，信号量semophore，套接字socket
@@ -1519,10 +1540,10 @@ Aczy156的面经 系统 1、Linux系统的进程通信方式
     
     <item>
       <title>Deep Learning 14 keras</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl14-keras/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl14-keras/</link>
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl14-keras/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl14-keras/</guid>
       <description>[TOC]
 keras.models  Model Sequential  Keras.Input 区分于keras.layers.Input 或者区分于
 keras.layers 适用于含有神经元的网络  Dropout / SpatialDropout Dense 全连接层  用于处理图像-卷积  Convention卷积：Conv1D，Conv2D 和 Conv3D Pooling池化：MaxPooling1D,MaxPooling2D, GlobalMaxPooling1D   用于NLP处理-序列模型  LSTM / Bidirectional LSTM GRU Cu  CuDNNLSTM：这个是在老版本(在V_tensorflow &amp;lt; 2.0.0)中支持的，在新的tensorflow和独立出来的keras中都是没有的，所以如果使用的话，需要1:调整tensorflow的版本小于2.0.0、2:不使用自带的独立出来的keras，而是使用tensorflow内置的keras CUDNNGRU    一些不常用的keras库 keras.engine 底层控制驱动引擎，keras.engine.topology中的Layer来自定义keras神经网络模型中的某一层(是层，不是神经元)
@@ -1531,10 +1552,10 @@ keras.initializers &amp;ndash; 初始化 keras.regularizers &amp;ndash; 正则�
     
     <item>
       <title>Deep Learning 14.1 pytorch</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl14.1-pytorch/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl14.1-pytorch/</link>
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl14.1-pytorch/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl14.1-pytorch/</guid>
       <description>[TOC]
 pytorch类比keras但区别 keras的所有子库基本都是复数，包括models, layers, optimizers等等
 而torch大部分都是单数
@@ -1547,10 +1568,10 @@ torch.optim torch.optim.Adam()
     
     <item>
       <title>Deep Learning 16 GNN Basic</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</link>
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl16-gnn%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B/</guid>
       <description>[TOC]
 工具配备：
 深度学习框架：
@@ -1565,10 +1586,10 @@ Graph embedding [把整个表进行嵌入]   node embedding
     
     <item>
       <title>Deep Learning 17 优化目标</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</link>
       <pubDate>Wed, 29 Jan 2020 01:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl17-%E4%BC%98%E5%8C%96%E7%9B%AE%E6%A0%87/</guid>
       <description>[TOC]
 优化目标 概念区分 1、整体理解：损失函数，代价函数，目标函数，熵=&amp;gt;都是最优化问题下的的优化目标，通过设定优化目标获取最优化问题的最优解
 2、设计原理：为什么要设计这样的优化目标
@@ -1597,10 +1618,10 @@ Cost =&amp;gt; $C=-\frac{1}{n}\sum_{x}^{}[yln\hat{y}+(1-y)ln(1-\hat{y}]\$
     
     <item>
       <title>Deep Learning 15 Kaggle一些基本问题</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl15-kaggle%E4%B8%80%E4%BA%9B%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98/</guid>
       <description>[TOC]
 /input目录下的数据是read_only格式 可以通过copy一份到/working
 两个路径：
@@ -1627,10 +1648,10 @@ input_shape=(12) vs input_shape=(12,) 前面的是数字，然后在这一层进
     
     <item>
       <title>Python 1 Pandas</title>
-      <link>https://chenranfei.xyz/posts/python/python1-pandas/</link>
+      <link>http://chenranfei.xyz/posts/python/python1-pandas/</link>
       <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/python/python1-pandas/</guid>
+      <guid>http://chenranfei.xyz/posts/python/python1-pandas/</guid>
       <description>[TOC]
 数据类型相关 在处理脏数据的时候：
 通过data[col][raw].dtype来查看元素的类型
@@ -1641,10 +1662,10 @@ sex tip total_bill 0 Female 1.01 16.99 1 Male 1.66 10.34 2 Male 3.50 23.68 3 Mal
     
     <item>
       <title>Python 2 Numpy</title>
-      <link>https://chenranfei.xyz/posts/python/python2-numpy/</link>
+      <link>http://chenranfei.xyz/posts/python/python2-numpy/</link>
       <pubDate>Tue, 28 Jan 2020 23:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/python/python2-numpy/</guid>
+      <guid>http://chenranfei.xyz/posts/python/python2-numpy/</guid>
       <description>[TOC]
 np.zeros np.zeros(size) 初始化为长度为size，内容为0的矢量「秩=1」==》既不是行向量也不是列向量【a.T=a即可以验证】
 a = np.zeros(array_size)
@@ -1667,20 +1688,20 @@ v = np.</description>
     
     <item>
       <title>Deep Learning 12 CV Target Detection</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl12-cvtarget-detection/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl12-cvtarget-detection/</link>
       <pubDate>Tue, 28 Jan 2020 22:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl12-cvtarget-detection/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl12-cvtarget-detection/</guid>
       <description>[TOC]
 CV Target Detection YOLO R-CNN &amp;amp; Fast R-CNN </description>
     </item>
     
     <item>
       <title>Deep Learning 11 CV Image Segmentation</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl11-cvimage-segmentation/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl11-cvimage-segmentation/</link>
       <pubDate>Tue, 28 Jan 2020 21:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl11-cvimage-segmentation/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl11-cvimage-segmentation/</guid>
       <description>[TOC]
 CV-Image Segmentation 图像分割 传统分割方法 理解：
  把图像分割成若干个块 每个块都有相同点 [可以利用拓广性来进行延伸]  基本方法：
@@ -1701,10 +1722,10 @@ CV-Image Segmentation 图像分割 传统分割方法 理解：
     
     <item>
       <title>Machine Learning 10 Boosting家族</title>
-      <link>https://chenranfei.xyz/posts/mldl/ml1-xgboost-lightgbm-catboost/</link>
+      <link>http://chenranfei.xyz/posts/mldl/ml1-xgboost-lightgbm-catboost/</link>
       <pubDate>Tue, 28 Jan 2020 20:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/ml1-xgboost-lightgbm-catboost/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/ml1-xgboost-lightgbm-catboost/</guid>
       <description>[TOC]
 Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix来进行转换
   然后通过xgb的train()来进行训练
@@ -1715,10 +1736,10 @@ Xgboost 1 普通训练 2 对于利用交叉训练的   首先需要利用DMatrix
     
     <item>
       <title>Machine Learning 2 SVM</title>
-      <link>https://chenranfei.xyz/posts/mldl/ml2-svm/</link>
+      <link>http://chenranfei.xyz/posts/mldl/ml2-svm/</link>
       <pubDate>Tue, 28 Jan 2020 20:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/ml2-svm/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/ml2-svm/</guid>
       <description>[TOC]
 SVM 背景 解决线性不可分的问题（最基础的，异或问题）
 原理 数据形式-向量 向量 =&amp;gt; 表示一个数据的特征向量（不同特征的值）
@@ -1733,10 +1754,10 @@ X = \left{ x_1, x_2, ……x_n\right} \
     
     <item>
       <title>Deep Learning 9 几种常用数据类型</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Tue, 28 Jan 2020 19:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl9-%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
       <description>[TOC]
 numpy 数据类型 查看维度数dim 查看各个维度的长度 【前提要知道有多少维度】
 print(&amp;#39;data_np shape is: &amp;#39;, np.size(data_np, 0), np.size(data_np, 1), np.size(data_np, 2)) 需要进行维度变化的 按照维度求最值 【根据axis来选择对应的维度，然后提取最大值】 ==&amp;gt; axis=x,就是第x的维度提取最值，最后那个维度变成一，dim--
@@ -1748,10 +1769,10 @@ ls = list(set([&amp;#39;a&amp;#39;, &amp;#39;b&amp;#39;, &amp;#39;a&amp;#39;])) 
     
     <item>
       <title>Deep Learning 8 Python 广播机制/apply/map/zip等</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</link>
       <pubDate>Tue, 28 Jan 2020 18:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl8-python-%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6-apply-map/</guid>
       <description>[TOC]
 Python - 广播机制 Python - apply [维持原来的维度数]
 应用场景：对于一个DataFrame
@@ -1767,10 +1788,10 @@ train[&amp;#39;new_length&amp;#39;] = train[&amp;#39;text&amp;#39;].apply(lambda
     
     <item>
       <title>Deep Learning 7 综合性案例 Credit Card Anomly Detection</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</link>
       <pubDate>Tue, 28 Jan 2020 17:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl7-%E7%BB%BC%E5%90%88%E6%80%A7-credit_card-anomly_detection/</guid>
       <description>[TOC]
 Credit Card Frauds Detection 处理样本分布不均问题：Imbalance Datasets distribution 几种可行的解决方案：
  采样方法  under-sampling 欠采样 over-sampling 过采样   集成学习+阈值调整 *  根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
@@ -1782,10 +1803,10 @@ df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [多个属�
     
     <item>
       <title>Deep Learning 6 CV</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Tue, 28 Jan 2020 16:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl6-cv%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
       <description>[TOC]
 CV-数据增强 手动人工数据增强   数据为非图形化的数据「本身不是图片」
  例如Digit Recognization，通过把所有像素点放进了表格里边    数据为图形化的数据「本身是图片」
@@ -1794,10 +1815,10 @@ CV-数据增强 手动人工数据增强   数据为非图形化的数据「本�
     
     <item>
       <title>Deep Learning 5.1 NLP 一些常用库</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</link>
       <pubDate>Tue, 28 Jan 2020 15:15:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl5.1-nlp%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%9A%84%E8%B5%84%E6%96%99%E5%BA%93/</guid>
       <description>[TOC]
 NLP 工具库 NLP &amp;ndash; nltk [natural language toolkit] NLP &amp;ndash; gensim NLP 语料库 NLP &amp;ndash; GloVe全局动态库  GloVe 50D GloVe 100D GloVe 200D GloVe 300D  一些其他的具有标准参考的库 String库 punctuation 【标点符号】
 import string collections defaultdict 【默认字典】
@@ -1807,40 +1828,40 @@ from collection import defaultdict from collection import Counter </description>
     
     <item>
       <title>Deep Learning 5 NLP基本过程</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl5-nlp%E5%9F%BA%E6%9C%AC%E8%BF%87%E7%A8%8B/</guid>
       <description>[TOC]
 NLP 1、数据清洗 data cleaning  清洗html中的残留的tag：BeautifulSoup 清洗标点：正则表达式 清洗常用的没有实际意义的词语(a, the)：nltk中的stepwords  # import basic dependencies from bs4 import BeautifulSoup import re from nltk.corpus import stopwords # 具体使用 # html残留tag：用BeautifulSoup，实例化对象，然后通过get_text()获取 bs = BeautifulSoup(train[&amp;#39;text_content&amp;#39;][index], &amp;#39;lxml&amp;#39;) print(&amp;#39;origin content:\n{}\nafter use BeautifulSoup to clean html tag:\n{}\n&amp;#39;, train[&amp;#39;text_content&amp;#39;][index], bs.get_text()) # 标点符号：正则表达式 letters_only = re.sub(&amp;#39;[^a-zA-Z]&amp;#39;, &amp;#39;&amp;#39;, bs.get_text()) print(&amp;#39;origin content:\n{}\nafter use re:\n{}\n&amp;#39;, bs.get_text(), letters_only) # 用nltk中导入的stopwords来删除一些常见的没有用的单词，a，the…… # 先转换成小写lower case，然后分割split，最后用nltk中的stepwords lower_case = letters_only.lower() words = lower_case.split() stopwords.words(&amp;#39;english&amp;#39;)[:20] words = [word for word in words if not word in stopwords.</description>
     </item>
     
     <item>
       <title>Deep Learning 5 NLP基本过程</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</link>
       <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl5.2-nlp%E9%A2%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%87%A0%E7%A7%8D%E6%95%B0%E6%8D%AE/</guid>
       <description>[TOC]
 NLP punctuations - 标点 puncts = [&amp;#39;,&amp;#39;, &amp;#39;.&amp;#39;, &amp;#39;&amp;#34;&amp;#39;, &amp;#39;:&amp;#39;, &amp;#39;)&amp;#39;, &amp;#39;(&amp;#39;, &amp;#39;-&amp;#39;, &amp;#39;!&amp;#39;, &amp;#39;?&amp;#39;, &amp;#39;|&amp;#39;, &amp;#39;;&amp;#39;, &amp;#34;&amp;#39;&amp;#34;, &amp;#39;$&amp;#39;, &amp;#39;&amp;amp;&amp;#39;, &amp;#39;/&amp;#39;, &amp;#39;[&amp;#39;, &amp;#39;]&amp;#39;, &amp;#39;&amp;gt;&amp;#39;, &amp;#39;%&amp;#39;, &amp;#39;=&amp;#39;, &amp;#39;#&amp;#39;, &amp;#39;*&amp;#39;, &amp;#39;+&amp;#39;, &amp;#39;\\&amp;#39;, &amp;#39;•&amp;#39;, &amp;#39;~&amp;#39;, &amp;#39;@&amp;#39;, &amp;#39;£&amp;#39;, &amp;#39;·&amp;#39;, &amp;#39;_&amp;#39;, &amp;#39;{&amp;#39;, &amp;#39;}&amp;#39;, &amp;#39;©&amp;#39;, &amp;#39;^&amp;#39;, &amp;#39;®&amp;#39;, &amp;#39;`&amp;#39;, &amp;#39;&amp;lt;&amp;#39;, &amp;#39;→&amp;#39;, &amp;#39;°&amp;#39;, &amp;#39;€&amp;#39;, &amp;#39;™&amp;#39;, &amp;#39;›&amp;#39;, &amp;#39;♥&amp;#39;, &amp;#39;←&amp;#39;, &amp;#39;×&amp;#39;, &amp;#39;§&amp;#39;, &amp;#39;″&amp;#39;, &amp;#39;′&amp;#39;, &amp;#39;Â&amp;#39;, &amp;#39;█&amp;#39;, &amp;#39;½&amp;#39;, &amp;#39;à&amp;#39;, &amp;#39;…&amp;#39;, &amp;#39;“&amp;#39;, &amp;#39;★&amp;#39;, &amp;#39;”&amp;#39;, &amp;#39;–&amp;#39;, &amp;#39;●&amp;#39;, &amp;#39;â&amp;#39;, &amp;#39;►&amp;#39;, &amp;#39;−&amp;#39;, &amp;#39;¢&amp;#39;, &amp;#39;²&amp;#39;, &amp;#39;¬&amp;#39;, &amp;#39;░&amp;#39;, &amp;#39;¶&amp;#39;, &amp;#39;↑&amp;#39;, &amp;#39;±&amp;#39;, &amp;#39;¿&amp;#39;, &amp;#39;▾&amp;#39;, &amp;#39;═&amp;#39;, &amp;#39;¦&amp;#39;, &amp;#39;║&amp;#39;, &amp;#39;―&amp;#39;, &amp;#39;¥&amp;#39;, &amp;#39;▓&amp;#39;, &amp;#39;—&amp;#39;, &amp;#39;‹&amp;#39;, &amp;#39;─&amp;#39;, &amp;#39;▒&amp;#39;, &amp;#39;：&amp;#39;, &amp;#39;¼&amp;#39;, &amp;#39;⊕&amp;#39;, &amp;#39;▼&amp;#39;, &amp;#39;▪&amp;#39;, &amp;#39;†&amp;#39;, &amp;#39;■&amp;#39;, &amp;#39;’&amp;#39;, &amp;#39;▀&amp;#39;, &amp;#39;¨&amp;#39;, &amp;#39;▄&amp;#39;, &amp;#39;♫&amp;#39;, &amp;#39;☆&amp;#39;, &amp;#39;é&amp;#39;, &amp;#39;¯&amp;#39;, &amp;#39;♦&amp;#39;, &amp;#39;¤&amp;#39;, &amp;#39;▲&amp;#39;, &amp;#39;è&amp;#39;, &amp;#39;¸&amp;#39;, &amp;#39;¾&amp;#39;, &amp;#39;Ã&amp;#39;, &amp;#39;⋅&amp;#39;, &amp;#39;‘&amp;#39;, &amp;#39;∞&amp;#39;, &amp;#39;∙&amp;#39;, &amp;#39;）&amp;#39;, &amp;#39;↓&amp;#39;, &amp;#39;、&amp;#39;, &amp;#39;│&amp;#39;, &amp;#39;（&amp;#39;, &amp;#39;»&amp;#39;, &amp;#39;，&amp;#39;, &amp;#39;♪&amp;#39;, &amp;#39;╩&amp;#39;, &amp;#39;╚&amp;#39;, &amp;#39;³&amp;#39;, &amp;#39;・&amp;#39;, &amp;#39;╦&amp;#39;, &amp;#39;╣&amp;#39;, &amp;#39;╔&amp;#39;, &amp;#39;╗&amp;#39;, &amp;#39;▬&amp;#39;, &amp;#39;❤&amp;#39;, &amp;#39;ï&amp;#39;, &amp;#39;Ø&amp;#39;, &amp;#39;¹&amp;#39;, &amp;#39;≤&amp;#39;, &amp;#39;‡&amp;#39;, &amp;#39;√&amp;#39;, ] fasttext mispell - 一些省略成引号的 mispell_dict = {&amp;#34;ain&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;aren&amp;#39;t&amp;#34;: &amp;#34;are not&amp;#34;,&amp;#34;can&amp;#39;t&amp;#34;: &amp;#34;cannot&amp;#34;, &amp;#34;&amp;#39;cause&amp;#34;: &amp;#34;because&amp;#34;, &amp;#34;could&amp;#39;ve&amp;#34;: &amp;#34;could have&amp;#34;, &amp;#34;couldn&amp;#39;t&amp;#34;: &amp;#34;could not&amp;#34;, &amp;#34;didn&amp;#39;t&amp;#34;: &amp;#34;did not&amp;#34;, &amp;#34;doesn&amp;#39;t&amp;#34;: &amp;#34;does not&amp;#34;, &amp;#34;don&amp;#39;t&amp;#34;: &amp;#34;do not&amp;#34;, &amp;#34;hadn&amp;#39;t&amp;#34;: &amp;#34;had not&amp;#34;, &amp;#34;hasn&amp;#39;t&amp;#34;: &amp;#34;has not&amp;#34;, &amp;#34;haven&amp;#39;t&amp;#34;: &amp;#34;have not&amp;#34;, &amp;#34;he&amp;#39;d&amp;#34;: &amp;#34;he would&amp;#34;,&amp;#34;he&amp;#39;ll&amp;#34;: &amp;#34;he will&amp;#34;, &amp;#34;he&amp;#39;s&amp;#34;: &amp;#34;he is&amp;#34;, &amp;#34;how&amp;#39;d&amp;#34;: &amp;#34;how did&amp;#34;, &amp;#34;how&amp;#39;d&amp;#39;y&amp;#34;: &amp;#34;how do you&amp;#34;, &amp;#34;how&amp;#39;ll&amp;#34;: &amp;#34;how will&amp;#34;, &amp;#34;how&amp;#39;s&amp;#34;: &amp;#34;how is&amp;#34;, &amp;#34;I&amp;#39;d&amp;#34;: &amp;#34;I would&amp;#34;, &amp;#34;I&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;I would have&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#34;: &amp;#34;I will&amp;#34;, &amp;#34;I&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;I will have&amp;#34;,&amp;#34;I&amp;#39;m&amp;#34;: &amp;#34;I am&amp;#34;, &amp;#34;I&amp;#39;ve&amp;#34;: &amp;#34;I have&amp;#34;, &amp;#34;i&amp;#39;d&amp;#34;: &amp;#34;i would&amp;#34;, &amp;#34;i&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;i would have&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#34;: &amp;#34;i will&amp;#34;, &amp;#34;i&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;i will have&amp;#34;,&amp;#34;i&amp;#39;m&amp;#34;: &amp;#34;i am&amp;#34;, &amp;#34;i&amp;#39;ve&amp;#34;: &amp;#34;i have&amp;#34;, &amp;#34;isn&amp;#39;t&amp;#34;: &amp;#34;is not&amp;#34;, &amp;#34;it&amp;#39;d&amp;#34;: &amp;#34;it would&amp;#34;, &amp;#34;it&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;it would have&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#34;: &amp;#34;it will&amp;#34;, &amp;#34;it&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;it will have&amp;#34;,&amp;#34;it&amp;#39;s&amp;#34;: &amp;#34;it is&amp;#34;, &amp;#34;let&amp;#39;s&amp;#34;: &amp;#34;let us&amp;#34;, &amp;#34;ma&amp;#39;am&amp;#34;: &amp;#34;madam&amp;#34;, &amp;#34;mayn&amp;#39;t&amp;#34;: &amp;#34;may not&amp;#34;, &amp;#34;might&amp;#39;ve&amp;#34;: &amp;#34;might have&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#34;: &amp;#34;might not&amp;#34;,&amp;#34;mightn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;might not have&amp;#34;, &amp;#34;must&amp;#39;ve&amp;#34;: &amp;#34;must have&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#34;: &amp;#34;must not&amp;#34;, &amp;#34;mustn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;must not have&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#34;: &amp;#34;need not&amp;#34;, &amp;#34;needn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;need not have&amp;#34;,&amp;#34;o&amp;#39;clock&amp;#34;: &amp;#34;of the clock&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#34;: &amp;#34;ought not&amp;#34;, &amp;#34;oughtn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;ought not have&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;sha&amp;#39;n&amp;#39;t&amp;#34;: &amp;#34;shall not&amp;#34;, &amp;#34;shan&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;shall not have&amp;#34;, &amp;#34;she&amp;#39;d&amp;#34;: &amp;#34;she would&amp;#34;, &amp;#34;she&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;she would have&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#34;: &amp;#34;she will&amp;#34;, &amp;#34;she&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;she will have&amp;#34;, &amp;#34;she&amp;#39;s&amp;#34;: &amp;#34;she is&amp;#34;, &amp;#34;should&amp;#39;ve&amp;#34;: &amp;#34;should have&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#34;: &amp;#34;should not&amp;#34;, &amp;#34;shouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;should not have&amp;#34;, &amp;#34;so&amp;#39;ve&amp;#34;: &amp;#34;so have&amp;#34;,&amp;#34;so&amp;#39;s&amp;#34;: &amp;#34;so as&amp;#34;, &amp;#34;this&amp;#39;s&amp;#34;: &amp;#34;this is&amp;#34;,&amp;#34;that&amp;#39;d&amp;#34;: &amp;#34;that would&amp;#34;, &amp;#34;that&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;that would have&amp;#34;, &amp;#34;that&amp;#39;s&amp;#34;: &amp;#34;that is&amp;#34;, &amp;#34;there&amp;#39;d&amp;#34;: &amp;#34;there would&amp;#34;, &amp;#34;there&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;there would have&amp;#34;, &amp;#34;there&amp;#39;s&amp;#34;: &amp;#34;there is&amp;#34;, &amp;#34;here&amp;#39;s&amp;#34;: &amp;#34;here is&amp;#34;,&amp;#34;they&amp;#39;d&amp;#34;: &amp;#34;they would&amp;#34;, &amp;#34;they&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;they would have&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#34;: &amp;#34;they will&amp;#34;, &amp;#34;they&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;they will have&amp;#34;, &amp;#34;they&amp;#39;re&amp;#34;: &amp;#34;they are&amp;#34;, &amp;#34;they&amp;#39;ve&amp;#34;: &amp;#34;they have&amp;#34;, &amp;#34;to&amp;#39;ve&amp;#34;: &amp;#34;to have&amp;#34;, &amp;#34;wasn&amp;#39;t&amp;#34;: &amp;#34;was not&amp;#34;, &amp;#34;we&amp;#39;d&amp;#34;: &amp;#34;we would&amp;#34;, &amp;#34;we&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;we would have&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#34;: &amp;#34;we will&amp;#34;, &amp;#34;we&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;we will have&amp;#34;, &amp;#34;we&amp;#39;re&amp;#34;: &amp;#34;we are&amp;#34;, &amp;#34;we&amp;#39;ve&amp;#34;: &amp;#34;we have&amp;#34;, &amp;#34;weren&amp;#39;t&amp;#34;: &amp;#34;were not&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#34;: &amp;#34;what will&amp;#34;, &amp;#34;what&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;what will have&amp;#34;, &amp;#34;what&amp;#39;re&amp;#34;: &amp;#34;what are&amp;#34;, &amp;#34;what&amp;#39;s&amp;#34;: &amp;#34;what is&amp;#34;, &amp;#34;what&amp;#39;ve&amp;#34;: &amp;#34;what have&amp;#34;, &amp;#34;when&amp;#39;s&amp;#34;: &amp;#34;when is&amp;#34;, &amp;#34;when&amp;#39;ve&amp;#34;: &amp;#34;when have&amp;#34;, &amp;#34;where&amp;#39;d&amp;#34;: &amp;#34;where did&amp;#34;, &amp;#34;where&amp;#39;s&amp;#34;: &amp;#34;where is&amp;#34;, &amp;#34;where&amp;#39;ve&amp;#34;: &amp;#34;where have&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#34;: &amp;#34;who will&amp;#34;, &amp;#34;who&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;who will have&amp;#34;, &amp;#34;who&amp;#39;s&amp;#34;: &amp;#34;who is&amp;#34;, &amp;#34;who&amp;#39;ve&amp;#34;: &amp;#34;who have&amp;#34;, &amp;#34;why&amp;#39;s&amp;#34;: &amp;#34;why is&amp;#34;, &amp;#34;why&amp;#39;ve&amp;#34;: &amp;#34;why have&amp;#34;, &amp;#34;will&amp;#39;ve&amp;#34;: &amp;#34;will have&amp;#34;, &amp;#34;won&amp;#39;t&amp;#34;: &amp;#34;will not&amp;#34;, &amp;#34;won&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;will not have&amp;#34;, &amp;#34;would&amp;#39;ve&amp;#34;: &amp;#34;would have&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#34;: &amp;#34;would not&amp;#34;, &amp;#34;wouldn&amp;#39;t&amp;#39;ve&amp;#34;: &amp;#34;would not have&amp;#34;, &amp;#34;y&amp;#39;all&amp;#34;: &amp;#34;you all&amp;#34;, &amp;#34;y&amp;#39;all&amp;#39;d&amp;#34;: &amp;#34;you all would&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you all would have&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;re&amp;#34;: &amp;#34;you all are&amp;#34;,&amp;#34;y&amp;#39;all&amp;#39;ve&amp;#34;: &amp;#34;you all have&amp;#34;,&amp;#34;you&amp;#39;d&amp;#34;: &amp;#34;you would&amp;#34;, &amp;#34;you&amp;#39;d&amp;#39;ve&amp;#34;: &amp;#34;you would have&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#34;: &amp;#34;you will&amp;#34;, &amp;#34;you&amp;#39;ll&amp;#39;ve&amp;#34;: &amp;#34;you will have&amp;#34;, &amp;#34;you&amp;#39;re&amp;#34;: &amp;#34;you are&amp;#34;, &amp;#34;you&amp;#39;ve&amp;#34;: &amp;#34;you have&amp;#34;, &amp;#39;colour&amp;#39;: &amp;#39;color&amp;#39;, &amp;#39;centre&amp;#39;: &amp;#39;center&amp;#39;, &amp;#39;favourite&amp;#39;: &amp;#39;favorite&amp;#39;, &amp;#39;travelling&amp;#39;: &amp;#39;traveling&amp;#39;, &amp;#39;counselling&amp;#39;: &amp;#39;counseling&amp;#39;, &amp;#39;theatre&amp;#39;: &amp;#39;theater&amp;#39;, &amp;#39;cancelled&amp;#39;: &amp;#39;canceled&amp;#39;, &amp;#39;labour&amp;#39;: &amp;#39;labor&amp;#39;, &amp;#39;organisation&amp;#39;: &amp;#39;organization&amp;#39;, &amp;#39;wwii&amp;#39;: &amp;#39;world war 2&amp;#39;, &amp;#39;citicise&amp;#39;: &amp;#39;criticize&amp;#39;, &amp;#39;youtu &amp;#39;: &amp;#39;youtube &amp;#39;, &amp;#39;Qoura&amp;#39;: &amp;#39;Quora&amp;#39;, &amp;#39;sallary&amp;#39;: &amp;#39;salary&amp;#39;, &amp;#39;Whta&amp;#39;: &amp;#39;What&amp;#39;, &amp;#39;narcisist&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;howdo&amp;#39;: &amp;#39;how do&amp;#39;, &amp;#39;whatare&amp;#39;: &amp;#39;what are&amp;#39;, &amp;#39;howcan&amp;#39;: &amp;#39;how can&amp;#39;, &amp;#39;howmuch&amp;#39;: &amp;#39;how much&amp;#39;, &amp;#39;howmany&amp;#39;: &amp;#39;how many&amp;#39;, &amp;#39;whydo&amp;#39;: &amp;#39;why do&amp;#39;, &amp;#39;doI&amp;#39;: &amp;#39;do I&amp;#39;, &amp;#39;theBest&amp;#39;: &amp;#39;the best&amp;#39;, &amp;#39;howdoes&amp;#39;: &amp;#39;how does&amp;#39;, &amp;#39;mastrubation&amp;#39;: &amp;#39;masturbation&amp;#39;, &amp;#39;mastrubate&amp;#39;: &amp;#39;masturbate&amp;#39;, &amp;#34;mastrubating&amp;#34;: &amp;#39;masturbating&amp;#39;, &amp;#39;pennis&amp;#39;: &amp;#39;penis&amp;#39;, &amp;#39;Etherium&amp;#39;: &amp;#39;Ethereum&amp;#39;, &amp;#39;narcissit&amp;#39;: &amp;#39;narcissist&amp;#39;, &amp;#39;bigdata&amp;#39;: &amp;#39;big data&amp;#39;, &amp;#39;2k17&amp;#39;: &amp;#39;2017&amp;#39;, &amp;#39;2k18&amp;#39;: &amp;#39;2018&amp;#39;, &amp;#39;qouta&amp;#39;: &amp;#39;quota&amp;#39;, &amp;#39;exboyfriend&amp;#39;: &amp;#39;ex boyfriend&amp;#39;, &amp;#39;airhostess&amp;#39;: &amp;#39;air hostess&amp;#39;, &amp;#34;whst&amp;#34;: &amp;#39;what&amp;#39;, &amp;#39;watsapp&amp;#39;: &amp;#39;whatsapp&amp;#39;, &amp;#39;demonitisation&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonitization&amp;#39;: &amp;#39;demonetization&amp;#39;, &amp;#39;demonetisation&amp;#39;: &amp;#39;demonetization&amp;#39;} </description>
     </item>
     
     <item>
       <title>Deep Learning 5 NLP基本过程</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</link>
       <pubDate>Tue, 28 Jan 2020 15:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl5.3-nlp%E8%AF%8D%E8%AF%AD%E5%A4%84%E7%90%86/</guid>
       <description>[TOC]
 NLP - 词嵌入 </description>
     </item>
     
     <item>
       <title>Deep Learning 4 Feature Engineering 几种编码整合</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</link>
       <pubDate>Tue, 28 Jan 2020 14:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl4-feature-engineering%E5%87%A0%E7%A7%8D%E7%BC%96%E7%A0%81/</guid>
       <description>[TOC]
 Feature Engineering&amp;ndash;拼接、拆分数据 1、直接根据数据量拼接、拆分
 df = pd.concat([train, test]) 用:来分割，:num表示num之前的所有，num:num之后的所有，:就是没有界限，所有的
@@ -1855,10 +1876,10 @@ shops[&amp;#39;newAttr&amp;#39;] = shops[&amp;#39;oriAttr&amp;#39;].str.split(&a
     
     <item>
       <title>Deep Learning 3 数据可视化之EDA</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</link>
       <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl3-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8Beda/</guid>
       <description>[TOC]
 数据可视化&amp;ndash;categorical data 离散数据 直方图类型 [单个属性]： 根据不同的种类来区分颜色的【通过利用plotly=&amp;gt;histogram】
 import plotly.express as px fig = px.histogram(data, x=&amp;#39;attr&amp;#39;, color=&amp;#39;attr&amp;#39;) fig.show() 直接画出数量，不用区分种类颜色的【直接利用matplotlib.pyplot=&amp;gt;bar】import matplotlib.pyplot as plt
@@ -1870,10 +1891,10 @@ df[&amp;#39;Attr&amp;#39;].value_counts().plot.bar() 直方图类型 [单个属�
     
     <item>
       <title>Deep Learning 3.1 数据可视化之模型评估阶段</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</link>
       <pubDate>Tue, 28 Jan 2020 13:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl3.1-%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B9%8B%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E9%98%B6%E6%AE%B5/</guid>
       <description>[TOC]
 数据可视化 &amp;ndash; 通过sklearn.metrics直接plot from sklearn.metrics import plot_precision_recall_curve
 from sklearn.metrics import plot_roc_curve
@@ -1895,10 +1916,10 @@ def plot_roc_curve_(y_true, y_pred): # Compute ROC curve and ROC area(auc) fpr, 
     
     <item>
       <title>Deep Learning 2 Kaggle Competition</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl2-kaggle-competition/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl2-kaggle-competition/</link>
       <pubDate>Tue, 28 Jan 2020 12:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl2-kaggle-competition/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl2-kaggle-competition/</guid>
       <description>[TOC]
 [Kaggle] House Price 结构化数据(表格)、回归问题(预测房价)
 2020.4.20 House Prices V1.0
@@ -1926,10 +1947,10 @@ def plot_roc_curve_(y_true, y_pred): # Compute ROC curve and ROC area(auc) fpr, 
     
     <item>
       <title>Deep Learning 1 IFLY Temperature Predict</title>
-      <link>https://chenranfei.xyz/posts/mldl/dl1-ifly_temperature_predict/</link>
+      <link>http://chenranfei.xyz/posts/mldl/dl1-ifly_temperature_predict/</link>
       <pubDate>Tue, 28 Jan 2020 04:05:44 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/mldl/dl1-ifly_temperature_predict/</guid>
+      <guid>http://chenranfei.xyz/posts/mldl/dl1-ifly_temperature_predict/</guid>
       <description>[TOC]
 描述 随着计算机技术的发展，我国逐渐实现了从传统农业到现代农业的转变，正逐步迈向智慧农业。温室是现代农业技术应用的典型场景，其内部环境具有可操作性，能人为形成适宜植物生长的小型封闭生态系统，提升农产品的产量和质量，因此被广泛应用于农业生产中。在温室的各项环境因子中，作物对温度最为敏感。温度的高低影响植株细胞的酶活性，从而影响作物的生长速度、产量和质量，因此温度对作物生长发育影响极大。为了保证农产品的产量和质量，应保证作物正常生长，需对温室温度进行精确的调控。
 二、赛事任务 温室温度调控需要对温室温度进行精准的预测，本次大赛提供了中国农业大学涿州实验站的温室温度数据作为样本，参赛选手需基于提供的样本构建模型，预测温室温度变化情况。
@@ -1945,10 +1966,10 @@ def plot_roc_curve_(y_true, y_pred): # Compute ROC curve and ROC area(auc) fpr, 
     
     <item>
       <title>Article-随笔-2019.6.7回忆高考有感</title>
-      <link>https://chenranfei.xyz/posts/article/article-%E9%9A%8F%E7%AC%94-2019.6.7%E5%9B%9E%E5%BF%86%E9%AB%98%E8%80%83%E6%9C%89%E6%84%9F/</link>
+      <link>http://chenranfei.xyz/posts/article/article-%E9%9A%8F%E7%AC%94-2019.6.7%E5%9B%9E%E5%BF%86%E9%AB%98%E8%80%83%E6%9C%89%E6%84%9F/</link>
       <pubDate>Fri, 07 Jun 2019 11:03:57 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/article/article-%E9%9A%8F%E7%AC%94-2019.6.7%E5%9B%9E%E5%BF%86%E9%AB%98%E8%80%83%E6%9C%89%E6%84%9F/</guid>
+      <guid>http://chenranfei.xyz/posts/article/article-%E9%9A%8F%E7%AC%94-2019.6.7%E5%9B%9E%E5%BF%86%E9%AB%98%E8%80%83%E6%9C%89%E6%84%9F/</guid>
       <description>一年前的现在，我坐在河北省衡水市冀州中学考场中参加语文高考，正在奋笔疾书，作答语文试卷。
  而现在，我坐在湖南省长沙市中南大学毓秀楼中学习，心中感触颇深，百感交集，既有为学弟学妹参加高考而紧张，也有自己对与高考的感悟，对高考的更深层认识。
  每个人对高考的见解不同，而我认为高考的最大意义不在于考试考出成绩，不在于通过成绩来进入一个自己最心仪的学校，而在于整个高考过程中对自己的精神世界的塑造，高考对于一个人来说就好像一次马拉松，而现实是由于地域、由于环境、由于家庭导致我们每个运动员的起点不同，因此，想要到达相同的终点需要付出的努力也是不同的，付出努力非常大的人，在高中三年磨砺意志的时期练就了努力拼搏的品质，知道了只有努力才能弥补自己在其他方面不如别人，经历过&amp;quot;就算起步比别人差，就算环境没别人好，就算家庭没别人优秀，但仍通过后天努力和别人站在同一高度或者更高的高度&amp;quot;这种精神世界，这是一种精神，这不是简简单单一个高考考700分这个成绩可以带来的，这是高考考700分这个目标所激励人努力的过程所带来的，纵使最后可能考不到700分，但他的精神世界所带来的足以让在今后达到更高的成就。

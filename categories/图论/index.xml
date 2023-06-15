@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>图论 on Aczy156</title>
-    <link>https://chenranfei.xyz/categories/%E5%9B%BE%E8%AE%BA/</link>
+    <link>http://chenranfei.xyz/categories/%E5%9B%BE%E8%AE%BA/</link>
     <description>Recent content in 图论 on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.xyz/categories/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://chenranfei.xyz/categories/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Algorithm14.0 图论 数据结构存储形式</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.0-%E5%9B%BE%E8%AE%BA-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%98%E5%82%A8%E5%BD%A2%E5%BC%8F/</guid>
       <description>[TOC]
 图论 四种数据结构存储形式 存纯边【无点集的一点关系】 // 数据结构：结构体「起点、终点、权重」 struct node { int from, to, cost; bool operator &amp;lt; (const node n) const{return cost &amp;lt; n.cost;} // kruskal初始化 =&amp;gt; 边权排序 }edge[maxedge]; // 遍历 for (int i = 1; i &amp;lt;= number_of_edge; i++) { int from = edge[i].from, to = edge[i].to, cost = edge[i].cost; } 邻接矩阵 // 数据结构：二维数组 int mp[maxpoint][maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 1; j &amp;lt;= number_of_point; j++) { int from = i, to = j, cost = mp[i][j]; } } 邻接表 // 数据结构：向量+结构体「终点、权重」 struct node { int to, cost; }; vector&amp;lt;node&amp;gt; b[maxpoint]; // 遍历 for (int i = 1; i &amp;lt;= number_of_point; i++) { for (int j = 0; j &amp;lt; b[i].</description>
     </item>
     
     <item>
       <title>Algorithm14.1 最短路</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.1-dijkstra/</guid>
       <description>[TOC]
 最短路 三大思路  Basic：Floyd Greedy：Dijkstra DP：Bellman-Ford、SPFA      Greedy DP Basic     代表方法 Dijkstra Bellman-Ford Floyd   数据结构 d[i]表示到起点的最小距离 d[i]表示到起点的最小距离 d[i][j]表示i、j两点之间的最小距离   思路
 (V为点，E为边) 1. 从所有其他点中找到距离起点最小的点argmin{d[i])}
@@ -43,10 +43,10 @@
     
     <item>
       <title>Algorithm14.1.2 Floyd</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.2-floyd/</guid>
       <description>[TOC]
 最短路-Floyd Floyd - 最短路 （已经经过滚动数组优化，d数组只有两个维度，不需要k这个维度）+邻接矩阵【用mp[maxn][maxn]二维矩阵储存】
  核心数据结构：只需要一个d数组，经过滚动数组优化之后，只需要两个维度。 核心遍历过程：遍历一个中间分割点k，然后遍历两个节点i、j =&amp;gt; 分别时d数组的两个维度，来进行遍历 最后的结果全部储存在d数组中，包括任意点和任意点的最短路。  #include &amp;lt;iostream&amp;gt;using namespace std; const int maxn = 105; const int inf = (1&amp;lt;&amp;lt;31)-1; int n, m, d[maxn][maxn], ta, tb, tc; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) if (i != j) d[i][j] = inf; for (int i = 1; i &amp;lt;= m; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); d[ta][tb] = d[tb][ta] = tc; } for (int k = 1; k &amp;lt;= n; ++k) for (int i = 1; i &amp;lt;= n; ++i) for (int j = 1; j &amp;lt;= n; ++j) d[i][j] = min(d[i][j], d[i][k]+d[k][j]); return 0; } // 测试用例 // 输入 4 6 1 2 2 2 3 2 2 4 1 1 3 5 3 4 3 1 4 4 // 输出 =&amp;gt; 可以得到所有节点之间的距离 0 2 4 3 2 0 2 1 4 2 0 3 3 1 3 0 Floyd - 最小环 https://www.</description>
@@ -54,20 +54,20 @@
     
     <item>
       <title>Algorithm14.1.3 SPFA</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.1.3-spfa/</guid>
       <description>[TOC]
 最短路-SPFA SPFA  数据结构类似于Dijkstra，也是d数组和vi/vis数组 首先起点入队，标记已达 开始循环遍历队列，此时不用判断是否已是vis。（Dijkstra是需要判断两次的） 出队，标记未达 遍历到之后再次给标记已达。  int d[maxpoint], vi[maxpoint]; queue&amp;lt;nd&amp;gt; spf; void spfa(int s) { for (int i = 1; i &amp;lt;= n; ++i) d[i] = INF;d[s] = 0; spf.push({0, s});vi[s] = 1; while (!spf.empty()) { nd nw = spf.front();spf.pop(); int nwpos = nw.pos; vi[nwpos] = 0; for (int i = head[nwpos]; i; i=edge[i].next) { int to = edge[i].to; if (d[to] &amp;gt; d[nwpos]+edge[i].cost) { d[to] = d[nwpos]+edge[i].</description>
     </item>
     
     <item>
       <title>Algorithm14.2 最小生成树</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.2-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
       <description>[TOC]
 最小生成树  几种数据给出形式以及对应的解决方案
 1、点a 点b 边ab权值 =&amp;gt; 邻接表vector来存 =&amp;gt; 优先kruskal
@@ -81,10 +81,10 @@
     
     <item>
       <title>Algorithm14.3 拓扑图</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.3-%E6%8B%93%E6%89%91%E5%9B%BE/</guid>
       <description>[TOC]
 拓扑图 https://www.luogu.com.cn/problem/P4017
 1、图存储的数据结构：邻接矩阵，mp[a][b]，等于1的时候表示的是
@@ -94,10 +94,10 @@
     
     <item>
       <title>Algorithm14.4 最近公共祖先(LCA)</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.4-lca%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</guid>
       <description>[TOC]
 LCA最近公共祖先 dfs深搜
  更新depth深度数组 depth[maxpoint] 更新p爬升数组 p[maxpoint][21]  LCA
@@ -111,10 +111,10 @@ void dfs(int from, int fa) { depth[from] = depth[fa] + 1; // 更新depth深度�
     
     <item>
       <title>Algorithm14.5 二分图-最大匹配</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D/</guid>
       <description>[TOC]
 二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
 二分图变式 关押罪犯：两个监狱，
@@ -123,10 +123,10 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm14.5.1 二分图-染色</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5.1-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5.1-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5.1-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.5.1-%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9F%93%E8%89%B2/</guid>
       <description>[TOC]
 二分图 最大匹配 模版 https://www.luogu.com.cn/problem/P3386
 二分图变式 关押罪犯：两个监狱，
@@ -135,10 +135,10 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm14.6 图的遍历与搜索</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.6-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86%E4%B8%8E%E6%90%9C%E7%B4%A2/</guid>
       <description>[TOC]
 图的遍历与搜索 模版 dfs &amp;amp; bfs https://www.luogu.com.cn/problem/P5318
 #include &amp;lt;iostream&amp;gt;using namespace std; #define maxpoint 100010#define maxedge 1000010int n, m, ta, tb, vis[maxpoint]; struct ed { int from, to; bool operator &amp;lt; (const ed e) const { if (from == e.from) return to &amp;gt; e.to;return from &amp;gt;e.from;} }t[maxedge]; struct node { int to, next; }edge[maxedge];int head[maxpoint], tot; #include &amp;lt;queue&amp;gt;queue&amp;lt;int&amp;gt;pq; #include &amp;lt;cstring&amp;gt;#define cl(a, b) memset(a, b, sizeof(a))#include &amp;lt;algorithm&amp;gt; void addedge(int from, int to) { edge[++tot].</description>
@@ -146,10 +146,10 @@ https://www.luogu.com.cn/problem/P1525</description>
     
     <item>
       <title>Algorithm14.7 树的图解法</title>
-      <link>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E5%9B%BE%E8%AE%BA/algorithm14.7-%E6%A0%91%E7%9A%84%E5%9B%BE%E8%A7%A3%E6%B3%95/</guid>
       <description>[TOC]
 树的图解法  树【不仅限于二叉树，多叉树都没问题的】转化为图【无向图】
  树的深度：【图中其他所有点】 离 【根节点对应的图中的节点】 距离最远的 树的宽度：图中距离 【根节点对应的图中的节点】 各个不同距离中，个数最多的点（例如，距离为1的点有2个，距离为2的点有3个，距离为3的点有1个，所以宽度为3） LCA问题：可以通过图论中的最短路来解决=》floyd直接暴力出来   基础转换 https://www.luogu.com.cn/problem/P3884

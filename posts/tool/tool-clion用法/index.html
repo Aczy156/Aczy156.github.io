@@ -27,7 +27,7 @@ cmake_minimum_required(VERSION 3.15)project(CCFCSP)set(CMAKE_CXX_STANDARD 14)# �
 模版代码修改 在clion的系统设置中进行修改=&gt;找到新建c source file 的对应内容，第一行要写成#[[#include]]# &lt;iostream&gt;，然后后面是自动化的内容。
 #[[#include]]# &lt;iostream&gt; using namespace std; int main() { return 0; } " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/" />
+<meta property="og:url" content="http://chenranfei.xyz/posts/tool/tool-clion%E7%94%A8%E6%B3%95/" />
 <meta property="article:published_time" content="2020-04-08T20:42:26+08:00" />
 <meta property="article:modified_time" content="2020-04-08T20:42:26+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -37,11 +37,11 @@ Clion用法 CMakeLists.txt写法 cmake扫描目录的所有cpp文件，可以在
 cmake_minimum_required(VERSION 3.15)project(CCFCSP)set(CMAKE_CXX_STANDARD 14)# 遍历项目根目录下所有的 .cpp 文件 file (GLOB files *.cpp)foreach (file ${files}) string(REGEX REPLACE &#34;.&#43;/(.&#43;)\\..*&#34; &#34;\\1&#34; exe ${file}) add_executable (${exe} ${file}) message (\ \ \ \ --\ src/${exe}.cpp\ will\ be\ compiled\ to\ bin/${exe})endforeach ()注意：要保证每次新建的时候不修改CMakeLists.txt。在new cpp source file的时候，不勾选自动修改CMakeLists文件
 模版代码修改 在clion的系统设置中进行修改=&gt;找到新建c source file 的对应内容，第一行要写成#[[#include]]# &lt;iostream&gt;，然后后面是自动化的内容。
 #[[#include]]# &lt;iostream&gt; using namespace std; int main() { return 0; } "/>
-<script src="https://chenranfei.xyz/js/feather.min.js"></script>
+<script src="http://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.xyz/">Aczy156</a>
+		<a href="http://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>模版 on Aczy156</title>
+    <link>http://chenranfei.xyz/categories/%E6%A8%A1%E7%89%88/</link>
+    <description>Recent content in 模版 on Aczy156</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© Aczy156</copyright>
+    <lastBuildDate>Tue, 04 Feb 2020 16:12:46 +0800</lastBuildDate>
+    
+	<atom:link href="http://chenranfei.xyz/categories/%E6%A8%A1%E7%89%88/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Summary1 基础用法模版</title>
+      <link>http://chenranfei.xyz/posts/acm-summary/summary1-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E6%A8%A1%E7%89%88/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>http://chenranfei.xyz/posts/acm-summary/summary1-%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95%E6%A8%A1%E7%89%88/</guid>
+      <description>[TOC]
+算法模版 常用 表示无穷大（int的上限）：
+// int的最大值就是2的31次方-1 #define INF (1&amp;lt;&amp;lt;31)-1// 用库中定义的INT_MAX #include &amp;lt;climits&amp;gt;#define INF INT_MAXdouble 四舍五入的变式：永远舍和永远入：
+double a = 0.656, b = 0.651; printf(&amp;#34;%.2lf %2lf&amp;#34;, a-0.05, b-0.05); // 都会往下舍，变为0.65 0.65 printf(&amp;#34;%.2lf %2lf&amp;#34;, a+0.05, b+0.05); // 都会往上入，变为0.66 0.66 字符 &amp;amp; 字符串的scanf读入
+char ch scanf(&amp;#34;%c&amp;#34;, &amp;amp;ch); // 前面要加空格 char s[10]; scanf(&amp;#34;%s&amp;#34;, s); scanf字符串读入(对于流输入输出进行优化)
+// 数据：2007-06-23-11:59 2007-06-23-12:00 int by, ey, bm, em, bd, ed, bh, eh, bmin, emin; scanf(&amp;#34;%d-%d-%d-%d:%d&amp;#34;, &amp;amp;by, &amp;amp;bm, &amp;amp;bd, &amp;amp;bh, &amp;amp;bmin); scanf(&amp;#34;%d-%d-%d-%d:%d&amp;#34;, &amp;amp;ey, &amp;amp;em, &amp;amp;ed, &amp;amp;eh, &amp;amp;emin); // 即可获取 char a; cin&amp;gt;&amp;gt;by&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bm&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bd&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bh&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bmin; cin&amp;gt;&amp;gt;by&amp;gt;&amp;gt;a&amp;gt;&amp;gt;bm&amp;gt;&amp;gt;a&amp;gt;&amp;gt;ed&amp;gt;&amp;gt;a&amp;gt;&amp;gt;eh&amp;gt;&amp;gt;a&amp;gt;&amp;gt;emin; // 也可以获取 判断字符是大写字母还是小写字母还是数字</description>
+    </item>
+    
+    <item>
+      <title>Summary1 常见算法模版</title>
+      <link>http://chenranfei.xyz/posts/acm-summary/summary1.1-%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>http://chenranfei.xyz/posts/acm-summary/summary1.1-%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E6%A8%A1%E7%89%88/</guid>
+      <description>[TOC]
+算法模版 字符串-整数表达式求值 #include stack, unordered_mapstack&amp;lt;char&amp;gt; op; //操作符栈 stack&amp;lt;int&amp;gt; num; //数字栈 unordered_map&amp;lt;char, int&amp;gt; pr{{&amp;#39;+&amp;#39;, 1}, {&amp;#39;-&amp;#39;, 1}, {&amp;#39;x&amp;#39;, 2}, {&amp;#39;/&amp;#39;, 2}}; //定义运算符优先级 void eval() { // 计算函数  int b = num.top(); num.pop(); int a = num.top(); num.pop(); char c = op.top(); op.pop(); int x; if (c == &amp;#39;+&amp;#39;) x = a + b; else if (c == &amp;#39;-&amp;#39;) x = a - b; else if (c == &amp;#39;x&amp;#39;) x = a * b; // 乘法符号区分&amp;#39;x&amp;#39;和&amp;#39;*&amp;#39;  else x = a / b; num.</description>
+    </item>
+    
+    <item>
+      <title>Summary1.3 算法板题</title>
+      <link>http://chenranfei.xyz/posts/acm-summary/summary1.3-%E7%AE%97%E6%B3%95%E6%9D%BF%E9%A2%98-copy/</link>
+      <pubDate>Tue, 04 Feb 2020 16:12:46 +0800</pubDate>
+      
+      <guid>http://chenranfei.xyz/posts/acm-summary/summary1.3-%E7%AE%97%E6%B3%95%E6%9D%BF%E9%A2%98-copy/</guid>
+      <description>[TOC]
+算法模版 背包DP-01背包 for (int i = 0; i &amp;lt; m; ++i) for (int j = t; j &amp;gt;= c[i] ; --j) dp[j] = max(dp[j], dp[j-c[i]]+val[i]); 背包DP-多重背包 for (int i = 1; i &amp;lt;= n; ++i) for (int j = w; j &amp;gt;= c[i]; --j) for (int k = 1; k &amp;lt;= num[i] &amp;amp;&amp;amp; k*c[i]&amp;lt;=j; ++k) dp[j] = max(dp[j], dp[j-k*c[i]]+k*val[i]); 背包DP-多重背包二进制加速 类似于快速幂的思路，对首先将多重背包拍平成01背包，然后再跑01，将跑01的过程用快速幂加速。
+int n, m ,ta, tb ,tc, c[maxn], val[maxn], idx = 0, dp[maxn]; int main() { scanf(&amp;#34;%d%d&amp;#34;, &amp;amp;n, &amp;amp;m); for (int i = 1; i &amp;lt;= n; ++i) { scanf(&amp;#34;%d%d%d&amp;#34;, &amp;amp;ta, &amp;amp;tb, &amp;amp;tc); for (int j = 1; j &amp;lt;= tc; j&amp;lt;&amp;lt;=1) { c[++idx] = tb*j; val[idx] = ta*j; tc-=j; } if (tc) {c[++idx] = tb*tc;val[idx] = ta*tc;} } for (int i = 1; i &amp;lt;= idx; ++i) for (int j = m; j &amp;gt;= c[i]; --j) dp[j] = max(dp[j], dp[j-c[i]]+val[i]); printf(&amp;#34;%d\n&amp;#34;, dp[m]);} 区间DP-区间合并代价 题目大意：删除一段数组的数，代价为这个区间的左右端点值的差的绝对值*长度，求全部删去的最大代价。</description>
+    </item>
+    
+  </channel>
+</rss>

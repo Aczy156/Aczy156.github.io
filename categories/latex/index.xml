@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LaTex on Aczy156</title>
-    <link>https://chenranfei.xyz/categories/latex/</link>
+    <link>http://chenranfei.xyz/categories/latex/</link>
     <description>Recent content in LaTex on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Sun, 05 Apr 2020 17:16:12 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.xyz/categories/latex/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://chenranfei.xyz/categories/latex/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Tool-LaTex语法</title>
-      <link>https://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</link>
+      <link>http://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Sun, 05 Apr 2020 17:16:12 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</guid>
+      <guid>http://chenranfei.xyz/posts/tool/tool-latex%E8%AF%AD%E6%B3%95/</guid>
       <description>[TOC]
 LaTex语法 插入方式  inline math 行内公式 block math 块内公式  inline math $test_{latex}$
 $test_{latex}$ block math $$ test_{latex} $$

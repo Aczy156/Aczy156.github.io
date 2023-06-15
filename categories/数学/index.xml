@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>数学 on Aczy156</title>
-    <link>https://chenranfei.xyz/categories/%E6%95%B0%E5%AD%A6/</link>
+    <link>http://chenranfei.xyz/categories/%E6%95%B0%E5%AD%A6/</link>
     <description>Recent content in 数学 on Aczy156</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Aczy156</copyright>
     <lastBuildDate>Mon, 01 Feb 2021 19:03:55 +0800</lastBuildDate>
     
-	<atom:link href="https://chenranfei.xyz/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://chenranfei.xyz/categories/%E6%95%B0%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Algorithm16 高精度&amp;大数运算</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm16-%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%A4%A7%E6%95%B0%E8%BF%90%E7%AE%97/</guid>
       <description>[TOC]
 高精度 &amp;amp; 大数运算 （一）高精度除法-高精度除低精度 &amp;lt; 高精度加法 &amp;lt; 高精度乘法 &amp;lt; 高精度减法 &amp;lt; 高精度除法-高精度除高精度
 （二）语言：python，Java的四则运算自带高精度；C/C++需要利用字符串/字符数组来读取大数并开数组存放然后通过模拟竖式运算来计算。
@@ -30,10 +30,10 @@
     
     <item>
       <title>Algorithm9 数论其他汇总</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9-%E6%95%B0%E8%AE%BA%E5%85%B6%E4%BB%96%E6%B1%87%E6%80%BB/</guid>
       <description>[TOC]
 数论其他汇总 约数问题 https://www.luogu.com.cn/problem/P1403
 题目大意：给定一个数n，求1～n的所有数各自的约数的数量总和。
@@ -45,10 +45,10 @@ https://www.luogu.com.cn/problem/P1372
     
     <item>
       <title>Algorithm9.1 数论 数学基础</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.1-%E6%95%B0%E8%AE%BA%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/</guid>
       <description>[TOC]
 数论 数学基础  常用：
  进制转换  数学思维：
@@ -61,10 +61,10 @@ scanf(&amp;#34;%d&amp;#34;, &amp;amp;n); for (int i = 1; i &amp;lt;= n; ++i) {sc
     
     <item>
       <title>Algorithm9.2 数论入门</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.2-%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/</guid>
       <description>[TOC]
 数论基础 最大公约数gcd int gcd(int a,int b) { return (b&amp;gt;0)?gcd(b, a%b):a; } 利用的就是欧几里得原理
 int gcd(int a, int b) { return (b&amp;lt;=0)?a:gcd(b, a%b); } 最大公约数[gcd]与最小公倍数[gld]乘积 == 这两个数的乘积 a*b = gcd(a, b)*gld()
@@ -79,10 +79,10 @@ prime是质数列表，isprime
     
     <item>
       <title>Algorithm9.3 组合数</title>
-      <link>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</link>
+      <link>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</link>
       <pubDate>Mon, 01 Feb 2021 19:03:55 +0800</pubDate>
       
-      <guid>https://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</guid>
+      <guid>http://chenranfei.xyz/posts/acm/%E6%95%B0%E8%AE%BA/algorithm9.3-%E7%BB%84%E5%90%88%E6%95%B0/</guid>
       <description>[TOC]
 组合数 基本的排列组合数 A(n, m)和C(n, m)
 第二类Stirling数 数学意义：把n个数划分成k个集合

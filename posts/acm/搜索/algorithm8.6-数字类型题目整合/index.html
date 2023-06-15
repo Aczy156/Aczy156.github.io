@@ -27,7 +27,7 @@
 1、计数问题，dfs暴力搜
 #include &lt;iostream&gt;using namespace std; #define maxtotal 205#define maxn 8int n, total, ans, dp[maxn][maxtotal]; void dfs(int last, int l, int val){ if (l == n) { if (val == total) ans&#43;&#43;; return; } for (int i = last; val&#43;i*(n-l)&lt;=total; &#43;&#43;i) dfs(i, l&#43;1, val&#43;i); } int main() { scanf(&#34;%d%d&#34;, &amp;total, &amp;n); dfs(1, 0, 0); printf(&#34;%d\n&#34;, ans); return 0; } 2、利用dp实现" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/" />
+<meta property="og:url" content="http://chenranfei.xyz/posts/acm/%E6%90%9C%E7%B4%A2/algorithm8.6-%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B%E9%A2%98%E7%9B%AE%E6%95%B4%E5%90%88/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -37,11 +37,11 @@
  若干个数相加组合成目标数的方案总和 小于等于4个数的平方的和组合成目标数的方案总和 给定一个数，问随意将这个数进行拆解，然后拆解得到的数做乘积，求乘积最大值   dfs转计数dp 问题1:若干个数相加组合成目标数的方案总和-可用dfs&#43;剪枝出来 https://www.luogu.com.cn/problem/P1025
 1、计数问题，dfs暴力搜
 #include &lt;iostream&gt;using namespace std; #define maxtotal 205#define maxn 8int n, total, ans, dp[maxn][maxtotal]; void dfs(int last, int l, int val){ if (l == n) { if (val == total) ans&#43;&#43;; return; } for (int i = last; val&#43;i*(n-l)&lt;=total; &#43;&#43;i) dfs(i, l&#43;1, val&#43;i); } int main() { scanf(&#34;%d%d&#34;, &amp;total, &amp;n); dfs(1, 0, 0); printf(&#34;%d\n&#34;, ans); return 0; } 2、利用dp实现"/>
-<script src="https://chenranfei.xyz/js/feather.min.js"></script>
+<script src="http://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -55,7 +55,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.xyz/">Aczy156</a>
+		<a href="http://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		

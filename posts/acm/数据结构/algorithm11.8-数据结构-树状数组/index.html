@@ -34,7 +34,7 @@ void single_add(int pos, int k) { while(pos &lt;= n) { c[pos] &#43;= k; pos &#43
 =&gt; 自上而下累加 =&gt; c数组的索引pos从target目标开始往下找，但是要限定下限，不能让下限爆掉，pos≥1 =&gt; 从上往下累加的话，看当前的节点归属那个的子节点，则需要pos-=lowbit(pos)，此时就可以直接下降到子节点。
 int getsum(int pos) { int ans = 0; while(pos &gt;= 1) { ans &#43;= c[pos]; pos -= lowbit(pos); } } #include &lt;iostream&gt;using namespace std; #define maxn 500010int n, m, tm, tp, ta, tb, c[maxn]; int lowbit(int x) {return x &amp; (-x);} void single_add(int pos, int k) { while (pos &lt;= n) { c[pos] &#43;= k; pos &#43;= lowbit(pos); } } int getsum(int pos) { int ans = 0; while (pos &gt;= 1) { ans &#43;= c[pos]; pos -= lowbit(pos); } return ans; } int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;tm);single_add(i, tm);} while (m--) { scanf(&#34;%d%d%d&#34;, &amp;tp, &amp;ta, &amp;tb); if (tp-1) printf(&#34;%d\n&#34;, getsum(tb)-getsum(ta-1)); else single_add(ta, tb); } return 0; } 模版-区间修改(操作)、单点求和(查询) 区间修改&#43;单点求和 模版：https://www." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" />
+<meta property="og:url" content="http://chenranfei.xyz/posts/acm/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/algorithm11.8-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" />
 <meta property="article:published_time" content="2021-02-01T19:03:55+08:00" />
 <meta property="article:modified_time" content="2021-02-01T19:03:55+08:00" />
 <meta name="twitter:card" content="summary"/>
@@ -51,11 +51,11 @@ eg：6(10) &amp; -6(10) = 2 =&gt; 根据树状数组结构图，就是2个节点
 void single_add(int pos, int k) { while(pos &lt;= n) { c[pos] &#43;= k; pos &#43;= lowbit(pos); } } 2、区间求和「注意这个区间求的是前缀和，也就是1到pos的和。如果区间和的话，可以通过两个前缀和相减得到」
 =&gt; 自上而下累加 =&gt; c数组的索引pos从target目标开始往下找，但是要限定下限，不能让下限爆掉，pos≥1 =&gt; 从上往下累加的话，看当前的节点归属那个的子节点，则需要pos-=lowbit(pos)，此时就可以直接下降到子节点。
 int getsum(int pos) { int ans = 0; while(pos &gt;= 1) { ans &#43;= c[pos]; pos -= lowbit(pos); } } #include &lt;iostream&gt;using namespace std; #define maxn 500010int n, m, tm, tp, ta, tb, c[maxn]; int lowbit(int x) {return x &amp; (-x);} void single_add(int pos, int k) { while (pos &lt;= n) { c[pos] &#43;= k; pos &#43;= lowbit(pos); } } int getsum(int pos) { int ans = 0; while (pos &gt;= 1) { ans &#43;= c[pos]; pos -= lowbit(pos); } return ans; } int main() { scanf(&#34;%d%d&#34;, &amp;n, &amp;m); for (int i = 1; i &lt;= n; &#43;&#43;i) {scanf(&#34;%d&#34;, &amp;tm);single_add(i, tm);} while (m--) { scanf(&#34;%d%d%d&#34;, &amp;tp, &amp;ta, &amp;tb); if (tp-1) printf(&#34;%d\n&#34;, getsum(tb)-getsum(ta-1)); else single_add(ta, tb); } return 0; } 模版-区间修改(操作)、单点求和(查询) 区间修改&#43;单点求和 模版：https://www."/>
-<script src="https://chenranfei.xyz/js/feather.min.js"></script>
+<script src="http://chenranfei.xyz/js/feather.min.js"></script>
 	
-	<link href="https://chenranfei.xyz/css/fonts.css" rel="stylesheet">
+	<link href="http://chenranfei.xyz/css/fonts.css" rel="stylesheet">
 	
-	<link rel="stylesheet" type="text/css" media="screen" href="https://chenranfei.xyz/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://chenranfei.xyz/css/main.css" />
 	
 	
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
@@ -69,7 +69,7 @@ MathJax.Hub.Config({
 <body>
         <div class="content"><header>
 	<div class="main">
-		<a href="https://chenranfei.xyz/">Aczy156</a>
+		<a href="http://chenranfei.xyz/">Aczy156</a>
 	</div>
 	<nav>
 		
